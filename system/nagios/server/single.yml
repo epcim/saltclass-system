@@ -1,0 +1,3 @@
+classes:
+- service.nagios.server.single
+- system.nagios.server

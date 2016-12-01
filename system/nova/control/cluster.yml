@@ -1,0 +1,67 @@
+classes:
+- service.haproxy.proxy.single
+- service.nova.control.cluster
+- service.keepalived.cluster.single
+- system.haproxy.proxy.listen.openstack.nova
+parameters:
+  nova:
+    controller:
+      enabled: true
+      version: ${_param:nova_version}
+      vncproxy_url: http://${_param:cluster_vip_address}:6080
+      security_group: false
+      dhcp_domain: novalocal
+      scheduler_default_filters: "DifferentHostFilter,RetryFilter,AvailabilityZoneFilter,RamFilter,CoreFilter,DiskFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter"
+      cpu_allocation_ratio: 16.0
+      ram_allocation_ratio: 1.5
+      disk_allocation_ratio: 1.0
+      workers: 8
+      logging:
+      - engine: syslog
+        facility: local0
+        heka:
+          enabled: true
+      bind:
+        private_address: ${_param:cluster_local_address}
+        public_address: ${_param:cluster_vip_address}
+        public_name: ${_param:cluster_vip_address}
+        novncproxy_port: 6080
+      database:
+        engine: mysql
+        host: ${_param:openstack_database_address}
+        port: 3306
+        name: nova
+        user: nova
+        password: ${_param:mysql_nova_password}
+      identity:
+        engine: keystone
+        region: ${_param:openstack_region}
+        host: ${_param:cluster_vip_address}
+        port: 35357
+        user: nova
+        password: ${_param:keystone_nova_password}
+        tenant: service
+      message_queue:
+        engine: rabbitmq
+        port: 5672
+        user: openstack
+        password: ${_param:rabbitmq_openstack_password}
+        virtual_host: '/openstack'
+        members:
+          - host: ${_param:openstack_message_queue_node01_address}
+          - host: ${_param:openstack_message_queue_node02_address}
+          - host: ${_param:openstack_message_queue_node03_address}
+      glance:
+        host: ${_param:cluster_vip_address}
+        port: 9292
+      network:
+        engine: neutron
+        region: ${_param:openstack_region}
+        host: ${_param:opencontrail_control_address}
+        user: neutron
+        password: ${_param:keystone_neutron_password}
+        port: 9696
+        mtu: 1500
+        tenant: service
+      metadata:
+        password: metadataPass

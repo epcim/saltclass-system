@@ -1,0 +1,78 @@
+classes:
+- service.elasticsearch.server.cluster
+- service.java.environment
+- service.glusterfs.server
+- service.glusterfs.client
+parameters:
+  _param:
+    java_environment_version: "8"
+    java_environment_platform: openjdk
+  linux:
+    system:
+      sysctl:
+        vm.max_map_count: 262144
+        vm.swappiness: 0
+      repo:
+        tcpcloud_elasticsearch:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ xenial elastic"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+  java:
+    environment:
+      headless: true
+  elasticsearch:
+    server:
+      enabled: true
+      master: true
+      data: true
+      mlockall: true
+      bind:
+        address: ${_param:single_address}
+        port: 9200
+      index:
+        replicas: 2
+      threadpool:
+        bulk:
+         queue_size: 1000
+      gateway:
+        expected_nodes: 3
+        recover_after_nodes: 2
+        recover_after_time: 5m
+      cluster:
+        multicast: false
+        minimum_master_nodes: 2
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+      snapshot:
+        repo:
+          path: /var/lib/elasticsearch/repo
+  glusterfs:
+    server:
+      peers:
+        - ${_param:cluster_node01_address}
+        - ${_param:cluster_node02_address}
+        - ${_param:cluster_node03_address}
+      volumes:
+        elasticrepo:
+          storage: /srv/glusterfs/elasticrepo
+          replica: 3
+          bricks:
+            - ${_param:cluster_node01_address}:/srv/glusterfs/elasticrepo
+            - ${_param:cluster_node02_address}:/srv/glusterfs/elasticrepo
+            - ${_param:cluster_node03_address}:/srv/glusterfs/elasticrepo
+          options:
+            cluster.readdir-optimize: On
+            cluster.lookup-optimize: On
+            nfs.disable: On
+            network.remote-dio: On
+            diagnostics.client-log-level: WARNING
+            diagnostics.brick-log-level: WARNING
+    client:
+      volumes:
+        elasticrepo:
+          path: /var/lib/elasticsearch/repo
+          server: ${_param:cluster_node01_address}
+          user: elasticsearch
+          group: elasticsearch

@@ -1,0 +1,61 @@
+parameters:
+  gerrit:
+    client:
+      enabled: True
+      dir:
+        git: /srv/volumes/gerrit/git
+      server:
+        host: ${_param:openstack_control_address}
+        user: admin
+        email: root@localhost
+        http_port: 8083
+        ssh_port: 29418
+        protocol: http
+        password: ${_param:gerrit_admin_password}
+        key: ${_param:gerrit_admin_private_key}
+      group:
+        Event Streaming Users:
+          description: Event Streaming Users
+        mcp_fuel_aio-core:
+          description: Core maintainers
+        mcp_fuel_aio-release:
+          description: Release engineers
+        mcp_fuel_aio-contrib:
+          description: Service developers
+      user:
+        jenkins:
+          fullname: Non-Interactive Jenkins
+          email: "jenkins@mirantis.com"
+          ssh_key: ${_param:gerrit_admin_public_key}
+          http_password: password
+          groups:
+          - Event Streaming Users
+          - Non-Interactive Users
+      default_access:
+        "refs/*":
+          actions:
+          - name: read
+            group: Non-Interactive Users
+        "refs/heads/*":
+          actions:
+          - name: abandon
+            group: ccp-poc-core
+          - name: create
+            group: ccp-poc-release
+          labels:
+          - name: label-Code-Review
+            group: ccp-poc-core
+            score: -2..+2
+          - name: label-Code-Review
+            group: Non-Interactive Users
+            score: -1..+1
+          - name: label-Verified
+            group: Non-Interactive Users
+            score: -1..+1
+          - name: label-Workflow
+            group: ccp-poc-core
+            score: -1..+1
+        "refs/tags/*":
+          actions:
+          - name: pushSignedTag
+            group: ${_param:cluster_name}-release

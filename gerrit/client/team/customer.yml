@@ -1,0 +1,4 @@
+parameters:
+  gerrit:
+    client:
+      user: {}

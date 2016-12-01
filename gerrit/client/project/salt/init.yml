@@ -1,0 +1,4 @@
+include:
+- gerrit.client.project.salt.salt_formula_linux
+- gerrit.client.project.salt.salt_formula_nova
+- gerrit.client.project.salt.salt_formula_salt

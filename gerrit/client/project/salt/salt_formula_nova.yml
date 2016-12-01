@@ -2,10 +2,10 @@ parameters:
   gerrit:
     client:
       project:
-        reclass-salt-model:
+        salt-formula-nova:
           enabled: true
-          description:
-            upstream: git@github.com:Mirantis/ccp-poc-salt-model.git
+          description: OpenStack Nova formula
+          upstream: https://github.com/openstack/salt-formula-nova.git
           access:
             "refs/heads/*":
               actions:

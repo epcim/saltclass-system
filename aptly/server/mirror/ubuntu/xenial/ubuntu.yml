@@ -1,0 +1,69 @@
+parameters:
+  aptly:
+    server:
+      mirror:
+        xenial-main:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/xenial
+        xenial-universe:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial
+          components: universe
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/xenial
+        xenial-updates:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-updates
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/xenial
+        xenial-updates-universe:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-updates
+          components: universe
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/xenial
+        xenial-security:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-security
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: security
+            distributions:
+              - nightly/xenial

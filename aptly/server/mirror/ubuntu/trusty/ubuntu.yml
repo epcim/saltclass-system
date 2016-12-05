@@ -1,0 +1,69 @@
+parameters:
+  aptly:
+    server:
+      mirror:
+        trusty-main:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/trusty
+        trusty-universe:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty
+          components: universe
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/trusty
+        trusty-updates:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-updates
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/trusty
+        trusty-updates-universe:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-updates
+          components: universe
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: main
+            distributions:
+              - nightly/trusty
+        trusty-security:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-security
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: security
+            distributions:
+              - nightly/trusty

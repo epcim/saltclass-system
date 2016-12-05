@@ -4,7 +4,6 @@ classes:
 - service.iptables.server
 parameters:
   _param:
-    aptly_gpg_passphrase:
     nginx_aptly_server_host: ${linux:network:fqdn}
   iptables:
     service:
@@ -74,6 +73,5 @@ parameters:
       enabled: true
       secure: true
       gpg_keypair_id: ${_param:aptly_gpg_keypair_id}
-      gpg_passphrase: ${_param:gpg_passphrase}
       gpg_public_key: ${_param:aptly_gpg_public_key}
       gpg_private_key: ${_param:aptly_gpg_private_key}

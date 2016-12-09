@@ -86,6 +86,18 @@ parameters:
           sudo: true
           full_name: Petr Michalec
           home: /home/pmichalec
+        jbroulik:
+          enabled: true
+          name: jbroulik
+          sudo: true
+          full_name: Jiri Broulik
+          home: /home/jbroulik
+        rfelkl:
+          enabled: true
+          name: rfelkl
+          sudo: true
+          full_name: Richard Felkl
+          home: /home/rfelkl
       group:
         libvirtd:
           enabled: true
@@ -159,6 +171,16 @@ parameters:
           public_keys:
           - ${public_keys:pmichalec}
           user: ${linux:system:user:pmichalec}
+        jbroulik:
+          enabled: true
+          public_keys:
+          - ${public_keys:jbroulik}
+          user: ${linux:system:user:jbroulik}
+        rfelkl:
+          enabled: true
+          public_keys:
+          - ${public_keys:rfelkl}
+          user: ${linux:system:user:rfelkl}
   public_keys:
     askotnicky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO6EnDYaGdF/Nn6lntxDNnKanCsheZRdh8kA/6ImyeRSjT2cgepm1Fsgv7wXBYoy0OxhB5wgCp5Az/Pj4oLkG3g+G05sUPUxxGCGRiwjcnyQ/FTz4TzHglAVqgbdgWoQYf9Hg6EKZovvPcH3STbEwcl+MhLqvxz0wm5+StE+wvp6I9dEfRV+2/e1uepauOTZ1+Ui1DMNXiMefTlbiIBHzUk7RiwJWgqzQXBndgunmbJWSed8zC0Ug97waDOFIX/oKZmAmsv0NLJ2e/kC3oUTuziGT74F9sh7Pqiw/9HZxvP45hJwEvytfUjfuiikIBbmYdF7Je93czaG/qjXGN8YvP== a.skotnicky@tcpisek.cz
@@ -186,4 +208,9 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt9HA2bUwCVGGdUjyFzdPFp0j2z9XanLW9gHZ3BhB6Wc4ficU6zmbqYxrHUvdmUrRJbLMEAo9JDlzAIw4CPGhRkD3d7HfnmlEYcEeizLnnC+CmKo3+mrwkQIzWIz6PJOh1kvp5uaNp4ztjRGXXmPzcR0nk4jRD89gLHvH9EYStxZI6nsi3mmWR/LhgIhijb8p63duhE4HuK/RRRjeDQaUsbTG9TMEskY5ZI3p/QM55wlml9F8QJrtwxpaIPI5Fl8lflq+4YcoqgDIBFc6nwubIuiNY4gPJ8s1SQfsfxHSOJpFPZDwi76dxUpthtJrU46fqRvXPzTKoS29WZ5pSAY6p pavel.cizinsky@tcpcloud.eu
     pmichalec:
       key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwsfObHWHqBv6UQBjvm0nkgnAGc5MZPuQXJ3ln4sM1P pmichalec@dontpanic
+    jbroulik:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCBPHunnzTMg2I88ZIaiQ5eJYJRq/hQcB5UtDZTC7hO0ce+oEpftcLQiQ69xKbOPb5xiK6VMJd6a53gZykabMTov6y+nECMr4B1i6tgK1NPCU/sGhvsUKeiRo7ZVMScRPuJuTGRLjR6Ac3pRrwrWpmoRvJtLnbrvjEYlt9V7ui/VFkl7uiPQc3AjNiSkgBekDGtrqZktjUstEosucjfriF/PVtlZqha7d3rHLpK1KBzzaSMNMxCgBitEtqjgHLtcR1H/KgPQpYAwkokmvAGH8/fqcd+tpmp6hiH3k2Haf8EjVBTcw71fbmqC0rpL8/r74jyYAmkfPG8LISb/T9gPcV jiri@jiri-Mirantis
+    rfelkl:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlvQKWbEQ8bM2rtE35sA5+y//YKMLNJ48d+/RxWlUx6G8xJusUhrKZuMRMgN5NqJQ92Z0Yd2lulsPeKEfSbqAxBxmNZ+mAAy8w8P/BHlQImi2HgMpWtQ5yExsAvCUAqq6KclJBhzjArg4+ztmKmNvjM8ZktJYeCM8VJ+qT01B8/3+frgltIDCDcC8YpRwbAt7aLjuB2Jk5Q9daQbtZ4XyXwHgPDpyZUkcuueUk/iklUBkAh9P3CFJBpttXEyKI0+cJAtM9vCXXPWmWt7nFAyQ8nH9+lTv/ZuD+pipKJBW2sp8+fFUWJ/Z6GzWhyh2KxiY7eK3kgabg1i7FtLFtRbZj richard@richard-inspiron
+
 

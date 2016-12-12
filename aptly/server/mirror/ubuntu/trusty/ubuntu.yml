@@ -3,7 +3,7 @@ parameters:
     server:
       mirror:
         trusty-main:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://in.archive.ubuntu.com/ubuntu/
           distribution: trusty
           components: main
           architectures: amd64
@@ -14,9 +14,9 @@ parameters:
           publisher:
             component: main
             distributions:
-              - nightly/trusty
+              - trusty/nightly
         trusty-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://in.archive.ubuntu.com/ubuntu/
           distribution: trusty
           components: universe
           architectures: amd64
@@ -27,9 +27,9 @@ parameters:
           publisher:
             component: main
             distributions:
-              - nightly/trusty
+              - trusty/nightly
         trusty-updates:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://in.archive.ubuntu.com/ubuntu/
           distribution: trusty-updates
           components: main
           architectures: amd64
@@ -40,9 +40,9 @@ parameters:
           publisher:
             component: main
             distributions:
-              - nightly/trusty
+              - trusty/nightly
         trusty-updates-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://in.archive.ubuntu.com/ubuntu/
           distribution: trusty-updates
           components: universe
           architectures: amd64
@@ -53,9 +53,9 @@ parameters:
           publisher:
             component: main
             distributions:
-              - nightly/trusty
+              - trusty/nightly
         trusty-security:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://in.archive.ubuntu.com/ubuntu/
           distribution: trusty-security
           components: main
           architectures: amd64
@@ -66,4 +66,4 @@ parameters:
           publisher:
             component: security
             distributions:
-              - nightly/trusty
+              - trusty/nightly

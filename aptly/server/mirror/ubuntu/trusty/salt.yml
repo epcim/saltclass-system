@@ -12,5 +12,5 @@ parameters:
           publisher:
             component: salt
             distributions:
-              - nightly/trusty
+              - trusty/nightly
 

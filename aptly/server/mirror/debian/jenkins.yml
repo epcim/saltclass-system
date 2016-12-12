@@ -12,8 +12,8 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly
         jenkins-debian-glue:
           source: http://jenkins.grml.org/debian/
           distribution: jenkins-debian-glue
@@ -26,5 +26,5 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly

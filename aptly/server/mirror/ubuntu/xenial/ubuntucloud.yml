@@ -12,7 +12,7 @@ parameters:
           publisher:
             component: newton
             distributions:
-              - nightly/xenial
+              - xenial/nightly
         xenial-updates-ocata:
           source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
           distribution: xenial-updates/ocata
@@ -23,4 +23,4 @@ parameters:
           publisher:
             component: ocata
             distributions:
-              - nightly/xenial
+              - xenial/nightly

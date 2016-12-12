@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: haproxy
             distributions:
-              - nightly/trusty
+              - trusty-haproxy

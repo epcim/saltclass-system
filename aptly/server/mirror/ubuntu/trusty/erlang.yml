@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: erlang
             distributions:
-              - nightly/trusty
+              - trusty/nightly

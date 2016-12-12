@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: salt
             distributions:
-              - nightly/xenial
+              - xenial/nightly

@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - 460F3994
           publisher:
-            component: extra
+            component: ceph
             distributions:
               - nightly/trusty

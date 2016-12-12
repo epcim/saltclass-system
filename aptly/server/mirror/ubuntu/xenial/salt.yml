@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - DE57BFBE
           publisher:
-            component: extra
+            component: salt
             distributions:
               - nightly/xenial

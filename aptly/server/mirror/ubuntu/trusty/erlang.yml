@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - A14F4FCA
           publisher:
-            component: extra
+            component: erlang
             distributions:
               - nightly/trusty

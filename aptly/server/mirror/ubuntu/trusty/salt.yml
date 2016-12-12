@@ -2,14 +2,15 @@ parameters:
   aptly:
     server:
       mirror:
-        salt-2015.8-trusty:
-          source: http://repo.saltstack.com/apt/ubuntu/ubuntu14/2015.8/
+        salt-2016.3-trusty:
+          source: http://repo.saltstack.com/apt/ubuntu/14.04/amd64/2016.3
           distribution: trusty
           components: main
           architectures: amd64
           gpgkeys:
             - DE57BFBE
           publisher:
-            component: extra
+            component: salt
             distributions:
               - nightly/trusty
+

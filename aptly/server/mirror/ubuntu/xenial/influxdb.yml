@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - 2582E0C5
           publisher:
-            component: extra
+            component: influxdb
             distributions:
-              - nightly/xenial
+              - xenial/nightly

@@ -79,3 +79,17 @@ parameters:
             distributions:
               - trusty/nightly
 
+        # elastic, kibana is there
+        tcpcloud-nightly-elastic-trusty:
+          source: http://apt.tcpcloud.eu/nightly
+          distribution: trusty
+          components: elastic
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+          gpgkeys:
+            - 3EF02D1C
+          publisher:
+            component: tcp-elastic
+            distributions:
+              - trusty/nightly
+

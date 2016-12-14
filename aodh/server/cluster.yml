@@ -1,0 +1,4 @@
+classes:
+- service.aodh.server.cluster
+- system.haproxy.proxy.listen.openstack.aodh
+- service.keepalived.cluster.single

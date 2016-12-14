@@ -14,5 +14,5 @@ parameters:
           node:
             sto01:
               provider: kvm02.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               size: foundation.storage

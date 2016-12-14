@@ -12,5 +12,5 @@ parameters:
           publisher:
             component: salt
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 

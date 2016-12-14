@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: influxdb
             distributions:
-              - xenial/nightly
+              - ubuntu-xenial/nightly

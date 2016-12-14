@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: galera
             distributions:
-              - trusty-galera
+              - ubuntu-trusty/nightly

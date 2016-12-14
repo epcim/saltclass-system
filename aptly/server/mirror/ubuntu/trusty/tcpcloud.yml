@@ -21,7 +21,7 @@ parameters:
           publisher:
             component: tcp
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 
         tcpcloud-nightly-extra-trusty:
           source: http://apt.tcpcloud.eu/nightly
@@ -35,7 +35,7 @@ parameters:
           publisher:
             component: tcp-extra
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 
         # required for alternative horizon plugins/etc..
         tcpcloud-nightly-liberty-trusty:
@@ -49,7 +49,7 @@ parameters:
           publisher:
             component: tcp-liberty
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 
         # required for salt formulas
         tcpcloud-nightly-salt-trusty:
@@ -63,7 +63,7 @@ parameters:
           publisher:
             component: tcp-salt
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 
         # required for opencontrail formulas
         tcpcloud-nightly-oc30-trusty:
@@ -77,7 +77,7 @@ parameters:
           publisher:
             component: tcp-oc30
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 
         # elastic, kibana is there
         tcpcloud-nightly-elastic-trusty:
@@ -91,5 +91,5 @@ parameters:
           publisher:
             component: tcp-elastic
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
 

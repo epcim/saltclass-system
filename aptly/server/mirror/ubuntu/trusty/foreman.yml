@@ -12,7 +12,7 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly
         foreman-plugins-trusty:
           source: http://deb.theforeman.org
           distribution: plugins
@@ -23,4 +23,4 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly

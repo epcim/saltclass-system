@@ -3,7 +3,6 @@ classes:
 - service.salt.minion.master
 - system.openssh.server.single
 - system.ntp.client.single
-- system.linux.system.repo.tcp_base
 parameters:
   linux:
     system:

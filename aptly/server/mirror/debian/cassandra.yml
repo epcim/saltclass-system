@@ -14,5 +14,5 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly

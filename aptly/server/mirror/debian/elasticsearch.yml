@@ -12,8 +12,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly
         kibana:
           source: http://packages.elasticsearch.org/kibana/4.4/debian
           distribution: stable
@@ -24,8 +24,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly
         kibana-46:
           source: http://packages.elasticsearch.org/kibana/4.6/debian
           distribution: stable
@@ -36,8 +36,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly
         elasticsearch-curator:
           source: http://packages.elastic.co/curator/4/debian
           distribution: stable
@@ -48,5 +48,5 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - nightly/trusty
-              - nightly/xenial
+              - trusty/nightly
+              - xenial/nightly

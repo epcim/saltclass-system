@@ -2,28 +2,28 @@ parameters:
   aptly:
     server:
       mirror:
-        trusty-updates-juno:
-          source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
-          distribution: trusty-updates/juno
-          components: main
-          architectures: amd64
-          gpgkeys:
-            - EC4926EA
-          publisher:
-            component: juno
-            distributions:
-              - nightly/trusty
-        trusty-updates-kilo:
-          source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
-          distribution: trusty-updates/kilo
-          components: main
-          architectures: amd64
-          gpgkeys:
-            - EC4926EA
-          publisher:
-            component: kilo
-            distributions:
-              - nightly/trusty
+        #trusty-updates-juno:
+        #  source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
+        #  distribution: trusty-updates/juno
+        #  components: main
+        #  architectures: amd64
+        #  gpgkeys:
+        #    - EC4926EA
+        #  publisher:
+        #    component: juno
+        #    distributions:
+        #      - trusty
+        #trusty-updates-kilo:
+        #  source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
+        #  distribution: trusty-updates/kilo
+        #  components: main
+        #  architectures: amd64
+        #  gpgkeys:
+        #    - EC4926EA
+        #  publisher:
+        #    component: kilo
+        #    distributions:
+        #      - trusty
         trusty-updates-liberty:
           source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
           distribution: trusty-updates/liberty
@@ -34,7 +34,7 @@ parameters:
           publisher:
             component: liberty
             distributions:
-              - nightly/trusty
+              - trusty/nightly
         trusty-updates-mitaka:
           source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
           distribution: trusty-updates/mitaka
@@ -45,4 +45,4 @@ parameters:
           publisher:
             component: mitaka
             distributions:
-              - nightly/trusty
+              - trusty/nightly

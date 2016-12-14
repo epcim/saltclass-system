@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - BC19DDBA
           publisher:
-            component: extra
+            component: galera
             distributions:
-              - nightly/trusty
+              - trusty-galera

@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - 1C61B9CD
           publisher:
-            component: extra
+            component: haproxy
             distributions:
-              - nightly/trusty
+              - trusty-haproxy

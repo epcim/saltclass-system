@@ -10,6 +10,6 @@ parameters:
           gpgkeys:
             - D59097AB
           publisher:
-            component: extra
+            component: grafana
             distributions:
-              - nightly/trusty
+              - trusty/nightly

@@ -1,0 +1,10 @@
+parameters:
+  linux:
+    system:
+      repo:
+        tcpcloud_horizon:
+          refresh_db: ${_param:linux_repo_refresh_db}
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ ${_param:linux_distrib_codename} ${_param:horizon_version}"
+          architectures: amd64
+          #key_url: "http://apt.tcpcloud.eu/public.gpg"
+          key_url: "salt://tcpcloud_public.gpg"

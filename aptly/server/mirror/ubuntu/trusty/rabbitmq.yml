@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: rabbitmq
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly

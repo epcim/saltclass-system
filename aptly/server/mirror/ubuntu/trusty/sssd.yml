@@ -12,4 +12,4 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - trusty/nightly
+              - ubuntu-trusty/nightly

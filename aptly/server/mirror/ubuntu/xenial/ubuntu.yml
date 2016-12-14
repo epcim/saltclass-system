@@ -16,19 +16,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/xenial
-        #xenial-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: xenial
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/xenial
+        xenial-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/xenial
         xenial-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: xenial
@@ -70,19 +70,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/xenial-updates
-        #xenial-updates-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: xenial-updates
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/xenial-updates
+        xenial-updates-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-updates
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/xenial-updates
         xenial-updates-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
@@ -124,19 +124,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/xenial-security
-        #xenial-security-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: xenial-security
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/xenial-security
+        xenial-security-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-security
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/xenial-security
         xenial-security-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
@@ -178,19 +178,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/xenial-proposed
-        #xenial-proposed-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: xenial-proposed
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/xenial-proposed
+        xenial-proposed-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-proposed
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/xenial-proposed
         xenial-proposed-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
@@ -232,19 +232,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/xenial-backports
-        #xenial-backports-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: xenial-backports
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/xenial-backports
+        xenial-backports-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: xenial-backports
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/xenial-backports
         xenial-backports-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports

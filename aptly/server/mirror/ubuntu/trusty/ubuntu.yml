@@ -16,19 +16,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/trusty
-        #trusty-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: trusty
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/trusty
+        trusty-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/trusty
         trusty-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty
@@ -70,19 +70,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/trusty-updates
-        #trusty-updates-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: trusty-updates
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/trusty-updates
+        trusty-updates-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-updates
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/trusty-updates
         trusty-updates-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-updates
@@ -124,19 +124,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/trusty-security
-        #trusty-security-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: trusty-security
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/trusty-security
+        trusty-security-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-security
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/trusty-security
         trusty-security-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-security
@@ -178,19 +178,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/trusty-proposed
-        #trusty-proposed-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: trusty-proposed
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/trusty-proposed
+        trusty-proposed-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-proposed
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/trusty-proposed
         trusty-proposed-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-proposed
@@ -232,19 +232,19 @@ parameters:
             component: main
             distributions:
               - ubuntu/trusty-backports
-        #trusty-backports-multiverse:
-        #  source: http://cz.archive.ubuntu.com/ubuntu/
-        #  distribution: trusty-backports
-        #  components: multiverse
-        #  architectures: amd64
-        #  gpgkeys:
-        #    - 40976EAF437D05B5
-        #    - 437D05B5
-        #    - C0B21F32
-        #  publisher:
-        #    component: multiverse
-        #    distributions:
-        #      - ubuntu/trusty-backports
+        trusty-backports-multiverse:
+          source: http://cz.archive.ubuntu.com/ubuntu/
+          distribution: trusty-backports
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/trusty-backports
         trusty-backports-restricted:
           source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-backports

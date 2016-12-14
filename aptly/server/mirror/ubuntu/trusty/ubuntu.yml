@@ -4,7 +4,7 @@ parameters:
       mirror:
         # trusty
         trusty-main:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty
           components: main
           architectures: amd64
@@ -17,7 +17,7 @@ parameters:
             distributions:
               - ubuntu/trusty
         #trusty-multiverse:
-        #  source: http://in.archive.ubuntu.com/ubuntu/
+        #  source: http://cz.archive.ubuntu.com/ubuntu/
         #  distribution: trusty
         #  components: multiverse
         #  architectures: amd64
@@ -30,7 +30,7 @@ parameters:
         #    distributions:
         #      - ubuntu/trusty
         trusty-restricted:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty
           components: restricted
           architectures: amd64
@@ -43,7 +43,7 @@ parameters:
             distributions:
               - ubuntu/trusty
         trusty-universe:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty
           components: universe
           architectures: amd64
@@ -58,7 +58,7 @@ parameters:
 
         # trusty-updates
         trusty-updates-main:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-updates
           components: main
           architectures: amd64
@@ -71,7 +71,7 @@ parameters:
             distributions:
               - ubuntu/trusty-updates
         #trusty-updates-multiverse:
-        #  source: http://in.archive.ubuntu.com/ubuntu/
+        #  source: http://cz.archive.ubuntu.com/ubuntu/
         #  distribution: trusty-updates
         #  components: multiverse
         #  architectures: amd64
@@ -84,7 +84,7 @@ parameters:
         #    distributions:
         #      - ubuntu/trusty-updates
         trusty-updates-restricted:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-updates
           components: restricted
           architectures: amd64
@@ -97,7 +97,7 @@ parameters:
             distributions:
               - ubuntu/trusty-updates
         trusty-updates-universe:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-updates
           components: universe
           architectures: amd64
@@ -112,7 +112,7 @@ parameters:
 
         #trusty-security:
         trusty-security-main:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-security
           components: main
           architectures: amd64
@@ -125,7 +125,7 @@ parameters:
             distributions:
               - ubuntu/trusty-security
         #trusty-security-multiverse:
-        #  source: http://in.archive.ubuntu.com/ubuntu/
+        #  source: http://cz.archive.ubuntu.com/ubuntu/
         #  distribution: trusty-security
         #  components: multiverse
         #  architectures: amd64
@@ -138,7 +138,7 @@ parameters:
         #    distributions:
         #      - ubuntu/trusty-security
         trusty-security-restricted:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-security
           components: restricted
           architectures: amd64
@@ -151,7 +151,7 @@ parameters:
             distributions:
               - ubuntu/trusty-security
         trusty-security-universe:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-security
           components: universe
           architectures: amd64
@@ -166,7 +166,7 @@ parameters:
 
         #trusty-proposed:
         trusty-proposed-main:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-proposed
           components: main
           architectures: amd64
@@ -179,7 +179,7 @@ parameters:
             distributions:
               - ubuntu/trusty-proposed
         #trusty-proposed-multiverse:
-        #  source: http://in.archive.ubuntu.com/ubuntu/
+        #  source: http://cz.archive.ubuntu.com/ubuntu/
         #  distribution: trusty-proposed
         #  components: multiverse
         #  architectures: amd64
@@ -192,7 +192,7 @@ parameters:
         #    distributions:
         #      - ubuntu/trusty-proposed
         trusty-proposed-restricted:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-proposed
           components: restricted
           architectures: amd64
@@ -205,7 +205,7 @@ parameters:
             distributions:
               - ubuntu/trusty-proposed
         trusty-proposed-universe:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-proposed
           components: universe
           architectures: amd64
@@ -220,7 +220,7 @@ parameters:
 
         #trusty-backports:
         trusty-backports-main:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-backports
           components: main
           architectures: amd64
@@ -233,7 +233,7 @@ parameters:
             distributions:
               - ubuntu/trusty-backports
         #trusty-backports-multiverse:
-        #  source: http://in.archive.ubuntu.com/ubuntu/
+        #  source: http://cz.archive.ubuntu.com/ubuntu/
         #  distribution: trusty-backports
         #  components: multiverse
         #  architectures: amd64
@@ -246,7 +246,7 @@ parameters:
         #    distributions:
         #      - ubuntu/trusty-backports
         trusty-backports-restricted:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-backports
           components: restricted
           architectures: amd64
@@ -259,7 +259,7 @@ parameters:
             distributions:
               - ubuntu/trusty-backports
         trusty-backports-universe:
-          source: http://in.archive.ubuntu.com/ubuntu/
+          source: http://cz.archive.ubuntu.com/ubuntu/
           distribution: trusty-backports
           components: universe
           architectures: amd64

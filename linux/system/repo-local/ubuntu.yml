@@ -4,19 +4,19 @@ parameters:
       repo:
         ubuntu:
           refresh_db: ${_param:linux_repo_refresh_db}
-          source: "deb [arch=amd64] http://${_param:local_repo_url}/${_param:linux_system_codename} nightly main"
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu ${_param:linux_system_codename} main"
           architectures: amd64
           default: true
           key_url: "http://${_param:local_repo_url}/public.gpg"
         ubuntu-updates:
           refresh_db: ${_param:linux_repo_refresh_db}
-          source: "deb [arch=amd64] http://${_param:local_repo_url}/${_param:linux_system_codename}-updates nightly main"
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu ${_param:linux_system_codename}-updates main"
           architectures: amd64
           default: true
           key_url: "http://${_param:local_repo_url}/public.gpg"
         ubuntu-security:
           refresh_db: ${_param:linux_repo_refresh_db}
-          source: "deb [arch=amd64] http://${_param:local_repo_url}/${_param:linux_system_codename}-security nightly main"
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu ${_param:linux_system_codename}-security main"
           architectures: amd64
           default: true
           key_url: "http://${_param:local_repo_url}/public.gpg"

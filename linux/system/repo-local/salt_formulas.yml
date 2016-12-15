@@ -4,5 +4,5 @@ parameters:
       repo:
         salt_formulas:
           refresh_db: ${_param:linux_repo_refresh_db}
-          source: "deb [arch=amd64] http://${_param:local_repo_url}/${_param:linux_system_codename}/ nightly tcp-salt"
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ nightly tcp-salt"
           architectures: amd64

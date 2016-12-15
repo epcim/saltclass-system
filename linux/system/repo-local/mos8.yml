@@ -2,7 +2,7 @@ parameters:
   linux:
     system:
       repo:
-        mos8_openstack:
+        mirantis_openstack:
           source: "deb [arch=amd64] http://${_param:local_repo_url}/mos8/ mos8.0 main"
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"

@@ -12,7 +12,6 @@ parameters:
       logging:
         heka:
           enabled: true
-  cinder:
     controller:
       enabled: true
       default_volume_type: ""

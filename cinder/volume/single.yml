@@ -2,5 +2,13 @@ classes:
 - service.cinder.volume.single
 parameters:
   cinder:
-    controller:
-      enabled: false
+    volume:
+      enabled: True
+      database:
+        host: ${_param:openstack_database_address}
+      glance:
+        host: ${_param:openstack_control_address}
+      message_queue:
+        host: ${_param:openstack_message_queue_address}
+      identity:
+        host: ${_param:openstack_control_address}

@@ -1,11 +1,10 @@
 classes:
 - service.kibana.server.single
 parameters:
-  _param:
-    kibana_port: 5601
   kibana:
     server:
       enabled: true
+      default_app_id: "dashboard/logs"
       bind:
         address: ${_param:single_address}
         port: 5601

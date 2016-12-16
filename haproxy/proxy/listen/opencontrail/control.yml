@@ -5,7 +5,6 @@ parameters:
         contrail_api:
           type: contrail-api
           service_name: contrail
-          check: false
           binds:
           - address: ${_param:cluster_vip_address}
             port: 8082
@@ -43,7 +42,7 @@ parameters:
             params: check inter 2000 rise 2 fall 3
         contrail_config_stats:
           type: contrail-config
-          service_name: contrail
+          check: false
           format: listen
           binds:
           - address: '*'
@@ -52,7 +51,7 @@ parameters:
           password: ${_param:opencontrail_stats_password}
         contrail_openstack_stats:
           type: contrail-config
-          service_name: contrail
+          check: false
           format: listen
           binds:
           - address: '*'
@@ -61,7 +60,7 @@ parameters:
           password: ${_param:opencontrail_stats_password}
         contrail_collector_stats:
           type: contrail-config
-          service_name: contrail
+          check: false
           format: listen
           binds:
           - address: '*'

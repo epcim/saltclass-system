@@ -20,12 +20,16 @@ parameters:
       check_service_freshness: 1
       check_host_freshness: 0
       purge_distribution_config: true
+      log_external_commands: 0
+      log_passive_checks: 0
+      log_initial_states: 1
       ui:
         enabled: true
         port: ${_param:nagios_ui_port}
-        basic_auth:
-          username: ${_param:nagios_username}
-          password: ${_param:nagios_password}
+        auth:
+          basic:
+            username: ${_param:nagios_username}
+            password: ${_param:nagios_password}
         wsgi:
           port: ${_param:nagios_status_port}
       notification:
@@ -35,6 +39,7 @@ parameters:
       dynamic:
         enabled: true
         grain_hostname: 'host'
+        hostname_suffix: ${_param:stacklight_environment}
         hostgroups:
           - target: '*'
             name: All

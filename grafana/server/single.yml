@@ -5,13 +5,6 @@ parameters:
     grafana_port: 3000
     grafana_user: admin
     grafana_password: admin
-  linux:
-    system:
-      repo:
-        grafana:
-          enabled: true
-          source: 'deb https://packagecloud.io/grafana/stable/debian/ jessie main'
-          key_url: 'https://packagecloud.io/gpg.key'
   grafana:
     server:
       enabled: true

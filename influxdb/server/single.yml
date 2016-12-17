@@ -2,13 +2,6 @@ classes:
 - service.influxdb.server.single
 - system.influxdb.server.tmpfs_wal
 parameters:
-  linux:
-    system:
-      repo:
-        influxdb:
-          enabled: true
-          source: 'deb https://repos.influxdata.com/ubuntu xenial stable'
-          key_url: 'https://repos.influxdata.com/influxdb.key'
   influxdb:
     server:
       enabled: true

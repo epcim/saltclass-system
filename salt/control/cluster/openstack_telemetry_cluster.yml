@@ -1,0 +1,26 @@
+parameters:
+  salt:
+    control:
+      size:
+        openstack.telemetry:
+          cpu: 4
+          ram: 8192
+          disk_profile: large
+          net_profile: default
+      cluster:
+        internal:
+          domain: ${_param:cluster_domain}
+          engine: virt
+          node:
+            mdb01:
+              provider: kvm01.${_param:cluster_domain}
+              image: ${_param:salt_control_trusty_image}
+              size: openstack.telemetry
+            mdb02:
+              provider: kvm02.${_param:cluster_domain}
+              image: ${_param:salt_control_trusty_image}
+              size: openstack.telemetry
+            mdb03:
+              provider: kvm03.${_param:cluster_domain}
+              image: ${_param:salt_control_trusty_image}
+              size: openstack.telemetry

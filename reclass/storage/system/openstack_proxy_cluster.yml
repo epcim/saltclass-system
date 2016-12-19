@@ -11,6 +11,7 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_proxy_node01_address}
+            keepalived_vip_priority: 102
         openstack_proxy_node02:
           name: prx02
           domain: ${_param:cluster_domain}
@@ -20,3 +21,4 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_proxy_node02_address}
+            keepalived_vip_priority: 101

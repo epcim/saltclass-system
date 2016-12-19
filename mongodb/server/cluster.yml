@@ -4,7 +4,7 @@ classes:
 parameters:
   _param:
     mongodb_server_replica_set: mongodb
-    mongodb_master: mdb01.${_param:cluster_domain}
+    mongodb_master: mdb01
     mongodb_server_members:
     - host: mdb01
       priority: 2

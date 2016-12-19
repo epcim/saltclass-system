@@ -86,7 +86,7 @@ parameters:
         host: ${_param:cluster_vip_address}
       cache:
         engine: redis
-        host: ${_param:cluster_local_address}
+        host: 127.0.0.1
         port: 6379
       identity:
         engine: keystone

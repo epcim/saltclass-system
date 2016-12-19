@@ -1,0 +1,13 @@
+parameters:
+  reclass:
+    storage:
+      node:
+        opencontrail_billing_node01:
+          name: bil01
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.openstack.billing
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename: trusty
+            single_address: ${_param:openstack_billing_address}

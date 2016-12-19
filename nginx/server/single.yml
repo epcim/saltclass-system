@@ -1,4 +1,5 @@
 classes:
+- service.keepalived.cluster.single
 - service.nginx.server.single
 - service.nginx.server.stats
 parameters:

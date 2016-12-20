@@ -2,6 +2,7 @@ parameters:
   _param:
     nginx_proxy_openstack_web_host: ${_param:cluster_public_host}
     nginx_proxy_openstack_web_proxy_host: ${_param:cluster_vip_address}
+    nginx_proxy_openstack_web_buffer_size: 
   nginx:
     server:
       enabled: true
@@ -11,6 +12,7 @@ parameters:
           type: nginx_proxy
           name: openstack_web
           proxy:
+            size: 5000m
             host: prx
             port: 8078
             protocol: http

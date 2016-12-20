@@ -7,6 +7,9 @@ parameters:
             aodh:
               source: pkg
               name: salt-formula-aodh
+            billometer:
+              source: pkg
+              name: salt-formula-billometer
             ceilometer:
               source: pkg
               name: salt-formula-ceilometer

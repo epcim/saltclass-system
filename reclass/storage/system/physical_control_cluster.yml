@@ -20,7 +20,6 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:fuel_compute_node02_address}
-            deploy_address: 192.168.10.152
         fuel_compute_node03:
           name: kvm03
           domain: ${_param:cluster_domain}

@@ -1,0 +1,12 @@
+parameters:
+  horizon:
+    server:
+      plugin:
+        telemetry:
+          metric:
+            engine: graphite
+            host: ${_param:stacklight_telemetry_address}
+            port: 80
+          source:
+            engine: pkg
+            name: openstack-dashboard-telemetry

@@ -1,0 +1,10 @@
+parameters:
+  horizon:
+    server:
+      plugin:
+        horizon_theme:
+          app: horizon_theme
+          theme_name: ${_param:openstack-dashboard-theme}
+          source:
+            engine: pkg
+            name: openstack-dashboard-.${_param:openstack-dashboard-theme}

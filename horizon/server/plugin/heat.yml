@@ -2,7 +2,7 @@ parameters:
   horizon:
     server:
       plugin:
-        contrail:
+        heat:
           source:
             engine: pkg
-            name: openstack-dashboard-contrail-panels
+            name: openstack-dashboard-heat-server-templates

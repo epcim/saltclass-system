@@ -5,7 +5,7 @@ parameters:
         telemetry:
           metric:
             engine: graphite
-            host: ${_param:stacklight_telemetry_address}
+            host: ${_param:openstack_telemetry_address}
             port: 80
           source:
             engine: pkg

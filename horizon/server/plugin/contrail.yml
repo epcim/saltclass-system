@@ -6,3 +6,6 @@ parameters:
           source:
             engine: pkg
             name: openstack-dashboard-contrail-panels
+        horizon_overrides:
+          overrides:
+          - contrail_openstack_dashboard

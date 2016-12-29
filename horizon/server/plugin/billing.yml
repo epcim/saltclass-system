@@ -1,6 +1,8 @@
 parameters:
   _param:
     openstack_billing_currency: EUR
+    openstack_billing_allocation: False
+    openstack_billing_resource_types: []
   horizon:
     server:
       plugin:
@@ -11,8 +13,11 @@ parameters:
             port: 80
           config:
             currency: ${_param:openstack_billing_currency}
-            allocation: false
-            extra_resource_types: []
+            allocation: ${_param:openstack_billing_allocation}
+            extra_resource_types: ${_param:openstack_billing_resource_types}
           source:
             engine: pkg
             name: openstack-dashboard-billing
+        horizon_overrides:
+          overrides:
+          - horizon_billing

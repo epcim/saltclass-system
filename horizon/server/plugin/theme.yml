@@ -9,4 +9,4 @@ parameters:
           theme_name: ${_param:horizon_dashboard_theme}
           source:
             engine: pkg
-            name: openstack-dashboard-.${_param:horizon_dashboard_theme}
+            name: openstack-dashboard-${_param:horizon_dashboard_theme}-theme

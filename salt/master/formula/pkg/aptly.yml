@@ -1,9 +1,0 @@
-parameters:
-  salt:
-    master:
-      environment:
-        prd:
-          formula:
-            aptly:
-              source: pkg
-              name: salt-formula-aptly

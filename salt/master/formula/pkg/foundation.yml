@@ -1,0 +1,18 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            aptly:
+              source: pkg
+              name: salt-formula-aptly
+            bind:
+              source: pkg
+              name: salt-formula-bind
+            gerrit:
+              source: pkg
+              name: salt-formula-gerrit
+            jenkins:
+              source: pkg
+              name: salt-formula-jenkins

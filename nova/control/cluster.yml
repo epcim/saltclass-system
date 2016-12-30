@@ -4,11 +4,13 @@ classes:
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.nova
 parameters:
+  _param:
+    nova_vncproxy_url: http://${_param:cluster_vip_address}:6080
   nova:
     controller:
       enabled: true
       version: ${_param:nova_version}
-      vncproxy_url: http://${_param:cluster_vip_address}:6080
+      vncproxy_url: ${_param:nova_vncproxy_url}
       security_group: false
       dhcp_domain: novalocal
       scheduler_default_filters: "DifferentHostFilter,RetryFilter,AvailabilityZoneFilter,RamFilter,CoreFilter,DiskFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter"

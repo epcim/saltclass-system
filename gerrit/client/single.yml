@@ -1,0 +1,13 @@
+parameters:
+  _param:
+    gerrit_server_port: 8082
+  gerrit:
+    client:
+      enabled: True
+      server: 
+        host: ${_param:gerrit_server_host}
+        user: admin
+        http_port: ${_param:gerrit_server_port}
+        protocol: http
+        password: ${_param:gerrit_admin_password}
+        key: ${_param:gerrit_admin_private_key}

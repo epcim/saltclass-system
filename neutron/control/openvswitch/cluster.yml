@@ -22,6 +22,13 @@ parameters:
         mechanism:
           ovs:
             driver: openvswitch
+      database:
+        host: ${_param:openstack_database_address}
+      message_queue:
+        members:
+          - host: ${_param:openstack_message_queue_node01_address}
+          - host: ${_param:openstack_message_queue_node02_address}
+          - host: ${_param:openstack_message_queue_node03_address}
   mysql:
     server:
       database:

@@ -6,6 +6,7 @@ classes:
 - system.mysql.client.database.keystone
 - system.mysql.client.database.nova
 - system.mysql.client.database.nova_api
+- system.mysql.client.database.neutron
 parameters:
   mysql:
     client:

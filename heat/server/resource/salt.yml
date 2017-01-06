@@ -8,4 +8,4 @@ parameters:
     server:
       dir:
         plugins:
-        - /usr/lib/python2.7/dist-packages/salt_heat/resources
+        - /usr/lib/python2.7/dist-packages/heat_salt/resources

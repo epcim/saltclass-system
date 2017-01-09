@@ -6,7 +6,7 @@ parameters:
     remote_collector:
       influxdb_host: ${_param:heka_influxdb_host}
       influxdb_port: ${_param:influxdb_port}
-      influxdb_database: ${_param:influxdb_database}
+      influxdb_database: lma
       influxdb_username: lma
       influxdb_password: ${_param:influxdb_stacklight_password}
       aggregator_host: ${_param:heka_aggregator_host}

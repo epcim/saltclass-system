@@ -19,5 +19,5 @@ parameters:
           port: ${_param:influxdb_port}
           user: lma
           password: ${_param:influxdb_stacklight_password}
-          database: ${_param:influxdb_database}
+          database: lma
           is_default: true

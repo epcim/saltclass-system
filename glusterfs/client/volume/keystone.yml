@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    keystone_glusterfs_service_host: ${_param:glusterfs_service_host}
   glusterfs:
     client:
       volumes:
         keystone-keys:
           path: /var/lib/keystone/fernet-keys
-          server: ${_param:glusterfs_service_host}
+          server: ${_param:keystone_glusterfs_service_host}
           user: keystone
           group: keystone

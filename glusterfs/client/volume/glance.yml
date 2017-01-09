@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    glance_glusterfs_service_host: ${_param:glusterfs_service_host}
   glusterfs:
     client:
       volumes:
         glance:
           path: /var/lib/glance/images
-          server: ${_param:glusterfs_service_host}
+          server: ${_param:glance_glusterfs_service_host}
           user: glance
           group: glance

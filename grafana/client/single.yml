@@ -17,7 +17,7 @@ parameters:
           type: influxdb
           host: ${_param:grafana_influxdb_host}
           port: ${_param:influxdb_port}
-          user: ${_param:influxdb_user}
+          user: lma
           password: ${_param:influxdb_stacklight_password}
           database: ${_param:influxdb_database}
           is_default: true

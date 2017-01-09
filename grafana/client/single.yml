@@ -18,6 +18,6 @@ parameters:
           host: ${_param:grafana_influxdb_host}
           port: ${_param:influxdb_port}
           user: ${_param:influxdb_user}
-          password: ${_param:influxdb_password}
+          password: ${_param:influxdb_stacklight_password}
           database: ${_param:influxdb_database}
           is_default: true

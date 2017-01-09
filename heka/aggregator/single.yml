@@ -11,7 +11,7 @@ parameters:
       influxdb_port: ${_param:influxdb_port}
       influxdb_database: ${_param:influxdb_database}
       influxdb_username: ${_param:influxdb_user}
-      influxdb_password: ${_param:influxdb_password}
+      influxdb_password: ${_param:influxdb_stacklight_password}
       nagios_host: ${_param:nagios_host}
       nagios_username: ${_param:nagios_username}
       nagios_password: ${_param:nagios_password}

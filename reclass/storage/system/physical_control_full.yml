@@ -1,9 +1,19 @@
 parameters:
+  _param:
+    infra_compute_node01_hostname: kvm01
+    infra_compute_node02_hostname: kvm02
+    infra_compute_node03_hostname: kvm03
+    infra_compute_node04_hostname: kvm04
+    infra_compute_node05_hostname: kvm05
+    infra_compute_node06_hostname: kvm06
+    infra_compute_node07_hostname: kvm07
+    infra_compute_node08_hostname: kvm08
+    infra_compute_node09_hostname: kvm09
   reclass:
     storage:
       node:
         infra_compute_node01:
-          name: kvm01
+          name: ${_param:infra_compute_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -13,7 +23,7 @@ parameters:
             single_address: ${_param:infra_compute_node01_address}
             deploy_address: ${_param:infra_compute_node01_deploy_address}
         infra_compute_node02:
-          name: kvm02
+          name: ${_param:infra_compute_node02_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -23,7 +33,7 @@ parameters:
             single_address: ${_param:infra_compute_node02_address}
             deploy_address: ${_param:infra_compute_node02_deploy_address}
         infra_compute_node03:
-          name: kvm03
+          name: ${_param:infra_compute_node03_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -33,7 +43,7 @@ parameters:
             single_address: ${_param:infra_compute_node03_address}
             deploy_address: ${_param:infra_compute_node03_deploy_address}
         infra_compute_node04:
-          name: kvm04
+          name: ${_param:infra_compute_node04_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -43,7 +53,7 @@ parameters:
             single_address: ${_param:infra_compute_node04_address}
             deploy_address: ${_param:infra_compute_node04_deploy_address}
         infra_compute_node05:
-          name: kvm05
+          name: ${_param:infra_compute_node05_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -53,7 +63,7 @@ parameters:
             single_address: ${_param:infra_compute_node05_address}
             deploy_address: ${_param:infra_compute_node05_deploy_address}
         infra_compute_node06:
-          name: kvm06
+          name: ${_param:infra_compute_node06_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -63,7 +73,7 @@ parameters:
             single_address: ${_param:infra_compute_node06_address}
             deploy_address: ${_param:infra_compute_node06_deploy_address}
         infra_compute_node07:
-          name: kvm07
+          name: ${_param:infra_compute_node07_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -73,7 +83,7 @@ parameters:
             single_address: ${_param:infra_compute_node07_address}
             deploy_address: ${_param:infra_compute_node07_deploy_address}
         infra_compute_node08:
-          name: kvm08
+          name: ${_param:infra_compute_node08_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -83,7 +93,7 @@ parameters:
             single_address: ${_param:infra_compute_node08_address}
             deploy_address: ${_param:infra_compute_node08_deploy_address}
         infra_compute_node09:
-          name: kvm09
+          name: ${_param:infra_compute_node09_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute

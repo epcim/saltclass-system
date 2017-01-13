@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    infra_compute_node01_hostname: kvm01
   reclass:
     storage:
       node:
         infra_compute_node01:
-          name: kvm01
+          name: ${_param:infra_compute_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute

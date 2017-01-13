@@ -1,9 +1,13 @@
 parameters:
+  _param:
+    openstack_telemetry_node01_hostname: mdb01
+    openstack_telemetry_node02_hostname: mdb02
+    openstack_telemetry_node03_hostname: mdb03
   reclass:
     storage:
       node:
         openstack_telemetry_node01:
-          name: mdb01
+          name: ${_param:openstack_telemetry_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.telemetry
@@ -13,7 +17,7 @@ parameters:
             single_address: ${_param:openstack_telemetry_node01_address}
             keepalived_vip_priority: 103
         openstack_telemetry_node02:
-          name: mdb02
+          name: ${_param:openstack_telemetry_node02_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.telemetry
@@ -23,7 +27,7 @@ parameters:
             single_address: ${_param:openstack_telemetry_node02_address}
             keepalived_vip_priority: 102
         openstack_telemetry_node03:
-          name: mdb03
+          name: ${_param:openstack_telemetry_node03_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.telemetry

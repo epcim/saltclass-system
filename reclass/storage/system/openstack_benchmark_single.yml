@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    openstack_benchmark_node01_hostname: bmk01
   reclass:
     storage:
       node:
         opencontrail_benchmark_node01:
-          name: bmk01
+          name: ${_param:openstack_benchmark_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.benchmark

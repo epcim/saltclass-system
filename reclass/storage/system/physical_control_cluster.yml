@@ -1,9 +1,13 @@
 parameters:
+  _param:
+    infra_compute_node01_hostname: kvm01
+    infra_compute_node02_hostname: kvm02
+    infra_compute_node03_hostname: kvm03
   reclass:
     storage:
       node:
         infra_compute_node01:
-          name: kvm01
+          name: ${_param:infra_compute_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -12,7 +16,7 @@ parameters:
             linux_system_codename: trusty
             single_address: ${_param:infra_compute_node01_address}
         infra_compute_node02:
-          name: kvm02
+          name: ${_param:infra_compute_node02_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute
@@ -21,7 +25,7 @@ parameters:
             linux_system_codename: trusty
             single_address: ${_param:infra_compute_node02_address}
         infra_compute_node03:
-          name: kvm03
+          name: ${_param:infra_compute_node03_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.infra.compute

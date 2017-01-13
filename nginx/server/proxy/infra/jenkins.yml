@@ -8,7 +8,7 @@ parameters:
           type: nginx_proxy
           name: jenkins
           proxy:
-            host: ${_param:fuel_integration_node01_single_address}
+            host: ${_param:infra_integration_node01_single_address}
             port: 8080
             protocol: http
           host:

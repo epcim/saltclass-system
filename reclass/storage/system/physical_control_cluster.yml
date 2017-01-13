@@ -2,30 +2,30 @@ parameters:
   reclass:
     storage:
       node:
-        fuel_compute_node01:
+        infra_compute_node01:
           name: kvm01
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.fuel.compute
+          - cluster.${_param:cluster_name}.infra.compute
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
-            single_address: ${_param:fuel_compute_node01_address}
-        fuel_compute_node02:
+            single_address: ${_param:infra_compute_node01_address}
+        infra_compute_node02:
           name: kvm02
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.fuel.compute
+          - cluster.${_param:cluster_name}.infra.compute
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
-            single_address: ${_param:fuel_compute_node02_address}
-        fuel_compute_node03:
+            single_address: ${_param:infra_compute_node02_address}
+        infra_compute_node03:
           name: kvm03
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.fuel.compute
+          - cluster.${_param:cluster_name}.infra.compute
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
-            single_address: ${_param:fuel_compute_node03_address}
+            single_address: ${_param:infra_compute_node03_address}

@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    stacklight_notification_topic: stacklight_notifications
   heka:
     remote_collector:
       amqp_host: ${_param:heka_amqp_host}
@@ -6,4 +8,4 @@ parameters:
       amqp_user: openstack
       amqp_password: ${_param:rabbitmq_openstack_password}
       amqp_vhost: '/openstack'
-      amqp_notification_topic: notifications
+      amqp_notification_topic: ${_param:stacklight_notification_topic}

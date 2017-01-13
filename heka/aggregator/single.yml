@@ -18,3 +18,4 @@ parameters:
       nagios_port: ${_param:nagios_status_port}
       nagios_default_host_alarm_clusters: ${_param:nagios_default_host_alarm_clusters}
       nagios_host_dimension_key: ${_param:nagios_host_dimension_key}
+      poolsize: 200

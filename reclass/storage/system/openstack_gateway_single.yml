@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    openstack_gateway_node01_hostname: gtw01
   reclass:
     storage:
       node:
         openstack_gateway_node01:
-          name: gtw01
+          name: ${_param:openstack_gateway_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.gateway

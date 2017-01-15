@@ -1,9 +1,12 @@
 parameters:
+  _param:
+    openstack_gateway_node01_hostname: gtw01
+    openstack_gateway_node02_hostname: gtw02
   reclass:
     storage:
       node:
         openstack_gateway_node01:
-          name: gtw01
+          name: ${_param:openstack_gateway_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.gateway
@@ -12,7 +15,7 @@ parameters:
             linux_system_codename: trusty
             single_address: ${_param:openstack_gateway_node01_address}
         openstack_gateway_node02:
-          name: gtw02
+          name: ${_param:openstack_gateway_node02_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.openstack.gateway

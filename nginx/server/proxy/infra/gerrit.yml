@@ -8,7 +8,7 @@ parameters:
           type: nginx_proxy
           name: gerrit
           proxy:
-            host: ${_param:fuel_version_control_node01_single_address}
+            host: ${_param:infra_version_control_node01_single_address}
             port: 8082
             protocol: http
           host:

@@ -1,0 +1,12 @@
+classes:
+- system.haproxy.proxy.listen.openstack.keystone
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        keystone_public_api:
+          type: openstack-service
+          service_name: keystone
+        keystone_admin_api:
+          type: openstack-service
+          service_name: keystone

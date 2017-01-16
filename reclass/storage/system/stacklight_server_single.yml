@@ -11,6 +11,8 @@ parameters:
           - cluster.${_param:cluster_name}.stacklight.server
           - system.elasticsearch.client.single
           - system.grafana.client.single
+          - system.influxdb.server.single
+          - system.influxdb.database.stacklight
           - system.kibana.client.single
           params:
             salt_master_host: ${_param:reclass_config_master}

@@ -1,8 +1,8 @@
 parameters:
   _param:
     stacklight_monitor_node01_hostname: mon01
-    stacklight_monitor_node01_hostname: mon02
-    stacklight_monitor_node01_hostname: mon03
+    stacklight_monitor_node02_hostname: mon02
+    stacklight_monitor_node03_hostname: mon03
   reclass:
     storage:
       node:

@@ -18,9 +18,9 @@ parameters:
             keepalived_vip_priority: 103
             opencontrail_database_id: 1
         opencontrail_control_node02:
-          name: ${_param:opencontrail_control_node02hostname}
+          name: ${_param:opencontrail_control_node02_hostname}
           domain: ${_param:cluster_domain}
-          classes:  
+          classes:
           - cluster.${_param:cluster_name}.opencontrail.control
           params:
             salt_master_host: ${_param:reclass_config_master}

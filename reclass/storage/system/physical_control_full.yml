@@ -47,7 +47,7 @@ parameters:
           name: ${_param:infra_compute_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -59,7 +59,7 @@ parameters:
           name: ${_param:infra_compute_node02_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -71,7 +71,7 @@ parameters:
           name: ${_param:infra_compute_node03_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -83,7 +83,7 @@ parameters:
           name: ${_param:infra_compute_node04_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -95,7 +95,7 @@ parameters:
           name: ${_param:infra_compute_node05_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -107,7 +107,7 @@ parameters:
           name: ${_param:infra_compute_node06_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -119,7 +119,7 @@ parameters:
           name: ${_param:infra_compute_node07_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -131,7 +131,7 @@ parameters:
           name: ${_param:infra_compute_node08_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
@@ -143,7 +143,7 @@ parameters:
           name: ${_param:infra_compute_node09_hostname}
           domain: ${_param:cluster_domain}
           classes:
-          - cluster.${_param:cluster_name}.infra.compute
+          - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty

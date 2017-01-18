@@ -73,6 +73,7 @@ parameters:
     server:
       enabled: true
       secure: ${_param:aptly_server_secure}
-      gpg_keypair_id: ${_param:aptly_gpg_keypair_id}
-      gpg_public_key: ${_param:aptly_gpg_public_key}
-      gpg_private_key: ${_param:aptly_gpg_private_key}
+      gpg:
+        keypair_id: ${_param:aptly_gpg_keypair_id}
+        public_key: ${_param:aptly_gpg_public_key}
+        private_key: ${_param:aptly_gpg_private_key}

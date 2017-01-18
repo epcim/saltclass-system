@@ -13,6 +13,7 @@ parameters:
             component: main
             distributions:
               - mos8/mos8.0
+        # FIXME, enable hotfix once contain packages, otherwise broke aptly publish
         #mirantis-openstack-8.0-hotfix-trusty:
         #  source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
         #  distribution: mos8.0-hotfix
@@ -37,6 +38,7 @@ parameters:
             component: main
             distributions:
               - mos8/mos8.0-proposed
+        # FIXME, enable security once contain packages, otherwise broke aptly publish
         #mirantis-openstack-8.0-security-trusty:
         #  source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
         #  distribution: mos8.0-security

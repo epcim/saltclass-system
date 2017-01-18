@@ -2,17 +2,17 @@ parameters:
   salt:
     control:
       size:
-        foundation.storage:
+        infra.integration:
           cpu: 4
           ram: 8192
-          disk_profile: xxxlarge
+          disk_profile: small
           net_profile: default
       cluster:
         internal:
           domain: ${_param:cluster_domain}
           engine: virt
           node:
-            sto01:
+            cid01:
               provider: kvm02.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
-              size: foundation.storage
+              size: infra.integration

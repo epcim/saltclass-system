@@ -1,0 +1,22 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            kubernetes:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-kubernetes.git'
+              revision: ${_param:salt_master_environment_revision}
+            etcd:
+              source: git
+              address: 'https://github.com/tcpcloud/salt-formula-etcd.git'
+              revision: ${_param:salt_master_environment_revision}
+            bird:
+              source: git
+              address: 'https://github.com/tcpcloud/salt-formula-bird.git'
+              revision: ${_param:salt_master_environment_revision}
+            docker:
+              source: git
+              address: 'https://github.com/tcpcloud/salt-formula-docker.git'
+              revision: ${_param:salt_master_environment_revision}

@@ -8,6 +8,9 @@ parameters:
           common_name: kubernetes-server
           key_file: /etc/kubernetes/ssl/kubernetes-server.key
           cert_file: /etc/kubernetes/ssl/kubernetes-server.crt
-          ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
+          all_file: /etc/haproxy/ssl/kubernetes.pem
           signing_policy: cert_server
           alternative_names: IP:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
+          user: root
+          group: haproxy
+          mode: 640

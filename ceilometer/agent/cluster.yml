@@ -1,6 +1,27 @@
 classes:
 - service.ceilometer.agent.cluster
 parameters:
+  ceilometer:
+    agent:
+      enabled: true
+      version: ${_param:ceilometer_version}
+      secret: ${_param:ceilometer_secret_key}
+      identity:
+        engine: keystone
+        host: ${_param:keystone_service_host}
+        port: 35357
+        tenant: service
+        user: ceilometer
+        password: ${_param:keystone_ceilometer_password}
+      message_queue:
+        engine: rabbitmq
+        host: ${_param:openstack_message_queue_address}
+        port: 5672
+        user: openstack
+        password: ${_param:rabbitmq_openstack_password}
+        virtual_host: '/openstack'
+        ha_queues: true
+        rpc_thread_pool_size: 5
   nova:
     compute:
       notification:

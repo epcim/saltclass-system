@@ -98,6 +98,12 @@ parameters:
           sudo: true
           full_name: Richard Felkl
           home: /home/rfelkl
+        tkukral:
+          enabled: true
+          name: tkukral
+          sudo: true
+          full_name: Tomas Kukral
+          home: /home/tkukral
       group:
         libvirtd:
           enabled: true
@@ -181,6 +187,11 @@ parameters:
           public_keys:
           - ${public_keys:rfelkl}
           user: ${linux:system:user:rfelkl}
+        tkukral:
+          enabled: true
+          public_keys:
+          - ${public_keys:tkukral}
+          user: ${linux:system:user:tkukral}
   public_keys:
     askotnicky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO6EnDYaGdF/Nn6lntxDNnKanCsheZRdh8kA/6ImyeRSjT2cgepm1Fsgv7wXBYoy0OxhB5wgCp5Az/Pj4oLkG3g+G05sUPUxxGCGRiwjcnyQ/FTz4TzHglAVqgbdgWoQYf9Hg6EKZovvPcH3STbEwcl+MhLqvxz0wm5+StE+wvp6I9dEfRV+2/e1uepauOTZ1+Ui1DMNXiMefTlbiIBHzUk7RiwJWgqzQXBndgunmbJWSed8zC0Ug97waDOFIX/oKZmAmsv0NLJ2e/kC3oUTuziGT74F9sh7Pqiw/9HZxvP45hJwEvytfUjfuiikIBbmYdF7Je93czaG/qjXGN8YvP== a.skotnicky@tcpisek.cz
@@ -212,5 +223,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCBPHunnzTMg2I88ZIaiQ5eJYJRq/hQcB5UtDZTC7hO0ce+oEpftcLQiQ69xKbOPb5xiK6VMJd6a53gZykabMTov6y+nECMr4B1i6tgK1NPCU/sGhvsUKeiRo7ZVMScRPuJuTGRLjR6Ac3pRrwrWpmoRvJtLnbrvjEYlt9V7ui/VFkl7uiPQc3AjNiSkgBekDGtrqZktjUstEosucjfriF/PVtlZqha7d3rHLpK1KBzzaSMNMxCgBitEtqjgHLtcR1H/KgPQpYAwkokmvAGH8/fqcd+tpmp6hiH3k2Haf8EjVBTcw71fbmqC0rpL8/r74jyYAmkfPG8LISb/T9gPcV jiri@jiri-Mirantis
     rfelkl:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlvQKWbEQ8bM2rtE35sA5+y//YKMLNJ48d+/RxWlUx6G8xJusUhrKZuMRMgN5NqJQ92Z0Yd2lulsPeKEfSbqAxBxmNZ+mAAy8w8P/BHlQImi2HgMpWtQ5yExsAvCUAqq6KclJBhzjArg4+ztmKmNvjM8ZktJYeCM8VJ+qT01B8/3+frgltIDCDcC8YpRwbAt7aLjuB2Jk5Q9daQbtZ4XyXwHgPDpyZUkcuueUk/iklUBkAh9P3CFJBpttXEyKI0+cJAtM9vCXXPWmWt7nFAyQ8nH9+lTv/ZuD+pipKJBW2sp8+fFUWJ/Z6GzWhyh2KxiY7eK3kgabg1i7FtLFtRbZj richard@richard-inspiron
-
-
+    tkukral:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRM6WquKic6i6v/JbNR2XuMqCCYqlfyGU1K7XHK7tWFordRLz2/o4S76sZULBTXR0rLHtynvHM4QHlloE1/XJnd0BtI/3y8aY0OkXyu6PHvTC8Az8SyGj2XAcaiPlaT2f+oTJHoPc9rxLhMMD7OTwias6QeVKB3UrT0OaHfy2wWCF7t8cQeofi2ldEHKeCsC1jrT1vaVuoThQgZ00h0rNk4COPZEW34FXdmdJFUmZcUIDMa71HtYgnn4gmE8sUiJ/j6ardvPaycCDT9j1GW1Yu6UVLBWOoMMCb04bDJiidlvY1fQqbM/G4cR4ZPHFZ0RQiM2+wnRaB5RCmBVgNT0Tj tkukral

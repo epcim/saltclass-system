@@ -67,6 +67,9 @@ parameters:
             rabbitmq:
               source: pkg
               name: salt-formula-rabbitmq
+            statsd:
+              source: pkg
+              name: salt-formula-statsd
             supervisor:
               source: pkg
               name: salt-formula-supervisor

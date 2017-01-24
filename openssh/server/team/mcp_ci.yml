@@ -1,0 +1,79 @@
+parameters:
+  linux:
+    system:
+      user:
+        rkamaldinov:
+          enabled: true
+          name: rkamaldinov
+          sudo: true
+          full_name: Ruslan Kamaldinov
+          home: /home/rkamaldinov
+          email: rkamaldinov@mirantis.com
+        iberezovskiy:
+          enabled: true
+          name: iberezovskiy
+          sudo: true
+          full_name: Ivan Berezovskiy
+          home: /home/iberezovskiy
+          email: iberezovskiy@mirantis.com
+        skolekonov:
+          enabled: true
+          name: skolekonov
+          sudo: true
+          full_name: Sergey Kolekonov
+          home: /home/skolekonov
+          email: skolekonov@mirantis.com
+        mmatuszkowiak:
+          enabled: true
+          name: mmatuszkowiak
+          sudo: true
+          full_name: Mateusz Matuszkowiak
+          home: /home/mmatuszkowiak
+          email: mmatuszkowiak@mirantis.com
+        akaszuba:
+          enabled: true
+          name: akaszuba
+          sudo: true
+          full_name: Artur Kaszuba
+          home: /home/akaszuba
+          email: akaszuba@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        rkamaldinov:
+          enabled: true
+          public_keys:
+          - ${public_keys:rkamaldinov}
+          user: ${linux:system:user:rkamaldinov}
+        iberezovskiy:
+          enabled: true
+          public_keys:
+          - ${public_keys:iberezovskiy}
+          user: ${linux:system:user:iberezovskiy}
+        skolekonov:
+          enabled: true
+          public_keys:
+          - ${public_keys:skolekonov}
+          user: ${linux:system:user:skolekonov}
+        mmatuszkowiak:
+          enabled: true
+          public_keys:
+          - ${public_keys:mmatuszkowiak}
+          user: ${linux:system:user:mmatuszkowiak}
+        akaszuba:
+          enabled: true
+          public_keys:
+          - ${public_keys:akaszuba}
+          user: ${linux:system:user:akaszuba}
+  public_keys:
+    rkamaldinov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCzeIFxatNuXWuaTomcGDTMlpqiF6KlK47BSO5yIpfWHTL7o0OFsQArB4UeZ9AC7JHQg1bpxzscJxz8Xj3tA1f8yOCrepR8LbWh7L6a1hMhSCJPK9QLUHPCLV4PW0ghq46Um8ekxMbEqGM/rrKP+GeYxNFUxJMHCkKbZAsV+BV8amuJHQkYt29GP/hgYyZEoWKErqoQ/uGQ0qWEMVQsnus6M3p3c/v1J4JtbbrmRBjyrPx/Tjinw6K2sgocgBZT7vVb4PYwbONi1IAclkPJIyrSNEavZ4MbK93ZXNQCV7rkUbKmHT71Qle34/ks9zyERJ3RgB+pWgQqCjtmJeV51V1 rkamaldinov@mirantis.com
+    iberezovskiy:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJT1d+2zKca28nFykpizh7z1yPLzK5fpMUH/zKaupINKqZxyMNbKiIQsYHSRXESRj6dpkCI2VQGO99fosPF7/XYCNVRcMLZ3lefi6aUaoBGhGTlj/Lbfwln9sN+o3m9oWgrwX/1+IkY9KlUPS4skVsiExHaGRLmCkMbF+dryB5oWKnOcf27z/fpXIFU06opYzxWZ1wR98vSlazqe+m1nDB4ZHYsvP2ztP2wn6+6xTeLj9tzWDRFmHluW7KJrN5PuX+KExPQx6IidDL92UX2E8ua5S+f6bGttT37wS0smKQTw3dnnM79sJnbd1hc4UtyDBQcFFqFq/L+ohpmM7EKY/f iberezovskiy@IvanBerezovskiy
+    skolekonov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmj9no4dGs67f3KPlson/IMWo4FVAiC83euE01MvwkMY0oWfkHgwPy600PYZANDbXg1Qmza7W56ePQosPBZYtdOmk/Dr0jrviGN2faSawpiFb2K+KHx+hi08gOYHWaooA/IoB7nXBdYjIdfoCrWVR23nB7gcPKRwB31/ozySb+Q5u3wnVdGf3CJGWtRsfzjAyGcwPj7+9K3RuuyzAnRL/oaf9tcBzCHo1jd1o+rqZBVkBazfZSYiO3Kv1/xyw5MREqsu12i8M/77Yiim2nhEre1nB3INj+TAvFYxTJs33SUxUjtcdCSdBQpHLTeODZR8Ra7MTfCoFCllKGx5IDO1Fd skolekonov@SK
+    mmatuszkowiak:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC63QhWE96IF/SRCFWyKJyzOyprc7WlD6RdCClw7BxKum7BDlXfV+fhQupWUdsPVnOaCMwndjG+ZrZXg5okGui4GuL7nucUFYfUhZh252IBM8TM7BkuVd7fmbZ6OD2/4uGTOJRBhO+Jrol9Z2450vaiGZwWrbvWHNPtI+bhx3/4WWxjgZ59NGll220c1cTjGQamvNgtWBWNnsEilmZxinl501EgvDPJ8uewCAS3YA3T9ut11RRJiWKfoMr4H9sFeUTiu1j6ByYlINXMJTNadPzEcV6EW06k1K9oNfJ42F6gYFfjBQK5db83iNTkyA/j4TjfqJ9tlg2cWTp+x2vy8YNV mmatuszkowiak@Mateuszs-MacBook-Pro-2.local
+    akaszuba:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDM8RI+GX+gh8KXQGIHlfePeplOk9aGSjbbDpb3KG2n3J4RftzNThtkaEKBCwKyOSuUh0qHW3pYu17M1eIXHI53PnEQLHE1VoJ2/GI7CHWOjBk0Hgf+/NFCKogetlMjXIrOPRYKtUDcS4ejgb8X+mGCUoJOBIM2qLPO5TLAYvkkEnWaeQQn7Nrn+t8f6hZmfJLBY36jUngXW13ucEj5BcoXpaMV5JPesw9Wg27mHfEPW1Rybizy0R0I3dC4B/1QygntlZW0OTivB35La99h/iHSVVhZQv9A/T+DeR5dMIpMPl+OPKGkZ1pE+4zFIbrGuEDUppxczxaDjJ+9dqzG3pn akaszuba@mirantis.com

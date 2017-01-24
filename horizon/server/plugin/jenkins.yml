@@ -2,6 +2,7 @@ parameters:
   _param:
     horizon_jenkins_url: http://localhost:8080/
     horizon_jenkins_user: admin
+    horizon_jenkins_password: cdsf432tgwetgsdgdsgdsa
   horizon:
     server:
       jenkins_api:

@@ -24,7 +24,7 @@ parameters:
           type: nginx_proxy
           name: openstack_api_keystone_private
           proxy:
-            host: ${_param:keystone_service_hsot}
+            host: ${_param:keystone_service_host}
             port: 35357
             protocol: http
             filter:

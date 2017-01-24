@@ -4,4 +4,5 @@ classes:
 - system.salt.master.formula.pkg.saltstack
 - system.salt.master.formula.pkg.stacklight
 - system.salt.master.formula.pkg.kubernetes
+- system.salt.master.formula.pkg.ccp
 - system.linux.system.repo.tcp_salt

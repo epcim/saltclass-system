@@ -1,0 +1,37 @@
+parameters:
+  linux:
+    system:
+      user:
+        kproskurin:
+          enabled: true
+          name: kproskurin
+          sudo: true
+          full_name: Kirill Proskurin
+          home: /home/kproskurin
+          email: kproskurin@mirantis.com
+        sreshetnyak:
+          enabled: true
+          name: sreshetnyak
+          sudo: true
+          full_name: Sergey Reshetnyak
+          home: /home/sreshetnyak
+          email: sreshetnyak@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        kproskurin:
+          enabled: true
+          public_keys:
+          - ${public_keys:kproskurin}
+          user: ${linux:system:user:kproskurin}
+        sreshetnyak:
+          enabled: true
+          public_keys:
+          - ${public_keys:sreshetnyak}
+          user: ${linux:system:user:sreshetnyak}
+  public_keys:
+    kproskurin:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBvuPnwVjS5AuxOp4Bd3zRFhE1IB7g5R8LMwfCpqokolV0pHw1QGbCFprBcahvR0daGla/lB0buUu1sCLmFm0QH/m3VD9PkY8VE/4XW58yCtA5/ANYqLchWaNxaaaQG8Sg3gxtcMwLUQ92HFejZT9c0jgQDRc8pTHHuPj/HuV1I2Cw2a/DHZtrMbMT27aAglrPFiMty+P1Gd5mdHAXK8sfK+LSZ9/PZ2IbW0fCGL3tE8rTwL7FG5rN7eeaX56lWwO3oQMu184Wi1vL/ukIt2sdRi6qvKAYfeELPzffo8GOhesQAq+BXzjpIo2HUT2gSkZid0YzX7lRLPWhAi1sdq3V oloremo@iHAL9000-2.local
+    sreshetnyak:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbc8cUMy2Stjq4qS8TaVGvTIUGetpgTcLCiW3NnG5Yqe+s+nlQnIL3ezvgSKHin4/PYHl8vV9FnmLdPLk+4eefoek1px8soW/B+Ri0KN6aQUy1ztcecMxcxRH9g4VLZWTbazqGsADwRCQVPXmyIQVQN5wMKd0IzXUp5c03dWv/I1PE7QPdKySrdhjjyo+1Npx/tQjtJaSnGCaUJrXfHXBxiiENzmHuY+se14nWV9RyYN3zRWsa8Yt1n2hWNNiKNfT89h6yFwZAxdsS+jGhzbGTLcWyAqq3sfvvgm0yeL5FEm0AKaOMv7AuM5LqjPkQE4zzCGA0j19EQlAjsVcvKHGH sreshetniak@workstation

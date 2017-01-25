@@ -16,6 +16,13 @@ parameters:
           full_name: Sergey Reshetnyak
           home: /home/sreshetnyak
           email: sreshetnyak@mirantis.com
+        apavlov:
+          enabled: true
+          name: apavlov
+          sudo: true
+          full_name: Andrey Pavlov
+          home: /home/apavlov
+          email: apavlov@mirantis.com
   openssh:
     server:
       enabled: true
@@ -30,8 +37,15 @@ parameters:
           public_keys:
           - ${public_keys:sreshetnyak}
           user: ${linux:system:user:sreshetnyak}
+        apavlov:
+          enabled: true
+          public_keys:
+          - ${public_keys:apavlov}
+          user: ${linux:system:user:apavlov}
   public_keys:
     kproskurin:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBvuPnwVjS5AuxOp4Bd3zRFhE1IB7g5R8LMwfCpqokolV0pHw1QGbCFprBcahvR0daGla/lB0buUu1sCLmFm0QH/m3VD9PkY8VE/4XW58yCtA5/ANYqLchWaNxaaaQG8Sg3gxtcMwLUQ92HFejZT9c0jgQDRc8pTHHuPj/HuV1I2Cw2a/DHZtrMbMT27aAglrPFiMty+P1Gd5mdHAXK8sfK+LSZ9/PZ2IbW0fCGL3tE8rTwL7FG5rN7eeaX56lWwO3oQMu184Wi1vL/ukIt2sdRi6qvKAYfeELPzffo8GOhesQAq+BXzjpIo2HUT2gSkZid0YzX7lRLPWhAi1sdq3V oloremo@iHAL9000-2.local
     sreshetnyak:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbc8cUMy2Stjq4qS8TaVGvTIUGetpgTcLCiW3NnG5Yqe+s+nlQnIL3ezvgSKHin4/PYHl8vV9FnmLdPLk+4eefoek1px8soW/B+Ri0KN6aQUy1ztcecMxcxRH9g4VLZWTbazqGsADwRCQVPXmyIQVQN5wMKd0IzXUp5c03dWv/I1PE7QPdKySrdhjjyo+1Npx/tQjtJaSnGCaUJrXfHXBxiiENzmHuY+se14nWV9RyYN3zRWsa8Yt1n2hWNNiKNfT89h6yFwZAxdsS+jGhzbGTLcWyAqq3sfvvgm0yeL5FEm0AKaOMv7AuM5LqjPkQE4zzCGA0j19EQlAjsVcvKHGH sreshetniak@workstation
+    apavlov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC13FvtJl6OdwdiaLFYfJO5WaA7YUMi2/DJJECWtrjJPObGPeAQ1Z8zxQWanwZVhDO7E5oR7n/LmuKHaJkRIFyQEZY3mHS3k4yybg0Vqu2FcGWQO4P3R16v6qDLvuvu9S4sUkYF3k8oYDzwN/Vc+o7a4AkL5U5rjB3vbLWVdGg8G61jFjdekXbJdFCb0liPpcQrUe1yZmjE2E4ERPOZLCVADPiVzXJhtbKigbn/nwdk4D0g+eq3NW0AwJfkyCu6mt1xXfk6gmhUrBPh1ostWv6mSpD9bXvxIKv/QnIM4SUJ/RhJH0uhWtpH4GeXvnPXHs0bxfyq1GtQt5bD3gqCHruz apavlov@Andreys-MacBook-Pro.local

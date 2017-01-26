@@ -1,0 +1,36 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        k8s_secure:
+          mode: http
+          http_request:
+            # Common proxy headers
+            - action: "set-header X-Forwarded-Port %[dst_port]"
+            - action: "add-header X-Forwarded-Proto https"
+              condition: "if { ssl_fc }"
+            - action: "add-header X-Forwarded-Proto http"
+              condition: "if !{ ssl_fc }"
+          options:
+            - forwardfor
+            - httpclose
+            - httplog
+          binds:
+            - address: ${_param:cluster_vip_address}
+              port: 443
+              ssl:
+                enabled: true
+                pem_file: /etc/kubernetes/ssl/kubernetes-server.pem
+          servers:
+            - name: ${_param:cluster_node01_hostname}
+              host: ${_param:cluster_node01_address}
+              port: 443
+              params: "check ssl verify none"
+            - name: ${_param:cluster_node02_hostname}
+              host: ${_param:cluster_node02_address}
+              port: 443
+              params: "check ssl verify none"
+            - name: ${_param:cluster_node03_hostname}
+              host: ${_param:cluster_node03_address}
+              port: 443
+              params: "check ssl verify none"

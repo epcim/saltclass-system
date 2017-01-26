@@ -20,7 +20,7 @@ parameters:
               port: 443
               ssl:
                 enabled: true
-                pem_file: /etc/haproxy/ssl/kubernetes.pem
+                pem_file: /etc/kubernetes/ssl/kubernetes-server.pem
           servers:
             - name: ${_param:cluster_node01_hostname}
               host: ${_param:cluster_node01_address}

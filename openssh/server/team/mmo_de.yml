@@ -26,6 +26,12 @@ parameters:
           sudo: true
           full_name: Katarzyna Orlowska
           home: /home/korlowska
+        sflorczak:
+          enabled: true
+          name: sflorczak
+          sudo: true
+          full_name: Szymon Florczak
+          home: /home/sflorczak
   openssh:
     server:
       enabled: true
@@ -51,6 +57,11 @@ parameters:
           public_keys:
           - ${public_keys:korlowska}
           user: ${linux:system:user:korlowska}
+        sflorczak:
+          enabled: true
+          public_keys:
+          - ${public_keys:sflorczak}
+          user: ${linux:system:user:sflorczak}
   public_keys:
     dszeluga:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEEFoCOaivah6AjFZmPIDlDlp8mUfsh9UFrjgLL8vqVYoyVnuZ5DQZTeZsCgFCPxodEsgHDkSEFwkB6hbyqEXszGIL8dWwSBR3QfNJD2cjZ8ZYqXsKN63RzHGAjTXMjlCB7TZtcui1SWpKjGd+x3gQ0KkHZI9V9WVYDcC75kyEAHZptM2N9jlwbhr9lXZ77gZacjaGoKN0Agb/ydd1TyhQ1F3g56pnvgZtkOe/bStwjpz2NS0FqiqAR3wOeZZUGsR3TCP70oYfaeJvpCDVRR/gVXqqvcBAiNYTGC/tMlKuECKPtOOAP8Oc+bt1eOrbiPVJ5NfoOIpmMCDUUSnFoNGN damjanek@cocaine.local
@@ -62,3 +73,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDV6H07IEV9merlHUFV8O/Y7sczYXNZjysTBg4TkUW3mWzvW0PJMKnP6Fc1XfFE53fR71N09gkmnVlEtbHa8PTXoS89JVuUHTnitAbDdINShm0pFNWsi/3f00nbfQ8hjaxEWeZ4VlwYzP4v5IPVtpDug+epK65clIG8Xfxlp+CcckyeDdBNSztHHDuQiholzmPicN6EFM6bVUqUZSGnmxiOCrYUOMXBbYChBc3otfeF6vO3WvnKF77nixgOGGmuS0+t96vPKLB3cl5GYpTFyOmrt3tu7JPlTsqwUa0yqDa3ny+5BToIpnROhAqTZV5fV3LHgtObcWYRGANdjVWyPiNOiywiDzsw7/xzuuqV2wLeLnFG1Z+G550F1Ed4lrsPYKc7+qxZYLquI0iJoIjg5WPzNw5QBLdb1srL9zo+0A91Asx8U95IjIMWumowWjDN3Mn0qJwxW5d8SUign3wksIu2FlkLCT4u95CEIebDVEhTQQR0AOP00/KLKtBDn9a5H0UnJZZSTG4+prU3CnqyXqyp6dano86fGEkkcP2PDi/SUwoxdBvMVbdZxYpPYm+8Oe0TjLWPlwu4kYCwVnl3EYgJZAHjT6wVHOjyXcJYezPvvXY8B/VR8UfupetHg5/mVjoQQy2+Nl34AaDN2TLQLXRuG+U+hZqV5Jzc3JO+KKfDUw== mwilson@mwilson-ThinkPad-W530
     korlowska:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCqsNuEIZr8XobFca4uN3KDAQzyd//NaZQrEMfJZNm8Gj5ym4NWX8cUjf3TQvV6eMGsNe/mxwIxmpyIANQeWUUlnelXG4rRjkBt94J1bg1YeB6F76R6yPuMrP8x/4s5nTy1OVr7jo1xwwL9aHZZcxQFExMBRMM2HrZDJNoXSdwqi7vuW8uUkCSwd8lsZ4iftI4TIafehZTHWroPP3kVMI+JvbdKyAR8xT2DsPHCIb42lEfCPMEYopKRI///L3KkZkbaVdshz/4zCvx3fAyKCHLH44Qgjs3eoAuz1ZFjAec/j6jwNEWGIrlk0g5nIfEXHR5e6qZRwa+nW60xHpIwMfGWtHscyTXR95OVXlEMLqAmycSXVLwyu47attnE/CLLUH4am38ET6w8Oxkzis0gHs3NOEhoNAf2OVhV3gP3aPzoDBRGemNdYZgGNnq6VI9dNhItkxN1QIYKI1d1Dwt8sz1PJM0W9JJjZDNFZAh5Q5QAsg3nxNudk4bxyjCnYbYbRj/dbKOKLJTEsqelsvlKT/+picEwqB/xmcwalHoKtR9QsNw2XuENBQk3OCfAC4SOhm+U1zq7XHpoVxjjn/J4p5ChkH7bhNGNMAE9aefekXGWNjpQFRszd/0SlEkzhUDsUIGKFEP8wlsjb9eOzatYf65fRbE1/YGODuwubj7WrZxy3w== korlowska@mirantis.com
+    sflorczak:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOdCr32ewiGJKLLwxf0Ic0naFV1j+ZflpfUVjuIPplrLeL5u8CNVlT5adPzgc48ijbee3qpzNvkOC7Ym295xQXUluo/cj2p5wVp70YnHrfhnLjGOCldm/K8B9bHmHbm1XW6hWUp7SWjMwhOdR217iveVLkuOy+hPdpXOC86hO93v7fY12UZDiqSRfrHpUqEaHHqlSyU2Eftn9GsR4UaotkeaQsiv8bi/k5nrwea/ccALZXnhrgTSTpXOVy3rfR5cCFQCA1PjMYvFEjhUofCHBSk+OA8xwOkpBOCfYrWRUmMT7MGEV5Jjm75QUrq1AuqRdFh8SM5lP39Tdwr8FMC+q5 flor3k@MacBook-Pro-Szymon.local

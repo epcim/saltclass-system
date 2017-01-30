@@ -6,19 +6,23 @@ parameters:
           formula:
             aodh:
               source: git
-              address: 'https://github.com/tcpcloud/salt-formula-aodh.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-aodh.git'
               revision: ${_param:salt_master_environment_revision}
             billometer:
               source: git
-              address: 'https://github.com/tcpcloud/salt-formula-billometer.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-billometer.git'
               revision: ${_param:salt_master_environment_revision}
             ceilometer:
               source: git
-              address: 'https://github.com/openstack/salt-formula-ceilometer.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-ceilometer.git'
+              revision: ${_param:salt_master_environment_revision}
+            ceph:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-ceph.git'
               revision: ${_param:salt_master_environment_revision}
             cinder:
               source: git
-              address: 'https://github.com/openstack/salt-formula-cinder.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-cinder.git'
               revision: ${_param:salt_master_environment_revision}
             galera:
               source: git
@@ -26,11 +30,11 @@ parameters:
               revision: ${_param:salt_master_environment_revision}
             glance:
               source: git
-              address: 'https://github.com/openstack/salt-formula-glance.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-glance.git'
               revision: ${_param:salt_master_environment_revision}
             glusterfs:
               source: git
-              address: 'https://github.com/tcpcloud/salt-formula-glusterfs.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-glusterfs.git'
               revision: ${_param:salt_master_environment_revision}
             haproxy:
               source: git
@@ -38,11 +42,11 @@ parameters:
               revision: ${_param:salt_master_environment_revision}
             heat:
               source: git
-              address: 'https://github.com/openstack/salt-formula-heat.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-heat.git'
               revision: ${_param:salt_master_environment_revision}
             horizon:
               source: git
-              address: 'https://github.com/openstack/salt-formula-horizon.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-horizon.git'
               revision: ${_param:salt_master_environment_revision}
             keepalived:
               source: git
@@ -50,7 +54,7 @@ parameters:
               revision: ${_param:salt_master_environment_revision}
             keystone:
               source: git
-              address: 'https://github.com/openstack/salt-formula-keystone.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-keystone.git'
               revision: ${_param:salt_master_environment_revision}
             memcached:
               source: git
@@ -70,7 +74,7 @@ parameters:
               revision: ${_param:salt_master_environment_revision}
             neutron:
               source: git
-              address: 'https://github.com/openstack/salt-formula-neutron.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-neutron.git'
               revision: ${_param:salt_master_environment_revision}
             nginx:
               source: git
@@ -78,11 +82,11 @@ parameters:
               revision: ${_param:salt_master_environment_revision}
             nova:
               source: git
-              address: 'https://github.com/openstack/salt-formula-nova.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-nova.git'
               revision: ${_param:salt_master_environment_revision}
             opencontrail:
               source: git
-              address: 'https://github.com/openstack/salt-formula-opencontrail.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-opencontrail.git'
               revision: ${_param:salt_master_environment_revision}
             python:
               source: git
@@ -102,5 +106,5 @@ parameters:
               revision: ${_param:salt_master_environment_revision}
             swift:
               source: git
-              address: 'https://github.com/openstack/salt-formula-swift.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-swift.git'
               revision: ${_param:salt_master_environment_revision}

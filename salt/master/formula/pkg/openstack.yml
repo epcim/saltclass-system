@@ -13,6 +13,9 @@ parameters:
             ceilometer:
               source: pkg
               name: salt-formula-ceilometer
+            ceph:
+              source: pkg
+              name: salt-formula-ceph
             cinder:
               source: pkg
               name: salt-formula-cinder

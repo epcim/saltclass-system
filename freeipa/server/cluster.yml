@@ -1,0 +1,20 @@
+classes:
+  - service.freeipa.server
+parameters:
+  freeipa:
+    server:
+      realm: ${_param:freeipa_realm} 
+      domain: ${_param:cluster_domain}
+      servers:
+        - ${_param:infra_freeipa_node01_hostname}.${_param:cluster_domain}
+        - ${_param:infra_freeipa_node02_hostname}.${_param:cluster_domain}
+        - ${_param:infra_freeipa_node03_hostname}.${_param:cluster_domain}
+      admin:
+        password: ${_param:freeipa_admin_password}
+      ldap:
+        password: ${_param:freeipa_ldap_password}
+      dns:
+        zone:
+          # Main zones
+          mb-staging.vw.vwg: ${_param:freeipa_dns_zone}
+

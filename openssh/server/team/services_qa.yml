@@ -1,0 +1,22 @@
+parameters:
+  linux:
+    system:
+      user:
+        npliashechnikov:
+          enabled: true
+          name: npliashechnikov
+          sudo: true
+          full_name: Nikolay Pliashechnykov
+          home: /home/npliashechnikov
+  openssh:
+    server:
+      enabled: true
+      user:
+        npliashechnikov:
+          enabled: true
+          public_keys:
+          - ${public_keys:npliashechnikov}
+          user: ${linux:system:user:npliashechnikov}
+  public_keys:
+    npliashechnikov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxy9ZNE+36U1W3vPxzMx++AujS8Ay9ZgJrfaa6YsWl1FeN87VuGucslHjLqFfiIYJLQl3m7tSLiAujQ/izBKDbfA5hd5z7JaCRB1LE+CehmCL0UVwsHflAi0tPn1tDrTcVGf/BRH0FsoZJo+KpOwohYGN8BMOpUIAP2SkGrE7cGbPrd9NbRqPW80iyIzsNIqzVKTcsh0CcJcr05V5n3or0GvteDMxl+mjAi6hpfx06a/bEfPLV10Ftl4+nIkbXr0KWA68uy7XmTlH+qgVUCMGwRP4mFaU63+uX45WboLKQ0aacPX833qvZJTIPe2FhAygoVoBwgOKBzrbnicBa9U+AQ== dkth1p3@lxf01p581

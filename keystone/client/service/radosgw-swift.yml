@@ -1,0 +1,28 @@
+parameters:
+  keystone:
+    client:
+      server:
+        identity:
+          project:
+            service:
+              user:
+                swift:
+                  is_admin: true
+                  password: ${_param:keystone_swift_password}
+                  email: ${_param:admin_email}
+      service:
+        radosgw-swift:
+          type: object-store
+          description: Swift Service (radosgw)
+          endpoints:
+            - region: ${_param:openstack_region}
+              public_address: ${_param:radosgw_service_host_public}
+              public_protocol: https
+              public_port: 8081
+              public_path: '/swift/v1' # /$(tenant_id)s
+              internal_address: ${_param:radosgw_service_host}
+              internal_port: 8081
+              internal_path: '/swift/v1'
+              admin_address: ${_param:radosgw_service_host}
+              admin_port: 8081
+              admin_path: '/swift/v1'

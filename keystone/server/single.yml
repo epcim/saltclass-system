@@ -42,3 +42,12 @@ parameters:
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
         ha_queues: true
+      roles:
+        - admin
+        - Member
+        - image_manager
+      auth_methods:
+      - password
+      - token
+    database:
+      host: 127.0.0.1

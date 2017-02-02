@@ -20,10 +20,18 @@ parameters:
           osd_journal_size: 7500
         mon:
           mon_debug_dump_transactions: False
+        client:
+          rbd cache size: 268435456
+          rbd cache max dirty: 134217728
+          rbd cache max dirty age: 5
+          rbd cache: True
+      # TODO: Configure these keys on cluster level
       # keyring:
+      #   images:
+      #     key:
       #   object:
-      #     key: 
+      #     key:
       #   cinder:
-      #     key: 
+      #     key:
       #   nova:
-      #     key: 
+      #     key:

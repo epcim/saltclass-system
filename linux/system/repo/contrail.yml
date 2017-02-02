@@ -1,6 +1,7 @@
 parameters:
   _param:
     linux_repo_contrail_component: oc30
+    contrail_repo_pin_priority: 200
   linux:
     system:
       repo:
@@ -8,3 +9,6 @@ parameters:
           source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ ${_param:linux_system_codename} extra ${_param:linux_repo_contrail_component}"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
+          - pin: 'release c=oc30'
+            priority: ${_param:contrail_repo_pin_priority}
+            package: '*'

@@ -8,6 +8,6 @@ parameters:
           refresh_db: ${_param:linux_repo_refresh_db}
           source: "deb [arch=amd64] http://${_param:local_repo_url}/contrail trusty main"
           pin:
-          - pin: 'release l=Local Contrail APT repository'
+          - pin: 'release l=contrail ubuntu-trusty'
             priority: ${_param:contrail_repo_pin_priority}
             package: '*'

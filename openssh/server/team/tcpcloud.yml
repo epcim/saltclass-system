@@ -68,18 +68,18 @@ parameters:
           sudo: true
           full_name: Ondrej Smola
           home: /home/osmola
-        jkonecny:
-          enabled: true
-          name: jkonecny
-          sudo: true
-          full_name: Jiri Konecny
-          home: /home/jkonecny
         pcizinsky:
           enabled: true
           name: pcizinsky
           sudo: true
           full_name: Pavel Cizinsky
           home: /home/pcizinsky
+        pjediny:
+          enabled: true
+          name: pjediny
+          sudo: true
+          full_name: Petr Jediny
+          home: /home/pjediny
         pmichalec:
           enabled: true
           name: pmichalec
@@ -162,16 +162,16 @@ parameters:
           public_keys:
           - ${public_keys:osmola}
           user: ${linux:system:user:osmola}
-        jkonecny:
-          enabled: true
-          public_keys:
-          - ${public_keys:jkonecny}
-          user: ${linux:system:user:jkonecny}
         pcizinsky:
           enabled: true
           public_keys:
           - ${public_keys:pcizinsky}
           user: ${linux:system:user:pcizinsky}
+        pjediny:
+          enabled: true
+          public_keys:
+          - ${public_keys:pjediny}
+          user: ${linux:system:user:pjediny}
         pmichalec:
           enabled: true
           public_keys:
@@ -213,10 +213,10 @@ parameters:
       key: AAAAB3NzaC1yc2EAAAABJQAAAQEAn4MJUkXbiZPPEcdKijB4MqnjPGk80x5W+8XsMvZuUqElmuLgB30kdCnSCBgipYPor3m8wakdJTTwiY6P50yhtp/tD2b4t1TC1djPwiNS/6JwjZawj30bS5ZrVKeTHtOq6E0tf927svXgEE21/ADgWpMoDeQ/pKlbt0m/U8YGBCmJ7cBa8ggGHhvJIwCNhpELn02vKV8Qfx44rk+DoxLBwQUHQ8PsEwtoSCLMIulpLflptak1pgvN6ggA5p15i36OyJkobI1yR9YEgtb+8yQqofu2DZ+v+9Qhbb+C0446RnyGzfvk/DreCeI4rJh5/6QZjwv3XfYDER5LbNCnoOQAsQ== v.zach@tcpcloud.eu
     osmola:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGcF8AI/8hOeKlda4vniFVBbD3wOK4D2+/z+pB7kK0JyxfVC3XccYbpqQioWjt96JwDX8dSio07OUAFqOWQH2cTp6wjqNmpIaAODo44kQgKDXrjEq61fYW+L6JYZHxsFUPLvlNlwQwND2F5HU8oWbsneGu+Psb/COQebcGDdT1v/f2G9r5br2O43P/XPx8+YGKd+OiHPIN4Fk8fZzCGX7oJ7GGGr8YTL/Y8ULF3WiTXbQEWusU52Sf7/Is0A6BQOH+OuBGrVCT+j2XI9QBMyVSYtaKCnRDlEGessnGIGRGrNza/xYivWBw8IsVziDC8x7zZByAwmctWoWED6wWs4YU7SqoonEaYEog32J6Uw9tGtTgvkRC1mpMtgR2eenjNax8Fpoc6uTb/l0gevaRE6IqNMS0FBIIbkCYcoxfj7zIsYms/9IhsXGk1lW5ZrouCFICGEVa7zJ2F+3DvyQDCSuqsk/bfUQZEFw1FdAYIsZYQR+LIOSVQplapGVyqhlbkeUEVdILzgdMAfkPa80ZnGvTO729G/8uP78k1QhZUHAypkeWQ/aJfOKrxXyAxtMZiuyK31zf4OZdKSDS9bAWlmyKkohp7cEjLU0ex4AYDS231Y6JywL+RnucMJ4gFqSfSYfkM6+23gFbYfP7NcEKrkCaim/9RMU1RsunBk8As2K5gw== ondrej.smola@tcpcloud.eu
-    jkonecny:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIYO4/Nwrs5PJTPJabVOVWW47RvErdCG7U3Gabi8xffdA5uN1YTZbiqHt4SNPRmto60+YX35YjFH3giJotf+q5Ct5GN5m90VVRRtppAK+TAHtMgisIa6j5re6egHoi++9L1NwwTLDr/lzD4Gf7MBtU+q3scJJFmrTpLKUqC2ptL8wnCMlXbnjF1zfHqFbaMxXss7ZU/puHlY7Oc6pPzf+30XTQaq+0ZbshEJMDD0iGH3ijk7V2CCnpShZpQYF8FaLhSRkLzqn4xwrcK1dtENPL9qFBME+XYeC5vvBEMU7MBgs4jLX2KDyx/ZFbk+i79pd37hxNPs7Aj105ppVAaiqWsUgZxdfbC3GaW/U0jqJCDtlftnq1FLCRfO8O2sIJsfA78qWOP5ylD+dnGvYzcexQFpfgu49ZqoJYIt0EgSElH27MHF+hmwE6MHHKyBhELn3iN2uY6IWZTEVG7JROuDPOD6zAAaEw90M2xs1O4kUusArqNnL+AyYNlKGvkMy6ztf2a7+YH9u8zpZCMJUBq3gPTGnFGAeiynoaoSxeN83VYv64durJ439SmRZGMQMHJh3/H0TIAJPO4VwzPwhnn+fg/zaT93Ofg/BNZ4EG+panVCdtNa+sLvZTy01pfwtgX2bDrhpPTiotTea9/8PcEi+DM3CVeIOOZigOEFk+oAo5sw== jiri.konecny@tcpcloud.eu
     pcizinsky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt9HA2bUwCVGGdUjyFzdPFp0j2z9XanLW9gHZ3BhB6Wc4ficU6zmbqYxrHUvdmUrRJbLMEAo9JDlzAIw4CPGhRkD3d7HfnmlEYcEeizLnnC+CmKo3+mrwkQIzWIz6PJOh1kvp5uaNp4ztjRGXXmPzcR0nk4jRD89gLHvH9EYStxZI6nsi3mmWR/LhgIhijb8p63duhE4HuK/RRRjeDQaUsbTG9TMEskY5ZI3p/QM55wlml9F8QJrtwxpaIPI5Fl8lflq+4YcoqgDIBFc6nwubIuiNY4gPJ8s1SQfsfxHSOJpFPZDwi76dxUpthtJrU46fqRvXPzTKoS29WZ5pSAY6p pavel.cizinsky@tcpcloud.eu
+    pjediny:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgPX2oPwcmBMjf46UC+1vUBnKn9iBG88VD7lNiMN2UGBNihfCfSt4vOSNcVotyCSTrgm1dzHWN3nDt/fYiWvEimVE8VrawU9nJQ48o+M546SMCSYL9jqm+j+oSTd9CP7TeMgRw7hob+/vXREJVmol9cynsQei7HoFeo6iw7ZYMqgI1qOtHwN5Xep/7XZbQ0znweQY4hvywl47dK1GxnoQQUi1v30MzKRVIasf3cCMVr3qJ3ECxyQ2+Po/899jYLDdeJvJeG6dJQf1aDEDSHkoEjVup4jl5xu8y3jAYxOfKwMPe+Lb6lF3zRCB9QRZN71cxLVm+w7LfLtgLfsKv3xPeNpvvOvEQOdFg5jx9Z8w1KRkU2Zkc4fRTcWis89/9va3QL7W1pini3fM+WrpFatc02i7KjoJApeNQt0pwFl33DW+Zz8bQQZT7PT7LWNZjuvB4YmZYA6t9hj5rzUdUN2IyD2mNvPeNykdCLuFh7N7A67tpFSh48UHGld2ckdNmPQR8Ev50Fxu9jj13Cs4l3VMxzOF5I6VOS7g5vEKcCpIyDTtjSk4fGZhyeea5l8unCQzMw9UjkZjgy4nTZvxeqdRNnXSMrb0SzNuqbSM1J67GAUPxfxjb5HSmCYK/KSK3RXHrhwrW+t6B5x72KCCmYYJfUwofm6GIPEYGDxPL/VWGKM= pjediny key
     pmichalec:
       key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwsfObHWHqBv6UQBjvm0nkgnAGc5MZPuQXJ3ln4sM1P pmichalec@dontpanic
     jbroulik:

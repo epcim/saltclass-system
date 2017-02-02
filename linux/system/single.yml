@@ -41,14 +41,14 @@ parameters:
           limits:
             - type: hard
               item: nofile
-              value: 102400
+              value: 307200
             - type: soft
               item: nofile
-              value: 102400
+              value: 307200
             - type: soft
               item: noproc
-              value: 102400
+              value: 307200
             - type: hard
               item: noproc
-              value: 102400
+              value: 307200
 

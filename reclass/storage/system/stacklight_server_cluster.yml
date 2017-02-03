@@ -11,8 +11,6 @@ parameters:
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.stacklight.server
-          - system.influxdb.server.single
-          - system.influxdb.database.stacklight
           - system.elasticsearch.client.single
           - system.grafana.client.single
           - system.kibana.client.single

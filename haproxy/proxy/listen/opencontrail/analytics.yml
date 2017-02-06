@@ -24,6 +24,7 @@ parameters:
         contrail_config_stats:
           type: contrail-config
           service_name: contrail
+          check: false
           format: listen
           binds:
           - address: '*'
@@ -33,6 +34,7 @@ parameters:
         contrail_openstack_stats:
           type: contrail-config
           service_name: contrail
+          check: false
           format: listen
           binds:
           - address: '*'
@@ -42,6 +44,7 @@ parameters:
         contrail_collector_stats:
           type: contrail-config
           service_name: contrail
+          check: false
           format: listen
           binds:
           - address: '*'

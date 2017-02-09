@@ -12,6 +12,8 @@ parameters:
           classes:
           - cluster.${_param:cluster_name}.stacklight.monitor
           params:
+            redis_cluster_role: 'master'
+            rabbitmq_cluster_role: 'master'
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
             single_address: ${_param:stacklight_monitor_node01_address}
@@ -22,6 +24,8 @@ parameters:
           classes:
           - cluster.${_param:cluster_name}.stacklight.monitor
           params:
+            redis_cluster_role: 'slave'
+            rabbitmq_cluster_role: 'slave'
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
             single_address: ${_param:stacklight_monitor_node02_address}
@@ -32,6 +36,8 @@ parameters:
           classes:
           - cluster.${_param:cluster_name}.stacklight.monitor
           params:
+            redis_cluster_role: 'slave'
+            rabbitmq_cluster_role: 'slave'
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
             single_address: ${_param:stacklight_monitor_node03_address}

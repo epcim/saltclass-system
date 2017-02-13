@@ -11,7 +11,7 @@ parameters:
           name: openstack_api_keystone
           check: false
           proxy:
-            host: ${_param:keystone_service_host}
+            host: ${_param:ceilometer_service_host}
             port: 8777
             protocol: http
           host:

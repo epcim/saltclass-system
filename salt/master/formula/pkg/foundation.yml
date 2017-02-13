@@ -16,3 +16,7 @@ parameters:
             jenkins:
               source: pkg
               name: salt-formula-jenkins
+            freeipa:
+              source: pkg
+              name: salt-formula-freeipa
+

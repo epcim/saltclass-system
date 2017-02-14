@@ -80,6 +80,13 @@ parameters:
           sudo: true
           full_name: Petr Jediny
           home: /home/pjediny
+        jjosef:
+          enabled: true
+          name: jjosef
+          sudo: true
+          full_name: Jakub Josef
+          home: /home/jjosef
+          email: jakub.josef@gmail.com
         pmichalec:
           enabled: true
           name: pmichalec
@@ -152,6 +159,11 @@ parameters:
           public_keys:
           - ${public_keys:filip}
           user: ${linux:system:user:filip}
+        jjosef:
+          enabled: true
+          public_keys:
+          - ${public_keys:jjosef}
+          user: ${linux:system:user:jjosef}
         vzach:
           enabled: true
           public_keys:
@@ -215,6 +227,8 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGcF8AI/8hOeKlda4vniFVBbD3wOK4D2+/z+pB7kK0JyxfVC3XccYbpqQioWjt96JwDX8dSio07OUAFqOWQH2cTp6wjqNmpIaAODo44kQgKDXrjEq61fYW+L6JYZHxsFUPLvlNlwQwND2F5HU8oWbsneGu+Psb/COQebcGDdT1v/f2G9r5br2O43P/XPx8+YGKd+OiHPIN4Fk8fZzCGX7oJ7GGGr8YTL/Y8ULF3WiTXbQEWusU52Sf7/Is0A6BQOH+OuBGrVCT+j2XI9QBMyVSYtaKCnRDlEGessnGIGRGrNza/xYivWBw8IsVziDC8x7zZByAwmctWoWED6wWs4YU7SqoonEaYEog32J6Uw9tGtTgvkRC1mpMtgR2eenjNax8Fpoc6uTb/l0gevaRE6IqNMS0FBIIbkCYcoxfj7zIsYms/9IhsXGk1lW5ZrouCFICGEVa7zJ2F+3DvyQDCSuqsk/bfUQZEFw1FdAYIsZYQR+LIOSVQplapGVyqhlbkeUEVdILzgdMAfkPa80ZnGvTO729G/8uP78k1QhZUHAypkeWQ/aJfOKrxXyAxtMZiuyK31zf4OZdKSDS9bAWlmyKkohp7cEjLU0ex4AYDS231Y6JywL+RnucMJ4gFqSfSYfkM6+23gFbYfP7NcEKrkCaim/9RMU1RsunBk8As2K5gw== ondrej.smola@tcpcloud.eu
     pcizinsky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt9HA2bUwCVGGdUjyFzdPFp0j2z9XanLW9gHZ3BhB6Wc4ficU6zmbqYxrHUvdmUrRJbLMEAo9JDlzAIw4CPGhRkD3d7HfnmlEYcEeizLnnC+CmKo3+mrwkQIzWIz6PJOh1kvp5uaNp4ztjRGXXmPzcR0nk4jRD89gLHvH9EYStxZI6nsi3mmWR/LhgIhijb8p63duhE4HuK/RRRjeDQaUsbTG9TMEskY5ZI3p/QM55wlml9F8QJrtwxpaIPI5Fl8lflq+4YcoqgDIBFc6nwubIuiNY4gPJ8s1SQfsfxHSOJpFPZDwi76dxUpthtJrU46fqRvXPzTKoS29WZ5pSAY6p pavel.cizinsky@tcpcloud.eu
+    jjosef:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkK55PVyvnhW2XiIyDUTWOaW1frsd7g9t8SLRmjtEjKqJOBaRk48bSUfcV2twGcSOq3E2dUikh3URobYIZ6WBEiWrl1e7MYCJJAE+8qzVoskk01mC6tp9HGbsSRKrZTgpjzReM+kN6jffi/P1rSqgeg4U0O99N2aWqdfc7UJPFM09z9nqfB1Gj4HUnBkC1X+di4U3S6W8q62JLgxuK2MAry3xSnPztFVH5OXXbBltdVIxshOHj9i8wyof9iFHGdjFNvB+c5I3RJ2HRmmmHm3zey9iHU7PNIppXKglUFZ0EKIB4LsDjL6xrEjo2A5tfCaVZLNJgP95tdbGEcYQuDv3N jakub.josef@gmail.com
     pjediny:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgPX2oPwcmBMjf46UC+1vUBnKn9iBG88VD7lNiMN2UGBNihfCfSt4vOSNcVotyCSTrgm1dzHWN3nDt/fYiWvEimVE8VrawU9nJQ48o+M546SMCSYL9jqm+j+oSTd9CP7TeMgRw7hob+/vXREJVmol9cynsQei7HoFeo6iw7ZYMqgI1qOtHwN5Xep/7XZbQ0znweQY4hvywl47dK1GxnoQQUi1v30MzKRVIasf3cCMVr3qJ3ECxyQ2+Po/899jYLDdeJvJeG6dJQf1aDEDSHkoEjVup4jl5xu8y3jAYxOfKwMPe+Lb6lF3zRCB9QRZN71cxLVm+w7LfLtgLfsKv3xPeNpvvOvEQOdFg5jx9Z8w1KRkU2Zkc4fRTcWis89/9va3QL7W1pini3fM+WrpFatc02i7KjoJApeNQt0pwFl33DW+Zz8bQQZT7PT7LWNZjuvB4YmZYA6t9hj5rzUdUN2IyD2mNvPeNykdCLuFh7N7A67tpFSh48UHGld2ckdNmPQR8Ev50Fxu9jj13Cs4l3VMxzOF5I6VOS7g5vEKcCpIyDTtjSk4fGZhyeea5l8unCQzMw9UjkZjgy4nTZvxeqdRNnXSMrb0SzNuqbSM1J67GAUPxfxjb5HSmCYK/KSK3RXHrhwrW+t6B5x72KCCmYYJfUwofm6GIPEYGDxPL/VWGKM= pjediny key
     pmichalec:

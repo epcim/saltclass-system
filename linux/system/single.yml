@@ -12,6 +12,8 @@ parameters:
         cloud-init:
           version: purged
       kernel:
+        modules:
+          - nf_conntrack
         sysctl:
           net.ipv4.tcp_keepalive_intvl: 3
           net.ipv4.tcp_keepalive_time: 30

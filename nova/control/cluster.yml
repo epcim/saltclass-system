@@ -6,6 +6,9 @@ classes:
 parameters:
   _param:
     nova_vncproxy_url: http://${_param:cluster_vip_address}:6080
+    nova_cpu_allocation_ratio: 16.0
+    nova_ram_allocation_ratio: 1.5
+    nova_disk_allocation_ratio: 1.0
   nova:
     controller:
       enabled: true
@@ -14,9 +17,9 @@ parameters:
       security_group: false
       dhcp_domain: novalocal
       scheduler_default_filters: "DifferentHostFilter,RetryFilter,AvailabilityZoneFilter,RamFilter,CoreFilter,DiskFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter,PciPassthroughFilter,NUMATopologyFilter,AggregateInstanceExtraSpecsFilter"
-      cpu_allocation_ratio: 16.0
-      ram_allocation_ratio: 1.5
-      disk_allocation_ratio: 1.0
+      cpu_allocation_ratio: ${_param:nova_cpu_allocation_ratio}
+      ram_allocation_ratio: ${_param:nova_ram_allocation_ratio}
+      disk_allocation_ratio: ${_param:nova_disk_allocation_ratio}
       workers: 8
       logging:
       - engine: syslog

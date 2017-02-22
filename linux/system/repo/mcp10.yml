@@ -1,0 +1,24 @@
+parameters:
+  linux:
+    system:
+      repo:
+        mirantis_openstack:
+          source: "deb http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0 mitaka main"
+          architectures: amd64
+          key_url: "http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0/archive-mcp1.0.key"
+        mirantis_openstack_hotfix:
+          source: "deb http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0 mitaka-hotfix main"
+          architectures: amd64
+          key_url: "http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0/archive-mcp1.0.key"
+        mirantis_openstack_security:
+          source: "deb http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0 mitaka-security main"
+          architectures: amd64
+          key_url: "http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0/archive-mcp1.0.key"
+        mirantis_openstack_updates:
+          source: "deb http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0 mitaka-updates main"
+          architectures: amd64
+          key_url: "http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0/archive-mcp1.0.key"
+        mirantis_openstack_holdback:
+          source: "deb http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0 mitaka-holdback main"
+          architectures: amd64
+          key_url: "http://perestroika-repo-tst.infra.mirantis.net/mcp-repos/1.0/archive-mcp1.0.key"

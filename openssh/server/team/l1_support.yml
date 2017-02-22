@@ -1,0 +1,44 @@
+classes:
+- system.linux.system.sudo
+# L1
+- system.openssh.server.team.support.aleksandrdobdin
+- system.openssh.server.team.support.aleksandrrubtsov
+- system.openssh.server.team.support.anatoliineliubin
+- system.openssh.server.team.support.antonrodionov
+- system.openssh.server.team.support.daniillapshin
+- system.openssh.server.team.support.danilakhmetov
+- system.openssh.server.team.support.deniskostriukov
+- system.openssh.server.team.support.dmitrygoloshubov
+- system.openssh.server.team.support.javierdiaz
+- system.openssh.server.team.support.josuepalmerin
+- system.openssh.server.team.support.krzysztoffranckowski
+- system.openssh.server.team.support.matthewroark
+- system.openssh.server.team.support.maximefimov
+- system.openssh.server.team.support.michaelpetersen
+- system.openssh.server.team.support.mikhailkraynov
+- system.openssh.server.team.support.nadezhdakabanova
+- system.openssh.server.team.support.renesoto
+- system.openssh.server.team.support.rudymccomb
+- system.openssh.server.team.support.scottmachtmes
+- system.openssh.server.team.support.zahedkhurasani
+parameters:
+  linux:
+    system:
+      group:
+        support:
+          enabled: true
+          name: support
+      sudo:
+        enabled: true
+        aliases:
+          command:
+            L1_SUPPORT_SALT: ${_param:sudo_salt_safe}
+            L1_SUPPORT_SALT_TRUSTED: ${_param:sudo_salt_trusted}
+            L1_SUPPORT_RESTRICTED_SHELLS: ${_param:sudo_shells}
+            L1_SUPPORT_RESTRICTED: ${_param:sudo_restricted_su}
+        groups:
+          support:
+            commands:
+                - L1_SUPPORT_SALT
+                - '!L1_SUPPORT_RESTRICTED_SHELLS'
+                - '!L1_SUPPORT_RESTRICTED'

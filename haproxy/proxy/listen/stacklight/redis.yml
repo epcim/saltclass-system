@@ -4,7 +4,8 @@ parameters:
       listen:
         redis:
           mode: tcp
-          check:
+          check: False
+          health-check:
             tcp:
               options:
                 - send PING\r\n

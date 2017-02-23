@@ -1,0 +1,32 @@
+parameters:
+  docker:
+    client:
+      service:
+        openldap:
+          # XXX: docker service is not able to set hostname
+          # https://github.com/docker/docker/issues/24877
+          restart:
+            condition: any
+          image: osixia/openldap:1.1.7
+          environment:
+            HOSTNAME: ldap01.${_param:cluster_public_host}
+            LDAP_ORGANISATION: "${_param:openldap_organisation}"
+            LDAP_DOMAIN: "${_param:openldap_domain}"
+            LDAP_ADMIN_PASSWORD: ${_param:openldap_admin_password}
+            LDAP_CONFIG_PASSWORD: ${_param:openldap_config_password}
+            LDAP_READONLY_USER: true
+            LDAP_READONLY_USER_USERNAME: readonly
+            LDAP_READONLY_USER_PASSWORD: ${_param:openldap_readonly_password}
+            LDAP_TLS: false
+          ports:
+            - 389:389
+            - 636:636
+          volume:
+            database:
+              type: bind
+              source: /srv/volumes/openldap/database
+              destination: /var/lib/ldap
+            config:
+              type: bind
+              source: /srv/volumes/openldap/config
+              destination: /etc/ldap/slapd.d

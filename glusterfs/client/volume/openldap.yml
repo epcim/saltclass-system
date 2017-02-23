@@ -1,0 +1,8 @@
+parameters:
+  glusterfs:
+    client:
+      volumes:
+        openldap:
+          path: /srv/volumes/openldap
+          server: ${_param:cluster_node01_address}
+          opts: 'defaults'

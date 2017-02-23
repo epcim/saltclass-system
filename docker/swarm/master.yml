@@ -1,0 +1,5 @@
+parameters:
+  docker:
+    swarm:
+      role: master
+      advertise_addr: ${_param:single_address}

@@ -1,0 +1,7 @@
+parameters:
+  docker:
+    swarm:
+      role: worker
+      advertise_addr: ${_param:single_address}
+      master:
+        host: ${_param:cluster_node01_address}

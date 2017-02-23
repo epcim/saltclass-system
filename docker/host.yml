@@ -1,0 +1,9 @@
+classes:
+  - service.docker.host
+  - system.linux.system.repo.docker
+parameters:
+  docker:
+    host:
+      insecure_registries:
+        - ${_param:cluster_vip_address}:5000
+        - ${_param:cluster_public_host}:5000

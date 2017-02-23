@@ -1,0 +1,35 @@
+applications:
+  - jenkins
+classes:
+  - service.java.environment
+  - system.docker.host
+parameters:
+  _param:
+    java_environment_version: "8"
+    java_environment_platform: openjdk
+  java:
+    environment:
+      headless: true
+  jenkins:
+    slave:
+      enabled: true
+      pkgs: false
+      sudo: false
+      scripts: []
+      master:
+        host: ${_param:control_vip_address}
+        port: 8081
+        protocol: http
+#      user:
+#        name: admin
+#        password: ${_param:jenkins_admin_password}
+  linux:
+    system:
+      user:
+        jenkins:
+          enabled: true
+          name: jenkins
+          home: /var/lib/jenkins
+          sudo: false
+          groups:
+            - docker

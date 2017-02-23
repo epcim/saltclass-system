@@ -1,0 +1,23 @@
+classes:
+  - service.aptly.server.single
+parameters:
+  aptly:
+    server:
+      enabled: true
+      source:
+        engine: docker
+        image: tcpcloud/aptly
+      user:
+        uid: 501
+        gid: 501
+      home_dir: /srv/volumes/aptly
+      root_dir: /srv/volumes/aptly
+      secure: true
+      no_config: true
+      gpg:
+        keyring: .gnupg/trustdb.gpg
+        keypair_id: ${_param:aptly_gpg_keypair_id}
+        public_key: ${_param:aptly_gpg_public_key}
+        private_key: ${_param:aptly_gpg_private_key}
+      api:
+        enabled: false

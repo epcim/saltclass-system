@@ -1,7 +1,7 @@
 parameters:
   _param:
     salt_minion_ca_common_name: Salt Master CA
-    salt_minion_ca_country: cz 
+    salt_minion_ca_country: cz
     salt_minion_ca_locality: Prague
     salt_minion_ca_organization: Mirantis
     salt_minion_ca_days_valid_authority: 3650

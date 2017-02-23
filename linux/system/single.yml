@@ -29,6 +29,8 @@ parameters:
           net.ipv4.neigh.default.gc_thresh3: 16384
           net.core.netdev_max_backlog: 261144
           kernel.panic: 60
+      cpu:
+        governor: performance
       timezone: UTC
       locale:
         en_US.UTF-8:

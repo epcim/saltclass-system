@@ -8,6 +8,7 @@ parameters:
           common_name: ${_param:cluster_local_address}
           signing_policy: etcd_server
           alternative_names: IP:127.0.0.1,IP:${_param:cluster_local_address},IP:${_param:cluster_vip_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
+          extendedKeyUsage: clientAuth, serverAuth
           key_file: /var/lib/etcd/etcd-server.key
           cert_file: /var/lib/etcd/etcd-server.crt
           all_file: /var/lib/etcd/etcd-server.pem

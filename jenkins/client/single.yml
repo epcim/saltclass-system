@@ -1,4 +1,0 @@
-parameters:
-  jenkins:
-    client:
-      enabled: True

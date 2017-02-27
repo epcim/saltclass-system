@@ -1,0 +1,8 @@
+parameters:
+  glusterfs:
+    client:
+      volumes:
+        registry:
+          path: /srv/volumes/registry
+          server: ${_param:cluster_node01_address}
+          opts: 'defaults'

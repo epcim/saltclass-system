@@ -1,0 +1,31 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        registry:
+          mode: http
+          options:
+            - forwardfor
+            - httpclose
+            - httplog
+          balance: source
+          http_request:
+            - action: "add-header X-Forwarded-Proto https"
+              condition: "if { ssl_fc }"
+          binds:
+            - address: ${_param:haproxy_bind_address}
+              port: 5000
+              ssl: ${_param:cluster_ssl_certificate}
+          servers:
+            - name: ${_param:cluster_node01_name}
+              host: ${_param:cluster_node01_address}
+              port: 15000
+              params: check
+            - name: ${_param:cluster_node02_name}
+              host: ${_param:cluster_node02_address}
+              port: 15000
+              params: check
+            - name: ${_param:cluster_node03_name}
+              host: ${_param:cluster_node03_address}
+              port: 15000
+              params: check

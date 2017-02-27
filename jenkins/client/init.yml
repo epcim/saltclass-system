@@ -1,0 +1,12 @@
+classes:
+  - service.jenkins.support
+  - service.jenkins.client
+parameters:
+  jenkins:
+    client:
+      master:
+        host: ${_param:cluster_vip_address}
+        port: 8081
+        # When Jenkins auth is enabled
+        #user: admin
+        #password: dummy

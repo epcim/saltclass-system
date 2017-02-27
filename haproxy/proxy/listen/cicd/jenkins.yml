@@ -1,0 +1,49 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        jenkins:
+          mode: http
+          options:
+            - forwardfor
+#            - httpchk
+            - httpclose
+            - httplog
+          balance: source
+          http_response:
+            - action: "del-header X-Frame-Options"
+          binds:
+            - address: ${_param:haproxy_bind_address}
+              port: 8081
+          servers:
+            - name: ${_param:cluster_node01_name}
+              host: ${_param:cluster_node01_address}
+              port: 18081
+              params: check
+            - name: ${_param:cluster_node02_name}
+              host: ${_param:cluster_node02_address}
+              port: 18081
+              params: backup check
+            - name: ${_param:cluster_node03_name}
+              host: ${_param:cluster_node03_address}
+              port: 18081
+              params: backup check
+        jenkins_jnlp:
+          mode: tcp
+          balance: source
+          binds:
+            - address: ${_param:haproxy_bind_address}
+              port: 50000
+          servers:
+            - name: ${_param:cluster_node01_name}
+              host: ${_param:cluster_node01_address}
+              port: 50001
+              params: check
+            - name: ${_param:cluster_node02_name}
+              host: ${_param:cluster_node02_address}
+              port: 50001
+              params: backup check
+            - name: ${_param:cluster_node03_name}
+              host: ${_param:cluster_node03_address}
+              port: 50001
+              params: backup check

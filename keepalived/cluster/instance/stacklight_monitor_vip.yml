@@ -3,6 +3,8 @@ applications:
 classes:
 - service.keepalived.support
 parameters:
+  _param:
+    keepalived_stacklight_monitor_vip_priority: 101
   keepalived:
     cluster:
       enabled: true
@@ -12,4 +14,4 @@ parameters:
           password: ${_param:keepalived_stacklight_monitor_vip_password}
           interface: ${_param:keepalived_stacklight_monitor_vip_interface}
           virtual_router_id: 100
-          priority: 101
+          priority: ${_param:keepalived_stacklight_monitor_vip_priority}

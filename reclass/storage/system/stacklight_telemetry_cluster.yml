@@ -15,7 +15,7 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
             single_address: ${_param:stacklight_telemetry_node01_address}
-            keepalived_vip_priority: 103
+            keepalived_stacklight_telemetry_vip_priority: 103
         stacklight_telemetry_node02:
           name: ${_param:stacklight_telemetry_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -25,7 +25,7 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
             single_address: ${_param:stacklight_telemetry_node02_address}
-            keepalived_vip_priority: 102
+            keepalived_stacklight_telemetry_vip_priority: 102
         stacklight_telemetry_node03:
           name: ${_param:stacklight_telemetry_node03_hostname}
           domain: ${_param:cluster_domain}
@@ -35,4 +35,4 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
             single_address: ${_param:stacklight_telemetry_node03_address}
-            keepalived_vip_priority: 101
+            keepalived_stacklight_telemetry_vip_priority: 101

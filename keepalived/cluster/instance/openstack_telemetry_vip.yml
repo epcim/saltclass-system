@@ -7,6 +7,7 @@ parameters:
     keepalived_openstack_telemetry_vip_address: ${_param:cluster_vip_address}
     keepalived_openstack_telemetry_vip_password: password
     keepalived_openstack_telemetry_vip_interface: eth1
+    keepalived_openstack_telemetry_vip_priority: 101
   keepalived:
     cluster:
       enabled: true
@@ -16,4 +17,4 @@ parameters:
           password: ${_param:keepalived_openstack_telemetry_vip_password}
           interface: ${_param:keepalived_openstack_telemetry_vip_interface}
           virtual_router_id: 230
-          priority: 101
+          priority: ${_param:keepalived_openstack_telemetry_vip_priority}

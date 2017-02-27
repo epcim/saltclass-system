@@ -1,6 +1,12 @@
 parameters:
   haproxy:
     proxy:
+      timeout:
+        queue: '10s'
+        connect: '10s'
+        client: '10s'
+        server: '10s'
+        check: '10s'
       listen:
         mysql_cluster:
           type: mysql
@@ -12,12 +18,12 @@ parameters:
           - name: ${_param:cluster_node01_hostname}
             host: ${_param:cluster_node01_address}
             port: 3306
-            params: check
+            params: check inter 20s fastinter 2s downinter 2s rise 3 fall 3
           - name: ${_param:cluster_node02_hostname}
             host: ${_param:cluster_node02_address}
             port: 3306
-            params: backup check
+            params: backup check inter 20s fastinter 2s downinter 2s rise 3 fall 3
           - name: ${_param:cluster_node03_hostname}
             host: ${_param:cluster_node03_address}
             port: 3306
-            params: backup check
+            params: backup check inter 20s fastinter 2s downinter 2s rise 3 fall 3

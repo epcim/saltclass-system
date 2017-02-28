@@ -30,7 +30,7 @@ parameters:
             # Set lowest priority for remain packages from this repo
             # as we want use only galera from here
             - pin: "release a=mos9.0"
-              priority: 400
+              priority: 700
               package: "*"
         mirantis_9_0_mos_updated_repo:
           source: "deb [arch=amd64] http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0 mos9.0-updates restricted main"
@@ -44,5 +44,5 @@ parameters:
             # Set lowest priority for remain packages from this repo
             # as we want use only galera from here
             - pin: "release a=mos9.0-updates"
-              priority: 400
+              priority: 700
               package: "*"

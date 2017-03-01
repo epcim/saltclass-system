@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    haproxy_docker_visualizer_listen_port: 8091
   haproxy:
     proxy:
       listen:
@@ -12,7 +14,7 @@ parameters:
           balance: source
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 8090
+              port: ${_param:haproxy_docker_visualizer_listen_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}

@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    haproxy_aptly_api_bind_port: 8084
+    haproxy_aptly_public_bind_port: 8085
   haproxy:
     proxy:
       listen:
@@ -11,7 +14,7 @@ parameters:
           balance: source
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 8084
+              port: ${_param:haproxy_aptly_api_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
@@ -34,7 +37,7 @@ parameters:
           balance: source
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 8085
+              port: ${_param:haproxy_aptly_public_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}

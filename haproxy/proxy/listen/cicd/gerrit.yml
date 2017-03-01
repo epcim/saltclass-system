@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    haproxy_gerrit_bind_port: 8080
+    haproxy_gerrit_ssh_bind_port: 29417
   haproxy:
     proxy:
       listen:
@@ -12,7 +15,7 @@ parameters:
           balance: source
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 8080
+              port: ${_param:haproxy_gerrit_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
@@ -31,7 +34,7 @@ parameters:
           balance: source
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 29418
+              port: ${_param:haproxy_gerrit_ssh_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}

@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    haproxy_jenkins_bind_port: 8081
+    haproxy_jenkins_jnlp_bind_port: 50000
   haproxy:
     proxy:
       listen:
@@ -14,7 +17,7 @@ parameters:
             - action: "del-header X-Frame-Options"
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 8081
+              port: ${_param:haproxy_jenkins_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
@@ -33,7 +36,7 @@ parameters:
           balance: source
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 50000
+              port: ${_param:haproxy_jenkins_jnlp_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}

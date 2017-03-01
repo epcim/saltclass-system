@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    haproxy_docker_registry_listen_port: 5000
   haproxy:
     proxy:
       listen:
@@ -14,7 +16,7 @@ parameters:
               condition: "if { ssl_fc }"
           binds:
             - address: ${_param:haproxy_bind_address}
-              port: 5000
+              port: ${_param:haproxy_docker_registry_listen_port}
               ssl: ${_param:cluster_ssl_certificate}
           servers:
             - name: ${_param:cluster_node01_name}

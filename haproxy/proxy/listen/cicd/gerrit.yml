@@ -1,7 +1,7 @@
 parameters:
   _param:
     haproxy_gerrit_bind_port: 8080
-    haproxy_gerrit_ssh_bind_port: 29417
+    haproxy_gerrit_ssh_bind_port: 29418
   haproxy:
     proxy:
       listen:

@@ -1,6 +1,7 @@
 parameters:
   _param:
-    haproxy_mysql_bind_port: 8081
+    haproxy_mysql_bind_port: 3306
+    haproxy_mysql_source_port: 3306
   haproxy:
     proxy:
       listen:
@@ -13,13 +14,13 @@ parameters:
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
-              port: 13306
+              port: ${_param:haproxy_mysql_source_port}
               params: check
             - name: ${_param:cluster_node02_name}
               host: ${_param:cluster_node02_address}
-              port: 13306
+              port: ${_param:haproxy_mysql_source_port}
               params: backup check
             - name: ${_param:cluster_node03_name}
               host: ${_param:cluster_node03_address}
-              port: 13306
+              port: ${_param:haproxy_mysql_source_port}
               params: backup check

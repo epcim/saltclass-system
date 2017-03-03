@@ -1,6 +1,6 @@
 parameters:
   _param:
-    salt_master_api_port: 8000
+    salt_master_api_port: 6969
     salt_master_api_permissions:
     - '.*'
     - '@local'

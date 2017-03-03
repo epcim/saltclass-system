@@ -30,8 +30,8 @@ env:
     - ENV_DOMAIN=ci.local
   matrix:
     - CLUSTER_NAME=openstack_mk_contrail
-    #- CLUSTER_NAME=openstack_mk_ovs
-    #- CLUSTER_NAME=kubernetes_mk
+    - CLUSTER_NAME=openstack_mk_ovs
+    - CLUSTER_NAME=kubernetes_mk
 
 install:
   - export RECLASS_SYSTEM=file://$PWD

@@ -1,3 +1,5 @@
+applications:
+- opencontrail
 parameters:
   _param:
     opencontrail_compute_iface_mask: 24

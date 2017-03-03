@@ -123,6 +123,12 @@ parameters:
           sudo: true
           full_name: Sergey Kreys
           home: /home/skreys
+        jcach:
+          enabled: true
+          name: jcach
+          sudo: true
+          full_name: Jan Cach
+          home: /home/jcach
       group:
         libvirtd:
           enabled: true
@@ -226,6 +232,11 @@ parameters:
           public_keys:
           - ${public_keys:skreys}
           user: ${linux:system:user:skreys}
+        jcach:
+          enabled: true
+          public_keys:
+          - ${public_keys:jcach}
+          user: ${linux:system:user:jcach}
   public_keys:
     askotnicky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO6EnDYaGdF/Nn6lntxDNnKanCsheZRdh8kA/6ImyeRSjT2cgepm1Fsgv7wXBYoy0OxhB5wgCp5Az/Pj4oLkG3g+G05sUPUxxGCGRiwjcnyQ/FTz4TzHglAVqgbdgWoQYf9Hg6EKZovvPcH3STbEwcl+MhLqvxz0wm5+StE+wvp6I9dEfRV+2/e1uepauOTZ1+Ui1DMNXiMefTlbiIBHzUk7RiwJWgqzQXBndgunmbJWSed8zC0Ug97waDOFIX/oKZmAmsv0NLJ2e/kC3oUTuziGT74F9sh7Pqiw/9HZxvP45hJwEvytfUjfuiikIBbmYdF7Je93czaG/qjXGN8YvP== a.skotnicky@tcpisek.cz
@@ -265,3 +276,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0N+ds8BGTR+ZQo9NSRGRbjv3T8AbPmtSw2nClXxetRdmHpM/mU7/5iD7qfkCXtNptKeCG/Qk44wlijnAtjztJK1qfvyphHe3etZxLnqhYMm73Yy++yKPE/ywFPFb+7kd0BDy2iZqohZpX3gUi5iDnvXUInHNqqtTv3xFe2kmn3lq5bSRuUMtr61nZ7z/fkX8kNfoGxKrm7bhSo5zq4sjTrj3lk1LKZc1HYji3RwrzBM0z4eyed1BaJyDNtG+eFN4nOnvVn59452AR8SmKJXRErk37rEoQn80xszypzybooFPN5dpdB6u9b4xquFCOD83usb8kEjKY9VIYGuXxEEts1KIF20J+xd8UnZU8d4JL50G8JY8zdNgurR3ZyMD2okuord4cpHF8SVecsAyRV6nuhDxVtF2Xn/RriY02jrLoRPsS+3nIrKt9H8vpQZMYJ+jgEpekZhhVfz4AP3pATzOrWENzNXj5G1bLJs1C9aTtwE27EnKW73XekX/GLsehCwsQ21JvDX8PMxJwLVfqvkRlrc5GILEIVgjZ82Cj6Eens1QobymRAEWuEpZxkPx6u0kGO62ri8zFx8+NYwYDz3mwhHDRT34T/Rvzy/9V9xVjkUQOj9cZ3eYBnC1MffJjx8heHDmSQmUd+99zKa9Hzr74z3AvR3AIgFqmu7kx5fIMew== ubuntu@thinkpad-x1
     skreys:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeg+Wj7yTBRLvsu2LKgdKyb6FW4n3t5me0LAZhGkP9mbsYonE5sN0OwI42ZPYeU1O35c+E4n3GJ4ZzdJYRUQJtqO5EHUMNyXELEcS8GZKydg5A0KPs69bB8SPVlTfO5D77sAWwG/3JIQD/uI21jqCp3a4lyEw5X2HjMbuz2Z4cW7Y69i73RdIYQdYb0X5+mqcVz8YEyuMZi2zweMxsvOczcanQ/4J6JKtC8imJu23Gr0TeS15OJCFh7yGviVp//LBzusXreqlEf7Tzx2yHkJ/rqULIIlPpBC1TFD7sgA72j3kq9rw3ZeQAwmaJA82L3KzagkgSQprEsRYnQ+wSWXkj skreys@skreys
+    jcach:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwAqWUvMAPTh4euvGwhLU3GjlAHVzKvlclKdg1VqmWAZI1Nd+GjKhop5kS3hMk+HCg4bgfE5nAEsp3mF78c+XXDZot1T1Sxsd0SfatkMycXgeK4l1U6QtouNR//7wEv4gPA5la7T5ktgwk7hfjnc9Jl84yS8xA1d5gsgOhQw4wHYQquyOcOA5rN8ylh7P+tEfJSx4PWlfsu9M8IZU9WvftPxNbmUfVF+GuwPcNgbAtMi3Oz2Zg9+6W4gnwfJiufXU+onDa2e5tL8ZsGqEbTQXIx13sg0ilMIT6WpbTtbCe81oZYokAMGY2hlbubhtHgGSQhBI4/qgE7/CsD4TNtuOFTAy8Y6lzvoDsTzR51ApUFHHQEjlsf7AfQFJF3Mb5/fy84K0PF2chz4XwXeO9ZbUGOvY9P349gqyJRIV29V6b8m2aqKYIHO/CRxYk52H1UY9SlCsJq9G+7qjHbugV+35+Za1/RFc0l+80Ei/GnfkYYNxpxHNM6r4sM2mte00lWTQwaSreFIVz/fRlKiaok1hHwwUNxgifdtcdIm+7RGnBgV9MoNGYN4AESKTnj7tr6OIOSLaZm8YbPJDW3VmpSmwGfHpOfI00lfymbKsR5ytn6nTLVHOkfU6pI4+LpUc0Jb9+Szrn+5QA8bGp6yn2DTCzHNW/mR5rrHYUY6o9m8/W4w== casek@casek14NB

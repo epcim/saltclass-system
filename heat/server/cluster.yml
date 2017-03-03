@@ -11,7 +11,7 @@ parameters:
         password: ${_param:heat_domain_admin_password}
         domain: heat
       enabled: true
-      region: RegionOne
+      region: ${_param:openstack_region}
       version: ${_param:heat_version}
       bind:
         api_cfn:

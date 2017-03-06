@@ -21,10 +21,10 @@ parameters:
         mon:
           mon_debug_dump_transactions: False
         client:
-          rbd cache size: 268435456
-          rbd cache max dirty: 134217728
-          rbd cache max dirty age: 5
-          rbd cache: True
+          rbd_cache_size: 268435456
+          rbd_cache_max_dirty: 134217728
+          rbd_cache_max_dirty_age: 5
+          rbd_cache: True
       # TODO: Configure these keys on cluster level
       # keyring:
       #   images:

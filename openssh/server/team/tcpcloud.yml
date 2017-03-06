@@ -135,6 +135,12 @@ parameters:
           sudo: true
           full_name: Lubos Mercl
           home: /home/lmercl
+        smatov:
+          enabled: true
+          name: smatov
+          sudo: true
+          full_name: Sergey Matov
+          home: /home/smatov
       group:
         libvirtd:
           enabled: true
@@ -248,6 +254,11 @@ parameters:
           public_keys:
           - ${public_keys:lmercl}
           user: ${linux:system:user:lmercl}
+        smatov:
+          enabled: true
+          public_keys:
+          - ${public_keys:smatov}
+          user: ${linux:system:user:smatov}
   public_keys:
     askotnicky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO6EnDYaGdF/Nn6lntxDNnKanCsheZRdh8kA/6ImyeRSjT2cgepm1Fsgv7wXBYoy0OxhB5wgCp5Az/Pj4oLkG3g+G05sUPUxxGCGRiwjcnyQ/FTz4TzHglAVqgbdgWoQYf9Hg6EKZovvPcH3STbEwcl+MhLqvxz0wm5+StE+wvp6I9dEfRV+2/e1uepauOTZ1+Ui1DMNXiMefTlbiIBHzUk7RiwJWgqzQXBndgunmbJWSed8zC0Ug97waDOFIX/oKZmAmsv0NLJ2e/kC3oUTuziGT74F9sh7Pqiw/9HZxvP45hJwEvytfUjfuiikIBbmYdF7Je93czaG/qjXGN8YvP== a.skotnicky@tcpisek.cz
@@ -291,3 +302,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwAqWUvMAPTh4euvGwhLU3GjlAHVzKvlclKdg1VqmWAZI1Nd+GjKhop5kS3hMk+HCg4bgfE5nAEsp3mF78c+XXDZot1T1Sxsd0SfatkMycXgeK4l1U6QtouNR//7wEv4gPA5la7T5ktgwk7hfjnc9Jl84yS8xA1d5gsgOhQw4wHYQquyOcOA5rN8ylh7P+tEfJSx4PWlfsu9M8IZU9WvftPxNbmUfVF+GuwPcNgbAtMi3Oz2Zg9+6W4gnwfJiufXU+onDa2e5tL8ZsGqEbTQXIx13sg0ilMIT6WpbTtbCe81oZYokAMGY2hlbubhtHgGSQhBI4/qgE7/CsD4TNtuOFTAy8Y6lzvoDsTzR51ApUFHHQEjlsf7AfQFJF3Mb5/fy84K0PF2chz4XwXeO9ZbUGOvY9P349gqyJRIV29V6b8m2aqKYIHO/CRxYk52H1UY9SlCsJq9G+7qjHbugV+35+Za1/RFc0l+80Ei/GnfkYYNxpxHNM6r4sM2mte00lWTQwaSreFIVz/fRlKiaok1hHwwUNxgifdtcdIm+7RGnBgV9MoNGYN4AESKTnj7tr6OIOSLaZm8YbPJDW3VmpSmwGfHpOfI00lfymbKsR5ytn6nTLVHOkfU6pI4+LpUc0Jb9+Szrn+5QA8bGp6yn2DTCzHNW/mR5rrHYUY6o9m8/W4w== casek@casek14NB
     lmercl:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy6mFrr4oNdLjT5wBZj1+KXNpdawnGGWEevDBQ2SWFjxBFujkWVLiW1kxLTpLVSnuoE5FB7doRIsT/CDe9IU5OhsJ+z6TT56R/pfVKrVnSB1rgrwqdezjgmYEM6kTWiH2GKJE0yiQEPgagK8Rz5Zl420JkhbFWnL7EGPhxNtmYMGDTZwUTzP0KYmytyeH15OqNIiBGTrp1t2bTrVB8HRnUp0uDpfoWAUnsijVGNe1j1bNKtDO0Z9LAWx3eUyxIk4cdpX/EeWJg8jNrSMxtAZZ7Hhm/WInNSNqcHcZ1rEYCAjENxo1WVOuA/aqUqc5xaAipWNon4Rk0e0IUAaFOfLvN2lIuilUZ5XKHDe7a2crkGPnotheT9FgaEHOeFtpuhSaygeZHTMR197jeocgjWIkPqHjVAGSQqQf0TAdNuN73QPTigbbfHWWc1d8KlCM5BqJUXMHPG6BasE1sI/4ykYbxN/DAEvVJ4+rdIlqSdedd73ZAseVQjDtpzD8diScGrpdOhZnTm43q89F8dIFv7tt1TjIwvfcDQNSBjyyKcYpj+NTyW2Zk7qWDVz+lzH0ToYk/rOKkGlrsRy7OwOnmyKR8IcIOL7Bowj895ThCX8tBrdLu/m55ojBOcZiCpawCm7K55ri1Ar6i8cO+bHDh11kKRa/utRRSQTpsW0sbCsamzQ== lubos@lubos-ThinkPad-X1
+    smatov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgBHACRnY/VEEDFE63xDp4bx0zgWY4h1aB9/c2f962HtTNaQ6R/Cz6DLISaB5th8qzrzbvjn9WcpHdxyTm9BqkLLzB4qe7fnebPtn6zGczZ9Btrjk9R8Fuw6DZhSucSk572r/gVIY0O3Z1LajHkNr0ZTQS8AY3fgn8rXMD2vMOruOzyTOmfWKmEw7e+JYUqoFXHhE3Dd7hGQ99d6kH2N3zXfM2rzfjshGAq0kOi5dN4Hx6QIXZapt0t9TzpYTkK5SaVzuEVyVaKRLYSa/rdPjHkKqDFa99RcQ+OI93uvT9CFNWDFIC/TDJ2M+7PQbm836EICXXVWKjQ2NUnQJeOU5v smatov@ubuntu

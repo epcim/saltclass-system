@@ -21,6 +21,9 @@ parameters:
             cert_client:
               type: v3_edge_cert_client
               minions: '*'
+            cert_open:
+              type: v3_edge_cert_open
+              minions: '*'
           days_valid:
             authority: ${_param:salt_minion_ca_days_valid_authority}
             certificate: ${_param:salt_minion_ca_days_valid_certificate}

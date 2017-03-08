@@ -65,3 +65,7 @@ parameters:
             port: 5938
           user: haproxy
           password: ${_param:opencontrail_stats_password}
+  opencontrail:
+    web:
+      database:
+        port: 9042

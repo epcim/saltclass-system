@@ -97,6 +97,8 @@ parameters:
         password: '${_param:keystone_admin_password}'
         token: '${_param:keystone_service_token}'
         tenant: admin
+      database:
+        port: 9042
       network:
         engine: neutron
         host: ${_param:cluster_vip_address}

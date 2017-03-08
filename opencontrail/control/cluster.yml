@@ -14,3 +14,7 @@ parameters:
           version: 1.0.1-0contrail1
         contrail-api-cli:
           version: latest
+  opencontrail:
+    web:
+      database:
+        port: 9042

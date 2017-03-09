@@ -1,0 +1,10 @@
+parameters:
+  opencontrail:
+    client:
+      database_node:
+        ntw01:
+          ip_address: ${_param:cluster_node01_address}
+        ntw02:
+          ip_address: ${_param:cluster_node02_address}
+        ntw03:
+          ip_address: ${_param:cluster_node03_address}

@@ -1,0 +1,7 @@
+parameters:
+  opencontrail:
+    client:
+      virtual_router:
+        compute01:
+          name: cmp01
+          ip_address: ${_param:openstack_compute_node01_single_address}

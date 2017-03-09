@@ -8,4 +8,4 @@ parameters:
         host: ${_param:openstack_control_address}
       config:
         host: ${_param:opencontrail_control_address}
-        port: 8002
+        port: 8082

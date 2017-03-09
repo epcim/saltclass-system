@@ -1,7 +1,11 @@
 parameters:
   _param:
+    haproxy_jenkins_bind_host: ${_param:haproxy_bind_address}
     haproxy_jenkins_bind_port: 8081
+    haproxy_jenkins_jnlp_bind_port: ${_param:haproxy_jenkins_bind_host}
     haproxy_jenkins_jnlp_bind_port: 50000
+    haproxy_jenkins_ssl:
+      enabled: false
   haproxy:
     proxy:
       listen:
@@ -13,11 +17,15 @@ parameters:
             - httpclose
             - httplog
           balance: source
+          http_request:
+            - action: "add-header X-Forwarded-Proto https"
+              condition: "if { ssl_fc }"
           http_response:
             - action: "del-header X-Frame-Options"
           binds:
-            - address: ${_param:haproxy_bind_address}
+            - address: ${_param:haproxy_jenkins_bind_host}
               port: ${_param:haproxy_jenkins_bind_port}
+              ssl: ${_param:haproxy_jenkins_ssl}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
@@ -35,7 +43,7 @@ parameters:
           mode: tcp
           balance: source
           binds:
-            - address: ${_param:haproxy_bind_address}
+            - address: ${_param:haproxy_jenkins_jnlp_bind_host}
               port: ${_param:haproxy_jenkins_jnlp_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}

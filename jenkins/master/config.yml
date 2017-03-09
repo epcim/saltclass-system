@@ -40,6 +40,9 @@ parameters:
                   - method java.net.URLConnection setRequestProperty java.lang.String java.lang.String
                   - method java.util.LinkedHashMap$LinkedHashIterator hasNext
                   - method java.util.Map size
+                  - method java.util.regex.MatchResult group int
+                  - method java.util.regex.Matcher matches
+                  - method java.util.regex.Pattern matcher java.lang.CharSequence
                   - method org.jenkinsci.plugins.workflow.job.WorkflowRun doStop
                   - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper build
                   - new groovy.json.JsonBuilder java.lang.Object
@@ -69,3 +72,18 @@ parameters:
                   - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods plus java.util.List java.util.Collection
                   - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object java.lang.String java.lang.Object
                   - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
+                  - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
+                  - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods println java.lang.Object java.lang.Object
+                  - method hudson.PluginWrapper getShortName
+                  - method hudson.PluginManager getPlugins
+                  - method jenkins.model.Jenkins getPluginManager
+                  - method hudson.model.ItemGroup getItem java.lang.String
+                  - method hudson.model.Job getLastBuild
+                  - method hudson.model.Run getResult
+                  - method hudson.model.Job getBuilds
+                  - staticMethod java.lang.String format java.lang.String java.lang.Object[]
+                  - staticMethod java.util.regex.Pattern quote java.lang.String
+                  - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods findAll java.util.List groovy.lang.Closure
+                  - method java.util.Collection remove java.lang.Object
+                  - staticMethod java.lang.System exit int
+

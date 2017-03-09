@@ -2,11 +2,15 @@ classes:
   - service.jenkins.support
   - service.jenkins.client
 parameters:
+  _param:
+    jenkins_client_user: none
+    jenkins_client_password: none
+    jenkins_master_host: ${_param:control_vip_address}
+    jenkins_master_port: 8081
   jenkins:
     client:
       master:
-        host: ${_param:cluster_vip_address}
-        port: 8081
-        # When Jenkins auth is enabled
-        #user: admin
-        #password: dummy
+        host: ${_param:jenkins_master_host}
+        port: ${_param:jenkins_master_port}
+        user: ${_param:jenkins_client_user}
+        password: ${_param:jenkins_client_password}

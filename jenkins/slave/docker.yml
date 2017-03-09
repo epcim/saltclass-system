@@ -1,0 +1,9 @@
+classes:
+  - system.jenkins.slave
+parameters:
+  linux:
+    system:
+      user:
+        jenkins:
+          groups:
+            - docker

@@ -1,20 +1,20 @@
 classes:
 - system.linux.system.sudo
 # L2
-- system.openssh.server.team.support.aepifanov
-- system.openssh.server.team.support.apetrenko
-- system.openssh.server.team.support.ashishkin
-- system.openssh.server.team.support.atarasov
-- system.openssh.server.team.support.dklepikov
-- system.openssh.server.team.support.dsutyagin
-- system.openssh.server.team.support.ekozhemyakin
-- system.openssh.server.team.support.enikanorov
-- system.openssh.server.team.support.fsoppelsa
-- system.openssh.server.team.support.manashkin
-- system.openssh.server.team.support.nkondra
-- system.openssh.server.team.support.obryndzii
-- system.openssh.server.team.support.oliemieshko
-- system.openssh.server.team.support.sovsianikov
+- system.openssh.server.team.members.aepifanov
+- system.openssh.server.team.members.apetrenko
+- system.openssh.server.team.members.ashishkin
+- system.openssh.server.team.members.atarasov
+- system.openssh.server.team.members.dklepikov
+- system.openssh.server.team.members.dsutyagin
+- system.openssh.server.team.members.ekozhemyakin
+- system.openssh.server.team.members.enikanorov
+- system.openssh.server.team.members.fsoppelsa
+- system.openssh.server.team.members.manashkin
+- system.openssh.server.team.members.nkondra
+- system.openssh.server.team.members.obryndzii
+- system.openssh.server.team.members.oliemieshko
+- system.openssh.server.team.members.sovsianikov
 parameters:
   linux:
     system:

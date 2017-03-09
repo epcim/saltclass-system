@@ -1,26 +1,26 @@
 classes:
 - system.linux.system.sudo
 # L1
-- system.openssh.server.team.support.aleksandrdobdin
-- system.openssh.server.team.support.aleksandrrubtsov
-- system.openssh.server.team.support.anatoliineliubin
-- system.openssh.server.team.support.antonrodionov
-- system.openssh.server.team.support.daniillapshin
-- system.openssh.server.team.support.danilakhmetov
-- system.openssh.server.team.support.deniskostriukov
-- system.openssh.server.team.support.dmitrygoloshubov
-- system.openssh.server.team.support.javierdiaz
-- system.openssh.server.team.support.josuepalmerin
-- system.openssh.server.team.support.krzysztoffranckowski
-- system.openssh.server.team.support.matthewroark
-- system.openssh.server.team.support.maximefimov
-- system.openssh.server.team.support.michaelpetersen
-- system.openssh.server.team.support.mikhailkraynov
-- system.openssh.server.team.support.nadezhdakabanova
-- system.openssh.server.team.support.renesoto
-- system.openssh.server.team.support.rudymccomb
-- system.openssh.server.team.support.scottmachtmes
-- system.openssh.server.team.support.zahedkhurasani
+- system.openssh.server.team.members.aleksandrdobdin
+- system.openssh.server.team.members.aleksandrrubtsov
+- system.openssh.server.team.members.anatoliineliubin
+- system.openssh.server.team.members.antonrodionov
+- system.openssh.server.team.members.daniillapshin
+- system.openssh.server.team.members.danilakhmetov
+- system.openssh.server.team.members.deniskostriukov
+- system.openssh.server.team.members.dmitrygoloshubov
+- system.openssh.server.team.members.javierdiaz
+- system.openssh.server.team.members.josuepalmerin
+- system.openssh.server.team.members.krzysztoffranckowski
+- system.openssh.server.team.members.matthewroark
+- system.openssh.server.team.members.maximefimov
+- system.openssh.server.team.members.michaelpetersen
+- system.openssh.server.team.members.mikhailkraynov
+- system.openssh.server.team.members.nadezhdakabanova
+- system.openssh.server.team.members.renesoto
+- system.openssh.server.team.members.rudymccomb
+- system.openssh.server.team.members.scottmachtmes
+- system.openssh.server.team.members.zahedkhurasani
 parameters:
   linux:
     system:

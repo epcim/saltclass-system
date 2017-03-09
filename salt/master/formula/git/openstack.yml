@@ -100,6 +100,10 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-rabbitmq.git'
               revision: ${_param:salt_master_environment_revision}
+            sahara:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-sahara.git'
+              revision: ${_param:salt_master_environment_revision}
             statsd:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-statsd.git'

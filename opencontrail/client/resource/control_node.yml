@@ -5,7 +5,7 @@ parameters:
     cluster_node03_hostname: ntw03
   opencontrail:
     client:
-      database_node:
+      control_node:
         member01:
           name: ${_param:cluster_node01_hostname}
           ip_address: ${_param:cluster_node01_address}

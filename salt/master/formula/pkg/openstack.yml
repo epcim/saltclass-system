@@ -31,6 +31,9 @@ parameters:
             glusterfs:
               source: pkg
               name: salt-formula-glusterfs
+            designate:
+              source: pkg
+              name: salt-formula-designate
             haproxy:
               source: pkg
               name: salt-formula-haproxy

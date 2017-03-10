@@ -28,6 +28,10 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-cinder.git'
               revision: ${_param:salt_master_environment_revision}
+            designate:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-designate.git'
+              revision: ${_param:salt_master_environment_revision}
             galera:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-galera.git'

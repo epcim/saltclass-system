@@ -1,11 +1,13 @@
 parameters:
+  _param:
+    contrail_compute_dpdk_enabled: True
   nova:
     compute:
       libvirt_service: libvirt-bin
   opencontrail:
     compute:
       dpdk:
-        enabled: true
+        enabled: ${_param:contrail_compute_dpdk_enabled}
         taskset: "${_param:compute_vrouter_taskset}"
         socket_mem: "${_param:compute_vrouter_socket_mem}"
       interface:

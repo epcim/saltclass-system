@@ -8,7 +8,7 @@ parameters:
     server:
       enabled: true
       version: ${_param:ceilometer_version}
-      region: ${_param: openstack_region}
+      region: ${_param:openstack_region}
       cluster: true
       secret: ${_param:ceilometer_secret_key}
       ttl: 86400

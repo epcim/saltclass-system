@@ -1,11 +1,2 @@
-parameters:
-  opencontrail:
-    client:
-      identity:
-        user: admin
-        project: admin
-        password: ${_param:keystone_admin_password}
-        host: ${_param:openstack_control_address}
-      config:
-        host: ${_param:opencontrail_control_address}
-        port: 8082
+classes:
+- service.opencontrail.client.single

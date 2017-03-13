@@ -84,6 +84,8 @@ parameters:
                   - staticMethod java.lang.String format java.lang.String java.lang.Object[]
                   - staticMethod java.util.regex.Pattern quote java.lang.String
                   - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods findAll java.util.List groovy.lang.Closure
+                  - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods find java.util.Collection groovy.lang.Closure
                   - method java.util.Collection remove java.lang.Object
                   - staticMethod java.lang.System exit int
-
+                  - method hudson.model.ItemGroup getItems
+                  - method hudson.model.Item getName

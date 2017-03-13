@@ -1,0 +1,26 @@
+parameters:
+  salt:
+    control:
+      size:
+        infra.cid:
+          cpu: 8
+          ram: 32768
+          disk_profile: large
+          net_profile: default
+      cluster:
+        internal:
+          domain: ${_param:cluster_domain}
+          engine: virt
+          node:
+            cid01:
+              provider: kvm01.${_param:cluster_domain}
+              image: ${_param:salt_control_xenial_image}
+              size: infra.cid
+            cid02:
+              provider: kvm02.${_param:cluster_domain}
+              image: ${_param:salt_control_xenial_image}
+              size: infra.cid
+            cid03:
+              provider: kvm03.${_param:cluster_domain}
+              image: ${_param:salt_control_xenial_image}
+              size: infra.cid

@@ -6,7 +6,7 @@ parameters:
     opencontrail_asn: 64512
   opencontrail:
     client:
-      bpp_router:
+      bgp_router:
         member01:
           name: ${_param:cluster_node01_hostname}
           type: control-node

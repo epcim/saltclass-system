@@ -5,7 +5,7 @@ parameters:
     opencontrail_router02_hostname: mx02
   opencontrail:
     client:
-      bpp_router:
+      bgp_router:
         router01:
           name: ${_param:opencontrail_router01_hostname}
           type: router

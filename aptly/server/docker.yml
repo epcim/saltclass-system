@@ -1,9 +1,12 @@
 classes:
   - service.aptly.server.single
 parameters:
+  _param:
+    aptly_server_secure: true
   aptly:
     server:
       enabled: true
+      secure: ${_param:aptly_server_secure}
       source:
         engine: docker
         image: tcpcloud/aptly

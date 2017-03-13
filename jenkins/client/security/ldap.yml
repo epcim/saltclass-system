@@ -1,0 +1,7 @@
+parameters:
+  jenkins:
+    client:
+      security:
+        ldap:
+          server: ${_param:jenkins_security_ldap_server}
+          root_dn: ${_param:jenkins_security_root_dn}

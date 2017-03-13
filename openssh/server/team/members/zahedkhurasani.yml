@@ -1,0 +1,25 @@
+parameters:
+  linux:
+    system:
+      user:
+        zkhurasani:
+          enabled: true
+          name: zkhurasani
+          sudo: false
+          full_name: Zahed Khurasani
+          home: /home/zkhurasani
+          email: zkhurasani@mirantis.com
+          groups:
+          - support
+  openssh:
+    server:
+      enabled: true
+      user:
+        zkhurasani:
+          enabled: true
+          public_keys: ${public_keys:zkhurasani}
+          user: ${linux:system:user:zkhurasani}
+  public_keys:
+    zkhurasani:
+      - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIFv/QaKxzK3Y5fRWrq8rgiFIlL1nDnwClyhaxUE08lZ3yxOdMuwyR2+ODcm1+ZX8L3YnXGxVA0avDxAZTbGr/Bo8F0QTTtkv827d/7qrtWwnH0egPqIegWAwvh1nDiSaPJNoq6HbvLVjhIwRO9J+qgFrIfu5Ul8FmvaV9wRmuyI44TbtgmHVcLdVGZEJzFCKZvR8nOPXmWJtVuHzUpgGnMgwx06sPBYBuMkamOdsCWZpV6hXFA9Htk6Yws549LJ3fuHk3lv9prYfJz99m6dhqW+P6sx9YOrZCZT6d03aWZ6KOj43MDQMltPmrCKg1HoeQ8emP6Nere2bLbMg2xY5d
+

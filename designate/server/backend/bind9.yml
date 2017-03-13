@@ -1,0 +1,7 @@
+parameters:
+  designate:
+    server:
+      backend:
+        bind9:
+          rndc_key: ${_param:designate_bind9_rndc_key}
+

@@ -1,4 +1,4 @@
 classes:
-  - system_extra.jenkins.client.job.opencontrail.git-mirrors.downstream
-  - system_extra.jenkins.client.job.opencontrail.git-mirrors.upstream
-  - system_extra.jenkins.client.job.opencontrail.git-mirrors.2way
+  - system.jenkins.client.job.opencontrail.git-mirrors.downstream
+  - system.jenkins.client.job.opencontrail.git-mirrors.upstream
+  - system.jenkins.client.job.opencontrail.git-mirrors.2way

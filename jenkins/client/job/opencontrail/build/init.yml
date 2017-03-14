@@ -1,3 +1,3 @@
 classes:
-  - system_extra.jenkins.client.job.opencontrail.build.generic
-  - system_extra.jenkins.client.job.opencontrail.build.dpdk-extra
+  - system.jenkins.client.job.opencontrail.build.generic
+  - system.jenkins.client.job.opencontrail.build.dpdk-extra

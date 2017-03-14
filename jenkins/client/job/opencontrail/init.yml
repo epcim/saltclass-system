@@ -1,6 +1,6 @@
 classes:
-  - system_extra.jenkins.client.job.opencontrail.build
-  - system_extra.jenkins.client.job.opencontrail.git-mirrors
+  - system.jenkins.client.job.opencontrail.build
+  - system.jenkins.client.job.opencontrail.git-mirrors
 parameters:
   _param:
     contrail_branches: "R3.0.2.x,R3.0.3.x,R3.1,R3.1.1.x,R3.2,master"

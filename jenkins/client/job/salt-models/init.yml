@@ -1,6 +1,6 @@
 classes:
-  - system_extra.jenkins.client.job.salt-models.git-mirrors
-  - system_extra.jenkins.client.job.salt-models.tests
+  - system.jenkins.client.job.salt-models.git-mirrors
+  - system.jenkins.client.job.salt-models.tests
 parameters:
   _param:
     salt_formulas_branches: master

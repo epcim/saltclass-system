@@ -1,5 +1,5 @@
 classes:
-  - system_extra.jenkins.client.job.deploy.mk_lab
-  - system_extra.jenkins.client.job.deploy.cicd_lab
-  - system_extra.jenkins.client.job.deploy.demo
-  - system_extra.jenkins.client.job.deploy.reclass_update
+  - system.jenkins.client.job.deploy.mk_lab
+  - system.jenkins.client.job.deploy.cicd_lab
+  - system.jenkins.client.job.deploy.demo
+  - system.jenkins.client.job.deploy.reclass_update

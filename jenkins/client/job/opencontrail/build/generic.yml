@@ -1,5 +1,5 @@
 classes:
-  - system_extra.jenkins.client.job.common
+  - system.jenkins.client.job.common
 parameters:
   jenkins:
     client:

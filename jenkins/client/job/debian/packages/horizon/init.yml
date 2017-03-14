@@ -1,3 +1,3 @@
 classes:
-  - system_extra.jenkins.client.job.debian.packages.horizon.modules
-  - system_extra.jenkins.client.job.debian.packages.horizon.themes
+  - system.jenkins.client.job.debian.packages.horizon.modules
+  - system.jenkins.client.job.debian.packages.horizon.themes

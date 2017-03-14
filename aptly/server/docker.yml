@@ -15,7 +15,6 @@ parameters:
         gid: 501
       home_dir: /srv/volumes/aptly
       root_dir: /srv/volumes/aptly
-      secure: true
       no_config: true
       gpg:
         keyring: .gnupg/trustdb.gpg

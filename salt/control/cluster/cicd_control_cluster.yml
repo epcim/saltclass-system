@@ -2,7 +2,7 @@ parameters:
   salt:
     control:
       size:
-        infra.cid:
+        cicd.control:
           cpu: 8
           ram: 32768
           disk_profile: large
@@ -15,12 +15,12 @@ parameters:
             cid01:
               provider: kvm01.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
-              size: infra.cid
+              size: cicd.control
             cid02:
               provider: kvm02.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
-              size: infra.cid
+              size: cicd.control
             cid03:
               provider: kvm03.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
-              size: infra.cid
+              size: cicd.control

@@ -1,0 +1,5 @@
+classes:
+  - system_extra.jenkins.client.job.debian.packages.extra
+  - system_extra.jenkins.client.job.debian.packages.salt
+  - system_extra.jenkins.client.job.debian.packages.salt-multi
+  - system_extra.jenkins.client.job.debian.packages.horizon

@@ -1,0 +1,67 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        heat_maas_lab:
+          type: workflow
+          concurrent: false
+          display_name: "[Heat] Deploy MAAS lab"
+          param:
+            HEAT_TEMPLATE_URL:
+              type: string
+              default: "git@github.com:Mirantis/mk-lab-heat-templates.git"
+            HEAT_TEMPLATE_CREDENTIALS:
+              type: string
+              default: "git-qa"
+            HEAT_TEMPLATE_BRANCH:
+              type: string
+              default: "master"
+            OPENSTACK_API_CLIENT:
+              type: string
+              default: "liberty"
+            OPENSTACK_API_VERSION:
+              type: string
+              default: "2"
+            OPENSTACK_API_URL:
+              type: string
+              default: "https://vpc.tcpisek.cz:5000/v2.0"
+            OPENSTACK_API_CREDENTIALS:
+              type: string
+              default: "openstack-qa"
+            OPENSTACK_API_PROJECT:
+              type: string
+              default: "mirantis_mk20_qa"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt-qa-credentials"
+            HEAT_STACK_NAME:
+              type: string
+              default: "maas_gate"
+            HEAT_STACK_TEMPLATE:
+              type: string
+              default: "maas_lab"
+            HEAT_STACK_ENVIRONMENT:
+              type: string
+              default: "tcpisek"
+            HEAT_STACK_ZONE:
+              type: string
+              default: "mirantis-zone-qa"
+            HEAT_STACK_PUBLIC_NET:
+              type: string
+              default: "inet2"
+          libs:
+          - repository: pipeline_libs
+            file: macro/common.groovy
+          - repository: pipeline_libs
+            file: macro/git.groovy
+          - repository: pipeline_libs
+            file: macro/http.groovy
+          - repository: pipeline_libs
+            file: macro/openstack.groovy
+          - repository: pipeline_libs
+            file: macro/python.groovy
+          - repository: pipeline_libs
+            file: macro/salt.groovy
+          script:
+            repository: pipeline_libs
+            file: pipeline/provision/heat_maas_lab.groovy

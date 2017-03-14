@@ -1,0 +1,93 @@
+classes:
+  - system_extra.jenkins.client.job.common
+parameters:
+  jenkins:
+    client:
+      job_template:
+        git-mirror:
+          name: git-mirror-{{name}}
+          jobs:
+            - name: contrail-build
+            - name: contrail-controller
+            - name: contrail-vrouter
+            - name: contrail-third-party
+            - name: contrail-generateDS
+            - name: contrail-sandesh
+            - name: contrail-packages
+            - name: contrail-nova-vif-driver
+            - name: contrail-neutron-plugin
+            - name: contrail-nova-extensions
+            - name: contrail-ceilometer-plugin
+            - name: contrail-heat
+            - name: contrail-web-storage
+            - name: contrail-web-server-manager
+            - name: contrail-web-controller
+            - name: contrail-web-core
+            - name: contrail-webui-third-party
+            - name: contrail-dpdk-extra-packages
+            - name: contrail-kubernetes
+          template:
+            discard:
+              build:
+                keep_num: 10
+              artifact:
+                keep_num: 10
+            type: workflow-scm
+            concurrent: false
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "gerrit"
+              script: git-mirror-pipeline.groovy
+              github:
+                url: "https://github.com/Juniper/{{name}}"
+            trigger:
+              github:
+              pollscm:
+                spec: ${_param:jenkins_pollscm_spec}
+            param:
+              SOURCE_URL:
+                type: string
+                default: "https://github.com/Juniper/{{name}}.git"
+              TARGET_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/contrail/{{name}}.git"
+              CREDENTIALS_ID:
+                type: string
+                default: "gerrit"
+              BRANCHES:
+                type: string
+                default: ${_param:contrail_branches}
+      job:
+        git-mirror-ifmap-python-client:
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          type: workflow-scm
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: git-mirror-pipeline.groovy
+            github:
+              url: "https://github.com/tcpcloud/ifmap-python-client"
+          trigger:
+            github:
+            pollscm:
+              spec: ${_param:jenkins_pollscm_spec}
+          param:
+            SOURCE_URL:
+              type: string
+              default: "https://github.com/tcpcloud/ifmap-python-client.git"
+            TARGET_URL:
+              type: string
+              default: "${_param:jenkins_gerrit_url}/contrail/ifmap-python-client.git"
+            CREDENTIALS_ID:
+              type: string
+              default: "gerrit"
+            BRANCHES:
+              type: string
+              default: "master"

@@ -1,0 +1,2 @@
+classes:
+  - system_extra.jenkins.client.job.debian.packages

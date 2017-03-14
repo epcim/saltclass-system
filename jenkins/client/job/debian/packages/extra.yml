@@ -1,0 +1,117 @@
+classes:
+  - system_extra.jenkins.client.job.common
+parameters:
+  jenkins:
+    client:
+      job_template:
+        build-debian:
+          name: build-debian-{{package}}-ubuntu-{{dist}}
+          jobs:
+            - package: librdkafka
+              dist: trusty
+            - package: python-kafka
+              dist: trusty
+            - package: liburcu
+              dist: trusty
+            - package: python-kazoo
+              dist: trusty
+            - package: python-pathlib
+              dist: trusty
+            - package: kafka
+              dist: trusty
+            - package: python-geventhttpclient
+              dist: trusty
+            - package: python-consistent-hash
+              dist: trusty
+            - package: libipfix
+              dist: trusty
+            - package: python-ncclient
+              dist: trusty
+            - package: python-pycassa
+              dist: trusty
+            - package: python-xmltodict
+              dist: trusty
+            - package: python-backports.ssl-match-hostname
+              dist: trusty
+            - package: python-certifi
+              dist: trusty
+            - package: python-docker
+              dist: trusty
+            - package: python-cassandra-driver
+              dist: trusty
+            - package: python-redis
+              dist: trusty
+            - package: python-tabulate
+              dist: trusty
+            - package: cassandra-cpp-driver
+              dist: trusty
+            - package: libuv1
+              dist: trusty
+            - package: python-sseclient
+              dist: trusty
+            - package: librdkafka
+              dist: xenial
+            - package: python-kafka
+              dist: xenial
+            - package: python-geventhttpclient
+              dist: xenial
+            - package: python-consistent-hash
+              dist: xenial
+            - package: libipfix
+              dist: xenial
+            - package: cassandra-cpp-driver
+              dist: xenial
+            - package: python-sseclient
+              dist: xenial
+          template:
+            type: workflow-scm
+            concurrent: false
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "gerrit"
+              script: build-debian-packages-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  debian/{{package}}:
+                    branches:
+                      - debian/{{dist}}
+                message:
+                  build_successful: "Build successful"
+                  build_unstable: "Build unstable"
+                  build_failure: "Build failed"
+                event:
+                  ref:
+                    - updated
+            param:
+              SOURCE_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/debian/{{package}}.git"
+              SOURCE_BRANCH:
+                type: string
+                default: "debian/{{dist}}"
+              SOURCE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              EXTRA_REPO_URL:
+                type: string
+                default: "deb ${_param:jenkins_aptly_url}/{{dist}}/ testing extra"
+              EXTRA_REPO_KEY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_url}/public.gpg"
+              APTLY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_api_url}"
+              APTLY_REPO:
+                type: string
+                default: "ubuntu-{{dist}}-extra"
+              OS:
+                type: string
+                default: "ubuntu"
+              DIST:
+                type: string
+                default: "{{dist}}"
+              ARCH:
+                type: string
+                default: "amd64"

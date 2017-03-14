@@ -1,0 +1,33 @@
+classes:
+  - system_extra.jenkins.client.job.common
+parameters:
+  jenkins:
+    client:
+      job:
+        git-mirror-2way-contrail-kubernetes:
+          type: workflow-scm
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: git-mirror-2way-pipeline.groovy
+            github:
+              url: "https://github.com/Mirantis/contrail-kubernetes"
+          trigger:
+            github:
+            pollscm:
+              spec: ${_param:jenkins_pollscm_spec}
+          param:
+            SOURCE_URL:
+              type: string
+              default: "${_param:jenkins_gerrit_url}/contrail/contrail-kubernetes.git"
+            TARGET_URL:
+              type: string
+              default: "https://github.com/Mirantis/contrail-kubernetes.git"
+            CREDENTIALS_ID:
+              type: string
+              default: "gerrit"
+            BRANCHES:
+              type: string
+              default: ${_param:contrail_kubernetes_branches}

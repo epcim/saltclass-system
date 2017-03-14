@@ -1,0 +1,4 @@
+classes:
+  - system_extra.jenkins.client.job.salt-formulas.git-mirrors
+  - system_extra.jenkins.client.job.salt-formulas.tests
+  - system_extra.jenkins.client.job.salt-formulas.release

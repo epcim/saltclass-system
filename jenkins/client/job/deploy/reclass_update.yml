@@ -1,0 +1,26 @@
+parameters:
+  jenkins:
+    client:
+      job_template:
+        reclass_update:
+          name: deploy-update-{{name}}
+          jobs:
+            - name: mk-ci
+              salt_url: "http://10.10.100.81:8000"
+              salt_credentials: salt-mk-ci
+          template:
+            display_name: "Deploy - update {{name}} environment"
+            type: workflow-scm
+            concurrent: false
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/salt-models/{{name}}"
+              credentials: "gerrit"
+              script: Jenkinsfile
+            param:
+              SALT_MASTER_URL:
+                type: string
+                default: "{{salt_url}}"
+              SALT_MASTER_CREDENTIALS:
+                type: string
+                default: "{{salt_credentials}}"

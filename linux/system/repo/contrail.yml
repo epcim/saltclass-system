@@ -6,9 +6,10 @@ parameters:
     system:
       repo:
         tcpcloud_opencontrail:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ ${_param:linux_system_codename} extra ${_param:linux_repo_contrail_component}"
+          source: "deb [arch=amd64] http://apt-mk.mirantis.com/nightly/ ${_param:linux_system_codename} extra ${_param:linux_repo_contrail_component}"
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
+          key_url: "http://apt-mk.mirantis.com/public.gpg"
+          pin:
           - pin: 'release c=oc30'
             priority: ${_param:contrail_repo_pin_priority}
             package: '*'

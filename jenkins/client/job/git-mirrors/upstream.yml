@@ -27,7 +27,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  {{downstream}}:
+                  "{{downstream}}":
                     branches:
                       - master
                 message:

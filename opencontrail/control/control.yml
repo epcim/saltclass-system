@@ -41,7 +41,7 @@ parameters:
       identity:
         engine: keystone
         version: '2.0'
-        region: RegionOne
+        region: ${_param:openstack_region}
         host: ${_param:openstack_control_address}
         port: 35357
         user: admin

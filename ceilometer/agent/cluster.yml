@@ -3,6 +3,7 @@ classes:
 parameters:
   ceilometer:
     agent:
+      region: ${_param:openstack_region}
       enabled: true
       version: ${_param:ceilometer_version}
       secret: ${_param:ceilometer_secret_key}

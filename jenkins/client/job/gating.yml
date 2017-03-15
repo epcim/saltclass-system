@@ -27,8 +27,8 @@ parameters:
               gerrit:
                 project:
                   '{{name}}\/.*':
-                  compare_type: REG_EXP
-                  branches:
+                    compare_type: REG_EXP
+                    branches:
                       - master
                 skip_vote:
                   - successful

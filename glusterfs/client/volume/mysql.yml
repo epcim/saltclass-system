@@ -1,8 +1,10 @@
 parameters:
+  _param:
+    mysql_glusterfs_service_host: ${_param:glusterfs_service_host}
   glusterfs:
     client:
       volumes:
         mysql:
           path: /srv/volumes/mysql
-          server: ${_param:cluster_node01_address}
+          server: ${_param:mysql_glusterfs_service_host}
           opts: 'defaults'

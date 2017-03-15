@@ -1,8 +1,10 @@
 parameters:
+  _param:
+    artifactory_glusterfs_service_host: ${_param:glusterfs_service_host}
   glusterfs:
     client:
       volumes:
         artifactory:
           path: /srv/volumes/artifactory
-          server: ${_param:cluster_node01_address}
+          server: ${_param:artifactory_glusterfs_service_host}
           opts: 'defaults'

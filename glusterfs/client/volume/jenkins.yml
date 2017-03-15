@@ -1,10 +1,12 @@
 parameters:
+  _param:
+    jenkins_glusterfs_service_host: ${_param:glusterfs_service_host}
   glusterfs:
     client:
       volumes:
         jenkins:
           path: /srv/volumes/jenkins
-          server: ${_param:cluster_node01_address}
+          server: ${_param:jenkins_glusterfs_service_host}
           opts: 'defaults'
           user: 1000
           group: 1000

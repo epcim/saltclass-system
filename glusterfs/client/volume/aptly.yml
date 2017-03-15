@@ -1,8 +1,10 @@
 parameters:
+  _param:
+    aptly_glusterfs_service_host: ${_param:glusterfs_service_host}
   glusterfs:
     client:
       volumes:
         aptly:
           path: /srv/volumes/aptly
-          server: ${_param:cluster_node01_address}
+          server: ${_param:aptly_glusterfs_service_host}
           opts: 'defaults'

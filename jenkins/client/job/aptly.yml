@@ -1,6 +1,3 @@
-classes:
-  - system.jenkins.client.job.common
-
 parameters:
   jenkins:
     client:

@@ -1,6 +1,6 @@
-classes:
-  - system.jenkins.client.job.common
 parameters:
+  _param:
+    jenkins_pollscm_spec: "H/60 * * * *"
   jenkins:
     client:
       job_template:

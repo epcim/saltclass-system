@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    jenkins_packer_pipeline: "${_param:jenkins_gerrit_url}/mk/packer-templates"
   jenkins:
     client:
       job:

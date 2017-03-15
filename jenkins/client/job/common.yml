@@ -1,7 +1,6 @@
 parameters:
   _param:
     jenkins_gerrit_url: "ssh://jenkins-mk@gerrit.mcp.mirantis.net:29418"
-    jenkins_pipeline_libs: "${_param:jenkins_gerrit_url}/tcp/ccp-pipeline-libs"
     jenkins_packer_pipeline: "${_param:jenkins_gerrit_url}/mk/packer-templates"
     jenkins_contrail_pipeline: "${_param:jenkins_gerrit_url}/contrail/contrail-pipeline"
     jenkins_aptly_api_url: "http://10.10.100.85:8081"

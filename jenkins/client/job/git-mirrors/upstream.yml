@@ -11,6 +11,10 @@ parameters:
               downstream: mcp-ci/pipeline-library.git
               upstream: "git@github.com:Mirantis/pipeline-library.git"
               branches: master
+            - name: mk-pipelines
+              downstream: mk/mk-pipelines.git
+              upstream: "git@github.com:Mirantis/mk-pipelines.git"
+              branches: master
           template:
             discard:
               build:

@@ -15,29 +15,29 @@ parameters:
         user: ${_param:jenkins_client_user}
         password: ${_param:jenkins_client_password}
       plugin:
-        slack: {}
-        extended-choice-parameter: {}
-        rebuild: {}
-        test-stability: {}
+        ansicolor: {}
         build-blocker-plugin: {}
+        build-monitor-plugin: {}
+        build-user-vars-plugin: {}
+        categorized-view: {}
+        description-setter: {}
+        discard-old-build: {}
+        docker-workflow: {}
+        extended-choice-parameter: {}
+        gerrit-trigger: {}
         heavy-job: {}
+        matrix-auth: {}
+        monitoring: {}
+        pipeline-utility-steps: {}
+        rebuild: {}
+        simple-theme-plugin: {}
+        slack: {}
+        test-stability: {}
+        timestamper: {}
         workflow-cps: {}
         workflow-remote-loader: {}
-        workflow-scm-step: {}
-        docker-workflow: {}
-        gerrit-trigger: {}
-        pipeline-utility-steps: {}
-        discard-old-build: {}
-        ansicolor: {}
-        timestamper: {}
-        build-user-vars-plugin: {}
-        description-setter: {}
-        build-monitor-plugin: {}
-        categorized-view: {}
-        monitoring: {}
-        matrix-auth: {}
-        simple-theme-plugin: {}
-
+        workflow-scm-step:
+          restart: true
       lib:
         pipeline-library:
           enabled: true

@@ -1,13 +1,19 @@
+#
+# Following job is about to simply execute Jenkinsfile of given Reclass model
+#
 parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+    jenkins_salt_model_name: "salt"
   jenkins:
     client:
       job_template:
-        reclass_update:
+        update_salt_env:
           name: deploy-update-{{name}}
           jobs:
-            - name: mk-ci
-              salt_url: "http://10.10.100.81:8000"
-              salt_credentials: salt-mk-ci
+            - name: ${_param:jenkins_salt_env_name}
+              salt_url: "${_param:jenkins_salt_api_url}"
+              salt_credentials: salt
           template:
             display_name: "Deploy - update {{name}} environment"
             type: workflow-scm

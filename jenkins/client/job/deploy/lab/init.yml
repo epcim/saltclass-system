@@ -1,0 +1,6 @@
+classes:
+  - system.jenkins.client.job.deploy.lab.mk.physical
+  - system.jenkins.client.job.deploy.lab.mk.virtual
+  - system.jenkins.client.job.deploy.lab.mk.cleanup
+  - system.jenkins.client.job.deploy.lab.cicd
+  - system.jenkins.client.job.deploy.lab.demo

@@ -1,18 +1,12 @@
 parameters:
+  _param:
+    jenkins_git_mirror_downstream_jobs: []
   jenkins:
     client:
       job_template:
-        git_mirror_upstream_common:
-          name: git-mirror-upstream-{{name}}
-          jobs:
-            - name: pipeline-library
-              downstream: mcp-ci/pipeline-library.git
-              upstream: "git@github.com:Mirantis/pipeline-library.git"
-              branches: master
-            - name: mk-pipelines
-              downstream: mk/mk-pipelines.git
-              upstream: "git@github.com:Mirantis/mk-pipelines.git"
-              branches: master
+        git_mirror_downstream_common:
+          name: git-mirror-downstream-{{name}}
+          jobs: ${_param:jenkins_git_mirror_downstream_jobs}
           template:
             discard:
               build:
@@ -42,10 +36,10 @@ parameters:
             param:
               SOURCE_URL:
                 type: string
-                default: "${_param:jenkins_gerrit_url}/{{downstream}}"
+                default: "{{upstream}}"
               TARGET_URL:
                 type: string
-                default: "{{upstream}}"
+                default: "${_param:jenkins_gerrit_url}/{{downstream}}"
               CREDENTIALS_ID:
                 type: string
                 default: "gerrit"

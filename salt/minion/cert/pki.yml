@@ -1,0 +1,3 @@
+classes:
+- system.salt.minion.cert.wildcard
+- system.salt.minion.cert.proxy

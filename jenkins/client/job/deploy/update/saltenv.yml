@@ -11,7 +11,7 @@ parameters:
         update_salt_env:
           name: deploy-update-{{name}}
           jobs:
-            - name: ${_param:jenkins_salt_env_name}
+            - name: ${_param:jenkins_salt_model_name}
               salt_url: "${_param:jenkins_salt_api_url}"
               salt_credentials: salt
           template:

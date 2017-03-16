@@ -21,6 +21,8 @@ parameters:
     - /bin/su -
     - /bin/su
     - /usr/sbin/visudo
+    sudo_coreutils_safe:
+    - /usr/bin/less
     sudo_salt_safe:
     - /usr/bin/salt state*
     - /usr/bin/salt service*

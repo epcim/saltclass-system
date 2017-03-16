@@ -36,3 +36,12 @@ parameters:
         categorized-view: {}
         monitoring: {}
         matrix-auth: {}
+        simple-theme-plugin: {}
+     theme:
+       css_url: /userContent/theme/mirantis.css
+       js_url: /userContent/theme/mirantis.js
+     lib:
+       pipeline-library:
+         enabled: true
+         url: ${_param:jenkins_gerrit_url}/mcp-ci/pipeline-library
+         credential_id: gerrit

@@ -5,9 +5,9 @@ parameters:
     jenkins_git_mirror_downstream_jobs:
       - name: pipeline-library
         downstream: mcp-ci/pipeline-library.git
-        upstream: "git@github.com:Mirantis/pipeline-library.git"
+        upstream: "https://github.com/Mirantis/pipeline-library"
         branches: master
       - name: mk-pipelines
         downstream: mk/mk-pipelines.git
-        upstream: "git@github.com:Mirantis/mk-pipelines.git"
+        upstream: "https://github.com/Mirantis/mk-pipelines"
         branches: master

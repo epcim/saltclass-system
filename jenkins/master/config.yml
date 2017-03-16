@@ -91,3 +91,5 @@ parameters:
                   - method hudson.model.Item getName
                   - method java.util.Map remove java.lang.Object
                   - staticMethod java.lang.System getProperty java.lang.String
+                  - staticMethod java.lang.Integer valueOf java.lang.String
+                  - method java.util.List subList int int

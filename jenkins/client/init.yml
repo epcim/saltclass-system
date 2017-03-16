@@ -25,6 +25,7 @@ parameters:
         docker-workflow: {}
         extended-choice-parameter: {}
         gerrit-trigger: {}
+        git: {}
         heavy-job: {}
         matrix-auth: {}
         monitoring: {}

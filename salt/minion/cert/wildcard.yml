@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    salt_minion_ca_authority: salt_master_ca
+  salt:
+    minion:
+      cert:
+        wildcard:
+          host: ${_param:salt_minion_ca_host}
+          signing_policy: cert_server
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: wildcard.${_param:cluster_public_host}
+          alternative_names: IP:127.0.0.1,IP:${_param:openstack_proxy_address},IP:${_param:cluster_public_host},DNS:*.${_param:cluster_public_host},DNS:${_param:cluster_domain},DNS:*.${_param:cluster_domain}
+          key_file:  /srv/salt/env/${_param:salt_master_base_environment}/wildcard.${_param:cluster_public_host}.key
+          cert_file: /srv/salt/env/${_param:salt_master_base_environment}/wildcard.${_param:cluster_public_host}.crt
+          all_file:  /srv/salt/env/${_param:salt_master_base_environment}/wildcard-with-key.${_param:cluster_public_host}.pem

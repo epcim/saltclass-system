@@ -89,3 +89,5 @@ parameters:
                   - staticMethod java.lang.System exit int
                   - method hudson.model.ItemGroup getItems
                   - method hudson.model.Item getName
+                  - method java.util.Map remove java.lang.Object
+                  - staticMethod java.lang.System getProperty java.lang.String

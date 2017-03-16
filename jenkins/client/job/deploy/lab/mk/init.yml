@@ -1,6 +1,7 @@
 parameters:
   _param:
     jenkins_deploy_lab_mk_jobs: []
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
   jenkins:
     client:
       job_template:
@@ -69,7 +70,7 @@ parameters:
                 default: "salt-qa-credentials"
               SALT_MASTER_URL:
                 type: string
-                default: ""
+                default: "${_param:jenkins_salt_api_url}"
 
               # openstack api
               OPENSTACK_API_URL:

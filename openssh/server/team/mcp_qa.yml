@@ -26,6 +26,18 @@ parameters:
           sudo: true
           full_name: Oleksandr Kosse
           home: /home/okosse
+        yshapovalov:
+          enabled: true
+          name: yshapovalov
+          sudo: true
+          full_name: Yevgeniy Shapovalov
+          home: /home/yshapovalov
+        dderyabin:
+          enabled: true
+          name: dderyabin
+          sudo: true
+          full_name: Denis Deryabin
+          home: /home/dderyabin
       group:
         libvirtd:
           enabled: true
@@ -54,6 +66,16 @@ parameters:
           public_keys:
           - ${public_keys:okosse}
           user: ${linux:system:user:okosse}
+        yshapovalov:
+          enabled: true
+          public_keys:
+          - ${public_keys:yshapovalov}
+          user: ${linux:system:user:yshapovalov}
+        dderyabin:
+          enabled: true
+          public_keys:
+          - ${public_keys:dderyabin}
+          user: ${linux:system:user:dderyabin}
   public_keys:
     ddmitriev:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuD4wJ8hzkchQ0pfgdwWukQyps1xYRfHOsjosmDu/mmgaXVud5mnpwb2q35E2YYTox2mx+ulJqyS+099gz6MPg4P8D5qdMuRbAsJqbceLaaIGQhdT8qgSo7ESrl5pwvYnfWzKLKF0z5s7nrW0nvArC40zhV9o9XpvzzzSFByepWfkwA8ReldGUYVvTKp8YXaCrqEdMZrU42adPM2nl+fYBbGF+h4/Ka247aVjPeER0blV3znFXbv2Kf38G+i/TEGaktgpBdtGGDi1tX2loMypmTJeqZRJnM0Eoly0BnynB7CSxn11eoIXBUe1mVYNqmQd1hw6uh59iymhK5j939v9J ddmitriev@dis_xcom
@@ -63,3 +85,7 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLtOIkzqNA3wdLQyQxLRaRwi4oXnRCPCsrn8oaAyxDXHhU3+ATGvXBdbkA6xU3d4hAohru5DwxGzyikzAAtrv79GWA9/ryXPcplmxBiJcN36GyfW6eX89hI1VIJMKMG3cUs0ONf2D+hENhbaO0pu4hNAb5HFcHAuqecQNOFFrJ3RqnWM8RWgJPY3iF1A9JnXwVrUgME962VPlydYvlL5mLk+h+4DgHuPipw/Qana5a2JfdErsPYeAdDwG8frCdA9wvMzVVZv78s0lA6BritQdd0SyZejbOlT9KVHhSOhqnWdCtd8+nZXzXgjV7GAiv7H9yE4Ee6QYSHUQHwJxZs3ZT tleontovich@tleontovich-pc
     okosse:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmb5FWl6dgK09TmxVYuvmfLyy6G9x2ed6dvXf0kfpMaaP37CST7t0UZ2m23qGF4T0ZGYbCkIdr+6zWG+a5ozuJiqoJwE3dLun8pnCwAjkmUxRyVIi9M6f3us4z+ooBZTBGWTGe7/ryqePpzyAjlw4om23pDTt09YQq5WDirdrFBNJ9ZlTwubbEWMTtHW5XMEui7s1IiggYmHI4cVh0lg7k/neoAk/5ZD9LI9+p2sISCOpD/f7C/BkgVd/4iCFNxXsPmMwRadBVYo8diB0OOekM6qsW5rfPCczCi9oavxjy62Z2XZ6wHPZ3HgeK8MhVJaRGge6zMTnB98aYh9LWfXFv okosse@okosse-pc
+    yshapovalov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWvKNMfHlugrEUMtDDJzZb3T1UzThOp/UtvQvyFTf1rlKN/i14b1cCVmbPaSKR6W4bqZ4YLnRfb5Z66ktEACL02RdC4FkCiGa8yFDAGXLbM2WJhHyA3ksu91z3wK2QRuKJuZuvjmelds1shTK1a31LgTqa7CNPfkfE9h+CsAizZfAhHg1yVqg0/CGKP8+iV8owR5MP9t8+JXTC40G6Qkjzrf/vuA13bT1X+JSWzLoI2OefezZ+X128fLkssPkr4IS1Jg+cbRvSRmGTVjvtk4dnDo3QxF5lUl6JZAUjPslMCxaqDvRFXn86UZ74g6iJ5dZjrU0vn6X+Ov+KVYmZ5znd yshapovalov@ys-pc
+    dderyabin:
+      key: AAAAB3NzaC1yc2EAAAADAQABAAABAQCljOKDvsoOsQFOsabL68kVTlzZOObP9d13Oqc7Lafew1MJx0uaCjabpfcaSOrLrqYu42akkpnHQ0ypQbzRWDREYWKciKmE1TKzRUTXZIF1FNNoFrDT7FfjrKVP42alk4isB0Yj9mvA6AhJGFM7pAy55dVEII30Rc0wKW6XCBAX8fIq3rHDnDYq7KuaSAtxkqj6u/C9eUcGBB+JIQ0NRhTVyIZlqjNeojXoM7py8pGDnGj54bIbpFtYiLU1hbowKfVVcJgHIE+17KsNvR7HwwZZ5lbUxzrOiOnoBq1JKF15JHQ3el358aKw3Ee7rqmVrHszohEBLfxRbWbACoTUem75 denis@usvbox

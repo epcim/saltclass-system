@@ -137,6 +137,8 @@ parameters:
               dist: trusty
             - name: pritunl
               dist: trusty
+            - name: prometheus
+              dist: trusty
             - name: python
               dist: trusty
             - name: rabbitmq
@@ -166,6 +168,8 @@ parameters:
             - name: supervisor
               dist: trusty
             - name: taiga
+              dist: trusty
+            - name: telegraf
               dist: trusty
             - name: varnish
               dist: trusty
@@ -303,6 +307,8 @@ parameters:
               dist: xenial
             - name: pritunl
               dist: xenial
+            - name: prometheus
+              dist: xenial
             - name: python
               dist: xenial
             - name: rabbitmq
@@ -332,6 +338,8 @@ parameters:
             - name: supervisor
               dist: xenial
             - name: taiga
+              dist: xenial
+            - name: telegraf
               dist: xenial
             - name: varnish
               dist: xenial

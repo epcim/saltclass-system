@@ -80,6 +80,7 @@ parameters:
             - name: postfix
             - name: postgresql
             - name: pritunl
+            - name: prometheus
             - name: python
             - name: rabbitmq
             - name: reclass
@@ -96,6 +97,7 @@ parameters:
             - name: supervisor
             - name: swift
             - name: taiga
+            - name: telegraf
             - name: varnish
             - name: zookeeper
           template:

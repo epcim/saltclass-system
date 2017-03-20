@@ -11,43 +11,43 @@ parameters:
               os: ubuntu
               dist: trusty
               branch: R3.0.3.x
-              ppa: mirantis/opencontrail-3.0.3
+              ppa: mirantis-opencontrail/opencontrail-3.0.3
               upload_source_package: false
             - buildname: oc31
               os: ubuntu
               dist: trusty
               branch: R3.1
-              ppa: mirantis/opencontrail-3.1
+              ppa: mirantis-opencontrail/opencontrail-3.1
               upload_source_package: true
             - buildname: oc31
               os: ubuntu
               dist: xenial
               branch: R3.1
-              ppa: mirantis/opencontrail-3.1
+              ppa: mirantis-opencontrail/opencontrail-3.1
               upload_source_package: true
             - buildname: oc311
               os: ubuntu
               dist: trusty
               branch: R3.1.1.x
-              ppa: mirantis/opencontrail-3.1.1
+              ppa: mirantis-opencontrail/opencontrail-3.1.1
               upload_source_package: true
             - buildname: oc311
               os: ubuntu
               dist: xenial
               branch: R3.1.1.x
-              ppa: mirantis/opencontrail-3.1.1
+              ppa: mirantis-opencontrail/opencontrail-3.1.1
               upload_source_package: true
             - buildname: oc32
               os: ubuntu
               dist: trusty
               branch: R3.2
-              ppa: mirantis/opencontrail-3.2
+              ppa: mirantis-opencontrail/opencontrail-3.2
               upload_source_package: true
             - buildname: oc32
               os: ubuntu
               dist: xenial
               branch: R3.2
-              ppa: mirantis/opencontrail-3.2
+              ppa: mirantis-opencontrail/opencontrail-3.2
               upload_source_package: true
           template:
             discard:

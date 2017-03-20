@@ -1,0 +1,10 @@
+classes:
+- service.kubernetes.master.cluster
+parameters:
+  server:
+    target:
+      kubernetes:
+        api_ip: ${kubernetes:master:apiserver:address}
+        ssl_dir: /opt/prometheus/config
+        cert_name: kubelet-client.crt
+        key_name: kubelet-client.key

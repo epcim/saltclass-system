@@ -1,0 +1,8 @@
+parameters:
+  docker:
+    client:
+      network:
+        monitoring:
+          driver: overlay
+          opt:
+            encrypted: true

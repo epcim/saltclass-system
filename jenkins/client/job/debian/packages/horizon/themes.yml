@@ -80,3 +80,6 @@ parameters:
               ARCH:
                 type: string
                 default: "amd64"
+              UPLOAD_APTLY:
+                type: boolean
+                default: 'true'

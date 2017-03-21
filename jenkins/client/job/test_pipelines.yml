@@ -15,11 +15,11 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
-            script: git-mirror-2way-pipeline.groovy
+            script: test-groovy-pipeline.groovy
           trigger:
             gerrit:
               project:
-                mk/mk-pipelines":
+                "mk/mk-pipelines":
                   branches:
                     - master
               event:
@@ -37,7 +37,7 @@ parameters:
               default: "gerrit"
             GRADLE_IMAGE:
               type: string
-              default: niaquinto/gradle
+              default: "niaquinto/gradle"
             GRADLE_CMD:
               type: string
-              default: check
+              default: "check"

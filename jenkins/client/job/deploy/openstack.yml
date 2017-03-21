@@ -15,19 +15,19 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
             script: lab-pipeline.groovy
-            param:
-              # deployments and test settings
-              STACK_TYPE:
-                type: string
-                default: "physical"
-              INSTALL:
-                type: string
-                default: "core,kvm,openstack,stacklight"
+          param:
+            # deployments and test settings
+            STACK_TYPE:
+              type: string
+              default: "physical"
+            INSTALL:
+              type: string
+              default: "core,kvm,openstack,stacklight"
 
-              # salt master
-              SALT_MASTER_CREDENTIALS:
-                type: string
-                default: "salt"
-              SALT_MASTER_URL:
-                type: string
-                default: ""
+            # salt master
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            SALT_MASTER_URL:
+              type: string
+              default: ""

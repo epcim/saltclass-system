@@ -2,8 +2,8 @@ parameters:
   jenkins:
     client:
       job:
-        test-mk-pipelines-pipeline:
-          name: test-mk-pipelines
+        test-mk-mk-pipelines:
+          name: test-mk-mk-pipelines
           discard:
             build:
               keep_num: 25

@@ -71,3 +71,11 @@ parameters:
               APTLY_URL:
                 type: string
                 default: "${_param:jenkins_aptly_api_url}"
+              COMPONENTS:
+                type: string
+                default: "all"
+                description: "Comma separated list (,)"
+              PACKAGES:
+                type: string
+                default: "all"
+                description: "Comma separated list (,)"

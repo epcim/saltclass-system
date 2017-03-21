@@ -408,3 +408,12 @@ parameters:
               ARCH:
                 type: string
                 default: "amd64"
+              PPA:
+                type: string
+                default: "salt-formulas/ppa"
+              UPLOAD_PPA:
+                type: boolean
+                default: 'true'
+              UPLOAD_APTLY:
+                type: boolean
+                default: 'true'

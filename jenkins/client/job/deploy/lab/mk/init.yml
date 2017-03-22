@@ -29,7 +29,7 @@ parameters:
                 default: "{{install}}"
               TEST:
                 type: string
-                default: ""
+                default: "{{test}}"
 
               # heat
               HEAT_TEMPLATE_URL:

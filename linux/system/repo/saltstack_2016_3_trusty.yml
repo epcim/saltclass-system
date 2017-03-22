@@ -1,3 +1,4 @@
+##Obsolete, please use repo/saltstack/trusty
 parameters:
   linux:
     system:

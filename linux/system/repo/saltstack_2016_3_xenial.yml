@@ -1,3 +1,4 @@
+##Obsolete, please use repo/saltstack/xenial
 parameters:
   linux:
     system:

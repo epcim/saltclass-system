@@ -9,3 +9,4 @@ parameters:
           server: ${_param:glance_glusterfs_service_host}
           user: glance
           group: glance
+          opts: "defaults,backup-volfile-servers=${_param:cluster_node01_address}:${_param:cluster_node02_address}:${_param:cluster_node03_address}"

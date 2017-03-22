@@ -1,4 +1,8 @@
 parameters:
+  _param:
+    docker_image_aptly:
+      api: tcpcloud/aptly-api
+      public: tcpcloud/aptly-public
   docker:
     client:
       service:

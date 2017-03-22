@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    docker_image_openldap: osixia/openldap:1.1.7
   docker:
     client:
       service:
@@ -7,7 +9,7 @@ parameters:
           # https://github.com/docker/docker/issues/24877
           restart:
             condition: any
-          image: osixia/openldap:1.1.7
+          image: ${_param:docker_image_openldap}
           environment:
             HOSTNAME: ldap01.${_param:cluster_public_host}
             LDAP_ORGANISATION: "${_param:openldap_organisation}"

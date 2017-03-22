@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    docker_image_jenkins: tcpcloud/jenkins:2.50
   docker:
     client:
       service:

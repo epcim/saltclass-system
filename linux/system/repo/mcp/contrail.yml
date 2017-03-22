@@ -5,7 +5,7 @@ parameters:
   linux:
     system:
       repo:
-        tcpcloud_opencontrail:
+        mcp_opencontrail:
           source: "deb [arch=amd64] http://apt-mk.mirantis.com/${_param:linux_system_codename}/ ${_param:apt_mk_version} ${_param:openstack_version} ${_param:linux_repo_contrail_component} extra"
           architectures: amd64
           key_url: "http://apt-mk.mirantis.com/public.gpg"

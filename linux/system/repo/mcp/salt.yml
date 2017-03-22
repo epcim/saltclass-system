@@ -4,7 +4,7 @@ parameters:
   linux:
     system:
       repo:
-        mcp_extra:
+        mcp_salt:
           source: "deb [arch=amd64] http://apt-mk.mirantis.com/${_param:linux_system_codename}/ ${_param:apt_mk_version} salt"
           architectures: amd64
           key_url: "http://apt-mk.mirantis.com/public.gpg"

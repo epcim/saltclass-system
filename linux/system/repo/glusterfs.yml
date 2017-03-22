@@ -1,0 +1,9 @@
+parameters:
+  linux:
+    system:
+      repo:
+        glusterfs-ppa:
+          source: "deb http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu trusty main"
+          architectures: amd64
+          key_id: 3FE869A9
+          key_server: keyserver.ubuntu.com

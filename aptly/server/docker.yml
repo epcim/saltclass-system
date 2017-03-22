@@ -2,7 +2,10 @@ classes:
   - service.aptly.server.single
 parameters:
   _param:
-    aptly_server_secure: true
+    aptly_server_secure: false
+    aptly_gpg_keypair_id: none
+    aptly_gpg_public_key: none
+    aptly_gpg_private_key: none
   aptly:
     server:
       enabled: true

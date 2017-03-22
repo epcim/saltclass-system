@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    docker_image_registry: registry:2
   docker:
     client:
       service:

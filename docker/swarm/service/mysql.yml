@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    docker_image_mysql: mysql:5.6
   docker:
     client:
       service:
@@ -10,7 +12,7 @@ parameters:
             MYSQL_ROOT_PASSWORD: ${_param:mysql_admin_password}
           restart:
             condition: any
-          image: "mysql:5.6"
+          image: "${_param:docker_image_mysql}"
           ports:
             - 13306:3306
           volume:

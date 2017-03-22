@@ -1,11 +1,13 @@
 parameters:
+  _param:
+    docker_image_visualizer: manomarks/visualizer
   docker:
     client:
       service:
         visualizer:
           restart:
             condition: any
-          image: manomarks/visualizer
+          image: ${_param:docker_image_visualizer}
           constraint: "node.role==manager"
           ports:
             - 18090:8080

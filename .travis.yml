@@ -4,8 +4,8 @@ sudo: required
 addons:
   apt:
     sources:
-    - sourceline: 'deb http://apt.tcpcloud.eu/nightly trusty tcp tcp-salt'
-    - key_url: 'http://apt.tcpcloud.eu/public.gpg'
+    - sourceline: 'deb http://apt-mk.mirantis.com/trusty nightly salt'
+    - key_url: 'http://apt-mk.mirantis.com/public.gpg'
     packages:
     - curl
     - subversion

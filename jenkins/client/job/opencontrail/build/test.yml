@@ -11,7 +11,7 @@ parameters:
               branch: R3.1
             - buildname: oc31
               os: ubuntu
-              dist: trusty
+              dist: xenial
               branch: R3.1
             - buildname: oc311
               os: ubuntu
@@ -19,7 +19,7 @@ parameters:
               branch: R3.1.1.x
             - buildname: oc311
               os: ubuntu
-              dist: trusty
+              dist: xenial
               branch: R3.1.1.x
             - buildname: oc32
               os: ubuntu
@@ -27,7 +27,7 @@ parameters:
               branch: R3.2
             - buildname: oc32
               os: ubuntu
-              dist: trusty
+              dist: xenial
               branch: R3.2
           template:
             discard:

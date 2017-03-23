@@ -1,6 +1,5 @@
 classes:
 - service.horizon.server.single
-- system.horizon.server.plugin.theme
 parameters:
   _param:
     horizon_site_branding: OpenStack Dashboard

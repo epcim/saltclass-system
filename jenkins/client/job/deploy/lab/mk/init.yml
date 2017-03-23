@@ -102,3 +102,7 @@ parameters:
                 type: string
                 default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
 
+              ASK_ON_ERROR:
+                type: boolean
+                default: 'false'
+

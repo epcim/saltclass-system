@@ -31,3 +31,6 @@ parameters:
             SALT_MASTER_URL:
               type: string
               default: ""
+            ASK_ON_ERROR:
+                type: boolean
+                default: 'false'

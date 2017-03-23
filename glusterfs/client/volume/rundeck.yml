@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    rundeck_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        rundeck:
+          path: /srv/volumes/rundeck
+          server: ${_param:rundeck_glusterfs_service_host}
+          opts: 'defaults'

@@ -1,0 +1,13 @@
+parameters:
+  devops_portal:
+    config:
+      service:
+        rundeck:
+          configure_proxy: true
+          credentials:
+            username: admin
+            password: ${_param:rundeck_admin_password}
+          endpoint:
+            address: ${_param:haproxy_rundeck_bind_host}
+            port: ${_param:haproxy_rundeck_bind_port}
+            https: ${_param:haproxy_rundeck_ssl:enabled}

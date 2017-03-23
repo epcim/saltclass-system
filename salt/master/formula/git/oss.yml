@@ -1,0 +1,13 @@
+parameters:
+  _param:
+    salt_master_oss_repository: https://gerrit.mcp.mirantis.net/oss
+    salt_master_oss_revision: master
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            devops-portal:
+              source: git
+              address: '${_param:salt_master_oss_repository}/salt-formula-devops-portal.git'
+              revision: ${_param:salt_master_oss_revision}

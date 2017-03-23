@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    devops_portal_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        devops_portal:
+          path: /srv/volumes/devops_portal
+          server: ${_param:devops_portal_glusterfs_service_host}
+          opts: 'defaults'

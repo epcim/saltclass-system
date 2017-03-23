@@ -2,7 +2,7 @@ parameters:
   aptly:
     server:
       mirror:
-        ceph-mirantis-xenial:
+        ubuntu-xenial-ceph-mirantis:
           source: http://eu.mirror.fuel-infra.org/decapod/ceph/apt
           distribution: jewel-xenial
           components: main
@@ -12,8 +12,8 @@ parameters:
           publisher:
             component: ceph-mirantis
             distributions:
-              - xenial/nightly
-        decapod-ceph-mirantis-xenial:
+              - ubuntu-xenial/nightly
+        ubuntu-xenial-decapod-ceph-mirantis:
           source: http://eu.mirror.fuel-infra.org/decapod/ceph/apt
           distribution: jewel-xenial
           components: main

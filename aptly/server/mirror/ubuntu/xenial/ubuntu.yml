@@ -1,10 +1,14 @@
 parameters:
+  _param:
+    linux_system_country_code_default: cz
+    linux_system_country_code: ${_param:linux_system_country_code_default}
   aptly:
     server:
       mirror:
         # xenial
         xenial-main:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: main
           architectures: amd64
@@ -17,7 +21,8 @@ parameters:
             distributions:
               - ubuntu/xenial
         xenial-multiverse:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: multiverse
           architectures: amd64
@@ -30,7 +35,8 @@ parameters:
             distributions:
               - ubuntu/xenial
         xenial-restricted:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: restricted
           architectures: amd64
@@ -43,7 +49,8 @@ parameters:
             distributions:
               - ubuntu/xenial
         xenial-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: universe
           architectures: amd64
@@ -58,7 +65,8 @@ parameters:
 
         # xenial-updates
         xenial-updates-main:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: main
           architectures: amd64
@@ -71,7 +79,8 @@ parameters:
             distributions:
               - ubuntu/xenial-updates
         xenial-updates-multiverse:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: multiverse
           architectures: amd64
@@ -84,7 +93,8 @@ parameters:
             distributions:
               - ubuntu/xenial-updates
         xenial-updates-restricted:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: restricted
           architectures: amd64
@@ -97,7 +107,8 @@ parameters:
             distributions:
               - ubuntu/xenial-updates
         xenial-updates-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: universe
           architectures: amd64
@@ -112,7 +123,8 @@ parameters:
 
         #xenial-security:
         xenial-security-main:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: main
           architectures: amd64
@@ -125,7 +137,8 @@ parameters:
             distributions:
               - ubuntu/xenial-security
         xenial-security-multiverse:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: multiverse
           architectures: amd64
@@ -138,7 +151,8 @@ parameters:
             distributions:
               - ubuntu/xenial-security
         xenial-security-restricted:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: restricted
           architectures: amd64
@@ -151,7 +165,8 @@ parameters:
             distributions:
               - ubuntu/xenial-security
         xenial-security-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: universe
           architectures: amd64
@@ -166,7 +181,8 @@ parameters:
 
         #xenial-proposed:
         xenial-proposed-main:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
           components: main
           architectures: amd64
@@ -179,7 +195,8 @@ parameters:
             distributions:
               - ubuntu/xenial-proposed
         xenial-proposed-multiverse:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
           components: multiverse
           architectures: amd64
@@ -192,7 +209,7 @@ parameters:
             distributions:
               - ubuntu/xenial-proposed
         xenial-proposed-restricted:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
           components: restricted
           architectures: amd64
@@ -205,7 +222,7 @@ parameters:
             distributions:
               - ubuntu/xenial-proposed
         xenial-proposed-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
           components: universe
           architectures: amd64
@@ -220,7 +237,7 @@ parameters:
 
         #xenial-backports:
         xenial-backports-main:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports
           components: main
           architectures: amd64
@@ -233,7 +250,7 @@ parameters:
             distributions:
               - ubuntu/xenial-backports
         xenial-backports-multiverse:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports
           components: multiverse
           architectures: amd64
@@ -246,7 +263,8 @@ parameters:
             distributions:
               - ubuntu/xenial-backports
         xenial-backports-restricted:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports
           components: restricted
           architectures: amd64
@@ -259,7 +277,8 @@ parameters:
             distributions:
               - ubuntu/xenial-backports
         xenial-backports-universe:
-          source: http://cz.archive.ubuntu.com/ubuntu/
+          sources: true
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports
           components: universe
           architectures: amd64

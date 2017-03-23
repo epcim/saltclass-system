@@ -17,6 +17,18 @@ parameters:
               dist: xenial
               os_version: mitaka
               branch: master
+            # Trusty
+            - name: horizon-contrail-panels
+              os: ubuntu
+              dist: trusty
+              os_version: mitaka
+              branch: stable/mitaka
+            # Xenial
+            - name: horizon-contrail-panels
+              os: ubuntu
+              dist: xenial
+              os_version: mitaka
+              branch: stable/mitaka
           template:
             discard:
               build:

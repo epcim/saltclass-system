@@ -10,6 +10,6 @@ parameters:
           architectures: amd64
           key_url: "http://apt-mk.mirantis.com/public.gpg"
           pin:
-            - pin: "release c=${_param:linux_repo_contrail_component}"
-              priority: ${_param:contrail_repo_pin_priority}
-              package: "*"
+          - pin: "release c=${_param:linux_repo_contrail_component}"
+            priority: ${_param:contrail_repo_pin_priority}
+            package: "*"

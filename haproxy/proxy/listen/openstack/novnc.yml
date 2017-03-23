@@ -5,7 +5,7 @@ parameters:
         nova_novnc:
           type: general-service
           service_name: http
-          check: false
+          check: true
           binds:
           - address: ${_param:cluster_vip_address}
             port: 6080

@@ -1,0 +1,74 @@
+parameters:
+  _param:
+    mcp_repo_version: 1.0
+    linux_system_codename: trusty
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_trusty:
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          distribution: mitaka
+          components: main restricted
+          architectures: amd64
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          gpgkeys:
+            - 1FA22B08
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/mitaka
+
+        mirantis_openstack_hotfix_trusty:
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          distribution: mitaka-hotfix
+          components: main restricted
+          architectures: amd64
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          gpgkeys:
+            - 1FA22B08
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/mitaka-hotfix
+
+        mirantis_openstack_security_trusty:
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          distribution: mitaka-security
+          components: main restricted
+          architectures: amd64
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          gpgkeys:
+            - 1FA22B08
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/mitaka-security
+
+        # required for alternative horizon plugins/etc..
+        mirantis_openstack_updates_trusty:
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          distribution: mitaka-updates
+          components:  main restricted
+          architectures: amd64
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          gpgkeys:
+            - 1FA22B08
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/mitaka-updates
+
+        # required for salt formulas
+        mirantis_openstack_holdback_trusty:
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          distribution: mitaka-holdback
+          components: main restricted
+          architectures: amd64
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          gpgkeys:
+          - 1FA22B08
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/mitaka-holdback
+

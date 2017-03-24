@@ -79,6 +79,9 @@ parameters:
             rabbitmq:
               source: pkg
               name: salt-formula-rabbitmq
+            sahara:
+              source: pkg
+              name: salt-formula-sahara
             statsd:
               source: pkg
               name: salt-formula-statsd

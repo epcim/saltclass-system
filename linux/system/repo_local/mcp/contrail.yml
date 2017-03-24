@@ -1,0 +1,27 @@
+parameters:
+  _param:
+    contrail_repo_pin_priority: 200
+    apt_mk_version: stable
+  linux:
+    system:
+      repo:
+        mcp_opencontrail_oc311:
+          refresh_db: ${_param:linux_repo_refresh_db}
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:apt_mk_version} oc311"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"
+        mcp_opencontrail_oc31:
+          refresh_db: ${_param:linux_repo_refresh_db}
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:apt_mk_version} oc31"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"
+        mcp_opencontrail_oc32:
+          refresh_db: ${_param:linux_repo_refresh_db}
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:apt_mk_version} oc32"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"
+        mcp_opencontrail_oc303:
+          refresh_db: ${_param:linux_repo_refresh_db}
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:apt_mk_version} oc303"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"

@@ -10,6 +10,11 @@ parameters:
           restart:
             condition: any
           image: ${_param:docker_image_openldap}
+          hostname: ldap01.${_param:openldap_domain}
+          hosts:
+            ldap01:
+              name: ldap01.${_param:openldap_domain}
+              address: 127.0.0.1
           environment:
             HOSTNAME: ldap01.${_param:openldap_domain}
             LDAP_ORGANISATION: "${_param:openldap_organisation}"

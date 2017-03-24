@@ -1,6 +1,7 @@
 parameters:
   _param:
     mcp_repo_version: 1.0
+    apt_mk_version: stable 
   linux:
     system:
       repo:
@@ -24,3 +25,8 @@ parameters:
           source: "deb http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename} ${_param:openstack_version}-holdback main"
           architectures: amd64
           key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+        mk_openstack:
+          source: "deb [arch=amd64] http://apt-mk.mirantis.com/${_param:linux_system_codename}/ ${_param:apt_mk_version} ${_param:openstack_version}"
+          architectures: amd64
+          key_url: "http://apt-mk.mirantis.com/public.gpg"
+

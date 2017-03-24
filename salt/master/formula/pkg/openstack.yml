@@ -58,6 +58,9 @@ parameters:
             mysql:
               source: pkg
               name: salt-formula-mysql
+            murano:
+              source: pkg
+              name: salt-formula-murano
             neutron:
               source: pkg
               name: salt-formula-neutron

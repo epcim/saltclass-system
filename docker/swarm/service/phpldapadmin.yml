@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    docker_image_phpldapadmin: osixia/phpldapadmin:0.6.12
+  docker:
+    client:
+      service:
+        phpldapadmin:
+          restart:
+            condition: any
+          image: ${_param:docker_image_phpldapadmin}
+          environment:
+            PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH: [{'ldap.${_param:cluster_public_host}': [{'server': [{'tls': False}, {'host': '${_param:cluster_vip_address}'}, {'port': 389}]}, {'login': [{'bind_id': 'cn=admin'}, {'bind_pass': '${_param:openldap_admin_password}'}]}]}]"
+            PHPLDAPADMIN_HTTPS: false
+            PHPLDAPADMIN_TRUST_PROXY_SSL: true
+            PHPLDAPADMIN_SERVER_ADMIN: ${_param:admin_email}
+          ports:
+            - 18089:80

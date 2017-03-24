@@ -10,25 +10,25 @@ parameters:
           template:
             type: workflow-scm
             concurrent: true
-            display_name: "[MCP] Generate reclass cluster {{cookiecutter_template}}"
+            display_name: "Generate reclass cluster {{cookiecutter_template}}"
             scm:
               type: git
-              url: ${_param:jenkins_job_repository}
-              credentials: "gitlab"
-              script: metadata/cookiecutter_generate.groovy
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "jenkins-mk"
+              script: generate-cookiecutter-products.groovy
             param:
               COOKIECUTTER_TEMPLATE_URL:
                 type: string
                 default: "git@github.com:Mirantis/mk2x-cookiecutter-reclass-model.git"
               COOKIECUTTER_TEMPLATE_CREDENTIALS:
                 type: string
-                default: jenkins
+                default: github-credentials
               COOKIECUTTER_TEMPLATE_BRANCH:
                 type: string
                 default: master
-#              COOKIECUTTER_TEMPLATE_PATH:
-#                type: string
-#                default: 'cluster/{{cookiecutter_template}}'
+              COOKIECUTTER_TEMPLATE_PATH:
+                type: string
+                default: "./"
               COOKIECUTTER_INSTALL_CICD:
                 type: boolean
                 default: false
@@ -48,11 +48,10 @@ parameters:
                 type: string
               RECLASS_MODEL_URL:
                 type: string
-                default: "
-                ssh://jenkins@gerrit.mcp.mirantis.net:29418/salt-models/training"
+                default: "jenkins-mk@${_param:jenkins_gerrit_url}/salt-models/training.git"
               RECLASS_MODEL_CREDENTIALS:
                 type: string
-                default: jenkins_slave
+                default: gerrit
               RECLASS_MODEL_BRANCH:
                 type: string
                 default: master

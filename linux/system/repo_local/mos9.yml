@@ -7,7 +7,7 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release s=mos9.0'
+          - pin: 'release a=mos9.0'
             priority: 1100
             package: '*'
         mos9_openstack_hotfix:
@@ -15,7 +15,7 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release s=mos9.0-hotfix'
+          - pin: 'release a=mos9.0-hotfix'
             priority: 1100
             package: '*'
         mos9_openstack_proposed:
@@ -23,7 +23,7 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release s=mos9.0-proposed'
+          - pin: 'release a=mos9.0-proposed'
             priority: 1100
             package: '*'
         mos9_openstack_security:
@@ -31,7 +31,7 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release s=mos9.0-security'
+          - pin: 'release a=mos9.0-security'
             priority: 1100
             package: '*'
         mos9_openstack_updates:
@@ -39,7 +39,7 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release s=mos9.0-updates'
+          - pin: 'release a=mos9.0-updates'
             priority: 1100
             package: '*'
         mos9_murano:
@@ -48,6 +48,6 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release s=mos8.0-proposed'
+          - pin: 'release a=mos8.0-proposed'
             priority: 1100
             package: '*'

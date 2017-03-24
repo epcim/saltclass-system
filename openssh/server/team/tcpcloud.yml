@@ -141,6 +141,12 @@ parameters:
           sudo: true
           full_name: Sergey Matov
           home: /home/smatov
+        dcech:
+          enabled: true
+          name: dcech
+          sudo: true
+          full_name: Daniel Cech
+          home: /home/dcech
       group:
         libvirtd:
           enabled: true
@@ -259,6 +265,11 @@ parameters:
           public_keys:
           - ${public_keys:smatov}
           user: ${linux:system:user:smatov}
+        dcech:
+          enabled: true
+          public_keys:
+          - ${public_keys:dcech}
+          user: ${linux:system:user:dcech}
   public_keys:
     askotnicky:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO6EnDYaGdF/Nn6lntxDNnKanCsheZRdh8kA/6ImyeRSjT2cgepm1Fsgv7wXBYoy0OxhB5wgCp5Az/Pj4oLkG3g+G05sUPUxxGCGRiwjcnyQ/FTz4TzHglAVqgbdgWoQYf9Hg6EKZovvPcH3STbEwcl+MhLqvxz0wm5+StE+wvp6I9dEfRV+2/e1uepauOTZ1+Ui1DMNXiMefTlbiIBHzUk7RiwJWgqzQXBndgunmbJWSed8zC0Ug97waDOFIX/oKZmAmsv0NLJ2e/kC3oUTuziGT74F9sh7Pqiw/9HZxvP45hJwEvytfUjfuiikIBbmYdF7Je93czaG/qjXGN8YvP== a.skotnicky@tcpisek.cz
@@ -304,3 +315,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy6mFrr4oNdLjT5wBZj1+KXNpdawnGGWEevDBQ2SWFjxBFujkWVLiW1kxLTpLVSnuoE5FB7doRIsT/CDe9IU5OhsJ+z6TT56R/pfVKrVnSB1rgrwqdezjgmYEM6kTWiH2GKJE0yiQEPgagK8Rz5Zl420JkhbFWnL7EGPhxNtmYMGDTZwUTzP0KYmytyeH15OqNIiBGTrp1t2bTrVB8HRnUp0uDpfoWAUnsijVGNe1j1bNKtDO0Z9LAWx3eUyxIk4cdpX/EeWJg8jNrSMxtAZZ7Hhm/WInNSNqcHcZ1rEYCAjENxo1WVOuA/aqUqc5xaAipWNon4Rk0e0IUAaFOfLvN2lIuilUZ5XKHDe7a2crkGPnotheT9FgaEHOeFtpuhSaygeZHTMR197jeocgjWIkPqHjVAGSQqQf0TAdNuN73QPTigbbfHWWc1d8KlCM5BqJUXMHPG6BasE1sI/4ykYbxN/DAEvVJ4+rdIlqSdedd73ZAseVQjDtpzD8diScGrpdOhZnTm43q89F8dIFv7tt1TjIwvfcDQNSBjyyKcYpj+NTyW2Zk7qWDVz+lzH0ToYk/rOKkGlrsRy7OwOnmyKR8IcIOL7Bowj895ThCX8tBrdLu/m55ojBOcZiCpawCm7K55ri1Ar6i8cO+bHDh11kKRa/utRRSQTpsW0sbCsamzQ== lubos@lubos-ThinkPad-X1
     smatov:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgBHACRnY/VEEDFE63xDp4bx0zgWY4h1aB9/c2f962HtTNaQ6R/Cz6DLISaB5th8qzrzbvjn9WcpHdxyTm9BqkLLzB4qe7fnebPtn6zGczZ9Btrjk9R8Fuw6DZhSucSk572r/gVIY0O3Z1LajHkNr0ZTQS8AY3fgn8rXMD2vMOruOzyTOmfWKmEw7e+JYUqoFXHhE3Dd7hGQ99d6kH2N3zXfM2rzfjshGAq0kOi5dN4Hx6QIXZapt0t9TzpYTkK5SaVzuEVyVaKRLYSa/rdPjHkKqDFa99RcQ+OI93uvT9CFNWDFIC/TDJ2M+7PQbm836EICXXVWKjQ2NUnQJeOU5v smatov@ubuntu
+    dcech:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8A26XMLUnXkxv4e/vByD4W4PQ0ZdgGZz5Tg6G/fQKuSa+9zRucG6IlOchJPikwrDyTrojHTGAClHPuyr2bPIRrjFy4oUTZNdjiDptV99Zv/kHRStYzPyZ4KabnFLJVKNtyKKagk6Z3wpzEjFjRHWJK7A5bIzHfd7Amx/frdLKRo9YZjGbLnZRw6mWGqZYyp2/5a/5rKqH1BhMQggDGkAwFGWYQByZzk2F81nDnkt3CY3bi24gX90w4mgFjP8B0m0QCEhcGqpfOKsQTnIyBCtztEHBiUplzBN+RHS4dDOIEs9SWrXLiMFakWu1Vr6bUa7v5xGaNN8XAWjd3xdsy4hvJjJHU5HPaMY9MGH+N6W0UUZxIF0MuxDNP03MDM1uA5mRWTdwffARaDySYaEUrUEYJmzFAtk700Jv/Aav7QixLoIeKU9SAKYvVb7XNlMWgiswQdRPoiMpXPXPw+bMhjpimHJa4n0KFGAUO/cRD1dpJKybqxDe2ip57JzpFkm5PxuNht5qmEreKcS5dWQqm0fDE9wv8cCUMnWQv36f0IDeVpftmeDREatqXSeUjES7NFQOgIQW5C5Pl+8ZHTXw46c/uh89gUILJT2tS/mOXaU4mELox1Qv8vc/laoGAec+TGD0flf75LfiuLOK6JOYX0QVW13ko1wc3CyJzHOi1sFEAw== daniel.cech@tcpcloud.eu

@@ -24,6 +24,7 @@ parameters:
             - name: cinder
             - name: collectd
             - name: dekapod
+            - name: devops-portal
             - name: docker
             - name: dovecot
             - name: elasticsearch

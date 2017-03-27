@@ -41,67 +41,6 @@ parameters:
             scm:
               type: git
               url: "https://github.com/chnyda/contrail-unittest"
-            trigger:
-              gerrit:
-                project:
-                  contrail/contrail-pipeline:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-build:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-controller:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-vrouter:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-third-party:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-generateDS:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-sandesh:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-packages:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-nova-vif-driver:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-neutron-plugin:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-nova-extensions:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-heat:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-web-storage:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-web-server-manager:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-web-controller:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-web-core:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-webui-third-party:
-                    branches:
-                      - "{{branch}}"
-                message:
-                  build_successful: "Build successful"
-                  build_unstable: "Build unstable"
-                  build_failure: "Build failed"
-                event:
-                  ref:
-                    - updated
             param:
               SOURCE_URL:
                 type: string

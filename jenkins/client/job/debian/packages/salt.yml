@@ -9,6 +9,8 @@ parameters:
               dist: trusty
             - name: apache
               dist: trusty
+            - name: aptcacher
+              dist: trusty
             - name: aptly
               dist: trusty
             - name: artifactory
@@ -178,6 +180,8 @@ parameters:
             - name: aodh
               dist: xenial
             - name: apache
+              dist: xenial
+            - name: aptcacher
               dist: xenial
             - name: aptly
               dist: xenial

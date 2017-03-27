@@ -9,6 +9,7 @@ parameters:
           jobs:
             - name: aodh
             - name: apache
+            - name: aptcacher
             - name: aptly
             - name: artifactory
             - name: backupninja

@@ -1,3 +1,2 @@
 classes:
 - service.heka.metric_collector.output.sensu
-

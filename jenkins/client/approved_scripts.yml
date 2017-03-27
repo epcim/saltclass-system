@@ -87,3 +87,6 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object java.lang.String java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
         - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
+        - method java.util.Collection stream
+        - staticMethod java.util.stream.Collectors joining java.lang.CharSequence
+        - method java.util.stream.Stream collect java.util.stream.Collector

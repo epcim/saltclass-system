@@ -5,8 +5,6 @@ parameters:
     client:
       service:
         openldap:
-          # XXX: docker service is not able to set hostname
-          # https://github.com/docker/docker/issues/24877
           restart:
             condition: any
           image: ${_param:docker_image_openldap}
@@ -21,9 +19,6 @@ parameters:
             LDAP_DOMAIN: "${_param:openldap_domain}"
             LDAP_ADMIN_PASSWORD: ${_param:openldap_admin_password}
             LDAP_CONFIG_PASSWORD: ${_param:openldap_config_password}
-            LDAP_READONLY_USER: "true"
-            LDAP_READONLY_USER_USERNAME: readonly
-            LDAP_READONLY_USER_PASSWORD: ${_param:openldap_readonly_password}
             LDAP_TLS: "false"
           ports:
             - 1389:389

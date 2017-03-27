@@ -1,0 +1,9 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            devops_portal:
+              source: pkg
+              name: salt-formula-devops-portal

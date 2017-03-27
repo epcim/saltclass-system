@@ -7,7 +7,10 @@ parameters:
       environment:
         dev:
           formula:
-            devops-portal:
+            devops_portal:
+              module:
+                devops_utils.py:
+                  enabled: true
               source: git
               address: '${_param:salt_master_oss_repository}/salt-formula-devops-portal.git'
               revision: ${_param:salt_master_oss_revision}

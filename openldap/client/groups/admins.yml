@@ -1,0 +1,18 @@
+classes:
+  - system.openldap.client.groups
+parameters:
+  openldap:
+    client:
+      entry:
+        groups:
+          entry:
+            admins:
+              attr:
+                description: Administrators
+                gidNumber: 20001
+              classes:
+                - posixGroup
+                - top
+              # TODO: Cannot set member attributes in our LDAP yet
+              # member:
+              #   - cn=admin,ou=people

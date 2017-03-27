@@ -19,4 +19,7 @@ parameters:
             freeipa:
               source: pkg
               name: salt-formula-freeipa
+            openldap:
+              source: pkg
+              name: salt-formula-openldap
 

@@ -28,6 +28,7 @@ parameters:
         gerrit-trigger: {}
         git: {}
         heavy-job: {}
+        ldap: {}
         matrix-auth: {}
         monitoring: {}
         pipeline-utility-steps: {}

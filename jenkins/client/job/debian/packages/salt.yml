@@ -127,6 +127,8 @@ parameters:
               dist: trusty
             - name: opencontrail
               dist: trusty
+            - name: openldap
+              dist: trusty
             - name: openssh
               dist: trusty
             - name: openvpn
@@ -300,6 +302,8 @@ parameters:
             - name: ntp
               dist: xenial
             - name: opencontrail
+              dist: xenial
+            - name: openldap
               dist: xenial
             - name: openssh
               dist: xenial

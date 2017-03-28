@@ -6,7 +6,7 @@ parameters:
       service:
         jenkins:
           environment:
-            JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Dhudson.footerURL=https://www.mirantis.com"
+            JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Dhudson.DNSMultiCast.disabled=true -Dhudson.udp=-1 -Dhudson.footerURL=https://www.mirantis.com"
             JENKINS_NUM_EXECUTORS: 4
           restart:
             condition: any

@@ -36,7 +36,7 @@ parameters:
              artifact:
                keep_num: 5
             type: workflow-scm
-            concurrent: false
+            concurrent: true
             quiet_period: 120
             scm:
               type: git

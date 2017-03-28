@@ -16,3 +16,5 @@ parameters:
               # TODO: Cannot set member attributes in our LDAP yet
               # member:
               #   - cn=admin,ou=people
+              memberUid:
+                - cn=admin,ou=people

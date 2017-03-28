@@ -45,9 +45,9 @@ parameters:
         grain_hostname: 'host'
         hostname_suffix: ${_param:stacklight_environment}
         hostgroups:
-          - target: '*'
+          - target: 'G@services:openssh'
             name: All
-            expr_from: glob
+            expr_from: compound
           - target: 'G@roles:nova.controller'
             expr_from: compound # the default
             name: Nova Controller

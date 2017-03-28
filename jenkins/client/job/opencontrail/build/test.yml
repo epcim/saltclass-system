@@ -64,3 +64,25 @@ parameters:
               ARCH:
                 type: string
                 default: "amd64"
+            trigger:
+              gerrit:
+                project:
+                  contrail/contrail-controller:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-vrouter:
+                    branches:
+                      - "{{branch}}"
+                event:
+                  patchset:
+                    - created:
+                        excludeDrafts: false
+                        excludeTrivialRebase: false
+                        excludeNoCodeChange: false
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(recheck|reverify)'
+            param:
+              TEST_MODELS:
+                type: string
+                default: "{{clusters}}"

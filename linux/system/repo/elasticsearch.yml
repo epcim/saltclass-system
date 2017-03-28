@@ -2,7 +2,7 @@ parameters:
   linux:
     system:
       repo:
-        tcpcloud_elasticsearch:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ xenial elastic"
+        elasticsearch:
+          source: "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main"
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
+          key_url: "https://packages.elastic.co/GPG-KEY-elasticsearch"

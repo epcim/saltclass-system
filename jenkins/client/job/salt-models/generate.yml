@@ -2,11 +2,11 @@ parameters:
   jenkins:
     client:
       job_template:
-        generate_reclass_clusters:
-          name: generate_reclass_cluster_{{cookiecutter_template}}
+        generate-salt-model:
+          name: generate-salt-model-{{cookiecutter_template}}
           param:
             cookiecutter_template:
-            - separated_products
+            - separated-products
           template:
             type: workflow-scm
             concurrent: true
@@ -48,7 +48,7 @@ parameters:
                 type: string
               RECLASS_MODEL_URL:
                 type: string
-                default: "jenkins-mk@${_param:jenkins_gerrit_url}/salt-models/training.git"
+                default: "${_param:jenkins_gerrit_url}/salt-models/training.git"
               RECLASS_MODEL_CREDENTIALS:
                 type: string
                 default: gerrit

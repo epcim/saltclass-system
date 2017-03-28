@@ -1,9 +1,12 @@
 classes:
   - service.gerrit.client
 parameters:
+  _param:
+    gerrit_try_login: true
   gerrit:
     client:
       enabled: True
+      try_login: ${_param:gerrit_try_login}
       source:
         engine: pip
       dir:

@@ -1,6 +1,16 @@
 parameters:
   jenkins:
     client:
+      view:
+        Aptly:
+          enabled: true
+          type: CategorizedJobsView
+          include_regex: "aptly-.*"
+          categories:
+            - group_regex: "aptly-.*-nightly-testing"
+              naming_rule: "Nightly -> Testing"
+            - group_regex: "aptly-.*-testing-stable"
+              naming_rule: "Testing -> Stable"
       job_template:
         aptly:
           name: aptly-{{operation}}-{{dist}}-{{source}}-{{target}}

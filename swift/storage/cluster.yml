@@ -1,0 +1,38 @@
+classes:
+- service.swift.storage.cluster
+- service.rsync.server.single
+parameters:
+  rsync:
+    server:
+      module:
+        account:
+          max_connections: 100
+          path: /srv/node/
+          read_only: False
+          uid: swift
+          gid: swift
+          #write_only: False
+          #list: yes
+          #incoming_chmod = 0644
+          #outgoing_chmod = 0644
+        container:
+          max_connections: 100
+          path: /srv/node/
+          read_only: False
+          uid: swift
+          gid: swift
+        object:
+          max_connections: 100
+          path: /srv/node/
+          read_only: False
+          uid: swift
+          gid: swift
+  swift:
+    common:
+      cache:
+        engine: memcached
+        members:
+        - host: ${_param:swift_proxy_node01_address}
+          port: 11211
+        - host: ${_param:swift_proxy_node02_address}
+          port: 11211

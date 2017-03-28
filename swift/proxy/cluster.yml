@@ -1,0 +1,52 @@
+classes:
+- service.memcached.server.single
+- service.keepalived.cluster.single
+- service.haproxy.proxy.single
+- service.swift.proxy.cluster
+parameters:
+  _param:
+      cluster_node01_address: ${_param:swift_proxy_node01_address}
+      cluster_node02_address: ${_param:swift_proxy_node02_address}
+  keepalived:
+    cluster:
+      instance:
+        VIP:
+            virtual_router_id: ${_param:keepalived_vip_virtual_router_id}
+  haproxy:
+    proxy:
+      listen:
+        swift_admin:
+          type: stats
+          check: false
+          binds:
+          - address: ${_param:swift_proxy_vip_address}
+            port: 8080
+        swift_proxy_cluster:
+          type: general-service
+          check: false
+          binds:
+          - address: ${_param:swift_proxy_vip_address}
+            port: 8080
+          servers:
+          - name: ${_param:swift_proxy_node01_hostname}
+            host: ${_param:swift_proxy_node01_address}
+            port: 8080
+            params: check
+          - name: ${_param:swift_proxy_node02_hostname}
+            host: ${_param:swift_proxy_node02_address}
+            port: 8080
+            params: check
+  swift:
+    proxy:
+      bind:
+        address: ${_param:single_address}
+      identity:
+        host: ${_param:control_vip_address}
+    common:
+      cache:
+        engine: memcached
+        members:
+        - host: ${_param:swift_proxy_node01_address}
+          port: 11211
+        - host: ${_param:swift_proxy_node02_address}
+          port: 11211

@@ -18,6 +18,7 @@ parameters:
                 sn: Root
                 homeDirectory: /home/admin
                 loginShell: /bin/bash
+                mail: ${_param:admin_email}
               classes:
                 - posixAccount
                 - inetOrgPerson

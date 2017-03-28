@@ -20,7 +20,7 @@ parameters:
             DB_ENV_MYSQL_DB: gerrit
             AUTH_TYPE: ${_param:gerrit_auth_type}
             LDAP_SERVER: ${_param:gerrit_ldap_server}
-            LDAP_ACCOUNTPATTERN: '(|(uid={username})(cn={username}))'
+            LDAP_ACCOUNTPATTERN: 'uid={username}'
             LDAP_ACCOUNTBASE: ${_param:gerrit_ldap_account_base}
             LDAP_GROUPBASE: ${_param:gerrit_ldap_group_base}
             LDAP_USERNAME: ${_param:gerrit_ldap_bind_user}

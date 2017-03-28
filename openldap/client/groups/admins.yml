@@ -10,11 +10,11 @@ parameters:
               attr:
                 description: Administrators
                 gidNumber: 20001
+                memberUid:
+                  - admin
               classes:
                 - posixGroup
                 - top
-              # TODO: Cannot set member attributes in our LDAP yet
+              # TODO: Cannot set memberOf attributes in our LDAP yet
               # member:
               #   - cn=admin,ou=people
-              memberUid:
-                - cn=admin,ou=people

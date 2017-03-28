@@ -20,6 +20,10 @@ parameters:
         protocol: http
         password: ${_param:gerrit_admin_password}
         key: ${_param:gerrit_admin_private_key}
+      user:
+        admin:
+          fullname: Administrator
+          ssh_key: ${_param:gerrit_admin_public_key}
       group:
         Event Streaming Users:
           description: Event Streaming Users

@@ -90,3 +90,5 @@ parameters:
         - method java.util.Collection stream
         - staticMethod java.util.stream.Collectors joining java.lang.CharSequence
         - method java.util.stream.Stream collect java.util.stream.Collector
+        - staticMethod java.util.regex.Pattern compile java.lang.String
+        - method java.util.regex.Matcher find

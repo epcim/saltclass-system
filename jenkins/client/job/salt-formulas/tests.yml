@@ -141,3 +141,10 @@ parameters:
               CREDENTIALS_ID:
                 type: string
                 default: "gerrit"
+              DEFAULT_GIT_URL:
+                type: string
+                description: "Run against alternate system reclass"
+                default: "${_param:jenkins_gerrit_url}/salt-formulas/{{name}}"
+              DEFAULT_GIT_REF:
+                type: string
+                default: master

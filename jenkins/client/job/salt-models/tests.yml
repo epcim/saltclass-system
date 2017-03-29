@@ -40,14 +40,13 @@ parameters:
               SALT_OPTS:
                 type: string
                 default: "--force-color"
-              GIT_URL:
-                type: string
-                default: "${_param:jenkins_gerrit_url}/salt-models/{{name}}"
-              RECLASS_SYSTEM_GIT_URL:
+              DEFAULT_GIT_URL:
                 type: string
                 description: "Run against alternate system reclass"
-              RECLASS_SYSTEM_GIT_REF:
+                default: "${_param:jenkins_gerrit_url}/salt-models/{{name}}"
+              DEFAULT_GIT_REF:
                 type: string
+                default: master
               CREDENTIALS_ID:
                 type: string
                 default: "gerrit"

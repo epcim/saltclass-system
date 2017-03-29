@@ -4,7 +4,7 @@ parameters:
   glusterfs:
     client:
       volumes:
-        prometheus-config:
-          path: /srv/volumes/prometheus-config
+        prometheus:
+          path: /srv/volumes/prometheus
           server: ${_param:prometheus_glusterfs_service_host}
           opts: 'defaults'

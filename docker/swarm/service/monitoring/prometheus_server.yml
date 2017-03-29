@@ -25,5 +25,5 @@ parameters:
           volume:
             site:
               type: bind
-              source: /srv/volumes/prometheus-config
+              source: /srv/volumes/prometheus
               destination: /opt/prometheus/config

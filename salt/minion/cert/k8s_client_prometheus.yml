@@ -10,3 +10,4 @@ parameters:
           common_name: kubelet-client
           signing_policy: cert_client
           alternative_names: IP:${_param:cluster_vip_address},IP:${_param:cluster_node01_address},IP:${_param:cluster_node02_address},IP:${_param:cluster_node03_address},IP:${_param:kubernetes_internal_api_address}
+          mode: '0444'

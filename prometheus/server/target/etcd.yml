@@ -1,6 +1,10 @@
-classes:
-- service.etcd.server.cluster
 parameters:
   server:
     target:
-      etcd: ${etcd:server:members}
+      etcd:
+        - host: ${_param:cluster_node01_address}
+          port: ${_param:cluster_node01_port}
+        - host: ${_param:cluster_node02_address}
+          port: ${_param:cluster_node02_port}
+        - host: ${_param:cluster_node03_address}
+          port: ${_param:cluster_node03_port}

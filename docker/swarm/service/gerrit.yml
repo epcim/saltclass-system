@@ -1,6 +1,6 @@
 parameters:
   _param:
-    docker_image_gerrit: tcpcloud/gerrit:2.12.7
+    docker_image_gerrit: tcpcloud/gerrit:2.13.6
     gerrit_ldap_server: ""
     gerrit_ldap_bind_user: ""
     gerrit_ldap_bind_password: ""
@@ -25,7 +25,6 @@ parameters:
             LDAP_GROUPBASE: ${_param:gerrit_ldap_group_base}
             LDAP_USERNAME: ${_param:gerrit_ldap_bind_user}
             LDAP_PASSWORD: ${_param:gerrit_ldap_bind_password}
-            CAPABILITY_ADMINISTRATESERVER: admin
             WEBURL: ${_param:gerrit_public_host}
             GERRIT_ADMIN_SSH_PUBLIC: ${_param:gerrit_admin_public_key}
             GERRIT_ADMIN_PWD: ${_param:gerrit_admin_password}

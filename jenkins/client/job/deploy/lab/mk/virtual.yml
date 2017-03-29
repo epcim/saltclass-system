@@ -23,6 +23,10 @@ parameters:
         install: core,openstack,ovs
         stack_type: heat
         test: openstack
+      - lab: virtual_mcp10_k8s
+        install: core,k8s
+        stack_type: heat
+        test: k8s
       - lab: virtual_mk20_advanced
         install: core,openstack
         stack_type: heat

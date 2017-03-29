@@ -40,7 +40,7 @@ parameters:
                 default: "gerrit"
               HEAT_TEMPLATE_BRANCH:
                 type: string
-                default: "composite"
+                default: "master"
               HEAT_STACK_NAME:
                 type: string
                 description: Heat stack name. Will be generated if missing.

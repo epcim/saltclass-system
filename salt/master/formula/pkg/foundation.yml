@@ -4,6 +4,9 @@ parameters:
       environment:
         prd:
           formula:
+            aptcacher:
+              source: pkg
+              name: salt-formula-aptcacher
             aptly:
               source: pkg
               name: salt-formula-aptly
@@ -19,7 +22,9 @@ parameters:
             freeipa:
               source: pkg
               name: salt-formula-freeipa
+            maas:
+              source: pkg
+              name: salt-formula-maas
             openldap:
               source: pkg
               name: salt-formula-openldap
-

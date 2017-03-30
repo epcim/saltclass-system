@@ -82,3 +82,10 @@ parameters:
               TEST_MODELS:
                 type: string
                 default: "{{clusters}}"
+              DEFAULT_GIT_URL:
+                type: string
+                description: "Run against alternate system reclass"
+                default: "${_param:jenkins_gerrit_url}/salt-models/reclass-system"
+              DEFAULT_GIT_REF:
+                type: string
+                default: master

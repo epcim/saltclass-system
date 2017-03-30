@@ -55,3 +55,6 @@ parameters:
               RECLASS_MODEL_BRANCH:
                 type: string
                 default: master
+              COMMIT_CHANGES:
+                type: boolean
+                default: false

@@ -3,6 +3,7 @@ parameters:
     # Full admin access
     jenkins_security_matrix_admins:
       - ${_param:jenkins_client_user}
+      - admins
     # Read only access
     jenkins_security_matrix_read: []
     # Read + permissions to build jobs

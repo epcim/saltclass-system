@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+  aptly:
+    server:
+      mirror:
+        glusterfs_upstream_trusty:
+          source: http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu
+          distribution: trusty
+          components: main
+          architectures: amd64
+          gpgkeys:
+            - 3FE869A9
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/${_param:apt_mk_version}

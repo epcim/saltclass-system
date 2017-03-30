@@ -1,16 +1,15 @@
 parameters:
   _param:
     mcp_repo_version: 1.0
-    linux_system_codename: xenial
   aptly:
     server:
       mirror:
         mirantis_openstack_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial
           distribution: mitaka
           components: main restricted
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial/archive-mcp${_param:mcp_repo_version}.key"
           gpgkeys:
             - 1FA22B08
           publisher:
@@ -19,11 +18,11 @@ parameters:
               - ubuntu-xenial/mitaka
 
         mirantis_openstack_hotfix_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial
           distribution: mitaka-hotfix
           components: main restricted
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial/archive-mcp${_param:mcp_repo_version}.key"
           gpgkeys:
             - 1FA22B08
           publisher:
@@ -32,11 +31,11 @@ parameters:
               - ubuntu-xenial/mitaka-hotfix
 
         mirantis_openstack_security_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial
           distribution: mitaka-security
           components: main restricted
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial/archive-mcp${_param:mcp_repo_version}.key"
           gpgkeys:
             - 1FA22B08
           publisher:
@@ -46,11 +45,11 @@ parameters:
 
         # required for alternative horizon plugins/etc..
         mirantis_openstack_updates_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial
           distribution: mitaka-updates
           components:  main restricted
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial/archive-mcp${_param:mcp_repo_version}.key"
           gpgkeys:
             - 1FA22B08
           publisher:
@@ -60,11 +59,11 @@ parameters:
 
         # required for salt formulas
         mirantis_openstack_holdback_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}
+          source: http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial
           distribution: mitaka-holdback
           components: main restricted
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/${_param:linux_system_codename}/archive-mcp${_param:mcp_repo_version}.key"
+          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:mcp_repo_version}/xenial/archive-mcp${_param:mcp_repo_version}.key"
           gpgkeys:
           - 1FA22B08
           publisher:

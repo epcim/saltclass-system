@@ -1,10 +1,16 @@
 parameters:
-  server:
-    target:
-      etcd:
-        - host: ${_param:cluster_node01_address}
-          port: ${_param:cluster_node01_port}
-        - host: ${_param:cluster_node02_address}
-          port: ${_param:cluster_node02_port}
-        - host: ${_param:cluster_node03_address}
-          port: ${_param:cluster_node03_port}
+  prometheus:
+    server:
+      target:
+        etcd:
+          scheme: https
+          ssl_dir: /opt/prometheus/config
+          cert_name: prometheus-server.crt
+          key_name: prometheus-server.key
+          member:
+          - host: ${_param:cluster_node01_address}
+            port: ${_param:cluster_node01_port}
+          - host: ${_param:cluster_node02_address}
+            port: ${_param:cluster_node02_port}
+          - host: ${_param:cluster_node03_address}
+            port: ${_param:cluster_node03_port}

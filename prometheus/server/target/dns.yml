@@ -1,14 +1,15 @@
 parameters:
-  server:
-    target:
-      dns:
-        - name: 'pushgateway'
-          domain:
-          - 'tasks.prometheus_pushgateway'
-          type: A
-          port: 9091
-        - name: 'prometheus'
-          domain:
-          - 'tasks.prometheus_server'
-          type: A
-          port: 9090
+  prometheus:
+    server:
+      target:
+        dns:
+          - name: 'pushgateway'
+            domain:
+            - 'tasks.prometheus_pushgateway'
+            type: A
+            port: 9091
+          - name: 'prometheus'
+            domain:
+            - 'tasks.prometheus_server'
+            type: A
+            port: 9090

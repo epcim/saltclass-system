@@ -41,3 +41,10 @@ parameters:
             GRADLE_CMD:
               type: string
               default: "check"
+            DEFAULT_GIT_URL:
+                type: string
+                description: "Run against alternate system reclass"
+                default: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            DEFAULT_GIT_REF:
+                type: string
+                default: master

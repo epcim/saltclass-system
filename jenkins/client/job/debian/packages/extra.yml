@@ -53,6 +53,8 @@ parameters:
               dist: xenial
             - package: python-geventhttpclient
               dist: xenial
+            - package: python-docker
+              dist: xenial
             - package: python-consistent-hash
               dist: xenial
             - package: libipfix

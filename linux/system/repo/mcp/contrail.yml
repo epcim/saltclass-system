@@ -10,6 +10,6 @@ parameters:
           architectures: amd64
           key_url: "http://apt-mk.mirantis.com/public.gpg"
           pin:
-          - pin: 'release a=${_param:openstack_version}-holdback'
+          - pin: 'release a=${_param:apt_mk_version}'
             priority: 1100
             package: '*'

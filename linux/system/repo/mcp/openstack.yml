@@ -1,7 +1,7 @@
 parameters:
   _param:
     mcp_repo_version: 1.0
-    apt_mk_version: stable 
+    apt_mk_version: stable
   linux:
     system:
       repo:

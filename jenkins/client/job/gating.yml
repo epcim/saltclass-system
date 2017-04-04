@@ -23,6 +23,7 @@ parameters:
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
               script: gating-pipeline.groovy
+            quiet_period: 60
             trigger:
               gerrit:
                 project:

@@ -9,3 +9,7 @@ parameters:
           architectures: amd64
           key_url: "http://apt-mk.mirantis.com/public.gpg"
           clean_file: true
+          pin:
+          - pin: 'release a=${_param:openstack_version}-holdback'
+            priority: 1100
+            package: '*'

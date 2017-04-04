@@ -84,6 +84,10 @@ parameters:
                 type: boolean
                 default: 'false'
                 description: "Don't cleanup on failure"
+              DEBUG_DPDK:
+                type: boolean
+                default: 'false'
+                description: "CONFIG_RTE_LIBRTE_ETHDEV_DEBUG enabled or disabled"
               OS:
                 type: string
                 default: "{{os}}"

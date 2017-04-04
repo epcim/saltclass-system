@@ -10,6 +10,7 @@ parameters:
       ttl: 86400
       debug: false
       verbose: true
+      region: ${_param:openstack_region}
       database:
         engine: "mysql+pymysql"
         host: ${_param:openstack_database_address}

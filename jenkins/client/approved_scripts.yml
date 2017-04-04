@@ -92,3 +92,5 @@ parameters:
         - method java.util.stream.Stream collect java.util.stream.Collector
         - staticMethod java.util.regex.Pattern compile java.lang.String
         - method java.util.regex.Matcher find
+        - method hudson.model.Run getId
+        - method java.util.regex.MatchResult groupCount

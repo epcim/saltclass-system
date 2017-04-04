@@ -6,4 +6,5 @@ parameters:
       repo:
         salt:
           source: "deb http://repo.saltstack.com/apt/ubuntu/14.04/amd64/${_param:salt_version} trusty main"
+          architectures: amd64
           key_url: "http://repo.saltstack.com/apt/ubuntu/14.04/amd64/${_param:salt_version}/SALTSTACK-GPG-KEY.pub"

@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    elasticsearch_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        elasticsearch:
+          path: /srv/volumes/elasticsearch
+          server: ${_param:elasticsearch_glusterfs_service_host}
+          opts: 'defaults'

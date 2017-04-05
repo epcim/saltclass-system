@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    pushkin_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        pushkin:
+          path: /srv/volumes/pushkin
+          server: ${_param:pushkin_glusterfs_service_host}
+          opts: 'defaults'

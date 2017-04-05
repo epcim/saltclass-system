@@ -59,6 +59,7 @@ parameters:
               HEAT_STACK_DELETE:
                 type: boolean
                 default: 'true'
+                description: "Don't enable it if you need to use the lab after"
               HEAT_STACK_REUSE:
                 type: boolean
                 default: 'false'

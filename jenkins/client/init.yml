@@ -46,3 +46,19 @@ parameters:
           enabled: true
           url: ${_param:jenkins_gerrit_url}/mcp-ci/pipeline-library
           credential_id: gerrit
+      view:
+        Mirrors:
+          enabled: true
+          type: CategorizedJobsView
+          include_regex: "git-mirror-.*"
+          categories:
+            - group_regex: "git-mirror-2way-.*"
+              naming_rule: "2way"
+            - group_regex: "git-mirror-(?!upstream-|2way-).*"
+              naming_rule: "Downstream"
+            - group_regex: "git-mirror-upstream-.*"
+              naming_rule: "Upstream"
+        Tests:
+          enabled: true
+          type: ListView
+          include_regex: "test-.*"

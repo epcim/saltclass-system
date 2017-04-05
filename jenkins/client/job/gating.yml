@@ -1,6 +1,11 @@
 parameters:
   jenkins:
     client:
+      view:
+        Gating:
+          enabled: true
+          type: ListView
+          include_regex: "gate-.*"
       job_template:
         gate-gerrit-namespace:
           name: gate-gerrit-{{name}}

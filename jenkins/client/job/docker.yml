@@ -44,7 +44,7 @@ parameters:
                 default: "tcpcloud/{{name}}"
               IMAGE_GIT_URL:
                 type: string
-                default: ${_param:jenkins_gerrit_url}/mk/docker-{{name}}"
+                default: "${_param:jenkins_gerrit_url}/mk/docker-{{name}}"
               IMAGE_BRANCH:
                 type: string
                 default: "{{branch}}"

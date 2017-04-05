@@ -38,6 +38,21 @@ parameters:
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
               script: docker-build-image-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  "mk/docker-{{name}}":
+                    branches:
+                      - master
+                event:
+                  patchset:
+                    - created:
+                        excludeDrafts: false
+                        excludeTrivialRebase: false
+                        excludeNoCodeChange: false
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(recheck|reverify)'
             param:
               IMAGE_NAME:
                 type: string

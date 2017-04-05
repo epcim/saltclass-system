@@ -3,3 +3,15 @@ classes:
   - system.jenkins.client.job.debian.packages.salt
   - system.jenkins.client.job.debian.packages.salt-multi
   - system.jenkins.client.job.debian.packages.horizon
+parameters:
+  jenkins:
+    client:
+      view:
+        Xenial:
+          enabled: true
+          type: ListView
+          include_regex: "build-.*-ubuntu-xenial.*"
+        Trusty:
+          enabled: true
+          type: ListView
+          include_regex: "build-.*-ubuntu-trusty.*"

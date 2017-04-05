@@ -126,6 +126,13 @@ parameters:
           full_name: Ruslan Khozinov
           home: /home/rkhozinov
           email: rkhozinov@mirantis.com
+        vnaumov:
+          enabled: true
+          name: vnaumov
+          sudo: true
+          full_name: Vlad Naumov
+          home: /home/vnaumov
+          email: vnaumov@mirantis.com
       group:
         libvirtd:
           enabled: true
@@ -234,6 +241,11 @@ parameters:
           public_keys:
           - ${public_keys:rkhozinov}
           user: ${linux:system:user:rkhozinov}
+        vnaumov:
+          enable: true
+          public_keys:
+          - ${public_keys:vnaumov}
+          user: ${linux:system:user:vnaumov}
   public_keys:
     ddmitriev:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuD4wJ8hzkchQ0pfgdwWukQyps1xYRfHOsjosmDu/mmgaXVud5mnpwb2q35E2YYTox2mx+ulJqyS+099gz6MPg4P8D5qdMuRbAsJqbceLaaIGQhdT8qgSo7ESrl5pwvYnfWzKLKF0z5s7nrW0nvArC40zhV9o9XpvzzzSFByepWfkwA8ReldGUYVvTKp8YXaCrqEdMZrU42adPM2nl+fYBbGF+h4/Ka247aVjPeER0blV3znFXbv2Kf38G+i/TEGaktgpBdtGGDi1tX2loMypmTJeqZRJnM0Eoly0BnynB7CSxn11eoIXBUe1mVYNqmQd1hw6uh59iymhK5j939v9J ddmitriev@dis_xcom
@@ -275,3 +287,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrCyaZjs8hiwx38LfpeQ2z9n9ptwQ7gFrhq2z5sK9q/LQMCubbnp5xhyF0SMY1jmQUewBOKXhnq3QSX+DmtNsnhitnZBw2BE5PBXllCBWMMiWULfAYvB0of728Q3EEjrtyfHkt7o2E+CvreVJcVI4kBwjKh5WpVBZ8mmkW/sexLGMuYu0bUWjCddu6ZlhUa+y14VZKOKp44auemza1VL/UzqOVZkBAfR2gPV2pBG3Im+SlnOlDRxKPEXQbsn3u/sNeZq0wSY++khY86AU7jAKfL2NiNsoA7CyB0jTEKwYO3vOWOhECifZuHwY/TNWyRFWM2ImW3mT9aO7nE4w4jXXJ vgusev@vgusev
     rkhozinov:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCti9e5kyNEtX3MEns+eehUCzaxZmI8FWkWrLeRQY3jLUGzI3+N12tA7gKffczGIDP/ttnDg1hl98Yw28mkrIfYYMwRMqsBkGmYZyu6EXccyde6/5U/dgKVFGYLjWmbAAcaIaO2YoxqUJKvIanfLNHTRI29KwgxpaMCtjB7+jHiw/V0MF2xKi8yJgajZgh8iXPiv50BGjICx1BuqgqZb5jjxouV0FpU28mBOobqtaphOHeFPHk1Uool9MBt+2ocAjLbFhozmx0xryBVG4FGreovK60Zz4PuGCUL98rSTt8fbebfVokqkCG+sjykTcEQ8h5/0BUR4sPXw5mxATHD/AOv rkhozinov@rkhw
+    vnaumov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDno7VX9jiveRCF7d1C/FK24WLZwCArdrBBOQ1uHqpkUfUYtG6vrYgt/K2n2FXoX55lbeoJAwuNC9HviaY+vQAekCI4W2s02iD+j/GRUwitpv+lJZXSmt/q2PgLz3OFUIsJV0EwyNl+bexM4+2jYTmHeDMrXAsHL4I2GUv5sFycA11UhxZ/Qm2QMKlRZhje/IJieX9u2BhgYuPYffASVl4AhwtDagYdqquwUXrfu/dQRt/U9w0Di9alApcyPqiW9LbXUgwha1G9+ScQnxmp8WvmaV8YR+nf2OFxQHvOZPYjCzniRnYpaQUMeUAkJKxDwqR1dAKYnaQY5TfXtFwfzsjN vnaumov@vnaumov

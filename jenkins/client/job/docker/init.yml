@@ -43,7 +43,7 @@ parameters:
                 project:
                   "mk/docker-{{name}}":
                     branches:
-                      - {{branch}}
+                      - "{{branch}}"
                 event:
                   patchset:
                     - created:

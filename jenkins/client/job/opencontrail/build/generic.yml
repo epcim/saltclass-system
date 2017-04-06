@@ -103,3 +103,31 @@ parameters:
               UPLOAD_SOURCE_PACKAGE:
                 type: boolean
                 default: '{{upload_source_package}}'
+            trigger:
+              gerrit:
+                project:
+                  contrail/contrail-controller:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-vrouter:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-packages:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-vrouter:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-web-core:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-web-controller:
+                    branches:
+                      - "{{branch}}"
+                  contrail/contrail-third-party:
+                    branches:
+                      - "{{branch}}"
+                event:
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(buildpackage)'

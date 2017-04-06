@@ -25,4 +25,4 @@ parameters:
             pushkin:
               type: bind
               source: /srv/volumes/pushkin/logs
-              destination: /var/log/pushkin/logs
+              destination: /var/log/pushkin

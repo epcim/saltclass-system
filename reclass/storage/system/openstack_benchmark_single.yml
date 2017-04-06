@@ -4,7 +4,7 @@ parameters:
   reclass:
     storage:
       node:
-        opencontrail_benchmark_node01:
+        openstack_benchmark_node01:
           name: ${_param:openstack_benchmark_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:

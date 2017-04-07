@@ -28,14 +28,17 @@ parameters:
         user: heat
         password: ${_param:mysql_heat_password}
       metadata:
-        host: ${_param:cluster_vip_address}
+        host: ${_param:cluster_public_host}
         port: 8000
+        protocol: ${_param:cluster_public_protocol}
       waitcondition:
-        host: ${_param:cluster_vip_address}
+        host: ${_param:cluster_public_host}
         port: 8000
+        protocol: ${_param:cluster_public_protocol}
       watch:
-        host: ${_param:cluster_vip_address}
+        host: ${_param:cluster_public_host}
         port: 8003
+        protocol: ${_param:cluster_public_protocol}
       identity:
         engine: keystone
         host: ${_param:cluster_vip_address}

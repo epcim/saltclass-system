@@ -73,3 +73,7 @@ parameters:
               ARCH:
                 type: string
                 default: "amd64"
+              BINARY_PACKAGES:
+                description: "binary packages to create"
+                type: string
+                default: "all"

@@ -45,14 +45,8 @@ parameters:
                     branches:
                       - "{{branch}}"
                 event:
-                  patchset:
-                    - created:
-                        excludeDrafts: false
-                        excludeTrivialRebase: false
-                        excludeNoCodeChange: false
-                  comment:
-                    - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
+                  ref:
+                    - updated: {}
             param:
               IMAGE_NAME:
                 type: string

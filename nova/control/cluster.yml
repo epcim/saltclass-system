@@ -71,4 +71,4 @@ parameters:
         mtu: 1500
         tenant: service
       metadata:
-        password: metadataPass
+        password: ${_param:metadata_password}

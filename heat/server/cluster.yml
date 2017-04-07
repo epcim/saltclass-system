@@ -4,6 +4,8 @@ classes:
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.heat
 parameters:
+  _param:
+    cluster_public_protocol: https
   heat:
     server:
       stack_domain_admin:

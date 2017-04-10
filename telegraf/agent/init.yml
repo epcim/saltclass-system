@@ -1,8 +1,6 @@
 paramaters:
   telegraf:
     agent:
-      input:
-        diskio:
       output:
         prometheus_client:
           bind:

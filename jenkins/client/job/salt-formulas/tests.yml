@@ -96,6 +96,7 @@ parameters:
             - name: sensu
             - name: sentry
             - name: sphinx
+            - name: spinnaker
             - name: statsd
             - name: supervisor
             - name: swift

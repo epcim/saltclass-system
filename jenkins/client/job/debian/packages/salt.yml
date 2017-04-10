@@ -169,6 +169,8 @@ parameters:
               dist: trusty
             - name: sphinx
               dist: trusty
+            - name: spinnaker
+              dist: trusty
             - name: statsd
               dist: trusty
             - name: supervisor
@@ -344,6 +346,8 @@ parameters:
             - name: sentry
               dist: xenial
             - name: sphinx
+              dist: xenial
+            - name: spinnaker
               dist: xenial
             - name: statsd
               dist: xenial

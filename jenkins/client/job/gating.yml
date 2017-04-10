@@ -11,10 +11,17 @@ parameters:
           name: gate-gerrit-{{name}}
           jobs:
             - name: mk
+              regex: 'mk\/.*'
             - name: debian
+              regex: 'debian\/.*'
             - name: contrail
+              regex: 'contrail\/.*'
             - name: salt-models
+              regex: 'salt-models\/.*'
             - name: salt-formulas
+              regex: 'salt-formulas\/.*'
+            - name: oss
+              regex: 'oss\/devops-portal'
           template:
             discard:
               build:
@@ -32,7 +39,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  '{{name}}\/.*':
+                  '{{regex}}':
                     compare_type: REG_EXP
                     branches:
                       - master

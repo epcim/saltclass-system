@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    salt_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        salt_pki:
+          path: /srv/salt/pki
+          server: ${_param:salt_glusterfs_service_host}
+          opts: "defaults,backup-volfile-servers=${_param:cluster_node01_address}:${_param:cluster_node02_address}:${_param:cluster_node03_address}"

@@ -3,6 +3,10 @@ parameters:
     nagios_notification_email: root@localhost
     nagios_host_dimension_key: nagios_host
     nagios_default_host_alarm_clusters: 00-clusters
+    nagios_monitoring_network: []
+    nagios_monitoring_interface:
+    - eth0
+    - ens3
   nagios :
     server:
       enabled: true
@@ -63,10 +67,8 @@ parameters:
           - target: 'G@services:openssh'
             contact_groups: Operator
             use: generic_host_tpl
-            interface:
-            - eth0
-            - ens3
-            - p4p1.602
+            interface: ${_param:nagios_monitoring_interface}
+            network: ${_param:nagios_monitoring_network}
         services:
           - target: 'G@roles:openssh.server'
             name: SSH

@@ -78,3 +78,19 @@ following example.
                 # Enabling 7 VFs on eth4 PF
                 echo 7 > /sys/class/net/eth4/device/sriov_numvfs; sleep 2; ip link set eth4 up
                 exit 0
+
+
+Nagios Monitoring
+=================
+
+Configure Hosts dynamically
+---------------------------
+
+The nagios formula looks up grains.items throught Salt mines to discover hosts.
+There are two different parameters that tell the nagios formula how to determine
+the hosts' IP address:
+
+- nagios_monitoring_network: IP subnet(s) in CIDR notation (can be a list)
+- nagios_monitoring_interface: interface name(s). Default ['eth0', 'ens3'].
+
+'nagios_monitoring_network' parameter takes precedence over 'nagios_monitoring_interface' list.

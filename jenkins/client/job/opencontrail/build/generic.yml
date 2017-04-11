@@ -106,27 +106,57 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  contrail/contrail-controller:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-vrouter:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-packages:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-vrouter:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-web-core:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-web-controller:
-                    branches:
-                      - "{{branch}}"
-                  contrail/contrail-third-party:
-                    branches:
-                      - "{{branch}}"
+                   contrail/contrail-pipeline:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-build:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-controller:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-vrouter:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-third-party:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-generateDS:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-sandesh:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-packages:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-nova-vif-driver:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-neutron-plugin:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-nova-extensions:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-heat:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-web-storage:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-web-server-manager:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-web-controller:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-web-core:
+                     branches:
+                       - "{{branch}}"
+                   contrail/contrail-webui-third-party:
+                     branches:
+                       - "{{branch}}"
                 event:
                   comment:
                     - addedContains:

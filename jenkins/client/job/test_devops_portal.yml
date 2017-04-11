@@ -2,8 +2,8 @@ parameters:
   jenkins:
     client:
       job:
-        test-devops-portal-unittests:
-          name: test-devops-portal-unittests
+        test-oss-devops-portal:
+          name: test-oss-devops-portal
           discard:
             build:
               keep_num: 10

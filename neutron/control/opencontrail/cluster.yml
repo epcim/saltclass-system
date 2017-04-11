@@ -20,33 +20,13 @@ parameters:
             rights: all
   neutron:
     server:
-      enabled: true
       dns_domain: ${_param:cluster_domain}
-      version: ${_param:neutron_version}
-      bind:
-        address: ${_param:cluster_local_address}
-        port: 9696
       database:
-        engine: mysql
         host: ${_param:openstack_database_address}
-        port: 3306
-        name: neutron
-        user: neutron
-        password: ${_param:mysql_neutron_password}
       identity:
-        engine: keystone
         region: ${_param:openstack_region}
         host: ${_param:openstack_control_address}
-        port: 35357
-        user: neutron
-        password: ${_param:keystone_neutron_password}
-        tenant: service
       message_queue:
-        engine: rabbitmq
-        port: 5672
-        user: openstack
-        password: ${_param:rabbitmq_openstack_password}
-        virtual_host: '/openstack'
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
@@ -54,13 +34,11 @@ parameters:
       compute:
         host: ${_param:openstack_control_address}
         region: ${_param:openstack_region}
-        user: nova
-        password: ${_param:keystone_nova_password}
-        tenant: service
-      plugin: contrail
-      tunnel_type: vxlan
-      public_networks: []
-      contrail:
-        version: ${_param:opencontrail_version}
-
-
+      backend:
+        engine: contrail
+        host: ${_param:opencontrail_control_address}
+        port: 8082
+        user: admin
+        password: ${_param:keystone_admin_password}
+        tenant: admin
+        token: ${_param:keystone_service_token}

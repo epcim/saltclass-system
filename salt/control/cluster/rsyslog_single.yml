@@ -2,9 +2,9 @@ parameters:
   salt:
     control:
       size:
-        infra.proxy:
+        infra.rsyslog:
           cpu: 8
-          ram: 16384
+          ram: 8192
           disk_profile: xxlarge
           net_profile: default
       cluster:
@@ -15,4 +15,4 @@ parameters:
             rsl01:
               provider: kvm02.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
-              size: infra.proxy
+              size: infra.rsyslog

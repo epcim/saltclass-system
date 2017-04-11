@@ -6,7 +6,7 @@ parameters:
   linux:
     system:
       repo:
-        mcp_opencontrail_${_param:linux_repo_contrail_component}:
+        mcp_opencontrail:
           refresh_db: ${_param:linux_repo_refresh_db}
           source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:apt_mk_version} ${_param:linux_repo_contrail_component}"
           architectures: amd64

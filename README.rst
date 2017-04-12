@@ -79,6 +79,45 @@ following example.
                 echo 7 > /sys/class/net/eth4/device/sriov_numvfs; sleep 2; ip link set eth4 up
                 exit 0
 
+Grafana
+=======
+
+Configure Grafana client
+------------------------
+
+The grafana.client talks to Grafana server to create datasource(s) and install
+Grafana plugin(s).
+
+User models must first include this class and define corresponding parameters:
+
+- grafana.client
+  - grafana_protocol (default: http)
+  - grafana_address
+  - grafana_port (default: 3000)
+  - grafana_user
+  - grafana_password
+
+Then include datasource(s) and define corresponding parameters:
+
+- grafana.client.datasource.influxdb
+  - grafana_influxdb_address
+  - grafana_influxdb_port
+  - grafana_influxdb_user
+  - grafana_influxdb_password
+  - grafana_influxdb_database
+  - grafana_influxdb_is_default (default true)
+
+- grafana.client.datasource.prometheus
+  - grafana_prometheus_address
+  - grafana_prometheus_port
+  - grafana_prometheus_is_default (default true)
+
+Backwark compatiblity
+---------------------
+
+The class **grafana.client.single** configures grafana client and an InfluxDB
+datasource. This is the legacy of LMA (aka StackLight) integration with Grafana
+and InfluxDB.
 
 Nagios Monitoring
 =================

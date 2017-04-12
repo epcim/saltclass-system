@@ -11,13 +11,13 @@ parameters:
         pushkin:
           mode: http
           options:
-          - httpchk get /apps
+          - httpchk GET /apps
           balance: source
           http_request:
             - action: "add-header X-Forwarded-Proto https"
               condition: "if { ssl_fc }"
           sticks:
-          - http-check expect ! rstatus ^5
+          - http-check expect status 200
           binds:
             - address: ${_param:haproxy_pushkin_bind_host}
               port: ${_param:haproxy_pushkin_bind_port}

@@ -12,7 +12,7 @@ parameters:
           mode: tcp
           balance: source
           options:
-          - pgsql-check user ${_param:pushkin_db_user}
+          - tcp-check
           binds:
             - address: ${_param:haproxy_pushkin_db_bind_host}
               port: ${_param:haproxy_pushkin_db_bind_port}
@@ -21,12 +21,12 @@ parameters:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
               port: ${_param:haproxy_pushkin_db_exposed_port}
-              params: check
+              params: check port ${_param:haproxy_pushkin_db_exposed_port}
             - name: ${_param:cluster_node02_name}
               host: ${_param:cluster_node02_address}
               port: ${_param:haproxy_pushkin_db_exposed_port}
-              params: backup check
+              params: backup check port ${_param:haproxy_pushkin_db_exposed_port}
             - name: ${_param:cluster_node03_name}
               host: ${_param:cluster_node03_address}
               port: ${_param:haproxy_pushkin_db_exposed_port}
-              params: backup check
+              params: backup check port ${_param:haproxy_pushkin_db_exposed_port}

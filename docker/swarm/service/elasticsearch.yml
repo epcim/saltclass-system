@@ -16,4 +16,4 @@ parameters:
             elasticsearch:
               type: bind
               source: /srv/volumes/elasticsearch
-              destination: /var/lib/elasticsearch/data
+              destination: /usr/share/elasticsearch/data

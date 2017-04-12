@@ -19,3 +19,7 @@ parameters:
         downstream: mk/docker-phpldapadmin
         upstream: "git@github.com:Mirantis/docker-phpldapadmin"
         branches: stable,master
+      - name: docker-openldap
+        downstream: mk/docker-openldap
+        upstream: "git@github.com:Mirantis/docker-openldap"
+        branches: stable,master

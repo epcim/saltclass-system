@@ -133,6 +133,13 @@ parameters:
           full_name: Vlad Naumov
           home: /home/vnaumov
           email: vnaumov@mirantis.com
+        ekhomyakova:
+          enabled: true
+          name: ekhomyakova
+          sudo: true
+          full_name: Ekaterina Khomyakova
+          home: /home/ekhomyakova
+          email: ekhomyakova@mirantis.com
       group:
         libvirtd:
           enabled: true
@@ -246,6 +253,11 @@ parameters:
           public_keys:
           - ${public_keys:vnaumov}
           user: ${linux:system:user:vnaumov}
+        ekhomyakova:
+          enable: true
+          public_keys:
+          - ${public_keys:ekhomyakova}
+          user: ${linux:system:user:ekhomyakova}
   public_keys:
     ddmitriev:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuD4wJ8hzkchQ0pfgdwWukQyps1xYRfHOsjosmDu/mmgaXVud5mnpwb2q35E2YYTox2mx+ulJqyS+099gz6MPg4P8D5qdMuRbAsJqbceLaaIGQhdT8qgSo7ESrl5pwvYnfWzKLKF0z5s7nrW0nvArC40zhV9o9XpvzzzSFByepWfkwA8ReldGUYVvTKp8YXaCrqEdMZrU42adPM2nl+fYBbGF+h4/Ka247aVjPeER0blV3znFXbv2Kf38G+i/TEGaktgpBdtGGDi1tX2loMypmTJeqZRJnM0Eoly0BnynB7CSxn11eoIXBUe1mVYNqmQd1hw6uh59iymhK5j939v9J ddmitriev@dis_xcom
@@ -289,3 +301,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCti9e5kyNEtX3MEns+eehUCzaxZmI8FWkWrLeRQY3jLUGzI3+N12tA7gKffczGIDP/ttnDg1hl98Yw28mkrIfYYMwRMqsBkGmYZyu6EXccyde6/5U/dgKVFGYLjWmbAAcaIaO2YoxqUJKvIanfLNHTRI29KwgxpaMCtjB7+jHiw/V0MF2xKi8yJgajZgh8iXPiv50BGjICx1BuqgqZb5jjxouV0FpU28mBOobqtaphOHeFPHk1Uool9MBt+2ocAjLbFhozmx0xryBVG4FGreovK60Zz4PuGCUL98rSTt8fbebfVokqkCG+sjykTcEQ8h5/0BUR4sPXw5mxATHD/AOv rkhozinov@rkhw
     vnaumov:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDno7VX9jiveRCF7d1C/FK24WLZwCArdrBBOQ1uHqpkUfUYtG6vrYgt/K2n2FXoX55lbeoJAwuNC9HviaY+vQAekCI4W2s02iD+j/GRUwitpv+lJZXSmt/q2PgLz3OFUIsJV0EwyNl+bexM4+2jYTmHeDMrXAsHL4I2GUv5sFycA11UhxZ/Qm2QMKlRZhje/IJieX9u2BhgYuPYffASVl4AhwtDagYdqquwUXrfu/dQRt/U9w0Di9alApcyPqiW9LbXUgwha1G9+ScQnxmp8WvmaV8YR+nf2OFxQHvOZPYjCzniRnYpaQUMeUAkJKxDwqR1dAKYnaQY5TfXtFwfzsjN vnaumov@vnaumov
+    ekhomyakova:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEaWwPVtsj39s0A2efRQ1ejL5B7ZetFPmXJDi/8W/gTWIIII3xP750H8QWZfvbjiJ+KBCxOndDL8aL3SHC/iRCvmzrVkgXBgf5J9vTu8uas7BNGf7oiDBuB75fryDtkg57Pam/A47IlgxJTCwYz+ofUGHb6WrWwQ+MUTEWAk9PB+RPyxjwNC4XxEwtULkKQMgFmg52kauESpx0R0ni8/LLKUJucdse7NCcUTvEcafppnXsxdZ640G0K82ADS1neg1CDwdtCPKLG57GZYs4iL3sPcOhQxnVUoONXsRpBD8kQTKOMl5R6hTDJHBd3oimUPEXlPqeb/XeGKatVraRA6nJ ekhomyakova@ekhomyakova

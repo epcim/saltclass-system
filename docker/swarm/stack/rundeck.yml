@@ -1,0 +1,29 @@
+parameters:
+  _param:
+    docker_rundeck_replicas: 1
+    docker_image_rundeck: docker-sandbox.sandbox.mirantis.net/ikharin/oss/rundeck:latest
+    rundeck_admin_password: password
+  docker:
+    client:
+      stack:
+        rundeck:
+          environment:
+            SERVER_URL: "http://${_param:haproxy_rundeck_bind_host}:${_param:haproxy_rundeck_bind_port}"
+            RUNDECK_ADMIN_PASSWORD: ${_param:rundeck_admin_password}
+          service:
+            rundeck:
+              image: ${_param:docker_image_rundeck}
+              deploy:
+                replicas: ${_param:docker_rundeck_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - 14440:4440
+              volumes:
+                - /srv/volumes/rundeck/etc:/etc/rundeck
+                - /srv/volumes/rundeck/rundeck:/var/rundeck
+                - /srv/volumes/rundeck/mysql:/var/lib/mysql
+                - /srv/volumes/rundeck/log:/var/log/rundeck
+                - /srv/volumes/rundeck/logs:/var/lib/rundeck/logs
+                - /srv/volumes/rundeck/plugins:/opt/rundeck-plugins
+                - /srv/volumes/rundeck/storage:/var/lib/rundeck/var/storage

@@ -7,4 +7,4 @@ parameters:
         elasticsearch:
           path: /srv/volumes/elasticsearch
           server: ${_param:elasticsearch_glusterfs_service_host}
-          opts: 'defaults'
+          opts: "defaults,backup-volfile-servers=${_param:cluster_node01_address}:${_param:cluster_node02_address}:${_param:cluster_node03_address}"

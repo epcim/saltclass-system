@@ -25,6 +25,7 @@ parameters:
         discard-old-build: {}
         docker-workflow: {}
         extended-choice-parameter: {}
+        extensible-choice-parameter: {}
         gerrit-trigger: {}
         git: {}
         heavy-job: {}

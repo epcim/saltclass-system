@@ -45,10 +45,9 @@ parameters:
                 type: boolean
                 default: false
               COOKIECUTTER_TEMPLATE_CONTEXT:
-                type: string
+                type: text
               RECLASS_MODEL_URL:
                 type: string
-                default: "${_param:jenkins_gerrit_url}/salt-models/training.git"
               RECLASS_MODEL_CREDENTIALS:
                 type: string
                 default: gerrit

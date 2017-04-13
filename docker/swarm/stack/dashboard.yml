@@ -1,0 +1,16 @@
+parameters:
+  docker:
+    client:
+      stack:
+        dashboard:
+          service:
+            grafana:
+              deploy:
+                replicas: 1
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_grafana}
+              ports:
+                - 15013:3000
+              environment:
+                GF_SECURITY_ADMIN_PASSWORD: ${_param:grafana_admin_password}

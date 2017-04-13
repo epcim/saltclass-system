@@ -1,0 +1,52 @@
+parameters:
+  _param:
+    docker_pushkin_db_replicas: 1
+    docker_image_pushkin_db: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/pushkindb:latest
+    pushkin_db_password: pushkin
+    pushkin_db_user: pushkin
+    pushkin_db: pushkin
+    docker_pushkin_replicas: 1
+    docker_image_pushkin: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/pushkin:latest
+    elasticsearch_replicas: 1
+    docker_image_oss_elasticsearch: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/elasticsearch:latest
+  docker:
+    client:
+      stack:
+        pushkin:
+          environment:
+            POSTGRES_USER: ${_param:pushkin_db_user}
+            POSTGRES_PASSWORD: ${_param:pushkin_db_password}
+            POSTGRES_DB: ${_param:pushkin_db}
+            PUSHKINDBHOST: ${_param:haproxy_pushkin_db_bind_host}
+            PUSHKINELASTICHOST: ${_param:haproxy_elasticsearch_bind_host}
+          service:
+            db:
+              image: ${_param:docker_image_pushkin_db}
+              deploy:
+                replicas: ${_param:docker_pushkin_db_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - ${_param:haproxy_pushkin_db_exposed_port}:${_param:haproxy_pushkin_db_bind_port}
+              volumes:
+                - /srv/volumes/pushkin/data:/var/lib/postgresql/data
+            backend:
+              image: ${_param:docker_image_pushkin}
+              deploy:
+                replicas: ${_param:docker_pushkin_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - ${_param:haproxy_pushkin_exposed_port}:${_param:haproxy_pushkin_bind_port}
+              volumes:
+                - /srv/volumes/pushkin/logs:/var/log/pushkin
+            elasticsearch:
+              image: ${_param:docker_image_oss_elasticsearch}
+              deploy:
+                replicas: ${_param:elasticsearch_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - ${_param:haproxy_elasticsearch_exposed_port}:${_param:haproxy_elasticsearch_bind_port}
+              volumes:
+                - /srv/volumes/elasticsearch:/usr/share/elasticsearch/data

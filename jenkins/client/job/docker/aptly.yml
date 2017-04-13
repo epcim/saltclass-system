@@ -43,3 +43,6 @@ parameters:
             REGISTRY_CREDENTIALS_ID:
               type: string
               default: "dockerhub"
+            DOCKER_GIT_TAG:
+              type: boolean
+              default: "true"

@@ -23,7 +23,11 @@ parameters:
               dockerfile: "Dockerfile"
             - name: phpldapadmin
               branch: "master"
-              tags: "0.16.2 latest"
+              tags: "latest"
+              dockerfile: "image/Dockerfile"
+            - name: openldap
+              branch: "master"
+              tags: "latest"
               dockerfile: "image/Dockerfile"
           template:
             discard:
@@ -72,3 +76,6 @@ parameters:
               REGISTRY_CREDENTIALS_ID:
                 type: string
                 default: "dockerhub"
+              DOCKER_GIT_TAG:
+                type: boolean
+                default: "true"

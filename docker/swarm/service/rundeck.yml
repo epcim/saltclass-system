@@ -1,8 +1,7 @@
 parameters:
   _param:
     docker_rundeck_replicas: 1
-    docker_image_rundeck: docker-sandbox.sandbox.mirantis.net/ikharin/oss/rundeck:latest
-    rundeck_admin_password: password
+    docker_image_rundeck: docker-sandbox.sandbox.mirantis.net/ikharin/oss/rundeck:devel
   docker:
     client:
       service:
@@ -17,10 +16,14 @@ parameters:
           ports:
             - 14440:4440
           volume:
-            etc:
+            framework.properties:
               type: bind
-              source: /srv/volumes/rundeck/etc
-              destination: /etc/rundeck
+              source: /srv/volumes/rundeck/config/framework.properties
+              destination: /etc/rundeck/framework.properties
+            tokens.properties:
+              type: bind
+              source: /srv/volumes/rundeck/config/tokens.properties
+              destination: /etc/rundeck/tokens.properties
             rundeck:
               type: bind
               source: /srv/volumes/rundeck/rundeck

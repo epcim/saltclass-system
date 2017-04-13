@@ -19,6 +19,9 @@ parameters:
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
               script: lab-pipeline.groovy
+            trigger:
+              timer:
+                spec: "{{timer}}"
             param:
               # deployments and test settings
               STACK_TYPE:

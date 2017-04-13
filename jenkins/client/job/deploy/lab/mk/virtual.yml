@@ -35,14 +35,17 @@ parameters:
         install: core,openstack,contrail
         stack_type: heat
         test: openstack
+        timer: "H H(0-6) * * *"
       - lab: virtual_mcp10_dvr
         install: core,openstack,dvr
         stack_type: heat
         test: openstack
+        timer: "H H(0-6) * * *"
       - lab: virtual_mcp10_ovs
         install: core,openstack,ovs
         stack_type: heat
         test: openstack
+        timer: "H H(0-6) * * *"
       # mcp11
       - lab: virtual_mcp11_contrail
         install: core,openstack,contrail

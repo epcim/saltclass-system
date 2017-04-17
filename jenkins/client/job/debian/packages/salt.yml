@@ -159,6 +159,8 @@ parameters:
               dist: trusty
             - name: rsyslog
               dist: trusty
+            - name: rundeck
+              dist: trusty
             - name: sahara
               dist: trusty
             - name: salt
@@ -334,6 +336,8 @@ parameters:
             - name: roundcube
               dist: xenial
             - name: rsync
+              dist: xenial
+            - name: rundeck
               dist: xenial
             - name: rsyslog
               dist: xenial

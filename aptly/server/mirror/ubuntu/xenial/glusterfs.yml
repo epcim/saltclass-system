@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    apt_mk_version: stable
   aptly:
     server:
       mirror:
@@ -12,6 +10,6 @@ parameters:
           gpgkeys:
             - 3FE869A9
           publisher:
-            component: main
+            component: glusterfs
             distributions:
-              - ubuntu-xenial/${_param:apt_mk_version}
+              - ubuntu-xenial/nightly

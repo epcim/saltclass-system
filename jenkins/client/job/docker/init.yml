@@ -1,6 +1,11 @@
 parameters:
   jenkins:
     client:
+      view:
+        Docker:
+          enabled: true
+          type: ListView
+          include_regex: ".*-docker-.*"
       job_template:
         docker-build-image:
           name: docker-build-image-{{name}}-{{branch}}

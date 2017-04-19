@@ -41,6 +41,8 @@ parameters:
               dist: trusty
             - name: dekapod
               dist: trusty
+            - name: designate
+              dist: trusty
             - name: devops-portal
               dist: trusty
             - name: docker
@@ -220,6 +222,8 @@ parameters:
             - name: collectd
               dist: xenial
             - name: dekapod
+              dist: xenial
+            - name: designate
               dist: xenial
             - name: devops-portal
               dist: xenial

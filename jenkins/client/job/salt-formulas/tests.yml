@@ -24,6 +24,7 @@ parameters:
             - name: chrony
             - name: cinder
             - name: collectd
+            - name: designate
             - name: dekapod
             - name: devops-portal
             - name: docker

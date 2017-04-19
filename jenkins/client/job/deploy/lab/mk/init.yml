@@ -37,7 +37,7 @@ parameters:
               # heat
               HEAT_TEMPLATE_URL:
                 type: string
-                default: "git@github.com:Mirantis/mk-lab-heat-templates.git"
+                default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
               HEAT_TEMPLATE_CREDENTIALS:
                 type: string
                 default: "gerrit"

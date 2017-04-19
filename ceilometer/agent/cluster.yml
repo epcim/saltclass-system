@@ -16,8 +16,10 @@ parameters:
         password: ${_param:keystone_ceilometer_password}
       message_queue:
         engine: rabbitmq
-        host: ${_param:openstack_message_queue_address}
-        port: 5672
+        members:
+          - host: ${_param:openstack_message_queue_node01_address}
+          - host: ${_param:openstack_message_queue_node02_address}
+          - host: ${_param:openstack_message_queue_node03_address}
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'

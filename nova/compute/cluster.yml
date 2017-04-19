@@ -5,7 +5,7 @@ parameters:
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
     nova_compute_virtualization: kvm
     nova_compute_avail_zone:
-    nova_aggregates:
+    nova_aggregates: []
     nova_compute_ssh_public: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCltIn93BcTMzNK/n2eBze6PyTkmIgdDkeXNR9X4DqE48Va80ojv2pq8xuaBxiNITJzyl+4p4UvTTXo+HmuX8qbHvqgMGXvuPUCpndEfb2r67f6vpMqPwMgBrUg2ZKgN4OsSDHU+H0dia0cEaTjz5pvbUy9lIsSyhrqOUVF9reJq+boAvVEedm8fUqiZuiejAw2D27+rRtdEPgsKMnh3626YEsr963q4rjU/JssV/iKMNu7mk2a+koOrJ+aHvcVU8zJjfA0YghoeVT/I3GLU/MB/4tD/RyR8GM+UYbI4sgAC7ZOCdQyHdJgnEzx3SJIwcS65U0T2XYvn2qXHXqJ9iGZ root@mirantis.com
     nova_compute_ssh_private: |
       -----BEGIN RSA PRIVATE KEY-----

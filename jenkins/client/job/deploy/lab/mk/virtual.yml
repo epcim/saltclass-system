@@ -60,7 +60,12 @@ parameters:
         stack_type: heat
         test: openstack
       - lab: virtual_mcp11_k8s_calico
-        install: core,k8s
+        install: core,k8s,calico
+        stack_type: heat
+        test: k8s
+        timer: "H H(0-6) * * *"
+      - lab: virtual_mcp11_k8s_contrail
+        install: core,k8s,contrail
         stack_type: heat
         test: k8s
         timer: "H H(0-6) * * *"

@@ -59,6 +59,7 @@ parameters:
             - name: letsencrypt
             - name: libvirt
             - name: linux
+            - name: lldp
             - name: logrotate
             - name: maas
             - name: magnum

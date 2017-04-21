@@ -7,62 +7,97 @@ parameters:
           jobs:
             - package: librdkafka
               dist: trusty
+              build: pipeline
             - package: python-kafka
               dist: trusty
+              build: pipeline
             - package: liburcu
               dist: trusty
+              build: pipeline
             - package: python-kazoo
               dist: trusty
+              build: pipeline
             - package: python-pathlib
               dist: trusty
+              build: pipeline
             - package: kafka
               dist: trusty
+              build: pipeline
             - package: python-geventhttpclient
               dist: trusty
+              build: pipeline
             - package: python-consistent-hash
               dist: trusty
+              build: pipeline
             - package: libipfix
               dist: trusty
+              build: pipeline
             - package: python-ncclient
               dist: trusty
+              build: pipeline
             - package: python-pycassa
               dist: trusty
+              build: pipeline
             - package: python-xmltodict
               dist: trusty
+              build: pipeline
             - package: python-backports.ssl-match-hostname
               dist: trusty
+              build: pipeline
             - package: python-certifi
               dist: trusty
+              build: pipeline
             - package: python-docker
               dist: trusty
+              build: pipeline
             - package: python-cassandra-driver
               dist: trusty
+              build: pipeline
             - package: python-redis
               dist: trusty
+              build: pipeline
             - package: python-tabulate
               dist: trusty
+              build: pipeline
             - package: cassandra-cpp-driver
               dist: trusty
+              build: pipeline
             - package: libuv1
               dist: trusty
+              build: pipeline
             - package: python-sseclient
               dist: trusty
+              build: pipeline
             - package: librdkafka
               dist: xenial
+              build: pipeline
             - package: python-kafka
               dist: xenial
+              build: pipeline
             - package: python-geventhttpclient
               dist: xenial
+              build: pipeline
             - package: python-docker
               dist: xenial
+              build: pipeline
             - package: python-consistent-hash
               dist: xenial
+              build: pipeline
             - package: libipfix
               dist: xenial
+              build: pipeline
             - package: cassandra-cpp-driver
               dist: xenial
+              build: pipeline
             - package: python-sseclient
               dist: xenial
+              build: pipeline
+            - package: telegraf
+              dist: trusty
+              build: telegraf
+            - package: telegraf
+              dist: xenial
+              build: telegraf
           template:
             type: workflow-scm
             concurrent: false
@@ -70,7 +105,7 @@ parameters:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
-              script: build-debian-packages-pipeline.groovy
+              script: build-debian-packages-{{build}}.groovy
             trigger:
               gerrit:
                 project:

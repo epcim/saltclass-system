@@ -24,11 +24,11 @@ parameters:
     sudo_coreutils_safe:
     - /usr/bin/less
     sudo_salt_safe:
-    - /usr/bin/salt state*
-    - /usr/bin/salt service*
-    - /usr/bin/salt pillar*
-    - /usr/bin/salt grains*
-    - /usr/bin/salt saltutil*
+    - /usr/bin/salt * state*
+    - /usr/bin/salt * service*
+    - /usr/bin/salt * pillar*
+    - /usr/bin/salt * grains*
+    - /usr/bin/salt * saltutil*
     - /usr/bin/salt-call state*
     - /usr/bin/salt-call service*
     - /usr/bin/salt-call pillar*

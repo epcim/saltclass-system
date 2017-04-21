@@ -41,5 +41,6 @@ parameters:
           support:
             commands:
                 - L1_SUPPORT_SALT
+                - L1_SUPPORT_COREUTILS
                 - '!L1_SUPPORT_RESTRICTED_SHELLS'
                 - '!L1_SUPPORT_RESTRICTED'

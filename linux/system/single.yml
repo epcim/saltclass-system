@@ -11,6 +11,8 @@ parameters:
           version: latest
         cloud-init:
           version: purged
+        mcelog:
+          version: latest
       kernel:
         modules:
           - nf_conntrack

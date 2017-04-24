@@ -89,6 +89,10 @@ parameters:
               dist: trusty
               build: pipeline
               branch: debian/trusty
+            - package: reclass
+              dist: trusty
+              build: pipeline
+              branch: debian/trusty
             - package: librdkafka
               dist: xenial
               build: pipeline
@@ -118,6 +122,10 @@ parameters:
               build: pipeline
               branch: debian/xenial
             - package: python-sseclient
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
+            - package: reclass
               dist: xenial
               build: pipeline
               branch: debian/xenial

@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    radosgw_s3_cluster_port: 8081
   keystone:
     client:
       server:
@@ -20,11 +21,11 @@ parameters:
                 - region: ${_param:openstack_region}
                   public_address: ${_param:cluster_public_host}
                   public_protocol: ${_param:cluster_public_protocol}
-                  public_port: 8081
+                  public_port: ${_param:radosgw_s3_cluster_port}
                   public_path: '/' # /$(project_id)s
                   internal_address: ${_param:radosgw_service_host}
-                  internal_port: 8081
+                  internal_port: ${_param:radosgw_s3_cluster_port}
                   internal_path: '/'
                   admin_address: ${_param:radosgw_service_host}
-                  admin_port: 8081
+                  admin_port: ${_param:radosgw_s3_cluster_port}
                   admin_path: '/'

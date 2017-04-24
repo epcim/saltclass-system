@@ -7,3 +7,6 @@ parameters:
             devops_portal:
               source: pkg
               name: salt-formula-devops-portal
+            rundeck:
+              source: pkg
+              name: salt-formula-rundeck

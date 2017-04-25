@@ -34,6 +34,10 @@ parameters:
               branch: "master"
               tags: "latest"
               dockerfile: "image/Dockerfile"
+            - name: mysql
+              branch: "master"
+              tags: "5.6 latest"
+              dockerfile: "5.6/Dockerfile"
           template:
             discard:
               build:

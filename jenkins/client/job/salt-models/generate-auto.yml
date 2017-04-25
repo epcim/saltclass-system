@@ -2,7 +2,7 @@ parameters:
   jenkins:
     client:
       job_template:
-        generate-salt-model:
+        generate-salt-model-auto:
           name: generate-salt-model-{{cookiecutter_template}}
           param:
             cookiecutter_template:

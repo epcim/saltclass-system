@@ -4,6 +4,7 @@ parameters:
       target:
         static:
           etcd:
+            enabled: true
             scheme: https
             tls_config:
               skip_verify: true

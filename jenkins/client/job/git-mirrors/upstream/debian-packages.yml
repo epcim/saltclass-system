@@ -5,5 +5,5 @@ parameters:
     jenkins_git_mirror_upstream_jobs:
       - name: debian-telegraf
         downstream: debian/telegraf
-        upstream: "https://github.com/mirantis/telegraf.git"
+        upstream: "git@github.com:Mirantis/telegraf.git"
         branches: master

@@ -13,7 +13,7 @@ parameters:
                   password: ${_param:keystone_sahara_password}
                   email: ${_param:admin_email}
           service:
-            swift:
+            sahara:
               type: data-processing
               description: Sahara Data Processing
               endpoints:

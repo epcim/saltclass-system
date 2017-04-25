@@ -52,9 +52,9 @@ parameters:
               item: nofile
               value: 307200
             - type: soft
-              item: noproc
+              item: nproc
               value: 307200
             - type: hard
-              item: noproc
+              item: nproc
               value: 307200
 

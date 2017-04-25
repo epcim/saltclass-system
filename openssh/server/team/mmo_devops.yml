@@ -1,5 +1,4 @@
 classes:
-- system.linux.system.sudo
 # DevOps/SRE Team
 - system.openssh.server.team.members.cade
 - system.openssh.server.team.members.dszeluga

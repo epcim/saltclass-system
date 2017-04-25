@@ -1,103 +1,11 @@
-parameters:
-  linux:
-    system:
-      user:
-        dszeluga:
-          enabled: true
-          name: dszeluga
-          sudo: true
-          full_name: Damian Szeluga
-          home: /home/dszeluga
-        mlos:
-          enabled: true
-          name: mlos
-          sudo: true
-          full_name: Mateusz Los
-          home: /home/mlos
-        mwilson:
-          enabled: true
-          name: mwilson
-          sudo: true
-          full_name: Mike Wilson
-          home: /home/mwilson
-        korlowska:
-          enabled: true
-          name: korlowska
-          sudo: true
-          full_name: Katarzyna Orlowska
-          home: /home/korlowska
-        sflorczak:
-          enabled: true
-          name: sflorczak
-          sudo: true
-          full_name: Szymon Florczak
-          home: /home/sflorczak
-        miwinski:
-          enabled: true
-          name: miwinski
-          sudo: true
-          full_name: Marcin Iwinski
-          home: /home/miwinski
-        mrelewicz:
-          enabled: true
-          name: mrelewicz
-          sudo: true
-          full_name: Maciej Relewicz
-          home: /home/mrelewicz
-  openssh:
-    server:
-      enabled: true
-      user:
-        dszeluga:
-          enabled: true
-          public_keys:
-          - ${public_keys:dszeluga}
-          user: ${linux:system:user:dszeluga}
-        mlos:
-          enabled: true
-          public_keys:
-          - ${public_keys:mlos}
-          user: ${linux:system:user:mlos}
-        mwilson:
-          enabled: true
-          public_keys:
-          - ${public_keys:mwilson}
-          - ${public_keys:mwilson2}
-          user: ${linux:system:user:mwilson}
-        korlowska:
-          enabled: true
-          public_keys:
-          - ${public_keys:korlowska}
-          user: ${linux:system:user:korlowska}
-        sflorczak:
-          enabled: true
-          public_keys:
-          - ${public_keys:sflorczak}
-          user: ${linux:system:user:sflorczak}
-        miwinski:
-          enabled: true
-          public_keys:
-          - ${public_keys:miwinski}
-          user: ${linux:system:user:miwinski}
-        mrelewicz:
-          enabled: true
-          public_keys:
-          - ${public_keys:mrelewicz}
-          user: ${linux:system:user:mrelewicz}
-  public_keys:
-    dszeluga:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEEFoCOaivah6AjFZmPIDlDlp8mUfsh9UFrjgLL8vqVYoyVnuZ5DQZTeZsCgFCPxodEsgHDkSEFwkB6hbyqEXszGIL8dWwSBR3QfNJD2cjZ8ZYqXsKN63RzHGAjTXMjlCB7TZtcui1SWpKjGd+x3gQ0KkHZI9V9WVYDcC75kyEAHZptM2N9jlwbhr9lXZ77gZacjaGoKN0Agb/ydd1TyhQ1F3g56pnvgZtkOe/bStwjpz2NS0FqiqAR3wOeZZUGsR3TCP70oYfaeJvpCDVRR/gVXqqvcBAiNYTGC/tMlKuECKPtOOAP8Oc+bt1eOrbiPVJ5NfoOIpmMCDUUSnFoNGN damjanek@cocaine.local
-    mlos:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCu2lUtuV3WnfLk/TcXQA0p/XKMSsRU+0Ov/j1x1aFZgG14QckfkOPJ8bRZ6+R5csYtd8Xy1yQS9xWQcq+bON4CkY/PfwCdmVxjWy5lLIg1Pmq18z+f/DNwCqPhXZy9MO3WkfXWtzd5qhk4aHUVX4R6K64OaDCdIqaVAiHTZp4jy+CqhOLiJcCyrrr/nXEHooVr9iZo2c8qGNdPfS9xw8Ikb7/TXOTOme8RL+DBOXLLjQaECcQYZlD057zSULLkUNH4y+3hs4hSmpzQj52NZ3FyDQTW6d3H0wmjaNhu2zrBOn48UGvYeTzT8QZCHYAYv20bFWLWDzDpB9lqUO2P+9g1 losiek@Mateuszs-MacBook-Pro-2.local
-    mwilson:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3ltgS2MbSWR6c/V60oEHtUnLQ3bm5sSqnjFEvL00Y/aVuNL6VCnPCrWXlYSbp6P70UYuD+ngD4x7aW8jg13ii9rw2RntlaPfmttIOb6REDFohOhC4T3BPdeCd5wVe9p/ioyiFCqNi6/m/RWL7Iv8IlR/2IetQHL14VWwTgGd62sqExdb6oZM3Yux/S4jSTcMYBzt49t+QKTLiYTvQJl7Tzv8RJNzAWMsgBwo9M1N73Zqa0hA46sGkbwmWXoBhnJwowGD38q54P+WaSrar/9FT7l+uCXMwbsyYDpoRJH8SQOOpKrymEeyKCjXQUVtLopmfZMZ6COBpLsTSq1BCytwQw== /home/mwilson/.ssh/id_rsa
-    mwilson2:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDV6H07IEV9merlHUFV8O/Y7sczYXNZjysTBg4TkUW3mWzvW0PJMKnP6Fc1XfFE53fR71N09gkmnVlEtbHa8PTXoS89JVuUHTnitAbDdINShm0pFNWsi/3f00nbfQ8hjaxEWeZ4VlwYzP4v5IPVtpDug+epK65clIG8Xfxlp+CcckyeDdBNSztHHDuQiholzmPicN6EFM6bVUqUZSGnmxiOCrYUOMXBbYChBc3otfeF6vO3WvnKF77nixgOGGmuS0+t96vPKLB3cl5GYpTFyOmrt3tu7JPlTsqwUa0yqDa3ny+5BToIpnROhAqTZV5fV3LHgtObcWYRGANdjVWyPiNOiywiDzsw7/xzuuqV2wLeLnFG1Z+G550F1Ed4lrsPYKc7+qxZYLquI0iJoIjg5WPzNw5QBLdb1srL9zo+0A91Asx8U95IjIMWumowWjDN3Mn0qJwxW5d8SUign3wksIu2FlkLCT4u95CEIebDVEhTQQR0AOP00/KLKtBDn9a5H0UnJZZSTG4+prU3CnqyXqyp6dano86fGEkkcP2PDi/SUwoxdBvMVbdZxYpPYm+8Oe0TjLWPlwu4kYCwVnl3EYgJZAHjT6wVHOjyXcJYezPvvXY8B/VR8UfupetHg5/mVjoQQy2+Nl34AaDN2TLQLXRuG+U+hZqV5Jzc3JO+KKfDUw== mwilson@mwilson-ThinkPad-W530
-    korlowska:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCqsNuEIZr8XobFca4uN3KDAQzyd//NaZQrEMfJZNm8Gj5ym4NWX8cUjf3TQvV6eMGsNe/mxwIxmpyIANQeWUUlnelXG4rRjkBt94J1bg1YeB6F76R6yPuMrP8x/4s5nTy1OVr7jo1xwwL9aHZZcxQFExMBRMM2HrZDJNoXSdwqi7vuW8uUkCSwd8lsZ4iftI4TIafehZTHWroPP3kVMI+JvbdKyAR8xT2DsPHCIb42lEfCPMEYopKRI///L3KkZkbaVdshz/4zCvx3fAyKCHLH44Qgjs3eoAuz1ZFjAec/j6jwNEWGIrlk0g5nIfEXHR5e6qZRwa+nW60xHpIwMfGWtHscyTXR95OVXlEMLqAmycSXVLwyu47attnE/CLLUH4am38ET6w8Oxkzis0gHs3NOEhoNAf2OVhV3gP3aPzoDBRGemNdYZgGNnq6VI9dNhItkxN1QIYKI1d1Dwt8sz1PJM0W9JJjZDNFZAh5Q5QAsg3nxNudk4bxyjCnYbYbRj/dbKOKLJTEsqelsvlKT/+picEwqB/xmcwalHoKtR9QsNw2XuENBQk3OCfAC4SOhm+U1zq7XHpoVxjjn/J4p5ChkH7bhNGNMAE9aefekXGWNjpQFRszd/0SlEkzhUDsUIGKFEP8wlsjb9eOzatYf65fRbE1/YGODuwubj7WrZxy3w== korlowska@mirantis.com
-    sflorczak:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOdCr32ewiGJKLLwxf0Ic0naFV1j+ZflpfUVjuIPplrLeL5u8CNVlT5adPzgc48ijbee3qpzNvkOC7Ym295xQXUluo/cj2p5wVp70YnHrfhnLjGOCldm/K8B9bHmHbm1XW6hWUp7SWjMwhOdR217iveVLkuOy+hPdpXOC86hO93v7fY12UZDiqSRfrHpUqEaHHqlSyU2Eftn9GsR4UaotkeaQsiv8bi/k5nrwea/ccALZXnhrgTSTpXOVy3rfR5cCFQCA1PjMYvFEjhUofCHBSk+OA8xwOkpBOCfYrWRUmMT7MGEV5Jjm75QUrq1AuqRdFh8SM5lP39Tdwr8FMC+q5 flor3k@MacBook-Pro-Szymon.local
-    miwinski:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCydY97fXVWbcUiNaK5KnMHQpLT4acAVXykKqB5hAUPwKn4nFN3dFNw9dpToFpriqNpJTZrEdxVgL9obB4aouHpi+NVH6s8cMZ6ulNTiSTBM0Xkmu7jl66eMhfHNaFwgFC0vsGQ85oI813H7A601tCweKegMUW/mwOKbwHj1isEA+jbyrdRTC64icBa6zbW/G2uF0ajz9dCPe9L0rAbQFE51N1fxrnLeb6BI+5br0H6bRz1kGc5ZsNiUx3EEEOrMFbAbHQAxvD8Te/nUErdlHCiFufKlXLJSUNDPGFrW2mIfvfGlbyrLPgm24RKS6xfcD7BhJOmr54k7QbWChEp/SrX iwi@iwon
-    mrelewicz:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsB8R/Sv7hI7kHnOa7slfRQUhx3uVo3lDT7SLZw6m5Xnc7JVmQBmsO3s0lLHWRcxBUNso8P5xd8XG30VaW2MPrHGEMy6TbwxJmoFb8+zZaETjcaXvXig2RAQe/I3GAplptCz76GFM9SQavXtqb4D7wPi/AGs7yTFBa1rlVPdmhnlQ2woZoF/Hb5vPpFbK8ucR79eopNyd+g9mhLALJGRIUkRh6q66LCUAbMHA/Lm01IV//mGFUS1Sh0lcM34LOl99SyRVKW7kbql4vWE/4ZSxX1GJC4WVxxBitdWAypGuq3PY8L/+JDjXK7hXSrYaVWygrrluQh+ZXY8S1zx1SoPEG8uzyqdei8VxDPJd+3Y+w3YvWiYI2QA7fdtf4AW57OjZJrCgC2SpUuO6TNGcQ3gxV2/IChHQMHUV6IYc+ENaKuFIXVfvFBa/VMVRoTFXKVdE1cycDR3mgygGxE9QWxLmsJf7ZaK6A0zQjxTQs0GJi6Id9dgjDsh90uPIaVJWGKZZqDH+/cbXqN1AOTK3ecVji2fOfL3JQfY4wTFt/WmGa2VrdTfv/d9bcvEvhHYaCUs3sWy3sobJXwYCiXwuZVTTLj4EvN6L+jt8I9nG/6OWILUPVjrx84ikZ3Ig1Tbts2giIuB8JpQRup1mrEtpxoeOga1ts5ZGF8XfIKOpqaBpTsw== mrelewicz@mirantis.com
+classes:
+# DevOps/SRE Team
+- system.openssh.server.team.members.cade
+- system.openssh.server.team.members.dszeluga
+- system.openssh.server.team.members.jmosher
+- system.openssh.server.team.members.mrelewicz
+- system.openssh.server.team.members.mwilson
+- system.openssh.server.team.members.pmathews
+# Missing- team members still in flux
+# - system.openssh.server.team.members.ecantwell
+# - system.openssh.server.team.members.bpiotrowski

@@ -97,6 +97,8 @@ parameters:
               dist: trusty
             - name: linux
               dist: trusty
+            - name: lldp
+              dist: trusty
             - name: logrotate
               dist: trusty
             - name: maas
@@ -278,6 +280,8 @@ parameters:
             - name: libvirt
               dist: xenial
             - name: linux
+              dist: xenial
+            - name: lldp
               dist: xenial
             - name: logrotate
               dist: xenial

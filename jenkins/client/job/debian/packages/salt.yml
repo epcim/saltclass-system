@@ -185,6 +185,8 @@ parameters:
               dist: trusty
             - name: telegraf
               dist: trusty
+            - name: tftpd-hpa
+              dist: trusty
             - name: varnish
               dist: trusty
             - name: zookeeper
@@ -368,6 +370,8 @@ parameters:
             - name: taiga
               dist: xenial
             - name: telegraf
+              dist: xenial
+            - name: tftpd-hpa
               dist: xenial
             - name: varnish
               dist: xenial

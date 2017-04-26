@@ -104,6 +104,7 @@ parameters:
             - name: swift
             - name: taiga
             - name: telegraf
+            - name: tftpd-hpa
             - name: varnish
             - name: zookeeper
           template:

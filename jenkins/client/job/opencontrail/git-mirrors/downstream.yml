@@ -45,6 +45,8 @@ parameters:
               branches: ${_param:contrail_dpdk_extra_branches}
             - name: contrail-kubernetes
               branches: ${_param:contrail_kubernetes_branches}
+            - name: contrail-dpdk
+              branches: ${_param:contrail_dpdk_branches}
           template:
             discard:
               build:

@@ -41,4 +41,4 @@ parameters:
                 default: master
               EMAIL_ADDRESS:
                 type: string
-                default: master
+                default: ""

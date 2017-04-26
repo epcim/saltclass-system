@@ -94,3 +94,4 @@ parameters:
         - method java.util.regex.Matcher find
         - method hudson.model.Run getId
         - method java.util.regex.MatchResult groupCount
+        - method java.lang.Throwable printStackTrace

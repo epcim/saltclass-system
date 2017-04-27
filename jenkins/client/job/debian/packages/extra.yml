@@ -132,11 +132,11 @@ parameters:
             - package: telegraf
               dist: trusty
               build: telegraf
-              branch: master
+              branch: release-1.2
             - package: telegraf
               dist: xenial
               build: telegraf
-              branch: master
+              branch: release-1.2
           template:
             type: workflow-scm
             concurrent: false

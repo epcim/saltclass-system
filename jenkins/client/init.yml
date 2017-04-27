@@ -24,7 +24,7 @@ parameters:
         description-setter: {}
         discard-old-build: {}
         docker-workflow: {}
-        email-ext-plugin: {}
+        email-ext: {}
         extended-choice-parameter: {}
         extensible-choice-parameter: {}
         gerrit-trigger: {}

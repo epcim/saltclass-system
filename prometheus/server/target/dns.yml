@@ -3,13 +3,15 @@ parameters:
     server:
       target:
         dns:
-          - name: 'pushgateway'
-            domain:
-            - 'tasks.monitoring_pushgateway'
-            type: A
-            port: 9091
-          - name: 'prometheus'
-            domain:
-            - 'tasks.monitoring_server'
-            type: A
-            port: 9090
+          enabled: true
+          endpoint:
+            - name: 'pushgateway'
+              domain:
+              - 'tasks.monitoring_pushgateway'
+              type: A
+              port: 9091
+            - name: 'prometheus'
+              domain:
+              - 'tasks.monitoring_server'
+              type: A
+              port: 9090

@@ -69,7 +69,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  salt-formulas/{{name}}:
+                  horizon-modules/{{name}}:
                     branches:
                       - "{{branch}}"
                 message:

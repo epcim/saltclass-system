@@ -33,7 +33,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  salt-formulas/{{name}}:
+                  horizon-themes/{{name}}:
                     branches:
                       - "{{branch}}"
                 message:

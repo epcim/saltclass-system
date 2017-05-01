@@ -1,4 +1,5 @@
 classes:
+- system.mysql.client.database.aodh
 - system.mysql.client.database.ceilometer
 - system.mysql.client.database.cinder
 - system.mysql.client.database.glance

@@ -39,7 +39,7 @@ parameters:
                 LDAP_GROUPBASE: ${_param:gerrit_ldap_group_base}
                 LDAP_USERNAME: ${_param:gerrit_ldap_bind_user}
                 LDAP_PASSWORD: ${_param:gerrit_ldap_bind_password}
-                WEBURL: ${_param:gerrit_public_host}
+                WEBURL: http://${_param:gerrit_public_host}:8080
                 GERRIT_ADMIN_SSH_PUBLIC: ${_param:gerrit_admin_public_key}
                 GERRIT_ADMIN_PWD: ${_param:gerrit_admin_password}
                 GERRIT_ADMIN_EMAIL: ${_param:gerrit_admin_email}

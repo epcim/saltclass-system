@@ -50,6 +50,7 @@ parameters:
                 MYSQL_PASSWORD: ${_param:mysql_gerrit_password}
                 MYSQL_DATABASE: gerrit
                 MYSQL_ROOT_PASSWORD: ${_param:mysql_admin_password}
+                MYSQL_START_TIMEOUT: 300
               deploy:
                 restart_policy:
                   condition: any

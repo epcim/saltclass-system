@@ -8,6 +8,8 @@ parameters:
         ldap:
           service:
             server:
+              networks:
+                - ldap
               deploy:
                 restart_policy:
                   condition: any
@@ -28,6 +30,8 @@ parameters:
                 LDAP_CONFIG_PASSWORD: ${_param:openldap_config_password}
                 LDAP_TLS: "false"
             admin:
+              networks:
+                - ldap
               deploy:
                 restart_policy:
                   condition: any
@@ -35,12 +39,16 @@ parameters:
               depends_on:
                 - server
               hostname: ldap
-              domainname: ${_param:openldap_domain}
               environment:
-                PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'ldap.${_param:openldap_domain}': [{'server': [{'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '${_param:openldap_admin_password}'}]}]}]"
+                PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'server': [{'server': [{'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '${_param:openldap_admin_password}'}]}]}]"
                 PHPLDAPADMIN_HTTPS: "false"
                 PHPLDAPADMIN_TRUST_PROXY_SSL: "true"
                 PHPLDAPADMIN_SERVER_ADMIN: ${_param:admin_email}
                 PHPLDAPADMIN_THEME: mirantis
               ports:
                 - 18089:80
+          network:
+            ldap:
+              driver: overlay
+              driver_opts:
+                encrypted: 1

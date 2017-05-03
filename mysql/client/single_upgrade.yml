@@ -12,7 +12,6 @@ classes:
 parameters:
   _param:
     mysql_client_host: localhost
-    backupninja_backup_host: localhost
   mysql:
     client:
       enabled: true

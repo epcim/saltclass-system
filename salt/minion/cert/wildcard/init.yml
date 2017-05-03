@@ -11,6 +11,6 @@ parameters:
           authority: ${_param:salt_minion_ca_authority}
           common_name: wildcard
           alternative_names: IP:127.0.0.1,${_param:salt_pki_wildcard_alt_names}
-          key_file:  /srv/salt/pki/${_param:cluster_name}/wildcard.${_param:cluster_public_host}.key
-          cert_file: /srv/salt/pki/${_param:cluster_name}/wildcard.${_param:cluster_public_host}.crt
-          all_file:  /srv/salt/pki/${_param:cluster_name}/wildcard-with-key.${_param:cluster_public_host}.pem
+          key_file:  /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:wildcard:common_name}.key
+          cert_file: /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:wildcard:common_name}.crt
+          all_file:  /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:wildcard:common_name}-chain-with-key.pem

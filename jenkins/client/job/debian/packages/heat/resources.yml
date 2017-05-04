@@ -50,7 +50,7 @@ parameters:
                 default: "{{branch}}"
               SOURCE_CREDENTIALS:
                 type: string
-                default: ""
+                default: "github-credentials"
               DEBIAN_SNAPSHOT:
                 type: boolean
                 default: 'true'

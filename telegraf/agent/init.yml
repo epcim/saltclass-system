@@ -1,4 +1,4 @@
-paramaters:
+parameters:
   telegraf:
     agent:
       output:

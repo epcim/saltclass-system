@@ -1,4 +1,4 @@
-  parameters:
+parameters:
   _param:
     nginx_proxy_openstack_api_host: ${_param:cluster_public_host}
   nginx:

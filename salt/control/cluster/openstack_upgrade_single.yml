@@ -13,6 +13,6 @@ parameters:
           engine: virt
           node:
             upg01:
-              provider: kvm02.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               size: openstack.upgrade

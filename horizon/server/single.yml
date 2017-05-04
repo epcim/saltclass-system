@@ -1,8 +1,9 @@
 classes:
 - service.horizon.server.single
+- system.memcached.server.single
 parameters:
   _param:
-    horizon_site_branding: OpenStack Dashboard
+    horizon_site_branding: "OpenStack Dashboard"
   horizon:
     server:
       branding: ${_param:horizon_site_branding}
@@ -10,3 +11,6 @@ parameters:
         address: 0.0.0.0
         port: 8078
       plugin: {}
+      session:
+        engine: "cache"
+

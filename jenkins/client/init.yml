@@ -17,6 +17,7 @@ parameters:
         password: ${_param:jenkins_client_password}
       plugin:
         ansicolor: {}
+        artifactory: {}
         build-blocker-plugin: {}
         build-monitor-plugin: {}
         build-user-vars-plugin: {}

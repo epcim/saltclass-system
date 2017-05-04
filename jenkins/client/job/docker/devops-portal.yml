@@ -22,6 +22,11 @@ parameters:
                 "oss/devops-portal":
                   branches:
                     - master
+              skip_vote:
+                - successful
+                - failed
+                - unstable
+                - not_built
               event:
                 patchset:
                   - created:

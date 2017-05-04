@@ -1,3 +1,8 @@
+classes:
+- service.prometheus.server.container
+- service.prometheus.alertmanager.container
+- service.prometheus.pushgateway.container
+
 parameters:
   prometheus:
     server:
@@ -9,9 +14,14 @@ parameters:
               domain:
               - 'tasks.monitoring_pushgateway'
               type: A
-              port: 9091
+              port: ${prometheus:pushgateway:bind:port}
             - name: 'prometheus'
               domain:
               - 'tasks.monitoring_server'
               type: A
-              port: 9090
+              port: ${prometheus:server:bind:port}
+            - name: 'alertmanager'
+              domain:
+              - 'tasks.monitoring_alertmanager'
+              type: A
+              port: ${prometheus:alertmanager:bind:port}

@@ -7,3 +7,5 @@ parameters:
       container: false
       network:
         engine: calico
+        prometheus:
+          enabled: true

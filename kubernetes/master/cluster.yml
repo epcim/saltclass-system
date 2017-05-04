@@ -10,3 +10,5 @@ parameters:
       network:
         engine: calico
         private_ip_range: ${_param:calico_private_network}/${_param:calico_private_netmask}
+        prometheus:
+          enabled: true

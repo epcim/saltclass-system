@@ -68,7 +68,7 @@ parameters:
                 default: "${_param:jenkins_aptly_api_url}"
               APTLY_REPO:
                 type: string
-                default: "{{os}}-{{dist}}"
+                default: "{{os}}-{{dist}}-extra"
               OS:
                 type: string
                 default: "{{os}}"

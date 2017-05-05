@@ -15,7 +15,7 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release a=m${_param:openstack_version}-hotfix'
+          - pin: 'release a=${_param:openstack_version}-hotfix'
             priority: 1100
             package: '*'
         mirantis_openstack_security:

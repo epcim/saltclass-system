@@ -29,6 +29,7 @@ parameters:
     - /usr/bin/salt * pillar*
     - /usr/bin/salt * grains*
     - /usr/bin/salt * saltutil*
+    - /usr/bin/salt * test.ping
     - /usr/bin/salt-call state*
     - /usr/bin/salt-call service*
     - /usr/bin/salt-call pillar*

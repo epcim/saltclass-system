@@ -23,6 +23,10 @@ parameters:
     - /usr/sbin/visudo
     sudo_coreutils_safe:
     - /usr/bin/less
+    sudo_rabbitmq_safe:
+    - /usr/sbin/rabbitmqctl status
+    - /usr/sbin/rabbitmqctl cluster_status
+    - /usr/sbin/rabbitmqctl list_queues*
     sudo_salt_safe:
     - /usr/bin/salt * state*
     - /usr/bin/salt * service*

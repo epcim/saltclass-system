@@ -34,6 +34,7 @@ parameters:
           command:
             L1_SUPPORT_SALT: ${_param:sudo_salt_safe}
             L1_SUPPORT_COREUTILS: ${_param:sudo_coreutils_safe}
+            L1_SUPPORT_RABBITMQ: ${_param:sudo_rabbitmq_safe}
             L1_SUPPORT_SALT_TRUSTED: ${_param:sudo_salt_trusted}
             L1_SUPPORT_RESTRICTED_SHELLS: ${_param:sudo_shells}
             L1_SUPPORT_RESTRICTED: ${_param:sudo_restricted_su}
@@ -42,5 +43,6 @@ parameters:
             commands:
                 - L1_SUPPORT_SALT
                 - L1_SUPPORT_COREUTILS
+                - L1_SUPPORT_RABBITMQ
                 - '!L1_SUPPORT_RESTRICTED_SHELLS'
                 - '!L1_SUPPORT_RESTRICTED'

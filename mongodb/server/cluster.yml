@@ -1,5 +1,4 @@
 classes:
-- service.keepalived.cluster.single
 - service.mongodb.server.cluster
 parameters:
   _param:

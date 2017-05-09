@@ -49,6 +49,18 @@ parameters:
               branch: R3.2
               ppa: mirantis-opencontrail/opencontrail-3.2
               upload_source_package: true
+            - buildname: oc40
+              os: ubuntu
+              dist: trusty
+              branch: R4.0
+              ppa: mirantis-opencontrail/opencontrail-4.0
+              upload_source_package: false
+            - buildname: oc40
+              os: ubuntu
+              dist: xenial
+              branch: R4.0
+              ppa: mirantis-opencontrail/opencontrail-4.0
+              upload_source_package: false
             - buildname: oc666
               os: ubuntu
               dist: trusty

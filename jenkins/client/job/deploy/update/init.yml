@@ -2,3 +2,4 @@ classes:
   - system.jenkins.client.job.deploy.update.package
   - system.jenkins.client.job.deploy.update.config
   - system.jenkins.client.job.deploy.update.saltenv
+  - system.jenkins.client.job.deploy.update.upgrade

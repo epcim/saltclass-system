@@ -81,3 +81,5 @@ parameters:
               UPLOAD_APTLY:
                 type: boolean
                 default: 'true'
+              PRE_BUILD_SCRIPT:
+                type: text

@@ -1,5 +1,6 @@
 parameters:
   _param:
+    docker_grafana_replicas: 1
     grafana_database_type: sqlite3
     grafana_database_host: localhost
     grafana_database_port: 3306
@@ -8,7 +9,7 @@ parameters:
     client:
       service:
         grafana_server:
-          replica: 1
+          replicas: ${_param:docker_grafana_replicas}
           environment:
             GF_DATABASE_TYPE: ${_param:grafana_database_type}
             GF_DATABASE_NAME: grafana

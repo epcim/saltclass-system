@@ -29,21 +29,6 @@ parameters:
               COOKIECUTTER_TEMPLATE_PATH:
                 type: string
                 default: "./"
-              COOKIECUTTER_INSTALL_CICD:
-                type: boolean
-                default: false
-              COOKIECUTTER_INSTALL_CONTRAIL:
-                type: boolean
-                default: false
-              COOKIECUTTER_INSTALL_KUBERNETES:
-                type: boolean
-                default: false
-              COOKIECUTTER_INSTALL_OPENSTACK:
-                type: boolean
-                default: false
-              COOKIECUTTER_INSTALL_STACKLIGHT:
-                type: boolean
-                default: false
               COOKIECUTTER_TEMPLATE_CONTEXT:
                 type: text
               RECLASS_MODEL_URL:
@@ -57,3 +42,5 @@ parameters:
               COMMIT_CHANGES:
                 type: boolean
                 default: false
+              EMAIL_ADDRESS:
+                type: string

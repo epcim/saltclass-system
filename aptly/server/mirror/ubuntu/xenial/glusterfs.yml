@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    glusterfs_version: 3.8
   aptly:
     server:
       mirror:
         glusterfs_upstream_xenial:
-          source: http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu
+          source: http://ppa.launchpad.net/gluster/glusterfs-${_param:glusterfs_version}/ubuntu
           distribution: xenial
           components: main
           architectures: amd64

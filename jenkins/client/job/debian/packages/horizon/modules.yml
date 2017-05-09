@@ -53,6 +53,42 @@ parameters:
               dist: xenial
               os_version: ocata
               branch: stable/ocata
+            # Trusty
+            - name: horizon-jenkins-dashboard
+              os: ubuntu
+              dist: trusty
+              os_version: liberty
+              branch: stable/liberty
+            # Xenial
+            - name: horizon-jenkins-dashboard
+              os: ubuntu
+              dist: xenial
+              os_version: liberty
+              branch: stable/liberty
+            # Trusty
+            - name: horizon-telemetry-dashboard
+              os: ubuntu
+              dist: trusty
+              os_version: liberty
+              branch: stable/liberty
+            # Xenial
+            - name: horizon-telemetry-dashboard
+              os: ubuntu
+              dist: xenial
+              os_version: liberty
+              branch: stable/liberty
+            # Trusty
+            - name: horizon-telemetry-dashboard
+              os: ubuntu
+              dist: trusty
+              os_version: mitaka
+              branch: stable/mitaka
+            # Xenial
+            - name: horizon-telemetry-dashboard
+              os: ubuntu
+              dist: xenial
+              os_version: mitaka
+              branch: stable/mitaka
           template:
             discard:
               build:

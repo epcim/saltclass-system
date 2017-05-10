@@ -28,3 +28,6 @@ parameters:
             openldap:
               source: pkg
               name: salt-formula-openldap
+            lldp:
+              source: pkg
+              name: salt-formula-lldp

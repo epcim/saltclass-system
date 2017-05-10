@@ -83,3 +83,8 @@ parameters:
                 default: 'true'
               PRE_BUILD_SCRIPT:
                 type: text
+                default: |
+                  echo "deb http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/ mos9.0 main restricted" >> /etc/apt/sources.list.d/extra.list
+                  curl --insecure -ss -f "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key" | apt-key add -
+                  apt-get update
+

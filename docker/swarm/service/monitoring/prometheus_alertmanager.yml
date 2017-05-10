@@ -1,4 +1,4 @@
-include:
+classes:
 - service.prometheus.alertmanager.container
 parameters:
   docker:

@@ -65,6 +65,13 @@ parameters:
           full_name: Martin Polreich
           home: /home/mpolreich
           email: mpolreich@mirantis.com
+        ityaptin:
+          enabled: true
+          name: ityaptin
+          sudo: true
+          full_name: Ilya Tyaptin
+          home: /home/ityaptin
+          email: ityaptin@mirantis.com
   openssh:
     client:
       enabled: true
@@ -116,6 +123,11 @@ parameters:
           public_keys:
           - ${public_keys:mpolreich}
           user: ${linux:system:user:mpolreich}
+        ityaptin:
+          enable: true
+          public_keys:
+          - ${public_keys:ityaptin}
+          user: ${linux:system:user:ityaptin}
   public_keys:
     newt:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3odU+3V2uDA2ptAFL9hrJRPNEEdAyztWOZFQ5Oyd9oerTGOU3p4xmrgWWjfKFKbYGhiiIUcYAol5PkTfKukGEkkjCHYA1t023soCaaAj85wCZCnw2zQNAziwxTYmAzTqgxiSvtZNMMrtJvFHRIRDzJ3M1lV0prWNWkMM1/3FAd4W49y6VT3fkMCo8uqG7CfGdgR2DgBCxf9KaNPfW5eDEPOgmE5lK8tVSEI6T+Cg7hbcTf4lFYnlFBnlQgp/0JstsM4Vbwb4B34LOpOsf2S8rrWk2xQMjwaMHXkc2s/E8iW3F5nVFuyEXYISFQIiAHw8dzC6CHgLcyHUVWwznKawZ newt@newt-dev1
@@ -135,3 +147,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrCyaZjs8hiwx38LfpeQ2z9n9ptwQ7gFrhq2z5sK9q/LQMCubbnp5xhyF0SMY1jmQUewBOKXhnq3QSX+DmtNsnhitnZBw2BE5PBXllCBWMMiWULfAYvB0of728Q3EEjrtyfHkt7o2E+CvreVJcVI4kBwjKh5WpVBZ8mmkW/sexLGMuYu0bUWjCddu6ZlhUa+y14VZKOKp44auemza1VL/UzqOVZkBAfR2gPV2pBG3Im+SlnOlDRxKPEXQbsn3u/sNeZq0wSY++khY86AU7jAKfL2NiNsoA7CyB0jTEKwYO3vOWOhECifZuHwY/TNWyRFWM2ImW3mT9aO7nE4w4jXXJ vgusev@vgusev
     mpolreich:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0N+ds8BGTR+ZQo9NSRGRbjv3T8AbPmtSw2nClXxetRdmHpM/mU7/5iD7qfkCXtNptKeCG/Qk44wlijnAtjztJK1qfvyphHe3etZxLnqhYMm73Yy++yKPE/ywFPFb+7kd0BDy2iZqohZpX3gUi5iDnvXUInHNqqtTv3xFe2kmn3lq5bSRuUMtr61nZ7z/fkX8kNfoGxKrm7bhSo5zq4sjTrj3lk1LKZc1HYji3RwrzBM0z4eyed1BaJyDNtG+eFN4nOnvVn59452AR8SmKJXRErk37rEoQn80xszypzybooFPN5dpdB6u9b4xquFCOD83usb8kEjKY9VIYGuXxEEts1KIF20J+xd8UnZU8d4JL50G8JY8zdNgurR3ZyMD2okuord4cpHF8SVecsAyRV6nuhDxVtF2Xn/RriY02jrLoRPsS+3nIrKt9H8vpQZMYJ+jgEpekZhhVfz4AP3pATzOrWENzNXj5G1bLJs1C9aTtwE27EnKW73XekX/GLsehCwsQ21JvDX8PMxJwLVfqvkRlrc5GILEIVgjZ82Cj6Eens1QobymRAEWuEpZxkPx6u0kGO62ri8zFx8+NYwYDz3mwhHDRT34T/Rvzy/9V9xVjkUQOj9cZ3eYBnC1MffJjx8heHDmSQmUd+99zKa9Hzr74z3AvR3AIgFqmu7kx5fIMew== ubuntu@thinkpad-x1
+    ityaptin:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDLTkl8X9HIJxruAHkmGNQTovy7DCr256pH68xh2DHWinPKUW4ccsCBbqJeF56aEA41OKJlEVOYzD3gQJkDAAbDdy9BlI14oEtzmk3yAtgBwwUzUNMq7oCPrbt4xNg5U26JSb26j69r5vQ4vXA2hf0bCQ68vb3VDqMMaMbneI3rP3qSaq7dauR8sEjx1XAtNen5SygLE46k0pCObJmahGkg39HisoJ/gkjoi/xvQn1JzrYSxWObrBfUbtQN3JbCRozSp/0Env0hMbXj7cS3J/uY68zAWc7GAEFKSmPAol4d/93sRknFUSQKqZjsDaLfiGLte/7oFwLquaz6AJw+mwP ityaptin@ityaptin.local

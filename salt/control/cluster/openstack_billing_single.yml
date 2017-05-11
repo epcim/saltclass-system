@@ -13,6 +13,6 @@ parameters:
           engine: virt
           node:
             bil01:
-              provider: kvm03.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_trusty_image}
               size: openstack.control

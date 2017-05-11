@@ -9,10 +9,3 @@ parameters:
             jenkins:
               master:
                 home: /srv/volumes/jenkins
-      sudo:
-        users:
-          jenkins:
-            hosts:
-            - ALL
-            commands:
-            - docker

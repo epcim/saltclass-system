@@ -19,6 +19,7 @@ parameters:
         install: core,openstack
         stack_type: heat
         test: openstack
+        timer: ""
       - lab: virtual_mk22_basic
         install: core,openstack
         stack_type: heat
@@ -29,6 +30,7 @@ parameters:
         install: core,openstack,dvr
         stack_type: heat
         test: openstack
+        timer: ""
       - lab: virtual_mcp05_ovs
         install: core,openstack,ovs
         stack_type: heat

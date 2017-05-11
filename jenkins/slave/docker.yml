@@ -7,3 +7,10 @@ parameters:
         jenkins:
           groups:
             - docker
+      sudo:
+        users:
+          jenkins:
+            hosts:
+            - ALL
+            commands:
+            - docker

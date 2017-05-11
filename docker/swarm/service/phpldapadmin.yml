@@ -13,7 +13,7 @@ parameters:
               name: ldap.${_param:openldap_domain}
               address: ${_param:cluster_vip_address}
           environment:
-            PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'ldap.${_param:openldap_domain}': [{'server': [{'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '${_param:openldap_admin_password}'}]}]}]"
+            PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'${_param:cluster_public_host}': [{'server': [{'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '${_param:openldap_admin_password}'}]}]}]"
             PHPLDAPADMIN_HTTPS: false
             PHPLDAPADMIN_TRUST_PROXY_SSL: true
             PHPLDAPADMIN_SERVER_ADMIN: ${_param:admin_email}

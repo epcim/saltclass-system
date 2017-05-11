@@ -1,4 +1,4 @@
-include:
+classes:
 - service.prometheus.server.container
 parameters:
   docker:

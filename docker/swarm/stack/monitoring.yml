@@ -37,9 +37,12 @@ parameters:
                 replicas: 2
                 restart_policy:
                   condition: any
+              environment:
+                bind_port: ${prometheus:pushgateway:bind:port}
+                bind_address: ${prometheus:pushgateway:bind:address}
               image: ${_param:docker_image_pushgateway}
               ports:
-                - 15012:9091
+                - 15012:${prometheus:pushgateway:bind:port}
             server:
               networks:
                 - monitoring

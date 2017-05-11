@@ -1,3 +1,2 @@
 classes:
 - service.heka.remote_collector.output.sensu
-

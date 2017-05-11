@@ -38,10 +38,10 @@ parameters:
           param:
             IMAGE_NAME:
               type: string
-              default: "devops-portal"
+              default: "devops_portal"
             IMAGE_TAGS:
               type: string
-              default: "latest"
+              default: ""
             CREDENTIALS_ID:
               type: string
               default: "gerrit"

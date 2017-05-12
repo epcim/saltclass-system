@@ -95,3 +95,6 @@ parameters:
         - method hudson.model.Run getId
         - method java.util.regex.MatchResult groupCount
         - method java.lang.Throwable printStackTrace
+        - method hudson.model.Run getNumber
+        - staticMethod java.lang.String valueOf int
+        - method jenkins.model.Jenkins getItemByFullName java.lang.String

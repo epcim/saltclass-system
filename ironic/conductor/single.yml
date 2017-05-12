@@ -1,0 +1,7 @@
+classes:
+- service.ironic.conductor.single
+parameters:
+  ironic:
+    conductor:
+      enabled: true
+      version: ${_param:ironic_version}

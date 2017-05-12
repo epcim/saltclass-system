@@ -1,0 +1,7 @@
+classes:
+- service.ironic.api.single
+parameters:
+  ironic:
+    api:
+      bind:
+        address: ${_param:single_address}

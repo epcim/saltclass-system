@@ -1,0 +1,19 @@
+parameters:
+  neutron:
+    client:
+      enabled: true
+      server:
+        admin_identity:
+          endpoint_type: internalURL
+          network:
+            baremetal-flat-network:
+              tenant: admin
+              shared: True
+              admin_state_up: True
+              provider_network_type: flat
+              provider_physical_network: physnet1
+              port_security_enabled: false
+              subnet:
+                baremetal-subnet:
+                  cidr: 192.168.90.0/24
+                  enable_dhcp: true

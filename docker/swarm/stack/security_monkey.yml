@@ -2,9 +2,22 @@ parameters:
   _param:
     docker_security_monkey_api_replicas: 1
     docker_security_monkey_scheduler_replicas: 1
-    docker_image_security_monkey_api: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-api:3842.6
-    docker_image_security_monkey_scheduler: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-scheduler:3842.6
+    docker_image_security_monkey_api: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-api:4435
+    docker_image_security_monkey_scheduler: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-scheduler:4435
     security_monkey_db: secmonkey
+    notification_service_url: ${_param:haproxy_pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
+    security_monkey_user: devopsportal@devopsportal.local
+    security_monkey_password: devopsportal
+    security_monkey_role: Justify
+    security_monkey_openstack:
+      os_account_id: mcp_cloud
+      os_account_name: mcp_cloud
+      username: ""
+      password: ""
+      auth_url: ""
+      project_domain_name: Default
+      project_name: admin
+      user_domain_name: Default
   docker:
     client:
       stack:
@@ -14,6 +27,18 @@ parameters:
             SECURITY_MONKEY_POSTGRES_PASSWORD: ${_param:secmonkey_db_user_password}
             SECURITY_MONKEY_POSTGRES_HOST: ${_param:secmonkey_db_host}
             SECURITY_MONKEY_POSTGRES_PORT: ${_param:haproxy_postgresql_bind_port}
+            NOTIFICATIONS_SERVICE_URL: ${_param:notification_service_url}
+            DEFAULT_USER: ${_param:security_monkey_user}
+            DEFAULT_PASSWORD: ${_param:security_monkey_password}
+            DEFAULT_ROLE: ${_param:security_monkey_role}
+            OS_ACCOUNT_ID: ${_param:security_monkey_openstack:os_account_id}
+            OS_ACCOUNT_NAME: ${_param:security_monkey_openstack:os_account_name}
+            OS_USERNAME: ${_param:security_monkey_openstack:username}
+            OS_PASSWORD: ${_param:security_monkey_openstack:password}
+            OS_AUTH_URL: ${_param:security_monkey_openstack:auth_url}
+            OS_PROJECT_DOMAIN_NAME: ${_param:security_monkey_openstack:project_domain_name}
+            OS_PROJECT_NAME: ${_param:security_monkey_openstack:project_name}
+            USER_DOMAIN_NAME: ${_param:security_monkey_openstack:user_domain_name}
           service:
             api:
               image: ${_param:docker_image_security_monkey_api}
@@ -24,7 +49,7 @@ parameters:
               ports:
                 - ${_param:haproxy_security_monkey_exposed_port}:${_param:haproxy_security_monkey_bind_port}
               volumes:
-                - /srv/volumes/security_monkey:/var/log/security_monkey
+                - /srv/volumes/security_monkey/logs:/var/log/security_monkey/logs
             scheduler:
               image: ${_param:docker_image_security_monkey_scheduler}
               deploy:
@@ -32,4 +57,4 @@ parameters:
                 restart_policy:
                   condition: any
               volumes:
-                - /srv/volumes/security_monkey:/var/log/security_monkey
+                - /srv/volumes/security_monkey/logs:/var/log/security_monkey/logs

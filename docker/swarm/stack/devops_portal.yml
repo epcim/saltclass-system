@@ -1,7 +1,7 @@
 parameters:
   _param:
     docker_devops_portal_replicas: 1
-    docker_image_devops_portal: docker-sandbox.sandbox.mirantis.net/ikharin/oss/devops-portal:latest
+    docker_image_devops_portal: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/devops-portal:latest
   docker:
     client:
       stack:

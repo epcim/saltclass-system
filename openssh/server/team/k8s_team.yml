@@ -37,6 +37,41 @@ parameters:
           full_name: Victoria Efimova
           home: /home/vefimova
           email: vefimova@mirantis.com
+        sgolovatiuk:
+          enabled: true
+          sudo: true
+          name: sgolovatiuk
+          full_name: Sergii Golovatiuk
+          home: /home/sgolovatiuk
+          email: sgolovatiuk@mirantis.com
+        loles:
+          enabled: true
+          sudo: true
+          name: loles
+          full_name: Lukasz Oles
+          home: /home/loles
+          email: loles@mirantis.com
+        mkwiek:
+          enabled: true
+          sudo: true
+          name: mkwiek
+          full_name: Maciej Kwiek
+          home: /home/mkwiek
+          email: mkwiek@mirantis.com
+        mattymo:
+          enabled: true
+          sudo: true
+          name: mattymo
+          full_name: Matthew Mosesohn
+          home: /home/mattymo
+          email: mattymo@mirantis.com
+        slagun:
+          enabled: true
+          sudo: true
+          name: slagun
+          full_name: Stan Lagun
+          home: /home/slagun
+          email: slagun@mirantis.com
   openssh:
     server:
       enabled: true
@@ -66,6 +101,31 @@ parameters:
           public_keys:
           - ${public_keys:vefimova}
           user: ${linux:system:user:vefimova}
+        sgolovatiuk:
+          enabled: true
+          public_keys:
+            - ${public_keys:sgolovatiuk}
+          user: ${linux:system:user:sgolovatiuk}
+        loles:
+          enabled: true
+          public_keys:
+          - ${public_keys:loles}
+          user: ${linux:system:user:loles}
+        mkwiek:
+          enabled: true
+          public_keys:
+          - ${public_keys:mkwiek}
+          user: ${linux:system:user:mkwiek}
+        slagun:
+          enabled: true
+          public_keys:
+          - ${public_keys:slagun}
+          user: ${linux:system:user:slagun}
+        mattymo:
+          enabled: true
+          public_keys:
+          - ${public_keys:mattymo}
+          user: ${linux:system:user:mattymo}
   public_keys:
     dshulyak:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCvkecSoZQDlJ3rfnxzYYkKVOwZG/oGVNYykey07pJXzcc4RDnP+OSPSD57Ovc3f9DgGpDqi5EaSTK9wPT3Z4Xlq/0IN9mJjSqkMKahlQutozNeathqghM3mkiBrqV8Y9H+L+5V743ttWMxp+oEpYMVz6QlP152mDwhRESEoU6dm1UjPDOPmiqIBrjkc0glqrBGkvj6Rd7cyVrbVG//mOoemT0S+l9KHjVzIDF3sd9m1MWCtslO0ixCrIXh90wRYTUVJLe4g95Bo3f3k2/DIeqyLns2zjYaYBc54+VMwPllbc4KTNQnW+oZLGmh7fJRouJvNRmL9JrmVFBZ79tMKpLKq55U9RxAbtkO4wPUQxVXQRairYT6XVOis7eOQzojSyT8+jW1HK1ftexITn1nZnAgivzJYg9YugE5brS1pchJeptGQJDQSNeoAGR5rRc0A4uJIc9EzUjURVpa13ZWWKeenhQ3sfRUrP4+rCe4c0yeZS03jk54bNf3hqD7EEGH96L1ojAXyoVV/TgGgFJC3a3T7qciOMIJpWJVyKBVEgU9mSgWUL0lzEp/IrtEObNQQKwTb7LBM6wrSJd/57ePlTzXzSAZEed+7QV0LW+SBD7rwQyKM93i1P+do+4dmGO0fGr9AhMp2J4gsaFuAtCYZXV/b2zmuGnYGhbq3vacLIJYqQ== ds@ds-X10SAE
@@ -77,3 +137,13 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2W27dcnqDu+wHpxy0c69czDihhDirm3FgQm4CuNKuuYwS0iJtITj5C7TWD1oP3Ym9yKvLqI71kpREH9BNB3qPw1ypfs/BY8Rv7CJTPk4N+lwUGlfIWPJ+PhS3bQMdDjOfpy7lBaVpVl6WpfBXN9RkNvqX0MYU7173Nm2EsBZVZ3Lcz/sYnpZxuRhbe+XMmnnOXmPJIO579Gawfx/yGMemjv/M4KxUpEIfCEdVhsUc5NRhIaWbk80VFxPJ/k8i6WJVootN0wtHgS1pk5Li0G66Y4A+epdmsyCaMJ5REJRzp9IyV70Dev7eBAYLSo0PGG2cG3AnLUnkMvyp6/vaWXBj pigmej@lap
     vefimova:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDr7JWFM1GAEtsTKF3UfYnZRJJzCGM/Bp0QUdTa0ZPvcG1Vn01utIJvd8/STYHhG4Ifvreo7J76lF3gZ63nndr5kcB+StrSx604Rx12aD1yjLRNuJqiWa9JOgGq7zJaDECN0PIdRDiRH9tepdmrCeq+hrqZzeJLPYo8xIaTXukcI5g5IueciWEU37lerV86X4qycJp7weLYocT7IttNTq8Gln3K8fLfjYDO4JqVX32SOT4d/Y/BpxEMVwEMgFp7lVc75SfwdVFiTvYLrEqexvcL89Cefg12O/kEMAvGQ+s5UZp+4uwKE6meLkkYXTdN91yYq2gZ3Qvf2l9z9UY+jefH vyatta@vyatta
+    sgolovatiuk:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRO3Q3yFST6biBh9aMbDROK8dDsknJCRSD9at3Bpac0dDHRuaM+Bq+bTmf/BtgTn3oKnL/cCDEmQYWIUY8aja8FcEE28rte6E0bBBQHXXLW0GyaD23wGOE5L20Qp+l9p0mcO9LtdZ0KVNGX28lx0z+qhE71l/PzMWHN+YxxwoOTBsI+3ByOefKKJYQsDvhvW4tGyKNATinA1ZSJBPPrnrTjac6zeYZZFE1evgBjxWawFm5Pebe95irLKuMr4tBWHqf7frP4VqfXlIWuRvhMi1OQDLMJeodhtZPKvX2FRfRST8XXwX4c8tfl1w3TD5nkGapTxPdUI/0BdTfyxPlf0sW3MQQTycCILxHSWQCTvP/O7hcckCYXpY5THTXRjkSat0nYNcERiiIbM0uubUdH+Pe7KTQ73OOrE92yWc8bDpnNTSgcMI41/YdKvX+dZtPVMFu8yT7Q/9aBvmQY4BzBt5zjI7ZQyGaOY/SmalYj50tCMFMbk+7Ey1WEDbNSsTMq/YH7l7ywxpcN6un9WVpUYvVSFdNjuS96LSeMYZA4126HwxQwLGDJ7xFUoSjwlkxgWBta6hajJEsXg43azinpGfcQLrlsTD3s9IlRhTeiWysmmM/OllqHCwMTE6xJi7HIoHu2WIvZNW58XRKNHY4AN8frvAsN7L+17UZ+huNweaLzQ==
+    loles:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdbj2Li0TXK+U4jnLlfuQO8eyPdPjuqCHbHSWRokEmXwcjZVdRC/yLvI9W0tGFwNtPrf2Cyc14YJmnnPDUxvHklWX7vaOdLuTVvDRrnMrXK0INTVvFmytgLVzONvbAnFnMsh1HlpbkGwIfc12N+ZxUVtFEiwtVtT1Uf/drzZXENhTM2q7+l2/u9SlKrFWQkX5udw3L+Gi84D2RWqXhFG/0O0x/edZ5DDvKvLvolhyk+yXoo4wv5DJM+fRKI7tZC1whyL3jpDA9pe5TOxbKDsa/sHXx+2XIRQgQ1Z0vcUkde4j1LFZd032ZPMY4s8O1N0nKWOqGi/in1sOCxE6ofM1xtD/HJUYe8tp5qlWD1U2eofBxwtvw/qLUPjh00rUjW3S+Bla40M6rOmOoQdVID8qLsSXH/s/eAMNxoOL+go07EtfxL5uOOZp+3c+1kxFvyMfeu25Pb/xa8CHkTUgIri8eG4D0aGrBf6S24lb0/lRmhg0yZ6Zdk8pdlhIHXIOTvgPCkEY2O1Y8rHoWy4UtJAxxRvw8ssWsPexsvtDlFae1l3k7lh3ls9osebpo7xnfUevk5Lar4vCsoWkz0X2uNXxoiDHsINn1gUI17u2wH2nG7fvf6P/NvISIUKGN3vD0fLgjeQWYsXPX6x3bgO7DhJmibvVzhcAnq5Eb8qb5H3W5gQ== salmon@lmo
+    mkwiek:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDd/y9KPuy12K3hY+JE51rRm9Tbyl3FM2FK6+mi6Nbop/G03mDVSR8pbmsk+PiQwGRySMQtjVaLk3LoIkgn8MTNw9+Z1AqOdlBN7XJgaZ3PWvix3M4fV56uGzgjFtOTcWH9UfXPmGGKkqpwAfBEK1YK3lrW8dYWcnJcTH1juKCRsvbkWaxt1bzdTdkzH6LT3Bjr9S1imF4GpzXDecPve7eGmqxKjtq3jOupOrTb80BLo4AYBjrn1zdIWpEm0sBSz0acWlfhDd7+6eCaq5rSLAbWRHmBu+4shefh9oSyh/tLfGW68ILCNtpJWYKiKAWfFP5u1UqJyOLqzF0L9J9+fo5 mkwiek@mirantis.com
+    mattymo:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0IKYIbf05K67En++os8mfi2XYTCHp5ex+KBy4Y7NqAXC3J+hnqgcMry9sHtqVJ+O6do7bCRY7sjgnWosm6TxEupxMCs+euViT3VFvQlszAvj4v/xrAu0IwUUiqA0Pn9TKCJrHtYKYixkGfNw8IdxShH2FRTh52ufBqlLP5qRhdMP/nOohbNwtk0FAX49UB4AXzcLLkHu+P3gjTkR345CH+iciBGL88rp8qpEEA6QdtEjcgk1tGY3uktJ1tTWBv4ozth6EF9A+kG4yd1Fhwv2JVPRNkcL/xKR7f4i67A9KyyNoFLv4rHfXXPOjyproNpz5CZ06V7lJ4jgU/AbyHhLgw== mmosesohn@mattymo1
+    slagun:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfQtpitSDDfwP1TruBs7Nlim1B2PC8NKu1lOifZGOgGaL4G6CTXJunSoU48ovg0AOks6OPb7DSU9ocLTj6q0qNuPvy4yrsKWS+ZsrywLW5qp3OGfE7wmAWj5AGxNUiUaLAFKhriVV541v57OVw322dDuxQ3YE0P5dkKKBc9Xy3Su7PoDkR029fbQFvSlIsUtrICNGKvMtrTIm8V0EQHZnV7Y44+MMJMRxCMrulHJFmtaKE5uPaRz+eVVsbEOl1jfUA/BQ1WyU52Ol3gvm34kwBStQcnqhKC2CP/5ILVhf+Omylw+mcs58vKbc0Tw6dwFEDaTQlkYHLFZij+Y24HGyr slagun@MacLagun2.local

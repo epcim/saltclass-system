@@ -19,5 +19,5 @@ parameters:
           - ${public_keys:dshulyak}
           user: ${linux:system:user:dshulyak}
   public_keys:
-    kproskurin:
+    dshulyak:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCvkecSoZQDlJ3rfnxzYYkKVOwZG/oGVNYykey07pJXzcc4RDnP+OSPSD57Ovc3f9DgGpDqi5EaSTK9wPT3Z4Xlq/0IN9mJjSqkMKahlQutozNeathqghM3mkiBrqV8Y9H+L+5V743ttWMxp+oEpYMVz6QlP152mDwhRESEoU6dm1UjPDOPmiqIBrjkc0glqrBGkvj6Rd7cyVrbVG//mOoemT0S+l9KHjVzIDF3sd9m1MWCtslO0ixCrIXh90wRYTUVJLe4g95Bo3f3k2/DIeqyLns2zjYaYBc54+VMwPllbc4KTNQnW+oZLGmh7fJRouJvNRmL9JrmVFBZ79tMKpLKq55U9RxAbtkO4wPUQxVXQRairYT6XVOis7eOQzojSyT8+jW1HK1ftexITn1nZnAgivzJYg9YugE5brS1pchJeptGQJDQSNeoAGR5rRc0A4uJIc9EzUjURVpa13ZWWKeenhQ3sfRUrP4+rCe4c0yeZS03jk54bNf3hqD7EEGH96L1ojAXyoVV/TgGgFJC3a3T7qciOMIJpWJVyKBVEgU9mSgWUL0lzEp/IrtEObNQQKwTb7LBM6wrSJd/57ePlTzXzSAZEed+7QV0LW+SBD7rwQyKM93i1P+do+4dmGO0fGr9AhMp2J4gsaFuAtCYZXV/b2zmuGnYGhbq3vacLIJYqQ== ds@ds-X10SAE

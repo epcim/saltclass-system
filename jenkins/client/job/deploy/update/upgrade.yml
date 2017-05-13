@@ -23,3 +23,15 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
+            STAGE_TEST_UPGRADE:
+              type: boolean
+              default: 'true'
+              description: "Test if syncdb and APIs succeed"
+            STAGE_REAL_UPGRADE:
+              type: boolean
+              default: 'true'
+              description: "Run real control upgrade"
+            STAGE_ROLLBACK_UPGRADE:
+              type: boolean
+              default: 'true'
+              description: "Rollback if control upgrade fails"

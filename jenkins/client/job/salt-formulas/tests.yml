@@ -93,6 +93,7 @@ parameters:
             - name: roundcube
             - name: rsync
             - name: rsyslog
+            - name: rundeck
             - name: sahara
             - name: salt
             - name: sensu

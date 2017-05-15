@@ -32,6 +32,8 @@ parameters:
                   - created:
                       excludeDrafts: false
                       excludeNoCodeChange: false
+                change:
+                  - merged
                 comment:
                   - addedContains:
                       commentAddedCommentContains: 'rebuild'

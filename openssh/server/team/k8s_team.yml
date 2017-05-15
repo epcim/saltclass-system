@@ -72,6 +72,13 @@ parameters:
           full_name: Stan Lagun
           home: /home/slagun
           email: slagun@mirantis.com
+        psiwczak:
+          enabled: true
+          sudo: true
+          name: psiwczak
+          full_name: Piotr Siwczak
+          home: /home/psiwczak
+          email: psiwczak@mirantis.com
   openssh:
     server:
       enabled: true
@@ -147,3 +154,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0IKYIbf05K67En++os8mfi2XYTCHp5ex+KBy4Y7NqAXC3J+hnqgcMry9sHtqVJ+O6do7bCRY7sjgnWosm6TxEupxMCs+euViT3VFvQlszAvj4v/xrAu0IwUUiqA0Pn9TKCJrHtYKYixkGfNw8IdxShH2FRTh52ufBqlLP5qRhdMP/nOohbNwtk0FAX49UB4AXzcLLkHu+P3gjTkR345CH+iciBGL88rp8qpEEA6QdtEjcgk1tGY3uktJ1tTWBv4ozth6EF9A+kG4yd1Fhwv2JVPRNkcL/xKR7f4i67A9KyyNoFLv4rHfXXPOjyproNpz5CZ06V7lJ4jgU/AbyHhLgw== mmosesohn@mattymo1
     slagun:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfQtpitSDDfwP1TruBs7Nlim1B2PC8NKu1lOifZGOgGaL4G6CTXJunSoU48ovg0AOks6OPb7DSU9ocLTj6q0qNuPvy4yrsKWS+ZsrywLW5qp3OGfE7wmAWj5AGxNUiUaLAFKhriVV541v57OVw322dDuxQ3YE0P5dkKKBc9Xy3Su7PoDkR029fbQFvSlIsUtrICNGKvMtrTIm8V0EQHZnV7Y44+MMJMRxCMrulHJFmtaKE5uPaRz+eVVsbEOl1jfUA/BQ1WyU52Ol3gvm34kwBStQcnqhKC2CP/5ILVhf+Omylw+mcs58vKbc0Tw6dwFEDaTQlkYHLFZij+Y24HGyr slagun@MacLagun2.local
+    psiwczak:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFSHwjVOBC3nVVytH3DAaWEcfrca/cnurIn9K2elf8wn2PSet7q1OddfVTAtYdiG8pai9BX3uHswEu+TinAfgPoEnvKR4wSgk4hVf/W9eCf7xOn1X0fdSnfogQEjdP54Qk+mOmrh1vChcOL/NdBNNxJC6LGHRslVfcGu5ULaasT7EGzItMjUl8hKbbsM8tFX1IW7uRm3fZu4/HiMMaMnm+cPwH9LUB+cOaLEain5WNo0j0OKtpF6Kp53fpqCS6v4z/+wMgx0V2BMMrSla6cq4mL7iLvtufkO467j2ksa9sG8/ADD6Wh89hxkKGqF3yDm+olywNEo+WwTRfZf6Py5Uv

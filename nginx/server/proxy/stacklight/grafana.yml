@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    nginx_proxy_grafana_port: 3000
   nginx:
     server:
       enabled: true
@@ -9,7 +11,7 @@ parameters:
           name: grafana
           proxy:
             host: ${_param:stacklight_monitor_address}
-            port: 3000
+            port: ${_param:nginx_proxy_grafana_port}
             protocol: http
           host:
             name: ${_param:cluster_public_host}

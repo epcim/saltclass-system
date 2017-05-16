@@ -30,3 +30,6 @@ parameters:
               SALT_MASTER_CREDENTIALS:
                 type: string
                 default: "{{salt_credentials}}"
+              UPDATE_FORMULAS:
+                type: boolean
+                default: "true"

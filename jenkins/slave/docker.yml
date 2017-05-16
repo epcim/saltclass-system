@@ -8,10 +8,11 @@ parameters:
           groups:
             - docker
       sudo:
+        enabled: true
         users:
           jenkins:
             setenv: true
             hosts:
             - ALL
             commands:
-            - docker
+            - /usr/bin/docker

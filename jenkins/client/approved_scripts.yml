@@ -98,3 +98,9 @@ parameters:
         - method hudson.model.Run getNumber
         - staticMethod java.lang.String valueOf int
         - method jenkins.model.Jenkins getItemByFullName java.lang.String
+        - new java.util.ArrayList
+        - new java.util.HashMap
+        - staticMethod java.lang.Math min int int
+        - method hudson.model.Job getBuildByNumber int
+        - new java.io.IOException java.lang.String
+        - method org.jenkinsci.plugins.workflow.job.WorkflowRun finish hudson.model.Result java.lang.Throwable

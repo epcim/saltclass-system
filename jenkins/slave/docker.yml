@@ -10,6 +10,7 @@ parameters:
       sudo:
         users:
           jenkins:
+            setenv: true
             hosts:
             - ALL
             commands:

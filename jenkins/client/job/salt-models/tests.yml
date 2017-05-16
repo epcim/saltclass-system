@@ -50,6 +50,9 @@ parameters:
               CREDENTIALS_ID:
                 type: string
                 default: "gerrit"
+              PARALLEL_NODE_GROUP_SIZE:
+                type: string
+                default: "3"
         test_system_reclass:
           name: test-salt-model-{{name}}
           jobs:

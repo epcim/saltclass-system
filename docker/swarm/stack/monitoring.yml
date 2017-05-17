@@ -2,6 +2,8 @@ classes:
 - service.prometheus.server.container
 - service.prometheus.alertmanager.container
 - service.prometheus.pushgateway.container
+- system.prometheus.server
+- system.prometheus.alertmanager
 parameters:
   docker:
     client:
@@ -18,15 +20,21 @@ parameters:
                 - monitoring
               deploy:
                 replicas: 2
+                labels:
+                  com.mirantis.monitoring: "alertmanager"
                 restart_policy:
                   condition: any
+              labels:
+                com.mirantis.monitoring: "alertmanager"
               image: ${_param:docker_image_alertmanager}
               ports:
                 - 15011:${prometheus:alertmanager:bind:port}
               volumes:
-                - /srv/volumes/prometheus:/opt/alertmanager/config
+                - ${prometheus:alertmanager:dir:config}:${_param:prometheus_alertmanager_config_directory}
+                - ${prometheus:alertmanager:dir:data}:${_param:prometheus_alertmanager_data_directory}
               environment:
-                config_dir: /opt/alertmanager/config
+                config_dir: ${_param:prometheus_alertmanager_config_directory}
+                data_dir: ${_param:prometheus_alertmanager_data_directory}
                 bind_port: ${prometheus:alertmanager:bind:port}
                 bind_address: ${prometheus:alertmanager:bind:address}
                 discovery_domain: 'monitoring_alertmanager'
@@ -35,11 +43,15 @@ parameters:
                 - monitoring
               deploy:
                 replicas: 2
+                labels:
+                  com.mirantis.monitoring: "pushgateway"
                 restart_policy:
                   condition: any
               environment:
                 bind_port: ${prometheus:pushgateway:bind:port}
                 bind_address: ${prometheus:pushgateway:bind:address}
+              labels:
+                com.mirantis.monitoring: "pushgateway"
               image: ${_param:docker_image_pushgateway}
               ports:
                 - 15012:${prometheus:pushgateway:bind:port}
@@ -48,15 +60,21 @@ parameters:
                 - monitoring
               deploy:
                 replicas: 1
+                labels:
+                  com.mirantis.monitoring: "prometheus"
                 restart_policy:
                   condition: any
+              labels:
+                com.mirantis.monitoring: "prometheus"
               image: ${_param:docker_image_prometheus}
               ports:
                 - 15010:${prometheus:server:bind:port}
               volumes:
-                - /srv/volumes/prometheus:/opt/prometheus/config
+                - ${prometheus:server:dir:config}:${_param:prometheus_server_config_directory}
+                - ${prometheus:server:dir:data}:${_param:prometheus_server_data_directory}
               environment:
-                config_dir: /opt/prometheus/config
+                config_dir: ${_param:prometheus_server_config_directory}
+                data_dir: ${_param:prometheus_server_data_directory}
                 bind_port: ${prometheus:server:bind:port}
                 bind_address: ${prometheus:server:bind:address}
                 alertmanager_port: ${prometheus:alertmanager:bind:port}

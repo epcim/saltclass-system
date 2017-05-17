@@ -1,0 +1,4 @@
+parameters:
+  _param:
+    prometheus_alermanager_config_directory: /srv/alertmanager
+    prometheus_alermanager_data_directory: /data

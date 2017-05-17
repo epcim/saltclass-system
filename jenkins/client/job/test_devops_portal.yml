@@ -38,6 +38,9 @@ parameters:
             CREDENTIALS_ID:
               type: string
               default: "gerrit"
+            JSON_CONFIG:
+              type: string
+              default: '{"services": {"elasticsearch": {"endpoint": "http://elasticsearch:9200"}}}'
             NODE_IMAGE:
               type: string
               default: "docker-sandbox.sandbox.mirantis.net/ikharin/ci/node-firefox:6.10"

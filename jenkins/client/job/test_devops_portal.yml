@@ -32,6 +32,9 @@ parameters:
                   - addedContains:
                       commentAddedCommentContains: '(recheck|reverify)'
           param:
+            COMPOSE_PATH:
+              type: string
+              default: "docker/stack/docker-compose.yml"
             CREDENTIALS_ID:
               type: string
               default: "gerrit"

@@ -24,3 +24,9 @@ parameters:
                 host: ${_param:secmonkey_db_host}
                 createdb: true
                 rights: all privileges
+              init:
+                maintenance_db: pushkin
+                force: true
+                queries:
+                - INSERT INTO login VALUES (11, 1) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
+                - INSERT INTO device VALUES (1, 11, 42, 'security_audit_service', NULL, 1, NULL) ON CONFLICT (id) DO UPDATE SET id = excluded.id;

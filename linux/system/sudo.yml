@@ -23,8 +23,6 @@ parameters:
     - /usr/sbin/visudo
     sudo_coreutils_safe:
     - /usr/bin/less
-    - /usr/bin/strace
-    - /usr/bin/ltrace
     - /usr/bin/grep
     - /usr/bin/fgrep
     - /usr/bin/egrep
@@ -33,13 +31,11 @@ parameters:
     - /usr/bin/socat
     - /usr/bin/top
     - /usr/bin/tail
-    - /usr/bin/mysql*
     - /usr/bin/lsof
     - /usr/bin/virsh
     - /bin/ls
     - /bin/cp
     - /bin/netstat
-    - /bin/kill
     sudo_rabbitmq_safe:
     - /usr/sbin/rabbitmqctl
     - /usr/sbin/rabbitmqctl status
@@ -59,7 +55,7 @@ parameters:
     - /usr/bin/salt-call saltutil*
     sudo_salt_trusted:
     - /usr/bin/salt*
-    sudo_networking_base_utilities:
+    sudo_networking:
     - /sbin/ip
     - /sbin/ss
     - /sbin/ifconfig

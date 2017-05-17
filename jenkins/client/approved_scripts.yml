@@ -104,3 +104,7 @@ parameters:
         - method hudson.model.Job getBuildByNumber int
         - new java.io.IOException java.lang.String
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun finish hudson.model.Result java.lang.Throwable
+        - new groovy.json.JsonBuilder
+        - new java.lang.RuntimeException java.lang.String
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods takeRight java.util.List int
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.util.List groovy.lang.Range

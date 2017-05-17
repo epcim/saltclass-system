@@ -38,7 +38,7 @@ parameters:
             L1_SUPPORT_SALT_TRUSTED: ${_param:sudo_salt_trusted}
             L1_SUPPORT_RESTRICTED_SHELLS: ${_param:sudo_shells}
             L1_SUPPORT_RESTRICTED: ${_param:sudo_restricted_su}
-            L1_SUPPORT_NETWORKING: ${_param:sudo_networking_base_utilities}
+            L1_SUPPORT_NETWORKING: ${_param:sudo_networking}
             L1_SUPPORT_CONTRAIL: ${_param:sudo_contrail_utilities}
             L1_SUPPORT_STORAGE: ${_param:sudo_storage_utilities}
             L1_SUPPORT_OPENSTACK_CLIENTS: ${_param:sudo_openstack_clients}

@@ -7,6 +7,10 @@ parameters:
         downstream: debian/telegraf
         upstream: "https://github.com/influxdata/telegraf.git"
         branches: master
+      - name: libvirt-exporter
+        downstream: debian/libvirt-exporter
+        upstream: "https://github.com/kumina/libvirt_exporter.git"
+        branches: master
       - name: debian-gophercloud
         downstream: debian/gophercloud
         upstream: "https://github.com/gophercloud/gophercloud.git"

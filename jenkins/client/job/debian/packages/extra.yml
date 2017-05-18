@@ -137,6 +137,10 @@ parameters:
               dist: xenial
               build: telegraf
               branch: release-1.2
+            - package: libvirt-exporter
+              dist: xenial
+              build: libvirt-exporter
+              branch: master
           template:
             type: workflow-scm
             concurrent: false

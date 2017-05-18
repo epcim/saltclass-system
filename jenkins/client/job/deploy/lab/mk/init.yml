@@ -91,6 +91,12 @@ parameters:
               OPENSTACK_API_VERSION:
                 type: string
                 default: "2"
+              OPENSTACK_API_PROJECT_DOMAIN_ID:
+                type: string
+                default: "default"
+              OPENSTACK_API_USER_DOMAIN_ID:
+                type: string
+                default: "default"
 
               # k8s setttings
               K8S_API_SERVER:

@@ -105,10 +105,6 @@ parameters:
                 type: string
                 default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
 
-              # Salt master setup extra formulas
-              EXTRA_FORMULAS:
-                type: string
-                default: "{{extra_formulas}}"
               ASK_ON_ERROR:
                 type: boolean
                 default: 'false'

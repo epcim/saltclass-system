@@ -5,14 +5,19 @@ parameters:
       job_template:
         test_salt_model:
           name: test-salt-model-{{name}}
-          param:
-            name:
-              - mcp-baremetal-lab
-              - mcp-virtual-lab
-              - mk-ci
-              - qa
-              - stacklight
-              - training
+          jobs:
+            - name: mcp-baremetal-lab
+              extra_formulas: ""
+            - name: mcp-virtual-lab
+              extra_formulas: "prometheus"
+            - name: mk-ci
+              extra_formulas: ""
+            - name: qa
+              extra_formulas: ""
+            - name: stacklight
+              extra_formulas: ""
+            - name: training
+              extra_formulas: ""
           template:
             type: workflow-scm
             scm:
@@ -53,6 +58,10 @@ parameters:
               PARALLEL_NODE_GROUP_SIZE:
                 type: string
                 default: "3"
+              # Salt master setup extra formulas
+              EXTRA_FORMULAS:
+                type: string
+                default: "{{extra_formulas}}"
         test_system_reclass:
           name: test-salt-model-{{name}}
           jobs:

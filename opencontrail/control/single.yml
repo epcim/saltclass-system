@@ -12,6 +12,9 @@ parameters:
           version: 1.0.1-0contrail1
         contrail-api-cli:
           version: latest
+      kernel:
+        modules:
+        - nf_conntrack_ipv4
   haproxy:
     proxy:
       listen:

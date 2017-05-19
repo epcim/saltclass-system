@@ -38,3 +38,8 @@ parameters:
         port: 9042
       network:
         host: ${_param:cluster_vip_address}
+  linux:
+    system:
+      kernel:
+        modules:
+        - nf_conntrack_ipv4

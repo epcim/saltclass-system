@@ -14,6 +14,9 @@ parameters:
         python-kafka:
           version: 1.0.1-0contrail1
           hold: true
+      kernel:
+        modules:
+        - nf_conntrack_ipv4
   opencontrail:
     common:
       identity:

@@ -154,7 +154,7 @@ parameters:
                 project:
                   debian/{{package}}:
                     branches:
-                      - {{branch}}
+                      - "{{branch}}"
                 message:
                   build_successful: "Build successful"
                   build_unstable: "Build unstable"

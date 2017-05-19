@@ -9,6 +9,8 @@ parameters:
           jobs:
             - name: contrail-build
               branches: ${_param:contrail_branches}
+            - name: contrail-pipeline
+              branches: ${_param:contrail_branches}
             - name: contrail-controller
               branches: ${_param:contrail_branches}
             - name: contrail-vrouter

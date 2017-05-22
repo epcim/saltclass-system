@@ -1,0 +1,134 @@
+parameters:
+  _param:
+    jenkins_cloud_deploy_pipelines:
+      - stack_name: k8s_calico
+        stack_type: heat
+        stack_install: core,k8s
+        job_timer: ""
+      - stack_name: k8s_calico
+        stack_type: aws
+        stack_install: core,k8s
+        job_timer: ""
+  jenkins:
+    client:
+      job_template:
+        cloud_deploy_heat_template:
+          name: cloud-deploy-{{stack_type}}-{{stack_name}}
+          jobs: ${_param:jenkins_cloud_deploy_pipelines}
+          template:
+            type: workflow-scm
+            discard:
+              build:
+                keep_num: 20
+            concurrent: true
+            display_name: "Deploy {{stack_type}} {{stack_name}} stack"
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "gerrit"
+              script: cloud-deploy-pipeline.groovy
+            trigger:
+              timer:
+                spec: "{{job_timer}}"
+            param:
+              # deployments and test settings
+              STACK_NAME:
+                type: string
+                description: Heat stack name. Will be generated if missing.
+              STACK_TEMPLATE:
+                type: string
+                default: "{{stack_name}}"
+              STACK_TYPE:
+                type: string
+                default: "{{stack_type}}"
+              STACK_INSTALL:
+                type: string
+                default: "{{stack_install}}"
+              STACK_TEST:
+                type: string
+                default: ""
+              STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: "Don't enable it if you need to use the lab after"
+              STACK_REUSE:
+                type: boolean
+                default: 'false'
+
+              STACK_TEMPLATE_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
+              STACK_TEMPLATE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              STACK_TEMPLATE_BRANCH:
+                type: string
+                default: "master"
+
+              # salt master
+              SALT_MASTER_CREDENTIALS:
+                type: string
+                default: "salt-qa-credentials"
+              SALT_MASTER_URL:
+                type: string
+                default: ""
+
+              # openstack api
+              AWS_STACK_REGION:
+                type: string
+                default: "us-west-2"
+              AWS_API_CREDENTIALS:
+                type: string
+                default: "aws-qa-credentials"
+
+              # openstack api
+              OPENSTACK_API_URL:
+                type: string
+                default: "https://vpc.tcpisek.cz:5000/v2.0"
+              OPENSTACK_API_CREDENTIALS:
+                type: string
+                default: "openstack-qa-credentials"
+              OPENSTACK_API_PROJECT:
+                type: string
+                default: "mirantis_mk20_qa"
+              OPENSTACK_API_CLIENT:
+                type: string
+                default: "liberty"
+              OPENSTACK_API_VERSION:
+                type: string
+                default: "2"
+              OPENSTACK_API_PROJECT_DOMAIN_ID:
+                type: string
+                default: "default"
+              OPENSTACK_API_USER_DOMAIN_ID:
+                type: string
+                default: "default"
+
+              # heat
+              HEAT_STACK_ENVIRONMENT:
+                type: string
+                default: "tcpisek"
+              HEAT_STACK_ZONE:
+                type: string
+                default: "workshop-sunnyvale"
+              HEAT_STACK_PUBLIC_NET:
+                type: string
+                default: "mirantis-private"
+
+              # k8s setttings
+              K8S_API_SERVER:
+                type: string
+                default: "http://127.0.0.1:8080"
+              K8S_CONFORMANCE_IMAGE:
+                type: string
+                default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
+
+              # Tempest settings
+              TEMPEST_IMAGE_LINK:
+                type: string
+                default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
+
+              ASK_ON_ERROR:
+                type: boolean
+                default: 'false'
+

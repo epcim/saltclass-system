@@ -18,6 +18,18 @@ parameters:
               os_version: mitaka
               branch: master
             # Trusty
+            - name: horizon-overrides-plugin
+              os: ubuntu
+              dist: trusty
+              os_version: ocata
+              branch: master
+            # Xenial
+            - name: horizon-overrides-plugin
+              os: ubuntu
+              dist: xenial
+              os_version: ocata
+              branch: master
+            # Trusty
             - name: horizon-contrail-panels
               os: ubuntu
               dist: trusty

@@ -8,6 +8,6 @@ parameters:
             scheme: https
             tls_config:
               skip_verify: true
-              ssl_dir: /opt/prometheus/config
+              ssl_dir: ${_param:prometheus_server_config_directory}
               cert_name: prometheus-server.crt
               key_name: prometheus-server.key

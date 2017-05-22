@@ -2,3 +2,19 @@ classes:
 - service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.galera
+parameters:
+  galera:
+    clustercheck:
+      enabled: True
+      user: clustercheck
+      password: clustercheck
+      port: 9200
+      available_when_donor: 0
+      available_when_readonly: 0
+  mysql:
+    server:
+      users:
+      - name: clustercheck
+        password: clustercheck
+        database: '*.*'
+        grants: PROCESS

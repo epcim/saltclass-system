@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    haproxy_params_check: 'check'
   haproxy:
     proxy:
       timeout:
@@ -19,12 +21,12 @@ parameters:
           - name: ${_param:cluster_node01_hostname}
             host: ${_param:cluster_node01_address}
             port: 3306
-            params: check inter 20s fastinter 2s downinter 2s rise 3 fall 3
+            params: ${_param:haproxy_params_check} inter 20s fastinter 2s downinter 2s rise 3 fall 3
           - name: ${_param:cluster_node02_hostname}
             host: ${_param:cluster_node02_address}
             port: 3306
-            params: backup check inter 20s fastinter 2s downinter 2s rise 3 fall 3
+            params: backup ${_param:haproxy_params_check} inter 20s fastinter 2s downinter 2s rise 3 fall 3
           - name: ${_param:cluster_node03_hostname}
             host: ${_param:cluster_node03_address}
             port: 3306
-            params: backup check inter 20s fastinter 2s downinter 2s rise 3 fall 3
+            params: backup ${_param:haproxy_params_check} inter 20s fastinter 2s downinter 2s rise 3 fall 3

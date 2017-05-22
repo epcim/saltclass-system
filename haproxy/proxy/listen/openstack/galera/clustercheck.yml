@@ -1,0 +1,12 @@
+parameters:
+  _param:
+    haproxy_params_check: 'check port 9200'
+  haproxy:
+    proxy:
+      listen:
+        mysql_cluster:
+          # mysql clustercheck service at port 9200 is in conflict
+          # with regular haproxy mysql-check option on port 3306
+          health-check:
+            mysql:
+              enabled: False

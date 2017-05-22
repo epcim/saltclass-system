@@ -3,7 +3,7 @@ parameters:
     client:
       job:
         docker-build-images:
-          name: docker-build-images-{{name}}
+          name: "docker-build-images-{{name}}"
           jobs:
             - name: aptly
             - name: ci

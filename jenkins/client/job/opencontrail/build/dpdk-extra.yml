@@ -21,6 +21,10 @@ parameters:
               dist: xenial
               branch_name: mitaka
               branch_real_name: mitaka
+            - os: ubuntu
+              dist: xenial
+              branch_name: newton
+              branch_real_name: newton
           template:
             discard:
              build:

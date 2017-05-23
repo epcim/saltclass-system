@@ -41,3 +41,6 @@ parameters:
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
         ha_queues: true
+      auth_methods:
+      - password
+      - token

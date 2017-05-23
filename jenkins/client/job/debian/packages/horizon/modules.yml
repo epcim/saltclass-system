@@ -6,6 +6,18 @@ parameters:
           name: build-debian-horizon-module-{{name}}-{{os_version}}-{{os}}-{{dist}}
           jobs:
             # Trusty
+            - name: horizon-neutron-lbaasv2-panel
+              os: ubuntu
+              dist: trusty
+              os_version: ocata
+              branch: stable/ocata
+            # Xenial
+            - name: horizon-neutron-lbaasv2-panel
+              os: ubuntu
+              dist: xenial
+              os_version: ocata
+              branch: stable/ocata
+            # Trusty
             - name: horizon-overrides-plugin
               os: ubuntu
               dist: trusty

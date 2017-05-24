@@ -1,7 +1,7 @@
 parameters:
   jenkins:
     client:
-      job:
+      job_template:
         docker-build-images:
           name: "docker-build-images-{{name}}"
           jobs:

@@ -77,10 +77,8 @@ parameters:
                 data_dir: ${_param:prometheus_server_data_directory}
                 bind_port: ${prometheus:server:bind:port}
                 bind_address: ${prometheus:server:bind:address}
-                alertmanager_port: ${prometheus:alertmanager:bind:port}
                 storage_local_engine: ${prometheus:server:storage:local:engine}
                 storage_local_retention: ${prometheus:server:storage:local:retention}
                 storage_local_memory_chunks: ${prometheus:server:storage:local:memory_chunks}
                 storage_local_max_chunks_to_persist: ${prometheus:server:storage:local:max_chunks_to_persist}
                 storage_local_num_fingerprint_mutexes: ${prometheus:server:storage:local:num_fingerprint_mutexes}
-                discovery_domain: 'monitoring_alertmanager'

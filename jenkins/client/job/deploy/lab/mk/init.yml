@@ -27,10 +27,10 @@ parameters:
               STACK_TYPE:
                 type: string
                 default: "{{stack_type}}"
-              INSTALL:
+              STACK_INSTALL:
                 type: string
                 default: "{{install}}"
-              TEST:
+              STACK_TEST:
                 type: string
                 default: "{{test}}"
 
@@ -56,7 +56,9 @@ parameters:
               STACK_REUSE:
                 type: boolean
                 default: 'false'
-                
+              STACK_CLEANUP_JOB:
+                type: string
+                default: 'deploy-heat-cleanup'
               # heat
               HEAT_STACK_ENVIRONMENT:
                 type: string

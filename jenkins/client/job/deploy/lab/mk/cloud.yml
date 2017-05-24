@@ -64,6 +64,9 @@ parameters:
               STACK_TEMPLATE_BRANCH:
                 type: string
                 default: "master"
+              STACK_CLEANUP_JOB:
+                type: string
+                default: ''
 
               # salt master
               SALT_MASTER_CREDENTIALS:

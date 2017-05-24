@@ -20,7 +20,7 @@ parameters:
             STACK_TYPE:
               type: string
               default: "physical"
-            INSTALL:
+            STACK_INSTALL:
               type: string
               default: "core,kvm,openstack,stacklight"
 

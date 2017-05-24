@@ -43,17 +43,14 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
-      pool:
-        pool_id: ${_param:designate_pool_id}
-        nameservers:
-          - uuid: ${_param:designate_node1_uuid}
-            host: ${_param:cluster_node01_address}
-            port: 53
-          - uuid: ${_param:designate_node2_uuid}
-            host: ${_param:cluster_node02_address}
-            port: 53
-        targets:
-          uuid: ${_param:designate_target_uuid}
-          options: 'port: 53, host: 127.0.0.1'
-          masters: 127.0.0.1:5354
-          type:  ${_param:designate_target_type}
+      pools:
+        default:
+          description: 'default pool'
+          ns_records: ${_param:designate_pool_ns_records}
+          nameservers: ${_param:designate_pool_nameservers}
+          targets:
+            default:
+              type: ${_param:designate_pool_target_type}
+              description: 'default target'
+              masters: ${_param:designate_pool_target_masters}
+              options: ${_param:designate_pool_target_options}

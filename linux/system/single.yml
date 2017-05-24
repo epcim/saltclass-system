@@ -57,3 +57,8 @@ parameters:
             - type: hard
               item: nproc
               value: 307200
+      systemd:
+        system:
+          Manager:
+            DefaultLimitNOFILE: 307200
+            DefaultLimitNPROC: 307200

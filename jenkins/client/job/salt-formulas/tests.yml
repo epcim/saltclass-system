@@ -153,3 +153,6 @@ parameters:
               DEFAULT_GIT_REF:
                 type: string
                 default: master
+              KITCHEN_TESTS_PARALLEL:
+                type: boolean
+                default: 'false'

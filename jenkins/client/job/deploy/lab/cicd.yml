@@ -18,21 +18,33 @@ parameters:
               script: cicd-lab-pipeline.groovy
             param:
               # heat
-              HEAT_TEMPLATE_URL:
+              STACK_TEMPLATE_URL:
                 type: string
                 default: "git@github.com:Mirantis/mk-lab-heat-templates.git"
-              HEAT_TEMPLATE_CREDENTIALS:
+              STACK_TEMPLATE_CREDENTIALS:
                 type: string
                 default: "gerrit"
-              HEAT_TEMPLATE_BRANCH:
+              STACK_TEMPLATE_BRANCH:
                 type: string
                 default: "master"
-              HEAT_STACK_NAME:
+              STACK_NAME:
                 type: string
                 description: Heat stack name. Will be generated if missing.
-              HEAT_STACK_TEMPLATE:
+              STACK_TEMPLATE:
                 type: string
                 default: "{{lab}}"
+              STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: "Delete heat stack at the end of job"
+              STACK_REUSE:
+                type: boolean
+                default: 'false'
+                description: "Reuse existing stack and only orchestrate deployment"
+              STACK_CLEANUP_JOB:
+                type: string
+                default: 'deploy-heat-cleanup'
+
               HEAT_STACK_ENVIRONMENT:
                 type: string
                 default: "tcpisek"
@@ -42,14 +54,6 @@ parameters:
               HEAT_STACK_PUBLIC_NET:
                 type: string
                 default: "mirantis-private"
-              HEAT_STACK_DELETE:
-                type: boolean
-                default: 'true'
-                description: "Delete heat stack at the end of job"
-              HEAT_STACK_REUSE:
-                type: boolean
-                default: 'false'
-                description: "Reuse existing stack and only orchestrate deployment"
 
               # salt master
               SALT_MASTER_CREDENTIALS:

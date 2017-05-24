@@ -10,13 +10,25 @@ parameters:
               os: ubuntu
               dist: trusty
               os_version: mitaka
-              branch: master
+              branch: stable/mitaka
             # Xenial
             - name: horizon-mirantis-theme
               os: ubuntu
               dist: xenial
               os_version: mitaka
-              branch: master
+              branch: stable/mitaka
+            # Trusty
+            - name: horizon-mirantis-theme
+              os: ubuntu
+              dist: trusty
+              os_version: ocata
+              branch: stable/ocata
+            # Xenial
+            - name: horizon-mirantis-theme
+              os: ubuntu
+              dist: xenial
+              os_version: ocata
+              branch: stable/ocata
           template:
             discard:
               build:

@@ -1,0 +1,14 @@
+classes:
+- service.freeipa.client
+parameters:
+  freeipa:
+    client:
+      enabled: true
+      hostname: ${linux:system:name}
+      servers:
+        - ${_param:freeipa_node01_hostname}.${_param:cluster_domain}
+        - ${_param:freeipa_node02_hostname}.${_param:cluster_domain}
+        - ${_param:freeipa_node03_hostname}.${_param:cluster_domain}
+      domain: ${_param:cluster_domain}
+      realm: ${_param:freeipa_realm}
+      otp: ${_param:freeipa_otp}

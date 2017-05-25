@@ -105,6 +105,10 @@ parameters:
               dist: xenial
               build: pipeline
               branch: debian/xenial
+            - package: python-pydbus
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
             - package: python-docker
               dist: xenial
               build: pipeline

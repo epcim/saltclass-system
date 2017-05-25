@@ -1,18 +1,14 @@
+classes:
+  - system.postgresql.client
 parameters:
   _param:
     secmonkey_db_host: ${_param:haproxy_postgresql_bind_host}
-    secmonkey_db_port: ${_param:haproxy_postgresql_bind_port}
     secmonkey_db_user: secmonkey
     secmonkey_db_user_password: secmonkey
   postgresql:
     client:
       server:
         server01:
-          admin:
-            host: ${_param:secmonkey_db_host}
-            port: ${_param:secmonkey_db_port}
-            user: ${_param:postgresql_admin_user}
-            password: ${_param:postgresql_admin_user_password}
           database:
             secmonkey:
               enabled: true

@@ -1,0 +1,22 @@
+classes:
+  - system.postgresql.client
+parameters:
+  _param:
+    rundeck_db_host: ${_param:haproxy_postgresql_bind_host}
+    rundeck_db_user: rundeck
+    rundeck_db_user_password: password
+  postgresql:
+    client:
+      server:
+        server01:
+          database:
+            rundeck:
+              enabled: true
+              encoding: 'UTF8'
+              locale: 'en_US'
+              users:
+              - name: ${_param:rundeck_db_user}
+                password: ${_param:rundeck_db_user_password}
+                host: ${_param:rundeck_db_host}
+                createdb: true
+                rights: all privileges

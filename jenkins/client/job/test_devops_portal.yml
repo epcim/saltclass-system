@@ -41,15 +41,11 @@ parameters:
             JSON_CONFIG:
               type: string
               default: '{"services": {"elasticsearch": {"endpoint": "http://elasticsearch:9200"}}}'
-            NODE_IMAGE:
-              type: string
-              default: "docker-sandbox.sandbox.mirantis.net/ikharin/ci/node-firefox:6.10"
             COMMANDS:
               type: text
               default: |
                 npm run lint
                 npm run test:unit
-                npm run test:functional
             DEFAULT_GIT_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/oss/devops-portal"

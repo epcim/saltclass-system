@@ -79,6 +79,5 @@ parameters:
                 bind_address: ${prometheus:server:bind:address}
                 storage_local_engine: ${prometheus:server:storage:local:engine}
                 storage_local_retention: ${prometheus:server:storage:local:retention}
-                storage_local_memory_chunks: ${prometheus:server:storage:local:memory_chunks}
-                storage_local_max_chunks_to_persist: ${prometheus:server:storage:local:max_chunks_to_persist}
+                storage_local_target_heap_size: ${prometheus:server:storage:local:target_heap_size}
                 storage_local_num_fingerprint_mutexes: ${prometheus:server:storage:local:num_fingerprint_mutexes}

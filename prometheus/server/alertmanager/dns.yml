@@ -1,0 +1,12 @@
+parameters:
+  prometheus:
+    server:
+      config:
+        alertmanager:
+          docker_swarm_alertmanager:
+            enabled: true
+            dns_sd_configs:
+              domain:
+                - tasks.monitoring_alertmanager
+              type: A
+              port: ${prometheus:alertmanager:bind:port}

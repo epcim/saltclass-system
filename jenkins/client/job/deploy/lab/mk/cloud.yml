@@ -13,7 +13,7 @@ parameters:
     client:
       job_template:
         cloud_deploy_heat_template:
-          name: cloud-deploy-{{stack_type}}-{{stack_name}}
+          name: deploy-{{stack_type}}-{{stack_name}}
           jobs: ${_param:jenkins_cloud_deploy_pipelines}
           template:
             type: workflow-scm
@@ -76,13 +76,17 @@ parameters:
                 type: string
                 default: ""
 
-              # openstack api
+              # aws api
               AWS_STACK_REGION:
                 type: string
                 default: "us-west-2"
               AWS_API_CREDENTIALS:
                 type: string
-                default: "aws-qa-credentials"
+                default: "aws-credentials"
+              AWS_SSH_KEY:
+                type: string
+                default: "jenkins-mk"
+
 
               # openstack api
               OPENSTACK_API_URL:

@@ -42,6 +42,18 @@ parameters:
               os_version: ocata
               branch: master
             # Trusty
+            - name: horizon-contrib
+              os: ubuntu
+              dist: trusty
+              os_version: ocata
+              branch: master
+            # Xenial
+            - name: horizon-contrib
+              os: ubuntu
+              dist: xenial
+              os_version: ocata
+              branch: master
+            # Trusty
             - name: horizon-contrail-panels
               os: ubuntu
               dist: trusty

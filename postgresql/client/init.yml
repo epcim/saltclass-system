@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    postgresql_client_user: none
+    postgresql_client_password: none
+    postgresql_client_host: ${_param:control_vip_address}
+    postgresql_client_port: 5432
+  postgresql:
+    client:
+      server:
+        server01:
+          admin:
+            host: ${_param:postgresql_client_host}
+            port: ${_param:postgresql_client_port}
+            user: ${_param:postgresql_client_user}
+            password: ${_param:postgresql_client_password}

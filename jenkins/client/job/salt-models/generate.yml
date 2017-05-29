@@ -44,3 +44,6 @@ parameters:
                 default: false
               EMAIL_ADDRESS:
                 type: string
+              TEST_MODEL:
+                type: boolean
+                default: true

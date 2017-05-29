@@ -96,3 +96,41 @@ parameters:
               DEFAULT_GIT_REF:
                 type: string
                 default: master
+        test_salt_model_cookiecutter:
+          name: test-salt-model-cookiecutter-{{cookiecutter_template}}
+          jobs:
+            cookiecutter_template: cookiecutter-template
+          template:
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "jenkins-mk"
+              script: test-cookiecutter-reclass.groovy
+            trigger:
+              gerrit:
+                project:
+                  mk/{{cookiecutter_template}}:
+                    branches:
+                      - master
+                event:
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(recheck|reverify)'
+            param:
+              COOKIECUTTER_TEMPLATE_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/mk/{{cookiecutter_template}}"
+              CREDENTIALS_ID:
+                type: string
+                default: gerrit
+              COOKIECUTTER_TEMPLATE_BRANCH:
+                type: string
+                default: master
+              RECLASS_MODEL_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/salt-models/reclass-system"
+              RECLASS_MODEL_BRANCH:
+                type: string
+                default: master

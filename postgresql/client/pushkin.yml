@@ -14,10 +14,13 @@ parameters:
               enabled: true
               encoding: 'UTF8'
               locale: 'en_US'
-              template: 'hstore_enabled'
               users:
               - name: ${_param:pushkin_db_user}
                 password: ${_param:pushkin_db_user_password}
                 host: ${_param:pushkin_db_host}
                 createdb: true
                 rights: all privileges
+              extension:
+                hstore:
+                  enabled: true
+

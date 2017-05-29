@@ -1,7 +1,7 @@
 parameters:
   _param:
     docker_postgresql_replicas: 1
-    docker_image_postgresql: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/postgresql:latest
+    docker_image_postgresql: library/postgres:9.6
     postgresql_admin_user: postgres
     postgresql_admin_user_password: postgrespassword
   docker:

@@ -19,7 +19,7 @@ parameters:
             param:
               COOKIECUTTER_TEMPLATE_URL:
                 type: string
-                default: "git@github.com:Mirantis/mk2x-cookiecutter-reclass-model.git"
+                default: "https://gerrit.mcp.mirantis.net/p/mk/cookiecutter-templates.git"
               COOKIECUTTER_TEMPLATE_CREDENTIALS:
                 type: string
                 default: github-credentials

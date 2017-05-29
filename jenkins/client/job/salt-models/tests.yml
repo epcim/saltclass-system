@@ -99,7 +99,7 @@ parameters:
         test_salt_model_cookiecutter:
           name: test-salt-model-cookiecutter-{{cookiecutter_template}}
           jobs:
-            cookiecutter_template: cookiecutter-template
+            - cookiecutter_template: cookiecutter-template
           template:
             type: workflow-scm
             concurrent: true

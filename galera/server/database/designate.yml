@@ -1,0 +1,26 @@
+parameters:
+  mysql:
+    server:
+      database:
+        designate:
+          encoding: utf8
+          users:
+          - name: designate
+            password: ${_param:mysql_designate_password}
+            host: '%'
+            rights: all
+          - name: designate
+            password: ${_param:mysql_designate_password}
+            host: ${_param:cluster_vip_address}
+            rights: all
+        designate_pool_manager:
+          encoding: utf8
+          users:
+          - name: designate
+            password: ${_param:mysql_designate_password}
+            host: '%'
+            rights: all
+          - name: designate
+            password: ${_param:mysql_designate_password}
+            host: ${_param:cluster_vip_address}
+            rights: all

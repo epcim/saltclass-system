@@ -20,7 +20,6 @@ parameters:
       root_dir: /srv/volumes/aptly
       no_config: true
       gpg:
-        keyring: .gnupg/trustdb.gpg
         keypair_id: ${_param:aptly_gpg_keypair_id}
         public_key: ${_param:aptly_gpg_public_key}
         private_key: ${_param:aptly_gpg_private_key}

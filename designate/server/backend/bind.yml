@@ -1,15 +1,18 @@
 parameters:
+  _param:
+    designate_bind9_rndc_algorithm: hmac-sha512
   designate:
     server:
       backend:
         bind9:
           rndc_key: "${_param:designate_bind9_rndc_key}"
+          rndc_algorithm: "${_param:designate_bind9_rndc_algorithm}"
   bind:
     server:
       key:
         designate:
           secret: "${_param:designate_bind9_rndc_key}"
-          algorithm: hmac-sha512
+          algorithm: "${_param:designate_bind9_rndc_algorithm}"
       allow_new_zones: true
       query: true
       control:
@@ -33,4 +36,4 @@ parameters:
       key:
         designate:
           secret: "${_param:designate_bind9_rndc_key}"
-          algorithm: hmac-sha512
+          algorithm: "${_param:designate_bind9_rndc_algorithm}"

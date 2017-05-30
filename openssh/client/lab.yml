@@ -38,13 +38,6 @@ parameters:
           enabled: true
           user: ${linux:system:user:root}
           private_key: ${private_keys:lab}
-          known_hosts:
-          - ${known_hosts:git.tcpcloud.eu}
-  known_hosts:
-    git.tcpcloud.eu:
-      name: git.tcpcloud.eu
-      type: ecdsa
-      fingerprint: fc:77:72:6c:65:c0:e1:26:0d:68:b8:a8:4a:56:38:22
   private_keys:
     lab:
       type: rsa

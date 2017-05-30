@@ -18,7 +18,7 @@ parameters:
             # openstack api
             OPENSTACK_API_URL:
               type: string
-              default: "https://vpc.tcpisek.cz:5000/v2.0"
+              default: "https://vpc.tcpisek.cz:5000"
             OPENSTACK_API_CREDENTIALS:
               type: string
               default: "openstack-qa-credentials"
@@ -60,7 +60,7 @@ parameters:
             # openstack api
             OPENSTACK_API_URL:
               type: string
-              default: "https://vpc.tcpisek.cz:5000/v2.0"
+              default: "https://vpc.tcpisek.cz:5000"
             OPENSTACK_API_CREDENTIALS:
               type: string
               default: "openstack-qa-credentials"

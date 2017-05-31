@@ -99,11 +99,6 @@ parameters:
                     branches:
                       - master
                 event:
-                  patchset:
-                    - created:
-                        excludeDrafts: false
-                        excludeTrivialRebase: false
-                        excludeNoCodeChange: false
                   comment:
                     - addedContains:
                         commentAddedCommentContains: '(recheck|reverify)'
@@ -139,6 +134,11 @@ parameters:
                     branches:
                       - master
                 event:
+                  patchset:
+                    - created:
+                        excludeDrafts: false
+                        excludeTrivialRebase: false
+                        excludeNoCodeChange: false
                   comment:
                     - addedContains:
                         commentAddedCommentContains: '(recheck|reverify)'

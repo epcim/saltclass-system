@@ -7,11 +7,26 @@ parameters:
         git_mirror_2way_salt_model:
           name: git-mirror-2way-salt-model-{{name}}
           param:
-            name:
-              - reclass-system
-              - slovaktelekom
-              - stacklight
-              - statens
+            - name: reclass-system
+              branches: "master"
+            - name: slovaktelekom
+              branches: "master"
+            - name: stacklight
+              branches: "master"
+            - name: statens
+              branches: "master"
+            - name: aeg
+              branches: "master"
+            - name: att-cicd
+              branches: "master"
+            - name: mall
+              branches: "master"
+            - name: quickplay
+              branches: "master"
+            - name: ril-jamnagar
+              branches: "master,jlab,next"
+            - name: vf-cloudstore
+              branches: "master"
           template:
             type: workflow-scm
             concurrent: false
@@ -50,4 +65,4 @@ parameters:
                 default: "gerrit"
               BRANCHES:
                 type: string
-                default: "master"
+                default: "{{branches}}"

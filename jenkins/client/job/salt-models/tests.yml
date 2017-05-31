@@ -7,6 +7,12 @@ parameters:
         test_salt_model:
           name: test-salt-model-{{name}}
           jobs:
+            - name: aeg
+              extra_formulas: ""
+            - name: att-cicd
+              extra_formulas: ""
+            - name: mall
+              extra_formulas: ""
             - name: mcp-baremetal-lab
               extra_formulas: ""
             - name: mcp-virtual-lab
@@ -15,9 +21,19 @@ parameters:
               extra_formulas: ""
             - name: qa
               extra_formulas: ""
+            - name: quickplay
+              extra_formulas: ""
+            - name: ril-jamnagar
+              extra_formulas: ""
+            - name: slovaktelekom
+              extra_formulas: ""
             - name: stacklight
               extra_formulas: ""
+            - name: statens
+              extra_formulas: ""
             - name: training
+              extra_formulas: ""
+            - name: vf-cloudstore
               extra_formulas: ""
           template:
             type: workflow-scm
@@ -103,9 +119,12 @@ parameters:
                 type: string
                 default: master
         test_salt_model_cookiecutter:
-          name: test-salt-model-cookiecutter-{{cookiecutter_template}}
+          name: test-{{option}}-cookiecutter-{{cookiecutter_template}}
           jobs:
             - cookiecutter_template: cookiecutter-templates
+              option: salt-model
+            - cookiecutter_template: cookiecutter-templates
+              option: syntax
           template:
             type: workflow-scm
             concurrent: true
@@ -142,3 +161,9 @@ parameters:
               RECLASS_MODEL_BRANCH:
                 type: string
                 default: master
+              TEST_OPTION:
+                type: string
+                default: "{{option}}"
+              PARALLEL_NODE_GROUP_SIZE:
+                type: string
+                default: "3"

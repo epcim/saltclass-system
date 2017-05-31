@@ -6,7 +6,7 @@ parameters:
       job_template:
         git_mirror_2way_salt_model:
           name: git-mirror-2way-salt-model-{{name}}
-          param:
+          jobs:
             - name: reclass-system
               branches: "master"
             - name: slovaktelekom

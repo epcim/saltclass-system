@@ -7,6 +7,12 @@ parameters:
         test_salt_model:
           name: test-salt-model-{{name}}
           jobs:
+            - name: aeg
+              extra_formulas: ""
+            - name: att-cicd
+              extra_formulas: ""
+            - name: mall
+              extra_formulas: ""
             - name: mcp-baremetal-lab
               extra_formulas: ""
             - name: mcp-virtual-lab
@@ -15,9 +21,19 @@ parameters:
               extra_formulas: ""
             - name: qa
               extra_formulas: ""
+            - name: quickplay
+              extra_formulas: ""
+            - name: ril-jamnagar
+              extra_formulas: ""
+            - name: slovaktelekom
+              extra_formulas: ""
             - name: stacklight
               extra_formulas: ""
+            - name: statens
+              extra_formulas: ""
             - name: training
+              extra_formulas: ""
+            - name: vf-cloudstore
               extra_formulas: ""
           template:
             type: workflow-scm

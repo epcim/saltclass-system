@@ -119,9 +119,12 @@ parameters:
                 type: string
                 default: master
         test_salt_model_cookiecutter:
-          name: test-salt-model-cookiecutter-{{cookiecutter_template}}
+          name: test-{{option}}-cookiecutter-{{cookiecutter_template}}
           jobs:
             - cookiecutter_template: cookiecutter-templates
+              option: salt-model
+            - cookiecutter_template: cookiecutter-templates
+              option: syntax
           template:
             type: workflow-scm
             concurrent: true
@@ -158,3 +161,9 @@ parameters:
               RECLASS_MODEL_BRANCH:
                 type: string
                 default: master
+              TEST_OPTION:
+                type: string
+                default: "{{option}}"
+              PARALLEL_NODE_GROUP_SIZE:
+                type: string
+                default: "3"

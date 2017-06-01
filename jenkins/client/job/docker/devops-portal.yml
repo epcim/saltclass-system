@@ -40,7 +40,7 @@ parameters:
           param:
             IMAGE_NAME:
               type: string
-              default: "devops_portal"
+              default: "devops-portal"
             IMAGE_TAGS:
               type: string
               default: ""

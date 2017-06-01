@@ -8,24 +8,34 @@ parameters:
           name: git-mirror-2way-salt-model-{{name}}
           jobs:
             - name: reclass-system
+              upstream_name: reclass-system
               branches: "master"
             - name: slovaktelekom
+              upstream_name: slovaktelekom
               branches: "master"
             - name: stacklight
+              upstream_name: stacklight
               branches: "master"
             - name: statens
+              upstream_name: statensit
               branches: "master"
             - name: aeg
+              upstream_name: aeg
               branches: "master"
             - name: att-cicd
+              upstream_name: att-cicd
               branches: "master"
             - name: mall
+              upstream_name: mall
               branches: "master"
             - name: quickplay
+              upstream_name: quickplay
               branches: "master"
             - name: ril-jamnagar
+              upstream_name: ril-jamnagar-lab
               branches: "master,jlab,next"
             - name: vf-cloudstore
+              upstream_name: vf-cloudstore
               branches: "master"
           template:
             type: workflow-scm
@@ -36,7 +46,7 @@ parameters:
               credentials: "gerrit"
               script: git-mirror-2way-pipeline.groovy
               github:
-                url: "https://github.com/Mirantis/{{name}}-salt-model"
+                url: "https://github.com/Mirantis/{{upstream_name}}-salt-model"
             trigger:
               github:
               pollscm:
@@ -59,7 +69,7 @@ parameters:
                 default: "${_param:jenkins_gerrit_url}/salt-models/{{name}}.git"
               TARGET_URL:
                 type: string
-                default: "git@github.com:Mirantis/{{name}}-salt-model.git"
+                default: "git@github.com:Mirantis/{{upstream_name}}-salt-model.git"
               CREDENTIALS_ID:
                 type: string
                 default: "gerrit"

@@ -1,0 +1,47 @@
+parameters:
+  _param:
+    jenkins_slave_executors: 4
+  jenkins:
+    client:
+      node:
+        master:
+          node_mode: Exclusive
+          remote_home: /var/lib/jenkins
+          launcher:
+            type: master
+        slave01:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: ${_param:jenkins_slave_executors}
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - docker
+          launcher:
+             type: jnlp
+        slave02:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: ${_param:jenkins_slave_executors}
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - docker
+          launcher:
+             type: jnlp
+        slave03:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: ${_param:jenkins_slave_executors}
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - docker
+          launcher:
+             type: jnlp

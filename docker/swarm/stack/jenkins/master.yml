@@ -5,11 +5,11 @@ parameters:
     client:
       stack:
         jenkins:
-          environment:
-            JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Dhudson.DNSMultiCast.disabled=true -Dhudson.udp=-1 -Dhudson.footerURL=https://www.mirantis.com"
-            JENKINS_NUM_EXECUTORS: 4
           service:
             master:
+              environment:
+                JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Dhudson.DNSMultiCast.disabled=true -Dhudson.udp=-1 -Dhudson.footerURL=https://www.mirantis.com"
+                JENKINS_NUM_EXECUTORS: 4
               deploy:
                 restart_policy:
                   condition: any

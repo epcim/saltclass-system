@@ -1,0 +1,71 @@
+parameters:
+  _param:
+    docker_image_jenkins_slave: tcpcloud/jnlp-slave
+    jenkins_master_host: ${_param:control_vip_address}
+    jenkins_master_port: 8081
+    jenkins_secret: "7c40abc1a7df2d26dd6b2e4421af17218df75a16fcbd5e3aa6017d9f47eaeabe"
+    jenkins_master_url: http://${_param:jenkins_master_host}:${_param:jenkins_master_port}
+    jenkins_slave_user: ${_param:jenkins_client_user}
+    jenkins_slave_password: ${_param:jenkins_client_password}
+  docker:
+    client:
+      stack:
+        jenkins:
+          service:
+            slave01:
+              environment:
+                JENKINS_URL: ${_param:jenkins_master_url}
+                JENKINS_AGENT_NAME: slave01
+                JENKINS_UPDATE_SLAVE: 'true'
+                JENKINS_LOGIN: ${_param:jenkins_slave_user}
+                JENKINS_PASSWORD: ${_param:jenkins_slave_password}
+              deploy:
+                restart_policy:
+                  condition: any
+                placement:
+                  constraints:
+                    - "node.hostname == ${_param:cluster_node01_name}"
+              image: ${_param:docker_image_jenkins_slave}
+              volumes:
+                - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
+                - /etc/aptly-publisher.yaml:/etc/aptly-publisher.yaml:ro
+                - /var/run/docker.sock:/var/run/docker.sock
+                - /usr/bin/docker:/usr/bin/docker:ro
+            slave02:
+              environment:
+                JENKINS_URL: ${_param:jenkins_master_url}
+                JENKINS_AGENT_NAME: slave02
+                JENKINS_UPDATE_SLAVE: 'true'
+                JENKINS_LOGIN: ${_param:jenkins_slave_user}
+                JENKINS_PASSWORD: ${_param:jenkins_slave_password}
+              deploy:
+                restart_policy:
+                  condition: any
+                placement:
+                  constraints:
+                    - "node.hostname == ${_param:cluster_node02_name}"
+              image: ${_param:docker_image_jenkins_slave}
+              volumes:
+                - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
+                - /etc/aptly-publisher.yaml:/etc/aptly-publisher.yaml:ro
+                - /var/run/docker.sock:/var/run/docker.sock
+                - /usr/bin/docker:/usr/bin/docker:ro
+            slave03:
+              environment:
+                JENKINS_URL: ${_param:jenkins_master_url}
+                JENKINS_AGENT_NAME: slave03
+                JENKINS_UPDATE_SLAVE: 'true'
+                JENKINS_LOGIN: ${_param:jenkins_slave_user}
+                JENKINS_PASSWORD: ${_param:jenkins_slave_password}
+              deploy:
+                restart_policy:
+                  condition: any
+                placement:
+                  constraints:
+                    - "node.hostname == ${_param:cluster_node03_name}"
+              image: ${_param:docker_image_jenkins_slave}
+              volumes:
+                - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
+                - /etc/aptly-publisher.yaml:/etc/aptly-publisher.yaml:ro
+                - /var/run/docker.sock:/var/run/docker.sock
+                - /usr/bin/docker:/usr/bin/docker:ro

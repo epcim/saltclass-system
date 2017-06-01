@@ -107,6 +107,7 @@ parameters:
             - name: telegraf
             - name: tftpd-hpa
             - name: varnish
+            - name: xtrabackup
             - name: zookeeper
           template:
             discard:

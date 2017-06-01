@@ -189,6 +189,8 @@ parameters:
               dist: trusty
             - name: varnish
               dist: trusty
+            - name: xtrabackup
+              dist: trusty
             - name: zookeeper
               dist: trusty
             - name: aodh
@@ -374,6 +376,8 @@ parameters:
             - name: tftpd-hpa
               dist: xenial
             - name: varnish
+              dist: xenial
+            - name: xtrabackup
               dist: xenial
             - name: zookeeper
               dist: xenial

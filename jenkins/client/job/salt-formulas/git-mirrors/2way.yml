@@ -106,6 +106,7 @@ parameters:
             - name: taiga
             - name: telegraf
             - name: varnish
+            - name: xtrabackup
             - name: zookeeper
           template:
             discard:

@@ -103,7 +103,7 @@ parameters:
               OPENSTACK_USER_DOMAIN:
                 type: string
                 default: "default"
-              OPENSTACK_API_USER_DOMAIN_ID:
+              OPENSTACK_API_USER_DOMAIN:
                 type: string
                 default: "default"
 

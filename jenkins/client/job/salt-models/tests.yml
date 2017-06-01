@@ -16,7 +16,7 @@ parameters:
             - name: mcp-baremetal-lab
               extra_formulas: ""
             - name: mcp-virtual-lab
-              extra_formulas: "prometheus"
+              extra_formulas: "prometheus telegraf"
             - name: mk-ci
               extra_formulas: ""
             - name: qa

@@ -3,12 +3,12 @@ parameters:
     jenkins_cloud_deploy_pipelines:
       - stack_name: k8s_calico
         stack_type: heat
-        stack_install: core,k8s
+        stack_install: core,k8s,calico
         job_timer: ""
       - stack_name: k8s_calico
         stack_type: aws
-        stack_install: core,k8s
-        job_timer: ""
+        stack_install: core,k8s,calico
+        job_timer: "H H * * *"
   jenkins:
     client:
       job_template:
@@ -21,7 +21,7 @@ parameters:
               build:
                 keep_num: 20
             concurrent: true
-            display_name: "Deploy {{stack_type}} {{stack_name}} stack"
+            display_name: "Deploy - {{stack_name}} {{stack_type}}"
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
@@ -31,7 +31,12 @@ parameters:
               timer:
                 spec: "{{job_timer}}"
             param:
-              # deployments and test settings
+              # general parameters
+              ASK_ON_ERROR:
+                type: boolean
+                default: 'false'
+
+              # deployments
               STACK_NAME:
                 type: string
                 description: Heat stack name. Will be generated if missing.
@@ -66,7 +71,7 @@ parameters:
                 default: "master"
               STACK_CLEANUP_JOB:
                 type: string
-                default: ''
+                default: 'deploy-stack-cleanup'
 
               # salt master
               SALT_MASTER_CREDENTIALS:
@@ -130,12 +135,8 @@ parameters:
                 type: string
                 default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
 
-              # Tempest settings
-              TEMPEST_IMAGE_LINK:
+              # Openstack settings
+              TEMPEST_IMAGE:
                 type: string
                 default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
-
-              ASK_ON_ERROR:
-                type: boolean
-                default: 'false'
 

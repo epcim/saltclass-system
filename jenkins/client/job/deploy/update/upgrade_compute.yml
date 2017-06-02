@@ -10,12 +10,12 @@ parameters:
         deploy-update-package:
           type: workflow-scm
           concurrent: true
-          display_name: "Deploy - update system package(s)"
+          display_name: "Deploy - upgrade computes"
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
-            script: update-package.groovy
+            script: openstack-compute-upgrade.groovy
           param:
             SALT_MASTER_URL:
               type: string

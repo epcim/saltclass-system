@@ -58,7 +58,7 @@ parameters:
                 default: 'false'
               STACK_CLEANUP_JOB:
                 type: string
-                default: 'deploy-heat-cleanup'
+                default: 'deploy-stack-cleanup'
               # heat
               HEAT_STACK_ENVIRONMENT:
                 type: string

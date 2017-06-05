@@ -129,6 +129,8 @@ parameters:
               dist: trusty
             - name: ntp
               dist: trusty
+            - name: octavia
+              dist: trusty
             - name: opencontrail
               dist: trusty
             - name: openldap
@@ -316,6 +318,8 @@ parameters:
             - name: nodejs
               dist: xenial
             - name: ntp
+              dist: xenial
+            - name: octavia
               dist: xenial
             - name: opencontrail
               dist: xenial

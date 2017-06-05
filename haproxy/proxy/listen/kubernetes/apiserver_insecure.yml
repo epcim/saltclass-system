@@ -20,6 +20,9 @@ parameters:
             host: ${_param:cluster_node03_address}
             port: 8080
             params: check
+          timeout:
+            server: 10m
+            client: 10m
         k8s_cluster_localhost:
           type: kubernetes
           binds:
@@ -38,3 +41,6 @@ parameters:
             host: ${_param:cluster_node03_address}
             port: 8080
             params: check
+          timeout:
+            server: 10m
+            client: 10m

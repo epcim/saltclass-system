@@ -22,3 +22,6 @@ parameters:
             host: ${_param:cluster_node03_address}
             port: 443
             params: check
+          timeout:
+            server: 10m
+            client: 10m

@@ -59,6 +59,9 @@ parameters:
               STACK_REUSE:
                 type: boolean
                 default: 'false'
+              STACK_COMPUTE_COUNT:
+                type: string
+                default: '2'
 
               STACK_TEMPLATE_URL:
                 type: string

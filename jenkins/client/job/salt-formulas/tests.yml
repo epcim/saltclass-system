@@ -76,6 +76,7 @@ parameters:
             - name: nodejs
             - name: nova
             - name: ntp
+            - name: octavia
             - name: opencontrail
             - name: openldap
             - name: openssh

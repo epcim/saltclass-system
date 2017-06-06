@@ -20,3 +20,8 @@ parameters:
               - 'tasks.monitoring_alertmanager'
               type: A
               port: ${prometheus:alertmanager:bind:port}
+            - name: 'remote_agent'
+              domain:
+              - 'tasks.monitoring_remote_agent'
+              type: A
+              port: ${telegraf:remote_agent:output:prometheus_client:bind:port}

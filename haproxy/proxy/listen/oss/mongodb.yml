@@ -1,0 +1,51 @@
+parameters:
+  _param:
+    haproxy_mongodb_bind_host: ${_param:haproxy_bind_address}
+    haproxy_mongodb_bind_port: 27017
+    haproxy_mongodb_exposed_port: 37017
+    haproxy_mongodb_ssl:
+      enabled: false
+  haproxy:
+    proxy:
+      listen:
+        mongodb:
+          mode: tcp
+          balance: source
+          options:
+            - tcp-check
+          health-check:
+            tcp:
+              enabled: true
+              options:
+                - send-binary 39000000 # Message Length (57)
+                - send-binary EEEEEEEE # Request ID (random value)
+                - send-binary 00000000 # Response To (nothing)
+                - send-binary d4070000 # OpCode (Query)
+                - send-binary 00000000 # Query Flags
+                - send-binary 746573742e # fullCollectionName (test.$cmd)
+                - send-binary 24636d6400 # continued
+                - send-binary 00000000 # NumToSkip
+                - send-binary FFFFFFFF # NumToReturn
+                - send-binary 13000000 # Document Length (19)
+                - send-binary 01 # Type (Double)
+                - send-binary 70696e6700 # Ping:
+                - send-binary 000000000000f03f # Value : 1
+                - send-binary 00 # Term
+                - expect string ok
+          binds:
+            - address: ${_param:haproxy_mongodb_bind_host}
+              port: ${_param:haproxy_mongodb_bind_port}
+              ssl: ${_param:haproxy_mongodb_ssl}
+          servers:
+            - name: ${_param:cluster_node01_name}
+              host: ${_param:cluster_node01_address}
+              port: ${_param:haproxy_mongodb_exposed_port}
+              params: check port ${_param:haproxy_mongodb_exposed_port}
+            - name: ${_param:cluster_node02_name}
+              host: ${_param:cluster_node02_address}
+              port: ${_param:haproxy_mongodb_exposed_port}
+              params: backup check port ${_param:haproxy_mongodb_exposed_port}
+            - name: ${_param:cluster_node03_name}
+              host: ${_param:cluster_node03_address}
+              port: ${_param:haproxy_mongodb_exposed_port}
+              params: backup check port ${_param:haproxy_mongodb_exposed_port}

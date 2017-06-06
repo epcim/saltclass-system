@@ -1,0 +1,13 @@
+parameters:
+  _param:
+    mongodb_glusterfs_service_host: ${_param:glusterfs_service_host}
+    mongodb_glusterfs_node01_address: ${_param:cluster_node01_address}
+    mongodb_glusterfs_node02_address: ${_param:cluster_node02_address}
+    mongodb_glusterfs_node03_address: ${_param:cluster_node03_address}
+  glusterfs:
+    client:
+      volumes:
+        mongodb:
+          path: /srv/volumes/mongodb
+          server: ${_param:mongodb_glusterfs_service_host}
+          opts: "defaults,backup-volfile-servers=${_param:mongodb_glusterfs_node01_address}:${_param:mongodb_glusterfs_node02_address}:${_param:mongodb_glusterfs_node03_address}"

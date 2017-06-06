@@ -1,0 +1,24 @@
+parameters:
+  _param:
+    docker_janitor_monkey_replicas: 1
+    docker_image_mongodb: library/mongo:3.4
+    docker_mongodb_admin_username: admin
+    docker_mongodb_admin_password: password
+  docker:
+    client:
+      stack:
+        janitor_monkey:
+          environment:
+            MONGO_INITDB_ROOT_USERNAME: ${_param:docker_mongodb_admin_username}
+            MONGO_INITDB_ROOT_PASSWORD: ${_param:docker_mongodb_admin_password}
+          service:
+            mongodb:
+              image: ${_param:docker_image_mongodb}
+              deploy:
+                replicas: ${_param:docker_janitor_monkey_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - ${_param:haproxy_mongodb_exposed_port}:${_param:haproxy_mongodb_bind_port}
+              volumes:
+                - /srv/volumes/mongodb:/data

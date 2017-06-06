@@ -9,6 +9,7 @@ parameters:
     security_monkey_user: devopsportal@devopsportal.local
     security_monkey_password: devopsportal
     security_monkey_role: Justify
+    devops_portal_sm_wtf_csrf_enabled: False
     security_monkey_openstack:
       os_account_id: mcp_cloud
       os_account_name: mcp_cloud
@@ -39,6 +40,7 @@ parameters:
             OS_PROJECT_DOMAIN_NAME: ${_param:security_monkey_openstack:project_domain_name}
             OS_PROJECT_NAME: ${_param:security_monkey_openstack:project_name}
             USER_DOMAIN_NAME: ${_param:security_monkey_openstack:user_domain_name}
+            SM_WTF_CSRF_ENABLED: ${_param:devops_portal_sm_wtf_csrf_enabled}
           service:
             api:
               image: ${_param:docker_image_security_monkey_api}

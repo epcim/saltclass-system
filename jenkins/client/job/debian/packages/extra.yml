@@ -149,6 +149,10 @@ parameters:
               dist: xenial
               build: pipeline
               branch: debian/xenial
+            - package: python-cassandra-driver
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
           template:
             type: workflow-scm
             concurrent: false

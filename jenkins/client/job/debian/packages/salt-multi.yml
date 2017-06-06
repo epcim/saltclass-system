@@ -25,6 +25,8 @@ parameters:
               dist: trusty
             - name: swift
               dist: trusty
+            - name: ironic
+              dist: trusty
             - name: ceilometer
               dist: xenial
             - name: cinder
@@ -44,6 +46,8 @@ parameters:
             - name: nova
               dist: xenial
             - name: swift
+              dist: xenial
+            - name: ironic
               dist: xenial
           template:
             discard:

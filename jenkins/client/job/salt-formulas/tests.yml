@@ -47,6 +47,7 @@ parameters:
             - name: horizon
             - name: influxdb
             - name: iptables
+            - name: ironic
             - name: isc-dhcp
             - name: java
             - name: jenkins

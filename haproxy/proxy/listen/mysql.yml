@@ -7,7 +7,7 @@ parameters:
       listen:
         mysql:
           mode: tcp
-          balance: source
+          balance: first
           binds:
             - address: ${_param:haproxy_bind_address}
               port: ${_param:haproxy_mysql_bind_port}

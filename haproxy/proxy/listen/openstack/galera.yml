@@ -11,6 +11,7 @@ parameters:
         mysql_cluster:
           type: mysql
           service_name: mysql
+          balance: first
           binds:
           - address: ${_param:cluster_vip_address}
             port: 3306

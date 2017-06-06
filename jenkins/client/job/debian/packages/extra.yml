@@ -145,6 +145,10 @@ parameters:
               dist: xenial
               build: libvirt-exporter
               branch: master
+            - package: kafka
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
           template:
             type: workflow-scm
             concurrent: false

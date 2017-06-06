@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    pushkin_elasticsearch_host: ${_param:haproxy_elasticsearch_bind_host}
+    pushkin_elasticsearch_port: ${_param:haproxy_elasticsearch_bind_port}
+  elasticsearch:
+    client:
+      enabled: true
+      server:
+        host: ${_param:pushkin_elasticsearch_host}
+        port: ${_param:pushkin_elasticsearch_port}

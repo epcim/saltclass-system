@@ -2,15 +2,42 @@ classes:
   - service.maas.region.single
   - service.maas.region.vendor_repo
 parameters:
+  _param:
+    maas_admin_username: mirantis
   maas:
+    cluster:
+      enabled: true
+      role: master
+      region:
+        host: ${_param:single_address}
+        port: 5242
     region:
+      salt_master_ip: ${_param:infra_config_deploy_address}
       theme: mirantis
       enable_iframe: True
       bind:
-        host: ${_param:cluster_vip_address}
+        host: ${_param:single_address}
+      admin:
+        username: ${_param:maas_admin_username}
+        password: ${_param:maas_admin_password}
+        email:  email@example.com
       database:
         engine: postgresql
-        host: 10.0.175.10
+        host: localhost
         name: maasdb
-        password: password
+        password: ${_param:maas_db_password}
         username: maas
+      maas_config:
+        commissioning_distro_series: xenial
+        default_distro_series: xenial
+        default_osystem: 'ubuntu'
+        default_storage_layout: lvm
+        disk_erase_with_secure_erase: true
+        dnssec_validation: 'no'
+        enable_third_party_drivers: true
+        maas_name: mas01
+        active_discovery_interval: '600'
+        ntp_external_only: true
+        upstream_dns: ${_param:dns_server01}
+        enable_http_proxy: false
+        default_min_hwe_kernel: ''

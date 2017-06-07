@@ -1,0 +1,11 @@
+parameters:
+  apache:
+    server:
+      site:
+        ironic:
+          name: 'ironic'
+          enabled: true
+          type: 'static'
+          root: '/var/www/httproot'
+          host:
+            name: ${linux:system:name}.${linux:system:domain}

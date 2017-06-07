@@ -1,0 +1,6 @@
+classes:
+- service.ironic.conductor.cluster
+parameters:
+  ironic:
+    conductor:
+      api_url: 'http://${_param:cluster_vip_address}'

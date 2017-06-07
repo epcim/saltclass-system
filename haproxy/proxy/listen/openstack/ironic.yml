@@ -1,0 +1,25 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        ironic:
+          type: general-service
+          service_name: ironic
+          check: false
+          binds:
+          - address: ${_param:cluster_vip_address}
+            port: 6385
+          servers:
+          - name: ctl01
+            host: ${_param:cluster_node01_address}
+            port: 6385
+            params: check
+          - name: ctl02
+            host: ${_param:cluster_node02_address}
+            port: 6385
+            params: check
+          - name: ctl03
+            host: ${_param:cluster_node03_address}
+            port: 6385
+            params: check
+

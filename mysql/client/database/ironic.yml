@@ -1,0 +1,18 @@
+parameters:
+  mysql:
+    client:
+      server:
+        database:
+          database:
+            ironic:
+              encoding: utf8
+              users:
+              - name: ironic
+                password: ${_param:mysql_ironic_password}
+                host: '%'
+                rights: all
+              - name: ironic
+                password: ${_param:mysql_ironic_password}
+                host: ${_param:cluster_local_address}
+                rights: all
+

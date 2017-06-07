@@ -70,6 +70,9 @@ parameters:
             nova:
               source: pkg
               name: salt-formula-nova
+            octavia:
+              source: pkg
+              name: salt-formula-octavia
             opencontrail:
               source: pkg
               name: salt-formula-opencontrail

@@ -92,6 +92,10 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-nova.git'
               revision: ${_param:salt_master_environment_revision}
+            octavia:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-octavia.git'
+              revision: ${_param:salt_master_environment_revision}
             opencontrail:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-opencontrail.git'

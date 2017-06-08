@@ -22,3 +22,5 @@ parameters:
           public_keys:
             - key: ${_param:rundeck_runbook_public_key}
           user: ${linux:system:user:runbook}
+      accept_env:
+        - RD_OPTION_*

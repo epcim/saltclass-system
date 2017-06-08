@@ -17,10 +17,10 @@ parameters:
               image: ${_param:salt_control_xenial_image}
               size: openstack.gateway
             gtw02:
-              provider: kvm01.${_param:cluster_domain}
+              provider: kvm02.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               size: openstack.gateway
             gtw03:
-              provider: kvm01.${_param:cluster_domain}
+              provider: kvm03.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               size: openstack.gateway

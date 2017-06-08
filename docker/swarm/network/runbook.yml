@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    docker_runbook_subnet: 10.40.0.0/24
+  docker:
+    client:
+      network:
+        runbook:
+          subnet: ${_param:docker_runbook_subnet}
+          driver: overlay
+          attachable: true

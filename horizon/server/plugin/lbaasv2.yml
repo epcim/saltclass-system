@@ -1,0 +1,9 @@
+parameters:
+  horizon:
+    server:
+      plugin:
+        lbaasv2:
+          source:
+            engine: pkg
+            name: python-horizon-neutron-lbaasv2-panel
+

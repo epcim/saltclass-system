@@ -93,6 +93,13 @@ parameters:
           full_name: Krzysztof Szukiełojć
           home: /home/kszukielojc
           email: kszukielojc@mirantis.com
+        isviridov:
+          enabled: true
+          name: isviridov
+          sudo: true
+          full_name: Illia Svyrydov
+          home: /home/isviridov
+          email: isviridov@mirantis.com
   openssh:
     client:
       enabled: true
@@ -164,6 +171,11 @@ parameters:
           public_keys:
           - ${public_keys:kszukielojc}
           user: ${linux:system:user:kszukielojc}
+        isviridov:
+          enable: true
+          public_keys:
+          - ${public_keys:isviridov}
+          user: ${linux:system:user:isviridov}
   public_keys:
     newt:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3odU+3V2uDA2ptAFL9hrJRPNEEdAyztWOZFQ5Oyd9oerTGOU3p4xmrgWWjfKFKbYGhiiIUcYAol5PkTfKukGEkkjCHYA1t023soCaaAj85wCZCnw2zQNAziwxTYmAzTqgxiSvtZNMMrtJvFHRIRDzJ3M1lV0prWNWkMM1/3FAd4W49y6VT3fkMCo8uqG7CfGdgR2DgBCxf9KaNPfW5eDEPOgmE5lK8tVSEI6T+Cg7hbcTf4lFYnlFBnlQgp/0JstsM4Vbwb4B34LOpOsf2S8rrWk2xQMjwaMHXkc2s/E8iW3F5nVFuyEXYISFQIiAHw8dzC6CHgLcyHUVWwznKawZ newt@newt-dev1
@@ -191,3 +203,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDjpy9RI6iEDH/04eOOwreDa+R32USZiWxyFiKHa8zoDAlOfwaZVg6mZWepOxzwxCJPYusPGXCwQ6Zw9tHxVWOCgtzzPpsCCfhUU4v+99Wh08//W8d/s/WFka+5vqyskAO5Z8Ekk+kQU+jpUBG8/gMxAPBjj0fFc5BNeqDY9r9nmMNK6N2RVjvA6wZ8G5hLGxL9bn5Prhf/+avui1NAfy6gsT/mRt1W+eHWTvpijyNGm+m83jU34dQO6gE48n6WdSylLh/fY/p31rzAURaq1V/AZhdbSuZ8aJYDnfHevpK5+hMjoOop3v3hb7WHEmybGujQfW5HVaaWmG7SFlHeKGE/gZ2P9T+bQ+SgO+PmEAw4LayiBkzTPAHdZ2UGZe+3BI5gdM/ayovK2WVO1jS5FNlNGIvEQW+ws9V+ph+S1jL4jobDJEjs358iXrAYpf4JL+LvxFHiuj6EL51tbo8EU22z5mmgRQQ5eFrDzBuVLhcim651A3a5iSlmCeAQ5rTmHX/Op/PbK+3vAtI8vnlK4AhycLvWQ3kK2DRx+Uhzrlk5v6E14SopAhvpGOHqrLgmoHwHp1xt/9M1JgxkOUK5gccFKTQduxLHoTNBaNcP60IOG/MjqUPcOXSBcAN4Y1RDBg+pwXe4PFgOzwKdFoYeuhvtm8y185S0IvvfCHLCD8pNfQ== akholkin@mirantis.com
     kszukielojc:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiUm3Z3W3t4v7oe143rCNM/hbg9NU2bYUmQXek8DJPA4c3Xm6u0q+RL9kEXME+3zcj2HKqMxKsCBLXXdFIsgdUbOBV8AYiuySE220FTnEKRmdxsEnfSaBhXxFyIBNoew4gI7URSqAOclt5WuPJTqRM7K4VhbtzwEgeWVd/NUhxMCCtgkdJCYTSmycxmxs7R6V8vMr9Mb8DOqKkSpOu6f3JkR0lwnFN9zGGC4V/60FlJSDzvvI5Tn40ANPHITivs8xME0znsx7t0bF4vQUimvhYn1mumQCY1NwIaxJ/QqasD6Ag9Sn5dxSg9b3SeLn0JM6qKoIqZtfPYVuCp9gmlH0fyzJUdqu4lKKb2wBw/H5lK6icH4+owMawkav55rbvinHQOqmVCr/Bg/rTfc35ycVqjTXH/5J7OhzioKjU0yFkXFS2X/s8gpyxp3beJ+Ea4faoX+kcs0gyhMYzqC7/DOamrau7aVyEAjKYJNy60xRfjCQzjqiurbxVFh+3Fi64UUn7Bl1QV8VEiU3ztJ118psEI7zA+x2VROLZ1jrtaBYZTYB118JZicaFDycEVgg3+BHX3pFH/QSOjLsA4SK+HJjSz8CFKvWwaO6QJv1/3KHpcGEacMvmqKxwpQK0E4WpjWhglZRMPObQ0dBaGClOujgoOIHXtFGILEpWy2SdzDQkHw== kszukielojc@w541
+    isviridov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGNZxzOm7OsZi/q6Qk71fnvjCfWk4BfxpZ5hDig6N1f9D0iAMaINyNmlF2PxstSLW0Mjdq2tXTUvVWlYpGrw+YLHQmVk8dckmLdUAxe2Z0oEvtWhiQC64927ibBTgQ2Tjfkao+PFYPbdjiO4FgRymS1/FpGKhvpdyPDCcOLrxsMSK9YpPi4kbkd4GmlGMercuaEzP3JOOzJioOOLtEw3LOLWG5mAIzXjGFxuCNdTI4gqxQm/iw/tOpb9PcsY10EapZsS4Pd8j58vuhJlwdoTxI3gzySJcTlWm0tcphex0g8X0tEUI+zVjemJcrYkZgUpb6x5/mUjNxC4nv+4A4yMTP

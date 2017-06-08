@@ -3,3 +3,5 @@ classes:
   - system.jenkins.client.job.deploy.update.config
   - system.jenkins.client.job.deploy.update.saltenv
   - system.jenkins.client.job.deploy.update.upgrade
+  - system.jenkins.client.job.deploy.update.upgrade_compute
+  - system.jenkins.client.job.deploy.update.restore_mysql

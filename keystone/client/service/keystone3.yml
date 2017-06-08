@@ -6,7 +6,7 @@ parameters:
       server:
         identity:
           service:
-            keystone3:
+            keystone:
               type: identity
               description: OpenStack Identity Service v3
               endpoints:

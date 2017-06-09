@@ -9,6 +9,8 @@ parameters:
           name: ${_param:rundeck_runbook_user}
           system: true
           sudo: true
+          groups:
+            - docker
           full_name: Rundeck Remote
           home: /var/lib/runbook
   openssh:

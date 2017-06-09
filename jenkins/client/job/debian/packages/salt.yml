@@ -79,6 +79,8 @@ parameters:
               dist: trusty
             - name: iptables
               dist: trusty
+            - name: ironic
+              dist: trusty
             - name: isc-dhcp
               dist: trusty
             - name: java
@@ -268,6 +270,8 @@ parameters:
             - name: influxdb
               dist: xenial
             - name: iptables
+              dist: xenial
+            - name: ironic
               dist: xenial
             - name: isc-dhcp
               dist: xenial

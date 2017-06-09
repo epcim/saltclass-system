@@ -6,37 +6,6 @@ parameters:
       job_template:
         git_mirror_2way_salt_model:
           name: git-mirror-2way-salt-model-{{name}}
-          jobs:
-            - name: reclass-system
-              upstream_name: reclass-system
-              branches: "master"
-            - name: slovaktelekom
-              upstream_name: slovaktelekom
-              branches: "master"
-            - name: stacklight
-              upstream_name: stacklight
-              branches: "master"
-            - name: statens
-              upstream_name: statensit
-              branches: "master"
-            - name: aeg
-              upstream_name: aeg
-              branches: "master"
-            - name: att-cicd
-              upstream_name: att-cicd
-              branches: "master"
-            - name: mall
-              upstream_name: mall
-              branches: "master"
-            - name: quickplay
-              upstream_name: quickplay
-              branches: "master"
-            - name: ril-jamnagar
-              upstream_name: ril-jamnagar-lab
-              branches: "master,jlab,next,year4_pilot"
-            - name: vf-cloudstore
-              upstream_name: vf-cloudstore
-              branches: "master"
           template:
             type: workflow-scm
             concurrent: false

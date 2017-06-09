@@ -5,7 +5,7 @@ parameters:
     docker_image_security_monkey_api: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-api:4435
     docker_image_security_monkey_scheduler: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-scheduler:4435
     security_monkey_db: secmonkey
-    notification_service_url: ${_param:haproxy_pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
+    notification_service_url: http://${_param:haproxy_pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
     security_monkey_user: devopsportal@devopsportal.local
     security_monkey_password: devopsportal
     security_monkey_role: Justify

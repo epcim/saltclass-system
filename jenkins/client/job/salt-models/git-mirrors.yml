@@ -33,7 +33,7 @@ parameters:
               branches: "master"
             - name: ril-jamnagar
               upstream_name: ril-jamnagar-lab
-              branches: "master,jlab,next"
+              branches: "master,jlab,next,year4_pilot"
             - name: vf-cloudstore
               upstream_name: vf-cloudstore
               branches: "master"

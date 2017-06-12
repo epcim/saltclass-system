@@ -2,6 +2,7 @@ classes:
 - service.prometheus.server.container
 - service.prometheus.alertmanager.container
 - service.prometheus.pushgateway.container
+- service.prometheus.remote_storage_adapter.container
 - system.prometheus.server
 - system.prometheus.alertmanager
 parameters:
@@ -15,6 +16,27 @@ parameters:
               driver_opts:
                 encrypted: 1
           service:
+            remote_storage_adapter:
+              networks:
+                - monitoring
+              deploy:
+                replicas: 1
+                labels:
+                  com.mirantis.monitoring: "remote_storage_adapter"
+                restart_policy:
+                  condition: any
+              labels:
+                com.mirantis.monitoring: "remote_storage_adapter"
+              image: ${_param:docker_image_remote_storage_adapter}
+              ports:
+                - 15015:${prometheus:remote_storage_adapter:bind:port}
+              environment:
+                bind_port: ${prometheus:remote_storage_adapter:bind:port}
+                bind_address: ${prometheus:remote_storage_adapter:bind:address}
+                influxdb_url: ${_param:prometheus_influxdb_url}
+                influxdb_db: ${_param:prometheus_influxdb_db}
+                influxdb_username: ${_param:prometheus_influxdb_username}
+                influxdb_password: ${_param:prometheus_influxdb_password}
             remote_agent:
               networks:
                 - monitoring

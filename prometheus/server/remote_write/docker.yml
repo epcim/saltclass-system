@@ -1,0 +1,8 @@
+parameters:
+  prometheus:
+    server:
+      config:
+        remote_write:
+          docker_remote_write:
+            enabled: true
+            url: http://monitoring_remote_storage_adapter:${prometheus:remote_storage_adapter:bind:port}/write

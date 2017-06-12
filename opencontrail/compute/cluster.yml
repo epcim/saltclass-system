@@ -20,6 +20,8 @@ parameters:
       version: ${_param:opencontrail_version}
       disable_flow_collection: true
       enabled: True
+      bind:
+        address: ${_param:single_address}
       discovery:
         host: ${_param:opencontrail_control_address}
       interface:

@@ -1,10 +1,12 @@
 parameters:
   _param:
-    docker_grafana_replicas: 1
+    docker_grafana_replicas: 3
     grafana_database_type: sqlite3
     grafana_database_host: localhost
     grafana_database_port: 3306
     grafana_database_password: password
+    grafana_session_directory: /data/sessions
+    grafana_session_life_time: 86400
   docker:
     client:
       stack:
@@ -18,6 +20,8 @@ parameters:
               image: ${_param:docker_image_grafana}
               ports:
                 - 15013:3000
+              volumes:
+                /srv/glusterfs/grafana:${_param:grafana_session_directory}
               environment:
                 GF_DATABASE_TYPE: ${_param:grafana_database_type}
                 GF_DATABASE_NAME: grafana
@@ -25,3 +29,6 @@ parameters:
                 GF_DATABASE_PASSWORD: ${_param:grafana_database_password}
                 GF_DATABASE_HOST: "${_param:grafana_database_host}:${_param:grafana_database_port}"
                 GF_SECURITY_ADMIN_PASSWORD: ${_param:grafana_admin_password}
+                GF_SESSION_PROVIDER: file
+                GF_SESSION_PROVIDER_CONFIG: ${_param:grafana_session_directory}
+                GF_SESSION_LIFE_TIME: ${_param:grafana_session_life_time}

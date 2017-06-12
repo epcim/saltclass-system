@@ -261,6 +261,8 @@ parameters:
               dist: xenial
             - name: glusterfs
               dist: xenial
+            - name: gnocchi
+              dist: xenial
             - name: grafana
               dist: xenial
             - name: graphite
@@ -338,6 +340,8 @@ parameters:
             - name: openvstorage
               dist: xenial
             - name: owncloud
+              dist: xenial
+            - name: panko
               dist: xenial
             - name: postfix
               dist: xenial

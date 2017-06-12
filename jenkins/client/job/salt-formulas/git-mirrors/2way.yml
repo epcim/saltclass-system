@@ -40,6 +40,7 @@ parameters:
             - name: gitlab
             - name: glance
             - name: glusterfs
+            - name: gnocchi
             - name: grafana
             - name: graphite
             - name: haproxy
@@ -85,6 +86,7 @@ parameters:
             - name: openvpn
             - name: openvstorage
             - name: owncloud
+            - name: panko
             - name: postfix
             - name: postgresql
             - name: powerdns

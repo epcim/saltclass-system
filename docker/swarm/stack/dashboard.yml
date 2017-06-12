@@ -21,7 +21,7 @@ parameters:
               ports:
                 - 15013:3000
               volumes:
-                /srv/glusterfs/grafana:${_param:grafana_session_directory}
+                - /srv/glusterfs/grafana:${_param:grafana_session_directory}
               environment:
                 GF_DATABASE_TYPE: ${_param:grafana_database_type}
                 GF_DATABASE_NAME: grafana

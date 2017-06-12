@@ -149,6 +149,8 @@ parameters:
               dist: trusty
             - name: postgresql
               dist: trusty
+            - name: powerdns
+              dist: trusty
             - name: pritunl
               dist: trusty
             - name: prometheus
@@ -344,6 +346,8 @@ parameters:
             - name: pritunl
               dist: xenial
             - name: prometheus
+              dist: xenial
+            - name: powerdns
               dist: xenial
             - name: python
               dist: xenial

@@ -86,6 +86,7 @@ parameters:
             - name: owncloud
             - name: postfix
             - name: postgresql
+            - name: powerdns
             - name: pritunl
             - name: prometheus
             - name: python

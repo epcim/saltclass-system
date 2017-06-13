@@ -15,5 +15,10 @@ parameters:
           name: wsgi
           host:
             name: ${linux:network:fqdn}
+          log:
+            custom:
+              format: >-
+                %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+
       modules:
         - wsgi

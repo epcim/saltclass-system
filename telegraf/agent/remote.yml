@@ -3,6 +3,7 @@ classes:
 parameters:
   telegraf:
     remote_agent:
+      omit_hostname: true
       dir:
         config: /srv/volumes/local/telegraf
         config_d: /srv/volumes/local/telegraf/telegraf.d

@@ -1,0 +1,17 @@
+classes:
+  - system.openldap.client.groups
+parameters:
+  openldap:
+    client:
+      entry:
+        groups:
+          entry:
+            mirantis:
+              attr:
+                description: Mirantis Administrators
+                gidNumber: 20002
+                memberUid:
+                  - admin
+              classes:
+                - posixGroup
+                - top

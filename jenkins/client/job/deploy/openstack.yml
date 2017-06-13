@@ -34,3 +34,23 @@ parameters:
             ASK_ON_ERROR:
                 type: boolean
                 default: 'false'
+        deploy-openstack-compute:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - OpenStack Compute node"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: openstack-compute-install.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            TARGET_SERVERS:
+              type: string
+              default: ""
+              description: "Salt compound target to match nodes to be updated [*, G@osfamily:debian]."

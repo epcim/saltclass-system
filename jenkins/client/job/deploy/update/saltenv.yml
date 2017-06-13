@@ -5,6 +5,7 @@ parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     jenkins_salt_model_name: "salt"
+    jenkins_salt_model_branch: "master"
   jenkins:
     client:
       job_template:
@@ -21,6 +22,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/salt-models/{{name}}"
+              branch: ${_param:jenkins_salt_model_branch}
               credentials: "gerrit"
               script: Jenkinsfile
             param:

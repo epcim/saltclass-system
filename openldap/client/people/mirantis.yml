@@ -1,0 +1,64 @@
+#
+# This class defines Mirantis users. To crypt user password, use this command:
+#   echo "{CRYPT}$(mkpasswd --rounds 500000 -m sha-512 --salt `head -c 40 /dev/random | base64 | sed -e 's/+/./g' |  cut -b 10-25` 'password')"
+#
+classes:
+  - system.openldap.client.people
+  - system.openldap.client.groups.mirantis
+parameters:
+  openldap:
+    client:
+      entry:
+        people:
+          entry:
+            jpavlik:
+              attr:
+                uid: jpavlik
+                userPassword: '{CRYPT}$6$rounds=500000$sSdm1peCUw78UsaP$l55AuiLv3j.0avLg.k8B2jM.xBczuf9CMursuS4QUm0ZEUgIZkmToPU1PiaTJB37zGgv2ubAYbr2oME7.TX8G1'
+                uidNumber: 20051
+                gidNumber: ${openldap:client:entry:groups:entry:mirantis:attr:gidNumber}
+                gecos: "Jakub Pavlik"
+                givenName: Jakub
+                sn: Pavlik
+                homeDirectory: /home/jpavlik
+                loginShell: /bin/bash
+                mail: jpavlik@mirantis.com
+              classes:
+                - posixAccount
+                - inetOrgPerson
+                - top
+                - shadowAccount
+            akomarek:
+              attr:
+                uid: akomarek
+                userPassword: '{CRYPT}$6$rounds=500000$sSdm1peCUw78UsaP$l55AuiLv3j.0avLg.k8B2jM.xBczuf9CMursuS4QUm0ZEUgIZkmToPU1PiaTJB37zGgv2ubAYbr2oME7.TX8G1'
+                uidNumber: 20052
+                gidNumber: ${openldap:client:entry:groups:entry:mirantis:attr:gidNumber}
+                gecos: "Ales Komarek"
+                givenName: Ales
+                sn: Komarek
+                homeDirectory: /home/akomarek
+                loginShell: /bin/bash
+                mail: akomarek@mirantis.com
+              classes:
+                - posixAccount
+                - inetOrgPerson
+                - top
+                - shadowAccount
+            fpytloun:
+              attr:
+                uid: fpytloun
+                userPassword: '{CRYPT}$6$rounds=500000$T84bEG26yetA1384$.Zh2GZu6pjWdS3hA2WVFzMnWe/hD15IeNIiGM.clq4XpKkwzbNeLbIs7F21vMsxzdOs0R8P8fvjepVHyrPrjQ.'
+                uidNumber: 20053
+                gidNumber: ${openldap:client:entry:groups:entry:mirantis:attr:gidNumber}
+                gecos: "Filip Pytloun"
+                givenName: Filip
+                sn: Pytloun
+                homeDirectory: /home/fpytloun
+                loginShell: /bin/bash
+                mail: fpytloun@mirantis.com
+              classes:
+                - posixAccount
+                - inetOrgPerson
+                - top
+                - shadowAccount

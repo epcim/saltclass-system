@@ -19,7 +19,8 @@ parameters:
                 project:
                   salt-models/{{name}}:
                     branches:
-                      - master
+                      - compare_type: "REG_EXP"
+                        name: "{{branch}}"
                 event:
                   patchset:
                     - created:

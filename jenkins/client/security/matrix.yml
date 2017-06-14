@@ -5,9 +5,11 @@ parameters:
       - ${_param:jenkins_client_user}
       - admins
     # Read only access
-    jenkins_security_matrix_read: []
+    jenkins_security_matrix_read:
+      - mirantis
     # Read + permissions to build jobs
-    jenkins_security_matrix_build: []
+    jenkins_security_matrix_build:
+      - mirantis
     # Build permissions + create/delete, whatever.
     jenkins_security_matrix_write:
       - ${_param:jenkins_client_user}

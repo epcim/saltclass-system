@@ -3,4 +3,4 @@ classes:
 parameters:
   ironic:
     conductor:
-      api_url: 'http://${_param:cluster_vip_address}'
+      api_url: 'http://${_param:cluster_baremetal_vip_address}'

@@ -1,0 +1,24 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        ironic_deploy:
+          type: general-service
+          service_name: ironic_deploy
+          check: false
+          binds:
+          - address: ${_param:cluster_baremetal_vip_address}
+            port: 6385
+          servers:
+          - name: bmt01
+            host: ${_param:openstack_baremetal_node01_baremetal_address}
+            port: 6385
+            params: check
+          - name: bmt02
+            host: ${_param:openstack_baremetal_node02_baremetal_address}
+            port: 6385
+            params: check
+          - name: bmt03
+            host: ${_param:openstack_baremetal_node03_baremetal_address}
+            port: 6385
+            params: check

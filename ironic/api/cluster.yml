@@ -6,4 +6,4 @@ parameters:
       enabled: true
       version: ${_param:ironic_version}
       bind:
-        address: ${_param:cluster_local_address}
+        address: ${_param:cluster_baremetal_local_address}

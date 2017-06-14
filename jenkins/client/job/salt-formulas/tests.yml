@@ -134,12 +134,10 @@ parameters:
                     branches:
                       - master
                 event:
-                  patchset:
-                    - created:
-                        excludeDrafts: false
-                        excludeTrivialRebase: false
-                        excludeNoCodeChange: false
                   comment:
+                    - added:
+                        verdictCategory: 'Code-Review'
+                        commentAddedTriggerApprovalValue: '+1'
                     - addedContains:
                         commentAddedCommentContains: '(recheck|reverify)'
             param:

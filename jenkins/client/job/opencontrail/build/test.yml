@@ -62,12 +62,10 @@ parameters:
                     branches:
                       - "{{branch}}"
                 event:
-                  patchset:
-                    - created:
-                        excludeDrafts: false
-                        excludeTrivialRebase: false
-                        excludeNoCodeChange: false
-                  comment:
+                 comment:
+                    - added:
+                        verdictCategory: 'Code-Review'
+                        commentAddedTriggerApprovalValue: '+1'
                     - addedContains:
                         commentAddedCommentContains: '(recheck|reverify)'
             param:

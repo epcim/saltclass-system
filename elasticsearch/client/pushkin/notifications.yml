@@ -1,0 +1,42 @@
+parameters:
+  _param:
+    pushkin_notifications_shards: 5
+    pushkin_notifications_replicas: 1
+  elasticsearch:
+    client:
+      index:
+        notifications:
+          enabled: true
+          force_operation: true
+          definition:
+            template: notifications
+            settings:
+              number_of_shards: ${_param:pushkin_notifications_shards}
+              number_of_replicas: ${_param:pushkin_notifications_replicas}
+            mappings:
+              notification:
+                properties:
+                  applicationId:
+                    type: long
+                  content:
+                    type: text
+                    fields:
+                      keyword:
+                        type: keyword
+                        ignore_above: 256
+                  level:
+                    type: text
+                    fields:
+                      keyword:
+                        type: keyword
+                        ignore_above: 256
+                  read:
+                    type: boolean
+                  timestamp:
+                    type: date
+                  title:
+                    type: text
+                    fields:
+                      keyword:
+                        type: keyword
+                        ignore_above: 256

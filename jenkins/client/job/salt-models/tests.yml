@@ -130,3 +130,6 @@ parameters:
               PARALLEL_NODE_GROUP_SIZE:
                 type: string
                 default: "1"
+              EXTRA_FORMULAS:
+                type: string
+                default: "xtrabackup"

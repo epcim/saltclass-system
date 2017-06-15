@@ -13,3 +13,9 @@ parameters:
           user: keystone
           group: keystone
           opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address}"
+        keystone-credential-keys:
+          path: /var/lib/keystone/credential-keys
+          server: ${_param:keystone_glusterfs_service_host}
+          user: keystone
+          group: keystone
+          opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address}"

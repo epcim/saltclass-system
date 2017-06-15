@@ -31,6 +31,8 @@ parameters:
         expiration: 3600
         max_active_keys: 3
         location: /var/lib/keystone/fernet-keys
+      credential:
+        location: /var/lib/keystone/credential-keys
       message_queue:
         engine: rabbitmq
         members:

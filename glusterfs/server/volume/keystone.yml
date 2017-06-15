@@ -15,3 +15,16 @@ parameters:
             network.remote-dio: On
             diagnostics.client-log-level: WARNING
             diagnostics.brick-log-level: WARNING
+        keystone-credential-keys:
+          storage: /srv/glusterfs/keystone-credential-keys
+          replica: 3
+          bricks:
+            - ${_param:cluster_node01_address}:/srv/glusterfs/keystone-credential-keys
+            - ${_param:cluster_node02_address}:/srv/glusterfs/keystone-credential-keys
+            - ${_param:cluster_node03_address}:/srv/glusterfs/keystone-credential-keys
+          options:
+            cluster.readdir-optimize: On
+            nfs.disable: On
+            network.remote-dio: On
+            diagnostics.client-log-level: WARNING
+            diagnostics.brick-log-level: WARNING

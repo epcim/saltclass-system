@@ -1,0 +1,30 @@
+parameters:
+  _param:
+    cluster_public_protocol: https
+  keystone:
+    client:
+      server:
+        identity:
+          project:
+            service:
+              user:
+                octavia:
+                  is_admin: true
+                  password: ${_param:keystone_octavia_password}
+                  email: ${_param:admin_email}
+          service:
+            octavia:
+              type: octavia
+              description: OpenStack Loadbalancing Service
+              endpoints:
+              - region: ${_param:openstack_region}
+                public_address: ${_param:cluster_public_host}
+                public_protocol: ${_param:cluster_public_protocol}
+                public_port: 9876
+                public_path: '/'
+                internal_address: ${_param:octavia_service_host}
+                internal_port: 9876
+                internal_path: '/'
+                admin_address: ${_param:octavia_service_host}
+                admin_port: 9876
+                admin_path: '/'

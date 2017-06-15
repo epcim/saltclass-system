@@ -1,0 +1,6 @@
+classes:
+  - service.powerdns.server.single
+parameters:
+  powerdns:
+    server:
+      enabled: true

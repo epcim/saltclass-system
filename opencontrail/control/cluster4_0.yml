@@ -1,0 +1,108 @@
+classes:
+- service.haproxy.proxy.single
+- service.keepalived.cluster.single
+- service.opencontrail.control.cluster
+- system.haproxy.proxy.listen.opencontrail.control
+- system.haproxy.proxy.listen.opencontrail.analytics
+parameters:
+  _param:
+    opencontrail_version: 4.0
+    linux_repo_contrail_component: oc40
+# Temprorary fix for MOS9 packages to pin old version of kafka
+  linux:
+    system:
+      package:
+        librdkafka1:
+          version: 0.9.0-0contrail0
+        python-kafka:
+          version: 1.0.1-0contrail1
+      kernel:
+        modules:
+        - nf_conntrack_ipv4
+  opencontrail:
+    common:
+      identity:
+        host: ${_param:openstack_control_address}
+      network:
+        host: ${_param:openstack_control_address}
+    collector:
+      discovery:
+        host: None
+      database:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+      analytics:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+      message_queue:
+        host: ${_param:openstack_control_address}
+        members:
+        - host: ${_param:openstack_control_node01_address}
+        - host: ${_param:openstack_control_node02_address}
+        - host: ${_param:openstack_control_node03_address}
+      config:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+    database:
+      discovery:
+        host: None
+      analytics:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+    config:
+      network:
+        host: ${_param:openstack_control_address}
+      bind:
+        address: ${_param:cluster_local_address}
+      discovery:
+        host: None
+      analytics:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+      message_queue:
+        members:
+        - host: ${_param:openstack_message_queue_node01_address}
+        - host: ${_param:openstack_message_queue_node02_address}
+        - host: ${_param:openstack_message_queue_node03_address}
+      identity:
+        region: ${_param:openstack_region}
+        host: ${_param:openstack_control_address}
+    control:
+      analytics:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+      message_queue:
+        members:
+        - host: ${_param:openstack_message_queue_node01_address}
+        - host: ${_param:openstack_message_queue_node02_address}
+        - host: ${_param:openstack_message_queue_node03_address}
+      database:
+        members:
+        - host: ${_param:cluster_node01_address}
+        - host: ${_param:cluster_node02_address}
+        - host: ${_param:cluster_node03_address}
+      discovery:
+        host: None
+    web:
+      analytics:
+        host: ${_param:opencontrail_control_address}
+      cache:
+        host: 127.0.0.1
+      identity:
+        host: ${_param:openstack_control_address}
+      database:
+        port: 9042
+      network:
+        host: ${_param:openstack_control_address}

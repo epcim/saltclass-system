@@ -1,0 +1,138 @@
+classes:
+- service.opencontrail.control.single
+- service.haproxy.proxy.single
+parameters:
+  _param:
+    opencontrail_version: 4.0
+    linux_repo_contrail_component: oc40
+# Temprorary fix for MOS9 packages to pin old version of kafka
+  linux:
+    system:
+      package:
+        librdkafka1:
+          version: 0.9.0-0contrail0
+        python-kafka:
+          version: 1.0.1-0contrail1
+        contrail-api-cli:
+          version: latest
+      kernel:
+        modules:
+        - nf_conntrack_ipv4
+  haproxy:
+    proxy:
+      listen:
+        contrail_api:
+          type: contrail-api
+          service_name: contrail
+          check: false
+          binds:
+          - address: ${_param:single_address}
+            port: 8082
+          servers:
+          - name: ctl01
+            host: ${_param:single_address}
+            port: 9100
+            params: check inter 2000 rise 2 fall 3
+        contrail_discovery:
+          type: contrail-api
+          service_name: contrail
+          binds:
+          - address: ${_param:single_address}
+            port: 5998
+          servers:
+          - name: ctl01
+            host: ${_param:single_address}
+            port: 9110
+            params: check inter 2000 rise 2 fall 3
+        contrail_config_stats:
+          type: contrail-config
+          service_name: contrail
+          format: listen
+          binds:
+          - address: '*'
+            port: 5937
+          user: haproxy
+          password: ${_param:opencontrail_stats_password}
+        contrail_openstack_stats:
+          type: contrail-config
+          service_name: contrail
+          format: listen
+          binds:
+          - address: '*'
+            port: 5936
+          user: haproxy
+          password: ${_param:opencontrail_stats_password}
+        contrail_collector_stats:
+          type: contrail-config
+          service_name: contrail
+          format: listen
+          binds:
+          - address: '*'
+            port: 5938
+          user: haproxy
+          password: ${_param:opencontrail_stats_password}
+  opencontrail:
+    common:
+      identity:
+        host: ${_param:openstack_control_address}
+      network:
+        host: ${_param:openstack_control_address}
+    config:
+      network:
+        host: ${_param:openstack_control_address}
+      bind:
+        address: ${_param:single_address}
+      discovery:
+        host: None
+      analytics:
+        members:
+        - host: ${_param:single_address}
+      message_queue:
+        members:
+        - host: ${_param:openstack_control_address}
+      identity:
+        region: ${_param:openstack_region}
+        host: ${_param:openstack_control_address}
+    control:
+      analytics:
+        members:
+        - host: ${_param:single_address}
+      message_queue:
+        members:
+        - host: ${_param:openstack_control_address}
+      database:
+        members:
+        - host: ${_param:single_address}
+      discovery:
+        host: None
+    web:
+      analytics:
+        host: ${_param:single_address}
+      cache:
+        host: 127.0.0.1
+      identity:
+        host: ${_param:openstack_control_address}
+      database:
+        port: 9042
+      network:
+        host: ${_param:openstack_control_address}
+    database:
+      analytics:
+        members:
+        - host: ${_param:single_address}
+    collector:
+      discovery:
+        host: None
+      database:
+        members:
+        - host: ${_param:single_address}
+      analytics:
+        members:
+        - host: ${_param:single_address}
+      message_queue:
+        host: ${_param:openstack_control_address}
+        members:
+        - host: ${_param:openstack_control_address}
+      config:
+        members:
+        - host: ${_param:single_address}

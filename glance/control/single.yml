@@ -5,3 +5,4 @@ parameters:
     server:
       database:
         host: ${_param:single_address}
+      show_multiple_locations: True

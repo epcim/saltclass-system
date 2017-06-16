@@ -7,7 +7,7 @@ parameters:
   jenkins:
     client:
       job:
-        deploy-update-package:
+        deploy-upgrade-compute:
           type: workflow-scm
           concurrent: true
           display_name: "Deploy - upgrade computes"
@@ -27,9 +27,6 @@ parameters:
               type: string
               default: "*"
               description: Salt compound target to match nodes to be updated [*, G@osfamily:debian].
-            TARGET_PACKAGES:
-              type: string
-              description: Space delimited list of packages to be updates [package1=version package2=version], empty string means all updating all packages to the latest version.
             TARGET_SUBSET_TEST:
               type: string
               description: Number of nodes to list package updates, empty string means all targetted nodes.
@@ -37,6 +34,3 @@ parameters:
               type: string
               default: '1'
               description: Number of selected nodes to live apply selected package update.
-            TARGET_BATCH_LIVE:
-              type: string
-              description: Batch size for the complete live package update on all nodes, empty string means apply to all targetted nodes.

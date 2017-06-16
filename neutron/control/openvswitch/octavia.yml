@@ -1,0 +1,12 @@
+parameters:
+  _param:
+    octavia_api_bind_address: ${_param:cluster_local_address}
+  neutron:
+    server:
+      lbaas:
+        enabled: true
+        providers:
+          octavia:
+            engine: octavia
+            driver_path: 'neutron_lbaas.drivers.octavia.driver.OctaviaDriver'
+            base_url: ${_param:octavia_api_bind_address}

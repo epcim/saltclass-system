@@ -13,7 +13,7 @@ parameters:
       master:
         host: ${_param:jenkins_master_host}
         port: ${_param:jenkins_master_port}
-        user: ${_param:jenkins_client_user}
+        username: ${_param:jenkins_client_user}
         password: ${_param:jenkins_client_password}
       plugin:
         ansicolor: {}

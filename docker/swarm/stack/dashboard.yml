@@ -5,8 +5,6 @@ parameters:
     grafana_database_host: localhost
     grafana_database_port: 3306
     grafana_database_password: password
-    grafana_data_directory: /var/lib/grafana
-    grafana_session_life_time: 86400
   docker:
     client:
       stack:
@@ -20,16 +18,10 @@ parameters:
               image: ${_param:docker_image_grafana}
               ports:
                 - 15013:3000
-              volumes:
-                - /srv/volumes/grafana:${_param:grafana_data_directory}
               environment:
                 GF_DATABASE_TYPE: ${_param:grafana_database_type}
                 GF_DATABASE_NAME: grafana
                 GF_DATABASE_USER: grafana
                 GF_DATABASE_PASSWORD: ${_param:grafana_database_password}
                 GF_DATABASE_HOST: "${_param:grafana_database_host}:${_param:grafana_database_port}"
-                GF_PATHS_DATA: ${_param:grafana_data_directory}
                 GF_SECURITY_ADMIN_PASSWORD: ${_param:grafana_admin_password}
-                GF_SESSION_PROVIDER: file
-                GF_SESSION_PROVIDER_CONFIG: ${_param:grafana_data_directory}/data/sessions
-                GF_SESSION_LIFE_TIME: ${_param:grafana_session_life_time}

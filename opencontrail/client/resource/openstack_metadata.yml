@@ -1,0 +1,9 @@
+parameters:
+  opencontrail:
+    client:
+      linklocal_service:
+         metadata:
+           lls_ip: 169.254.169.254
+           lls_port: 80
+           ipf_addresses: ${_param:openstack_control_address}
+           ipf_port: 8775

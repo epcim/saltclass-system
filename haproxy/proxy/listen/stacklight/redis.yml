@@ -5,6 +5,8 @@ parameters:
         redis:
           mode: tcp
           check: False
+          options:
+          - tcp-check
           health-check:
             tcp:
               options:

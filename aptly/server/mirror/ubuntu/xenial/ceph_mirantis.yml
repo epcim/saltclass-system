@@ -1,9 +1,11 @@
 parameters:
+  _param:
+    apt_mk_version: stable
   aptly:
     server:
       mirror:
         ubuntu-xenial-ceph-mirantis:
-          source: http://eu.mirror.fuel-infra.org/decapod/ceph/apt
+          source: http://eu.mirror.fuel-infra.org/decapod/ceph/jewel-xenial
           distribution: jewel-xenial
           components: main
           architectures: amd64
@@ -12,15 +14,4 @@ parameters:
           publisher:
             component: ceph-mirantis
             distributions:
-              - ubuntu-xenial/nightly
-        ubuntu-xenial-decapod-ceph-mirantis:
-          source: http://eu.mirror.fuel-infra.org/decapod/ceph/apt
-          distribution: jewel-xenial
-          components: main
-          architectures: amd64
-          gpgkeys:
-            - 460F3994
-          publisher:
-            component: main
-            distributions:
-              - ubuntu-xenial-decapod-ceph/nightly
+              - ubuntu-xenial/${_param:apt_mk_version}

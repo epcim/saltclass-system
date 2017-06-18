@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    apt_mk_version: stable
   aptly:
     server:
       mirror:
@@ -12,8 +14,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/nightly
-              - xenial/nightly
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}
         kibana:
           source: http://packages.elasticsearch.org/kibana/4.4/debian
           distribution: stable
@@ -24,8 +26,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/nightly
-              - xenial/nightly
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}
         kibana-46:
           source: http://packages.elasticsearch.org/kibana/4.6/debian
           distribution: stable
@@ -36,8 +38,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/nightly
-              - xenial/nightly
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}
         elasticsearch-curator:
           source: http://packages.elastic.co/curator/4/debian
           distribution: stable
@@ -48,5 +50,5 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/nightly
-              - xenial/nightly
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}

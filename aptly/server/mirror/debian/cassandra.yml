@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    apt_mk_version: stable
   aptly:
     server:
       mirror:
@@ -14,5 +16,5 @@ parameters:
           publisher:
             component: extra
             distributions:
-              - trusty/nightly
-              - xenial/nightly
+              - ubuntu-trusty/${_param:apt_mk_version}
+              - ubuntu-xenial/${_param:apt_mk_version}

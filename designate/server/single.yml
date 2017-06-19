@@ -1,6 +1,5 @@
 classes:
 - service.designate.server.single
-- service.haproxy.proxy.single
 parameters:
   designate:
     server:
@@ -23,7 +22,7 @@ parameters:
         password: ${_param:mysql_designate_password}
       identity:
         engine: keystone
-        host: ${_param:openstack_control_address}
+        host: ${_param:single_address}
         port: 35357
         tenant: service
         user: designate
@@ -35,3 +34,14 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
+      pools:
+        default:
+          description: 'default pool'
+          ns_records: ${_param:designate_pool_ns_records}
+          nameservers: ${_param:designate_pool_nameservers}
+          targets:
+            default:
+              type: ${_param:designate_pool_target_type}
+              description: 'default target'
+              masters: ${_param:designate_pool_target_masters}
+              options: ${_param:designate_pool_target_options}

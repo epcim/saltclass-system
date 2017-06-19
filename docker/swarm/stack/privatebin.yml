@@ -1,0 +1,16 @@
+parameters:
+  _param:
+    docker_image_privatebin: jgeusebroek/privatebin
+
+  docker:
+    client:
+      stack:
+        privatebin:
+          service:
+            server:
+              image: ${_param:docker_image_privatebin}
+              ports:
+                - 8099:80
+              volumes:
+                - /srv/volumes/privatebin/data:/privatebin/data
+                - /srv/volumes/privatebin/cfg:/privatebin/cfg

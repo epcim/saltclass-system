@@ -1,0 +1,7 @@
+classes:
+- service.octavia.manager.single
+parameters:
+  octavia:
+    manager:
+      enabled: true
+      version: ${_param:octavia_version}

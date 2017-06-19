@@ -1,0 +1,25 @@
+parameters:
+  designate:
+    server:
+      backend:
+        pdns4:
+          api_token: ${_param:designate_pdns_api_key}
+          api_endpoint: ${_param:designate_pdns_api_endpoint}
+  powerdns:
+    server:
+      enabled: true
+      bind:
+        address: ${_param:single_address}
+        port: 53
+      backend:
+        engine: sqlite
+        dbname: pdns.sqlite3
+        dbpath: /var/lib/powerdns
+      api:
+        enabled: true
+        key: ${_param:designate_pdns_api_key}
+      webserver:
+        enabled: true
+        address: ${_param:single_address}
+        port: ${_param:powerdns_webserver_port}
+        password: ${_param:powerdns_webserver_password}

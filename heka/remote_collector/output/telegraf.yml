@@ -1,0 +1,5 @@
+classes:
+- service.heka.remote_collector.output.telegraf
+parameters:
+  _param:
+    remote_collector_telegraf_host: ${_param:telegraf_remote_agent_address}

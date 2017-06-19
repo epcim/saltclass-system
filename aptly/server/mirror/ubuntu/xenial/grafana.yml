@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    apt_mk_version: stable
   aptly:
     server:
       mirror:
@@ -12,4 +14,4 @@ parameters:
           publisher:
             component: grafana
             distributions:
-              - ubuntu-xenial/nightly
+              - ubuntu-xenial/${_param:apt_mk_version}

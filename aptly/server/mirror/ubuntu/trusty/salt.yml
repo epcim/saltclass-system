@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    apt_mk_version: stable
   aptly:
     server:
       mirror:
@@ -12,5 +14,5 @@ parameters:
           publisher:
             component: salt
             distributions:
-              - ubuntu-trusty/nightly
+              - ubuntu-trusty/${_param:apt_mk_version}
 

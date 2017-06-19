@@ -6,8 +6,11 @@ parameters:
           name: "docker-build-images-{{name}}"
           jobs:
             - name: aptly
+              repo: mk
             - name: ci
+              repo: mk
             - name: prometheus
+              repo: mcp
           template:
             discard:
               build:
@@ -18,7 +21,7 @@ parameters:
             concurrent: true
             scm:
               type: git
-              url: "${_param:jenkins_gerrit_url}/mk/docker-{{name}}"
+              url: "${_param:jenkins_gerrit_url}/{{repo}}/docker-{{name}}"
               credentials: "gerrit"
             trigger:
               gerrit:
@@ -32,7 +35,7 @@ parameters:
             param:
               IMAGE_GIT_URL:
                 type: string
-                default: "${_param:jenkins_gerrit_url}/mk/docker-{{name}}"
+                default: "${_param:jenkins_gerrit_url}/{{repo}}/docker-{{name}}"
               IMAGE_BRANCH:
                 type: string
                 default: "master"

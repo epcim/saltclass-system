@@ -156,7 +156,7 @@ parameters:
             - package: jmx-exporter
               dist: xenial
               build: jmx-exporter
-              branch: debian/xenial
+              branch: master
           template:
             type: workflow-scm
             concurrent: false

@@ -1,7 +1,7 @@
 parameters:
   _param:
     pushkin_elasticsearch_host: ${_param:haproxy_elasticsearch_bind_host}
-    pushkin_elasticsearch_port: ${_param:haproxy_elasticsearch_bind_port}
+    pushkin_elasticsearch_port: ${_param:haproxy_elasticsearch_http_bind_port}
   elasticsearch:
     client:
       enabled: true

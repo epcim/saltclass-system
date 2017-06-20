@@ -5,6 +5,7 @@ parameters:
     elasticsearch_cluster_name: oss-cluster
     elasticsearch_xpack_security_enabled: 'false'
     elasticsearch_discovery_zen_minimum_master_nodes: 1
+    elasticsearch_discovery_type: single-node
   docker:
     client:
       stack:
@@ -13,7 +14,7 @@ parameters:
             cluster.name: ${_param:elasticsearch_cluster_name}
             xpack.security.enabled: ${_param:elasticsearch_xpack_security_enabled}
             discovery.zen.minimum_master_nodes: ${_param:elasticsearch_discovery_zen_minimum_master_nodes}
-            ES_JAVA_OPTS: '-Des.enforce.bootstrap.checks=true'
+            discovery.type: ${_param:elasticsearch_discovery_type}
           service:
             cluster:
               image: ${_param:docker_image_oss_elasticsearch}

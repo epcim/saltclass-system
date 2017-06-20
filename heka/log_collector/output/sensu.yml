@@ -1,3 +1,2 @@
 classes:
 - service.heka.log_collector.output.sensu
-

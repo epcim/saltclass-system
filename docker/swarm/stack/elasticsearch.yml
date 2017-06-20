@@ -23,6 +23,7 @@ parameters:
                 restart_policy:
                   condition: any
               ports:
-                - ${_param:haproxy_elasticsearch_exposed_port}:${_param:haproxy_elasticsearch_bind_port}
+                - ${_param:haproxy_elasticsearch_http_exposed_port}:${_param:haproxy_elasticsearch_http_bind_port}
+                - ${_param:haproxy_elasticsearch_binary_exposed_port}:${_param:haproxy_elasticsearch_binary_bind_port}
               volumes:
                 - /srv/volumes/elasticsearch:/usr/share/elasticsearch/data

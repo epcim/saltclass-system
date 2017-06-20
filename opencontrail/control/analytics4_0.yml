@@ -7,6 +7,10 @@ parameters:
   _param:
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
+    opencontrail_message_queue_node01_address: ${_param:openstack_message_queue_node01_address}
+    opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
+    opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
+    opencontrail_message_queue_address: ${_param:openstack_message_queue_address}
 # Temprorary fix for MOS9 packages to pin old version of kafka
   linux:
     system:
@@ -40,11 +44,11 @@ parameters:
         - host: ${_param:opencontrail_analytics_node02_address}
         - host: ${_param:opencontrail_analytics_node03_address}
       message_queue:
-        host: ${_param:openstack_control_address}
+        host: ${_param:opencontrail_message_queue_address}
         members:
-        - host: ${_param:openstack_control_node01_address}
-        - host: ${_param:openstack_control_node02_address}
-        - host: ${_param:openstack_control_node03_address}
+        - host: ${_param:opencontrail_message_queue_node01_address}
+        - host: ${_param:opencontrail_message_queue_node02_address}
+        - host: ${_param:opencontrail_message_queue_node03_address}
       config:
         members:
         - host: ${_param:opencontrail_control_node01_address}

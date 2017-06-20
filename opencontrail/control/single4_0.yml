@@ -84,6 +84,8 @@ parameters:
         address: ${_param:single_address}
       discovery:
         host: None
+      api:
+        host: ${_param:single_address}
       analytics:
         members:
         - host: ${_param:single_address}

@@ -37,3 +37,6 @@ parameters:
             sphinx:
               source: pkg
               name: salt-formula-sphinx
+            xtrabackup:
+              source: pkg
+              name: salt-formula-xtrabackup

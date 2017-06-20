@@ -153,6 +153,10 @@ parameters:
               dist: xenial
               build: pipeline
               branch: debian/xenial
+            - package: jmx-exporter
+              dist: xenial
+              build: jmx-exporter
+              branch: debian/xenial
           template:
             type: workflow-scm
             concurrent: false

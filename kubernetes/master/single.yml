@@ -1,6 +1,9 @@
 classes:
 - service.kubernetes.master.single
 parameters:
+  _param:
+    kubernetes_netchecker_agent_image: quay.io/l23network/k8s-netchecker-agent:v1.0
+    kubernetes_netchecker_server_image: quay.io/l23network/k8s-netchecker-server:v1.0
   kubernetes:
     master:
       container: false

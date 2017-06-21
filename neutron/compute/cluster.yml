@@ -2,8 +2,11 @@ classes:
 - service.neutron.compute.single
 parameters:
   neutron:
+    _param:
+      neutron_enable_qos: False
     compute:
       dvr: ${_param:neutron_compute_dvr}
+      qos: ${_param:neutron_enable_qos}
       agent_mode: ${_param:neutron_compute_agent_mode}
       external_access: ${_param:neutron_compute_external_access}
       backend:

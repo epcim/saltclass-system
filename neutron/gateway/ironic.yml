@@ -1,0 +1,4 @@
+parameters:
+  neutron:
+    gateway:
+      ironic_enabled: true

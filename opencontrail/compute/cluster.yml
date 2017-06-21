@@ -1,3 +1,5 @@
+classes:
+  - service.opencontrail.compute.cluster
 applications:
 - opencontrail
 parameters:

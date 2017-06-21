@@ -9,4 +9,4 @@ parameters:
           octavia:
             engine: octavia
             driver_path: 'neutron_lbaas.drivers.octavia.driver.OctaviaDriver'
-            base_url: ${_param:octavia_api_bind_address}
+            base_url: http://${_param:octavia_api_bind_address}:9876

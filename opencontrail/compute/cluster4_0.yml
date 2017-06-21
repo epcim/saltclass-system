@@ -34,6 +34,11 @@ parameters:
         - host: ${_param:opencontrail_analytics_node01_address}
         - host: ${_param:opencontrail_analytics_node02_address}
         - host: ${_param:opencontrail_analytics_node03_address}
+      control:
+        members:
+        - host: ${_param:opencontrail_control_node01_address}
+        - host: ${_param:opencontrail_control_node02_address}
+        - host: ${_param:opencontrail_control_node03_address}
       interface:
         address: ${_param:opencontrail_compute_address}
         dev: ${_param:opencontrail_compute_iface}

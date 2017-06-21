@@ -6,6 +6,9 @@ parameters:
   _param:
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
+    opencontrail_message_queue_node01_address: ${_param:openstack_message_queue_node01_address}
+    opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
+    opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
   opencontrail:
     common:
       identity:
@@ -19,6 +22,8 @@ parameters:
         address: ${_param:cluster_local_address}
       discovery:
         host: None
+      api:
+        host: ${_param:opencontrail_control_address}
       analytics:
         members:
         - host: ${_param:opencontrail_analytics_node01_address}
@@ -26,9 +31,9 @@ parameters:
         - host: ${_param:opencontrail_analytics_node03_address}
       message_queue:
         members:
-        - host: ${_param:openstack_message_queue_node01_address}
-        - host: ${_param:openstack_message_queue_node02_address}
-        - host: ${_param:openstack_message_queue_node03_address}
+        - host: ${_param:opencontrail_message_queue_node01_address}
+        - host: ${_param:opencontrail_message_queue_node02_address}
+        - host: ${_param:opencontrail_message_queue_node03_address}
       identity:
         region: ${_param:openstack_region}
         host: ${_param:openstack_control_address}
@@ -40,9 +45,9 @@ parameters:
         - host: ${_param:opencontrail_analytics_node03_address}
       message_queue:
         members:
-        - host: ${_param:openstack_message_queue_node01_address}
-        - host: ${_param:openstack_message_queue_node02_address}
-        - host: ${_param:openstack_message_queue_node03_address}
+        - host: ${_param:opencontrail_message_queue_node01_address}
+        - host: ${_param:opencontrail_message_queue_node02_address}
+        - host: ${_param:opencontrail_message_queue_node03_address}
       database:
         members:
         - host: ${_param:opencontrail_control_node01_address}

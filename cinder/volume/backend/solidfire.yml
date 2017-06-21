@@ -1,0 +1,15 @@
+parameters:
+  cinder:
+    volume:
+      enabled: true
+      default_volume_type: normal_storage
+      backend:
+        solidfire:
+          engine: solidfire
+          type_name: normal-storage
+          engine: solidfire
+          san_ip: ${_param:san_ip_address}
+          san_login: ${_param:san_login}
+          san_password: ${_param:san_password}
+          clustername: ${_param:san_cluster_name}
+          sf_emulate_512: true

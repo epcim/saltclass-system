@@ -16,12 +16,3 @@ parameters:
             - ALL
             commands:
             - /usr/bin/docker
-  docker:
-    client:
-      network:
-        docker_gwbridge:
-          subnet: 10.20.0.0/16
-          opt:
-            com.docker.network.bridge.name: docker_gwbridge
-            com.docker.network.bridge.enable_icc: false
-            com.docker.network.bridge.enable_ip_masquerade: true

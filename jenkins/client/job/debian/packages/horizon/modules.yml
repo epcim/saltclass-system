@@ -6,6 +6,18 @@ parameters:
           name: build-debian-horizon-module-{{name}}-{{os_version}}-{{os}}-{{dist}}
           jobs:
             # Trusty
+            - name: horizon-avi-panels
+              os: ubuntu
+              dist: trusty
+              os_version: mitaka
+              branch: stable/mitaka
+            # Xenial
+            - name: horizon-avi-panels
+              os: ubuntu
+              dist: xenial
+              os_version: mitaka
+              branch: stable/mitaka
+            # Trusty
             - name: horizon-neutron-lbaasv2-panel
               os: ubuntu
               dist: trusty

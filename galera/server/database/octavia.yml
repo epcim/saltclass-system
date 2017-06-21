@@ -1,0 +1,15 @@
+parameters:
+  mysql:
+    server:
+      database:
+        octavia:
+          encoding: 'utf8'
+          users:
+          - name: 'octavia'
+            password: '${_param:mysql_octavia_password}'
+            host: '%'
+            rights: 'all'
+          - name: 'octavia'
+            password: '${_param:mysql_octavia_password}'
+            host: '${_param:cluster_local_address}'
+            rights: 'all'

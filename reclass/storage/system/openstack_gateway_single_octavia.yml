@@ -1,0 +1,9 @@
+classes:
+- system.reclass.storage.system.openstack_gateway_single
+parameters:
+  reclass:
+    storage:
+      node:
+        openstack_gateway_node01:
+          classes:
+          - system.octavia.manager.single

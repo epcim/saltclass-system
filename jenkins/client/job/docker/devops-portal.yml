@@ -44,12 +44,15 @@ parameters:
             IMAGE_TAGS:
               type: string
               default: ""
+            CONTEXT_PATH:
+              type: string
+              default: "."
             CREDENTIALS_ID:
               type: string
               default: "gerrit"
             DOCKERFILE_PATH:
               type: string
-              default: "docker/devops-portal"
+              default: "docker/devops-portal/Dockerfile"
             DOCKER_REGISTRY:
               type: string
               default: "docker-dev-virtual.docker.mirantis.net"

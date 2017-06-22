@@ -1,0 +1,8 @@
+parameters:
+  _param:
+    log_collector_telegraf_port: 8186
+  heka:
+    log_collector:
+      telegraf_host: 127.0.0.1
+      telegraf_port: ${_param:log_collector_telegraf_port}
+      telegraf_timeout: 2000

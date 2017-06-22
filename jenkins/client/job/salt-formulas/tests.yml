@@ -135,11 +135,8 @@ parameters:
                       - master
                 event:
                   comment:
-                    - added:
-                        verdictCategory: 'Code-Review'
-                        commentAddedTriggerApprovalValue: '+1'
                     - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
+                        commentAddedCommentContains: "^(test|recheck|reverify)$"
             param:
               SALT_VERSION:
                 type: string

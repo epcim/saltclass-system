@@ -23,11 +23,8 @@ parameters:
                         name: "{{branch}}"
                 event:
                   comment:
-                    - added:
-                        verdictCategory: 'Code-Review'
-                        commentAddedTriggerApprovalValue: '+1'
                     - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
+                        commentAddedCommentContains: "^(test|recheck|reverify)$"
             param:
               SALT_OPTS:
                 type: string
@@ -102,11 +99,8 @@ parameters:
                       - master
                 event:
                   comment:
-                    - added:
-                        verdictCategory: 'CodeReview'
-                        commentAddedTriggerApprovalValue: '+1'
                     - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
+                        commentAddedCommentContains: "^(test|recheck|reverify)$"
             param:
               COOKIECUTTER_TEMPLATE_URL:
                 type: string

@@ -63,11 +63,8 @@ parameters:
                       - "{{branch}}"
                 event:
                  comment:
-                    - added:
-                        verdictCategory: 'Code-Review'
-                        commentAddedTriggerApprovalValue: '+1'
                     - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
+                        commentAddedCommentContains: "^(test|recheck|reverify)$"
             param:
               TEST_MODELS:
                 type: string

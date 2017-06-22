@@ -62,13 +62,13 @@ parameters:
               # heat
               HEAT_STACK_ENVIRONMENT:
                 type: string
-                default: "tcpisek"
+                default: "devcloud"
               HEAT_STACK_ZONE:
                 type: string
-                default: "mirantis-zone-qa"
+                default: "mcp-mk"
               HEAT_STACK_PUBLIC_NET:
                 type: string
-                default: "mirantis-private"
+                default: "public"
 
               # salt master
               SALT_MASTER_CREDENTIALS:

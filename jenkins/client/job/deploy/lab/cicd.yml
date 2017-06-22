@@ -35,13 +35,13 @@ parameters:
                 default: "{{lab}}"
               HEAT_STACK_ENVIRONMENT:
                 type: string
-                default: "tcpisek"
+                default: "devcloud"
               HEAT_STACK_ZONE:
                 type: string
-                default: "mirantis-zone-qa"
+                default: "mcp-mk"
               HEAT_STACK_PUBLIC_NET:
                 type: string
-                default: "mirantis-private"
+                default: "public"
               HEAT_STACK_DELETE:
                 type: boolean
                 default: 'true'
@@ -62,19 +62,19 @@ parameters:
               # openstack api
               OPENSTACK_API_URL:
                 type: string
-                default: "https://vpc.tcpisek.cz:5000"
+                default: "https://cloud-cz.bud.mirantis.net:5000"
               OPENSTACK_API_CREDENTIALS:
                 type: string
                 default: "openstack-qa-credentials"
               OPENSTACK_API_PROJECT:
                 type: string
-                default: "mirantis_mk20_qa"
+                default: "mcp-mk"
               OPENSTACK_API_CLIENT:
                 type: string
-                default: "liberty"
+                default: ""
               OPENSTACK_API_VERSION:
                 type: string
-                default: "2"
+                default: "3"
               OPENSTACK_API_PROJECT_DOMAIN:
                 type: string
                 default: "default"

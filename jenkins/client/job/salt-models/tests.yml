@@ -46,6 +46,9 @@ parameters:
               EXTRA_FORMULAS:
                 type: string
                 default: "{{extra_formulas}}"
+              FORMULAS_SOURCE:
+                type: string
+                default: "{{formulas_src}}"
               SYSTEM_GIT_URL:
                 type: string
                 default: ""
@@ -160,6 +163,9 @@ parameters:
             EXTRA_FORMULAS:
               type: string
               default: ""
+            FORMULAS_SOURCE:
+              type: string
+              default: "{{formulas_src}}"
             SYSTEM_GIT_URL:
               type: string
               default: ""

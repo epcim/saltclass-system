@@ -134,7 +134,7 @@ parameters:
           name: test-salt-model-node
           discard:
             build:
-              keep_num: 10
+              keep_num: 500
             artifact:
               keep_num: 10
           type: workflow-scm

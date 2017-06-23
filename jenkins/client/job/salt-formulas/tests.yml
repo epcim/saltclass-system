@@ -136,7 +136,7 @@ parameters:
                 event:
                   comment:
                     - addedContains:
-                        commentAddedCommentContains: "^(test|recheck|reverify)$"
+                        commentAddedCommentContains: '^(?s:Patch Set \d+:\s*(test|recheck|reverify)\s*)$'
             param:
               SALT_VERSION:
                 type: string

@@ -13,6 +13,11 @@ parameters:
             POSTGRES_DB: ${_param:pushkin_db}
             PUSHKINDBHOST: ${_param:pushkin_db_host}
             PUSHKINELASTICHOST: ${_param:haproxy_elasticsearch_bind_host}
+            WEBHOOK_FROM: ${_param:webhook_from}
+            WEBHOOK_RECIPIENTS: ${_param:webhook_recipients}
+            WEBHOOK_LOGIN_ID: ${_param:webhook_login_id}
+            WEBHOOK_APPLICATION_ID: ${_param:webhook_application_id}
+            WEBHOOK_SFDC_USERNAME: ${_param:webhook_sfdc_username}
           service:
             api:
               image: ${_param:docker_image_pushkin}

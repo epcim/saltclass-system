@@ -1,0 +1,9 @@
+parameters:
+  _param:
+    prometheus_server_alert_label_route: mail
+  prometheus:
+    server:
+      config:
+        alert:
+          labels_add:
+            route: ${_param:prometheus_server_alert_label_route}

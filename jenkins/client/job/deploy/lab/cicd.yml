@@ -65,7 +65,7 @@ parameters:
                 default: "https://cloud-cz.bud.mirantis.net:5000"
               OPENSTACK_API_CREDENTIALS:
                 type: string
-                default: "openstack-qa-credentials"
+                default: "openstack-devcloud-credentials"
               OPENSTACK_API_PROJECT:
                 type: string
                 default: "mcp-mk"

@@ -49,6 +49,9 @@ parameters:
               FORMULAS_SOURCE:
                 type: string
                 default: "{{formulas_src}}"
+              FORMULAS_REVISION:
+                type: string
+                default: "{{formulas_revision}}"
               SYSTEM_GIT_URL:
                 type: string
                 default: ""

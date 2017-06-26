@@ -1,9 +1,9 @@
 classes:
 - service.neutron.gateway.single
 parameters:
+  _param:
+    neutron_enable_qos: False
   neutron:
-    _param:
-      neutron_enable_qos: False
     gateway:
       dvr: ${_param:neutron_gateway_dvr}
       qos: ${_param:neutron_enable_qos}

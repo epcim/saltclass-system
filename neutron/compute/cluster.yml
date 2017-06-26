@@ -1,9 +1,9 @@
 classes:
 - service.neutron.compute.single
 parameters:
+  _param:
+    neutron_enable_qos: False
   neutron:
-    _param:
-      neutron_enable_qos: False
     compute:
       dvr: ${_param:neutron_compute_dvr}
       qos: ${_param:neutron_enable_qos}

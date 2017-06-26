@@ -48,7 +48,6 @@ parameters:
                   - failed
                   - unstable
                   - not_built
-                silent_start_mode: "true"
                 event:
                   comment:
                     - added:

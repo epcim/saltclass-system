@@ -64,7 +64,7 @@ parameters:
                 event:
                  comment:
                     - addedContains:
-                        commentAddedCommentContains: '^(?s:Patch Set \d+:\s*(test|recheck|reverify)\s*)$'
+                        commentAddedCommentContains: '^(?s:Patch Set \d+:.*(test|recheck|reverify)\s*)$'
             param:
               TEST_MODELS:
                 type: string

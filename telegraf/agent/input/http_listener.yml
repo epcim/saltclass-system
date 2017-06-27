@@ -1,0 +1,13 @@
+parameters:
+  _param:
+    telegraf_agent_http_listener_port: 8186
+  telegraf:
+    agent:
+      input:
+        http_listener:
+          bind:
+            address: 127.0.0.1
+            port: ${_param:telegraf_agent_http_listener_port}
+          read_timeout: 10s
+          write_timeout: 10s
+          tagexclude: ['hostname']

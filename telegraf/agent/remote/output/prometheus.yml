@@ -1,0 +1,11 @@
+parameters:
+  _param:
+    telegraf_remote_agent_prometheus_port: 9126
+  telegraf:
+    remote_agent:
+      output:
+        prometheus_client:
+          bind:
+            address: 0.0.0.0
+            port: ${_param:telegraf_remote_agent_prometheus_port}
+          engine: prometheus

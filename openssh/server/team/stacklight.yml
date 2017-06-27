@@ -86,6 +86,13 @@ parameters:
           full_name: Illia Svyrydov
           home: /home/isviridov
           email: isviridov@mirantis.com
+        nzaporozhets:
+          enabled: true
+          name: nzaporozhets
+          sudo: true
+          full_name: Nikita Zaporozhets
+          home: /home/nzaporozhets
+          email: nzaporozhets@mirantis.com
   openssh:
     client:
       enabled: true
@@ -152,6 +159,11 @@ parameters:
           public_keys:
           - ${public_keys:isviridov}
           user: ${linux:system:user:isviridov}
+        nzaporozhets:
+          enable: true
+          public_keys:
+          - ${public_keys:nzaporozhets}
+          user: ${linux:system:user:nzaporozhets}
   public_keys:
     newt:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3odU+3V2uDA2ptAFL9hrJRPNEEdAyztWOZFQ5Oyd9oerTGOU3p4xmrgWWjfKFKbYGhiiIUcYAol5PkTfKukGEkkjCHYA1t023soCaaAj85wCZCnw2zQNAziwxTYmAzTqgxiSvtZNMMrtJvFHRIRDzJ3M1lV0prWNWkMM1/3FAd4W49y6VT3fkMCo8uqG7CfGdgR2DgBCxf9KaNPfW5eDEPOgmE5lK8tVSEI6T+Cg7hbcTf4lFYnlFBnlQgp/0JstsM4Vbwb4B34LOpOsf2S8rrWk2xQMjwaMHXkc2s/E8iW3F5nVFuyEXYISFQIiAHw8dzC6CHgLcyHUVWwznKawZ newt@newt-dev1
@@ -177,3 +189,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiUm3Z3W3t4v7oe143rCNM/hbg9NU2bYUmQXek8DJPA4c3Xm6u0q+RL9kEXME+3zcj2HKqMxKsCBLXXdFIsgdUbOBV8AYiuySE220FTnEKRmdxsEnfSaBhXxFyIBNoew4gI7URSqAOclt5WuPJTqRM7K4VhbtzwEgeWVd/NUhxMCCtgkdJCYTSmycxmxs7R6V8vMr9Mb8DOqKkSpOu6f3JkR0lwnFN9zGGC4V/60FlJSDzvvI5Tn40ANPHITivs8xME0znsx7t0bF4vQUimvhYn1mumQCY1NwIaxJ/QqasD6Ag9Sn5dxSg9b3SeLn0JM6qKoIqZtfPYVuCp9gmlH0fyzJUdqu4lKKb2wBw/H5lK6icH4+owMawkav55rbvinHQOqmVCr/Bg/rTfc35ycVqjTXH/5J7OhzioKjU0yFkXFS2X/s8gpyxp3beJ+Ea4faoX+kcs0gyhMYzqC7/DOamrau7aVyEAjKYJNy60xRfjCQzjqiurbxVFh+3Fi64UUn7Bl1QV8VEiU3ztJ118psEI7zA+x2VROLZ1jrtaBYZTYB118JZicaFDycEVgg3+BHX3pFH/QSOjLsA4SK+HJjSz8CFKvWwaO6QJv1/3KHpcGEacMvmqKxwpQK0E4WpjWhglZRMPObQ0dBaGClOujgoOIHXtFGILEpWy2SdzDQkHw== kszukielojc@w541
     isviridov:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGNZxzOm7OsZi/q6Qk71fnvjCfWk4BfxpZ5hDig6N1f9D0iAMaINyNmlF2PxstSLW0Mjdq2tXTUvVWlYpGrw+YLHQmVk8dckmLdUAxe2Z0oEvtWhiQC64927ibBTgQ2Tjfkao+PFYPbdjiO4FgRymS1/FpGKhvpdyPDCcOLrxsMSK9YpPi4kbkd4GmlGMercuaEzP3JOOzJioOOLtEw3LOLWG5mAIzXjGFxuCNdTI4gqxQm/iw/tOpb9PcsY10EapZsS4Pd8j58vuhJlwdoTxI3gzySJcTlWm0tcphex0g8X0tEUI+zVjemJcrYkZgUpb6x5/mUjNxC4nv+4A4yMTP
+    nzaporozhets:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/UtqwBD6qkEoWSrmO0jXa9sUcwumySxmkX2XCTlAj+e8tzCNndNhaUueu01pbcNrGrB7xvCHyTa5cxgJEv0RAJRxZnObTjluegiuW+/KNSGwiSDy90bwPVb6zWalrDg12xGh8C0ybmv90uC+GrGO1UXFpm5N1qL3ZsUvSjWBRZ70xXjUI4self+fWxBYJhu7hGZ0RVCeA8TjRutzdOWcSZwN2Arn2Oq+fx9n5HP8iXlPcfM6aWj+QvkXphvKjUhDYiImQ07kJctYvxEwMei5pM1dAPZefQ6FRsUP1gKYKPVp1CiBHPIKLG3LMwxp0/LWQmHB4umZvA6HYplSUXZLMd+FhCRuocVFdxe308JWeIFWyw7og/qEBlpxqW4BUk0bR3c4deI9QDKWCuuunTDB4oEB8ZnkI7utknpx7sqO72Ev2UNS/CSi3yyqgOajojQ3l+McWn9bm08KSLzuuMaexETRYQ9dgjE79N7fH+DEt5Ryii+GA2a8Gl3iRtTZs9WA94mTb/KjZBrVxh+PixpQ6s3oGFelFCPMKSPWIEb+rwuAUi0Ulrqb2UZDzJYhT50QfbCzRN2MU+8bR7PJt/xpAADvQX0iMMrMUvAVngs2YrXKapJliyHhTZxOmVdDRIyCQ1YpK2ktBJf+E+RXl3R5XUmbJkT4jZ1R6cA1QJOEKVQ== nzaporozhets@mirantis.com

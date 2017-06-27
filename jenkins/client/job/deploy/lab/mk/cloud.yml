@@ -9,6 +9,62 @@ parameters:
         stack_type: aws
         stack_install: core,k8s,calico
         job_timer: "H H * * *"
+#      - stack_name: ceph_ha
+#        stack_type: heat
+#        stack_install: core
+#        job_timer: ""
+#      - stack_name: drivetrain_ha
+#        stack_type: heat
+#        stack_install: core
+#        job_timer: ""
+#      - stack_name: drivetrain_ha_clusters
+#        stack_type: heat
+#        stack_install: core
+#        job_timer: ""
+      - stack_name: k8s_aio_calico
+        stack_type: heat
+        stack_install: core,k8s,calico
+        job_timer: ""
+      - stack_name: k8s_aio_contrail
+        stack_type: heat
+        stack_install: core,k8s,contrail
+        job_timer: ""
+      - stack_name: k8s_ha_calico
+        stack_type: heat
+        stack_install: core,k8s,calico
+        job_timer: ""
+      - stack_name: k8s_ha_contrail
+        stack_type: heat
+        stack_install: core,k8s,contrail
+        job_timer: ""
+      - stack_name: os_aio_contrail
+        stack_type: heat
+        stack_install: core,openstack,contrail
+        job_timer: ""
+      - stack_name: os_aio_ovs
+        stack_type: heat
+        stack_install: core,openstack,ovs
+        job_timer: ""
+      - stack_name: os_ha_contrail
+        stack_type: heat
+        stack_install: core,openstack,contrail
+        job_timer: ""
+      - stack_name: os_ha_ovs
+        stack_type: heat
+        stack_install: core,openstack,ovs
+        job_timer: ""
+      - stack_name: stacklight_k8s_calico
+        stack_type: heat
+        stack_install: core,k8s,calico,stacklight
+        job_timer: ""
+      - stack_name: stacklight_os_contrail
+        stack_type: heat
+        stack_install: core,openstack,contrail,stacklight
+        job_timer: ""
+      - stack_name: stacklight_os_ovs
+        stack_type: heat
+        stack_install: core,openstack,ovs,stacklight
+        job_timer: ""
   jenkins:
     client:
       job_template:
@@ -82,6 +138,9 @@ parameters:
                 default: "salt-qa-credentials"
               SALT_MASTER_URL:
                 type: string
+                default: ""
+              SALT_OVERRIDES:
+                type: text
                 default: ""
 
               # aws api

@@ -92,3 +92,15 @@ parameters:
         test: k8s
         timer: "H H(0-6) * * *"
         extra_formulas: ""
+      - lab: virtual_mcp11_contrail_nfv
+        install: core,openstack,contrail
+        stack_type: heat
+        test: openstack
+        timer: "H H(0-6) * * *"
+        extra_formulas: ""
+      - lab: virtual_mcp11_ovs_dpdk
+        install: core,openstack,ovs
+        stack_type: heat
+        test: openstack
+        timer: "H H(0-6) * * *"
+        extra_formulas: ""

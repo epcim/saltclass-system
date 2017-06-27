@@ -168,7 +168,10 @@ parameters:
               default: ""
             FORMULAS_SOURCE:
               type: string
-              default: "{{formulas_src}}"
+              default: "pkg"
+            FORMULAS_REVISION:
+              type: string
+              default: "stable"
             SYSTEM_GIT_URL:
               type: string
               default: ""

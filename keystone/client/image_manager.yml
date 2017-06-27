@@ -1,0 +1,20 @@
+parameters:
+  keystone:
+    client:
+      enabled: true
+      server:
+        identity:
+          admin:
+            host: ${_param:keystone_service_host}
+            port: 35357
+            token: ${_param:keystone_service_token}
+          roles:
+          - image_manager
+          project:
+            admin:
+              user:
+                image_manager:
+                  is_admin: false
+                  password: ${_param:keystone_image_manager_password}
+                  roles:
+                  - image_manager

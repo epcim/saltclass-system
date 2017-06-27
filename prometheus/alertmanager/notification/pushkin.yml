@@ -7,24 +7,16 @@ parameters:
     alertmanager:
       config:
         route:
-          group_by: ['region', 'service']
-          group_wait: 60s
-          group_interval: 5m
-          repeat_interval: 3h
-          receiver: pushkin_notification
           routes:
-            - match:
-                route: email
-              receiver: email_notification
-            - match:
-                route: salesforce
-              receiver: salesforce_notification
-        receivers:
-          - name: salesforce_notification
+            pushkin:
+              receiver: HTTP-pushkin
+              match_re:
+                - label: route
+                  value:  .+?
+        receiver:
+          HTTP-pushkin:
+            enabled: true
             webhook_configs:
-              - url: "${_param:alertmanager_notification_pushkin_host}:${_param:alertmanager_notification_pushkin_port}/webhook?app=stacklight&route=salesforce&cluster_id=id"
-                send_resolved: true
-          - name: pushkin_notification
-            webhook_configs:
-              - url: "${_param:alertmanager_notification_pushkin_host}:${_param:alertmanager_notification_pushkin_port}/webhook?app=stacklight&route=email&cluster_id=id"
+              pushkin-vip:
+                url: "${_param:alertmanager_notification_pushkin_host}:${_param:alertmanager_notification_pushkin_port}/webhook?app=stacklight"
                 send_resolved: true

@@ -93,6 +93,10 @@ parameters:
               dist: trusty
               build: pipeline
               branch: debian/trusty
+            - package: jmx-exporter
+              dist: trusty
+              build: jmx-exporter
+              branch: master
             - package: librdkafka
               dist: xenial
               build: pipeline

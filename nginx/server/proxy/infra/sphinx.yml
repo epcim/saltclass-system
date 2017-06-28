@@ -8,7 +8,7 @@ parameters:
           type: nginx_proxy
           name: sphinx
           proxy:
-            host: prx
+            host: ${_param:openstack_proxy_hostname}
             port: 8090
             protocol: http
           host:

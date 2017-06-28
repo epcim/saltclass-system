@@ -63,13 +63,13 @@ parameters:
               default: "qcow2"
             GLANCE_URL:
               type: string
-              default: "https://vpc.tcpisek.cz:5000"
+              default: "https://cloud-cz.bud.mirantis.net:5000"
             GLANCE_CREDENTIALS_ID:
               type: string
-              default: "openstack-qa-credentials"
+              default: "openstack-devcloud-credentials"
             GLANCE_PROJECT:
               type: string
-              default: "mirantis_mk20_qa"
+              default: "mcp-mk"
             GLANCE_ARGS:
               type: string
               default: ""
@@ -78,7 +78,7 @@ parameters:
               default: "true"
             OPENSTACK_API_CLIENT:
               type: string
-              default: "liberty"
+              default: ""
         build-image-ubuntu-16-04:
           type: workflow-scm
           concurrent: false
@@ -129,13 +129,13 @@ parameters:
               default: "qcow2"
             GLANCE_URL:
               type: string
-              default: "https://vpc.tcpisek.cz:5000"
+              default: "https://cloud-cz.bud.mirantis.net:5000"
             GLANCE_CREDENTIALS_ID:
               type: string
-              default: "openstack-qa-credentials"
+              default: "openstack-devcloud-credentials"
             GLANCE_PROJECT:
               type: string
-              default: "mirantis_mk20_qa"
+              default: "mcp-mk"
             GLANCE_ARGS:
               type: string
               default: ""
@@ -144,4 +144,4 @@ parameters:
               default: "true"
             OPENSTACK_API_CLIENT:
               type: string
-              default: "liberty"
+              default: ""

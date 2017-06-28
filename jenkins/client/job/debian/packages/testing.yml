@@ -1,0 +1,64 @@
+parameters:
+  _param:
+    jenkins_pollscm_spec: "H/60 * * * *"
+  jenkins:
+    client:
+      job_template:
+        build-debian-python-flask-hello:
+          name: build-debian-{{package}}-ubuntu-{{dist}}
+          jobs:
+            - package: python-flask-hello
+              dist: trusty
+              build: pipeline
+              branch: master
+          template:
+            type: workflow-scm
+            concurrent: false
+            scm:
+              type: git
+              url: "https://github.com/tcpcloud/python-flask-hello.git"
+              credentials: "gerrit"
+              script: build-debian-packages-{{build}}.groovy
+            trigger:
+              pollscm:
+                spec: ${_param:jenkins_pollscm_spec}
+            param:
+              SOURCE_URL:
+                type: string
+                default: "https://github.com/tcpcloud/python-flask-hello.git"
+              SOURCE_BRANCH:
+                type: string
+                default: "{{branch}}"
+              SOURCE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              EXTRA_REPO_URL:
+                type: string
+                default: "deb ${_param:jenkins_aptly_url}/{{dist}}/ testing extra"
+              EXTRA_REPO_KEY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_url}/public.gpg"
+              APTLY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_api_url}"
+              APTLY_REPO:
+                type: string
+                default: "ubuntu-{{dist}}-extra"
+              OS:
+                type: string
+                default: "ubuntu"
+              DIST:
+                type: string
+                default: "{{dist}}"
+              ARCH:
+                type: string
+                default: "amd64"
+              PPA:
+                type: string
+                default: "mirantis-opencontrail/extra"
+              UPLOAD_PPA:
+                type: boolean
+                default: 'false'
+              UPLOAD_APTLY:
+                type: boolean
+                default: 'true'

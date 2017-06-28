@@ -16,7 +16,7 @@ parameters:
             concurrent: false
             scm:
               type: git
-              url: "https://github.com/tcpcloud/python-flask-hello.git"
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
               script: build-debian-packages-{{build}}.groovy
             trigger:

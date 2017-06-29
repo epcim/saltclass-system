@@ -85,7 +85,7 @@ parameters:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 9696
           ssl: ${_param:nginx_proxy_ssl}
-        nginx_proxy_openstack_api_heat_cfn:
+        nginx_proxy_openstack_api_heat_cloudwatch:
           enabled: true
           type: nginx_proxy
           name: openstack_api_heat_cfn
@@ -96,6 +96,18 @@ parameters:
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8000
+          ssl: ${_param:nginx_proxy_ssl}
+        nginx_proxy_openstack_api_heat_cfn:
+          enabled: true
+          type: nginx_proxy
+          name: openstack_api_heat_cloudwatch
+          proxy:
+            host: ${_param:heat_service_host}
+            port: 8003
+            protocol: http
+          host:
+            name: ${_param:nginx_proxy_openstack_api_host}
+            port: 8003
           ssl: ${_param:nginx_proxy_ssl}
         nginx_proxy_openstack_api_heat:
           enabled: true

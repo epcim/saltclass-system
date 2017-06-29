@@ -2,4 +2,4 @@ parameters:
   glance:
     server:
       policy:
-        publicize_image: 'role:admin or role:image_manager'
+        publicize_image: ['role:admin', 'role:image_manager']

@@ -13,6 +13,10 @@ parameters:
             - docker
           full_name: Rundeck Remote
           home: /var/lib/runbook
+      group:
+        docker:
+          enabled: true
+          name: docker
   openssh:
     server:
       enabled: true

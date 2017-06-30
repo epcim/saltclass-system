@@ -31,6 +31,7 @@ parameters:
                 - /etc/aptly-publisher.yaml:/etc/aptly-publisher.yaml:ro
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
+                - /var/lib/jenkins:/var/lib/jenkins
             slave02:
               environment:
                 JENKINS_URL: ${_param:jenkins_master_url}
@@ -50,6 +51,7 @@ parameters:
                 - /etc/aptly-publisher.yaml:/etc/aptly-publisher.yaml:ro
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
+                - /var/lib/jenkins:/var/lib/jenkins
             slave03:
               environment:
                 JENKINS_URL: ${_param:jenkins_master_url}
@@ -69,3 +71,4 @@ parameters:
                 - /etc/aptly-publisher.yaml:/etc/aptly-publisher.yaml:ro
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
+                - /var/lib/jenkins:/var/lib/jenkins

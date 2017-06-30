@@ -1,0 +1,15 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-trusty-extra:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Ubuntu Trusty"
+          publisher:
+            component: extra
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64

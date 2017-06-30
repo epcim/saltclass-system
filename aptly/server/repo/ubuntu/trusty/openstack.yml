@@ -1,0 +1,37 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-trusty-kilo:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Kilo"
+          publisher:
+            component: kilo
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-liberty:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Liberty"
+          publisher:
+            component: liberty
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-mitaka:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Mitaka"
+          publisher:
+            component: mitaka
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64

@@ -1,0 +1,136 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-trusty-oc302:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.0.2.x"
+          publisher:
+            component: oc302
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc303:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.0.3.x"
+          publisher:
+            component: oc303
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc31:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.1"
+          publisher:
+            component: oc31
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc31-exp:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.1 experimental"
+          publisher:
+            component: oc31
+            distributions:
+              - trusty-dev/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc311:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.1.1.x"
+          publisher:
+            component: oc311
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc311-exp:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.1.1.x experimental"
+          publisher:
+            component: oc311
+            distributions:
+              - trusty-dev/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc32:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.2"
+          publisher:
+            component: oc32
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc323:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.2.3.x"
+          publisher:
+            component: oc323
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc32-exp:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 3.2 experimental"
+          publisher:
+            component: oc32
+            distributions:
+              - trusty-dev/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc40:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 4.0"
+          publisher:
+            component: oc40
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc40-exp:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 4.0 experimental"
+          publisher:
+            component: oc40
+            distributions:
+              - trusty-dev/nightly
+            architectures:
+              - amd64
+        ubuntu-trusty-oc666:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Opencontrail master"
+          publisher:
+            component: oc666
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64

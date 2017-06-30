@@ -1,0 +1,59 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-xenial-kilo:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Kilo"
+          publisher:
+            component: kilo
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64
+        ubuntu-xenial-liberty:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Liberty"
+          publisher:
+            component: liberty
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64
+        ubuntu-xenial-mitaka:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Mitaka"
+          publisher:
+            component: mitaka
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64
+        ubuntu-xenial-newton:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Newton"
+          publisher:
+            component: newton
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64
+        ubuntu-xenial-ocata:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Openstack Ocata"
+          publisher:
+            component: ocata
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64

@@ -1,0 +1,15 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-xenial-extra:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Extra packages for Ubuntu Xenial"
+          publisher:
+            component: extra
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64

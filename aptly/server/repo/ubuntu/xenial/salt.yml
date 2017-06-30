@@ -1,0 +1,15 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-xenial-salt:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Salt formulas for Ubuntu Xenial"
+          publisher:
+            component: salt
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64

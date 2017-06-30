@@ -1,0 +1,15 @@
+parameters:
+  aptly:
+    server:
+      repo:
+        ubuntu-trusty-salt:
+          distribution: trusty
+          component: main
+          architectures: amd64
+          comment: "Salt formulas for Ubuntu Trusty"
+          publisher:
+            component: salt
+            distributions:
+              - trusty/nightly
+            architectures:
+              - amd64

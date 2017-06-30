@@ -1,7 +1,7 @@
 parameters:
   _param:
     docker_rundeck_replicas: 1
-    docker_image_rundeck: docker-prod-virtual.docker.mirantis.net/mirantis/oss/rundeck:latest
+    docker_image_rundeck: docker-prod-local.artifactory.mirantis.com/mirantis/oss/rundeck:latest
   docker:
     client:
       stack:

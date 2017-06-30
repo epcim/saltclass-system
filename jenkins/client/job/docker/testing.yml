@@ -54,7 +54,7 @@ parameters:
                 default: "{{dockerfile}}"
               REGISTRY_URL:
                 type: string
-                default: "${_param:docker_registry_url}"
+                default: "${_param:jenkins_docker_registry_url}"
               REGISTRY_CREDENTIALS_ID:
                 type: string
                 default: "${_param:jenkins_docker_registry_credentials}"

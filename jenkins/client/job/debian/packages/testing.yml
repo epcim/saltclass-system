@@ -19,9 +19,19 @@ parameters:
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
               script: build-debian-packages-{{build}}.groovy
-            # trigger:
-            #   pollscm:
-            #     spec: ${_param:jenkins_pollscm_spec}
+            trigger:
+              gerrit:
+                project:
+                  mk/{{package}}:
+                    branches:
+                      - "{{branch}}"
+                message:
+                  build_successful: "Build successful"
+                  build_unstable: "Build unstable"
+                  build_failure: "Build failed"
+                event:
+                  ref:
+                    - updated
             param:
               SOURCE_URL:
                 type: string

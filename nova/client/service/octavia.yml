@@ -1,0 +1,13 @@
+parameters:
+  nova:
+    client:
+      enabled: true
+      server:
+        octavia_identity:
+          endpoint_type: internalURL
+          flavor:
+            m1.amphora:
+              flavor_id: ${_param:amp_flavor_id}
+              ram: 1024
+              disk: 2
+              vcpus: 1

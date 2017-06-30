@@ -28,3 +28,11 @@ parameters:
                 admin_address: ${_param:octavia_service_host}
                 admin_port: 9876
                 admin_path: '/'
+        octavia_identity:
+          admin:
+            user: octavia
+            password: ${_param:keystone_octavia_password}
+            project: service
+            host: ${_param:keystone_service_host}
+            port: 5000
+            region_name: ${_param:openstack_region}

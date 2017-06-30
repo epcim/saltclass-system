@@ -7,3 +7,7 @@ parameters:
         downstream: mk/docker-aptly
         upstream: "https://github.com/tcpcloud/docker-aptly"
         branches: master
+      - name: python-flask-hello
+        downstream: mk/python-flask-hello
+        upstream: "https://github.com/tcpcloud/python-flask-hello"
+        branches: master

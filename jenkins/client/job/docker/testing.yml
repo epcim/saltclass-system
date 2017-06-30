@@ -26,6 +26,7 @@ parameters:
               reverse:
                 projects:
                   - build-debian-python-flask-hello-ubuntu-trusty
+                state: UNSTABLE
             param:
               IMAGE_NAME:
                 type: string

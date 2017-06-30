@@ -25,7 +25,7 @@ parameters:
             param:
               SOURCE_URL:
                 type: string
-                default: "https://github.com/tcpcloud/python-flask-hello.git"
+                default: "${_param:jenkins_gerrit_url}/mk/python-flask-hello"
               SOURCE_BRANCH:
                 type: string
                 default: "{{branch}}"

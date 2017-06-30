@@ -33,7 +33,7 @@ parameters:
                 default: "tcpcloud/{{name}}"
               IMAGE_GIT_URL:
                 type: string
-                default: "https://github.com/tcpcloud/python-flask-hello.git"
+                default: "${_param:jenkins_gerrit_url}/mk/python-flask-hello"
               IMAGE_BRANCH:
                 type: string
                 default: "{{branch}}"

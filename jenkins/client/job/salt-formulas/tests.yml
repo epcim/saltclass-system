@@ -45,6 +45,7 @@ parameters:
             - name: haproxy
             - name: heat
             - name: heka
+            - name: helm
             - name: horizon
             - name: influxdb
             - name: iptables

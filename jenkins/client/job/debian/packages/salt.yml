@@ -271,6 +271,8 @@ parameters:
               dist: xenial
             - name: heka
               dist: xenial
+            - name: helm
+              dist: xenial
             - name: influxdb
               dist: xenial
             - name: iptables

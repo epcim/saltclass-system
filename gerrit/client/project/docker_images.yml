@@ -1,0 +1,20 @@
+parameters:
+  gerrit:
+    client:
+      project:
+        mk/docker-aptly:
+          enabled: true
+          description: Aptly docker images
+          upstream: https://github.com/tcpcloud/docker-aptly
+          access: ${gerrit:client:default_access}
+          require_change_id: true
+          require_agreement: false
+          merge_content: true
+        mk/python-flask-hello:
+          enabled: true
+          description: Flask hello demo application
+          upstream: https://github.com/tcpcloud/python-flask-hello
+          access: ${gerrit:client:default_access}
+          require_change_id: true
+          require_agreement: false
+          merge_content: true

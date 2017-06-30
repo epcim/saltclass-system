@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    jenkins_docker_registry_url: ""
+    jenkins_docker_registry_credentials: "dockerhub"
   jenkins:
     client:
       job_template:
@@ -34,6 +37,9 @@ parameters:
               IMAGE_GIT_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/mk/python-flask-hello"
+              IMAGE_BUILD_PARAMS:
+                type: string
+                default: "--build-arg apt_repository='deb [arch=amd64] ${_param:jenkins_aptly_url}/trusty/ nightly extra' --build-arg apt_key_url=${_param:jenkins_aptly_url}/public.gpg"
               IMAGE_BRANCH:
                 type: string
                 default: "{{branch}}"
@@ -48,10 +54,10 @@ parameters:
                 default: "{{dockerfile}}"
               REGISTRY_URL:
                 type: string
-                default: ""
+                default: "${_param:docker_registry_url}"
               REGISTRY_CREDENTIALS_ID:
                 type: string
-                default: "dockerhub"
+                default: "${_param:jenkins_docker_registry_credentials}"
               DOCKER_GIT_TAG:
                 type: boolean
                 default: "true"

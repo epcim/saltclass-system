@@ -34,7 +34,7 @@ parameters:
                 default: "gerrit"
               EXTRA_REPO_URL:
                 type: string
-                default: "deb ${_param:jenkins_aptly_url}/{{dist}}/ testing extra"
+                default: ""
               EXTRA_REPO_KEY_URL:
                 type: string
                 default: "${_param:jenkins_aptly_url}/public.gpg"

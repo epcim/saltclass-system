@@ -7,19 +7,19 @@ parameters:
           service_name: heat
           binds:
           - address: ${_param:cluster_vip_address}
-            port: 8000
+            port: 8003
           servers:
           - name: ctl01
             host: ${_param:cluster_node01_address}
-            port: 8000
+            port: 8003
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
           - name: ctl02
             host: ${_param:cluster_node02_address}
-            port: 8000
+            port: 8003
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
           - name: ctl03
             host: ${_param:cluster_node03_address}
-            port: 8000
+            port: 8003
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
         heat_api:
           type: openstack-service
@@ -45,17 +45,17 @@ parameters:
           service_name: heat
           binds:
           - address: ${_param:cluster_vip_address}
-            port: 8003
+            port: 8000
           servers:
           - name: ctl01
             host: ${_param:cluster_node01_address}
-            port: 8003
+            port: 8000
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
           - name: ctl02
             host: ${_param:cluster_node02_address}
-            port: 8003
+            port: 8000
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
           - name: ctl03
             host: ${_param:cluster_node03_address}
-            port: 8003
+            port: 8000
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3

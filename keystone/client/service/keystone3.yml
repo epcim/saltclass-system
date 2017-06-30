@@ -20,4 +20,4 @@ parameters:
                 internal_path: '/v3'
                 admin_address: ${_param:keystone_service_host}
                 admin_port: 35357
-                admin_path: '/v3'
+                admin_path: '/v2.0'

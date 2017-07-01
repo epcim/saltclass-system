@@ -8,6 +8,7 @@ parameters:
     rundeck_cis_jobs_repository: https://gerrit.mcp.mirantis.net/oss/rundeck-cis-jobs
     rundeck_cis_jobs_revision: master
     rundeck_cis_elasticsearch_url: none
+    rundeck_cis_os_docker_image: docker-prod-local.artifactory.mirantis.com/mirantis/oss/cis-openstack:latest
   rundeck:
     client:
       project:
@@ -52,3 +53,6 @@ parameters:
         cis/openstack/domain_id:
           type: password
           content: ${_param:rundeck_cis_os_domain_id}
+        cis/openstack/image:
+          type: password
+          content: ${_param:rundeck_cis_os_docker_image}

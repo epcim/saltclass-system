@@ -11,7 +11,7 @@ parameters:
           cluster: flask-hello
           role: server
           type: LoadBalancer
-          replicas: 3
+          replicas: 1
           kind: Deployment
           apiVersion: extensions/v1beta1
           ports:
@@ -20,6 +20,7 @@ parameters:
           container:
             flask-hello:
               image: ${_param:cicd_control_address}:5000/tcpcloud/python-flask-hello
+              image_pull_policy: Always
               ports:
               - port: 5000
                 name: flask-hello

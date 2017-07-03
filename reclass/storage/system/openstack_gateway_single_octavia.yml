@@ -1,5 +1,3 @@
-classes:
-- system.reclass.storage.system.openstack_gateway_single
 parameters:
   reclass:
     storage:

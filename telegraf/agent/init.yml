@@ -1,5 +1,6 @@
 classes:
 - service.telegraf.agent
+- system.telegraf.sudo
 parameters:
   telegraf:
     agent:

@@ -1,0 +1,51 @@
+parameters:
+  linux:
+    system:
+      user:
+        ivano:
+          enabled: true
+          name: ivano
+          sudo: true
+          full_name: Ivan Ostojic
+          home: /home/ivano
+          email: ivan@mirantis.com
+        asteer:
+          enabled: true
+          name: asteer
+          sudo: true
+          full_name: Adrian Steer
+          home: /home/asteer
+          email: asteer@mirantis.com
+        sbraun:
+          enabled: true
+          name: sbraun
+          sudo: true
+          full_name: Sebastien Braun
+          home: /home/sbraun
+          email: sbraun@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        ivano:
+          enabled: true
+          public_keys:
+          - ${public_keys:ivano}
+          user: ${linux:system:user:ivano}
+        asteer:
+          enabled: true
+          public_keys:
+          - ${public_keys:asteer}
+          user: ${linux:system:user:asteer}
+        sbraun:
+          enabled: true
+          public_keys:
+          - ${public_keys:sbraun}
+          user: ${linux:system:user:sbraun}
+  public_keys:
+    ivano:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD94JXgHYTjfPoyYfWe5HgCPUgyal89VlI7ZYLr7RezAl+YQaaeO5adCXnnMDN2BiNf2l1SfbFf/A4Vi6W5eSRLqtSplpdhass7iqmmq+rDoXcELv6BZYnbOFhbFq2vegwcgk35A2uz9x9i3x3wHMLBZI/+dNCjCnW2Uikb/f0nmFqTLT5T9SJ/nmhs5oPd5vGKgFtYdRPLZW/fPxl180psPzBXmOCh50xyydxKPzncyFme+mgb0o1GjyBiJe7cXL/rXShcrFb9btMS+sXZZVQaDveaBHYUE+q+29yqR0c5uUusEzD9BWZVSoKPrFUMy/9YohGwRqbRE7Jh8XVF7Fff ivano@unicorn
+    asteer:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBIXQqD5NH9glU5CBoodFtTuZMd5KgcjPDw0krOBaM0YkzbCGzEecLeqgd1oP2AbUO1nV80O9STatFhJ1NY1x1Xxv/k0n7kMIXpuxyAcVKbg6J/B5GzACsK9tKfnEypz8VvQcBB70h+4Y6G6AiOQxRpLJg4fHv/Q0fF3rl3diQyJZeTa6jjcYettikclZlYYyFh1eLQ7yzjbGL+KNX/ks/N55gl+N6BKYIGvhSUFI7Xex0p6qqpPM+XTsGJFVRBIrHnNiTtHc5SO+oN/J4u2PnO14tP8ZAeX33jF4XejbRvo8kA61KZ+i10wkSbGKFLQeYBrVnxJwo5FG+kOm8WnRF
+    sbraun:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCdvb2aPES+H5+McRueB3EYbpdG/685pIJCH6mbFmTsIHlQobcJSSYtqww7ji/m6/KuMGE/Wc5f06d5v+beslfHKLaaAKXwWBpDgO77zwO42PbFPreFXKg8sNLPmqB+WEyIX7yAaJNxz0bbQgo2Vl3Bhtv/79zZXpzo0DIXNtdi75vwzWpuiyRuhC7pNqz+VXFZAVtkA+EchogDnT7rLa8ullSwuSgk5iPC6/XsuwL5Z5/UGBx4OT9Y8+cjb3g2oE9N3hdJH8wp9ts6stvKgAZ/5EE+LuCVhtKCvQ0sbZY8DmH99HFIP7SQoNQoyD8ALKbyCxGdF4/kxsqSlnLM5bR sebbraun@gmail.com

@@ -28,6 +28,9 @@ parameters:
             openldap:
               source: pkg
               name: salt-formula-openldap
+            powerdns:
+              source: pkg
+              name: salt-formula-powerdns
             lldp:
               source: pkg
               name: salt-formula-lldp

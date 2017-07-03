@@ -21,6 +21,10 @@ parameters:
               type: string
               default: "E@k8s-ctl01.*"
               description: "Salt compound target to match nodes to be updated [*, G@osfamily:debian]."
+            EXTRA_COMMAND:
+              type: string
+              default: ""
+              description: "Extra command to run before update"
             # salt master
             SALT_MASTER_CREDENTIALS:
               type: string

@@ -1,0 +1,29 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        deploy_k8s_control:
+          type: workflow-scm
+          name: deploy-k8s-control
+          display_name: "Deploy - k8s control"
+          discard:
+            build:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: deploy-k8s-deployments.groovy
+          param:
+            # deployments and test settings
+            TARGET_MINIONS:
+              type: string
+              default: "E@k8s-ctl01.*"
+            # salt master
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            SALT_MASTER_URL:
+              type: string
+              default: ""

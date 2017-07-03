@@ -1,7 +1,7 @@
 parameters:
   _param:
     docker_image_registry: registry:2
-    docker_image_visualizer: manomarks/visualizer
+    docker_image_visualizer: dockersamples/visualizer
   docker:
     client:
       stack:

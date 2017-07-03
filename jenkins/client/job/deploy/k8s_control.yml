@@ -20,10 +20,11 @@ parameters:
             TARGET_MINIONS:
               type: string
               default: "E@k8s-ctl01.*"
+              description: "Salt compound target to match nodes to be updated [*, G@osfamily:debian]."
             # salt master
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
             SALT_MASTER_URL:
               type: string
-              default: ""
+              default: "${_param:jenkins_salt_api_url}"

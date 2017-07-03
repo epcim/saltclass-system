@@ -1,0 +1,14 @@
+parameters:
+  _param:
+    salt_version: 2016.3
+    rhel_releasever: 7
+    rhel_basearch: x86_64
+  linux:
+    system:
+      repo:
+        salt:
+          humanname: "SaltStack repo for RHEL/CentOS ${rhel_repo_releasever}"
+          source: "https://repo.saltstack.com/yum/redhat/${_param:rhel_releasever}/${_param:rhel_basearch}/${_param:salt_version}"
+          gpgkey: "https://repo.saltstack.com/yum/redhat/${_param:rhel_releasever}/${_param:rhel_basearch}/${_param:salt_version}/SALTSTACK-GPG-KEY.pub"
+          gpgcheck: true
+          architectures: amd64

@@ -1,0 +1,25 @@
+classes:
+  - system.kubernetes.control
+parameters:
+  kubernetes:
+    control:
+      service:
+        flask-hello:
+          enabled: true
+          service: flask-hello
+          namespace: default
+          cluster: flask-hello
+          role: server
+          type: LoadBalancer
+          replicas: 3
+          kind: Deployment
+          apiVersion: extensions/v1beta1
+          ports:
+            - port: 5000
+              name: flask-hello
+          container:
+            flask-hello:
+              image: ${_param:cicd_control_address}:5000/tcpcloud/python-flask-hello
+              ports:
+              - port: 5000
+                name: flask-hello

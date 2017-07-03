@@ -39,7 +39,7 @@ parameters:
                 default: "${_param:jenkins_gerrit_url}/mk/python-flask-hello"
               IMAGE_BUILD_PARAMS:
                 type: string
-                default: "--build-arg apt_repository='deb [arch=amd64] ${_param:jenkins_aptly_url}/trusty/ nightly extra' --build-arg apt_key_url=${_param:jenkins_aptly_url}/public.gpg"
+                default: "--build-arg apt_repository='deb [arch=amd64] ${_param:jenkins_aptly_url}/trusty/ nightly extra' --build-arg apt_key_url=${_param:jenkins_aptly_url}/public.gpg --no-cache"
               IMAGE_BRANCH:
                 type: string
                 default: "{{branch}}"

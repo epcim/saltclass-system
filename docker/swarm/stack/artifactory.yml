@@ -13,7 +13,7 @@ parameters:
               deploy:
                 restart_policy:
                   condition: any
-              image: ${_param:docker_image_repository:cicd}/artifactory
+              image: ${_param:docker_image_repository:cicd}
               ports:
                 - 18082:8081
               volumes:

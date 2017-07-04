@@ -1,0 +1,9 @@
+parameters:
+  opencontrail:
+    client:
+      linklocal_service:
+        k8s_api:
+          lls_ip: ${_param:kubernetes_internal_api_address}
+          lls_port: 443
+          ipf_addresses: ${_param:kubernetes_control_address}
+          ipf_port: 443

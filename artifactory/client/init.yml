@@ -1,0 +1,22 @@
+parameters:
+  artifactory:
+    client:
+        enabled: True
+        source:
+          engine: pip
+        server:
+          host: ${_param:artifactory_server_host}
+          port: ${_param:artifactory_server_port}
+          user: ${_param:artifactory_client_user}
+          password: ${_param:artifactory_client_password}
+          ssl_verify: False
+        repo:
+          local_artifactory_repo:
+            name: local_artifactory_repo
+            package_type: generic
+            repo_type: local
+          remote_artifactory_repo:
+            name: remote_artifactory_repo
+            package_type: generic
+            repo_type: remote
+            url: "http://artifactory.mcp.mirantis.net/"

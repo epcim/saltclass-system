@@ -1,0 +1,38 @@
+parameters:
+  _param:
+    haproxy_artifactory_bind_host: ${_param:haproxy_bind_address}
+    haproxy_artifactory_bind_port: 8081
+    haproxy_artifactory_ssh_bind_host: ${_param:haproxy_artifactory_bind_host}
+    haproxy_artifactory_ssl:
+      enabled: false
+  haproxy:
+    proxy:
+      listen:
+        artifactory:
+          mode: http
+          options:
+            - forwardfor
+            - httpchk
+            - httpclose
+            - httplog
+          balance: source
+          http_request:
+            - action: "add-header X-Forwarded-Proto https"
+              condition: "if { ssl_fc }"
+          binds:
+            - address: ${_param:haproxy_artifactory_bind_host}
+              port: ${_param:haproxy_artifactory_bind_port}
+              ssl: ${_param:haproxy_artifactory_ssl}
+          servers:
+            - name: ${_param:cluster_node01_name}
+              host: ${_param:cluster_node01_address}
+              port: 18082
+              params: check
+            - name: ${_param:cluster_node02_name}
+              host: ${_param:cluster_node02_address}
+              port: 18082
+              params: backup check
+            - name: ${_param:cluster_node03_name}
+              host: ${_param:cluster_node03_address}
+              port: 18082
+              params: backup check

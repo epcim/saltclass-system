@@ -1,0 +1,11 @@
+parameters:
+  linux:
+    system:
+      sudo:
+        enabled: true
+        users:
+          telegraf:
+            hosts:
+            - ALL
+            commands:
+            - /usr/sbin/gluster

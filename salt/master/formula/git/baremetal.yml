@@ -1,0 +1,14 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            ironic:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-ironic.git'
+              revision: ${_param:salt_master_environment_revision}
+            tftpd_hpa:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-tftpd-hpa.git'
+              revision: ${_param:salt_master_environment_revision}

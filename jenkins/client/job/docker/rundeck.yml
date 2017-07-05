@@ -13,9 +13,9 @@ parameters:
           concurrent: false
           scm:
             type: git
-            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            url: "${_param:jenkins_gerrit_url}/oss/jenkins/pipelines"
             credentials: "gerrit"
-            script: docker-build-to-jfrog.groovy
+            script: docker-build-image-pipeline.groovy
           trigger:
             gerrit:
               project:

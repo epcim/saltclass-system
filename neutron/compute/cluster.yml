@@ -3,6 +3,7 @@ classes:
 parameters:
   _param:
     neutron_enable_qos: False
+    neutron_enable_vlan_aware_vms: False
   linux:
     system:
       package:
@@ -13,6 +14,7 @@ parameters:
     compute:
       dvr: ${_param:neutron_compute_dvr}
       qos: ${_param:neutron_enable_qos}
+      vlan_aware_vms: ${_param:neutron_enable_vlan_aware_vms}
       agent_mode: ${_param:neutron_compute_agent_mode}
       external_access: ${_param:neutron_compute_external_access}
       backend:

@@ -3,10 +3,12 @@ classes:
 parameters:
   _param:
     neutron_enable_qos: False
+    neutron_enable_vlan_aware_vms: False
   neutron:
     gateway:
       dvr: ${_param:neutron_gateway_dvr}
       qos: ${_param:neutron_enable_qos}
+      vlan_aware_vms: ${_param:neutron_enable_vlan_aware_vms}
       agent_mode: ${_param:neutron_gateway_agent_mode}
       backend:
         tenant_network_types: ${_param:neutron_tenant_network_types}"

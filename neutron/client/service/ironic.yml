@@ -1,7 +1,8 @@
+classes:
+- service.neutron.client
 parameters:
   neutron:
     client:
-      enabled: true
       server:
         admin_identity:
           endpoint_type: internalURL

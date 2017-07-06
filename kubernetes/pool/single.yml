@@ -8,6 +8,8 @@ parameters:
     kubernetes_calico_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/node:latest
     kubernetes_calico_cni_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/cni:latest
     kubernetes_hyperkube_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/hyperkube-amd64:v1.6.2-2
+    kubernetes_contrail_cni_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration/contrail-cni:v1.0.0
+    kubernetes_contrail_network_controller_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration/contrail-network-controller:v1.0.0
 
   kubernetes:
     pool:

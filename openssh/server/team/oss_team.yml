@@ -37,6 +37,13 @@ parameters:
           full_name: Iuliia Aranovich
           home: /home/jkirnosova
           email: jkirnosova@mirantis.com
+        sskripnick:
+          enabled: true
+          name: sskripnick
+          sudo: true
+          full_name: Serhii Skrypnik
+          home: /home/sskripnick
+          email: sskripnick@mirantis.com
   openssh:
     server:
       enabled: true
@@ -66,6 +73,11 @@ parameters:
           public_keys:
           - ${public_keys:jkirnosova}
           user: ${linux:system:user:jkirnosova}
+        sskripnick:
+          enabled: true
+          public_keys:
+          - ${public_keys:sskripnick}
+          user: ${linux:system:user:sskripnick}
   public_keys:
     ikharin:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0NNCF9Orei3Ls5wa7xNH/2nl4eAUYY/vuAers7as8lQXjUXkurLQUG1YTQhuRiqyLrqLZjokq87l3LcpXsiBaqNybwlg4OAcf7p59FwDwdpCcAfoHeP03vt/FOYgozeExIRxVNHMdZjQJ4o5j75vnwTfGIubSF1eUOwtRVeezAREK1OPA2TRvlSOXCsAinNSZHBFTlYVYIXQEk/zuH7PdwlU2rkN69mNivh1tAUDlhrwZHrR9rcudafp5s3C5MKFtI3W4MhYIqv9ZViEhLwfEhNb0WXiUv+sdGTf8jTcXaYOlw6z9A76Ab/9bfPyOTmI7tli8Pz15+YPj1ymdlIZlQ==
@@ -77,3 +89,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9eVOmPT/jCS/q/+T5EmKIBol3wovE+qTb4SQI4y9ZUIT+tMGult1dheqXVKIMYdTe/cccPTf5A+b6QpkPEjzQQljn0qmyHM75ya+Gjd3uTWx+1VXSFL42p0+404oVkB+eOtax+Bf8CU14P6sJn+3ypO63VVCJz6V2cgkr14tqkMZb+4OBPJB6zrNAfXhNJlJ8fLV4d5c4guin74hoaor5VIER3hwMPIe0CtudzdjcdDDvVNqXYfoknwMTNR52h1Zfwvomsy5pdFcI5sQKaOxSqWyi3C22yu/ZK0Diq82INskZ1vjHiJHw8QguXLzevCK4BECnjDFr6Hu4J6eRK3YJ
     jkirnosova:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuW6hvLo7eRwm6WcjJEDW7TsLG2rZrtmffHQ58c4AzlLAxV0tkvvfQRS4f5Pb+Wj1flxt+RW2rq4dSkQCpwNnYdTHHRnQJFJQEAouqNF7cTVrprioXNeoBe8DGVHiUUI8IpeN8hJYQw17NB6hf8oZulZqdZZ9DA7uwnC0HFfQ1E4MuFnfhB0/XyzJMsxrxHyjte+cOdgE9F43ccHInBGowrzOJP8AUdWdC0I2WU0sjvQrGcvlHr7/EqPP1Zh7PblwESyf3muas7iFTCKtCbXM+pT3e687++ueCqrAftVZGCPpXe23U3sSGdiIti0L6CYxBI02VKlsQgfSqWd8z+W1T
+    sskripnick:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbDedH7Aw1g2LDHrCLpxfq5GsdTpqRglDXy9dDSEr08tVVl7gSzPJ5oMlIr9VsNVHsR9vf/THhxghFrV1rQZDny8c6yLqus3Upc7pJfOUztWD4+E29H7qJOafrnuNRHGFaEiaG6aZm3WyyvAdlR1lh/i5zQtdrPBmjYkq5LMJvNQBpj4XqmHYp7gLRNDI30Ne49xxAIGC1Qbx0Xvhmq9/h4gZhI5mB/QeOj4tPcd7g+kSTdc5/fXbBLeQDBZt/HlDr7/LFjYZ4OBumVDOTfClFO5UoIAvHyfysaiWI/qZ7UZI7uU4yAPeI8/s/INOQOIoiqaHyiVnL5BvFklHldMot

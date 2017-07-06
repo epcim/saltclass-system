@@ -6,3 +6,5 @@ parameters:
       influxdb_host: ${_param:remote_collector_telegraf_host}
       influxdb_port: ${_param:remote_collector_telegraf_port}
       influxdb_timeout: 2000
+      emit_rates: false
+      alarms_enabled: false

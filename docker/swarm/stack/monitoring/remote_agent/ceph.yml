@@ -1,0 +1,12 @@
+classes:
+- system.ceph.client.container
+- system.ceph.monitoring.cluster_stats
+parameters:
+  docker:
+    client:
+      stack:
+        monitoring:
+          service:
+            remote_agent:
+              volumes:
+                - ${ceph:client:prefix_dir}/etc/ceph:/etc/ceph

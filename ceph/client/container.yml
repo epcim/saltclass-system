@@ -1,0 +1,5 @@
+classes:
+- service.ceph.client.container
+parameters:
+  _param:
+    ceph_client_prefix_dir: /srv/volumes/ceph

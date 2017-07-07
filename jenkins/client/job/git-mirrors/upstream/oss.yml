@@ -1,0 +1,9 @@
+classes:
+  - system.jenkins.client.job.git-mirrors.upstream
+parameters:
+  _param:
+    jenkins_git_mirror_upstream_jobs:
+      - name: rundeck-cis-jobs
+        downstream: oss/rundeck-cis-jobs
+        upstream: "git@github.com:Mirantis/rundeck-cis-jobs"
+        branches: master

@@ -1,0 +1,6 @@
+classes:
+- system.linux.system.repo.saltstack.rhel
+parameters:
+  _param:
+    salt_version: 2016.3
+    rhel_releasever: 6

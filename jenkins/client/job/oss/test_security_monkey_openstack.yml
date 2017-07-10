@@ -1,0 +1,43 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        test-oss-security-monkey-openstack:
+          name: test-oss-security-monkey-openstack
+          discard:
+            build:
+              keep_num: 15
+            artifact:
+              keep_num: 15
+          type: workflow-scm
+          concurrent: true
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/oss/jenkins/pipelines"
+            credentials: "gerrit"
+            script: test-security-monkey-openstack-pipeline.groovy
+          trigger:
+            gerrit:
+              project:
+                "oss/security-monkey-openstack":
+                  branches:
+                    - master
+              event:
+                patchset:
+                  - created:
+                      excludeDrafts: false
+                      excludeTrivialRebase: false
+                      excludeNoCodeChange: false
+                comment:
+                  - addedContains:
+                      commentAddedCommentContains: '(recheck|reverify)'
+          param:
+            CREDENTIALS_ID:
+              type: string
+              default: "gerrit"
+            DEFAULT_GIT_URL:
+              type: string
+              default: "${_param:jenkins_gerrit_url}/oss/security-monkey-openstack"
+            DEFAULT_GIT_REF:
+              type: string
+              default: master

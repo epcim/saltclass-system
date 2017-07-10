@@ -1,6 +1,8 @@
 classes:
 - system.openssh.client.root
 parameters:
+  _param:
+    cassandra_remote_backup_server: cfg01
   cassandra:
     backup:
       client:
@@ -8,6 +10,4 @@ parameters:
         full_backups_to_keep: 3
         hours_before_full: 24
         target:
-          host: cfg01
-        restore_latest: 1
-        restore_from: local
+          host: ${_param:cassandra_remote_backup_server}

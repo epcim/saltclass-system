@@ -16,7 +16,14 @@ parameters:
                   allocation_pools:
                     - start: 192.168.0.2
                       end: 192.168.0.200
-
+              port:
+                octavia-health-manager-listen-port:
+                  fixed_ips:
+                    - ip_address: '192.168.0.12'
+                  device_owner: Octavia:health-mgr
+                  binding_host_id: ${_param:openstack_gateway_node01_hostname}
+                  security_groups:
+                    - lb-health-mgr-sec-grp
           security_group:
             lb-mgmt-sec-grp:
               tenant: service

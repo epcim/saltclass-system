@@ -19,6 +19,8 @@ parameters:
               dist: trusty
             - name: backupninja
               dist: trusty
+            - name: baremetal-simulator
+              dist: trusty
             - name: billometer
               dist: trusty
             - name: bind
@@ -210,6 +212,8 @@ parameters:
             - name: artifactory
               dist: xenial
             - name: avinetworks
+              dist: xenial
+            - name: baremetal-simulator
               dist: xenial
             - name: backupninja
               dist: xenial

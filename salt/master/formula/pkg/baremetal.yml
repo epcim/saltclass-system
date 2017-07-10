@@ -1,0 +1,12 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            ironic:
+              source: pkg
+              name: salt-formula-ironic
+            tftpd_hpa:
+              source: pkg
+              name: salt-formula-tftpd-hpa

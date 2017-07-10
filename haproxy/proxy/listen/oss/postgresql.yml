@@ -7,6 +7,11 @@ parameters:
       enabled: false
   haproxy:
     proxy:
+      timeout:
+        queue: '8h'
+        client: '8h'
+        server: '8h'
+        check: '10s'
       listen:
         postgresql:
           mode: tcp

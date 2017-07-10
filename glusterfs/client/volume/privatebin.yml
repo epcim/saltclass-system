@@ -8,6 +8,6 @@ parameters:
     client:
       volumes:
         privatebin:
-          path: /srv/volume/privatebin
+          path: /srv/volumes/privatebin
           server: ${_param:privatebin_glusterfs_service_host}
           opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address}"

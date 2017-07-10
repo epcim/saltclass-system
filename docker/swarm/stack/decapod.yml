@@ -1,0 +1,65 @@
+parameters:
+  _param:
+    docker_decapod_fe_replicas: 3
+    decapod_version: latest
+    docker_image_admin: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/admin:${_param:decapod_version}
+    docker_image_db: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/db:${_param:decapod_version}
+    docker_image_api: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/api:${_param:decapod_version}
+    docker_image_controller: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/controller:latest
+    docker_image_frontend: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/controller:${_param:decapod_version}
+  docker:
+    client:
+      stack:
+        decapod:
+          service:
+            database:
+              deploy:
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_db}
+              volumes:
+                - /srv/volumes/decapod/db:/data/db
+              ports:
+                - 37017:27017
+            api:
+              links:
+                - database
+              deploy:
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_api}
+              volumes:
+                - /srv/volumes/decapod/config:/etc/decapod
+            controller:
+              links:
+                - database
+              deploy:
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_controller}
+              volumes:
+                - /srv/volumes/decapod/key:/root/.ssh
+                - /srv/volumes/decapod/config:/etc/decapod
+            frontend:
+              links:
+                - api
+              ports:
+                - 19999:80
+                - 20000:443
+              deploy:
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_frontend}
+            admin:
+              links:
+                - database
+              ports:
+                - 20001:8000
+                - 19998:8001
+              deploy:
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_admin}
+              volumes:
+                - /srv/volumes/decapod/key:/root/.ssh
+                - /srv/volumes/decapod/config:/etc/decapod

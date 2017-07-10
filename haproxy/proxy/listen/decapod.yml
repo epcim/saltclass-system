@@ -1,0 +1,28 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        decapod:
+          mode: http
+          options:
+            - forwardfor
+#            - httpchk
+            - httpclose
+            - httplog
+          balance: source
+          binds:
+            - address: ${_param:haproxy_jenkins_bind_host}
+              port: 9999
+          servers:
+            - name: ${_param:cluster_node01_name}
+              host: ${_param:cluster_node01_address}
+              port: 19999
+              params: check
+            - name: ${_param:cluster_node02_name}
+              host: ${_param:cluster_node02_address}
+              port: 19999
+              params: backup check
+            - name: ${_param:cluster_node03_name}
+              host: ${_param:cluster_node03_address}
+              port: 19999
+              params: backup check

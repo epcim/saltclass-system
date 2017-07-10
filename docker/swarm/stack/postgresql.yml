@@ -11,6 +11,7 @@ parameters:
           environment:
             POSTGRES_USER: ${_param:postgresql_admin_user}
             POSTGRES_PASSWORD: ${_param:postgresql_admin_user_password}
+            SQLALCHEMY_POOL_RECYCLE: 14400
           service:
             db:
               image: ${_param:docker_image_postgresql}

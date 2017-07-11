@@ -51,3 +51,11 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-xtrabackup.git'
               revision: ${_param:salt_master_environment_revision}
+            zookeeper:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-zookeeper.git'
+              revision: ${_param:salt_master_environment_revision}
+            cassandra:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-cassandra.git'
+              revision: ${_param:salt_master_environment_revision}

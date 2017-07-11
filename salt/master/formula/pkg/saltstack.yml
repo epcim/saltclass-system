@@ -40,3 +40,9 @@ parameters:
             xtrabackup:
               source: pkg
               name: salt-formula-xtrabackup
+            zookeeper:
+              source: pkg
+              name: salt-formula-zookeeper
+            cassandra:
+              source: pkg
+              name: salt-formula-cassandra

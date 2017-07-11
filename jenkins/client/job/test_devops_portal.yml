@@ -13,7 +13,7 @@ parameters:
           concurrent: true
           scm:
             type: git
-            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            url: "${_param:jenkins_gerrit_url}/oss/jenkins/pipelines"
             credentials: "gerrit"
             script: test-devops-portal-pipeline.groovy
           trigger:

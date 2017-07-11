@@ -14,6 +14,7 @@ parameters:
     security_monkey_api_port: ${_param:haproxy_security_monkey_bind_port}
     security_monkey_nginx_port: ${_param:haproxy_security_monkey_bind_port}
     devops_portal_sm_wtf_csrf_enabled: False
+    security_monkey_sync_interval: 15
     security_monkey_openstack:
       os_account_id: mcp_cloud
       os_account_name: mcp_cloud
@@ -49,6 +50,7 @@ parameters:
             OS_PROJECT_NAME: ${_param:security_monkey_openstack:project_name}
             USER_DOMAIN_NAME: ${_param:security_monkey_openstack:user_domain_name}
             SM_WTF_CSRF_ENABLED: ${_param:devops_portal_sm_wtf_csrf_enabled}
+            SECURITY_MONKEY_SYNC_INTERVAL: ${_param:security_monkey_sync_interval}
           service:
             api:
               image: ${_param:docker_image_security_monkey_api}

@@ -6,3 +6,5 @@ parameters:
       telegraf_host: 127.0.0.1
       telegraf_port: ${_param:log_collector_telegraf_port}
       telegraf_timeout: 2000
+      emit_rates: false
+      alarms_enabled: false

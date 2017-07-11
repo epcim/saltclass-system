@@ -1,5 +1,6 @@
 classes:
 - service.telegraf.agent
+- system.telegraf.agent.input.http_listener
 - system.telegraf.sudo
 parameters:
   telegraf:

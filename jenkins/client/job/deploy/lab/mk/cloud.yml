@@ -170,7 +170,7 @@ parameters:
                 default: ""
               OPENSTACK_API_VERSION:
                 type: string
-                default: "2"
+                default: "3"
               OPENSTACK_API_PROJECT_DOMAIN:
                 type: string
                 default: "default"
@@ -203,7 +203,7 @@ parameters:
                 type: string
                 default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
 
-              # Openstack settings
+              # openstack settings
               TEMPEST_IMAGE:
                 type: string
                 default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"

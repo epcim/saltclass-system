@@ -29,4 +29,11 @@ parameters:
                   is_admin: true
                   password: ${_param:keystone_admin_password}
                   email: ${_param:admin_email}
-
+        admin_identity:
+          admin:
+            user: admin
+            password: ${_param:keystone_admin_password}
+            project: admin
+            host: ${_param:keystone_service_host}
+            port: 5000
+            region_name: ${_param:openstack_region}

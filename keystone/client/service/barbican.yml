@@ -1,0 +1,30 @@
+parameters:
+  _param:
+    cluster_public_protocol: https
+  keystone:
+    client:
+      server:
+        identity:
+          project:
+            service:
+              user:
+                barbican:
+                  is_admin: true
+                  password: ${_param:keystone_barbican_password}
+                  email: ${_param:admin_email}
+          service:
+            barbican:
+              type: key-manager
+              description: OpenStack Key-Manager Service
+              endpoints:
+              - region: ${_param:openstack_region}
+                public_address: ${_param:cluster_public_host}
+                public_protocol: ${_param:cluster_public_protocol}
+                public_port: 9311
+                public_path: '/'
+                internal_address: ${_param:barbican_service_host}
+                internal_port: 9311
+                internal_path: '/'
+                admin_address: ${_param:barbican_service_host}
+                admin_port: 9311
+                admin_path: '/'

@@ -1,0 +1,30 @@
+parameters:
+  _param:
+    cluster_public_protocol: https
+  keystone:
+    client:
+      server:
+        identity:
+          project:
+            service:
+              user:
+                congress:
+                  is_admin: true
+                  password: ${_param:keystone_congress_password}
+                  email: ${_param:admin_email}
+          service:
+            congress:
+              type: policy
+              description: Congress service
+              endpoints:
+              - region: ${_param:openstack_region}
+                public_address: ${_param:cluster_public_host}
+                public_protocol: ${_param:cluster_public_protocol}
+                public_port: 1789
+                public_path: '/'
+                internal_address: ${_param:congress_service_host}
+                internal_port: 1789
+                internal_path: '/'
+                admin_address: ${_param:congress_service_host}
+                admin_port: 1789
+                admin_path: '/'

@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    janitor_monkey_cis_openstack_shards: 5
+    janitor_monkey_cis_openstack_replicas: 1
+  elasticsearch:
+    client:
+      index:
+        cis-openstack:
+          enabled: true
+          force_operation: true
+          definition:
+            template: cis-openstack
+            settings:
+              number_of_shards: ${_param:janitor_monkey_cis_openstack_shards}
+              number_of_replicas: ${_param:janitor_monkey_cis_openstack_replicas}

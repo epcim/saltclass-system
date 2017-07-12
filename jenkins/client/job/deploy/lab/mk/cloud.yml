@@ -1,6 +1,12 @@
 parameters:
   _param:
     jenkins_cloud_deploy_pipelines:
+      # Identity AAA
+      - stack_name: aaa_freeipa
+        stack_type: heat
+        stack_install: core,aaa
+        job_timer: ""
+        extra_formulas: ""
       - stack_name: k8s_calico
         stack_type: aws
         stack_install: core,k8s,calico

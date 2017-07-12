@@ -104,3 +104,10 @@ parameters:
         test: openstack
         timer: "H H(0-6) * * *"
         extra_formulas: ""
+      # Identity AAA
+      - lab: virtual_aaa_freeipa
+        install: core,aaa
+        stack_type: heat
+        test: ""
+        timer: ""
+        extra_formulas: ""

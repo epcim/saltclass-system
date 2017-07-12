@@ -1,0 +1,11 @@
+parameters:
+  freeipa:
+    client:
+      keytab:
+        /etc/apache2/ipa.keytab:
+          user: root
+          group: www-data
+          mode: 640
+          identities:
+            - service: HTTP
+              host: ${linux:network:hostname}

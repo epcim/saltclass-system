@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    freeipa_client_nsupdate_01_address: 172.16.10.240
+  freeipa:
+    client:
+      nsupdate:
+        - name: ${linux:network:hostname}.${_param:cluster_domain}
+          ipv4:
+            - ${_param:freeipa_client_nsupdate_01_address}
+          server: idm.${_param:cluster_domain}

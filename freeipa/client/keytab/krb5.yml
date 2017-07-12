@@ -1,0 +1,8 @@
+parameters:
+  freeipa:
+    client:
+      keytab:
+        /etc/krb5.keytab:
+          identities:
+            - service: host
+              host: ${linux:network:hostname}.${_param:cluster_domain}

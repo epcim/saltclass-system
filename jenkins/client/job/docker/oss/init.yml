@@ -1,0 +1,4 @@
+parameters:
+  - system.jenkins.client.job.docker.oss.cis-collectors
+  - system.jenkins.client.job.docker.oss.devops-portal
+  - system.jenkins.client.job.docker.oss.rundeck

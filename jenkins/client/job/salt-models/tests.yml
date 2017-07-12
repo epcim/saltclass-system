@@ -68,16 +68,6 @@ parameters:
               credentials: "gerrit"
               script: test-system-reclass-pipeline.groovy
             concurrent: true
-            trigger:
-              gerrit:
-                project:
-                  salt-models/{{name}}:
-                    branches:
-                      - master
-                event:
-                  comment:
-                    - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
             param:
               TEST_MODELS:
                 type: string
@@ -102,8 +92,6 @@ parameters:
               credentials: "jenkins-mk"
               script: test-cookiecutter-reclass.groovy
             trigger:
-              pollscm:
-                spec: ${_param:jenkins_pollscm_spec}
               gerrit:
                 project:
                   mk/{{cookiecutter_template}}:

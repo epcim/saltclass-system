@@ -2,10 +2,6 @@ parameters:
   _param:
     jenkins_cloud_deploy_pipelines:
       - stack_name: k8s_calico
-        stack_type: heat
-        stack_install: core,k8s,calico
-        job_timer: ""
-      - stack_name: k8s_calico
         stack_type: aws
         stack_install: core,k8s,calico
         job_timer: "H H * * *"

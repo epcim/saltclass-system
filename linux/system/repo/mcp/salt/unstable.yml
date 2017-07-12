@@ -1,0 +1,17 @@
+classes:
+- linux.system.repo.mcp.salt
+parameters:
+  _param:
+    linux_system_repo_mcp_salt_unstable_version: testing
+  linux:
+    system:
+      repo:
+        mcp_salt_unstable:
+          source: "deb [arch=amd64] http://apt-mk.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mcp_salt_unstable_version} salt"
+          architectures: amd64
+          key_url: "http://apt-mk.mirantis.com/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_salt_unstable_version}'
+            priority: 90
+            package: '*'

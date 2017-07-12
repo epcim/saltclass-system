@@ -1,0 +1,8 @@
+parameters:
+  linux:
+    network:
+      resolv:
+        dns:
+          - ${_param:freeipa_node01_hostname}
+          - ${_param:freeipa_node02_hostname}
+          - ${_param:freeipa_node03_hostname}

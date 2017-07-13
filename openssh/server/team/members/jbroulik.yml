@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        jbroulik:
+          enabled: true
+          name: jbroulik
+          sudo: true
+          full_name: Jiri Broulik
+          home: /home/jbroulik
+          email: jbroulik@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        jbroulik:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCBPHunnzTMg2I88ZIaiQ5eJYJRq/hQcB5UtDZTC7hO0ce+oEpftcLQiQ69xKbOPb5xiK6VMJd6a53gZykabMTov6y+nECMr4B1i6tgK1NPCU/sGhvsUKeiRo7ZVMScRPuJuTGRLjR6Ac3pRrwrWpmoRvJtLnbrvjEYlt9V7ui/VFkl7uiPQc3AjNiSkgBekDGtrqZktjUstEosucjfriF/PVtlZqha7d3rHLpK1KBzzaSMNMxCgBitEtqjgHLtcR1H/KgPQpYAwkokmvAGH8/fqcd+tpmp6hiH3k2Haf8EjVBTcw71fbmqC0rpL8/r74jyYAmkfPG8LISb/T9gPcV jiri@jiri-Mirantis
+          user: ${linux:system:user:jbroulik}

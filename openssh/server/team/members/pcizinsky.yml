@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        pcizinsky:
+          enabled: true
+          name: pcizinsky
+          sudo: true
+          full_name: Pavel Cizinsky
+          home: /home/pcizinsky
+          email: pcizinsky@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        pcizinsky:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt9HA2bUwCVGGdUjyFzdPFp0j2z9XanLW9gHZ3BhB6Wc4ficU6zmbqYxrHUvdmUrRJbLMEAo9JDlzAIw4CPGhRkD3d7HfnmlEYcEeizLnnC+CmKo3+mrwkQIzWIz6PJOh1kvp5uaNp4ztjRGXXmPzcR0nk4jRD89gLHvH9EYStxZI6nsi3mmWR/LhgIhijb8p63duhE4HuK/RRRjeDQaUsbTG9TMEskY5ZI3p/QM55wlml9F8QJrtwxpaIPI5Fl8lflq+4YcoqgDIBFc6nwubIuiNY4gPJ8s1SQfsfxHSOJpFPZDwi76dxUpthtJrU46fqRvXPzTKoS29WZ5pSAY6p pavel.cizinsky@tcpcloud.eu
+          user: ${linux:system:user:pcizinsky}

@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        tux:
+          enabled: true
+          name: tux
+          sudo: true
+          full_name: Adam Tengler
+          home: /home/tux
+          email: atengler@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        tux:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXEN5qmte4oMYFCMZtuNzWiu5M32Dp0OsfR1pSz5gMMQF1Sw3xEDXEATEWhyvJTuVtFQasWVcMCYzEPev8H54UK97dLlxHxEDD9PQYY2O+xu/Rq+p/jryJ/T3mO7LDjUUXtHkUnsDZ51G+sFAWktE+FifwrEDmAEnRucLqOzVhehelG73S3uqfxVsPTsW2CcVIZICKtvdODbgAVyCf1LRR0LJv4fXqcyebCbzIrk4NWJhc474TH88niC7PH5VfxSfXZdKoi3yKVMgqdGSUxGhkx3D5CwCR9K+kUnP0rE5GNIqoCiS8iNbWl6POfMPSxH/ckqZN1h8El6SEoPJzVNp9 tux@tux-workbook
+          user: ${linux:system:user:tux}

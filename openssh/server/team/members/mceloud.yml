@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        marco:
+          enabled: true
+          name: marco
+          sudo: true
+          full_name: Marek Celoud
+          home: /home/marco
+          email: mceloud@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        marco:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmrJJsRR1dIqaomk83+sn5OnRLvVqrxtROT2uO83W0C4036t3OfJEBL2COJ4Z1iQmyoQUcIpRdJns+Ft8GpVEEQ+mW4eo33jhVEkfLBzRTE7f/WqDmMeDbdxO7LdUNlIIc40KBPcnJWvEorqV2z2UF0+xqittTE34A3CgF82BI2Nx6vCNhgnJJnCyYisD+wT4f+Ovor3Rm2s6zdnJRqcLgx5lkNx6fM2ffkD36MjyPyVYWvFqw68kEsBPcpB0EmiINKQRg3A/iPvUgRWMl9nSvSMVopkbTOBpSK3H9hzGCLiQJvE8pGjHhb7SOix0p0sFdNrNRiC5ayaGQUDQgWH8h marco@marco-MS-7699
+          user: ${linux:system:user:marco}

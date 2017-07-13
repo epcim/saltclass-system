@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        osmola:
+          enabled: true
+          name: osmola
+          sudo: true
+          full_name: Ondrej Smola
+          home: /home/osmola
+          email: osmola@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        osmola:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGcF8AI/8hOeKlda4vniFVBbD3wOK4D2+/z+pB7kK0JyxfVC3XccYbpqQioWjt96JwDX8dSio07OUAFqOWQH2cTp6wjqNmpIaAODo44kQgKDXrjEq61fYW+L6JYZHxsFUPLvlNlwQwND2F5HU8oWbsneGu+Psb/COQebcGDdT1v/f2G9r5br2O43P/XPx8+YGKd+OiHPIN4Fk8fZzCGX7oJ7GGGr8YTL/Y8ULF3WiTXbQEWusU52Sf7/Is0A6BQOH+OuBGrVCT+j2XI9QBMyVSYtaKCnRDlEGessnGIGRGrNza/xYivWBw8IsVziDC8x7zZByAwmctWoWED6wWs4YU7SqoonEaYEog32J6Uw9tGtTgvkRC1mpMtgR2eenjNax8Fpoc6uTb/l0gevaRE6IqNMS0FBIIbkCYcoxfj7zIsYms/9IhsXGk1lW5ZrouCFICGEVa7zJ2F+3DvyQDCSuqsk/bfUQZEFw1FdAYIsZYQR+LIOSVQplapGVyqhlbkeUEVdILzgdMAfkPa80ZnGvTO729G/8uP78k1QhZUHAypkeWQ/aJfOKrxXyAxtMZiuyK31zf4OZdKSDS9bAWlmyKkohp7cEjLU0ex4AYDS231Y6JywL+RnucMJ4gFqSfSYfkM6+23gFbYfP7NcEKrkCaim/9RMU1RsunBk8As2K5gw== ondrej.smola@tcpcloud.eu
+          user: ${linux:system:user:osmola}

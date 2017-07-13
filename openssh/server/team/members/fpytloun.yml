@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        filip:
+          enabled: true
+          name: filip
+          sudo: true
+          full_name: Filip Pytloun
+          home: /home/filip
+          email: filip@pytloun.cz
+  openssh:
+    server:
+      enabled: true
+      user:
+        filip:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcuHTjJ3CoWdkmvtag07bIWeyAMqFLAN+QApat7TXUcDYmm/neK4Asg3m/UicofZnB80cI4tjnB84Z8WazLHMxVTLwHbEqTVbXVeKebiZ5yn0yo4ndRzmppUfSvs0xcMysBwu+hYAnIDXTedctbciMSYKbuQ+b9XZ4mFZ/2RHG4QBA/dPUxJdCwvkBu7AOV+6zaRSR99UETr5nxICQUGVJBTy6VkCsch4mK3/K2SrujODUhytcROg+6ejV/aZHWH9xIFRBLfhmSFeOC6oneBWo4QBQ2tTZgb7Go744JpkhkoMfWQnR2s6cCgUN60BJ6j5snqmbv9/2CmgbI4UprC+E6lL04K/Jbgjv+fi3KqnCIpRiQzahmjSeeYdPducWme3BVDceUSb5EzF/RjSDi4yHcTWJS0TcPf195p42O1G6tLw5zfmIu2+PWUq1L4pLualboUbaDtwqg0WaLWKONi9tJkOS1OMz4hxqEbWBAtFNJLHC5K+OXcV8Yt6C7iB2dEZ4c26MAi1pdMqhFjxYiCGYKZ4lyV9xo8tWcs5fiUIi2PKyLQ9SMRQbhXIcb9ENby2D/ijh5AVpbBew8iaUQQKg83Yo0z2PwTWyNFuXECAl667XaTNZEMVUjo5yU/OtktVZiH6ZfvEFwj+7OpLBiZ3sFgp/7EHcGXa0FL6BcXuwfQ== filip@pytloun.cz
+          user: ${linux:system:user:filip}

@@ -43,3 +43,19 @@ parameters:
               type: string
               default: '1'
               description: Number of selected nodes to live apply compute upgrade.
+            STAGE_CONTROLLERS_ROLLBACK:
+              type: boolean
+              default: 'false'
+              description: "Run rollback on Opencontrail controllers"
+            STAGE_ANALYTICS_ROLLBACK:
+              type: boolean
+              default: 'false'
+              description: "Run rollback on Opencontrail analytics"
+            STAGE_COMPUTES_ROLLBACK:
+              type: boolean
+              default: 'false'
+              description: "Run rollback on Opencontrail compute nodes"
+            CMP_ROLLBACK_PKGS:
+              type: string
+              default: "contrail-lib=3.1.1.x~20170613145417-0 contrail-nodemgr=3.1.1.x~20170613145417-0 ..."
+              description: "String of package versions outputed by compute upgrade stage to rollback"

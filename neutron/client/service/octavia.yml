@@ -16,7 +16,14 @@ parameters:
                   allocation_pools:
                     - start: 192.168.0.2
                       end: 192.168.0.200
-
+              port:
+                octavia-health-manager-listen-port:
+                  fixed_ips:
+                    - ip_address: '192.168.0.12'
+                  device_owner: Octavia:health-mgr
+                  binding_host_id: ${_param:openstack_gateway_node01_hostname}
+                  security_groups:
+                    - lb-health-mgr-sec-grp
           security_group:
             lb-mgmt-sec-grp:
               tenant: service
@@ -64,3 +71,20 @@ parameters:
                   'port_range_min': 5555
                   'port_range_max': 5555
                   'remote_ip_prefix': '::/0'
+
+  salt:
+    minion:
+      mine:
+        module:
+          list_octavia_networks:
+            mine_function: neutronng.list_networks
+            name: 'lb-mgmt-net'
+            profile: 'octavia_identity'
+          list_octavia_mgmt_security_groups:
+            mine_function: neutronng.list_security_groups
+            name: 'lb-mgmt-sec-grp'
+            profile: 'octavia_identity'
+          list_octavia_hm_ports:
+            mine_function: neutronng.list_ports
+            name: 'octavia-health-manager-listen-port'
+            profile: 'octavia_identity'

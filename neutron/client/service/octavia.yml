@@ -16,3 +16,51 @@ parameters:
                   allocation_pools:
                     - start: 192.168.0.2
                       end: 192.168.0.200
+
+          security_group:
+            lb-mgmt-sec-grp:
+              tenant: service
+              rules:
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv4'
+                  'protocol': 'icmp'
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv4'
+                  'protocol': 'TCP'
+                  'port_range_min': 22
+                  'port_range_max': 22
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv4'
+                  'protocol': 'TCP'
+                  'port_range_min': 9443
+                  'port_range_max': 9443
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv6'
+                  'protocol': 'icmpv6'
+                  'remote_ip_prefix': '::/0'
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv6'
+                  'protocol': 'TCP'
+                  'port_range_min': 22
+                  'port_range_max': 22
+                  'remote_ip_prefix': '::/0'
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv6'
+                  'protocol': 'TCP'
+                  'port_range_min': 9443
+                  'port_range_max': 9443
+                  'remote_ip_prefix': '::/0'
+            lb-health-mgr-sec-grp:
+              tenant: service
+              rules:
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv4'
+                  'protocol': 'UDP'
+                  'port_range_min': 5555
+                  'port_range_max': 5555
+                - 'direction': 'ingress'
+                  'ethertype': 'IPv6'
+                  'protocol': 'UDP'
+                  'port_range_min': 5555
+                  'port_range_max': 5555
+                  'remote_ip_prefix': '::/0'

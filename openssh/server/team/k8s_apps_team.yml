@@ -1,0 +1,93 @@
+parameters:
+  linux:
+    system:
+      user:
+        apavlov:
+          enabled: true
+          name: apavlov
+          sudo: true
+          full_name: Andrey Pavlov
+          home: /home/apavlov
+          email: apavlov@mirantis.com
+        mzhnichkov:
+          enabled: true
+          name: mzhnichkov
+          sudo: true
+          full_name: Michail Zhnichkov
+          home: /home/mzhnichkov
+          email: mzhnichkov@mirantis.com
+        prazumovsky:
+          enabled: true
+          name: prazumovsky
+          sudo: true
+          full_name: Peter Razumovsky
+          home: /home/prazumovsky
+          email: prazumovsky@mirantis.com
+        slukjanov:
+          enabled: true
+          name: slukjanov
+          sudo: true
+          full_name: Sergey Lukjanov
+          home: /home/slukjanov
+          email: slukjanov@mirantis.com
+        sreshetnyak:
+          enabled: true
+          name: sreshetnyak
+          sudo: true
+          full_name: Sergey Reshetnyak
+          home: /home/sreshetnyak
+          email: sreshetnyak@mirantis.com
+        ytaraday:
+          enabled: true
+          name: ytaraday
+          sudo: true
+          full_name: Yuriy Taraday
+          home: /home/ytaraday
+          email: ytaraday@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        apavlov:
+          enabled: true
+          public_keys:
+          - ${public_keys:apavlov}
+          user: ${linux:system:user:apavlov}
+        mzhnichkov:
+          enabled: true
+          public_keys:
+          - ${public_keys:mzhnichkov}
+          user: ${linux:system:user:mzhnichkov}
+        prazumovsky:
+          enabled: true
+          public_keys:
+          - ${public_keys:prazumovsky}
+          user: ${linux:system:user:prazumovsky}
+        slukjanov:
+          enabled: true
+          public_keys:
+          - ${public_keys:slukjanov}
+          user: ${linux:system:user:slukjanov}
+        sreshetnyak:
+          enabled: true
+          public_keys:
+          - ${public_keys:sreshetnyak}
+          user: ${linux:system:user:sreshetnyak}
+        ytaraday:
+          enabled: true
+          public_keys:
+          - ${public_keys:ytaraday}
+          user: ${linux:system:user:ytaraday}
+  public_keys:
+    apavlov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC13FvtJl6OdwdiaLFYfJO5WaA7YUMi2/DJJECWtrjJPObGPeAQ1Z8zxQWanwZVhDO7E5oR7n/LmuKHaJkRIFyQEZY3mHS3k4yybg0Vqu2FcGWQO4P3R16v6qDLvuvu9S4sUkYF3k8oYDzwN/Vc+o7a4AkL5U5rjB3vbLWVdGg8G61jFjdekXbJdFCb0liPpcQrUe1yZmjE2E4ERPOZLCVADPiVzXJhtbKigbn/nwdk4D0g+eq3NW0AwJfkyCu6mt1xXfk6gmhUrBPh1ostWv6mSpD9bXvxIKv/QnIM4SUJ/RhJH0uhWtpH4GeXvnPXHs0bxfyq1GtQt5bD3gqCHruz apavlov@Andreys-MacBook-Pro.local
+    prazumovsky:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMGi+I02wfKwHqKoTahRJg3TWX9SaYjKBRKndmVfz4J9kptuQEsVbJGiBIxOKV4unFvBSgVDVgZ4rUwwkL2nMrdATAWiBeVcgaNTt4kVBxD21wAeFWi0kTgrJ403jqOqH/WIKA6lnGUCmdRxp3phcjHRlgw/ZOnFu6AuZqtO1Luxg/9PawOFcoCjWWDolp/ICSHBhGZuDWThvTSgVQTd10oMP55LMjuxSOdvM1ZjWczyxegKD7lt7j+FjQXHzGUyqcCH/NlXl4VHdjaNG2muP0lY+QRiRMye3qftu15qgRxqQtL1QksBspDP2TvVVTwE7c0m7VtKaQtnmlsJGUx/7H prazumovsky@shprotby-box
+    mzhnichkov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDW54LczyIFu1cKKDiKTcc3CQpY1sosDez7nLlOCdhyn096rl5q4GbjcX5WtMvlArKKjw5cRoBGMlLdJuQ+5PGfxnlK0GOaa924AyQSNINUyvEshV4D1OvEScN/lM0TNQZ3tkIw4YbST1g5JoSkq0MRv/qlzdv8Jg0sV4phZcx410uVQ0oVhfQgrGuq6pjf1fQpvo00cfGUyZRzF9JsxVGHdkXPgYB+W479Smha9GE2wkpiQscnnFyAcs50auLEt9E6/Tw+4fSK1dTgbD0MCSopI+E9WgVaCAxcTaEKaIB32gbgG3jRziC711GDdF4567hM1xDspPc3LeGSsTa4eAYN
+    slukjanov:
+      key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV5dNsXJ6aJMml7JSd4cJ54qYhOya18QNEdb7NJ88yo
+    sreshetnyak:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbc8cUMy2Stjq4qS8TaVGvTIUGetpgTcLCiW3NnG5Yqe+s+nlQnIL3ezvgSKHin4/PYHl8vV9FnmLdPLk+4eefoek1px8soW/B+Ri0KN6aQUy1ztcecMxcxRH9g4VLZWTbazqGsADwRCQVPXmyIQVQN5wMKd0IzXUp5c03dWv/I1PE7QPdKySrdhjjyo+1Npx/tQjtJaSnGCaUJrXfHXBxiiENzmHuY+se14nWV9RyYN3zRWsa8Yt1n2hWNNiKNfT89h6yFwZAxdsS+jGhzbGTLcWyAqq3sfvvgm0yeL5FEm0AKaOMv7AuM5LqjPkQE4zzCGA0j19EQlAjsVcvKHGH sreshetniak@workstation
+    ytaraday:
+      key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDtcRlAQg3baU14eBh8THRv+1T5sHCGAIeFaReEB/KRT

@@ -4,6 +4,7 @@ classes:
   - system.jenkins.client.job.deploy.update.saltenv
   - system.jenkins.client.job.deploy.update.upgrade
   - system.jenkins.client.job.deploy.update.upgrade_compute
+  - system.jenkins.client.job.deploy.update.upgrade_opencontrail
   - system.jenkins.client.job.deploy.update.restore_mysql
   - system.jenkins.client.job.deploy.update.restore_cassandra
   - system.jenkins.client.job.deploy.update.restore_zookeeper

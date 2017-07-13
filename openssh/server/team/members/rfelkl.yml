@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        rfelkl:
+          enabled: true
+          name: rfelkl
+          sudo: true
+          full_name: Richard Felkl
+          home: /home/rfelkl
+          email: rfelkl@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        rfelkl:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlvQKWbEQ8bM2rtE35sA5+y//YKMLNJ48d+/RxWlUx6G8xJusUhrKZuMRMgN5NqJQ92Z0Yd2lulsPeKEfSbqAxBxmNZ+mAAy8w8P/BHlQImi2HgMpWtQ5yExsAvCUAqq6KclJBhzjArg4+ztmKmNvjM8ZktJYeCM8VJ+qT01B8/3+frgltIDCDcC8YpRwbAt7aLjuB2Jk5Q9daQbtZ4XyXwHgPDpyZUkcuueUk/iklUBkAh9P3CFJBpttXEyKI0+cJAtM9vCXXPWmWt7nFAyQ8nH9+lTv/ZuD+pipKJBW2sp8+fFUWJ/Z6GzWhyh2KxiY7eK3kgabg1i7FtLFtRbZj richard@richard-inspiron
+          user: ${linux:system:user:rfelkl}

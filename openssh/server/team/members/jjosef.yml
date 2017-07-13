@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        jjosef:
+          enabled: true
+          name: jjosef
+          sudo: true
+          full_name: Jakub Josef
+          home: /home/jjosef
+          email: jakub.josef@gmail.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        jjosef:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkK55PVyvnhW2XiIyDUTWOaW1frsd7g9t8SLRmjtEjKqJOBaRk48bSUfcV2twGcSOq3E2dUikh3URobYIZ6WBEiWrl1e7MYCJJAE+8qzVoskk01mC6tp9HGbsSRKrZTgpjzReM+kN6jffi/P1rSqgeg4U0O99N2aWqdfc7UJPFM09z9nqfB1Gj4HUnBkC1X+di4U3S6W8q62JLgxuK2MAry3xSnPztFVH5OXXbBltdVIxshOHj9i8wyof9iFHGdjFNvB+c5I3RJ2HRmmmHm3zey9iHU7PNIppXKglUFZ0EKIB4LsDjL6xrEjo2A5tfCaVZLNJgP95tdbGEcYQuDv3N jakub.josef@gmail.com
+          user: ${linux:system:user:jjosef}

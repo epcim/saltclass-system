@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        pjediny:
+          enabled: true
+          name: pjediny
+          sudo: true
+          full_name: Petr Jediny
+          home: /home/pjediny
+          email: pjediny@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        pjediny:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgPX2oPwcmBMjf46UC+1vUBnKn9iBG88VD7lNiMN2UGBNihfCfSt4vOSNcVotyCSTrgm1dzHWN3nDt/fYiWvEimVE8VrawU9nJQ48o+M546SMCSYL9jqm+j+oSTd9CP7TeMgRw7hob+/vXREJVmol9cynsQei7HoFeo6iw7ZYMqgI1qOtHwN5Xep/7XZbQ0znweQY4hvywl47dK1GxnoQQUi1v30MzKRVIasf3cCMVr3qJ3ECxyQ2+Po/899jYLDdeJvJeG6dJQf1aDEDSHkoEjVup4jl5xu8y3jAYxOfKwMPe+Lb6lF3zRCB9QRZN71cxLVm+w7LfLtgLfsKv3xPeNpvvOvEQOdFg5jx9Z8w1KRkU2Zkc4fRTcWis89/9va3QL7W1pini3fM+WrpFatc02i7KjoJApeNQt0pwFl33DW+Zz8bQQZT7PT7LWNZjuvB4YmZYA6t9hj5rzUdUN2IyD2mNvPeNykdCLuFh7N7A67tpFSh48UHGld2ckdNmPQR8Ev50Fxu9jj13Cs4l3VMxzOF5I6VOS7g5vEKcCpIyDTtjSk4fGZhyeea5l8unCQzMw9UjkZjgy4nTZvxeqdRNnXSMrb0SzNuqbSM1J67GAUPxfxjb5HSmCYK/KSK3RXHrhwrW+t6B5x72KCCmYYJfUwofm6GIPEYGDxPL/VWGKM= pjediny key
+          user: ${linux:system:user:pjediny}

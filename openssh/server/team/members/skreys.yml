@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        skreys:
+          enabled: true
+          name: skreys
+          sudo: true
+          full_name: Sergey Kreys
+          home: /home/skreys
+          email: skreys@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        skreys:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeg+Wj7yTBRLvsu2LKgdKyb6FW4n3t5me0LAZhGkP9mbsYonE5sN0OwI42ZPYeU1O35c+E4n3GJ4ZzdJYRUQJtqO5EHUMNyXELEcS8GZKydg5A0KPs69bB8SPVlTfO5D77sAWwG/3JIQD/uI21jqCp3a4lyEw5X2HjMbuz2Z4cW7Y69i73RdIYQdYb0X5+mqcVz8YEyuMZi2zweMxsvOczcanQ/4J6JKtC8imJu23Gr0TeS15OJCFh7yGviVp//LBzusXreqlEf7Tzx2yHkJ/rqULIIlPpBC1TFD7sgA72j3kq9rw3ZeQAwmaJA82L3KzagkgSQprEsRYnQ+wSWXkj skreys@skreys
+          user: ${linux:system:user:skreys}

@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        smatov:
+          enabled: true
+          name: smatov
+          sudo: true
+          full_name: Sergey Matov
+          home: /home/smatov
+          email: smatov@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        smatov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgBHACRnY/VEEDFE63xDp4bx0zgWY4h1aB9/c2f962HtTNaQ6R/Cz6DLISaB5th8qzrzbvjn9WcpHdxyTm9BqkLLzB4qe7fnebPtn6zGczZ9Btrjk9R8Fuw6DZhSucSk572r/gVIY0O3Z1LajHkNr0ZTQS8AY3fgn8rXMD2vMOruOzyTOmfWKmEw7e+JYUqoFXHhE3Dd7hGQ99d6kH2N3zXfM2rzfjshGAq0kOi5dN4Hx6QIXZapt0t9TzpYTkK5SaVzuEVyVaKRLYSa/rdPjHkKqDFa99RcQ+OI93uvT9CFNWDFIC/TDJ2M+7PQbm836EICXXVWKjQ2NUnQJeOU5v smatov@ubuntu
+          user: ${linux:system:user:smatov}

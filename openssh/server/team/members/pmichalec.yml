@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        pmichalec:
+          enabled: true
+          name: pmichalec
+          sudo: true
+          full_name: Petr Michalec
+          home: /home/pmichalec
+          email: pmichalec@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        pmichalec:
+          enabled: true
+          public_keys:
+            - key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwsfObHWHqBv6UQBjvm0nkgnAGc5MZPuQXJ3ln4sM1P pmichalec@dontpanic
+          user: ${linux:system:user:pmichalec}

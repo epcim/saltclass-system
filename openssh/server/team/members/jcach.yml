@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        jcach:
+          enabled: true
+          name: jcach
+          sudo: true
+          full_name: Jan Cach
+          home: /home/jcach
+          email: jcach@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        jcach:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwAqWUvMAPTh4euvGwhLU3GjlAHVzKvlclKdg1VqmWAZI1Nd+GjKhop5kS3hMk+HCg4bgfE5nAEsp3mF78c+XXDZot1T1Sxsd0SfatkMycXgeK4l1U6QtouNR//7wEv4gPA5la7T5ktgwk7hfjnc9Jl84yS8xA1d5gsgOhQw4wHYQquyOcOA5rN8ylh7P+tEfJSx4PWlfsu9M8IZU9WvftPxNbmUfVF+GuwPcNgbAtMi3Oz2Zg9+6W4gnwfJiufXU+onDa2e5tL8ZsGqEbTQXIx13sg0ilMIT6WpbTtbCe81oZYokAMGY2hlbubhtHgGSQhBI4/qgE7/CsD4TNtuOFTAy8Y6lzvoDsTzR51ApUFHHQEjlsf7AfQFJF3Mb5/fy84K0PF2chz4XwXeO9ZbUGOvY9P349gqyJRIV29V6b8m2aqKYIHO/CRxYk52H1UY9SlCsJq9G+7qjHbugV+35+Za1/RFc0l+80Ei/GnfkYYNxpxHNM6r4sM2mte00lWTQwaSreFIVz/fRlKiaok1hHwwUNxgifdtcdIm+7RGnBgV9MoNGYN4AESKTnj7tr6OIOSLaZm8YbPJDW3VmpSmwGfHpOfI00lfymbKsR5ytn6nTLVHOkfU6pI4+LpUc0Jb9+Szrn+5QA8bGp6yn2DTCzHNW/mR5rrHYUY6o9m8/W4w== casek@casek14NB
+          user: ${linux:system:user:jcach}

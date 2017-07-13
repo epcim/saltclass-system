@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        tkukral:
+          enabled: true
+          name: tkukral
+          sudo: true
+          full_name: Tomas Kukral
+          home: /home/tkukral
+          email: tkukral@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        tkukral:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRM6WquKic6i6v/JbNR2XuMqCCYqlfyGU1K7XHK7tWFordRLz2/o4S76sZULBTXR0rLHtynvHM4QHlloE1/XJnd0BtI/3y8aY0OkXyu6PHvTC8Az8SyGj2XAcaiPlaT2f+oTJHoPc9rxLhMMD7OTwias6QeVKB3UrT0OaHfy2wWCF7t8cQeofi2ldEHKeCsC1jrT1vaVuoThQgZ00h0rNk4COPZEW34FXdmdJFUmZcUIDMa71HtYgnn4gmE8sUiJ/j6ardvPaycCDT9j1GW1Yu6UVLBWOoMMCb04bDJiidlvY1fQqbM/G4cR4ZPHFZ0RQiM2+wnRaB5RCmBVgNT0Tj tkukral
+          user: ${linux:system:user:tkukral}

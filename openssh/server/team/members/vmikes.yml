@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        vmikes:
+          enabled: true
+          name: vmikes
+          sudo: true
+          full_name: Vlasta Mikes
+          home: /home/vmikes
+          email: vmikes@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        vmikes:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXng0oUbSGMlZCamlSWuc4jzgTym+p9u0ukbQvaWW2cneOhLw6QbVkOgRETBIfXitiIB+5nNqTYy7lrYqc3wofjZJzonR07oFoNcyhITLnKjLHV9eZ8aRhwKL2PONyp8d61cdm5zqeth1tMP8uBB+SOn+aD12Hu5tfTJjQeH286p+Xt75Llo/bHybfYmt2HaV9Ts6qb/Kw3Eom0Jkjh8837navek/PnFF7WAkM8GvP5Taqzp4Tmu2UfLeMv4459q+ZiS56WRbcixBQGb7uUUy4jkuis0batBNoY0pwMaaTj8KzSwrQ8shc/LuU2QhR7xwXVIgZR/Yqa/Ojw/U36N4t v.mikes@tcpisek.cz
+          user: ${linux:system:user:vmikes}

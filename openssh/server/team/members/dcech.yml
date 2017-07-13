@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        dcech:
+          enabled: true
+          name: dcech
+          sudo: true
+          full_name: Daniel Cech
+          home: /home/dcech
+          email: dcech@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        dcech:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8A26XMLUnXkxv4e/vByD4W4PQ0ZdgGZz5Tg6G/fQKuSa+9zRucG6IlOchJPikwrDyTrojHTGAClHPuyr2bPIRrjFy4oUTZNdjiDptV99Zv/kHRStYzPyZ4KabnFLJVKNtyKKagk6Z3wpzEjFjRHWJK7A5bIzHfd7Amx/frdLKRo9YZjGbLnZRw6mWGqZYyp2/5a/5rKqH1BhMQggDGkAwFGWYQByZzk2F81nDnkt3CY3bi24gX90w4mgFjP8B0m0QCEhcGqpfOKsQTnIyBCtztEHBiUplzBN+RHS4dDOIEs9SWrXLiMFakWu1Vr6bUa7v5xGaNN8XAWjd3xdsy4hvJjJHU5HPaMY9MGH+N6W0UUZxIF0MuxDNP03MDM1uA5mRWTdwffARaDySYaEUrUEYJmzFAtk700Jv/Aav7QixLoIeKU9SAKYvVb7XNlMWgiswQdRPoiMpXPXPw+bMhjpimHJa4n0KFGAUO/cRD1dpJKybqxDe2ip57JzpFkm5PxuNht5qmEreKcS5dWQqm0fDE9wv8cCUMnWQv36f0IDeVpftmeDREatqXSeUjES7NFQOgIQW5C5Pl+8ZHTXw46c/uh89gUILJT2tS/mOXaU4mELox1Qv8vc/laoGAec+TGD0flf75LfiuLOK6JOYX0QVW13ko1wc3CyJzHOi1sFEAw== daniel.cech@tcpcloud.eu
+          user: ${linux:system:user:dcech}

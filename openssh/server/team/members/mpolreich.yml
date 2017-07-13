@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        mpolreich:
+          enabled: true
+          name: mpolreich
+          sudo: true
+          full_name: Martin Polreich
+          home: /home/mpolreich
+          email: mpolreich@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        mpolreich:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0N+ds8BGTR+ZQo9NSRGRbjv3T8AbPmtSw2nClXxetRdmHpM/mU7/5iD7qfkCXtNptKeCG/Qk44wlijnAtjztJK1qfvyphHe3etZxLnqhYMm73Yy++yKPE/ywFPFb+7kd0BDy2iZqohZpX3gUi5iDnvXUInHNqqtTv3xFe2kmn3lq5bSRuUMtr61nZ7z/fkX8kNfoGxKrm7bhSo5zq4sjTrj3lk1LKZc1HYji3RwrzBM0z4eyed1BaJyDNtG+eFN4nOnvVn59452AR8SmKJXRErk37rEoQn80xszypzybooFPN5dpdB6u9b4xquFCOD83usb8kEjKY9VIYGuXxEEts1KIF20J+xd8UnZU8d4JL50G8JY8zdNgurR3ZyMD2okuord4cpHF8SVecsAyRV6nuhDxVtF2Xn/RriY02jrLoRPsS+3nIrKt9H8vpQZMYJ+jgEpekZhhVfz4AP3pATzOrWENzNXj5G1bLJs1C9aTtwE27EnKW73XekX/GLsehCwsQ21JvDX8PMxJwLVfqvkRlrc5GILEIVgjZ82Cj6Eens1QobymRAEWuEpZxkPx6u0kGO62ri8zFx8+NYwYDz3mwhHDRT34T/Rvzy/9V9xVjkUQOj9cZ3eYBnC1MffJjx8heHDmSQmUd+99zKa9Hzr74z3AvR3AIgFqmu7kx5fIMew== ubuntu@thinkpad-x1
+          user: ${linux:system:user:mpolreich}

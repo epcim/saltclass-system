@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        lmercl:
+          enabled: true
+          name: lmercl
+          sudo: true
+          full_name: Lubos Mercl
+          home: /home/lmercl
+          email: lmercl@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        lmercl:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy6mFrr4oNdLjT5wBZj1+KXNpdawnGGWEevDBQ2SWFjxBFujkWVLiW1kxLTpLVSnuoE5FB7doRIsT/CDe9IU5OhsJ+z6TT56R/pfVKrVnSB1rgrwqdezjgmYEM6kTWiH2GKJE0yiQEPgagK8Rz5Zl420JkhbFWnL7EGPhxNtmYMGDTZwUTzP0KYmytyeH15OqNIiBGTrp1t2bTrVB8HRnUp0uDpfoWAUnsijVGNe1j1bNKtDO0Z9LAWx3eUyxIk4cdpX/EeWJg8jNrSMxtAZZ7Hhm/WInNSNqcHcZ1rEYCAjENxo1WVOuA/aqUqc5xaAipWNon4Rk0e0IUAaFOfLvN2lIuilUZ5XKHDe7a2crkGPnotheT9FgaEHOeFtpuhSaygeZHTMR197jeocgjWIkPqHjVAGSQqQf0TAdNuN73QPTigbbfHWWc1d8KlCM5BqJUXMHPG6BasE1sI/4ykYbxN/DAEvVJ4+rdIlqSdedd73ZAseVQjDtpzD8diScGrpdOhZnTm43q89F8dIFv7tt1TjIwvfcDQNSBjyyKcYpj+NTyW2Zk7qWDVz+lzH0ToYk/rOKkGlrsRy7OwOnmyKR8IcIOL7Bowj895ThCX8tBrdLu/m55ojBOcZiCpawCm7K55ri1Ar6i8cO+bHDh11kKRa/utRRSQTpsW0sbCsamzQ== lubos@lubos-ThinkPad-X1
+          user: ${linux:system:user:lmercl}

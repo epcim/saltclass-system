@@ -1,0 +1,18 @@
+classes:
+- service.neutron.client
+parameters:
+  neutron:
+    client:
+      server:
+        octavia_identity:
+          endpoint_type: internalURL
+          network:
+            lb-mgmt-net:
+              tenant: service
+              admin_state_up: True
+              subnet:
+                lb-mgmt-subnet:
+                  cidr: 192.168.0.0/24
+                  allocation_pools:
+                    - start: 192.168.0.2
+                      end: 192.168.0.200

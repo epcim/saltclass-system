@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        ashestakov:
+          enabled: true
+          name: ashestakov
+          sudo: true
+          full_name: Andrey Shestakov
+          home: /home/ashestakov
+          email: ashestakov@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        ashestakov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClIwlkr2nH8tCa2VnDgYpsVccJ4pX44mEdjt4oYqSdvEzXKaLhkC2vRzZ/DJo+1GjHC1cy6oPq26bo186MZ2/6PBh2gyVR5rRWyOFoNocAUaaEnBxu8TtNewIzrZ9k+telbmzz/PcoXkELLsHjrTPPxGlpI6qmk3WL/vJlXumvlZlv/FUbI8RlMxTuOK3TF5AQBGd3+1UkF+qFcAFGAAVFO0Td69MMQcsIhLCzJ68d7YM60+3z37At0x/URNlRwgf5Wt8NLPUQwo1dCDCK4GSZtqAHzj7IKVyk77twiN0SLQR12eTqUkyEjm6zR6QpZ6mpIbAjRVVFV5W55WTZXpIz
+          user: ${linux:system:user:ashestakov}

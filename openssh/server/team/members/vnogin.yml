@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        vnogin:
+          enabled: true
+          name: vnogin
+          sudo: true
+          full_name: Vitaliy Nogin
+          home: /home/vnogin
+          email: vnogin@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        vnogin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCiuKuC+aACWPhwTg1liOOGMAvL3zSMcgU2ZfjN6NMLMyekJqD7sr9NwJkeXEt6wr1YSelfYDcUjdu2ZyQHzfQ8CaNrTAlrNYUc+UlUqqydbO1d89j/MMn8fUAuFBu1vLMOqfNW8nPRmy327blmvSxBq2Oz9wSf/z/3lB4TVJKGwB61ciQn08FwFAitCN9cdfBthjRJXrhs/7kt0/An8O0p43LNa1aQ5QeaxLUAqMZa3VxkAaEwFzm/E/Vg4SPEJLijfCWYPozkZttoS2ud0HAJR87jya/BaCrtSAOqX55cLzWGABlvDWFprwo/59aJw7WlE8Y2bgxhtnFRdaHuIk7T vnogin@MacBook-Pro-Vitalii.local
+          user: ${linux:system:user:vnogin}

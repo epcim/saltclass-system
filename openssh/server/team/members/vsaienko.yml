@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        vsaienko:
+          enabled: true
+          name: vsaienko
+          sudo: true
+          full_name: Vasyl Saienko
+          home: /home/vsaienko
+          email: vsaienko@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        vsaienko:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPagYDP2Dt5cGMC/HYlv+5AVYx/v9yRiOSJuQb/XqU35PLW5CVroSAaEA33IIAOjyte8DRrmi4UxErX00V7+F9Dwebt0qkEX35FE91E+BM2L3S2Zcuuh4gHDDp5khsHSTHdgiFpMhRREFesuG6P7ekQ6gCBzKK4R+TTLVTKWYn1/TXQIvMUAO+umGykHQ2T6memO2eGivnSSNkKCGOjODquyP3JMmt9Dk7bP5RR6kRLSD9HknFCIFds2fkcdbOhZMv+XIqwOVAWhRPksafOMktmaHNyy3k6IcMPJroH6H4P/GsQmrPL8IXpDP01vTdeQYM47YqPC14L3T74u71YJGF vsaienko@mirantis.com
+          user: ${linux:system:user:vsaienko}

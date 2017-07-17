@@ -1,0 +1,36 @@
+#
+# Jobs to update packages on given Salt master environment
+#
+parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+  jenkins:
+    client:
+      job:
+        deploy-upgrade-ovs-gateway:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - upgrade OVS gateway"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: ovs-gateway-upgrade.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            TARGET_SERVERS:
+              type: string
+              default: "gtw*"
+              description: Salt compound target to match nodes to be updated [*, G@osfamily:debian].
+            TARGET_SUBSET_TEST:
+              type: string
+              description: Number of nodes to list package updates, empty string means all targetted nodes.
+            TARGET_SUBSET_LIVE:
+              type: string
+              default: '1'
+              description: Number of selected nodes to live apply upgrade.

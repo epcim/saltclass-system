@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    # Ceilometer samples are persisted up to 3 hours by default
+    rabbitmq_ceilometer_ttl: 10800000
   rabbitmq:
     server:
       host:
@@ -15,6 +18,10 @@ parameters:
           user: openstack
           password: ${_param:rabbitmq_openstack_password}
           policies:
+          - name: Ceilometer
+            pattern: '^metering.sample$'
+            definition: '{"ha-mode": "all", "message-ttl": ${_param:rabbitmq_ceilometer_ttl}}'
+            priority: 10
           - name: HA
             pattern: '^(?!amq\.).*'
             definition: '{"ha-mode": "all", "message-ttl": 120000}'

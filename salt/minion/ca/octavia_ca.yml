@@ -1,0 +1,29 @@
+parameters:
+  _param:
+    octavia_ca_common_name: Octavia CA
+    octavia_ca_country: cz
+    octavia_ca_locality: Prague
+    octavia_ca_organization: Mirantis
+    octavia_ca_days_valid_authority: 3650
+    octavia_ca_days_valid_certificate: 365
+  salt:
+    minion:
+      ca:
+        octavia_ca:
+          common_name: ${_param:octavia_ca_common_name}
+          country: ${_param:octavia_ca_country}
+          locality: ${_param:octavia_ca_locality}
+          organization: ${_param:octavia_ca_organization}
+          signing_policy:
+            cert_server:
+              type: v3_edge_cert_server
+              minions: '*'
+            cert_client:
+              type: v3_edge_cert_client
+              minions: '*'
+            cert_open:
+              type: v3_edge_cert_open
+              minions: '*'
+          days_valid:
+            authority: ${_param:octavia_ca_days_valid_authority}
+            certificate: ${_param:octavia_ca_days_valid_certificate}

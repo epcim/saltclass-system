@@ -1,0 +1,20 @@
+parameters:
+  _param:
+    salt_minion_ca_host: ${_param:openstack_gateway_node01_hostname}.${_param:cluster_domain}
+    salt_minion_ca_authority: octavia_ca
+  salt:
+    minion:
+      cert:
+        octavia_amp_client:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: octavia_amp_client
+          signing_policy: cert_open
+          key_usage: "digitalSignature,nonRepudiation,keyEncipherment"
+          ca_file: ${octavia:manager:certificates:ca_certificate}
+          ca_key_file: ${octavia:manager:certificates:ca_private_key}
+          key_file: ${octavia:manager:haproxy_amphora:client_cert_key}
+          cert_file: ${octavia:manager:haproxy_amphora:client_cert}
+          all_file: ${octavia:manager:haproxy_amphora:client_cert_all}
+          user: octavia
+          group: octavia

@@ -6,7 +6,7 @@ parameters:
     docker_image_db: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/db:${_param:decapod_version}
     docker_image_api: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/api:${_param:decapod_version}
     docker_image_controller: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/controller:latest
-    docker_image_frontend: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/controller:${_param:decapod_version}
+    docker_image_frontend: docker-prod-local.artifactory.mirantis.com/mirantis/ceph/decapod/frontend:${_param:decapod_version}
   docker:
     client:
       stack:

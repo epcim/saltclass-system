@@ -39,19 +39,6 @@ parameters:
               credentials: "gerrit"
               script: build-extra-dpdk-pipeline.groovy
             quiet_period: 120
-            trigger:
-              gerrit:
-                project:
-                  contrail/contrail-dpdk-extra-packages:
-                    branches:
-                      - "{{branch_real_name}}"
-                message:
-                  build_successful: "Build successful"
-                  build_unstable: "Build unstable"
-                  build_failure: "Build failed"
-                event:
-                  ref:
-                    - updated
             param:
               SOURCE_URL:
                 type: string

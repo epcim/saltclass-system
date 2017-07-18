@@ -158,3 +158,5 @@ parameters:
               KITCHEN_TESTS_PARALLEL:
                 type: boolean
                 default: 'false'
+              CUSTOM_KITCHEN_ENVS:
+                type: text

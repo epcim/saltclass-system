@@ -5,43 +5,53 @@ parameters:
       - stack_name: aaa_freeipa
         stack_type: heat
         stack_install: core,aaa
+        stack_test: ""
         job_timer: ""
         extra_formulas: ""
       - stack_name: k8s_calico
         stack_type: aws
         stack_install: core,k8s,calico
+        stack_test: ""
         job_timer: "H H * * *"
-#      - stack_name: ceph_ha
-#        stack_type: heat
-#        stack_install: core
-#        job_timer: ""
+      - stack_name: ceph_ha
+        stack_type: heat
+        stack_install: core,ceph
+        stack_test: "ceph"
+        job_timer: ""
 #      - stack_name: drivetrain_ha
 #        stack_type: heat
 #        stack_install: core
+#        stack_test: ""
 #        job_timer: ""
 #      - stack_name: drivetrain_ha_clusters
 #        stack_type: heat
 #        stack_install: core
+#        stack_test: ""
 #        job_timer: ""
       - stack_name: k8s_aio_calico
         stack_type: heat
         stack_install: core,k8s,calico
+        stack_test: ""
         job_timer: ""
       - stack_name: k8s_aio_contrail
         stack_type: heat
         stack_install: core,k8s,contrail
+        stack_test: ""
         job_timer: ""
       - stack_name: k8s_ha_calico
         stack_type: heat
         stack_install: core,k8s,calico
+        stack_test: ""
         job_timer: ""
       - stack_name: k8s_ha_contrail
         stack_type: heat
         stack_install: core,k8s,contrail
+        stack_test: ""
         job_timer: ""
       - stack_name: os_aio_contrail
         stack_type: heat
         stack_install: core,openstack,contrail
+        stack_test: ""
         job_timer: ""
       - stack_name: os_aio_ovs
         stack_type: heat
@@ -50,22 +60,27 @@ parameters:
       - stack_name: os_ha_contrail
         stack_type: heat
         stack_install: core,openstack,contrail
+        stack_test: ""
         job_timer: ""
       - stack_name: os_ha_ovs
         stack_type: heat
         stack_install: core,openstack,ovs
+        stack_test: ""
         job_timer: ""
       - stack_name: stacklight_k8s_calico
         stack_type: heat
         stack_install: core,k8s,calico,sl-legacy
+        stack_test: ""
         job_timer: ""
       - stack_name: stacklight_os_contrail
         stack_type: heat
         stack_install: core,openstack,contrail,sl-legacy
+        stack_test: ""
         job_timer: ""
       - stack_name: stacklight_os_ovs
         stack_type: heat
         stack_install: core,openstack,ovs,sl-legacy
+        stack_test: ""
         job_timer: ""
   jenkins:
     client:
@@ -109,7 +124,7 @@ parameters:
                 default: "{{stack_install}}"
               STACK_TEST:
                 type: string
-                default: ""
+                default: "{{stack_test}}"
               STACK_DELETE:
                 type: boolean
                 default: 'true'

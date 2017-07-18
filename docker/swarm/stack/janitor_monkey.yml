@@ -19,6 +19,9 @@ parameters:
     janitor_monkey_openstack:
       project_domain_name: default
       project_name: admin
+      username: ""
+      password: ""
+      auth_url: ""
   docker:
     client:
       stack:

@@ -1,0 +1,12 @@
+parameters:
+  _param:
+    telegraf_remote_agent_influxdb_port: 15016
+    telegraf_remote_agent_influxdb_protocol: http
+  telegraf:
+    remote_agent:
+      input:
+        influxdb:
+          servers:
+          - url: "${_param:telegraf_remote_agent_influxdb_protocol}://${_param:telegraf_remote_agent_influxdb_address}:${_param:telegraf_remote_agent_influxdb_port}/debug/vars"
+          tags:
+            host: ${_param:telegraf_remote_agent_influxdb_address}

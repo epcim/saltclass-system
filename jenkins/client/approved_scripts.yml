@@ -58,7 +58,6 @@ parameters:
         - method java.util.stream.Stream collect java.util.stream.Collector
         - method jenkins.model.Jenkins getItemByFullName java.lang.String
         - method jenkins.model.Jenkins getPluginManager
-        - method org.jenkinsci.plugins.scriptsecurity.sandbox.RejectedAccessException
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun doStop
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun finish hudson.model.Result java.lang.Throwable
         - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper build

@@ -60,6 +60,7 @@ parameters:
         - method jenkins.model.Jenkins getPluginManager
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun doStop
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun finish hudson.model.Result java.lang.Throwable
+        - method org.jenkinsci.plugins.workflow.support.actions.EnvironmentAction getEnvironment
         - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper build
         - new groovy.json.JsonBuilder
         - new groovy.json.JsonBuilder java.lang.Object
@@ -70,12 +71,15 @@ parameters:
         - new java.lang.Exception java.lang.String
         - new java.lang.InterruptedException
         - new java.lang.RuntimeException java.lang.String
+        - new java.lang.StringBuilder
+        - new java.lang.StringBuilder int
         - new java.net.URI java.lang.String
         - new java.util.ArrayList
         - new java.util.Date
         - new java.util.HashMap
         - staticField groovy.io.FileType FILES
         - staticMethod com.cloudbees.plugins.credentials.CredentialsProvider lookupCredentials java.lang.Class hudson.model.ItemGroup
+        - staticMethod java.lang.Integer valueOf int
         - staticMethod java.lang.Integer valueOf java.lang.String
         - staticMethod java.lang.Math min int int
         - staticMethod java.lang.String format java.lang.String java.lang.Object[]
@@ -100,17 +104,14 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods hasProperty java.lang.Object java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods iterator java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods iterator java.lang.Object[]
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.lang.StringBuffer java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods plus java.util.List java.lang.Iterable
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods plus java.util.List java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods plus java.util.List java.util.Collection
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods println java.lang.Object java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object java.lang.String java.lang.Object
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods sort java.util.Collection
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods split java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods takeRight java.util.List int
         - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
         - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
-        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods split java.lang.String
-        - staticMethod java.lang.Integer valueOf int
-        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.lang.StringBuffer java.lang.Object
-        - new java.lang.StringBuilder
-        - new java.lang.StringBuilder int
-        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods sort java.util.Collection

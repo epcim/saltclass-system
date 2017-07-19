@@ -69,17 +69,17 @@ parameters:
         job_timer: ""
       - stack_name: stacklight_k8s_calico
         stack_type: heat
-        stack_install: core,k8s,calico,sl-legacy
+        stack_install: core,k8s,calico,stacklight
         stack_test: ""
         job_timer: ""
       - stack_name: stacklight_os_contrail
         stack_type: heat
-        stack_install: core,openstack,contrail,sl-legacy
+        stack_install: core,openstack,contrail,stacklight
         stack_test: ""
         job_timer: ""
       - stack_name: stacklight_os_ovs
         stack_type: heat
-        stack_install: core,openstack,ovs,sl-legacy
+        stack_install: core,openstack,ovs,stacklight
         stack_test: ""
         job_timer: ""
   jenkins:

@@ -86,6 +86,12 @@ parameters:
         test: openstack
         timer: ""
         extra_formulas: ""
+      - lab: virtual_mcp11_aio
+        install: core,openstack
+        stack_type: heat
+        test: openstack
+        timer: ""
+        extra_formulas: ""
       - lab: virtual_mcp11_k8s_calico
         install: core,k8s,calico
         stack_type: heat

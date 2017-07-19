@@ -1,0 +1,73 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        docker-build-images-janitor-monkey-codebase:
+          name: docker-build-images-janitor-monkey-codebase
+          discard:
+            build:
+              keep_num: 25
+            artifact:
+              keep_num: 25
+          type: workflow-scm
+          concurrent: true
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/oss/jenkins/pipelines"
+            credentials: "gerrit"
+            script: docker-build-image-pipeline.groovy
+          trigger:
+            gerrit:
+              project:
+                "oss/SimianArmy":
+                  branches:
+                    - devel
+              skip_vote:
+                - successful
+                - failed
+                - unstable
+                - not_built
+              event:
+                patchset:
+                  - created:
+                      excludeDrafts: false
+                      excludeNoCodeChange: false
+                change:
+                  - merged
+                comment:
+                  - addedContains:
+                      commentAddedCommentContains: 'rebuild'
+          param:
+            IMAGE_NAME:
+              type: string
+              default: "janitor-monkey"
+            IMAGE_TAGS:
+              type: string
+              default: ""
+            CREDENTIALS_ID:
+              type: string
+              default: "gerrit"
+            DOCKER_REGISTRY:
+              type: string
+              default: "docker-dev-virtual.docker.mirantis.net"
+            PROJECT_NAMESPACE:
+              type: string
+              default: "oss"
+            DOCKERFILE_PATH:
+              type: string
+              default: "Dockerfile"
+            CONTEXT_PATH:
+              type: string
+              default: "."
+            CUSTOM_GERRIT_PROJECT:
+              type: string
+              default: oss/docker-janitor-monkey
+            CUSTOM_GERRIT_BRANCH:
+              type: string
+              default: master
+            CI_BUILD_ARG_JANITOR_MONKEY_REPO:
+              type: string
+              default: ""
+            CI_BUILD_ARG_JANITOR_MONKEY_REF:
+              type: string
+              default: ""

@@ -1,4 +1,6 @@
 classes:
   - system.jenkins.client.job.docker.oss.cis-collectors
   - system.jenkins.client.job.docker.oss.devops-portal
+  - system.jenkins.client.job.docker.oss.janitor-monkey-codebase
+  - system.jenkins.client.job.docker.oss.janitor-monkey-docker
   - system.jenkins.client.job.docker.oss.rundeck

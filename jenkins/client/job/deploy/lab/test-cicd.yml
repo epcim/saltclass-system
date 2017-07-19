@@ -2,7 +2,7 @@ parameters:
   jenkins:
     client:
       job_template:
-        deploy_heat_cicd:
+        deploy_heat_test_cicd:
           name: deploy-heat-{{name}}
           jobs:
             - name: cicd-lab-dev

@@ -2,7 +2,7 @@ parameters:
   _param:
     jenkins_cloud_deploy_pipelines:
       # Identity AAA
-      - stack_name: aaa_freeipa
+      - stack_name: aaa_ha_freeipa
         stack_type: heat
         stack_install: core,aaa
         stack_test: ""

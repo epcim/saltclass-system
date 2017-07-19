@@ -58,6 +58,9 @@ parameters:
               SYSTEM_GIT_REF:
                 type: string
                 default: ""
+              CONFIG_NODE_NAME_PATTERN:
+                type: string
+                default: "{{config_node_name}}"
         test_system_reclass:
           name: test-salt-model-{{name}}
           template:

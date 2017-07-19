@@ -1,0 +1,25 @@
+classes:
+- system.telegraf.agent.remote
+parameters:
+  docker:
+    client:
+      stack:
+        monitoring:
+          service:
+            remote_agent:
+              networks:
+                - monitoring
+              deploy:
+                replicas: 1
+                labels:
+                  com.mirantis.monitoring: "remote_agent"
+                restart_policy:
+                  condition: any
+              labels:
+                com.mirantis.monitoring: "remote_agent"
+              image: ${_param:docker_image_remote_agent}
+              ports:
+                - 15014:${telegraf:remote_agent:output:prometheus_client:bind:port}
+              volumes:
+                - ${telegraf:remote_agent:dir:config}:/etc/telegraf
+                - ${telegraf:remote_agent:dir:config_d}:/etc/telegraf/telegraf.d

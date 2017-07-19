@@ -5,7 +5,7 @@ parameters:
         deploy_heat_test_cicd:
           name: deploy-heat-{{name}}
           jobs:
-            - name: cicd-lab-dev
+            - name: test-cicd-lab-dev
               lab: cicd_lab_dev
           template:
             type: workflow-scm

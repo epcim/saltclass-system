@@ -17,9 +17,10 @@ parameters:
               credentials: "jenkins-mk"
               script: generate-cookiecutter-products.groovy
             param:
+              # Cookiecutter
               COOKIECUTTER_TEMPLATE_URL:
                 type: string
-                default: "https://gerrit.mcp.mirantis.net/p/mk/cookiecutter-templates.git"
+                default: "${_param:jenkins_gerrit_url}/mk/cookiecutter-templates.git"
               COOKIECUTTER_TEMPLATE_CREDENTIALS:
                 type: string
                 default: github-credentials
@@ -31,17 +32,11 @@ parameters:
                 default: "./"
               COOKIECUTTER_TEMPLATE_CONTEXT:
                 type: text
-              RECLASS_MODEL_URL:
+
+              # Other
+              SHARED_RECLASS_URL:
                 type: string
-              RECLASS_MODEL_CREDENTIALS:
-                type: string
-                default: gerrit
-              RECLASS_MODEL_BRANCH:
-                type: string
-                default: master
-              COMMIT_CHANGES:
-                type: boolean
-                default: false
+                default: "${_param:jenkins_gerrit_url}/salt-models/reclass-system.git"
               EMAIL_ADDRESS:
                 type: string
               TEST_MODEL:

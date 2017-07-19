@@ -1,0 +1,7 @@
+parameters:
+  prometheus:
+    server:
+      target:
+        kubernetes:
+          endpoint:
+            enabled: true

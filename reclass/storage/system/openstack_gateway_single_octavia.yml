@@ -5,3 +5,5 @@ parameters:
         openstack_gateway_node01:
           classes:
           - system.octavia.manager.single
+          - system.salt.minion.ca.octavia_ca
+          - system.salt.minion.cert.octavia_amp_client

@@ -4,6 +4,7 @@ classes:
   - system.jenkins.client.job.deploy.lab.mk.cleanup
   - system.jenkins.client.job.deploy.lab.mk.cloud
   - system.jenkins.client.job.deploy.lab.cicd
+  - system.jenkins.client.job.deploy.lab.test-cicd
   - system.jenkins.client.job.deploy.lab.demo
 
 parameters:

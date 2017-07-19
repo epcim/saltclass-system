@@ -1,0 +1,111 @@
+parameters:
+  jenkins:
+    client:
+      job_template:
+        deploy_heat_cicd:
+          name: deploy-heat-{{name}}
+          jobs:
+            - name: cicd-lab-dev
+              lab: cicd_lab_dev
+          template:
+            type: workflow-scm
+            concurrent: true
+            display_name: "Deploy {{name}} heat stack"
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "gerrit"
+              script: cicd-lab-pipeline.groovy
+            param:
+              # heat
+              HEAT_TEMPLATE_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
+              HEAT_TEMPLATE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              HEAT_TEMPLATE_BRANCH:
+                type: string
+                default: "master"
+              HEAT_STACK_NAME:
+                type: string
+                description: Heat stack name. Will be generated if missing.
+              HEAT_STACK_TEMPLATE:
+                type: string
+                default: "{{lab}}"
+              HEAT_STACK_ENVIRONMENT:
+                type: string
+                default: "devcloud"
+              HEAT_STACK_ZONE:
+                type: string
+                default: "mcp-oss"
+              HEAT_STACK_PUBLIC_NET:
+                type: string
+                default: "public"
+              HEAT_STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: "Delete heat stack at the end of job"
+              HEAT_STACK_REUSE:
+                type: boolean
+                default: 'false'
+                description: "Reuse existing stack and only orchestrate deployment"
+
+              # salt master
+              SALT_MASTER_CREDENTIALS:
+                type: string
+                default: "salt-qa-credentials"
+              SSH_PUBLIC_KEY:
+                type: string
+                description: "User's public SSH key to be able to login when stack is deployed"
+
+              # openstack api
+              OPENSTACK_API_URL:
+                type: string
+                default: "https://cloud-cz.bud.mirantis.net:5000"
+              OPENSTACK_API_CREDENTIALS:
+                type: string
+                default: "openstack-devcloud-credentials"
+              OPENSTACK_API_PROJECT:
+                type: string
+                default: "mcp-oss"
+              OPENSTACK_API_CLIENT:
+                type: string
+                default: ""
+              OPENSTACK_API_VERSION:
+                type: string
+                default: "3"
+              OPENSTACK_API_PROJECT_DOMAIN:
+                type: string
+                default: "default"
+              OPENSTACK_API_USER_DOMAIN_ID:
+                type: string
+                default: "default"
+              OPENSTACK_API_PROJECT_ID:
+                type: string
+                default: ""
+              OPENSTACK_API_USER_DOMAIN:
+                type: string
+                default: "default"
+
+              # devops-portal-tests
+              DEVOPS_PORTAL_TESTS_URL:
+                type: string
+                default: "${_param:jenkins_gerrit_url}/oss/devops-portal-tests"
+              DEVOPS_PORTAL_TESTS_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              DEVOPS_PORTAL_TESTS_BRANCH:
+                type: string
+                default: "master"
+              DEVOPS_PORTAL_TESTS_RUN_LOCAL:
+                type: boolean
+                default: 'true'
+                description: "Run on swarm master node"
+              DEVOPS_PORTAL_TESTS_CONFIG:
+                type: string
+                description: "Path to the service-configuration file in json-format"
+              DEVOPS_PORTAL_TESTS_MARK:
+                type: string
+                default: "ALL"
+                description: "Mark specific tests to run: healthcheck, functional (default = all)"

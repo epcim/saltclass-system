@@ -10,6 +10,8 @@ parameters:
   horizon:
     server:
       branding: ${_param:horizon_site_branding}
+      bind:
+        port: 8078
       plugin: {}
       session:
         engine: "cache"

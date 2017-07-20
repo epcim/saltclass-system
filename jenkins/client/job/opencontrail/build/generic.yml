@@ -84,14 +84,14 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-4.0
               upload_source_package: true
               dpdk: contrail_dpdk_2_1
-            - buildname: oc40-dpdk-17-02
+            - buildname: oc40-dpdk1702
               os: ubuntu
               dist: trusty
               branch: R4.0
               ppa: mirantis-opencontrail/opencontrail-4.0-dpdk-17-02
               upload_source_package: false
               dpdk: contrail_dpdk_17_02
-            - buildname: oc40-dpdk-17-02
+            - buildname: oc40-dpdk1702
               os: ubuntu
               dist: xenial
               branch: R4.0

@@ -23,7 +23,7 @@ parameters:
           domain: ${_param:cluster_domain}
           classes:
           - system.docker.swarm.manager
-          - cluster.${_param:cluster_name}.stacklight.server
+          - cluster.${_param:cluster_name}.stacklight.client
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
@@ -34,7 +34,7 @@ parameters:
           domain: ${_param:cluster_domain}
           classes:
           - system.docker.swarm.manager
-          - cluster.${_param:cluster_name}.stacklight.server
+          - cluster.${_param:cluster_name}.stacklight.client
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial

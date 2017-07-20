@@ -1,0 +1,37 @@
+parameters:
+  _param:
+    nginx_proxy_model_manager_web_host: ${_param:cluster_public_host}
+    nginx_proxy_model_manager_web_proxy_host: ${_param:cluster_vip_address}
+    nginx_proxy_model_manager_web_buffer_size:
+      number: 4
+      size: 256
+  nginx:
+    server:
+      enabled: true
+      site:
+        nginx_proxy_model_manager_web:
+          enabled: true
+          type: nginx_proxy
+          name: model_manager_web
+          proxy:
+            host: ${_param:nginx_proxy_model_manager_web_proxy_host}
+            port: 80
+            size: 10000m
+            timeout: 43200
+            protocol: http
+            websocket: true
+            request_buffer: false
+            buffer:
+              ${_param:nginx_proxy_model_manager_web_buffer_size}
+          host:
+            name: ${_param:nginx_proxy_model_manager_web_host}
+            port: 443
+            protocol: https
+          ssl: ${_param:nginx_proxy_ssl}
+        nginx_ssl_redirect_model_manager_web:
+          enabled: true
+          type: nginx_redirect
+          name: model_manager_web_redirect
+          host:
+            name: ${_param:nginx_proxy_model_manager_web_host}
+            port: 80

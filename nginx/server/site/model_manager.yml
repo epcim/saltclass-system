@@ -1,0 +1,13 @@
+parameters:
+  nginx:
+    server:
+      enabled: true
+      site:
+        model_manager_dashboard:
+          enabled: true
+          type: model_manager
+          name: dashboard
+          host:
+            name: ${_param:single_address}
+            port: 80
+

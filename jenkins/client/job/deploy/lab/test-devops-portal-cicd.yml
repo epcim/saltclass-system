@@ -13,9 +13,9 @@ parameters:
             display_name: "Deploy {{name}} heat stack"
             scm:
               type: git
-              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              url: "${_param:jenkins_gerrit_url}/oss/jenkins/pipelines"
               credentials: "gerrit"
-              script: cicd-lab-pipeline.groovy
+              script: test-func-devops-portal-pipeline.groovy
             param:
               # heat
               HEAT_TEMPLATE_URL:

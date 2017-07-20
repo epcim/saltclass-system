@@ -9,22 +9,38 @@ parameters:
               dist: trusty
               branch_name: kilo
               branch_real_name: kilo
+              aptly_repo: ubuntu-trusty-kilo
+              binary: "all"
             - os: ubuntu
               dist: trusty
               branch_name: liberty
               branch_real_name: liberty-multiqueue
+              aptly_repo: ubuntu-trusty-liberty
+              binary: "all"
             - os: ubuntu
               dist: trusty
               branch_name: mitaka
               branch_real_name: mitaka
+              aptly_repo: ubuntu-trusty-mitaka
+              binary: "all"
             - os: ubuntu
               dist: xenial
               branch_name: mitaka
               branch_real_name: mitaka
+              aptly_repo: ubuntu-xenial-mitaka
+              binary: "all"
             - os: ubuntu
               dist: xenial
               branch_name: newton
               branch_real_name: newton
+              aptly_repo: ubuntu-xenial-newton
+              binary: "all"
+            - os: ubuntu
+              dist: xenial
+              branch_name: dpdk1702
+              branch_real_name: mitaka_dpdk_17_02
+              aptly_repo: ubuntu-xenial-oc40-dpdk1702
+              binary: "contrail-dpdk-kernel-modules-dkms"
           template:
             discard:
              build:
@@ -67,4 +83,4 @@ parameters:
               BINARY_PACKAGES:
                 description: "binary packages to create"
                 type: string
-                default: "all"
+                default: "{{binary}}"

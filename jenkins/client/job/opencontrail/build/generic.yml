@@ -13,66 +13,91 @@ parameters:
               branch: R3.0.3.x
               ppa: mirantis-opencontrail/opencontrail-3.0.3
               upload_source_package: false
+              dpdk: contrail_dpdk_2_1
             - buildname: oc31
               os: ubuntu
               dist: trusty
               branch: R3.1
               ppa: mirantis-opencontrail/opencontrail-3.1
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc31
               os: ubuntu
               dist: xenial
               branch: R3.1
               ppa: mirantis-opencontrail/opencontrail-3.1
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc311
               os: ubuntu
               dist: trusty
               branch: R3.1.1.x
               ppa: mirantis-opencontrail/opencontrail-3.1.1
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc311
               os: ubuntu
               dist: xenial
               branch: R3.1.1.x
               ppa: mirantis-opencontrail/opencontrail-3.1.1
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc32
               os: ubuntu
               dist: trusty
               branch: R3.2
               ppa: mirantis-opencontrail/opencontrail-3.2
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc32
               os: ubuntu
               dist: xenial
               branch: R3.2
               ppa: mirantis-opencontrail/opencontrail-3.2
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc323
               os: ubuntu
               dist: trusty
               branch: R3.2.3.x
               ppa: mirantis-opencontrail/opencontrail-3.2.3
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc323
               os: ubuntu
               dist: xenial
               branch: R3.2.3.x
               ppa: mirantis-opencontrail/opencontrail-3.2.3
               upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc40
               os: ubuntu
               dist: trusty
               branch: R4.0
               ppa: mirantis-opencontrail/opencontrail-4.0
-              upload_source_package: false
+              upload_source_package: true
+              dpdk: contrail_dpdk_2_1
             - buildname: oc40
               os: ubuntu
               dist: xenial
               branch: R4.0
               ppa: mirantis-opencontrail/opencontrail-4.0
+              upload_source_package: true
+              dpdk: contrail_dpdk_2_1
+            - buildname: oc40-dpdk-17-02
+              os: ubuntu
+              dist: trusty
+              branch: R4.0
+              ppa: mirantis-opencontrail/opencontrail-4.0-dpdk-17-02
               upload_source_package: false
+              dpdk: contrail_dpdk_17_02
+            - buildname: oc40-dpdk-17-02
+              os: ubuntu
+              dist: xenial
+              branch: R4.0
+              ppa: mirantis-opencontrail/opencontrail-4.0-dpdk-17-02
+              upload_source_package: false
+              dpdk: contrail_dpdk_17_02
             - buildname: oc666
               os: ubuntu
               dist: trusty
@@ -120,10 +145,9 @@ parameters:
                 type: boolean
                 default: 'false'
                 description: "Don't cleanup on failure"
-              DEBUG_DPDK:
-                type: boolean
-                default: 'false'
-                description: "CONFIG_RTE_LIBRTE_ETHDEV_DEBUG enabled or disabled"
+              DPDK_BRANCH:
+                type: string
+                default: "{{dpdk}}"
               OS:
                 type: string
                 default: "{{os}}"

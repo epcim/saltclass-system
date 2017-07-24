@@ -1,6 +1,8 @@
 classes:
 - service.neutron.client
 parameters:
+  _param:
+    octavia_hm_bind_ip: '192.168.0.12'
   neutron:
     client:
       server:
@@ -19,7 +21,7 @@ parameters:
               port:
                 octavia-health-manager-listen-port:
                   fixed_ips:
-                    - ip_address: '192.168.0.12'
+                    - ip_address: ${_param:octavia_hm_bind_ip}
                   device_owner: Octavia:health-mgr
                   binding_host_id: ${_param:openstack_gateway_node01_hostname}
                   security_groups:

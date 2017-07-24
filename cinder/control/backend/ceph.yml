@@ -11,3 +11,4 @@ parameters:
           user: ${_param:cinder_storage_user}
           secret_uuid: ${_param:cinder_storage_secret_uuid}
           client_cinder_key: ${_param:cinder_storage_client_key}
+          host: ceph

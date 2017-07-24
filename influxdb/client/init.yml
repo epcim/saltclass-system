@@ -1,0 +1,13 @@
+classes:
+- service.influxdb.client
+parameters:
+  _param:
+    influxdb_client_port: 8086
+  influxdb:
+    client:
+      server:
+        protocol: http
+        host: ${_param:influxdb_client_host}
+        port: ${_param:influxdb_client_port}
+        user: root
+        password: ${_param:influxdb_client_password}

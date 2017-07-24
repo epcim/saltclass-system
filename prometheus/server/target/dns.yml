@@ -25,3 +25,8 @@ parameters:
               - 'tasks.monitoring_remote_agent'
               type: A
               port: ${telegraf:remote_agent:output:prometheus_client:bind:port}
+            - name: 'remote_storage_adapter'
+              domain:
+              - 'tasks.monitoring_remote_storage_adapter'
+              type: A
+              port: ${prometheus:remote_storage_adapter:bind:port}

@@ -1,0 +1,19 @@
+classes:
+- service.influxdb.server.container
+parameters:
+  influxdb:
+    server:
+      enabled: true
+      prefix_dir: /srv/volumes/local/influxdb
+      http:
+        enabled: true
+        bind:
+          port: 8086
+      admin:
+        enabled: true
+        bind:
+          port: 8083
+        user:
+          enabled: true
+          name: 'root'
+          password: ${_param:influxdb_admin_password}

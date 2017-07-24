@@ -1,0 +1,29 @@
+classes:
+- system.influxdb.server.container
+- system.influxdb.server.tmpfs_wal
+- system.telegraf.agent.remote.input.influxdb
+parameters:
+  _param:
+    docker_influxdb_replicas: 1
+    docker_influxdb_data_dir: /srv/volumes/influxdb
+  docker:
+    client:
+      stack:
+        influxdb:
+          service:
+            server:
+              deploy:
+                replicas: ${_param:docker_influxdb_replicas}
+                restart_policy:
+                  condition: any
+              environment:
+                INFLUXDB_CONFIG_PATH: /etc/influxdb/influxdb.conf
+                INFLUXDB_DATA_DIR: /var/lib/influxdb/data
+                INFLUXDB_DATA_WAL_DIR: /var/lib/influxdb/wal
+              image: ${_param:docker_influxdb_image}
+              ports:
+              - 15016:8086
+              volumes:
+              - ${influxdb:server:prefix_dir}/etc/influxdb:/etc/influxdb
+              - ${_param:docker_influxdb_data_dir}:/var/lib/influxdb/data
+              - ${influxdb:server:data:wal_dir}:/var/lib/influxdb/wal

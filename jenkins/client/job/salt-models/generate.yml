@@ -23,7 +23,7 @@ parameters:
                 default: "${_param:jenkins_gerrit_url}/mk/cookiecutter-templates.git"
               COOKIECUTTER_TEMPLATE_CREDENTIALS:
                 type: string
-                default: github-credentials
+                default: gerrit
               COOKIECUTTER_TEMPLATE_BRANCH:
                 type: string
                 default: master

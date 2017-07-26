@@ -108,27 +108,27 @@ parameters:
                 default: "default"
 
               # k8s setttings
-              K8S_API_SERVER:
+              TEST_K8S_API_SERVER:
                 type: string
                 default: "http://127.0.0.1:8080"
-              K8S_CONFORMANCE_IMAGE:
+              TEST_K8S_CONFORMANCE_IMAGE:
                 type: string
                 default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
 
               # Tempest settings
-              TEMPEST_IMAGE:
+              TEST_TEMPEST_IMAGE:
                 type: string
                 description: "Tempest image link"
                 default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
-              TARGET_TEST_NODE:
+              TEST_TEMPEST_TARGET:
                 type: string
                 description: "Node to run tests"
                 default: ""
-              DOCKER_INSTALL:
+              TEST_DOCKER_INSTALL:
                 type: boolean
                 description: "Install docker on the target if true"
                 default: "true"
-              PATTERN:
+              TEST_TEMPEST_PATTERN:
                 type: string
                 description: "Run tests matched to pattern only"
                 default: ""

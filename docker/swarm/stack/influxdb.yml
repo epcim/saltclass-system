@@ -5,7 +5,7 @@ classes:
 parameters:
   _param:
     docker_influxdb_replicas: 1
-    docker_influxdb_data_dir: /srv/volumes/influxdb
+    docker_influxdb_dir: /srv/volumes/influxdb
   docker:
     client:
       stack:
@@ -19,11 +19,12 @@ parameters:
               environment:
                 INFLUXDB_CONFIG_PATH: /etc/influxdb/influxdb.conf
                 INFLUXDB_DATA_DIR: /var/lib/influxdb/data
-                INFLUXDB_DATA_WAL_DIR: /var/lib/influxdb/wal
+                INFLUXDB_META_DIR: /var/lib/influxdb/meta
+                INFLUXDB_DATA_WAL_DIR: /tmp/wal
               image: ${_param:docker_influxdb_image}
               ports:
               - 15016:8086
               volumes:
               - ${influxdb:server:prefix_dir}/etc/influxdb:/etc/influxdb
-              - ${_param:docker_influxdb_data_dir}:/var/lib/influxdb/data
-              - ${influxdb:server:data:wal_dir}:/var/lib/influxdb/wal
+              - ${_param:docker_influxdb_dir}:/var/lib/influxdb
+              - ${influxdb:server:data:wal_dir}:/tmp/wal

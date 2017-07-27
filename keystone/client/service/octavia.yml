@@ -36,3 +36,4 @@ parameters:
             host: ${_param:keystone_service_host}
             port: 5000
             region_name: ${_param:openstack_region}
+            use_keystoneauth: true

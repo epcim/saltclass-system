@@ -23,12 +23,8 @@ parameters:
               tags: "2.32"
               dockerfile: "Dockerfile"
             - name: jenkins
-              branch: "2.52"
-              tags: "2.52 latest"
-              dockerfile: "Dockerfile"
-            - name: jenkins
-              branch: "2.70"
-              tags: "2.70 latest"
+              branch: "2.71"
+              tags: "2.71 latest"
               dockerfile: "Dockerfile"
             - name: phpldapadmin
               branch: "master"

@@ -113,9 +113,6 @@ parameters:
               STACK_NAME:
                 type: string
                 description: Heat stack name. Will be generated if missing.
-              STACK_TEMPLATE:
-                type: string
-                default: "{{stack_name}}"
               STACK_TYPE:
                 type: string
                 default: "{{stack_type}}"
@@ -125,17 +122,20 @@ parameters:
               STACK_TEST:
                 type: string
                 default: "{{stack_test}}"
+              STACK_REUSE:
+                type: boolean
+                default: 'false'
               STACK_DELETE:
                 type: boolean
                 default: 'true'
                 description: "Don't enable it if you need to use the lab after"
-              STACK_REUSE:
-                type: boolean
-                default: 'false'
               STACK_COMPUTE_COUNT:
                 type: string
                 default: '2'
 
+              STACK_TEMPLATE:
+                type: string
+                default: "{{stack_name}}"
               STACK_TEMPLATE_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
@@ -149,7 +149,7 @@ parameters:
                 type: string
                 default: 'deploy-stack-cleanup'
 
-              # salt master
+              # salt
               SALT_MASTER_CREDENTIALS:
                 type: string
                 default: "salt-qa-credentials"
@@ -159,6 +159,7 @@ parameters:
               SALT_OVERRIDES:
                 type: text
                 default: ""
+                description: "YAML with overrides for Salt deployment"
 
               # aws api
               AWS_STACK_REGION:
@@ -171,36 +172,6 @@ parameters:
                 type: string
                 default: "jenkins-mk"
 
-
-              # openstack api
-              OPENSTACK_API_URL:
-                type: string
-                default: "https://cloud-cz.bud.mirantis.net:5000"
-              OPENSTACK_API_CREDENTIALS:
-                type: string
-                default: "openstack-devcloud-credentials"
-              OPENSTACK_API_PROJECT:
-                type: string
-                default: "mcp-mk"
-              OPENSTACK_API_CLIENT:
-                type: string
-                default: ""
-              OPENSTACK_API_VERSION:
-                type: string
-                default: "3"
-              OPENSTACK_API_PROJECT_DOMAIN:
-                type: string
-                default: "default"
-              OPENSTACK_API_USER_DOMAIN_ID:
-                type: string
-                default: "default"
-              OPENSTACK_API_PROJECT_ID:
-                type: string
-                default: ""
-              OPENSTACK_API_USER_DOMAIN:
-                type: string
-                default: "default"
-
               # heat
               HEAT_STACK_ENVIRONMENT:
                 type: string
@@ -212,7 +183,34 @@ parameters:
                 type: string
                 default: "public"
 
-              # k8s setttings
+              # openstack api
+              OPENSTACK_API_URL:
+                type: string
+                default: "https://cloud-cz.bud.mirantis.net:5000"
+              OPENSTACK_API_CREDENTIALS:
+                type: string
+                default: "openstack-devcloud-credentials"
+              OPENSTACK_API_PROJECT:
+                type: string
+                default: "mcp-mk"
+              OPENSTACK_API_PROJECT_DOMAIN:
+                type: string
+                default: ""
+              OPENSTACK_API_PROJECT_ID:
+                type: string
+                default: ""
+              OPENSTACK_API_USER_DOMAIN:
+                type: string
+                default: "default"
+
+              OPENSTACK_API_CLIENT:
+                type: string
+                default: ""
+              OPENSTACK_API_VERSION:
+                type: string
+                default: "3"
+
+              # test
               TEST_K8S_API_SERVER:
                 type: string
                 default: "http://127.0.0.1:8080"
@@ -220,8 +218,20 @@ parameters:
                 type: string
                 default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
 
-              # openstack settings
               TEST_TEMPEST_IMAGE:
                 type: string
+                description: "Tempest docker image"
                 default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
+              TEST_TEMPEST_TARGET:
+                type: string
+                description: "Node to run tests"
+                default: ""
+              TEST_DOCKER_INSTALL:
+                type: boolean
+                description: "Install docker on the target if true"
+                default: "true"
+              TEST_TEMPEST_PATTERN:
+                type: string
+                description: "Run tests matched to pattern only"
+                default: ""
 

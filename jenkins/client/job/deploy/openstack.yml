@@ -14,7 +14,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
-            script: lab-pipeline.groovy
+            script: cloud-deploy-pipeline.groovy
           param:
             # deployments and test settings
             STACK_TYPE:

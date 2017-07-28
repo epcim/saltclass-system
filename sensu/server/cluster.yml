@@ -14,6 +14,8 @@ parameters:
     cluster_redis_port: 6379
   sensu:
    server:
+     bind:
+       address: ${_param:single_address}
      database:
        engine: redis
        host: ${_param:cluster_vip_address}

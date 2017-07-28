@@ -38,6 +38,7 @@ parameters:
             quiet_period: 60
             trigger:
               gerrit:
+                silent_start_mode: true
                 project:
                   '{{regex}}':
                     compare_type: REG_EXP

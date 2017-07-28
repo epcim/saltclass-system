@@ -3,4 +3,9 @@ classes:
   - system.jenkins.client.job.docker.oss.devops-portal
   - system.jenkins.client.job.docker.oss.janitor-monkey-codebase
   - system.jenkins.client.job.docker.oss.janitor-monkey-docker
+  - system.jenkins.client.job.docker.oss.pushkin-docker
+  - system.jenkins.client.job.docker.oss.pushkin-codebase
+  - system.jenkins.client.job.docker.oss.pushkin-codebase-ext
   - system.jenkins.client.job.docker.oss.rundeck
+  - system.jenkins.client.job.docker.oss.security-monkey-docker
+  - system.jenkins.client.job.docker.oss.security-monkey-codebase-openstack

@@ -9,6 +9,10 @@ parameters:
           port: ${_param:artifactory_server_port}
           user: ${_param:artifactory_client_user}
           password: ${_param:artifactory_client_password}
+          license_key: ${_param:artifactory_license_key}
+          ldap_server: ${_param:artifactory_security_ldap_server}
+          ldap_account_base: ${_param:artifactory_security_ldap_root_dn}
+          ldap_searchFilter: ${_param:artifactory_security_ldap_searchFilter}
           ssl_verify: False
         repo:
           local_artifactory_repo:

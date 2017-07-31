@@ -85,6 +85,8 @@ parameters:
               branches: ${_param:salt_formulas_extra_branches}
             - name: heka
               branches: ${_param:salt_formulas_branches}
+            - name: helm
+              branches: ${_param:salt_formulas_branches}
             - name: horizon
               branches: ${_param:salt_formulas_extra_branches}
             - name: influxdb

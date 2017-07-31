@@ -61,6 +61,9 @@ parameters:
               CONFIG_NODE_NAME_PATTERN:
                 type: string
                 default: "{{config_node_name}}"
+              MAX_CPU_PER_JOB:
+                type: string
+                default: "2"
         test_system_reclass:
           name: test-salt-model-{{name}}
           template:
@@ -169,3 +172,6 @@ parameters:
             SYSTEM_GIT_REF:
               type: string
               default: ""
+            MAX_CPU_PER_JOB:
+              type: string
+              default: "2"

@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        psvimbersky:
+          enabled: true
+          name: psvimbersky
+          sudo: true
+          full_name: Pavel Svimbersky
+          home: /home/psvimbersky
+          email: psvimbersky@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        psvimbersky:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnsI2H2xgNFttWvGaIa7UdXtgAnlGMpin1/sBufx/bYkDMU2r0xGDjIBbUNWc4/OSKhpDyJiwxT5qiln07uFDBw0PtHUlJYHpJgS9xE6PERZPEiyQqrmbUVdqX9bIimweMH8kJIXjKgut+pc+GLUs5SyUlkjlHbKuYoYo52jAx+ldAslKK0P/aA1msjzGpoDRSvFChew7FHs9sH0GTgX865DoqCzqulNjHiGUrziBxwEAdUVjNDfxFHROm6kgdFU7ipgNQTHB7NvEI/VfZFlcuZ9IWZQhLQiw1jSxs4zAxOYJWrELPUqhPYE5yB5Y9j8iP4b0xIKhwoWkxQxdYuaLB
+          user: ${linux:system:user:psvimbersky}

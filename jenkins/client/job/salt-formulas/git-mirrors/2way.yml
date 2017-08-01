@@ -17,9 +17,11 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: artifactory
               branches: ${_param:salt_formulas_branches}
+            - name: avinetworks
+              branches: ${_param:salt_formulas_branches}
             - name: backupninja
               branches: ${_param:salt_formulas_branches}
-            - name: avinetworks
+            - name: barbican
               branches: ${_param:salt_formulas_branches}
             - name: billometer
               branches: ${_param:salt_formulas_branches}

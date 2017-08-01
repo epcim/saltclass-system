@@ -213,6 +213,8 @@ parameters:
               dist: xenial
             - name: avinetworks
               dist: xenial
+            - name: barbican
+              dist: xenial
             - name: baremetal-simulator
               dist: xenial
             - name: backupninja

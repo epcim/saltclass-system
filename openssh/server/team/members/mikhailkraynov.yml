@@ -9,8 +9,6 @@ parameters:
           full_name: Mikhail Kraynov
           home: /home/mkraynov
           email: mkraynov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

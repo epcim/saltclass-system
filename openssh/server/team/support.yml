@@ -1,0 +1,179 @@
+classes:
+- system.linux.system.sudo
+# L1
+- system.openssh.server.team.members.aleksandrdobdin
+- system.openssh.server.team.members.aleksandrrubtsov
+- system.openssh.server.team.members.anatoliineliubin
+- system.openssh.server.team.members.antonrodionov
+- system.openssh.server.team.members.collinmay
+- system.openssh.server.team.members.danilakhmetov
+- system.openssh.server.team.members.deniskostriukov
+- system.openssh.server.team.members.dmitrygoloshubov
+- system.openssh.server.team.members.javierdiaz
+- system.openssh.server.team.members.josuepalmerin
+- system.openssh.server.team.members.krzysztoffranckowski
+- system.openssh.server.team.members.matthewroark
+- system.openssh.server.team.members.maximefimov
+- system.openssh.server.team.members.mikhailkraynov
+- system.openssh.server.team.members.nadezhdakabanova
+- system.openssh.server.team.members.renesoto
+- system.openssh.server.team.members.rsafonov
+- system.openssh.server.team.members.scottmachtmes
+- system.openssh.server.team.members.zahedkhurasani
+# L2OPS
+- system.openssh.server.team.members.aepifanov
+- system.openssh.server.team.members.apetrenko
+- system.openssh.server.team.members.atarasov
+- system.openssh.server.team.members.dklepikov
+- system.openssh.server.team.members.dsutyagin
+- system.openssh.server.team.members.ekozhemyakin
+- system.openssh.server.team.members.enikanorov
+- system.openssh.server.team.members.fsoppelsa
+- system.openssh.server.team.members.manashkin
+- system.openssh.server.team.members.nkondra
+- system.openssh.server.team.members.obryndzii
+- system.openssh.server.team.members.oliemieshko
+- system.openssh.server.team.members.sovsianikov
+# L2OPS SRE Team
+- system.openssh.server.team.members.cade
+- system.openssh.server.team.members.jmosher
+- system.openssh.server.team.members.ecantwell
+- system.openssh.server.team.members.lmercl
+- system.openssh.server.team.members.mrelewicz
+- system.openssh.server.team.members.osmola
+- system.openssh.server.team.members.pcizinsky
+- system.openssh.server.team.members.pmathews
+- system.openssh.server.team.members.pmichalec
+parameters:
+  _param:
+    linux_system_user_sudo: false
+  linux:
+    system:
+      group:
+        supportl1:
+          enabled: false
+        supportl2:
+          enabled: false
+        support0:
+          enabled: true
+          name: support0
+        support1:
+          enabled: true
+          name: support1
+          addusers:
+            # L1
+            - ${linux:system:users:ardobdin:name}
+            - ${linux:system:users:arubtsov:name}
+            - ${linux:system:users:aneliubin:name}
+            - ${linux:system:users:arodionov:name}
+            - ${linux:system:users:cmay:name}
+            - ${linux:system:users:dakhmetov:name}
+            - ${linux:system:users:dkostriukov:name}
+            - ${linux:system:users:dgoloshubov:name}
+            - ${linux:system:users:jdiaz:name}
+            - ${linux:system:users:jpalmerin:name}
+            - ${linux:system:users:kfranckowski:name}
+            - ${linux:system:users:mroark:name}
+            - ${linux:system:users:mefimov:name}
+            - ${linux:system:users:mkraynov:name}
+            - ${linux:system:users:nkabanova:name}
+            - ${linux:system:users:rsoto:name}
+            - ${linux:system:users:rsafonov:name}
+            - ${linux:system:users:smachtmes:name}
+            - ${linux:system:users:zkhurasani:name}
+        support2:
+          enabled: true
+          name: support2
+          addusers:
+            # L2OPS
+            - ${linux:system:users:aepifanov:name}
+            - ${linux:system:users:apetrenko:name}
+            - ${linux:system:users:atarasov:name}
+            - ${linux:system:users:dklepikov:name}
+            - ${linux:system:users:dsutyagin:name}
+            - ${linux:system:users:ekozhemyaki:name}
+            - ${linux:system:users:enikanorov:name}
+            - ${linux:system:users:fsoppelsa:name}
+            - ${linux:system:users:manashkin:name}
+            - ${linux:system:users:nkondra:name}
+            - ${linux:system:users:obryndzii:name}
+            - ${linux:system:users:oliemieshko:name}
+            - ${linux:system:users:sovsianikov:name}
+            # L2OPS SRE
+            - ${linux:system:users:pmichalec:name}
+            - ${linux:system:users:pmathews:name}
+            - ${linux:system:users:pcizinsky:name}
+            - ${linux:system:users:osmola:name}
+            - ${linux:system:users:cade:name}
+            - ${linux:system:users:jmosher:name}
+            - ${linux:system:users:ecantwell:name}
+            - ${linux:system:users:lmercl:name}
+            - ${linux:system:users:mrelewicz:name}
+        support3:
+          enabled: false
+          name: support3
+          addusers:
+            - ${linux:system:users:pmichalec:name}
+            - ${linux:system:users:pmathews:name}
+            - ${linux:system:users:pcizinsky:name}
+            - ${linux:system:users:osmola:name}
+            - ${linux:system:users:cade:name}
+            - ${linux:system:users:jmosher:name}
+            - ${linux:system:users:ecantwell:name}
+            - ${linux:system:users:lmercl:name}
+            - ${linux:system:users:mrelewicz:name}
+      sudo:
+        enabled: true
+        aliases:
+          command:
+            SUPPORT_SALT: ${_param:sudo_salt_safe}
+            SUPPORT_SALT_TRUSTED: ${_param:sudo_salt_trusted}
+            SUPPORT_RESTRICTED_SHELLS: ${_param:sudo_shells}
+            SUPPORT_RESTRICTED_SU: ${_param:sudo_restricted_su}
+            SUPPORT_COREUTILS: ${_param:sudo_coreutils_safe}
+            SUPPORT_RABBITMQ: ${_param:sudo_rabbitmq_safe}
+            SUPPORT_SALT_TRUSTED: ${_param:sudo_salt_trusted}
+            SUPPORT_NETWORKING: ${_param:sudo_networking}
+            SUPPORT_CONTRAIL: ${_param:sudo_contrail_utilities}
+            SUPPORT_STORAGE: ${_param:sudo_storage_utilities}
+            SUPPORT_OPENSTACK_CLIENTS: ${_param:sudo_openstack_clients}
+        groups:
+          support0:
+          # This group should have only RO access to non-sensitive data and commands
+          # assumed usage: common operations, non experienced, non technical users.
+            commands:
+                - SUPPORT_SALT
+                - '!SUPPORT_RESTRICTED_SHELLS'
+                - '!SUPPORT_RESTRICTED_SU'
+          support1:
+          # This group should have access to safe, trusted, commands
+            commands:
+                - SUPPORT_SALT
+                - SUPPORT_COREUTILS
+                - SUPPORT_RABBITMQ
+                - SUPPORT_NETWORKING
+                - SUPPORT_CONTRAIL
+                - SUPPORT_STORAGE
+                - SUPPORT_OPENSTACK_CLIENTS
+                - '!SUPPORT_RESTRICTED_SHELLS'
+                - '!SUPPORT_RESTRICTED_SU'
+          support2:
+          # This group should have access to any command using sudo
+            commands:
+                - SUPPORT_SALT
+                - SUPPORT_SALT_TRUSTED
+                - SUPPORT_COREUTILS
+                - SUPPORT_RABBITMQ
+                - SUPPORT_NETWORKING
+                - SUPPORT_CONTRAIL
+                - SUPPORT_STORAGE
+                - SUPPORT_OPENSTACK_CLIENTS
+                - '!SUPPORT_RESTRICTED_SHELLS'
+                - '!SUPPORT_RESTRICTED_SU'
+          support3:
+          # It's never safe to run unlimited number of commands with sudo.
+          # Use with caution.
+            commands:
+                - ALL
+                - '!SUPPORT_RESTRICTED_SHELLS'
+                - '!SUPPORT_RESTRICTED_SU'

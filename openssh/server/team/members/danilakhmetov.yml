@@ -9,8 +9,6 @@ parameters:
           full_name: Danil Akhmetov
           home: /home/dakhmetov
           email: dakhmetov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

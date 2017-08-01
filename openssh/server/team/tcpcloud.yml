@@ -22,6 +22,8 @@ classes:
 - system.openssh.server.team.members.psvimbersky
 
 parameters:
+  _param:
+    linux_system_user_sudo: true
   linux:
     system:
       user:

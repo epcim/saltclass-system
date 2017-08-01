@@ -9,8 +9,6 @@ parameters:
           full_name: Josue Palmerin
           home: /home/jpalmerin
           email: jpalmerin@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

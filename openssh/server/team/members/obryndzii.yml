@@ -9,8 +9,6 @@ parameters:
           full_name: Oleksandr Bryndzii
           home: /home/obryndzii
           email: obryndzii@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

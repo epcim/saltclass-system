@@ -9,8 +9,6 @@ parameters:
           full_name: Daniil Lapshin
           home: /home/dlapshin
           email: dlapshin@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

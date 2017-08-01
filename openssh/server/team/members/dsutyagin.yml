@@ -9,8 +9,6 @@ parameters:
           full_name: Dmitry Sutyagin
           home: /home/dsutyagin
           email: dsutyagin@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

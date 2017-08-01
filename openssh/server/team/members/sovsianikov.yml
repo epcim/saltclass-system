@@ -9,8 +9,6 @@ parameters:
           full_name: Serhii Ovsianikov
           home: /home/sovsianikov
           email: sovsianikov@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

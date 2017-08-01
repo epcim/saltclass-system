@@ -9,8 +9,6 @@ parameters:
           full_name: Nazarii Kondra
           home: /home/nkondra
           email: nkondra@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

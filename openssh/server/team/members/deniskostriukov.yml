@@ -9,8 +9,6 @@ parameters:
           full_name: Denis Kostriukov
           home: /home/dkostriukov
           email: dkostryukov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

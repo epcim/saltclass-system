@@ -9,8 +9,6 @@ parameters:
           full_name: Roman Safonov
           home: /home/rsafonov
           email: rsafonov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

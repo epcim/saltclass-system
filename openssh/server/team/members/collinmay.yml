@@ -9,8 +9,6 @@ parameters:
           full_name: Collin May
           home: /home/cmay
           email: cmay@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

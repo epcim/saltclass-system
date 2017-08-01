@@ -9,8 +9,6 @@ parameters:
           full_name: Andrii Petrenko
           home: /home/apetrenko
           email: apetrenko@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

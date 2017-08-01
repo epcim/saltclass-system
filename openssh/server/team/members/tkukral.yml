@@ -5,7 +5,7 @@ parameters:
         tkukral:
           enabled: true
           name: tkukral
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Tomas Kukral
           home: /home/tkukral
           email: tkukral@mirantis.com

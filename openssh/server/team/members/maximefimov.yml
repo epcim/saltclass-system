@@ -9,8 +9,6 @@ parameters:
           full_name: Maxim Efimov
           home: /home/mefimov
           email: mefimov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

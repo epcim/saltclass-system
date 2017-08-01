@@ -9,8 +9,6 @@ parameters:
           full_name: Matthew Roark
           home: /home/mroark
           email: mroark@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

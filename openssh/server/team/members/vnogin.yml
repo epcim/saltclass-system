@@ -5,7 +5,7 @@ parameters:
         vnogin:
           enabled: true
           name: vnogin
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Vitaliy Nogin
           home: /home/vnogin
           email: vnogin@mirantis.com

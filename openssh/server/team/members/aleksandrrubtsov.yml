@@ -9,8 +9,6 @@ parameters:
           full_name: Aleksandr Rubtsov
           home: /home/arubtsov
           email: arubtsov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

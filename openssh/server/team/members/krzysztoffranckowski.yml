@@ -9,8 +9,6 @@ parameters:
           full_name: Krzysztof Franckowski
           home: /home/kfranckowski
           email: kfranckowski@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

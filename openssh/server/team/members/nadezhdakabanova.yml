@@ -9,8 +9,6 @@ parameters:
           full_name: Nadezhda Kabanova
           home: /home/nkabanova
           email: nkabanova@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

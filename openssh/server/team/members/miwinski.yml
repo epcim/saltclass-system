@@ -5,7 +5,7 @@ parameters:
         miwinski:
           enabled: true
           name: miwinski
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Marcin Iwinski
           home: /home/miwinski
           email: miwinski@mirantis.com

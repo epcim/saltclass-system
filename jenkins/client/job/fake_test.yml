@@ -19,7 +19,7 @@ parameters:
           trigger:
             gerrit:
               project:
-                "mk/mk-pipelines":
+                "salt-formulas/salt-formulas":
                   branches:
                     - master
               event:

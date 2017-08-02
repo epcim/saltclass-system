@@ -29,7 +29,7 @@ parameters:
               description: Salt compound target to match nodes to be updated [*, G@osfamily:debian].
             TARGET_PACKAGES:
               type: string
-              description: Space delimited list of packages to be updates [package1=version package2=version], empty string means all updating all packages to the latest version.
+              description: Space delimited list of packages to be updated, empty string means updating all packages to the latest version e.g. [package1=version package2=version] or [package1 package2].
             TARGET_SUBSET_TEST:
               type: string
               description: Number of nodes to list package updates, empty string means all targetted nodes.

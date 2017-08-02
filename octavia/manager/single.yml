@@ -5,3 +5,7 @@ parameters:
     manager:
       enabled: true
       version: ${_param:octavia_version}
+      ssh:
+        private_key: ${_param:octavia_private_key}
+        user: octavia
+        group: octavia

@@ -18,3 +18,7 @@ parameters:
         engine: calico
         prometheus:
           enabled: true
+  docker:
+    host:
+      options:
+        iptables: false

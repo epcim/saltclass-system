@@ -16,3 +16,7 @@ parameters:
       container: false
       network:
         engine: calico
+  docker:
+    host:
+      options:
+        iptables: false

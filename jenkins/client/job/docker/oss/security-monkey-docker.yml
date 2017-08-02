@@ -59,15 +59,3 @@ parameters:
             CONTEXT_PATH:
               type: string
               default: "."
-            CI_BUILD_ARG_SECURITY_MONKEY_REPO:
-              type: string
-              default: ""
-            CI_BUILD_ARG_SECURITY_MONKEY_REF:
-              type: string
-              default: ""
-            CI_BUILD_ARG_SECURITY_MONKEY_OPENSTACK_REPO:
-              type: string
-              default: ""
-            CI_BUILD_ARG_SECURITY_MONKEY_OPENSTACK_REF:
-              type: string
-              default: ""

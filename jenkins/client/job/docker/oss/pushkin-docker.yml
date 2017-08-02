@@ -59,15 +59,3 @@ parameters:
             CONTEXT_PATH:
               type: string
               default: "."
-            CI_BUILD_ARG_PUSHKIN_REPO:
-              type: string
-              default: ""
-            CI_BUILD_ARG_PUSHKIN_REF:
-              type: string
-              default: ""
-            CI_BUILD_ARG_PUSHKIN_EXT_REPO:
-              type: string
-              default: ""
-            CI_BUILD_ARG_PUSHKIN_EXT_REF:
-              type: string
-              default: ""

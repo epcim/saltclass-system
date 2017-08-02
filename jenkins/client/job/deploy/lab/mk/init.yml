@@ -114,7 +114,7 @@ parameters:
                 default: "mcp-mk"
               OPENSTACK_API_PROJECT_DOMAIN:
                 type: string
-                default: ""
+                default: "default"
               OPENSTACK_API_PROJECT_ID:
                 type: string
                 default: ""

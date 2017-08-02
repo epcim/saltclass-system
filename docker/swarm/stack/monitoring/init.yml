@@ -32,6 +32,7 @@ parameters:
               environment:
                 bind_port: ${prometheus:remote_storage_adapter:bind:port}
                 bind_address: ${prometheus:remote_storage_adapter:bind:address}
+                influxdb_retention_policy: 'lma'
                 influxdb_url: ${_param:prometheus_influxdb_url}
                 influxdb_db: ${_param:prometheus_influxdb_db}
                 influxdb_username: ${_param:prometheus_influxdb_username}

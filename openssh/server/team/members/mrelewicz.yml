@@ -1,9 +1,10 @@
+##Disabled user
 parameters:
   linux:
     system:
       user:
         mrelewicz:
-          enabled: true
+          enabled: false
           name: mrelewicz
           sudo: true
           full_name: Maciej Relewicz

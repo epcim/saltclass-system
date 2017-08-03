@@ -1,9 +1,10 @@
+##Disabled user
 parameters:
   linux:
     system:
       user:
         dszeluga:
-          enabled: true
+          enabled: false
           name: dszeluga
           sudo: true
           full_name: Damian Szeluga

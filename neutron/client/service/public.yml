@@ -1,0 +1,25 @@
+classes:
+- service.neutron.client
+parameters:
+  neutron:
+    client:
+      server:
+        admin_identity:
+          endpoint_type: internalURL
+          network:
+            public:
+              tenant: admin
+              shared: False
+              router_external: True
+              default: True
+              admin_state_up: True
+              provider_network_type: flat
+              provider_physical_network: physnet1
+              subnet:
+                public-subnet:
+                  cidr: ${_param:openstack_public_neutron_subnet_cidr}
+                  allocation_pools:
+                    - start: ${_param:openstack_public_neutron_subnet_allocation_start}
+                      end: ${_param:openstack_public_neutron_subnet_allocation_end}
+                  gateway: ${_param:openstack_public_neutron_subnet_gateway}
+                  enable_dhcp: False

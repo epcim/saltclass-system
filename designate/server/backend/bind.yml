@@ -21,7 +21,7 @@ parameters:
         local:
           enabled: true
           bind:
-            address: 127.0.0.1
+            address: ${_param:single_address}
             port: 953
           allow:
             - 127.0.0.1
@@ -32,7 +32,7 @@ parameters:
       enabled: true
       option:
         default:
-          server: 127.0.0.1
+          server: ${_param:single_address}
           port: 953
           key: designate
       key:

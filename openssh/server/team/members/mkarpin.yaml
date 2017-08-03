@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        mkarpin:
+          enabled: true
+          name: mkarpin
+          sudo: true
+          full_name: Mykyta Karpin
+          home: /home/mkarpin
+          email: mkarpin@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        mkarpin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcO+qMO4z5O75JmeoyHQKNjq72psAMO2lebEMl5MbgVs7BAOT3PChamRId3xhwX2X5R0vS1ZSgRm0XC4br2OpJ9DsBhOBbPRK/EyjAm5aTBW8eZZ69NDFam/hLJ6Xq+jZDdlBT8iK7CPxTJD+0wz1KqpIgYlUNkix5EEj2wfUAfw3j6lGiEVQ0Cpbejey9sYlUSitKcYs/EAX5byBBqkFCLL4/D77fLOIuWfDzAAStUR/wbOJnWNiIScifu4EUdcSdHra9RoQaRgo31ALq+BeYVpvqnyHTOw9t2q04sZVDN4anhUMAFh0n1CkbY/2HWpX/RYWt1bV6XtDeoCpsC5Ar nkarpin@nkarpin-pc
+          user: ${linux:system:user:mkarpin}

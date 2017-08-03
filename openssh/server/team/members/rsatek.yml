@@ -17,4 +17,4 @@ parameters:
           enabled: true
           public_keys:
             - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC63DK9CdBB2WNHcbgzReBlcVY7YDvVKBJI4P5O8N3lg/T+01ROL99/6k8drFYFJjdeXJaMkCg7UM17yIyouDijBHB9G9AM7jkefBZrGDF7QaWJeGvpxB9W3BQnhotCeuP363CNBup+oUfPwXVnkE5iGuLJAGS8SENpVZpZsF0gXAUuVtvl5D8h1wIqQtFveJSV6qJkjVIudZYJfOMDBfiyS5nEwKmboP5jFtrm3e64HpxDhm2J5irNtzw3hOO8cq2ssnZ0ZAHFf2FfnPAzZ2L0Z1MpZcEPdzBonsdO8/cfxdbov9hW4iLmpJF80KxgPyHU0R304uyfnsfkC164l0Rx rsatek@Rudolfs-MacBook-Pro.local
-            user: ${linux:system:user:rsatek}
+          user: ${linux:system:user:rsatek}

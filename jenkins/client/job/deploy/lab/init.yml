@@ -1,11 +1,16 @@
 classes:
-  - system.jenkins.client.job.deploy.lab.mk.physical
-  - system.jenkins.client.job.deploy.lab.mk.virtual
-  - system.jenkins.client.job.deploy.lab.mk.cleanup
-  - system.jenkins.client.job.deploy.lab.mk.cloud
   - system.jenkins.client.job.deploy.lab.cicd
   - system.jenkins.client.job.deploy.lab.test-cicd
   - system.jenkins.client.job.deploy.lab.demo
+  - system.jenkins.client.job.deploy.lab.cleanup
+  - system.jenkins.client.job.deploy.lab.release.mcp05
+  - system.jenkins.client.job.deploy.lab.release.mcp10
+  - system.jenkins.client.job.deploy.lab.release.mcp11
+  - system.jenkins.client.job.deploy.lab.component.aaa
+  - system.jenkins.client.job.deploy.lab.component.ceph
+  - system.jenkins.client.job.deploy.lab.component.kubernetes
+  - system.jenkins.client.job.deploy.lab.component.openstack
+  - system.jenkins.client.job.deploy.lab.component.stacklight
 
 parameters:
   jenkins:

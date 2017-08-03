@@ -1,0 +1,15 @@
+classes:
+  - system.jenkins.client.job.deploy.lab.deploy
+parameters:
+  _param:
+    jenkins_deploy_jobs:
+      - stack_name: drivetrain_ha
+        stack_type: heat
+        stack_install: core
+        stack_test: ""
+        job_timer: ""
+      - stack_name: drivetrain_ha_clusters
+        stack_type: heat
+        stack_install: core
+        stack_test: ""
+        job_timer: ""

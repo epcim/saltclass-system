@@ -1,0 +1,43 @@
+classes:
+  - system.jenkins.client.job.deploy.lab.deploy
+parameters:
+  _param:
+    jenkins_deploy_jobs:
+      # physical
+      - stack_name: mcp10_contrail
+        stack_install: core,kvm,openstack,contrail
+        stack_type: physical
+        stack_test: openstack
+        job_timer: ""
+      - stack_name: mcp10_opencontrail_nfv
+        stack_install: core,kvm,openstack,nfv
+        stack_type: physical
+        stack_test: openstack
+        job_timer: ""
+      - stack_name: mcp10_dvr
+        stack_install: core,kvm,openstack,dvr
+        stack_type: physical
+        stack_test: openstack
+        job_timer: ""
+      - stack_name: mcp10_non_dvr
+        stack_install: core,kvm,openstack
+        stack_type: physical
+        stack_test: openstack
+        job_timer: ""
+
+      # virtual
+      - stack_name: virtual_mcp10_contrail
+        stack_install: core,openstack,contrail
+        stack_type: heat
+        stack_test: ""
+        job_timer: "H H(0-6) * * *"
+      - stack_name: virtual_mcp10_dvr
+        stack_install: core,openstack,dvr
+        stack_type: heat
+        stack_test: ""
+        job_timer: "H H(0-6) * * *"
+      - stack_name: virtual_mcp10_ovs
+        stack_install: core,openstack,ovs
+        stack_type: heat
+        stack_test: ""
+        job_timer: "H H(0-6) * * *"

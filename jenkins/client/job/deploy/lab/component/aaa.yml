@@ -1,0 +1,10 @@
+classes:
+  - system.jenkins.client.job.deploy.lab.deploy
+parameters:
+  _param:
+    jenkins_deploy_jobs:
+      - stack_name: aaa_ha_freeipa
+        stack_type: heat
+        stack_install: core,aaa
+        stack_test: ""
+        job_timer: ""

@@ -45,3 +45,6 @@ parameters:
       xxxlarge:
         - system:
             size: 500000
+      xxxxlarge:
+        - system:
+            size: 700000

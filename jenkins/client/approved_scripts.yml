@@ -56,6 +56,9 @@ parameters:
         - method java.util.regex.Matcher matches
         - method java.util.regex.Pattern matcher java.lang.CharSequence
         - method java.util.stream.Stream collect java.util.stream.Collector
+        - method java.util.Calendar add int int
+        - method java.util.Calendar getTime
+        - method java.util.Date before java.util.Date
         - method jenkins.model.Jenkins getItemByFullName java.lang.String
         - method jenkins.model.Jenkins getPluginManager
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun doStop

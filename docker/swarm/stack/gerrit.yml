@@ -1,3 +1,5 @@
+classes:
+- system.docker
 parameters:
   _param:
     docker_image_gerrit: tcpcloud/gerrit:2.13.6
@@ -8,6 +10,7 @@ parameters:
     gerrit_ldap_account_base: ""
     gerrit_ldap_group_base: ""
     gerrit_http_listen_url: http://*:8080/
+    gerrit_extra_opts: ""
   docker:
     client:
       stack:
@@ -45,6 +48,10 @@ parameters:
                 GERRIT_ADMIN_PWD: ${_param:gerrit_admin_password}
                 GERRIT_ADMIN_EMAIL: ${_param:gerrit_admin_email}
                 CANLOADINIFRAME: "true"
+                JAVA_OPTIONS: ${_param:gerrit_extra_opts}
+                https_proxy: ${_param:docker_https_proxy}
+                http_proxy: ${_param:docker_http_proxy}
+                no_proxy: ${_param:docker_no_proxy}
             db:
               environment:
                 MYSQL_USER: gerrit

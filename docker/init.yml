@@ -1,0 +1,6 @@
+parameters:
+  _param:
+    http_proxy: ""
+    docker_http_proxy: ${_param:http_proxy}
+    docker_https_proxy: ${_param:docker_http_proxy}
+    docker_no_proxy: ""

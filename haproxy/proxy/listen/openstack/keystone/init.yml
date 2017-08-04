@@ -3,8 +3,6 @@ parameters:
     proxy:
       listen:
         keystone_public_api:
-          type: openstack-service
-          service_name: keystone
           binds:
           - address: ${_param:cluster_vip_address}
             port: 5000
@@ -22,8 +20,6 @@ parameters:
             port: 5000
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
         keystone_admin_api:
-          type: openstack-service
-          service_name: keystone
           binds:
           - address: ${_param:cluster_vip_address}
             port: 35357

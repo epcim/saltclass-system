@@ -2,6 +2,7 @@ classes:
 - service.keystone.server.cluster
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.keystone
+- system.haproxy.proxy.listen.openstack.keystone.standalone
 parameters:
   keystone:
     server:

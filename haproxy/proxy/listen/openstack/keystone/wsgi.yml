@@ -1,0 +1,29 @@
+classes:
+- system.haproxy.proxy.listen.openstack.keystone
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        keystone_public_api:
+          mode: http
+          options:
+            - httpchk
+            - httpclose
+            - httplog
+          sticks:
+            - stick on src
+            - stick-table type ip size 200k expire 2m
+        keystone_admin_api:
+          mode: http
+          options:
+            - httpchk
+            - httpclose
+            - httplog
+          sticks:
+            - stick on src
+            - stick-table type ip size 200k expire 2m
+          binds:
+          - address: ${_param:cluster_vip_address}
+            port: 35357
+            ssl:
+              enabled: false

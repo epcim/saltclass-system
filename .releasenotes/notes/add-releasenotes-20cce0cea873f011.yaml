@@ -1,0 +1,18 @@
+---
+summary: >
+  Use "reno", an releasenotes configuration tool to record release notes.
+  Documentation: https://docs.openstack.org/reno/latest
+
+  Example usage:
+
+  .. code-block:: shell
+
+    # to list/create/show release notes, run following commands
+    reno -qd .releasenotes list
+    reno -qd .releasenotes new releasenote-slug-title --edit
+    reno -qd .releasenotes report --no-show-source
+
+other:
+  - |
+    Added `reno <https://docs.openstack.org/reno/latest>_` configuration to track release notes
+    within the reclass-system git repository.

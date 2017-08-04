@@ -1,0 +1,58 @@
+---
+# Usage:
+#
+# reno -qd .releasenotes list
+# reno -qd .releasenotes new slug-title --edit
+# reno -qd .releasenotes report --no-show-source
+
+# Change prelude_section_name to 'summary' from default value prelude
+prelude_section_name: summary
+show_source: False
+sections:
+  - [features, New Features]
+  - [upgrade, Upgrade Notes]
+  - [fixes, Bug Fixes]
+  - [other, Other Notes]
+template: |
+  ---
+  # Author the following sections or remove the section if it is not related.
+  # Use one release note per a feature.
+  #
+  # If you miss a section from the list below, please first submit a review
+  # adding it to .releasenotes/config.yaml.
+  #
+  summary: >
+    This section is not mandatory. Use it to highlight the change.
+
+  features:
+    - Use list to record summary of features.
+    - |
+      Provide detailed description with examples.
+      Format with reStructuredText.
+
+      .. code-block:: text
+
+         provide model/formula pillar snippets
+
+  upgrade:
+    - |
+      Document how to use a feature and related upgrade instructions.
+
+  fixes:
+    - Use list to record summary of fixes.
+      Quick and dirty `git log --oneline`.
+
+  other:
+    - Author additional notes for the release.
+    - Format with reStructuredText.
+    - |
+        Use this section if note is not related to one of the common sections:
+        features, issues, upgrade, deprecations, security, fixes, api, cli
+
+        * list item 1
+        * list item 2
+
+        .. code-block:: yaml
+
+          classes:
+          - system.class.to.load

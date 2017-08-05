@@ -13,3 +13,6 @@ classes:
 - system.openssh.server.team.members.pmichalec
 # Missing- team members still in flux
 # - system.openssh.server.team.members.bpiotrowski
+parameters:
+  _param:
+    linux_system_user_sudo: true

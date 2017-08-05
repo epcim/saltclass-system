@@ -9,8 +9,6 @@ parameters:
           full_name: Denys Klepikov
           home: /home/dklepikov
           email: dklepikov@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

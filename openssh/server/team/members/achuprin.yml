@@ -5,7 +5,7 @@ parameters:
         achuprin:
           enabled: true
           name: achuprin
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Alexey Chuprin
           home: /home/achuprin
           email: achuprin@mirantis.com

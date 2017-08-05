@@ -5,7 +5,7 @@ parameters:
         lmercl:
           enabled: true
           name: lmercl
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Lubos Mercl
           home: /home/lmercl
           email: lmercl@mirantis.com

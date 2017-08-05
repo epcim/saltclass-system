@@ -1,3 +1,5 @@
+## DEPRECATED, this class will be removed 01/2018
+#  please use support3.yml instead
 classes:
 - system.linux.system.sudo
 # L2
@@ -16,6 +18,8 @@ classes:
 - system.openssh.server.team.members.oliemieshko
 - system.openssh.server.team.members.sovsianikov
 parameters:
+  _param:
+    linux_system_user_sudo: false
   linux:
     system:
       group:

@@ -9,8 +9,6 @@ parameters:
           full_name: Scott Machtmes
           home: /home/smachtmes
           email: smachtmes@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

@@ -9,8 +9,6 @@ parameters:
           full_name: Evgeny Kozhemyakin
           home: /home/ekozhemyakin
           email: ekozhemyakin@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

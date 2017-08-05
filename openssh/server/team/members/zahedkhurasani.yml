@@ -9,8 +9,6 @@ parameters:
           full_name: Zahed Khurasani
           home: /home/zkhurasani
           email: zkhurasani@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

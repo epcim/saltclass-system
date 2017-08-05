@@ -5,7 +5,7 @@ parameters:
         ecantwell:
           enabled: true
           name: ecantwell
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Erick Cantwell
           home: /home/ecantwell
           email: ecantwell@mirantis.com

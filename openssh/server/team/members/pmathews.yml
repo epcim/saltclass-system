@@ -5,7 +5,7 @@ parameters:
         pmathews:
           enabled: true
           name: pmathews
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Paul Mathews
           home: /home/pmathews
           email: pmathews@mirantis.com

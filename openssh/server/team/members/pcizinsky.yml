@@ -5,7 +5,7 @@ parameters:
         pcizinsky:
           enabled: true
           name: pcizinsky
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Pavel Cizinsky
           home: /home/pcizinsky
           email: pcizinsky@mirantis.com

@@ -9,8 +9,6 @@ parameters:
           full_name: Michael Petersen
           home: /home/mpetersen
           email: mpetersen@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

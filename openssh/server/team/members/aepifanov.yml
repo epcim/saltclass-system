@@ -9,8 +9,6 @@ parameters:
           full_name: Andrey Epifanov
           home: /home/aepifanov
           email: aepifanov@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

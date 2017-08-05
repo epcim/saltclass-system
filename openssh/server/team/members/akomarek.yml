@@ -5,7 +5,7 @@ parameters:
         newt:
           enabled: true
           name: newt
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Ales Komarek
           home: /home/newt
           email: mail@newt.cz

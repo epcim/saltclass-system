@@ -9,8 +9,6 @@ parameters:
           full_name: Eugene Nikanorov
           home: /home/enikanorov
           email: enikanorov@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

@@ -9,8 +9,6 @@ parameters:
           full_name: Anton Tarasov
           home: /home/atarasov
           email: atarasov@mirantis.com
-          groups:
-          - supportl2
   openssh:
     server:
       enabled: true

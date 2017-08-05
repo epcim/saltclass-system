@@ -5,7 +5,7 @@ parameters:
         cade:
           enabled: true
           name: cade
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Cade Ekblad-Frank
           home: /home/cade
           email: cade@mirantis.com

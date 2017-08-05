@@ -9,8 +9,6 @@ parameters:
           full_name: Anton Rodionov
           home: /home/arodionov
           email: arodionov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

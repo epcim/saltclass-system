@@ -9,8 +9,6 @@ parameters:
           full_name: Rene Soto
           home: /home/rsoto
           email: rsoto@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

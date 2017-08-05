@@ -9,8 +9,6 @@ parameters:
           full_name: Javier Diaz
           home: /home/jdiaz
           email: jdiaz@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

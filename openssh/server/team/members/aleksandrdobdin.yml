@@ -9,8 +9,6 @@ parameters:
           full_name: Aleksandr Dobdin
           home: /home/adobdin
           email: adobdin@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

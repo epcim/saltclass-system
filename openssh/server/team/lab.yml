@@ -1,5 +1,6 @@
 parameters:
   _param:
+    linux_system_user_sudo: true
     # This is the public key associated to the default private key setup in
     # openssh.client.lab
     cluster_public_key: >-

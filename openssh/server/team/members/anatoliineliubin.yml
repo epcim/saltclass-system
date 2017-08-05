@@ -9,8 +9,6 @@ parameters:
           full_name: Anatolii Neliubin
           home: /home/aneliubin
           email: aneliuubin@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

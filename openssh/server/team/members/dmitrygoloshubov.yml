@@ -9,8 +9,6 @@ parameters:
           full_name: Dmitry Goloshubov
           home: /home/dgoloshubov
           email: dgoloshubov@mirantis.com
-          groups:
-          - support
   openssh:
     server:
       enabled: true

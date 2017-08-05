@@ -5,7 +5,7 @@ parameters:
         jjosef:
           enabled: true
           name: jjosef
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Jakub Josef
           home: /home/jjosef
           email: jakub.josef@gmail.com

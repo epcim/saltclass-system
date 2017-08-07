@@ -1,8 +1,6 @@
 classes:
 - service.nova.client
 parameters:
-  _param:
-    octavia_ssh_key_path: "/etc/octavia/.ssh/octavia_ssh_key.pub"
   nova:
     client:
       server:
@@ -18,4 +16,4 @@ parameters:
           endpoint_type: internalURL
           keypair:
             octavia_ssh_key:
-              pub_file: ${_param:octavia_ssh_key_path}
+              pub_key: ${_param:octavia_public_key}

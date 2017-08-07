@@ -27,3 +27,7 @@ parameters:
           days_valid:
             authority: ${_param:octavia_ca_days_valid_authority}
             certificate: ${_param:octavia_ca_days_valid_certificate}
+          ca_file: ${octavia:manager:certificates:ca_certificate}
+          ca_key_file: ${octavia:manager:certificates:ca_private_key}
+          user: octavia
+          group: octavia

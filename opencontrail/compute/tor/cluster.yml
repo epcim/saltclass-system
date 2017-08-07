@@ -1,0 +1,4 @@
+classes:
+- service.haproxy.proxy.single
+- service.keepalived.cluster.single
+- service.opencontrail.compute.tor.cluster

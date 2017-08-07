@@ -1,0 +1,19 @@
+parameters:
+  haproxy:
+    proxy:
+      listen:
+        contrail_tor01:
+          type: contrail-tor
+          service_name: contrail
+          binds:
+          - address: ${_param:cluster_vip_address}
+            port: 6631
+          servers:
+          - name: sw01
+            host: ${_param:cluster_node01_address}
+            port: 6632
+            params: check
+          - name: sw02
+            host: ${_param:cluster_node02_address}
+            port: 6632
+            params: check backup

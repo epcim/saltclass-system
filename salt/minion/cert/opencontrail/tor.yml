@@ -1,0 +1,14 @@
+parameters:
+  _param:
+    salt_minion_ca_authority: salt_master_ca
+  salt:
+    minion:
+      cert:
+        opencontrail_tor:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: opencontrail_tor
+          key_file: /etc/contrail/ssl/certs/tor.key
+          cert_file: /etc/contrail/ssl/certs/tor.crt
+          ca_file: /etc/contrail/ssl/certs/ca.crt
+          signing_policy: cert_open

@@ -4,46 +4,55 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       - stack_name: virtual_mcp11_contrail
+        stack_env: virtual_mcp11_contrail/devcloud
         stack_install: core,openstack,contrail
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp11_dvr
+        stack_env: virtual_mcp11_dvr/devcloud
         stack_install: core,openstack,dvr
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp11_ovs
+        stack_env: virtual_mcp11_ovs/devcloud
         stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp11_ironic_small
+        stack_env: virtual_mcp11_ironic_small/devcloud
         stack_install: core,openstack
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp11_aio
+        stack_env: virtual_mcp11_aio/devcloud
         stack_install: core,openstack
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp11_k8s_calico
+        stack_env: virtual_mcp11_k8s_calico/devcloud
         stack_install: core,k8s,calico
         stack_type: heat
         stack_test: k8s
         job_timer: "H H(0-6) * * *"
       - stack_name: virtual_mcp11_k8s_contrail
+        stack_env: virtual_mcp11_k8s_contrail/devcloud
         stack_install: core,k8s,contrail
         stack_type: heat
         stack_test: k8s
         job_timer: "H H(0-6) * * *"
       - stack_name: virtual_mcp11_contrail_nfv
+        stack_env: virtual_mcp11_contrail_nfv/devcloud
         stack_install: core,openstack,contrail
         stack_type: heat
         stack_test: ""
         job_timer: "H H(0-6) * * *"
       - stack_name: virtual_mcp11_ovs_dpdk
+        stack_env: virtual_mcp11_ovs_dpdk/devcloud
         stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""

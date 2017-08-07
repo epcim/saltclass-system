@@ -4,26 +4,31 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       - stack_name: k8s_aio_calico
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,k8s,calico
         stack_test: ""
         job_timer: ""
       - stack_name: k8s_aio_contrail
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,k8s,contrail
         stack_test: ""
         job_timer: ""
       - stack_name: k8s_ha_calico
+        stack_env: devcloud
         stack_type: aws
         stack_install: core,k8s,calico
         stack_test: ""
         job_timer: "H H(0-6) * * *"
       - stack_name: k8s_ha_calico
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,k8s,calico
         stack_test: ""
         job_timer: "H H(0-6) * * *"
       - stack_name: k8s_ha_contrail
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,k8s,contrail
         stack_test: ""

@@ -4,20 +4,24 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       - stack_name: os_aio_contrail
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,openstack,contrail
         stack_test: ""
         job_timer: ""
       - stack_name: os_aio_ovs
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,openstack,ovs
         job_timer: ""
       - stack_name: os_ha_contrail
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,openstack,contrail
         stack_test: ""
         job_timer: "H H(0-6) * * *"
       - stack_name: os_ha_ovs
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,openstack,ovs
         stack_test: ""

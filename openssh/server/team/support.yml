@@ -90,7 +90,7 @@ parameters:
             - ${linux:system:user:atarasov:name}
             - ${linux:system:user:dklepikov:name}
             - ${linux:system:user:dsutyagin:name}
-            - ${linux:system:user:ekozhemyaki:name}
+            - ${linux:system:user:ekozhemyakin:name}
             - ${linux:system:user:enikanorov:name}
             - ${linux:system:user:fsoppelsa:name}
             - ${linux:system:user:manashkin:name}

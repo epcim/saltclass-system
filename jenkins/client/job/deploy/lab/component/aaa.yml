@@ -4,6 +4,7 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       - stack_name: aaa_ha_freeipa
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,aaa
         stack_test: ""

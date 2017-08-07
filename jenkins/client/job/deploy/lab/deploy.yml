@@ -94,7 +94,7 @@ parameters:
               # heat
               HEAT_STACK_ENVIRONMENT:
                 type: string
-                default: "devcloud"
+                default: "{{stack_env}}"
               HEAT_STACK_ZONE:
                 type: string
                 default: "mcp-mk"

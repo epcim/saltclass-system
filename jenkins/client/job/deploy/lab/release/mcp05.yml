@@ -4,11 +4,13 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       - stack_name: virtual_mcp05_dvr
+        stack_env: virtual_mcp05_dvr/devcloud
         stack_install: core,openstack,dvr
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp05_ovs
+        stack_env: virtual_mcp05_ovs/devcloud
         stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""

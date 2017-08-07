@@ -4,6 +4,7 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       - stack_name: ceph_ha
+        stack_env: devcloud
         stack_type: heat
         stack_install: core,ceph
         stack_test: "ceph"

@@ -61,7 +61,7 @@ parameters:
           name: support1
           addusers:
             # L1
-            - ${linux:system:user:ardobdin:name}
+            - ${linux:system:user:adobdin:name}
             - ${linux:system:user:arubtsov:name}
             - ${linux:system:user:aneliubin:name}
             - ${linux:system:user:arodionov:name}

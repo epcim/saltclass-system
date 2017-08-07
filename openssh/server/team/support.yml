@@ -39,7 +39,6 @@ classes:
 - system.openssh.server.team.members.jmosher
 - system.openssh.server.team.members.ecantwell
 - system.openssh.server.team.members.lmercl
-- system.openssh.server.team.members.mrelewicz
 - system.openssh.server.team.members.osmola
 - system.openssh.server.team.members.pcizinsky
 - system.openssh.server.team.members.pmathews
@@ -108,7 +107,6 @@ parameters:
             - ${linux:system:users:jmosher:name}
             - ${linux:system:users:ecantwell:name}
             - ${linux:system:users:lmercl:name}
-            - ${linux:system:users:mrelewicz:name}
         support3:
           enabled: false
           name: support3

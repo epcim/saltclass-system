@@ -59,9 +59,3 @@ parameters:
             CONTEXT_PATH:
               type: string
               default: "."
-            CI_BUILD_ARG_JANITOR_MONKEY_REPO:
-              type: string
-              default: ""
-            CI_BUILD_ARG_JANITOR_MONKEY_REF:
-              type: string
-              default: ""

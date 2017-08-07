@@ -61,65 +61,64 @@ parameters:
           name: support1
           addusers:
             # L1
-            - ${linux:system:users:ardobdin:name}
-            - ${linux:system:users:arubtsov:name}
-            - ${linux:system:users:aneliubin:name}
-            - ${linux:system:users:arodionov:name}
-            - ${linux:system:users:cmay:name}
-            - ${linux:system:users:dakhmetov:name}
-            - ${linux:system:users:dkostriukov:name}
-            - ${linux:system:users:dgoloshubov:name}
-            - ${linux:system:users:jdiaz:name}
-            - ${linux:system:users:jpalmerin:name}
-            - ${linux:system:users:kfranckowski:name}
-            - ${linux:system:users:mroark:name}
-            - ${linux:system:users:mefimov:name}
-            - ${linux:system:users:mkraynov:name}
-            - ${linux:system:users:nkabanova:name}
-            - ${linux:system:users:rsoto:name}
-            - ${linux:system:users:rsafonov:name}
-            - ${linux:system:users:smachtmes:name}
-            - ${linux:system:users:zkhurasani:name}
+            - ${linux:system:user:ardobdin:name}
+            - ${linux:system:user:arubtsov:name}
+            - ${linux:system:user:aneliubin:name}
+            - ${linux:system:user:arodionov:name}
+            - ${linux:system:user:cmay:name}
+            - ${linux:system:user:dakhmetov:name}
+            - ${linux:system:user:dkostriukov:name}
+            - ${linux:system:user:dgoloshubov:name}
+            - ${linux:system:user:jdiaz:name}
+            - ${linux:system:user:jpalmerin:name}
+            - ${linux:system:user:kfranckowski:name}
+            - ${linux:system:user:mroark:name}
+            - ${linux:system:user:mefimov:name}
+            - ${linux:system:user:mkraynov:name}
+            - ${linux:system:user:nkabanova:name}
+            - ${linux:system:user:rsoto:name}
+            - ${linux:system:user:rsafonov:name}
+            - ${linux:system:user:smachtmes:name}
+            - ${linux:system:user:zkhurasani:name}
         support2:
           enabled: true
           name: support2
           addusers:
             # L2OPS
-            - ${linux:system:users:aepifanov:name}
-            - ${linux:system:users:apetrenko:name}
-            - ${linux:system:users:atarasov:name}
-            - ${linux:system:users:dklepikov:name}
-            - ${linux:system:users:dsutyagin:name}
-            - ${linux:system:users:ekozhemyaki:name}
-            - ${linux:system:users:enikanorov:name}
-            - ${linux:system:users:fsoppelsa:name}
-            - ${linux:system:users:manashkin:name}
-            - ${linux:system:users:nkondra:name}
-            - ${linux:system:users:obryndzii:name}
-            - ${linux:system:users:oliemieshko:name}
-            - ${linux:system:users:sovsianikov:name}
+            - ${linux:system:user:aepifanov:name}
+            - ${linux:system:user:apetrenko:name}
+            - ${linux:system:user:atarasov:name}
+            - ${linux:system:user:dklepikov:name}
+            - ${linux:system:user:dsutyagin:name}
+            - ${linux:system:user:ekozhemyaki:name}
+            - ${linux:system:user:enikanorov:name}
+            - ${linux:system:user:fsoppelsa:name}
+            - ${linux:system:user:manashkin:name}
+            - ${linux:system:user:nkondra:name}
+            - ${linux:system:user:obryndzii:name}
+            - ${linux:system:user:oliemieshko:name}
+            - ${linux:system:user:sovsianikov:name}
             # L2OPS SRE
-            - ${linux:system:users:pmichalec:name}
-            - ${linux:system:users:pmathews:name}
-            - ${linux:system:users:pcizinsky:name}
-            - ${linux:system:users:osmola:name}
-            - ${linux:system:users:cade:name}
-            - ${linux:system:users:jmosher:name}
-            - ${linux:system:users:ecantwell:name}
-            - ${linux:system:users:lmercl:name}
+            - ${linux:system:user:pmichalec:name}
+            - ${linux:system:user:pmathews:name}
+            - ${linux:system:user:pcizinsky:name}
+            - ${linux:system:user:osmola:name}
+            - ${linux:system:user:cade:name}
+            - ${linux:system:user:jmosher:name}
+            - ${linux:system:user:ecantwell:name}
+            - ${linux:system:user:lmercl:name}
         support3:
           enabled: false
           name: support3
           addusers:
-            - ${linux:system:users:pmichalec:name}
-            - ${linux:system:users:pmathews:name}
-            - ${linux:system:users:pcizinsky:name}
-            - ${linux:system:users:osmola:name}
-            - ${linux:system:users:cade:name}
-            - ${linux:system:users:jmosher:name}
-            - ${linux:system:users:ecantwell:name}
-            - ${linux:system:users:lmercl:name}
-            - ${linux:system:users:mrelewicz:name}
+            - ${linux:system:user:pmichalec:name}
+            - ${linux:system:user:pmathews:name}
+            - ${linux:system:user:pcizinsky:name}
+            - ${linux:system:user:osmola:name}
+            - ${linux:system:user:cade:name}
+            - ${linux:system:user:jmosher:name}
+            - ${linux:system:user:ecantwell:name}
+            - ${linux:system:user:lmercl:name}
       sudo:
         enabled: true
         aliases:

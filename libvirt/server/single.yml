@@ -1,0 +1,7 @@
+parameters:
+  linux:
+    system:
+      group:
+        libvirtd:
+          enabled: true
+          name: libvirtd

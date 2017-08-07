@@ -1,3 +1,8 @@
+classes:
+- system.openssh.server.team.members.mceloud
+- system.openssh.server.team.members.pjediny
+- system.openssh.server.team.members.skreys
+- system.openssh.server.team.members.smatov
 parameters:
   _param:
     linux_system_user_sudo: true

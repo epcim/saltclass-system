@@ -3,9 +3,11 @@ classes:
 parameters:
   _param:
     docker_gwbridge_subnet: 10.20.0.0/16
+    docker_swarm_master_port: 2377
   docker:
     swarm:
       role: worker
       advertise_addr: ${_param:single_address}
       master:
         host: ${_param:cluster_node01_address}
+        port: ${_param:docker_swarm_master_port}

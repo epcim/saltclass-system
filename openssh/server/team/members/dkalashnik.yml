@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        dkalashnik:
+          enabled: true
+          name: dkalashnik
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Dmitry Kalashnik
+          home: /home/dkalashnik
+          email: dkalashnik@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        dkalashnik:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAyz5ovMK/rRxlhiy7x4dVwFkUqN/hhdVIpsQRQoGgTOjVhH6Y+eTE3si0RRq/HKZMwkcClJIqzMgjoajT5eQQphQrAAn2pwuCyZj0mXJJ1RSXQm+nSnhoqyB1r7Nl3keopgxrDlBLWyvyS3dJM9RJy4TimIwhuSA3qdhmfeqRm5M=
+          user: ${linux:system:user:dkalashnik}

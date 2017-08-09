@@ -63,10 +63,6 @@ parameters:
               OPENSTACK_API_URL:
                 type: string
                 default: "https://cloud-cz.bud.mirantis.net:5000"
-              TARGET_OPENSTACK_IP:
-                type: string
-                default: "${_param:oss_target_openstack_ip}"
-                description: "IP address of the OpenStack deployment, managed by OSS tooling"
               OPENSTACK_API_CREDENTIALS:
                 type: string
                 default: "openstack-devcloud-credentials"

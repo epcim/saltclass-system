@@ -5,10 +5,10 @@ parameters:
   _param:
     contrail_branches: "R3.0.2.x,R3.0.3.x,R3.1,R3.1.1.x,R3.2,R3.2.3.x,R4.0,master"
     contrail_kubernetes_branches: "master,release-1.2"
-    contrail_dpdk_extra_branches: "mitaka,mitaka_dpdk_17_02,mitaka_dpdk_17_05,kilo,liberty-multiqueue,newton"
+    contrail_dpdk_extra_branches: "mitaka,mitaka_dpdk_17_02,mitaka_dpdk_17_05,kilo,liberty-multiqueue,newton,ocata"
     contrail_ceilometer_plugin_branches: "master,R4.0"
     contrail_kubernetes_branches: "master,origin-1.1,origin-1.1.3,release-1.1,release-1.2"
-    contrail_dpdk_branches: "master,R3.0.2.x,R3.0.3.x,R3.1,R3.1.1.x,R3.2,R3.2.3.x,R4.0,contrail_dpdk_17_02,contrail_dpdk_17_05,contrail_dpdk_1_7,contrail_dpdk_2_0,contrail_dpdk_2_1"
+    contrail_dpdk_branches: "master,R3.0.2.x,R3.0.3.x,R3.1,R3.1.1.x,R3.2,R3.2.3.x,R4.0,R4.0.1,contrail_dpdk_17_02,contrail_dpdk_17_05,contrail_dpdk_1_7,contrail_dpdk_2_0,contrail_dpdk_2_1"
   jenkins:
     client:
       view:

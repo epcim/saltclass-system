@@ -1,0 +1,51 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        test_service_job:
+          name: deploy-test-service
+          type: workflow-scm
+          discard:
+            build:
+              keep_num: 20
+          concurrent: true
+          display_name: "Deploy - Test services in environment"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: test-service.groovy
+          param:
+
+            # salt
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt-qa-credentials"
+            SALT_MASTER_URL:
+              type: string
+              default: ""
+
+            # test
+            TEST_K8S_API_SERVER:
+              type: string
+              default: "http://127.0.0.1:8080"
+            TEST_K8S_CONFORMANCE_IMAGE:
+              type: string
+              default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
+
+            TEST_TEMPEST_IMAGE:
+              type: string
+              description: "Tempest docker image"
+              default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
+            TEST_TEMPEST_TARGET:
+              type: string
+              description: "Node to run tests"
+              default: ""
+            TEST_DOCKER_INSTALL:
+              type: boolean
+              description: "Install docker on the target if true"
+              default: "true"
+            TEST_TEMPEST_PATTERN:
+              type: string
+              description: "Run tests matched to pattern only"
+              default: ""

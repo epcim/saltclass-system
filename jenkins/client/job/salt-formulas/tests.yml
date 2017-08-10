@@ -10,8 +10,9 @@ parameters:
             - name: aptcacher
             - name: aptly
             - name: artifactory
-            - name: backupninja
             - name: avinetworks
+            - name: backupninja
+            - name: barbican
             - name: billometer
             - name: bind
             - name: bird

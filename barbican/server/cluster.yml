@@ -1,0 +1,3 @@
+classes:
+- service.barbican.server.cluster
+- system.haproxy.proxy.listen.openstack.barbican

@@ -5,13 +5,17 @@ parameters:
     client:
       server:
         identity:
+          roles:
+          - creator
           project:
             service:
               user:
                 barbican:
-                  is_admin: true
                   password: ${_param:keystone_barbican_password}
                   email: ${_param:admin_email}
+                  roles:
+                  - admin
+                  - creator
           service:
             barbican:
               type: key-manager

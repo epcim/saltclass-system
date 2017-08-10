@@ -23,20 +23,30 @@ parameters:
     - /usr/sbin/visudo
     - /usr/bin/sudo
     sudo_coreutils_safe:
+    - /usr/bin/cat
     - /usr/bin/less
+    - /usr/bin/view
+    - /usr/bin/more
     - /usr/bin/grep
     - /usr/bin/fgrep
     - /usr/bin/egrep
     - /usr/bin/zgrep
+    - /usr/bin/ack
     - /usr/bin/tail
     - /usr/bin/socat
     - /usr/bin/top
+    - /usr/bin/atop
     - /usr/bin/tail
     - /usr/bin/lsof
     - /usr/bin/virsh
     - /bin/ls
     - /bin/cp
     - /bin/netstat
+    sudo_coreutils_trusted:
+    - /usr/bin/vi*
+    - /usr/bin/vim*
+    - /usr/bin/emacs*
+    - /usr/bin/nano*
     sudo_rabbitmq_safe:
     - /usr/sbin/rabbitmqctl
     - /usr/sbin/rabbitmqctl status
@@ -80,6 +90,9 @@ parameters:
     - /usr/bin/rados*
     - /usr/bin/rbd
     - /usr/sbin/gluster
+    - /usr/fdisk -l *
+    - /usr/bin/du *
+    - /bin/df *
     sudo_openstack_clients:
     - /usr/bin/openstack
     - /usr/bin/heat*

@@ -1,6 +1,12 @@
 classes:
 - service.ironic.api.cluster
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   ironic:
     api:
       enabled: true

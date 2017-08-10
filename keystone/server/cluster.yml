@@ -4,6 +4,12 @@ classes:
 - system.haproxy.proxy.listen.openstack.keystone
 - system.haproxy.proxy.listen.openstack.keystone.standalone
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   keystone:
     server:
       enabled: true

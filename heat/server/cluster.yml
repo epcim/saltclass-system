@@ -6,6 +6,12 @@ classes:
 parameters:
   _param:
     cluster_public_protocol: https
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   heat:
     server:
       stack_domain_admin:

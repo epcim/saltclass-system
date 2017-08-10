@@ -7,6 +7,12 @@ parameters:
     mysql_admin_user: root
     mysql_admin_password: password
     mysql_keystone_password: password
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   keystone:
     server:
       enabled: true

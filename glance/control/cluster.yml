@@ -4,6 +4,12 @@ classes:
 - service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.glance
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   glance:
     server:
       enabled: true

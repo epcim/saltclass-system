@@ -4,6 +4,12 @@ classes:
 - service.neutron.control.cluster
 - system.haproxy.proxy.listen.openstack.neutron
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   mysql:
     server:
       database:

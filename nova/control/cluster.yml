@@ -11,6 +11,12 @@ parameters:
     nova_ram_allocation_ratio: 1.5
     nova_disk_allocation_ratio: 1.0
     metadata_password: metadataPass
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   nova:
     controller:
       enabled: true

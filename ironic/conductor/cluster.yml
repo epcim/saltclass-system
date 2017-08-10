@@ -1,6 +1,12 @@
 classes:
 - service.ironic.conductor.cluster
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   ironic:
     conductor:
       api_url: 'http://${_param:cluster_baremetal_vip_address}:6385'

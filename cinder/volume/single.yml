@@ -1,6 +1,12 @@
 classes:
 - service.cinder.volume.single
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   cinder:
     volume:
       enabled: True

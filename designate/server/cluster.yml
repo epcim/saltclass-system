@@ -4,6 +4,12 @@ classes:
 - system.haproxy.proxy.listen.openstack.designate
 - service.haproxy.proxy.single
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   designate:
     _support:
       sensu:

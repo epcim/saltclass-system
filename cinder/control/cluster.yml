@@ -4,6 +4,12 @@ classes:
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.cinder
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   cinder:      
     volume:
       enabled: false

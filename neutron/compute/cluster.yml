@@ -3,6 +3,12 @@ classes:
 parameters:
   _param:
     neutron_enable_qos: False
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   neutron:
     compute:
       dvr: ${_param:neutron_compute_dvr}

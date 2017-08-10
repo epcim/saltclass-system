@@ -1,6 +1,12 @@
 classes:
 - service.glance.control.single
 parameters:
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   glance:
     server:
       database:

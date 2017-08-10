@@ -19,8 +19,8 @@ parameters:
             - name: ${_param:cluster_node02_hostname}
               host: ${_param:cluster_node02_address}
               port: ${_param:haproxy_radosgw_source_port}
-              params: backup check
+              params: check
             - name: ${_param:cluster_node03_hostname}
               host: ${_param:cluster_node03_address}
               port: ${_param:haproxy_radosgw_source_port}
-              params: backup check
+              params: check

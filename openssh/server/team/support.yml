@@ -51,8 +51,10 @@ parameters:
       group:
         supportl1:
           enabled: false
+          name: supportl1
         supportl2:
           enabled: false
+          name: supportl2
         support0:
           enabled: true
           name: support0

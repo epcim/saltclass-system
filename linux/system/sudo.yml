@@ -22,6 +22,7 @@ parameters:
     - /bin/su
     - /usr/sbin/visudo
     - /usr/bin/sudo
+    - /bin/bash
     sudo_coreutils_safe:
     - /usr/bin/less
     - /usr/bin/grep

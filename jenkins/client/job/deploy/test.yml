@@ -36,10 +36,10 @@ parameters:
             TEST_TEMPEST_IMAGE:
               type: string
               description: "Tempest docker image"
-              default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
+              default: "obutenko/rally_tempest_docker"
             TEST_TEMPEST_TARGET:
               type: string
-              description: "Node to run tests"
+              description: "Node to run tests. use FQDN for ctl01 e.g. ctl01.deploy-heat-os_ha_contrail-17.bud-mk.local"
               default: ""
             TEST_DOCKER_INSTALL:
               type: boolean
@@ -47,5 +47,13 @@ parameters:
               default: "true"
             TEST_TEMPEST_PATTERN:
               type: string
-              description: "Run tests matched to pattern only"
-              default: ""
+              description: "Run tests matched to pattern only e.g. tempest.api.identity"
+              default: "false"
+            TEST_SERVICE:
+              type: string
+              description: "openstack or k8s"
+              default: "openstack"
+            TEST_JUNIT_RATIO:
+              type: string
+              description: "The amplification factor to apply to test failures when computing the test result contribution to the build health score."
+              default: "1.0"

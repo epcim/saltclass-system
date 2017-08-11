@@ -82,6 +82,7 @@ parameters:
         - new java.util.HashMap
         - staticField groovy.io.FileType FILES
         - staticMethod com.cloudbees.plugins.credentials.CredentialsProvider lookupCredentials java.lang.Class hudson.model.ItemGroup
+        - staticMethod java.lang.Double parseDouble java.lang.String
         - staticMethod java.lang.Integer valueOf int
         - staticMethod java.lang.Integer valueOf java.lang.String
         - staticMethod java.lang.Math min int int

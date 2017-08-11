@@ -5,7 +5,7 @@ parameters:
         dkostriukov:
           enabled: true
           name: dkostriukov
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Denis Kostriukov
           home: /home/dkostriukov
           email: dkostryukov@mirantis.com

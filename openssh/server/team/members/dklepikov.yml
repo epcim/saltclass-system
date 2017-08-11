@@ -5,7 +5,7 @@ parameters:
         dklepikov:
           enabled: true
           name: dklepikov
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Denys Klepikov
           home: /home/dklepikov
           email: dklepikov@mirantis.com

@@ -5,7 +5,7 @@ parameters:
         cmay:
           enabled: true
           name: cmay
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Collin May
           home: /home/cmay
           email: cmay@mirantis.com

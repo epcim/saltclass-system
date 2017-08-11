@@ -5,7 +5,7 @@ parameters:
         arubtsov:
           enabled: true
           name: arubtsov
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Aleksandr Rubtsov
           home: /home/arubtsov
           email: arubtsov@mirantis.com

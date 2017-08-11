@@ -5,7 +5,7 @@ parameters:
         dlapshin:
           enabled: true
           name: dlapshin
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Daniil Lapshin
           home: /home/dlapshin
           email: dlapshin@mirantis.com

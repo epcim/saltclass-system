@@ -93,3 +93,4 @@ parameters:
       user:
         public_key: ${_param:nova_compute_ssh_public}
         private_key: ${_param:nova_compute_ssh_private}
+      my_ip: ${_param:single_address}

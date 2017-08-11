@@ -18,6 +18,18 @@ parameters:
               script: test-func-devops-portal-pipeline.groovy
             param:
               # heat
+              HEAT_STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: "Delete heat stack at the end of job"
+              HEAT_STACK_REUSE:
+                type: boolean
+                default: 'false'
+                description: "Reuse existing stack and only orchestrate deployment"
+              HEAT_STACK_KEEP_INTACT:
+                type: boolean
+                default: 'false'
+                description: "Save current deployment status without re-orchestrating"
               HEAT_TEMPLATE_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
@@ -42,14 +54,6 @@ parameters:
               HEAT_STACK_PUBLIC_NET:
                 type: string
                 default: "public"
-              HEAT_STACK_DELETE:
-                type: boolean
-                default: 'true'
-                description: "Delete heat stack at the end of job"
-              HEAT_STACK_REUSE:
-                type: boolean
-                default: 'false'
-                description: "Reuse existing stack and only orchestrate deployment"
 
               # salt master
               SALT_MASTER_CREDENTIALS:

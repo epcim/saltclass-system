@@ -1,0 +1,49 @@
+parameters:
+  jenkins:
+    client:
+      view:
+        Validation:
+          enabled: true
+          type: ListView
+          include_regex: "validate.*"
+      job:
+        validate_openstack:
+          type: workflow-scm
+          name: validate-openstack
+          display_name: "Validate - Openstack"
+          discard:
+            build:
+              keep_num: 20
+            artifact:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: validate-cloud.groovy
+
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: ""
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            TEST_IMAGE:
+              type: string
+              default: "docker-prod-local.artifactory.mirantis.com/mirantis/oss/qa-tools"
+            TARGET_NODE:
+              type: string
+              default: ""
+            RUN_RALLY_TESTS:
+              type: boolean
+              default: 'true'
+            RUN_TEMPEST_TESTS:
+              type: boolean
+              default: 'true'
+            TEMPEST_TEST_SET:
+              type: choice
+              choices:
+                - smoke
+                - full

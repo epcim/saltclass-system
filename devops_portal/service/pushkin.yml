@@ -4,7 +4,8 @@ parameters:
       service:
         pushkin:
           configure_proxy: true
+          resolve_hostname: true
           endpoint:
-            address: ${_param:haproxy_pushkin_bind_host}
-            port: ${_param:haproxy_pushkin_bind_port}
-            https: ${_param:haproxy_pushkin_ssl:enabled}
+            address: ${_param:pushkin_bind_host}
+            port: ${_param:pushkin_bind_port}
+            https: ${_param:pushkin_ssl:enabled}

@@ -2,12 +2,16 @@ parameters:
   _param:
     docker_rundeck_replicas: 1
     docker_image_rundeck: docker-prod-local.artifactory.mirantis.com/mirantis/oss/rundeck:latest
+    rundeck_bind_host: rundeck-api
+    rundeck_bind_port: ${_param:haproxy_rundeck_bind_port}
+    rundeck_ssl:
+      enabled: false
   docker:
     client:
       stack:
         rundeck:
           service:
-            rundeck:
+            rundeck-api:
               image: ${_param:docker_image_rundeck}
               deploy:
                 replicas: ${_param:docker_rundeck_replicas}
@@ -25,3 +29,7 @@ parameters:
                 - /srv/volumes/rundeck/logs:/var/lib/rundeck/logs
                 - /srv/volumes/rundeck/plugins:/opt/rundeck-plugins
                 - /srv/volumes/rundeck/storage:/var/lib/rundeck/var/storage
+          network:
+            default:
+              external:
+                name: oss_backend

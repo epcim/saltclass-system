@@ -4,15 +4,19 @@ parameters:
     docker_security_monkey_scheduler_replicas: 1
     docker_image_security_monkey_api: docker-prod-local.artifactory.mirantis.com/mirantis/oss/security-monkey-api
     docker_image_security_monkey_scheduler: docker-prod-local.artifactory.mirantis.com/mirantis/oss/security-monkey-scheduler
+    security_monkey_bind_host: security-audit-api
+    security_monkey_bind_port: ${_param:haproxy_security_monkey_bind_port}
+    security_monkey_ssl:
+      enabled: false
     security_monkey_db: secmonkey
-    notification_service_url: http://${_param:haproxy_pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
+    notification_service_url: http://${_param:pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
     security_monkey_user: devopsportal@devopsportal.local
     security_monkey_password: devopsportal
     security_monkey_role: Justify
-    security_monkey_fqdn: ${_param:haproxy_security_monkey_bind_host}
-    security_monkey_web_port: ${_param:haproxy_security_monkey_bind_port}
-    security_monkey_api_port: ${_param:haproxy_security_monkey_bind_port}
-    security_monkey_nginx_port: ${_param:haproxy_security_monkey_bind_port}
+    security_monkey_fqdn: ${_param:security_monkey_bind_host}
+    security_monkey_web_port: ${_param:security_monkey_bind_port}
+    security_monkey_api_port: ${_param:security_monkey_bind_port}
+    security_monkey_nginx_port: ${_param:security_monkey_bind_port}
     devops_portal_sm_wtf_csrf_enabled: False
     security_monkey_sync_interval: 15
     security_monkey_openstack:
@@ -32,7 +36,7 @@ parameters:
             SECURITY_MONKEY_POSTGRES_USER: ${_param:secmonkey_db_user}
             SECURITY_MONKEY_POSTGRES_PASSWORD: ${_param:secmonkey_db_user_password}
             SECURITY_MONKEY_POSTGRES_HOST: ${_param:secmonkey_db_host}
-            SECURITY_MONKEY_POSTGRES_PORT: ${_param:haproxy_postgresql_bind_port}
+            SECURITY_MONKEY_POSTGRES_PORT: ${_param:postgresql_bind_port}
             SECURITY_MONKEY_FQDN: ${_param:security_monkey_fqdn}
             WEB_PORT: ${_param:security_monkey_web_port}
             API_PORT: ${_param:security_monkey_api_port}
@@ -54,7 +58,7 @@ parameters:
             SQLALCHEMY_DATABASE_URI: postgresql://${_param:secmonkey_db_user}:${_param:secmonkey_db_user_password}@${_param:secmonkey_db_host}:${_param:haproxy_postgresql_bind_port}/${_param:security_monkey_db}
             SQLALCHEMY_POOL_RECYCLE: 14400
           service:
-            api:
+            security-audit-api:
               image: ${_param:docker_image_security_monkey_api}
               deploy:
                 replicas: ${_param:docker_security_monkey_api_replicas}
@@ -64,7 +68,7 @@ parameters:
                 - ${_param:haproxy_security_monkey_exposed_port}:${_param:haproxy_security_monkey_bind_port}
               volumes:
                 - /srv/volumes/security_monkey/logs:/var/log/security_monkey/logs
-            scheduler:
+            security-audit-scheduler:
               image: ${_param:docker_image_security_monkey_scheduler}
               deploy:
                 replicas: ${_param:docker_security_monkey_scheduler_replicas}
@@ -72,3 +76,7 @@ parameters:
                   condition: any
               volumes:
                 - /srv/volumes/security_monkey/logs:/var/log/security_monkey/logs
+          network:
+            default:
+              external:
+                name: oss_backend

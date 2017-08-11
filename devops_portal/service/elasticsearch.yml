@@ -4,7 +4,8 @@ parameters:
       service:
         elasticsearch:
           configure_proxy: true
+          resolve_hostname: true
           endpoint:
-            address: ${_param:haproxy_elasticsearch_bind_host}
-            port: ${_param:haproxy_elasticsearch_http_bind_port}
-            https: ${_param:haproxy_elasticsearch_ssl:enabled}
+            address: ${_param:elasticsearch_bind_host}
+            port: ${_param:elasticsearch_http_bind_port}
+            https: ${_param:elasticsearch_ssl:enabled}

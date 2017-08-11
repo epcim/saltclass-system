@@ -18,3 +18,9 @@ parameters:
               volumes:
                 - /srv/volumes/devops_portal/nginx:/etc/nginx/config
                 - /srv/volumes/devops_portal/config:/opt/devops-portal/config
+          network:
+            default:
+              external:
+                name: oss_backend
+            frontend:
+              driver: overlay

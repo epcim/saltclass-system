@@ -12,6 +12,8 @@ parameters:
         - method groovy.json.JsonSlurperClassic parseText java.lang.String
         - method groovy.lang.GString getBytes
         - method groovy.lang.GroovyObject getProperty java.lang.String
+        - method groovy.util.Node attributes
+        - method groovy.util.XmlParser parse java.io.File
         - method hudson.PluginManager getPlugins
         - method hudson.PluginWrapper getShortName
         - method hudson.model.Item getName
@@ -68,6 +70,7 @@ parameters:
         - new groovy.json.JsonBuilder
         - new groovy.json.JsonBuilder java.lang.Object
         - new groovy.json.JsonSlurperClassic
+        - new groovy.util.XmlParser
         - new java.io.File java.lang.String
         - new java.io.IOException java.lang.String
         - new java.io.OutputStreamWriter java.io.OutputStream

@@ -15,12 +15,121 @@ parameters:
           ldap_searchFilter: ${_param:artifactory_security_ldap_searchFilter}
           ssl_verify: False
         repo:
-          local_artifactory_repo:
-            name: local_artifactory_repo
-            package_type: generic
+          _genericRepository-local:
+            description: "Used by Jimbo"
             repo_type: local
-          remote_artifactory_repo:
-            name: remote_artifactory_repo
             package_type: generic
+          binary-dev-local:
+            description: "None"
+            repo_type: local
+            package_type: generic
+          binary-prod-local:
+            repo_type: local
+            package_type: generic
+          docker-dev-local:
+            repo_type: local
+            package_type: docker
+          docker-prod-local:
+            repo_type: local
+            package_type: docker
+          k8s-tests-images:
+            repo_type: local
+            package_type: docker
+          maven-local:
+            description: "Hosts Java libraries needed to build Docker images"
+            repo_type: local
+            package_type: maven
+          mcp-ci-images:
+            repo_type: local
+            package_type: docker
+          vm-images:
+            repo_type: local
+            package_type: generic
+          _genericRepository-remote:
+            description: "Used by Jimbo"
             repo_type: remote
-            url: "http://artifactory.mcp.mirantis.net/"
+            package_type: generic
+            url: http://localhost
+          apk-remote:
+            repo_type: remote
+            package_type: generic
+            url: http://dl-cdn.alpinelinux.org/alpine/
+          apt-docker-project:
+            repo_type: remote
+            package_type: debian
+            url: https://apt.dockerproject.org/repo
+          artifactory-pro-debian:
+            repo_type: remote
+            package_type: debian
+            url: https://jfrog.bintray.com/artifactory-pro-debs
+          debian-mariadb-remote:
+            repo_type: remote
+            package_type: debian
+            url: http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.1/debian/
+          debian-nginx:
+            repo_type: remote
+            package_type: debian
+            url: http://nginx.org/packages/debian/
+          debian-percona-remote:
+            repo_type: remote
+            package_type: debian
+            url: http://repo.percona.com/apt
+          debian-rabbitmq-remote:
+            repo_type: remote
+            package_type: debian
+            url: http://www.rabbitmq.com/debian/
+          debian-remote:
+            repo_type: remote
+            package_type: debian
+            url: http://ftp.us.debian.org/debian
+          debian-security-remote:
+            repo_type: remote
+            package_type: debian
+            url: http://security.debian.org/
+          docker-remote:
+            description: "Remote repository for DockerHub"
+            repo_type: remote
+            package_type: docker
+            url: https://registry-1.docker.io/
+          gcs-remote:
+            description: "Has zero downloads. Can be removed."
+            repo_type: remote
+            package_type: generic
+            url: https://storage.googleapis.com
+          gerrit-plugins:
+            description: "Overlaps with maven-local. We should resolve overlap and remove this repo."
+            repo_type: remote
+            package_type: generic
+            url: http://builds.quelltextlich.at/gerrit/nightly
+          jcenter:
+            repo_type: remote
+            package_type: maven
+            url: https://jcenter.bintray.com
+          jenkins-deb-pkgs:
+            repo_type: remote
+            package_type: generic
+            url: https://pkg.jenkins.io/debian-stable/binary
+          jenkins-plugins:
+            repo_type: remote
+            package_type: generic
+            url: http://mirrors.jenkins-ci.org/plugins
+          jenkins-plugins-jars:
+            repo_type: remote
+            package_type: maven
+            url: https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/
+          jenkins-updates:
+            repo_type: remote
+            package_type: generic
+            url: https://updates.jenkins.io/
+          mysql-connector-java:
+            repo_type: remote
+            package_type: maven
+            url: http://repo.jfrog.org/artifactory/remote-repos/mysql/mysql-connector-java/
+          pypi-remote:
+            repo_type: remote
+            package_type: pypi
+            url: https://pypi.python.org
+          ubuntu-remote:
+            repo_type: remote
+            package_type: debian
+            url: http://us.archive.ubuntu.com/ubuntu/

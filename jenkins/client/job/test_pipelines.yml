@@ -46,7 +46,7 @@ parameters:
                 default: "niaquinto/gradle"
               GRADLE_CMD:
                 type: string
-                default: "check"
+                default: "check --info"
               DEFAULT_GIT_URL:
                   type: string
                   description: "Run against alternate system reclass"

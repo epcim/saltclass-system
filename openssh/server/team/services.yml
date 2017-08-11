@@ -1,0 +1,9 @@
+classes:
+- system.linux.system.sudo
+- system.openssh.server.team.members.mniedbala
+parameters:
+  linux:
+    system:
+      user:
+        mniedbala:
+          sudo: true

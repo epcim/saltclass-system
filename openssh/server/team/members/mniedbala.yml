@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        mniedbala:
+          enabled: true
+          name: mniedbala
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Mikolaj Niedbala
+          home: /home/mniedbala
+          email: mniedbala@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        mniedbala:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNepHgtflir2vNW+h9cr3hP3llsTlg5uIvvmByykfk455Cum0vSO27mWKZJu0ebU4LXfeH+WP4MjR3tKAKvXqzjGhPVGjMO3wo4/NLlel2CDx99w0KotcjQhW6p+iqLv1AT9E5LW4Kr1NuQ65nvGn6y4SevRw2y36bNS4VJBq40HlgQFTW3oNP+5u4TVzu7QQhulsTUdQETgLswZKsarX7whgvcHvFs1dnbriZlkPXvrKhZLA/CUb7ot+ugw6KWOl+g4gTFLjnt0IXjJXMstCOL9R7/juflUku9CYFvSuq4/T67yMW7XntQ89VkwudSCMjjUWg6ilEG0ghd9+b3bPr mniedbala@mirantis.com
+          user: ${linux:system:user:mniedbala}

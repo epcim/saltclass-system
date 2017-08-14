@@ -5,7 +5,7 @@ parameters:
         apetrenko:
           enabled: true
           name: apetrenko
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Andrii Petrenko
           home: /home/apetrenko
           email: apetrenko@mirantis.com

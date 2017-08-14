@@ -5,7 +5,7 @@ parameters:
         mroark:
           enabled: true
           name: mroark
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Matthew Roark
           home: /home/mroark
           email: mroark@mirantis.com

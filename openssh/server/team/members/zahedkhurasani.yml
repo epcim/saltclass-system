@@ -5,7 +5,7 @@ parameters:
         zkhurasani:
           enabled: true
           name: zkhurasani
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Zahed Khurasani
           home: /home/zkhurasani
           email: zkhurasani@mirantis.com

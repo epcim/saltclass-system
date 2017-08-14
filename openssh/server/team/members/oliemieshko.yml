@@ -5,7 +5,7 @@ parameters:
         oliemieshko:
           enabled: true
           name: oliemieshko
-          sudo: false
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Oleksandr Liemieshko
           home: /home/oliemieshko
           email: oliemieshko@mirantis.com

@@ -73,6 +73,16 @@ parameters:
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               credentials: "gerrit"
               script: test-system-reclass-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  salt-models/{{name}}:
+                    branches:
+                      - master
+                event:
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(recheck|reverify)'
             concurrent: true
             param:
               TEST_MODELS:
@@ -85,6 +95,9 @@ parameters:
               DEFAULT_GIT_REF:
                 type: string
                 default: master
+              PARALLEL_NODE_GROUP_SIZE:
+                type: string
+                default: "5"
         test_salt_model_cookiecutter:
           name: test-salt-model-cookiecutter-{{cookiecutter_template}}
           jobs:

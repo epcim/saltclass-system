@@ -9,3 +9,9 @@ parameters:
         stack_install: core,ceph
         stack_test: "ceph"
         job_timer: ""
+      - stack_name: ceph_ha
+        stack_env: devcloud
+        stack_type: aws
+        stack_install: core,ceph
+        stack_test: "ceph"
+        job_timer: ""

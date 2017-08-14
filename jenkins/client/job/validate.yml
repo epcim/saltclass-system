@@ -42,8 +42,17 @@ parameters:
             RUN_TEMPEST_TESTS:
               type: boolean
               default: 'true'
+            RUN_K8S_TESTS:
+              type: boolean
+              default: 'true'
             TEMPEST_TEST_SET:
               type: choice
               choices:
                 - smoke
                 - full
+            TEST_K8S_API_SERVER:
+              type: string
+              default: "http://127.0.0.1:8080"
+            TEST_K8S_CONFORMANCE_IMAGE:
+              type: string
+              default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"

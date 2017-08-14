@@ -1,0 +1,19 @@
+classes:
+- system.openssh.server.team.members.akomarek
+- system.openssh.server.team.members.atengler
+- system.openssh.server.team.members.fpytloun
+- system.openssh.server.team.members.jbroulik
+- system.openssh.server.team.members.jcach
+- system.openssh.server.team.members.jjosef
+- system.openssh.server.team.members.jpavlik
+- system.openssh.server.team.members.mpolreich
+- system.openssh.server.team.members.rfelkl
+- system.openssh.server.team.members.tkukral
+- system.openssh.server.team.members.psvimbersky
+
+parameters:
+  _param:
+    linux_system_user_sudo: true
+  openssh:
+    server:
+      enabled: true

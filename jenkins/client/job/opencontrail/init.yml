@@ -27,6 +27,8 @@ parameters:
               naming_rule: "R3.1.1.x"
             - group_regex: "build-opencontrail-oc32-.*"
               naming_rule: "R3.2"
+            - group_regex: "build-opencontrail-oc323-.*"
+              naming_rule: "R3.2.3.x"
             - group_regex: "build-opencontrail-oc40-.*"
               naming_rule: "R4.0"
             - group_regex: "build-opencontrail-oc666-.*"

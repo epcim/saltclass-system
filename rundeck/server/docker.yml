@@ -8,6 +8,7 @@ parameters:
     rundeck_postgresql_database: rundeck
     rundeck_postgresql_host: ${_param:control_vip_address}
     rundeck_postgresql_port: 5432
+    rundeck_server_ssh_timeout: 300000
   rundeck:
     server:
       user:
@@ -30,3 +31,4 @@ parameters:
         user: ${_param:rundeck_runbook_user}
         private_key: ${_param:rundeck_runbook_private_key}
         public_key: ${_param:rundeck_runbook_public_key}
+        timeout: ${_param:rundeck_server_ssh_timeout}

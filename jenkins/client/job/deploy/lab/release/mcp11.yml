@@ -28,8 +28,8 @@ parameters:
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp11_aio
-        stack_env: virtual_mcp11_aio/devcloud
-        stack_install: core,openstack
+        stack_env: devcloud
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""

@@ -29,13 +29,13 @@ parameters:
               description: OSDs on this HOST will be removed from cluster
             OSD:
               type: all
-              description: These OSDs at HOST will be removed
+              description: These OSDs at HOST will be removed (comma-separated list)
             ADMIN_HOST:
               type: string
               description: Host with admin keyring and access to cluster management
             CLUSTER_FLAGS:
               type: string
-              description: Flags to be aplied before pipeline and after pipeline
+              description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
             WAIT_FOR_HEALTHY:
               type: boolean
               default: 'false'

@@ -12,7 +12,7 @@ parameters:
           name: root
           home: /root
       package:
-          python-msgpack:
+        python-msgpack:
           version: latest
         cloud-init:
           version: purged

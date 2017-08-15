@@ -95,11 +95,11 @@ parameters:
                 - ${prometheus:server:dir:config}:${_param:prometheus_server_config_directory}
                 - ${prometheus:server:dir:data}:${_param:prometheus_server_data_directory}
               environment:
-                config_dir: ${_param:prometheus_server_config_directory}
-                data_dir: ${_param:prometheus_server_data_directory}
-                bind_port: ${prometheus:server:bind:port}
-                bind_address: ${prometheus:server:bind:address}
-                storage_local_engine: ${prometheus:server:storage:local:engine}
-                storage_local_retention: ${prometheus:server:storage:local:retention}
-                storage_local_target_heap_size: ${prometheus:server:storage:local:target_heap_size}
-                storage_local_num_fingerprint_mutexes: ${prometheus:server:storage:local:num_fingerprint_mutexes}
+                PROMETHEUS_CONFIG_DIR: ${_param:prometheus_server_config_directory}
+                PROMETHEUS_DATA_DIR: ${_param:prometheus_server_data_directory}
+                PROMETHEUS_BIND_PORT: ${prometheus:server:bind:port}
+                PROMETHEUS_BIND_ADDRESS: ${prometheus:server:bind:address}
+                PROMETHEUS_STORAGE_LOCAL_ENGINE: ${prometheus:server:storage:local:engine}
+                PROMETHEUS_STORAGE_LOCAL_RETENTION: ${prometheus:server:storage:local:retention}
+                PROMETHEUS_STORAGE_LOCAL_TARGET_HEAP_SIZE: ${prometheus:server:storage:local:target_heap_size}
+                PROMETHEUS_STORAGE_LOCAL_NUM_FINGERPRINT_MUTEXES: ${prometheus:server:storage:local:num_fingerprint_mutexes}

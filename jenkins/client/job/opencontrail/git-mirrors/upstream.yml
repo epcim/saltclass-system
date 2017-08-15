@@ -62,7 +62,18 @@ parameters:
               github:
                 url: "https://github.com/Mirantis/{{name}}"
             trigger:
-              github:
+              gerrit:
+                project:
+                  contrail/{{name}}:
+                    branches:
+                      - master
+                message:
+                  build_successful: "Build successful"
+                  build_unstable: "Build unstable"
+                  build_failure: "Build failed"
+                event:
+                  ref:
+                    - updated
             param:
               SOURCE_URL:
                 type: string

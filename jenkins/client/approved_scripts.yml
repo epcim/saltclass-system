@@ -126,3 +126,4 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.lang.Object java.lang.String
         - method java.io.File listFiles
         - method java.lang.String concat java.lang.String
+        - method org.jenkinsci.plugins.workflow.steps.FlowInterruptedException getCauses

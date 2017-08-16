@@ -3,6 +3,7 @@ parameters:
     system:
       repo:
         docker:
-          source: 'deb [arch=amd64] https://download.docker.com/linux/${_param:linux_distrib_codename}/ ${_param:linux_system_codename} stable'
+          source: "deb https://apt.dockerproject.org/repo ubuntu-${_param:linux_system_codename} main"
           architectures: amd64
-          key_url: https://download.docker.com/linux/${_param:linux_distrib_codename}/gpg
+          key_id: 58118E89F3A912897C070ADBF76221572C52609D
+          key_server: keyserver.ubuntu.com

@@ -4,9 +4,6 @@ classes:
 parameters:
   docker:
     host:
-      pkgs:
-        - docker-ce
-        - python-docker
       experimental: true
       insecure_registries:
         - ${_param:cluster_vip_address}:5000

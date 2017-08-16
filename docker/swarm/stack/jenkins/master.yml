@@ -1,6 +1,6 @@
 parameters:
   _param:
-    docker_image_jenkins: tcpcloud/jenkins:2.71
+    docker_image_jenkins: tcpcloud/jenkins:2.73
     jenkins_master_extra_opts: ""
     jenkins_master_executors_num: 4
   docker:

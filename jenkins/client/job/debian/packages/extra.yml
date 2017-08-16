@@ -97,6 +97,10 @@ parameters:
               dist: trusty
               build: jmx-exporter
               branch: master
+            - package: python-bitstring
+              dist: trusty
+              build: pipeline
+              branch: debian/trusty
             - package: librdkafka
               dist: xenial
               build: pipeline

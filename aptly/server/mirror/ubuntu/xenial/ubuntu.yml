@@ -2,12 +2,13 @@ parameters:
   _param:
     linux_system_country_code_default: cz
     linux_system_country_code: ${_param:linux_system_country_code_default}
+    aptly_server_mirror_ubuntu_xenial_sources: ${_param:aptly_server_mirror_ubuntu_sources}
   aptly:
     server:
       mirror:
         # xenial
         xenial-main:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: main
@@ -21,7 +22,7 @@ parameters:
             distributions:
               - ubuntu/xenial
         xenial-multiverse:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: multiverse
@@ -35,7 +36,7 @@ parameters:
             distributions:
               - ubuntu/xenial
         xenial-restricted:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: restricted
@@ -49,7 +50,7 @@ parameters:
             distributions:
               - ubuntu/xenial
         xenial-universe:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial
           components: universe
@@ -65,7 +66,7 @@ parameters:
 
         # xenial-updates
         xenial-updates-main:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: main
@@ -79,7 +80,7 @@ parameters:
             distributions:
               - ubuntu/xenial-updates
         xenial-updates-multiverse:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: multiverse
@@ -93,7 +94,7 @@ parameters:
             distributions:
               - ubuntu/xenial-updates
         xenial-updates-restricted:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: restricted
@@ -107,7 +108,7 @@ parameters:
             distributions:
               - ubuntu/xenial-updates
         xenial-updates-universe:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-updates
           components: universe
@@ -123,7 +124,7 @@ parameters:
 
         #xenial-security:
         xenial-security-main:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: main
@@ -137,7 +138,7 @@ parameters:
             distributions:
               - ubuntu/xenial-security
         xenial-security-multiverse:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: multiverse
@@ -151,7 +152,7 @@ parameters:
             distributions:
               - ubuntu/xenial-security
         xenial-security-restricted:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: restricted
@@ -165,7 +166,7 @@ parameters:
             distributions:
               - ubuntu/xenial-security
         xenial-security-universe:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-security
           components: universe
@@ -181,7 +182,7 @@ parameters:
 
         #xenial-proposed:
         xenial-proposed-main:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
           components: main
@@ -195,7 +196,7 @@ parameters:
             distributions:
               - ubuntu/xenial-proposed
         xenial-proposed-multiverse:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-proposed
           components: multiverse
@@ -263,7 +264,7 @@ parameters:
             distributions:
               - ubuntu/xenial-backports
         xenial-backports-restricted:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports
           components: restricted
@@ -277,7 +278,7 @@ parameters:
             distributions:
               - ubuntu/xenial-backports
         xenial-backports-universe:
-          sources: true
+          sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: xenial-backports
           components: universe

@@ -1,6 +1,7 @@
 parameters:
   _param:
     linux_system_country_code: cz
+    aptly_server_mirror_ubuntu_trusty_sources: ${_param:aptly_server_mirror_ubuntu_sources}
   aptly:
     server:
       mirror:
@@ -8,6 +9,7 @@ parameters:
         trusty-main:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: trusty
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           components: main
           architectures: amd64
           gpgkeys:
@@ -21,6 +23,7 @@ parameters:
         trusty-multiverse:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
           distribution: trusty
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           components: multiverse
           architectures: amd64
           gpgkeys:
@@ -33,6 +36,7 @@ parameters:
               - ubuntu/trusty
         trusty-restricted:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty
           components: restricted
           architectures: amd64
@@ -46,6 +50,7 @@ parameters:
               - ubuntu/trusty
         trusty-universe:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty
           components: universe
           architectures: amd64
@@ -61,6 +66,7 @@ parameters:
         # trusty-updates
         trusty-updates-main:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-updates
           components: main
           architectures: amd64
@@ -74,6 +80,7 @@ parameters:
               - ubuntu/trusty-updates
         trusty-updates-multiverse:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-updates
           components: multiverse
           architectures: amd64
@@ -87,6 +94,7 @@ parameters:
               - ubuntu/trusty-updates
         trusty-updates-restricted:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-updates
           components: restricted
           architectures: amd64
@@ -100,6 +108,7 @@ parameters:
               - ubuntu/trusty-updates
         trusty-updates-universe:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-updates
           components: universe
           architectures: amd64
@@ -115,6 +124,7 @@ parameters:
         #trusty-security:
         trusty-security-main:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-security
           components: main
           architectures: amd64
@@ -128,6 +138,7 @@ parameters:
               - ubuntu/trusty-security
         trusty-security-multiverse:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-security
           components: multiverse
           architectures: amd64
@@ -141,6 +152,7 @@ parameters:
               - ubuntu/trusty-security
         trusty-security-restricted:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-security
           components: restricted
           architectures: amd64
@@ -154,6 +166,7 @@ parameters:
               - ubuntu/trusty-security
         trusty-security-universe:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-security
           components: universe
           architectures: amd64
@@ -169,6 +182,7 @@ parameters:
         #trusty-proposed:
         trusty-proposed-main:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-proposed
           components: main
           architectures: amd64
@@ -182,6 +196,7 @@ parameters:
               - ubuntu/trusty-proposed
         trusty-proposed-multiverse:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-proposed
           components: multiverse
           architectures: amd64
@@ -195,6 +210,7 @@ parameters:
               - ubuntu/trusty-proposed
         trusty-proposed-restricted:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-proposed
           components: restricted
           architectures: amd64
@@ -208,6 +224,7 @@ parameters:
               - ubuntu/trusty-proposed
         trusty-proposed-universe:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-proposed
           components: universe
           architectures: amd64
@@ -223,6 +240,7 @@ parameters:
         #trusty-backports:
         trusty-backports-main:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-backports
           components: main
           architectures: amd64
@@ -236,6 +254,7 @@ parameters:
               - ubuntu/trusty-backports
         trusty-backports-multiverse:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-backports
           components: multiverse
           architectures: amd64
@@ -249,6 +268,7 @@ parameters:
               - ubuntu/trusty-backports
         trusty-backports-restricted:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-backports
           components: restricted
           architectures: amd64
@@ -262,6 +282,7 @@ parameters:
               - ubuntu/trusty-backports
         trusty-backports-universe:
           source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
           distribution: trusty-backports
           components: universe
           architectures: amd64

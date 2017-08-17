@@ -6,6 +6,8 @@ parameters:
     aptly_gpg_keypair_id: none
     aptly_gpg_public_key: none
     aptly_gpg_private_key: none
+    aptly_server_mirror_sources: false
+    aptly_server_mirror_ubuntu_sources: ${_param:aptly_server_mirror_sources}
   aptly:
     server:
       enabled: true

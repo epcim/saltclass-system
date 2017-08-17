@@ -6,6 +6,8 @@ parameters:
   _param:
     nginx_aptly_server_host: ${linux:network:fqdn}
     aptly_server_secure: true
+    aptly_server_mirror_sources: false
+    aptly_server_mirror_ubuntu_sources: ${_param:aptly_server_mirror_sources}
   iptables:
     service:
       enabled: true

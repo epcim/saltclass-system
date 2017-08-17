@@ -8,6 +8,7 @@ parameters:
     neutron_external_mtu: 1500
     neutron_tenant_network_types: "flat,vxlan"
     neutron_enable_qos: False
+    neutron_enable_vlan_aware_vms: False
   neutron:
     server:
       plugin: ml2
@@ -15,6 +16,7 @@ parameters:
       l3_ha: ${_param:neutron_l3_ha}
       dvr: ${_param:neutron_control_dvr}
       qos: ${_param:neutron_enable_qos}
+      vlan_aware_vms: ${_param:neutron_enable_vlan_aware_vms}
       backend:
         engine: ml2
         tenant_network_types: "${_param:neutron_tenant_network_types}"

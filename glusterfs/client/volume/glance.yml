@@ -13,3 +13,20 @@ parameters:
           user: glance
           group: glance
           opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address}"
+  linux:
+    system:
+      user:
+        glance:
+          enabled: true
+          name: glance
+          uid: 302
+          gid: 302
+          home: /var/lib/glance
+          shell: /bin/false
+          system: True
+      group:
+        glance:
+          enabled: true
+          name: glance
+          gid: 302
+          system: True

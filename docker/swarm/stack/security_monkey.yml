@@ -2,8 +2,8 @@ parameters:
   _param:
     docker_security_monkey_api_replicas: 1
     docker_security_monkey_scheduler_replicas: 1
-    docker_image_security_monkey_api: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-api:6700
-    docker_image_security_monkey_scheduler: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/security-monkey-scheduler:6700
+    docker_image_security_monkey_api: docker-prod-local.artifactory.mirantis.com/mirantis/oss/security-monkey-api
+    docker_image_security_monkey_scheduler: docker-prod-local.artifactory.mirantis.com/mirantis/oss/security-monkey-scheduler
     security_monkey_db: secmonkey
     notification_service_url: http://${_param:haproxy_pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
     security_monkey_user: devopsportal@devopsportal.local

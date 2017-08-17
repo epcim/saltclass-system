@@ -4,7 +4,7 @@ parameters:
     docker_image_mongodb: library/mongo:3.4
     docker_mongodb_admin_username: admin
     docker_mongodb_admin_password: password
-    docker_image_janitor_monkey: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/janitor_monkey:6040
+    docker_image_janitor_monkey: docker-prod-local.artifactory.mirantis.com/mirantis/oss/janitor-monkey
     janitor_monkey_enabled: true
     janitor_monkey_dryrun_mode: false
     janitor_monkey_base_url: http://${_param:haproxy_janitor_monkey_bind_host}:${_param:haproxy_janitor_monkey_bind_port}

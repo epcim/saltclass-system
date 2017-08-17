@@ -1,7 +1,7 @@
 parameters:
   _param:
     docker_pushkin_replicas: 1
-    docker_image_pushkin: docker-sandbox.sandbox.mirantis.net/vstoiko/oss/pushkin:latest
+    docker_image_pushkin: docker-prod-local.artifactory.mirantis.com/mirantis/oss/pushkin
     pushkin_db: pushkin
   docker:
     client:

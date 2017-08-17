@@ -161,6 +161,9 @@ parameters:
             NODE_TARGET:
               type: string
               default: ""
+            CLUSTER_NAME:
+              type: string
+              default: ""
             DEFAULT_GIT_URL:
               type: string
               default: "${_param:jenkins_gerrit_url}/salt-models/{{name}}"

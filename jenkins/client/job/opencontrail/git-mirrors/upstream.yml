@@ -67,7 +67,7 @@ parameters:
                   contrail/{{name}}:
                     branches:
                       - compare_type: "REG_EXP"
-                        name: "*"
+                        name: ".*"
                 message:
                   build_successful: "Build successful"
                   build_unstable: "Build unstable"

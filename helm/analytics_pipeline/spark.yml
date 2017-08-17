@@ -1,0 +1,20 @@
+parameters:
+  _param:
+    analytics_spark_release: ${_param:analytics_release_prefix}spark
+    analytics_spark_address: spark-master-${_param:analytics_spark_release}-0.spark-master-${_param:analytics_spark_release}:7077,spark-master-${_param:analytics_spark_release}-1.spark-master-${_param:analytics_spark_release}:7077
+  helm:
+    client:
+      releases:
+        analytics-pipeline-spark:
+          enabled: ${_param:analytics_enabled}
+          name: ${_param:analytics_spark_release}
+          chart: ${_param:analytics_repo}/spark
+          values:
+            spark:
+              master:
+                replicas: 1
+              worker:
+                replicas: 3
+            zookeeper:
+              deployChart: false
+              externalAddress: ${_param:analytics_zookeeper_address}

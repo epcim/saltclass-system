@@ -1,0 +1,27 @@
+parameters:
+  _param:
+    analytics_tweetics_release: ${_param:analytics_release_prefix}tweetics
+  helm:
+    client:
+      releases:
+        analytics-pipeline-tweetics:
+          enabled: ${_param:analytics_enabled}
+          name: ${_param:analytics_tweetics_release}
+          chart: ${_param:analytics_repo}/tweetics
+          values:
+            minHashtagCounts: 0
+            zookeeper:
+              deployChart: false
+              externalAddress: ${_param:analytics_zookeeper_address}
+            kafka:
+              deployChart: false
+              externalAddress: ${_param:analytics_kafka_address}
+              topic: twitter-stream
+            spark:
+              deployChart: false
+              externalAddress: ${_param:analytics_spark_address}
+            storage: hdfs
+            hdfs:
+              deployChart: false
+              externalAddress: ${_param:analytics_hdfs_address}
+              path: /twitter

@@ -1,7 +1,0 @@
-parameters:
-  prometheus:
-    server:
-      target:
-        kubernetes:
-          pod:
-            enabled: true

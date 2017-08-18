@@ -13,7 +13,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
-            script: ceph-remove-osd.groovy
+            script: ceph-enforce-weights.groovy
           param:
             # general parameters
             SALT_MASTER_URL:

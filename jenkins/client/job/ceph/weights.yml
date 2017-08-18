@@ -1,0 +1,29 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        ceph-enforce-weights:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Ceph - enforce OSD weights"
+          discard:
+            build:
+              keep_num: 50
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: ceph-remove-osd.groovy
+          param:
+            # general parameters
+            SALT_MASTER_URL:
+              type: string
+              description: URL of Salt master
+              default: "http://${_param:salt_master_host}:6969"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              description: Credentials for login to Salt API
+              default: salt
+            ADMIN_HOST:
+              type: string
+              description: Host with admin keyring and access to cluster management

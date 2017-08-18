@@ -28,8 +28,9 @@ parameters:
               type: string
               description: OSDs on this HOST will be removed from cluster
             OSD:
-              type: all
+              type: string
               description: These OSDs at HOST will be removed (comma-separated list)
+              default: '*'
             ADMIN_HOST:
               type: string
               description: Host with admin keyring and access to cluster management

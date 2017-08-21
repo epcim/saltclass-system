@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    analytics_kafka_release: ${_param:analytics_release_prefix}kafka
+    analytics_kafka_address: kafka-${_param:analytics_kafka_release}-0.kafka-${_param:analytics_kafka_release}:9092,kafka-${_param:analytics_kafka_release}-1.kafka-${_param:analytics_kafka_release}:9092,kafka-${_param:analytics_kafka_release}-2.kafka-${_param:analytics_kafka_release}:9092
+  helm:
+    client:
+      releases:
+        analytics-pipeline-kafka:
+          enabled: ${_param:analytics_enabled}
+          name: ${_param:analytics_kafka_release}
+          chart: ${_param:analytics_repo}/kafka
+          values:
+            replicas: ${_param:analytics_kafka_replicas}
+            antiAffinity: soft
+            zookeeper:
+              deployChart: false
+              externalAddress: ${_param:analytics_zookeeper_address}

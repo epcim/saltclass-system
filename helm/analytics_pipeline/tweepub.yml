@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    analytics_tweepub_release: ${_param:analytics_release_prefix}tweepub
+  helm:
+    client:
+      releases:
+        analytics-pipeline-tweepub:
+          enabled: ${_param:analytics_enabled}
+          name: ${_param:analytics_tweepub_release}
+          chart: ${_param:analytics_repo}/tweepub
+          values:
+            twitter:
+              appKey: ${_param:analytics_twitter_app_key}
+              appSecret: ${_param:analytics_twitter_app_secret}
+              tokenKey: ${_param:analytics_twitter_token_key}
+              tokenSecret: ${_param:analytics_twitter_token_secret}
+
+              # San Francisco, Boston, New York
+              locations: -71.4415,41.9860,-70.4747,42.9041,-122.75,36.8,-121.75,37.8,-74,40,-73,41
+            kafka:
+              deployChart: false
+              externalAddress: ${_param:analytics_kafka_address}
+              topic: twitter-stream

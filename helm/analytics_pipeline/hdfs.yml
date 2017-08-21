@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    analytics_hdfs_release: ${_param:analytics_release_prefix}hdfs
+    analytics_hdfs_address: hdfs-namenode-${_param:analytics_hdfs_release}-0.hdfs-namenode-${_param:analytics_hdfs_release}
+  helm:
+    client:
+      releases:
+        analytics-pipeline-hdfs:
+          enabled: ${_param:analytics_enabled}
+          name: ${_param:analytics_hdfs_release}
+          chart: ${_param:analytics_repo}/hdfs
+          values:
+            datanode:
+              replicas: 3
+              antiAffinity: soft

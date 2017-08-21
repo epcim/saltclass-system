@@ -16,7 +16,6 @@ parameters:
         username: ${_param:jenkins_client_user}
         password: ${_param:jenkins_client_password}
       plugin:
-        ansicolor: {}
         artifactory: {}
         build-blocker-plugin: {}
         build-monitor-plugin: {}
@@ -39,7 +38,6 @@ parameters:
         simple-theme-plugin: {}
         slack: {}
         test-stability: {}
-        timestamper: {}
         workflow-cps: {}
         workflow-remote-loader: {}
         workflow-scm-step:

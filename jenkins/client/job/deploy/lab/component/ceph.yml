@@ -14,4 +14,4 @@ parameters:
         stack_type: aws
         stack_install: core,ceph
         stack_test: "ceph"
-        job_timer: ""
+        job_timer: "H H * * *"

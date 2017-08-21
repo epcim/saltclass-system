@@ -1,18 +1,19 @@
 ---
 summary: >
-  Use "reno", an releasenotes configuration tool to record release notes.
-  Documentation: https://docs.openstack.org/reno/latest
-
-  Example usage:
-
-  .. code-block:: shell
-
-    # to list/create/show release notes, run following commands
-    reno -qd .releasenotes list
-    reno -qd .releasenotes new releasenote-slug-title --edit
-    reno -qd .releasenotes report --no-show-source
+  This is the test release of MCP Feature Update notes.
+  These notes are intended to detail the new functionality and
+  bug fixes released for Reclass model on a sprint basis.
 
 other:
-  - |
-    Added `reno <https://docs.openstack.org/reno/latest>_` configuration to track release notes
-    within the reclass-system git repository.
+  - Added `Reno <https://docs.openstack.org/reno/latest>_`, a release notes
+    configuration tool, to track release notes within the ``reclass-system``
+    Git repository.
+
+    To list/create/show release notes:
+
+    .. code-block:: shell
+
+       reno -qd .releasenotes list
+       reno -qd .releasenotes new releasenote-slug-title --edit
+       reno -qd .releasenotes report --no-show-source
+

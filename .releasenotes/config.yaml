@@ -9,10 +9,11 @@
 prelude_section_name: summary
 show_source: False
 sections:
-  - [features, New Features]
-  - [upgrade, Upgrade Notes]
-  - [fixes, Bug Fixes]
-  - [other, Other Notes]
+  - [features, New features]
+  - [upgrades, Upgrade notes]
+  - [deprecations, Deprecation notes]
+  - [fixes, Bug fixes]
+  - [others, Other notes]
 template: |
   ---
   # Author the following sections or remove the section if it is not related.
@@ -21,38 +22,66 @@ template: |
   # If you miss a section from the list below, please first submit a review
   # adding it to .releasenotes/config.yaml.
   #
+  # Format content with reStructuredText (RST).
+  # **Formatting examples:**
+  # - |
+  #   This is a brief description of the feature. It may include a
+  #   number of components:
+  #
+  #   * List item 1
+  #   * List item 2.
+  #     This code block below will appear as part of the list item 2:
+  #
+  #     .. code-block:: yaml
+  #
+  #        classes:
+  #        - system.class.to.load
+  #
+  #   The code block below will appear on the same level as the feature
+  #   description:
+  #
+  #   .. code-block:: text
+  #
+  #      provide model/formula pillar snippets
+
+
   summary: >
     This section is not mandatory. Use it to highlight the change.
 
   features:
-    - Use list to record summary of features.
-    - |
-      Provide detailed description with examples.
-      Format with reStructuredText.
+    - Use the list to record summary of **NEW** features
+    - Provide detailed description of the feature indicating the use cases
+      when users benefit from using it
+    - Explain how the feature integrates into the overall reference
+      architecture of a deployment.
+    - Provide steps to deploy the feature (if the procedure is complicated
+      indicate during what stage of the deployment workflow it should be
+      deployed).
+    - Indicate limitations or incompatibility with other versions, if applicable.
+    - Provide a brief overview of how to use the feature after installation
+      (Day2 operations).
+    - Provide troubleshooting information, if any.
+    - Provide disaster recovery information (in case of hardware or software
+      failure.)
 
-      .. code-block:: text
+  upgrades:
+    - Use the list to record summary of an **improvement** to an existing
+      functionality/feature
+    - Document how to use a feature.
+    - Document the related upgrade instructions.
+    - Indicate limitations, if applicable.
 
-         provide model/formula pillar snippets
-
-  upgrade:
-    - |
-      Document how to use a feature and related upgrade instructions.
+  deprecations:
+    - Use the list to record deprecated features.
+    - Explain the reason of deprecation.
+    - Point to the functionality that can be used instead.
 
   fixes:
-    - Use list to record summary of fixes.
-      Quick and dirty `git log --oneline`.
+    - Use the list to record summary of a bug fix for blocker, critical,
+      and/or customer-found issues.
+    - Provide a brief summary of what has been fixed.
 
-  other:
-    - Author additional notes for the release.
-    - Format with reStructuredText.
-    - |
-        Use this section if note is not related to one of the common sections:
-        features, issues, upgrade, deprecations, security, fixes, api, cli
+  others:
+    - Author any additional notes. Use this section if note is not related to
+      any of the common sections above.
 
-        * list item 1
-        * list item 2
-
-        .. code-block:: yaml
-
-          classes:
-          - system.class.to.load

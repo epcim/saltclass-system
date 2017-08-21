@@ -5,7 +5,9 @@ classes:
 - system.openssh.server.team.mcp_ci
 - system.openssh.server.team.mmo_devops
 - system.openssh.server.team.presales
-- system.openssh.server.team.support
+- system.openssh.server.team.services
+# avoid teams w/sudo group restrictions, or override restrictions
+#- system.openssh.server.team.support
 - system.openssh.server.team.stacklight
 - system.openssh.server.team.networking
 - system.openssh.server.team.oss_team

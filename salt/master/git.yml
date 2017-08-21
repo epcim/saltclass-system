@@ -8,6 +8,7 @@ classes:
 - system.salt.master.formula.git.saltstack
 - system.salt.master.formula.git.stacklight
 - system.salt.master.formula.git.monitoring
+- system.salt.master.formula.git.helm
 parameters:
   _param:
     salt_master_environment_repository: "https://github.com/salt-formulas"

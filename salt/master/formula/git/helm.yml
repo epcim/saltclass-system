@@ -1,0 +1,16 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            helm:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-helm.git'
+              revision: ${_param:salt_master_environment_revision}
+              module:
+                helm.py:
+                  enabled: true
+              state:
+                helm_release.py:
+                  enabled: true

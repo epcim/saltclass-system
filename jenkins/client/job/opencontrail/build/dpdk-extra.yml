@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    jenkins_contrail_dpdk_kernel_modules_dkms: "${_param:jenkins_gerrit_url}/contrail/contrail-dpdk-kernel-modules-dkms"
   jenkins:
     client:
       job_template:
@@ -84,3 +86,52 @@ parameters:
                 description: "binary packages to create"
                 type: string
                 default: "{{binary}}"
+        build-opencontrail-dpdk-kernel-modules-dkms:
+          name: build-opencontrail-dpdk-kernel-modules-dkms-{{os}}-{{dist}}-{{dpdk}}
+          jobs:
+            - os: ubuntu
+              dist: xenial
+              branch: contrail_dpdk_2_1
+              dpdk: "21"
+              aptly_repo: ubuntu-xenial-mitaka
+            - os: ubuntu
+              dist: xenial
+              dpdk: "1702"
+              branch: contrail_dpdk_17_02
+              aptly_repo: ubuntu-xenial-oc40-dpdk1702
+          template:
+            discard:
+             build:
+               keep_num: 5
+             artifact:
+               keep_num: 5
+            type: workflow-scm
+            concurrent: false
+            quiet_period: 120
+            scm:
+              type: git
+              url: "${_param:jenkins_contrail_dpdk_kernel_modules_dkms}"
+              credentials: "gerrit"
+              branch: "{{branch}}"
+            param:
+              SOURCE_BRANCH:
+                type: string
+                default: "{{branch}}"
+              SOURCE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              APTLY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_api_url}"
+              APTLY_REPO:
+                type: string
+                default: "{{aptly_repo}}"
+              OS:
+                type: string
+                default: "{{os}}"
+              DIST:
+                type: string
+                default: "{{dist}}"
+              ARCH:
+                type: string
+                default: "amd64"

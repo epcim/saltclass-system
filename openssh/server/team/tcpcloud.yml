@@ -20,6 +20,7 @@ classes:
 - system.openssh.server.team.members.tkukral
 - system.openssh.server.team.members.vmikes
 - system.openssh.server.team.members.psvimbersky
+- system.openssh.server.team.members.chnyda
 
 parameters:
   _param:

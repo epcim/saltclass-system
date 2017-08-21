@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        chnyda:
+          enabled: true
+          name: chnyda
+          sudo: true
+          full_name: Cedric Hnyda
+          home: /home/chnyda
+          email: chnyda@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        chnyda:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHmLTwDSFslOUVo4ViT0bqVLhSaweuLt0QNWhnIaSPgqWhHOSkdqt3+Tg4l8Vd4O4Z44Yv/rXqhmO5X1AIytNccA6+nJe4Km3JC6QzG6npS3ghtHWDU3DOGgWd5RrULviEDSIj1w1oG8oHxdycGkbfjApAkiDR/xr7NHhTcPhEuvn/q7i1raj4vpNdIrR+cr6XA3l+I4cmaizpjuWaFrag1q24RS7PVEUmcPRSODrkdwFREsrLkIlIgtIoMIIjtEDdk1RU/loiXrNwuVRI3KTLqhheFlHedQd13uzpn66KF6UVlZAm+k2y2jLdEi5IFKD3g6mmWsNH6xSZYVn6d84/XvLjMsS/UL+WHr5xetHNSi3RtQOkCPYphq1KcRAXLwH0dgtDwfyg2F+5ezG3wMsZAqD3KiaGNmDcA6R19Fpjm0S4SXa+QnX5eZcO9DS5cYTjs8F2T9Vsaspvwc0U80M6+JvOlV1PBNJYQhSxdX1Plf2p1MrrRnYhlgMdzCiPSQHsKp3tei8I+bqCvV9iScLAbLxKaW/yWdeuh74oGitTfI4R0h0HMJ1lqK+rT5wtMXyJSvFMK6Zph0GqJf3QHBhzCfs5PIto1pyNdXbI8KzfgTgyo+3gpIPAQ2VD/pf8mOD218UPNQglYWP6wniTq/hVtC2tl3DW53qx5qv10osGmw== chnyda@mirantis.com
+          user: ${linux:system:user:chnyda}

@@ -35,6 +35,8 @@ parameters:
           net.ipv4.neigh.default.gc_thresh2: 8192
           net.ipv4.neigh.default.gc_thresh3: 16384
           net.core.netdev_max_backlog: 261144
+          net.ipv4.tcp_tw_recycle: 1
+          net.ipv4.tcp_tw_reuse: 1
           kernel.panic: 60
       cpu:
         governor: performance

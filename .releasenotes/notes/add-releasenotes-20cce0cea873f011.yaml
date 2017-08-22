@@ -4,8 +4,9 @@ summary: >
   These notes are intended to detail the new functionality and
   bug fixes released for Reclass model on a sprint basis.
 
-other:
-  - Added `Reno <https://docs.openstack.org/reno/latest>_`, a release notes
+others:
+  - |
+    Added `Reno <https://docs.openstack.org/reno/latest>_`, a release notes
     configuration tool, to track release notes within the ``reclass-system``
     Git repository.
 

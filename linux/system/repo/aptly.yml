@@ -1,0 +1,9 @@
+parameters:
+  linux:
+    system:
+      repo:
+        aptly:
+          source: "deb http://repo.aptly.info/ squeeze main"
+          architectures: amd64
+          key_id: 9E3E53F19C7DE460
+          key_server: keys.gnupg.net

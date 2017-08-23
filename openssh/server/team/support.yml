@@ -34,7 +34,6 @@ classes:
 - system.openssh.server.team.members.obryndzii
 - system.openssh.server.team.members.oliemieshko
 - system.openssh.server.team.members.sovsianikov
-# L2OPS SRE Team
 - system.openssh.server.team.members.cade
 - system.openssh.server.team.members.jmosher
 - system.openssh.server.team.members.ecantwell
@@ -56,11 +55,17 @@ parameters:
           enabled: false
           name: supportl2
         support0:
-          enabled: true
+          enabled: false
           name: support0
         support1:
-          enabled: true
+          enabled: false
           name: support1
+        support2:
+          enabled: false
+          name: support2
+        support3:
+          enabled: true
+          name: support3
           addusers:
             # L1
             - ${linux:system:user:adobdin:name}
@@ -82,10 +87,6 @@ parameters:
             - ${linux:system:user:rsafonov:name}
             - ${linux:system:user:smachtmes:name}
             - ${linux:system:user:zkhurasani:name}
-        support2:
-          enabled: true
-          name: support2
-          addusers:
             # L2OPS
             - ${linux:system:user:aepifanov:name}
             - ${linux:system:user:apetrenko:name}
@@ -100,19 +101,6 @@ parameters:
             - ${linux:system:user:obryndzii:name}
             - ${linux:system:user:oliemieshko:name}
             - ${linux:system:user:sovsianikov:name}
-            # L2OPS SRE
-            - ${linux:system:user:pmichalec:name}
-            - ${linux:system:user:pmathews:name}
-            - ${linux:system:user:pcizinsky:name}
-            - ${linux:system:user:osmola:name}
-            - ${linux:system:user:cade:name}
-            - ${linux:system:user:jmosher:name}
-            - ${linux:system:user:ecantwell:name}
-            - ${linux:system:user:lmercl:name}
-        support3:
-          enabled: false
-          name: support3
-          addusers:
             - ${linux:system:user:pmichalec:name}
             - ${linux:system:user:pmathews:name}
             - ${linux:system:user:pcizinsky:name}
@@ -174,5 +162,3 @@ parameters:
           # Use with caution.
             commands:
                 - ALL
-                - '!SUPPORT_RESTRICTED_SHELLS'
-                - '!SUPPORT_RESTRICTED_SU'

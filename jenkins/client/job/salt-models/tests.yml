@@ -41,7 +41,7 @@ parameters:
                 default: "gerrit"
               PARALLEL_NODE_GROUP_SIZE:
                 type: string
-                default: "2"
+                default: "9"
               # Salt master setup extra formulas
               EXTRA_FORMULAS:
                 type: string

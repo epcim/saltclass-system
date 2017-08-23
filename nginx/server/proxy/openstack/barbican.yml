@@ -1,0 +1,20 @@
+parameters:
+  _param:
+    nginx_proxy_openstack_api_host: ${_param:cluster_public_host}
+  nginx:
+    server:
+      enabled: true
+      site:
+        nginx_proxy_openstack_api_barbican:
+          enabled: true
+          type: nginx_proxy
+          name: openstack_api_barbican
+          check: false
+          proxy:
+            host: ${_param:barbican_service_host}
+            port: 9311
+            protocol: http
+          host:
+            name: ${_param:nginx_proxy_openstack_api_host}
+            port: 9311
+          ssl: ${_param:nginx_proxy_ssl}

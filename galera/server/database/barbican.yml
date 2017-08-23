@@ -1,0 +1,15 @@
+parameters:
+  mysql:
+    server:
+      database:
+        barbican:
+          encoding: utf8
+          users:
+          - name: barbican
+            password: ${_param:mysql_barbican_password}
+            host: '%'
+            rights: all
+          - name: barbican
+            password: ${_param:mysql_barbican_password}
+            host: ${_param:cluster_vip_address}
+            rights: all

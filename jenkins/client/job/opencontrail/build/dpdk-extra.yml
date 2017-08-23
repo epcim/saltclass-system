@@ -113,6 +113,19 @@ parameters:
               url: "${_param:jenkins_contrail_dpdk_kernel_modules_dkms}"
               credentials: "gerrit"
               branch: "{{branch}}"
+            trigger:
+              gerrit:
+                project:
+                  contrail/contrail-dpdk:
+                    branches:
+                      - "{{branch}}"
+                message:
+                  build_successful: "Build successful"
+                  build_unstable: "Build unstable"
+                  build_failure: "Build failed"
+                event:
+                  ref:
+                    - updated
             param:
               SOURCE_BRANCH:
                 type: string

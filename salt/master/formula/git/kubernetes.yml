@@ -12,10 +12,6 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-etcd.git'
               revision: ${_param:salt_master_environment_revision}
-            bird:
-              source: git
-              address: '${_param:salt_master_environment_repository}/salt-formula-bird.git'
-              revision: ${_param:salt_master_environment_revision}
             docker:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-docker.git'

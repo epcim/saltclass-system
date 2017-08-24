@@ -3,6 +3,7 @@ parameters:
     infra_idm_node01_hostname: idm01
     infra_idm_node02_hostname: idm02
     infra_idm_node03_hostname: idm03
+    infra_idm_system_codename: centos
   reclass:
     storage:
       node:
@@ -13,7 +14,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.idm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: centos
+            linux_system_codename: ${_param:infra_idm_system_codename}
             single_address: ${_param:infra_idm_node01_address}
         infra_idm_node02:
           name: ${_param:infra_idm_node02_hostname}
@@ -22,7 +23,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.idm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: centos
+            linux_system_codename: ${_param:infra_idm_system_codename}
             single_address: ${_param:infra_idm_node02_address}
         infra_idm_node03:
           name: ${_param:infra_idm_node03_hostname}
@@ -31,5 +32,5 @@ parameters:
           - cluster.${_param:cluster_name}.infra.idm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: centos
+            linux_system_codename: ${_param:infra_idm_system_codename}
             single_address: ${_param:infra_idm_node03_address}

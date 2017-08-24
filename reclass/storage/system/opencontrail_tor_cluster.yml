@@ -4,6 +4,7 @@ parameters:
     opencontrail_tor01_node02_hostname: tor02
     opencontrail_tor01_node01_tenant_address: ${_param:opencontrail_tor01_node01_address}
     opencontrail_tor01_node02_tenant_address: ${_param:opencontrail_tor01_node02_address}
+    opencontrail_tor_system_codename: xenial
   reclass:
     storage:
       node:
@@ -14,7 +15,7 @@ parameters:
           - cluster.${_param:cluster_name}.opencontrail.tor
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:opencontrail_tor_system_codename}
             single_address: ${_param:opencontrail_tor01_node01_address}
             tenant_address: ${_param:opencontrail_tor01_node01_tenant_address}
             keepalived_vip_priority: 103
@@ -25,7 +26,7 @@ parameters:
           - cluster.${_param:cluster_name}.opencontrail.tor
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:opencontrail_tor_system_codename}
             single_address: ${_param:opencontrail_tor01_node02_address}
             tenant_address: ${_param:opencontrail_tor01_node02_tenant_address}
             keepalived_vip_priority: 102

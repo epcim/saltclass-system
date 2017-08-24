@@ -1,6 +1,7 @@
 parameters:
   _param:
     stacklight_telemetry_node01_hostname: mtr01
+    stacklight_telemetry_system_codename: xenial
   reclass:
     storage:
       node:
@@ -11,6 +12,6 @@ parameters:
           - cluster.${_param:cluster_name}.stacklight.telemetry
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:stacklight_telemetry_system_codename}
             single_address: ${_param:stacklight_telemetry_node01_address}
             keepalived_vip_priority: 103

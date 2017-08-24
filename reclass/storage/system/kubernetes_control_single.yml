@@ -1,6 +1,7 @@
 parameters:
   _param:
     kubernetes_control_node01_hostname: ctl01
+    kubernetes_control_system_codename: xenial
   reclass:
     storage:
       node:
@@ -11,5 +12,5 @@ parameters:
           - cluster.${_param:cluster_name}.kubernetes.control
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:kubernetes_control_system_codename}
             single_address: ${_param:kubernetes_control_node01_address}

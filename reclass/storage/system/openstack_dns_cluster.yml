@@ -2,6 +2,7 @@ parameters:
   _param:
     openstack_dns_node01_hostname: dns01
     openstack_dns_node02_hostname: dns02
+    openstack_dns_system_codename: xenial
   reclass:
     storage:
       node:
@@ -12,7 +13,7 @@ parameters:
           - cluster.${_param:cluster_name}.openstack.dns
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:openstack_dns_system_codename}
             single_address: ${_param:openstack_dns_node01_address}
             keepalived_vip_priority: 110
         openstack_dns_node02:
@@ -22,6 +23,6 @@ parameters:
           - cluster.${_param:cluster_name}.openstack.dns
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:openstack_dns_system_codename}
             single_address: ${_param:openstack_dns_node02_address}
             keepalived_vip_priority: 111

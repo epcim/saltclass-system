@@ -3,6 +3,7 @@ parameters:
     ceph_mon_node01_hostname: cmn01
     ceph_mon_node02_hostname: cmn02
     ceph_mon_node03_hostname: cmn03
+    ceph_mon_system_codename: xenial
   reclass:
     storage:
       node:
@@ -13,7 +14,7 @@ parameters:
           - cluster.${_param:cluster_name}.ceph.mon
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:ceph_mon_system_codename}
             single_address: ${_param:ceph_mon_node01_address}
             keepalived_vip_priority: 103
         ceph_mon_node02:
@@ -23,7 +24,7 @@ parameters:
           - cluster.${_param:cluster_name}.ceph.mon
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename:  ${_param:ceph_mon_system_codename}
             single_address: ${_param:ceph_mon_node02_address}
             keepalived_vip_priority: 102
         ceph_mon_node03:
@@ -33,6 +34,6 @@ parameters:
           - cluster.${_param:cluster_name}.ceph.mon
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename:  ${_param:ceph_mon_system_codename}
             single_address: ${_param:ceph_mon_node03_address}
             keepalived_vip_priority: 101

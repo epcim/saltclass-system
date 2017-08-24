@@ -1,6 +1,7 @@
 parameters:
   _param:
     infra_maas_node01_hostname: mas01
+    infra_maas_system_codename: xenial
   reclass:
     storage:
       node:
@@ -11,6 +12,5 @@ parameters:
           - cluster.${_param:cluster_name}.infra.maas
           params:
             salt_master_host: ${_param:infra_config_deploy_address}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:infra_maas_system_codename}
             single_address: ${_param:infra_maas_node01_deploy_address}
-

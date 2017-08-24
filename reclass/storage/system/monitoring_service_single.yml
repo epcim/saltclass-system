@@ -1,6 +1,7 @@
 parameters:
   _param:
     monitor_node01_hostname: mon01
+    monitor_system_codename: xenial
   reclass:
     storage:
       node:
@@ -11,5 +12,5 @@ parameters:
           - cluster.${_param:cluster_name}.monitoring.server
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename:  ${_param:monitor_system_codename}
             single_address: ${_param:monitoring_service_node01_address}

@@ -3,6 +3,7 @@ parameters:
     stacklight_log_node01_hostname: log01
     stacklight_log_node02_hostname: log02
     stacklight_log_node03_hostname: log03
+    stacklight_log_system_codename: xenial
   reclass:
     storage:
       node:
@@ -14,7 +15,7 @@ parameters:
           - cluster.${_param:cluster_name}.stacklight.log_curator
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:stacklight_log_system_codename}
             single_address: ${_param:stacklight_log_node01_address}
             keepalived_vip_priority: 103
         stacklight_log_node02:
@@ -25,7 +26,7 @@ parameters:
           - cluster.${_param:cluster_name}.stacklight.log_curator
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:stacklight_log_system_codename}
             single_address: ${_param:stacklight_log_node02_address}
             keepalived_vip_priority: 102
         stacklight_log_node03:
@@ -36,6 +37,6 @@ parameters:
           - cluster.${_param:cluster_name}.stacklight.log_curator
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:stacklight_log_system_codename}
             single_address: ${_param:stacklight_log_node03_address}
             keepalived_vip_priority: 101

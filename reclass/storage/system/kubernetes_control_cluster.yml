@@ -6,6 +6,7 @@ parameters:
     kubernetes_control_node01_deploy_address: ${_param:kubernetes_control_node01_address}
     kubernetes_control_node02_deploy_address: ${_param:kubernetes_control_node02_address}
     kubernetes_control_node03_deploy_address: ${_param:kubernetes_control_node03_address}
+    kubernetes_control_system_codename: xenial
   reclass:
     storage:
       node:
@@ -16,7 +17,7 @@ parameters:
           - cluster.${_param:cluster_name}.kubernetes.control
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:kubernetes_control_system_codename}
             single_address: ${_param:kubernetes_control_node01_address}
             deploy_address: ${_param:kubernetes_control_node01_deploy_address}
             keepalived_vip_priority: 103
@@ -27,7 +28,7 @@ parameters:
           - cluster.${_param:cluster_name}.kubernetes.control
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:kubernetes_control_system_codename}
             single_address: ${_param:kubernetes_control_node02_address}
             deploy_address: ${_param:kubernetes_control_node02_deploy_address}
             keepalived_vip_priority: 102
@@ -38,7 +39,7 @@ parameters:
           - cluster.${_param:cluster_name}.kubernetes.control
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:kubernetes_control_system_codename}
             single_address: ${_param:kubernetes_control_node03_address}
             deploy_address: ${_param:kubernetes_control_node03_deploy_address}
             keepalived_vip_priority: 101

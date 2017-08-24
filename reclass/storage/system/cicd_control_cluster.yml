@@ -3,6 +3,7 @@ parameters:
     cicd_control_node01_hostname: cid01
     cicd_control_node02_hostname: cid02
     cicd_control_node03_hostname: cid03
+    cicd_control_system_codename: xenial
   reclass:
     storage:
       node:
@@ -13,7 +14,7 @@ parameters:
           - cluster.${_param:cluster_name}.cicd.control.leader
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:cicd_control_system_codename}
             single_address: ${_param:cicd_control_node01_address}
             keepalived_vip_priority: 103
             cicd_database_id: 1
@@ -24,7 +25,7 @@ parameters:
           - cluster.${_param:cluster_name}.cicd.control.manager
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:cicd_control_system_codename}
             single_address: ${_param:cicd_control_node02_address}
             keepalived_vip_priority: 102
             cicd_database_id: 2
@@ -35,7 +36,7 @@ parameters:
           - cluster.${_param:cluster_name}.cicd.control.manager
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:cicd_control_system_codename}
             single_address: ${_param:cicd_control_node03_address}
             keepalived_vip_priority: 101
             cicd_database_id: 3

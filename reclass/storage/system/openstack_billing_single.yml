@@ -1,6 +1,7 @@
 parameters:
   _param:
     openstack_billing_hostname: bil01
+    openstack_billing_system_codename: trusty
   reclass:
     storage:
       node:
@@ -11,5 +12,5 @@ parameters:
           - cluster.${_param:cluster_name}.openstack.billing
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:openstack_billing_system_codename}
             single_address: ${_param:openstack_billing_address}

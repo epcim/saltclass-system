@@ -1,6 +1,7 @@
 parameters:
   _param:
     stacklight_monitor_node01_hostname: mon01
+    stacklight_monitor_system_codename: xenial
   reclass:
     storage:
       node:
@@ -14,5 +15,5 @@ parameters:
           - system.kibana.client.single
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: xenial
+            linux_system_codename: ${_param:stacklight_monitor_system_codename}
             single_address: ${_param:stacklight_monitor_node01_address}

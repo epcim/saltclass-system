@@ -40,6 +40,8 @@ parameters:
     infra_kvm_node08_public_address: ${_param:infra_kvm_node08_address}
     infra_kvm_node09_public_address: ${_param:infra_kvm_node09_address}
 
+    infra_kvm_system_codename: trusty
+
   reclass:
     storage:
       node:
@@ -50,7 +52,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node01_address}
             deploy_address: ${_param:infra_kvm_node01_deploy_address}
             public_address: ${_param:infra_kvm_node01_public_address}
@@ -62,7 +64,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node02_address}
             deploy_address: ${_param:infra_kvm_node02_deploy_address}
             public_address: ${_param:infra_kvm_node02_public_address}
@@ -74,7 +76,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node03_address}
             deploy_address: ${_param:infra_kvm_node03_deploy_address}
             public_address: ${_param:infra_kvm_node03_public_address}
@@ -86,7 +88,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node04_address}
             deploy_address: ${_param:infra_kvm_node04_deploy_address}
             public_address: ${_param:infra_kvm_node04_public_address}
@@ -98,7 +100,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node05_address}
             deploy_address: ${_param:infra_kvm_node05_deploy_address}
             public_address: ${_param:infra_kvm_node05_public_address}
@@ -110,7 +112,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node06_address}
             deploy_address: ${_param:infra_kvm_node06_deploy_address}
             public_address: ${_param:infra_kvm_node06_public_address}
@@ -122,7 +124,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node07_address}
             deploy_address: ${_param:infra_kvm_node07_deploy_address}
             public_address: ${_param:infra_kvm_node07_public_address}
@@ -134,7 +136,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node08_address}
             deploy_address: ${_param:infra_kvm_node08_deploy_address}
             public_address: ${_param:infra_kvm_node08_public_address}
@@ -146,7 +148,7 @@ parameters:
           - cluster.${_param:cluster_name}.infra.kvm
           params:
             salt_master_host: ${_param:reclass_config_master}
-            linux_system_codename: trusty
+            linux_system_codename: ${_param:infra_kvm_system_codename}
             single_address: ${_param:infra_kvm_node09_address}
             deploy_address: ${_param:infra_kvm_node09_deploy_address}
             public_address: ${_param:infra_kvm_node09_public_address}

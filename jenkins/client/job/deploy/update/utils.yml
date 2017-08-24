@@ -1,0 +1,70 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        reclass_metadata_update:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - Update reclass metadata"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: update-reclass-metadata.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "http://127.0.0.1:8000"
+              description: Full Salt API address [https://127.0.0.1:8000].
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+              description: Credentials to the Salt API.
+            TARGET_SERVERS:
+              type: string
+              default: "I@reclass:storage"
+              description: Salt compound target to match nodes to be updated.
+        salt_master_formula_update:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - Update salt master formulas"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: update-salt-master-formulas.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "http://127.0.0.1:8000"
+              description: Full Salt API address [https://127.0.0.1:8000].
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+              description: Credentials to the Salt API.
+            TARGET_SERVERS:
+              type: string
+              default: "I@reclass:storage"
+              description: Salt compound target to match nodes to be updated.
+        jenkins_master_job_update:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - Update jenkins master jobs"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: update-jenkins-master-jobs.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "http://127.0.0.1:8000"
+              description: Full Salt API address [https://127.0.0.1:8000].
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+              description: Credentials to the Salt API.
+            TARGET_SERVERS:
+              type: string
+              default: "I@reclass:storage"
+              description: Salt compound target to match nodes to be updated.

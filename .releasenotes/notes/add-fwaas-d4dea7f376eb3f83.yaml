@@ -1,0 +1,19 @@
+---
+features:
+  - |
+    Add system level metadata class required to enable FWaaS in Neutron.
+
+    The Firewall-as-a-Service (FWaaS) plug-in applies firewalls to OpenStack
+    objects such as projects, routers, router ports, as well as to VM ports
+    and SFC ports in FWaaS V2.
+
+    To enable FWaaS add the ``system.neutron.fwaas`` class to nodes with
+    control, gateway and, if the Neutron DVR feature is enabled, compute roles.
+
+    By default the FWaaS V1 is installed. To install FWaaS V2 redefine the
+    ``fwaas_version`` parameter on the cluster level:
+
+    .. code-block:: yaml
+
+       fwaas_version: v2
+

@@ -1,0 +1,8 @@
+classes:
+- service.neutron.fwaas
+parameters:
+  _param:
+    fwaas_version: v1
+  neutron:
+    fwaas:
+      api_version: ${_param:fwaas_version}

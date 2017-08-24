@@ -103,6 +103,11 @@ parameters:
           jobs:
             - cookiecutter_template: cookiecutter-templates
           template:
+            discard:
+             build:
+               keep_num: 20
+             artifact:
+               keep_num: 20
             type: workflow-scm
             concurrent: true
             scm:

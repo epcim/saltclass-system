@@ -15,3 +15,7 @@ parameters:
         downstream: debian/gophercloud
         upstream: "https://github.com/gophercloud/gophercloud.git"
         branches: master
+      - name: debian-influxdb-relay
+        downstream: debian/influxdb-relay
+        upstream: "https://github.com/influxdata/influxdb-relay.git"
+        branches: master

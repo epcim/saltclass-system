@@ -116,15 +116,17 @@ parameters:
               dist: trusty
               branch: master
               ppa: mirantis-opencontrail/opencontrail-master
-              upload_source_package: false
-              build_trigger: ""
+              upload_source_package: true
+              dpdk: contrail_dpdk_17_02
+              build_trigger: "H H(20-23) * * *"
             - buildname: oc666
               os: ubuntu
               dist: xenial
               branch: master
               ppa: mirantis-opencontrail/opencontrail-master
-              upload_source_package: false
-              build_trigger: ""
+              upload_source_package: true
+              dpdk: contrail_dpdk_17_02
+              build_trigger: "H H(20-23) * * *"
           template:
             discard:
              build:

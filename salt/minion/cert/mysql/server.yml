@@ -1,0 +1,27 @@
+classes:
+- system.salt.minion.cert.mysql
+
+parameters:
+  _param:
+    mysql_ssl_key_file: /etc/mysql/ssl/key.pem
+    mysql_ssl_cert_file: /etc/mysql/ssl/cert.pem
+    mysql_ssl_ca_file: /etc/mysql/ssl/ca.pem
+  salt:
+    minion:
+      cert:
+        mysql_server:
+          # IP are used as DNS due to cert verificaiton issue of python2:
+          # https://bugs.python.org/issue12000
+          alternative_names: >
+            IP:${_param:cluster_local_address},
+            IP:${_param:cluster_vip_address},
+            DNS:${_param:cluster_local_address},
+            DNS:${_param:cluster_vip_address},
+            DNS:${linux:system:name},
+            DNS:${linux:network:fqdn}
+          key_usage: "digitalSignature,nonRepudiation,keyEncipherment"
+          key_file: ${_param:mysql_ssl_key_file}
+          cert_file: ${_param:mysql_ssl_cert_file}
+          ca_file: ${_param:mysql_ssl_ca_file}
+          user: mysql
+          group: mysql

@@ -1,0 +1,19 @@
+---
+features:
+  - |
+    Added a system class to generate certificates and keys for MySQL.
+
+    **To generate files:**
+
+    #. Include the class to the Reclass model of your deployment:
+
+       .. code-block:: yaml
+
+          classes:
+             - system.salt.minion.cert.mysql.server
+
+    #. Apply the :command:`salt.minion.cert` Salt state:
+
+       .. code-block:: bash
+
+          salt '*' state.sls salt.minion.cert

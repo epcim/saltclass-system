@@ -15,7 +15,6 @@ classes:
 - system.openssh.server.team.members.matthewroark
 - system.openssh.server.team.members.maximefimov
 - system.openssh.server.team.members.mikhailkraynov
-- system.openssh.server.team.members.nadezhdakabanova
 - system.openssh.server.team.members.renesoto
 - system.openssh.server.team.members.rsafonov
 - system.openssh.server.team.members.scottmachtmes
@@ -31,6 +30,7 @@ classes:
 - system.openssh.server.team.members.fsoppelsa
 - system.openssh.server.team.members.manashkin
 - system.openssh.server.team.members.nkondra
+- system.openssh.server.team.members.nkabanova
 - system.openssh.server.team.members.obryndzii
 - system.openssh.server.team.members.oliemieshko
 - system.openssh.server.team.members.sovsianikov
@@ -98,6 +98,7 @@ parameters:
             - ${linux:system:user:fsoppelsa:name}
             - ${linux:system:user:manashkin:name}
             - ${linux:system:user:nkondra:name}
+            - ${linux:system:user:nkabanova:name}
             - ${linux:system:user:obryndzii:name}
             - ${linux:system:user:oliemieshko:name}
             - ${linux:system:user:sovsianikov:name}

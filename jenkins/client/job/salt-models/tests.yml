@@ -1,6 +1,6 @@
 parameters:
   _param:
-  jenkins_pollscm_spec: "0 1 * * *"
+    jenkins_pollscm_spec: "0 1 * * *"
   jenkins:
     client:
       job_template:

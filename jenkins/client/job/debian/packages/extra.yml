@@ -165,6 +165,10 @@ parameters:
               dist: xenial
               build: jmx-exporter
               branch: master
+            - package: influxdb-relay
+              dist: xenial
+              build: influxdb-relay
+              branch: master
           template:
             type: workflow-scm
             concurrent: false

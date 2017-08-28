@@ -101,6 +101,10 @@ parameters:
               dist: trusty
               build: pipeline
               branch: debian/trusty
+            - package: libvirt-exporter
+              dist: trusty
+              build: libvirt-exporter
+              branch: master
             - package: librdkafka
               dist: xenial
               build: pipeline

@@ -1,0 +1,80 @@
+classes:
+- service.nova.client
+parameters:
+  nova:
+    client:
+      server:
+        admin_identity:
+          flavor:
+            k8s_ctl_medium:
+              ram: 8192
+              disk: 40
+              vcpus: 2
+            k8_cmp_small:
+              ram: 4096
+              disk: 40
+              vcpus: 2
+            k8s_ctl_small:
+              ram: 4096
+              disk: 20
+              vcpus: 2
+            os_ha_ctl:
+              ram: 16384
+              disk: 60
+              vcpus: 8
+            stl_mon_medium:
+              ram: 8192
+              disk: 60
+              vcpus: 4
+            cfg_salt_small:
+              ram: 4096
+              disk: 20
+              vcpus: 1
+            os_cmp_small:
+              ram: 8192
+              disk: 40
+              vcpus: 4
+            windows:
+              ram: 8186
+              disk: 160
+              vcpus: 2
+            cid_aio:
+              ram: 24576
+              disk: 60
+              vcpus: 8
+            oc_aio_large:
+              ram: 16384
+              disk: 60
+              vcpus: 8
+            oc_aio_small:
+              ram: 8192
+              disk: 60
+              vcpus: 2
+            cph_ha_osd:
+              ram: 8192
+              disk: 60
+              vcpus: 4
+            cph_cfs:
+              ram: 8192
+              disk: 40
+              vcpus: 4
+            oc_vsrx:
+              ram: 4096
+              disk: 80
+              vcpus: 2
+            os_aio_ctl:
+              ram: 24576
+              disk: 60
+              vcpus: 8
+            oc_aio_medium:
+              ram: 8192
+              disk: 60
+              vcpus: 4
+            cph_ha_mon:
+              ram: 8192
+              disk: 40
+              vcpus: 4
+            cfg_salt_small-1:
+              ram: 4096
+              disk: 20
+              vcpus: 1

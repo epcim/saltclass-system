@@ -1,0 +1,22 @@
+classes:
+- system.glance.client
+parameters:
+  _param:
+    cirros_image_url: "http://apt.mirantis.com/images/cirros-x64-20170828.qcow2"
+    cirros_image_name:  "cirros-0.3.0-x86_64"
+  glance:
+    client:
+      identity:
+        admin_identity:
+          endpoint_type: internalURL
+          image:
+            cirros:
+              name: ${_param:cirros_image_name}
+              location: ${_param:cirros_image_url}
+              import_from_format: 'qcow2'
+              container_format: 'bare'
+              disk_format: 'qcow2'
+              tags:
+                - 'cirros'
+              visibility: public
+              wait_timeout: 1000

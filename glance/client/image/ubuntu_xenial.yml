@@ -1,0 +1,23 @@
+classes:
+- system.glance.client
+parameters:
+  _param:
+    ubuntu_xenial_image_url: "http://apt.mirantis.com/images/ubuntu-16-04-x64-mcp1.1.qcow2"
+    ubuntu_xenial_image_name:  "ubuntu-16-04-amd64-cloudimg"
+  glance:
+    client:
+      identity:
+        admin_identity:
+          endpoint_type: internalURL
+          image:
+            ubuntu_16_04_amd64_cloudimg:
+              name: ${_param:ubuntu_xenial_image_name}
+              location: ${_param:ubuntu_xenial_image_url}
+              import_from_format: 'qcow2'
+              container_format: 'bare'
+              disk_format: 'qcow2'
+              tags:
+                - 'ubuntu'
+                - 'xenial'
+              visibility: public
+              wait_timeout: 1000

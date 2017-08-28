@@ -1,0 +1,23 @@
+classes:
+- system.glance.client
+parameters:
+  _param:
+    ubuntu_trusty_image_url: "http://apt.mirantis.com/images/ubuntu-14-04-x64-mcp1.1.qcow2"
+    ubuntu_trusty_image_name:  "ubuntu-14-04-x64-mcp1.1"
+  glance:
+    client:
+      identity:
+        admin_identity:
+          endpoint_type: internalURL
+          image:
+            ubuntu_14_04_x64_mcp1.1:
+              name: ${_param:ubuntu_trusty_image_name}
+              location: ${_param:ubuntu_trusty_image_url}
+              import_from_format: 'qcow2'
+              container_format: 'bare'
+              disk_format: 'qcow2'
+              tags:
+                - 'ubuntu'
+                - 'trusty'
+              visibility: public
+              wait_timeout: 1000

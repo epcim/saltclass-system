@@ -1,0 +1,64 @@
+classes:
+- service.nova.client
+parameters:
+  nova:
+    client:
+      server:
+        admin_identity:
+          flavor:
+            m1.tiny:
+              ram: 256
+              disk: 1
+              vcpus: 1
+            m1.medium80:
+              ram: 4096
+              disk: 80
+              vcpus: 2
+            m1.xxlarge40:
+              ram: 32300
+              disk: 40
+              vcpus: 16
+            m1.large20:
+              ram: 8128
+              disk: 20
+              vcpus: 4
+            m1.large1000:
+              ram: 8128
+              disk: 1000
+              vcpus: 8
+            m1.large40:
+              ram: 8128
+              disk: 40
+              vcpus: 4
+            m1.medium20:
+              ram: 4096
+              disk: 20
+              vcpus: 2
+            m1.xlarge40:
+              ram: 16200
+              disk: 40
+              vcpus: 8
+            m1.small:
+              ram: 2048
+              disk: 20
+              vcpus: 1
+            m1.large:
+              ram: 8128
+              disk: 80
+              vcpus: 4
+            m1.xlarge:
+              ram: 16200
+              disk: 160
+              vcpus: 8
+            m1.medium:
+              ram: 4000
+              disk: 40
+              vcpus: 2
+            m1.xlarge20:
+              ram: 16200
+              disk: 20
+              vcpus: 8
+            m1.large100:
+              ram: 8096
+              disk: 100
+            	vcpus: 4

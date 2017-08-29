@@ -4,6 +4,7 @@ parameters:
     docker_image_elasticsearch: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
     elasticsearch_cluster_name: oss-cluster
     elasticsearch_xpack_security_enabled: 'false'
+    elasticsearch_xpack_monitoring_enabled: 'false'
     elasticsearch_discovery_zen_minimum_master_nodes: 1
     elasticsearch_discovery_type: single-node
   docker:
@@ -13,6 +14,7 @@ parameters:
           environment:
             cluster.name: ${_param:elasticsearch_cluster_name}
             xpack.security.enabled: ${_param:elasticsearch_xpack_security_enabled}
+            xpack.monitoring.enabled: ${_param:elasticsearch_xpack_monitoring_enabled}
             discovery.zen.minimum_master_nodes: ${_param:elasticsearch_discovery_zen_minimum_master_nodes}
             discovery.type: ${_param:elasticsearch_discovery_type}
           service:

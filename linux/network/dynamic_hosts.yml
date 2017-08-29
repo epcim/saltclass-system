@@ -1,0 +1,13 @@
+parameters:
+  linux:
+    network:
+      purge_hosts: true
+      mine_dns_records: true
+      host:
+        localhost_hostname:
+          address: ${_param:single_address}
+          grain: true
+          names:
+          - ${linux:network:fqdn}
+          - ${linux:network:hostname}
+

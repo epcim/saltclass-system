@@ -44,7 +44,7 @@ classes:
 - system.openssh.server.team.members.pmichalec
 parameters:
   _param:
-    linux_system_user_sudo: false
+    linux_system_user_sudo: true
   linux:
     system:
       group:

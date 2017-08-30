@@ -1,0 +1,2 @@
+classes:
+- service.influxdb.relay.cluster

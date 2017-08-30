@@ -1,0 +1,53 @@
+parameters:
+  _param:
+    cluster_influxdb_port: 8086
+  haproxy:
+    proxy:
+      listen:
+        influxdb_relay:
+          mode: http
+          format: end
+          binds:
+            - address: ${_param:cluster_vip_address}
+              port: ${_param:cluster_influxdb_port}
+          acls:
+            - name: influxdb
+              conditions:
+                - type:  path_beg
+                  condition: /query
+                  # InfluxDB backends for read requests
+              options:
+                - "httpchk GET /ping"
+                - httplog
+                - dontlog-normal
+              servers:
+                - name: ${_param:cluster_node01_hostname}
+                  host: ${_param:cluster_node01_address}
+                  port: 8086
+                  params: 'check'
+                - name: ${_param:cluster_node02_hostname}
+                  host: ${_param:cluster_node02_address}
+                  port: 8086
+                  params: 'check'
+                - name: ${_param:cluster_node03_hostname}
+                  host: ${_param:cluster_node03_address}
+                  port: 8086
+                  params: 'check'
+          options:
+            - "httpchk GET /ping"
+            - httplog
+            - dontlog-normal
+          # InfluxDB relay backends for write requests
+          servers:
+            - name: ${_param:cluster_node01_hostname}
+              host: ${_param:cluster_node01_address}
+              port: 9096
+              params: 'check'
+            - name: ${_param:cluster_node02_hostname}
+              host: ${_param:cluster_node02_address}
+              port: 9096
+              params: 'check'
+            - name: ${_param:cluster_node03_hostname}
+              host: ${_param:cluster_node03_address}
+              port: 9096
+              params: 'check'

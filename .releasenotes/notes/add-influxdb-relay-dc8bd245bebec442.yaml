@@ -1,0 +1,15 @@
+---
+features:
+  - |
+    Added system metadata classes to deploy the InfluxDB relay service.
+
+    The InfluxDB relay service replicates the InfluxDB data to a cluster of
+    InfluxDB servers for HA.
+
+    For more details about the service, see the `GitHub project
+    <https://github.com/influxdata/influxdb-relay>`_ page.
+
+    To enable it, add the ``system.influxdb.relay.cluster`` class to the
+    Telemetry nodes and change
+    ``system.haproxy.proxy.listen.stacklight.influxdb`` to
+    ``system.haproxy.proxy.listen.stacklight.influxdb_relay``.

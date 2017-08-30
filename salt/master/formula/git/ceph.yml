@@ -1,0 +1,10 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            ceph:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-ceph.git'
+              revision: ${_param:salt_master_environment_revision}

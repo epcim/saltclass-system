@@ -9,4 +9,5 @@ classes:
 - system.salt.master.formula.pkg.stacklight
 - system.salt.master.formula.pkg.monitoring
 - system.salt.master.formula.pkg.helm
+- system.salt.master.formula.pkg.ceph
 - system.linux.system.repo.mcp.salt

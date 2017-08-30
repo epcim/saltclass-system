@@ -7,6 +7,8 @@ parameters:
     pushkin_ssl:
       enabled: false
     pushkin_db: pushkin
+    pushkin_smtp_host: smtp.gmail.com
+    pushkin_smtp_port: 587
   docker:
     client:
       stack:
@@ -18,6 +20,9 @@ parameters:
             PUSHKINDBHOST: ${_param:postgresql_bind_host}
             PUSHKINELASTICHOST: ${_param:elasticsearch_bind_host}
             WEBHOOK_FROM: ${_param:webhook_from}
+            EMAIL_SENDER_PASSWORD: ${_param:pushkin_email_sender_password}
+            SMTP_HOST: ${_param:pushkin_smtp_host}
+            SMTP_PORT: ${_param:pushkin_smtp_port}
             WEBHOOK_RECIPIENTS: ${_param:webhook_recipients}
             WEBHOOK_LOGIN_ID: ${_param:webhook_login_id}
             WEBHOOK_APPLICATION_ID: ${_param:webhook_application_id}
@@ -33,7 +38,3 @@ parameters:
                 - ${_param:haproxy_pushkin_exposed_port}:${_param:haproxy_pushkin_bind_port}
               volumes:
                 - /srv/volumes/pushkin/api:/var/log/pushkin
-          network:
-            default:
-              external:
-                name: oss_backend

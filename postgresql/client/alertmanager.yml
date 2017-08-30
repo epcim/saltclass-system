@@ -1,0 +1,30 @@
+classes:
+  - system.postgresql.client
+parameters:
+  _param:
+    alertmanager_db_host: ${_param:haproxy_postgresql_bind_host}
+    alertmanager_db_user: alertmanager
+    alertmanager_db_user_password: alertmanager
+    webhook_login_id: 13
+    webhook_application_id: 24
+  postgresql:
+    client:
+      server:
+        server01:
+          database:
+            alertmanager:
+              enabled: true
+              encoding: 'UTF8'
+              locale: 'en_US'
+              users:
+              - name: ${_param:alertmanager_db_user}
+                password: ${_param:alertmanager_db_user_password}
+                host: ${_param:alertmanager_db_host}
+                createdb: true
+                rights: all privileges
+              init:
+                maintenance_db: pushkin
+                force: true
+                queries:
+                - INSERT INTO login VALUES (${_param:webhook_login_id}, ${_param:webhook_application_id}) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
+                - INSERT INTO device VALUES (${_param:webhook_application_id}, ${_param:webhook_login_id}, 42, 'stacklight_alertmanager', NULL, 1, NULL) ON CONFLICT (id) DO UPDATE SET id = excluded.id;

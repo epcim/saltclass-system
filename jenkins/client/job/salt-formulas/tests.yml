@@ -160,7 +160,7 @@ parameters:
                 type: text
               PARALLEL_GROUP_SIZE:
                 type: string
-                default: "4"
+                default: "8"
       job:
         test-salt-formulas-env:
           name: test-salt-formulas-env

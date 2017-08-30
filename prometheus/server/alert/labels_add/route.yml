@@ -1,6 +1,6 @@
 parameters:
   _param:
-    prometheus_server_alert_label_route: mail
+    prometheus_server_alert_label_route: email
   prometheus:
     server:
       config:

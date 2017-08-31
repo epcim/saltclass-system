@@ -55,7 +55,7 @@ parameters:
               default: "http://127.0.0.1:8080"
             TEST_K8S_CONFORMANCE_IMAGE:
               type: string
-              default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.5.1-3_1482332392819"
+              default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.7.3-1_1503652362277"
             RUN_SPT_TESTS:
               type: boolean
               default: 'true'

@@ -61,4 +61,4 @@ parameters:
             m1.large100:
               ram: 8096
               disk: 100
-            	vcpus: 4
+              vcpus: 4

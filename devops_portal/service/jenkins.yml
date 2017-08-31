@@ -3,6 +3,7 @@ parameters:
     config:
       service:
         jenkins:
+          configure_proxy: true
           endpoint:
             address: ${_param:haproxy_jenkins_bind_host}
             port: ${_param:haproxy_jenkins_bind_port}

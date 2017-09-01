@@ -1,0 +1,74 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        mcp_k8s_test_pipeline:
+          type: workflow-scm
+          name: mcp-k8s-test-pipeline
+          display_name: "Kubernetes tests pipeline"
+          discard:
+            build:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/kubernetes-ci/kubernetes-pipelines"
+            credentials: "gerrit"
+            script: pipelines/mcp-k8s-test-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  kubernetes/kubernetes:
+                    branches:
+                      - compare_type: "ANT"
+                        name: "**"
+                message:
+                  build_successful: "Build successful"
+                  build_unstable: "Build unstable"
+                  build_failure: "Build failed"
+                event:
+                  patchset:
+                    - created:
+                        excludeDrafts: false
+                        excludeTrivialRebase: false
+                        excludeNoCodeChange: false
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(recheck|reverify)'
+          param:
+            KUBE_DOCKER_REGISTRY:
+              type: string
+              default: 'docker-dev-virtual.docker.mirantis.net'
+              description: 'Docker registry for binaries and images'
+            CALICO_DOCKER_REGISTRY:
+              type: string
+              default: 'docker-prod-virtual.docker.mirantis.net'
+              description: 'Docker registry for published Calico images'
+            K8S_BASE_IMAGE:
+              type: string
+              default: '{docker-prod-virtual}/mirantis/base-images/debian-base:20161223134732'
+              description: 'Base Docker image to build k8s'
+            DOCKER_IMAGE_UNIT:
+              type: string
+              default: '{docker-prod-virtual}/mirantis/k8s-tests-images/k8s-tests-unit:latest'
+              desription: 'Docker image for k8s unit tests'
+            DOCKER_IMAGE_INTEGRATION:
+              type: string
+              default: '{docker-prod-virtual}/mirantis/k8s-tests-images/k8s-tests-integration:latest'
+              desription: 'Docker image for k8s integration tests'
+            CALICO_CNI_IMAGE_REPO:
+              type: string
+              default: 'calico/cni'
+              description: 'Custom calico/cni image repository'
+            CALICO_CNI_IMAGE_TAG:
+              type: string
+              default: 'v1.5.1'
+              description: 'Custom calico/cni image tag'
+            CALICO_DOWNSTREAM:
+              type: boolean
+              default: 'true'
+              description: 'Use Calico downstream'
+            CALICO_VER:
+              type: string
+              default: 'mcp'
+              description: 'Custom Calico version'

@@ -1,0 +1,2 @@
+classes:
+- system.jenkins.client.job.k8s-test.mcp-k8s-test-pipeline

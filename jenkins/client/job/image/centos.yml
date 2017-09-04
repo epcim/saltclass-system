@@ -38,7 +38,7 @@ parameters:
               default: ""
             UPLOAD_URL:
               type: string
-              default: "http://jenkins:eyoocaiG3ADireK3Eef8gae1roh5oox010.10.100.85:8088/"
+              default: "${_param:jenkins_packer_upload_url}"
             SKIP_UPLOAD:
               type: boolean
               default: "false"

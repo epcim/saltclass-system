@@ -129,3 +129,4 @@ parameters:
         - method org.jenkinsci.plugins.workflow.steps.FlowInterruptedException getCauses
         - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild
         - method hudson.model.Actionable getAction java.lang.Class
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toSorted java.lang.Iterable

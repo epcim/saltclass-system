@@ -4,26 +4,26 @@ parameters:
   _param:
     jenkins_deploy_jobs:
       # mk20
-      - stack_name: virtual_mk_advanced
+      - stack_name: virtual_mk20_advanced
         stack_env: devcloud_virtual_mk20_advanced
         stack_install: core,openstack
         stack_type: heat
         stack_test: ""
         job_timer: ""
-      - stack_name: virtual_mk_basic
+      - stack_name: virtual_mk20_basic
         stack_env: devcloud_virtual_mk20_basic
         stack_install: core,openstack
         stack_type: heat
         stack_test: ""
         job_timer: ""
       # mk22
-      - stack_name: virtual_mk_advanced
+      - stack_name: virtual_mk22_advanced
         stack_env: devcloud_virtual_mk22_advanced
         stack_install: core,openstack
         stack_type: heat
         stack_test: ""
         job_timer: ""
-      - stack_name: virtual_mk_basic
+      - stack_name: virtual_mk22_basic
         stack_env: devcloud_virtual_mk22_basic
         stack_install: core,openstack
         stack_type: heat

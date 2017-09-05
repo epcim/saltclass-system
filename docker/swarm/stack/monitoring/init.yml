@@ -30,13 +30,13 @@ parameters:
               ports:
                 - 15015:${prometheus:remote_storage_adapter:bind:port}
               environment:
-                bind_port: ${prometheus:remote_storage_adapter:bind:port}
-                bind_address: ${prometheus:remote_storage_adapter:bind:address}
-                influxdb_retention_policy: 'lma'
-                influxdb_url: ${_param:prometheus_influxdb_url}
-                influxdb_db: ${_param:prometheus_influxdb_db}
-                influxdb_username: ${_param:prometheus_influxdb_username}
-                influxdb_password: ${_param:prometheus_influxdb_password}
+                RSA_BIND_PORT: ${prometheus:remote_storage_adapter:bind:port}
+                RSA_BIND_ADDRESS: ${prometheus:remote_storage_adapter:bind:address}
+                RSA_INFLUXDB_RETENTION_POLICY: 'lma'
+                RSA_INFLUXDB_URL: ${_param:prometheus_influxdb_url}
+                RSA_INFLUXDB_DB: ${_param:prometheus_influxdb_db}
+                RSA_INFLUXDB_USERNAME: ${_param:prometheus_influxdb_username}
+                RSA_INFLUXDB_PASSWORD: ${_param:prometheus_influxdb_password}
             alertmanager:
               networks:
                 - monitoring
@@ -55,11 +55,11 @@ parameters:
                 - ${prometheus:alertmanager:dir:config}:${_param:prometheus_alertmanager_config_directory}
                 - ${prometheus:alertmanager:dir:data}:${_param:prometheus_alertmanager_data_directory}
               environment:
-                config_dir: ${_param:prometheus_alertmanager_config_directory}
-                data_dir: ${_param:prometheus_alertmanager_data_directory}
-                bind_port: ${prometheus:alertmanager:bind:port}
-                bind_address: ${prometheus:alertmanager:bind:address}
-                discovery_domain: 'monitoring_alertmanager'
+                ALERTMANAGER_CONFIG_DIR: ${_param:prometheus_alertmanager_config_directory}
+                ALERTMANAGER_DATA_DIR: ${_param:prometheus_alertmanager_data_directory}
+                ALERTMANAGER_BIND_PORT: ${prometheus:alertmanager:bind:port}
+                ALERTMANAGER_BIND_ADDRESS: ${prometheus:alertmanager:bind:address}
+                ALERTMANAGER_DISCOVERY_DOMAIN: 'monitoring_alertmanager'
             pushgateway:
               networks:
                 - monitoring
@@ -70,8 +70,8 @@ parameters:
                 restart_policy:
                   condition: any
               environment:
-                bind_port: ${prometheus:pushgateway:bind:port}
-                bind_address: ${prometheus:pushgateway:bind:address}
+                PUSHGATEWAY_BIND_PORT: ${prometheus:pushgateway:bind:port}
+                PUSHGATEWAY_BIND_ADDRESS: ${prometheus:pushgateway:bind:address}
               labels:
                 com.mirantis.monitoring: "pushgateway"
               image: ${_param:docker_image_pushgateway}

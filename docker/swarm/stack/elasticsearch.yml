@@ -2,6 +2,11 @@ parameters:
   _param:
     elasticsearch_replicas: 1
     docker_image_elasticsearch: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
+    elasticsearch_bind_host: elasticsearch-cluster
+    elasticsearch_http_bind_port: ${_param:haproxy_elasticsearch_http_bind_port}
+    elasticsearch_binary_bind_port: ${_param:haproxy_elasticsearch_binary_bind_port}
+    elasticsearch_ssl:
+      enabled: false
     elasticsearch_cluster_name: oss-cluster
     elasticsearch_xpack_security_enabled: 'false'
     elasticsearch_xpack_monitoring_enabled: 'false'
@@ -18,14 +23,18 @@ parameters:
             discovery.zen.minimum_master_nodes: ${_param:elasticsearch_discovery_zen_minimum_master_nodes}
             discovery.type: ${_param:elasticsearch_discovery_type}
           service:
-            cluster:
+            elasticsearch-cluster:
               image: ${_param:docker_image_elasticsearch}
               deploy:
                 replicas: ${_param:elasticsearch_replicas}
                 restart_policy:
                   condition: any
+              volumes:
+                - /srv/volumes/elasticsearch:/usr/share/elasticsearch/data
               ports:
                 - ${_param:haproxy_elasticsearch_http_exposed_port}:${_param:haproxy_elasticsearch_http_bind_port}
                 - ${_param:haproxy_elasticsearch_binary_exposed_port}:${_param:haproxy_elasticsearch_binary_bind_port}
-              volumes:
-                - /srv/volumes/elasticsearch:/usr/share/elasticsearch/data
+          network:
+            default:
+              external:
+                name: oss_backend

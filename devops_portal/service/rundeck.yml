@@ -4,6 +4,7 @@ parameters:
       service:
         rundeck:
           configure_proxy: true
+          resolve_hostname: false
           credentials:
             username: ${_param:rundeck_admin_username}
             password: ${_param:rundeck_admin_password}

@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    docker_oss_network_subnet: 10.50.0.0/24
+  docker:
+    client:
+      network:
+        oss_backend:
+          subnet: ${_param:docker_oss_network_subnet}
+          driver: overlay
+          attachable: true

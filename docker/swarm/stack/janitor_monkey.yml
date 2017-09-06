@@ -5,15 +5,21 @@ parameters:
     docker_mongodb_admin_username: admin
     docker_mongodb_admin_password: password
     docker_image_janitor_monkey: docker-prod-local.artifactory.mirantis.com/mirantis/oss/janitor-monkey
+    janitor_monkey_bind_host: cleanup-service-api
+    janitor_monkey_bind_port: 8080
+    janitor_monkey_ssl:
+      enabled: false
     janitor_monkey_enabled: true
     janitor_monkey_dryrun_mode: false
-    janitor_monkey_base_url: http://${_param:haproxy_janitor_monkey_bind_host}:${_param:haproxy_janitor_monkey_bind_port}
-    janitor_monkey_mongodb_host: ${_param:haproxy_mongodb_bind_host}
+    janitor_monkey_mongodb_host: cleanup-service-mongodb
     janitor_monkey_mongodb_port: ${_param:haproxy_mongodb_bind_port}
+    mongodb_ssl:
+      enabled: false
+    janitor_monkey_base_url: http://${_param:janitor_monkey_mongodb_host}:${_param:janitor_monkey_mongodb_port}
     janitor_monkey_mongodb_db: mcp_cloud
     janitor_monkey_mongodb_username: janitor
     janitor_monkey_mongodb_password: password
-    janitor_monkey_elasticsearch: ${_param:haproxy_elasticsearch_bind_host}:${_param:haproxy_elasticsearch_binary_bind_port}
+    janitor_monkey_elasticsearch: ${_param:elasticsearch_bind_host}:${_param:elasticsearch_binary_bind_port}
     janitor_monkey_cloudfire_region: RegionOne
     janitor_monkey_cis_clustername: ${_param:elasticsearch_cluster_name}
     janitor_monkey_openstack:
@@ -48,7 +54,7 @@ parameters:
             simianarmy.client.cloudfire.domain: ${_param:janitor_monkey_openstack:project_domain_name}
             simianarmy.client.cloudfire.project: ${_param:janitor_monkey_openstack:project_name}
           service:
-            mongodb:
+            cleanup-service-mongodb:
               image: ${_param:docker_image_mongodb}
               deploy:
                 replicas: ${_param:docker_janitor_monkey_replicas}
@@ -58,11 +64,15 @@ parameters:
                 - ${_param:haproxy_mongodb_exposed_port}:${_param:haproxy_mongodb_bind_port}
               volumes:
                 - /srv/volumes/mongodb:/data/db
-            api:
+            cleanup-service-api:
               image: ${_param:docker_image_janitor_monkey}
               deploy:
                 replicas: ${_param:docker_janitor_monkey_replicas}
                 restart_policy:
                   condition: any
               ports:
-                - ${_param:haproxy_janitor_monkey_exposed_port}:8080
+                - ${_param:haproxy_janitor_monkey_exposed_port}:${_param:janitor_monkey_bind_port}
+          network:
+            default:
+              external:
+                name: oss_backend

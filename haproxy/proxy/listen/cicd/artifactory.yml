@@ -12,7 +12,7 @@ parameters:
           mode: http
           options:
             - forwardfor
-            - httpchk
+#            - httpchk
             - httpclose
             - httplog
           balance: source

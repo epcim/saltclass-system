@@ -74,7 +74,7 @@ parameters:
             script: delete-broken-stacks-pipeline.groovy
           trigger:
             timer:
-              spec: "0 H * * *"
+              spec: "0 0 * * *"
           param:
             # openstack api
             OPENSTACK_API_URL:

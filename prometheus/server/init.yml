@@ -5,4 +5,6 @@ parameters:
   prometheus:
     server:
       dir:
+        data: /srv/volumes/local/prometheus/data
+        config: /srv/volumes/local/prometheus/config
         config_in_container: ${_param:prometheus_server_config_directory}

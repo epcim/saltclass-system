@@ -1,0 +1,9 @@
+---
+summary: >
+  Removed GlusterFS requirements for Prometheus
+
+deprecations:
+  - Removed GlusterFS from Prometheus requirements.
+    Prometheus/alertmanager do not require shared storage.
+    Now, the configurations for Prometheus and Alertmanager
+    will be generated on every Docker Swarm node.

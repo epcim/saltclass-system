@@ -2,3 +2,8 @@ parameters:
   _param:
     prometheus_alertmanager_config_directory: /srv/alertmanager
     prometheus_alertmanager_data_directory: /data
+  prometheus:
+    alertmanager:
+      dir:
+        data: /srv/volumes/local/alertmanager/data
+        config: /srv/volumes/local/alertmanager/config

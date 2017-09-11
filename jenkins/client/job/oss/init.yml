@@ -1,3 +1,4 @@
 classes:
   - system.jenkins.client.job.oss.test_devops_portal
+  - system.jenkins.client.job.oss.test_devops_portal_nightly
   - system.jenkins.client.job.oss.test_security_monkey_openstack

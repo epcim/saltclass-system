@@ -68,6 +68,10 @@ parameters:
                 type: string
                 default: 'deploy-stack-cleanup'
 
+              STACK_RECLASS_BRANCH:
+                type: string
+                default: ""
+
               # salt
               SALT_MASTER_CREDENTIALS:
                 type: string

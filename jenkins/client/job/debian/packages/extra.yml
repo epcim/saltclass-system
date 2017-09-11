@@ -173,6 +173,14 @@ parameters:
               dist: xenial
               build: influxdb-relay
               branch: master
+            - package: prometheus-relay
+              dist: trusty
+              build: prometheus-relay
+              branch: master
+            - package: prometheus-relay
+              dist: xenial
+              build: prometheus-relay
+              branch: master
           template:
             type: workflow-scm
             concurrent: false

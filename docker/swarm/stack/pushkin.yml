@@ -38,3 +38,7 @@ parameters:
                 - ${_param:haproxy_pushkin_exposed_port}:${_param:haproxy_pushkin_bind_port}
               volumes:
                 - /srv/volumes/pushkin/api:/var/log/pushkin
+          network:
+            default:
+              external:
+                name: oss_backend

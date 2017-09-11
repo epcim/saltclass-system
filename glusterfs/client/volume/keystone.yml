@@ -19,3 +19,20 @@ parameters:
           user: keystone
           group: keystone
           opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address}"
+  linux:
+    system:
+      user:
+        keystone:
+          enabled: true
+          name: keystone
+          home: /var/lib/keystone
+          uid: 301
+          gid: 301
+          shell: /bin/false
+          system: True
+      group:
+        keystone:
+          enabled: true
+          name: keystone
+          gid: 301
+          system: True

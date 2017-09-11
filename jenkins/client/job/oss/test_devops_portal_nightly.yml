@@ -2,8 +2,8 @@ parameters:
   jenkins:
     client:
       job:
-        test-oss-devops-portal:
-          name: test-oss-devops-portal
+        test-oss-devops-portal-nightly:
+          name: test-oss-devops-portal-nightly
           discard:
             build:
               keep_num: 15
@@ -17,20 +17,8 @@ parameters:
             credentials: "gerrit"
             script: test-devops-portal-pipeline.groovy
           trigger:
-            gerrit:
-              project:
-                "oss/devops-portal":
-                  branches:
-                    - master
-              event:
-                patchset:
-                  - created:
-                      excludeDrafts: false
-                      excludeTrivialRebase: false
-                      excludeNoCodeChange: false
-                comment:
-                  - addedContains:
-                      commentAddedCommentContains: '(recheck|reverify)'
+            timer:
+              spec: "0 23 * * *"
           param:
             CREDENTIALS_ID:
               type: string
@@ -43,4 +31,4 @@ parameters:
                 default: master
             NIGHTLY_BUILD:
                 type: boolean
-                default: false
+                default: true

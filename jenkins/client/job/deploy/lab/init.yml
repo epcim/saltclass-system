@@ -12,6 +12,7 @@ classes:
   - system.jenkins.client.job.deploy.lab.component.kubernetes
   - system.jenkins.client.job.deploy.lab.component.openstack
   - system.jenkins.client.job.deploy.lab.component.stacklight
+  - system.jenkins.client.job.deploy.lab.ironic
 
 parameters:
   jenkins:

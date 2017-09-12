@@ -28,7 +28,7 @@ parameters:
       username: ""
       password: ""
       auth_url: ""
-      disable_ssl_verification: True
+      ssl_verify: False
       cacert_path: ""
       cafile: /opt/certs/cert.pem
   docker:
@@ -56,7 +56,7 @@ parameters:
             simianarmy.client.cloudfire.secretKey: ${_param:janitor_monkey_openstack:password}
             simianarmy.client.cloudfire.domain: ${_param:janitor_monkey_openstack:project_domain_name}
             simianarmy.client.cloudfire.project: ${_param:janitor_monkey_openstack:project_name}
-            simianarmy.client.cloudfire.disableSSLVerification: ${_param:janitor_monkey_openstack:disable_ssl_verification}
+            simianarmy.client.cloudfire.SSLVerify: ${_param:janitor_monkey_openstack:ssl_verify}
             simianarmy.client.cloudfire.cafile: ${_param:janitor_monkey_openstack:cafile}
           service:
             cleanup-service-mongodb:

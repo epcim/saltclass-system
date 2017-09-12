@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    For stability and diversification of resources, Prometheus-based Stacklight
+    and OSS services were moved to monitoring nodes. Now, on spawning new
+    monitoring nodes, different Docker swarm is set up on them to deliver
+    Stacklight and/or OSS services.
+
+    To deploy Stacklight with OSS services on monitoring nodes, generate a new
+    deployment model using the Model Designer UI.
+

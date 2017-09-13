@@ -181,6 +181,14 @@ parameters:
               dist: xenial
               build: prometheus-relay
               branch: master
+            - package: python-datrie
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
+            - package: contrail-api-cli
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
           template:
             type: workflow-scm
             concurrent: false

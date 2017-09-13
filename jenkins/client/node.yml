@@ -7,6 +7,8 @@ parameters:
         master:
           node_mode: Exclusive
           remote_home: /var/lib/jenkins
+          labels:
+            - python
           launcher:
             type: master
         slave01:

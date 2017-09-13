@@ -98,8 +98,8 @@ parameters:
               PARALLEL_NODE_GROUP_SIZE:
                 type: string
                 default: "5"
-        test_salt_model_cookiecutter:
-          name: test-salt-model-cookiecutter-{{cookiecutter_template}}
+        test_mk_cookiecutter_templates:
+          name: test-mk-{{cookiecutter_template}}
           jobs:
             - cookiecutter_template: cookiecutter-templates
           template:

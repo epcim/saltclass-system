@@ -22,15 +22,15 @@ parameters:
     security_monkey_openstack:
       os_account_id: mcp_cloud
       os_account_name: mcp_cloud
-      username: ""
-      password: ""
-      auth_url: ""
+      auth_url: http://yourcloud.com:5000/v3/auth/tokens
+      username: admin
+      password: password
       project_domain_name: Default
       project_name: admin
       user_domain_name: Default
       cacert_path: /srv/volumes/rundeck/storage/content/cis/openstack/cert.pem
       cafile: /opt/certs/cert.pem
-      endpoint_type: "public"
+      endpoint_type: public
       ssl_verify: False
   docker:
     client:

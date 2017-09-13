@@ -25,11 +25,11 @@ parameters:
     janitor_monkey_openstack:
       project_domain_name: default
       project_name: admin
-      username: ""
-      password: ""
-      auth_url: ""
+      auth_url: http://yourcloud.com:5000/v3/auth/tokens
+      username: admin
+      password: password
       ssl_verify: False
-      cacert_path: ""
+      cacert_path: /srv/volumes/rundeck/storage/content/cis/openstack/cert.pem
       cafile: /opt/certs/cert.pem
   docker:
     client:

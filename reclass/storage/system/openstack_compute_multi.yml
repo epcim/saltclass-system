@@ -2,6 +2,8 @@ parameters:
   _param:
     openstack_compute_node01_hostname: cmp01
     openstack_compute_node02_hostname: cmp02
+    openstack_compute_node01_address: 172.16.10.105
+    openstack_compute_node02_address: 172.16.10.106
   reclass:
     storage:
       node:
@@ -13,7 +15,7 @@ parameters:
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: ${_param:linux_system_codename}
-            single_address: 172.16.10.105
+            single_address: ${_param:openstack_compute_node01_address}
         openstack_compute_node02:
           name: ${_param:openstack_compute_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -22,4 +24,4 @@ parameters:
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: ${_param:linux_system_codename}
-            single_address: 172.16.10.106
+            single_address: ${_param:openstack_compute_node02_address}

@@ -161,5 +161,6 @@ parameters:
           support3:
           # It's never safe to run unlimited number of commands with sudo.
           # Use with caution.
+            setenv: true
             commands:
                 - ALL

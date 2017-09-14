@@ -18,7 +18,7 @@ parameters:
                 restart_policy:
                   condition: any
               ports:
-                - 14440:4440
+                - ${_param:haproxy_rundeck_exposed_port}:${_param:haproxy_rundeck_bind_port}
               volumes:
                 - /srv/volumes/rundeck/etc/framework.properties:/etc/rundeck/framework.properties
                 - /srv/volumes/rundeck/etc/tokens.properties:/etc/rundeck/tokens.properties

@@ -2,6 +2,7 @@ parameters:
   _param:
     haproxy_rundeck_bind_host: ${_param:haproxy_bind_address}
     haproxy_rundeck_bind_port: 4440
+    haproxy_rundeck_exposed_port: 14440
     haproxy_rundeck_ssl:
       enabled: false
   haproxy:
@@ -25,13 +26,13 @@ parameters:
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
-              port: 14440
+              port: ${_param:haproxy_rundeck_exposed_port}
               params: check
             - name: ${_param:cluster_node02_name}
               host: ${_param:cluster_node02_address}
-              port: 14440
+              port: ${_param:haproxy_rundeck_exposed_port}
               params: backup check
             - name: ${_param:cluster_node03_name}
               host: ${_param:cluster_node03_address}
-              port: 14440
+              port: ${_param:haproxy_rundeck_exposed_port}
               params: backup check

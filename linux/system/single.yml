@@ -4,8 +4,11 @@ classes:
 - system.openssh.server.single
 - system.ntp.client.single
 parameters:
+  _param:
+    local_package_repos: false
   linux:
     system:
+      local_package_repos: ${_param:local_package_repos}
       user:
         root:
           enabled: true

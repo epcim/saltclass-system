@@ -19,6 +19,8 @@ parameters:
           version: latest
         cloud-init:
           version: purged
+        unattended-updates:
+          version: purged
         mcelog:
           version: latest
       kernel:

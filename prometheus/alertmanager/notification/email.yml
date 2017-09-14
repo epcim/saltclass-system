@@ -1,0 +1,23 @@
+parameters:
+  prometheus:
+    alertmanager:
+      config:
+        route:
+          routes:
+            email:
+              receiver: SMTP
+              match_re:
+                - label: route
+                  value: email
+        receiver:
+          SMTP:
+            enabled: true
+            email_configs:
+              smtp_server:
+                to: ${_param:alertmanager_notification_email_to}
+                from: ${_param:alertmanager_notification_email_from}
+                auth_username: ${_param:alertmanager_notification_email_username}
+                auth_password: ${_param:alertmanager_notification_email_password}
+                smarthost: ${_param:alertmanager_notification_email_host}
+                require_tls: ${_param:alertmanager_notification_email_require_tls}
+                send_resolved: true

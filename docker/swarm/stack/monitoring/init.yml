@@ -60,6 +60,7 @@ parameters:
                 ALERTMANAGER_BIND_PORT: ${prometheus:alertmanager:bind:port}
                 ALERTMANAGER_BIND_ADDRESS: ${prometheus:alertmanager:bind:address}
                 ALERTMANAGER_DISCOVERY_DOMAIN: 'monitoring_alertmanager'
+                ALERTMANAGER_EXTERNAL_URL: "http://${_param:stacklight_monitor_address}:15011"
             pushgateway:
               networks:
                 - monitoring
@@ -103,3 +104,4 @@ parameters:
                 PROMETHEUS_STORAGE_LOCAL_RETENTION: ${prometheus:server:storage:local:retention}
                 PROMETHEUS_STORAGE_LOCAL_TARGET_HEAP_SIZE: ${prometheus:server:storage:local:target_heap_size}
                 PROMETHEUS_STORAGE_LOCAL_NUM_FINGERPRINT_MUTEXES: ${prometheus:server:storage:local:num_fingerprint_mutexes}
+                PROMETHEUS_EXTERNAL_URL: "http://${_param:stacklight_monitor_address}:15010"

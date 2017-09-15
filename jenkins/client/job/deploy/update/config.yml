@@ -42,4 +42,7 @@ parameters:
             TARGET_BATCH_LIVE:
               type: string
               description: Batch size for the complete live config changes on all nodes, empty string means apply to all targetted nodes.
-
+            PULL_MODEL:
+              type: boolean
+              default: 'true'
+              description: Pull the latest reclass cluster model before applying the states.

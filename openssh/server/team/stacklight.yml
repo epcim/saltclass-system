@@ -105,52 +105,52 @@ parameters:
           - ${public_keys:spasquier}
           user: ${linux:system:user:spasquier}
         obourdon:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:obourdon}
           user: ${linux:system:user:obourdon}
         dkalashnik:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:dkalashnik}
           user: ${linux:system:user:dkalashnik}
         rpromyshlennikov:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:rpromyshlennikov}
           user: ${linux:system:user:rpromyshlennikov}
         vgusev:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:vgusev}
           user: ${linux:system:user:vgusev}
         mpolreich:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:mpolreich}
           user: ${linux:system:user:mpolreich}
         isvetlov:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:isvetlov}
           user: ${linux:system:user:isvetlov}
         akholkin:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:akholkin}
           user: ${linux:system:user:akholkin}
         kszukielojc:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:kszukielojc}
           user: ${linux:system:user:kszukielojc}
         isviridov:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:isviridov}
           user: ${linux:system:user:isviridov}
         nzaporozhets:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:nzaporozhets}
           user: ${linux:system:user:nzaporozhets}

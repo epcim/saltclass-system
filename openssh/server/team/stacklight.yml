@@ -18,13 +18,6 @@ parameters:
           full_name: Simon Pasquier
           home: /home/spasquier
           email: spasquier@mirantis.com
-        ppetit:
-          enabled: true
-          name: ppetit
-          sudo: true
-          full_name: Patrick Petit 
-          home: /home/ppetit
-          email: ppetit@mirantis.com
         obourdon:
           enabled: true
           name: obourdon
@@ -111,58 +104,53 @@ parameters:
           public_keys:
           - ${public_keys:spasquier}
           user: ${linux:system:user:spasquier}
-        ppetit:
-          enabled: true
-          public_keys:
-          - ${public_keys:ppetit}
-          user: ${linux:system:user:ppetit}
         obourdon:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:obourdon}
           user: ${linux:system:user:obourdon}
         dkalashnik:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:dkalashnik}
           user: ${linux:system:user:dkalashnik}
         rpromyshlennikov:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:rpromyshlennikov}
           user: ${linux:system:user:rpromyshlennikov}
         vgusev:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:vgusev}
           user: ${linux:system:user:vgusev}
         mpolreich:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:mpolreich}
           user: ${linux:system:user:mpolreich}
         isvetlov:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:isvetlov}
           user: ${linux:system:user:isvetlov}
         akholkin:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:akholkin}
           user: ${linux:system:user:akholkin}
         kszukielojc:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:kszukielojc}
           user: ${linux:system:user:kszukielojc}
         isviridov:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:isviridov}
           user: ${linux:system:user:isviridov}
         nzaporozhets:
-          enable: true
+          enabled: true
           public_keys:
           - ${public_keys:nzaporozhets}
           user: ${linux:system:user:nzaporozhets}
@@ -171,8 +159,6 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3odU+3V2uDA2ptAFL9hrJRPNEEdAyztWOZFQ5Oyd9oerTGOU3p4xmrgWWjfKFKbYGhiiIUcYAol5PkTfKukGEkkjCHYA1t023soCaaAj85wCZCnw2zQNAziwxTYmAzTqgxiSvtZNMMrtJvFHRIRDzJ3M1lV0prWNWkMM1/3FAd4W49y6VT3fkMCo8uqG7CfGdgR2DgBCxf9KaNPfW5eDEPOgmE5lK8tVSEI6T+Cg7hbcTf4lFYnlFBnlQgp/0JstsM4Vbwb4B34LOpOsf2S8rrWk2xQMjwaMHXkc2s/E8iW3F5nVFuyEXYISFQIiAHw8dzC6CHgLcyHUVWwznKawZ newt@newt-dev1
     spasquier:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXBHKQaGUNB92DsnyvflmCbmuXnkiuNahZiue3hnyXqLA2q8jmQmzBbxReAJzexnVfJhrUCTw8IPJUpMUP27u3igvGdkhfctdUuxVf9yGJErtGNgHK/aGbeLCvUOmhw6X/xbf3IbyFL1gwxOJ2cmmjlSptYU9E1W2xFY+IMFWBhzO3vso5EABgPVli/UUMfeXUUd++lIZpoyYe2Hkri1QGNhzfbZcFjEO78+vNiLZrvjJEtkXWu7iZTYK6eE365CiFJzqFL7N6Ichb28qakcmVqR/foreuz3cOMqMGssKoOQk1213x8w4fE0yLwf9Ft8L7GMf+vXQvuNt0ZKBPWqn7 spasquier@mirantis.com
-    ppetit:
-      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUGCb+mGidT4FRa4rJxoYx39NX2vCjRw+CmCQJW/Uf6xc0NNp5WRWJ0hnyIMRVVfehvfjdXPo4bO4cXIwmo06C1Wx+DMyvjI9NvuHtt52p3QTsh+PYZe5t4hFuGh7veWQw3LuLtDLVlVS633FQMgT/BXDaBc65yfN9CuV6lHqZ6KPKoGAi3ADlcQFqhFttO+GsVkxd6uGtelnbYXsDMwylCIKop0C/obu6wG85d/8Q2/Zts5CvUcCiCNfZtl8otgNMrpfnuhC0xAsmgwDxqK2kshxUujclyFfO7ixl+E9Plc7kUJvodNbzOcAmY3YpuHVoJQkHx/Ou81/q+JOVtFxz ppetit@baobab 
     obourdon:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDOd0PnoQhjjo/UrmCotaGZxXfpxLoMmuZ+XjKqAkEb9kE+aE0+k8t2EUs8PIctEgIcIC9vmovqOzIt5uNLV5MyN4R+pdIBKyWEQ5fQPaFhn/uZKf7AxLYhTVVW1wM+cDzrpWTyNQ0w59JBfNPZ/BDMtdpch9gTP24pwJ8yUDHHMSt1FnVqa7+Czw8jig4/oM05Mob5DQKlWOdtdUP3XYHSGJuHY4tHmc5sPvzIqs5r47uj5VD4gaCUqYeRS2C1YJcisN880qIqUHuCK0k9gQP+0DKJPVPmPPCuwebBzUUfjhKcbqiikKxPS0p4DWiprmeF8xjvmVWX+V8lP/v0hXiVgMc3wMoXJklH+XM7U5y5uzN8MF4YqAi4M/uSK5UF+TPn5dtu9s+joQmqt5XXaV4iFQe5kcdIYEMNJUGxiwMzByhvqWgC1reYSD8FquqLTH/5ITvFFmaTyQbBJMnXAE+QxdTXMfhTnfI/pbbhAUmfr5w8Z34lZG5UDnUy/rR+LlvJS76MqCr3nemZTHqhUYIrIJA8f9Xa8o9UJTy2QICdj2NidW1UzHCPybc/nH7qc6TjZJALLdhzK2QDbO6seJLOXuVHwSxjOx2Jdv5HImpFSeEfiGRQqc8bT+NGZI5V+cW+FuztU8i46VaSPXFM8t+57Ut/MdndAVYSPqgc7E3u3w== obourdon@mirantis.com
     dkalashnik:

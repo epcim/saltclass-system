@@ -1,11 +1,15 @@
 parameters:
+  _param:
+    gerrit_pipeline_library_repo: https://github.com/Mirantis/pipeline-library
+    gerrit_mk_pipelines_repo: https://github.com/Mirantis/mk-pipelines
+    gerrit_decapod_pipelines_repo: https://github.com/mateuszlos/decapod-pipelines
   gerrit:
     client:
       project:
         mcp-ci/pipeline-library:
           enabled: true
           description: Jenkins pipeline libraries
-          upstream: https://github.com/Mirantis/pipeline-library
+          upstream: ${_param:gerrit_pipeline_library_repo}
           access: ${gerrit:client:default_access}
           require_change_id: true
           require_agreement: false
@@ -13,7 +17,7 @@ parameters:
         mk/mk-pipelines:
           enabled: true
           description: Jenkins pipelines
-          upstream: https://github.com/Mirantis/mk-pipelines
+          upstream: ${_param:gerrit_mk_pipelines_repo}
           access: ${gerrit:client:default_access}
           require_change_id: true
           require_agreement: false
@@ -21,7 +25,7 @@ parameters:
         mk/decapod-pipelines:
           enabled: true
           description: Decapod jenkins pipelines
-          upstream: https://github.com/mateuszlos/decapod-pipelines
+          upstream: ${_param:gerrit_decapod_pipelines_repo}
           access: ${gerrit:client:default_access}
           require_change_id: true
           require_agreement: false

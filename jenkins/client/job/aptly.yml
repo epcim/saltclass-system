@@ -75,6 +75,9 @@ parameters:
               RECREATE:
                 type: boolean
                 default: 'false'
+              DUMP_PUBLISH:
+                type: boolean
+                default: 'true'
               DIFF_ONLY:
                 type: boolean
                 default: '{{diff_only}}'

@@ -5,6 +5,7 @@ parameters:
     docker_image_jenkins: tcpcloud/jenkins:2.73
     jenkins_master_extra_opts: ""
     jenkins_master_executors_num: 4
+    jenkins_master_max_concurent_requests: 40
   docker:
     client:
       stack:
@@ -15,6 +16,7 @@ parameters:
                 JENKINS_HOME: /var/jenkins_home
                 JAVA_OPTS: " -server -XX:+AlwaysPreTouch -Xloggc:$JENKINS_HOME/gc-%t.log -XX:NumberOfGCLogFiles=5 -XX:+UseGCLogFileRotation -XX:GCLogFileSize=20m -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintHeapAtGC -XX:+PrintGCCause -XX:+PrintTenuringDistribution -XX:+PrintReferenceGC -XX:+PrintAdaptiveSizePolicy -XX:+UseG1GC -XX:+ExplicitGCInvokesConcurrent -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1 -Djenkins.install.runSetupWizard=false -Dhudson.DNSMultiCast.disabled=true -Dhudson.udp=-1 -Dhudson.footerURL=https://www.mirantis.com ${_param:jenkins_master_extra_opts}"
                 JENKINS_NUM_EXECUTORS: ${_param:jenkins_master_executors_num}
+                JENKINS_OPTS: " --handlerCountMax=${_param:jenkins_master_max_concurent_requests}"
                 https_proxy: ${_param:docker_https_proxy}
                 http_proxy: ${_param:docker_http_proxy}
                 no_proxy: ${_param:docker_no_proxy}

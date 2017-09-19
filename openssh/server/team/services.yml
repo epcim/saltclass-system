@@ -1,9 +1,12 @@
 classes:
 - system.linux.system.sudo
 - system.openssh.server.team.members.mniedbala
+- system.openssh.server.team.members.pmichalec
+- system.openssh.server.team.members.pcizinsky
+- system.openssh.server.team.members.lmercl
+- system.openssh.server.team.members.korlowska
+- system.openssh.server.team.members.miwinski
+- system.openssh.server.team.members.mlos
 parameters:
-  linux:
-    system:
-      user:
-        mniedbala:
-          sudo: true
+  _param:
+    linux_system_user_sudo: true

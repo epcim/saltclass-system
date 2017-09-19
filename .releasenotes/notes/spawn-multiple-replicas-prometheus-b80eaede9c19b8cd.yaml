@@ -1,0 +1,14 @@
+summary: >
+  Spawned two replicas of Prometheus to provide HA
+
+features:
+  - Spawned two replicas of Prometheus inside Docker Swarm.
+    These two instances have the same configuration file
+    and scrape the same endpoints. Therefore, they can be
+    treated as one-to-one copies.
+    Due to a limitation, when connecting to the Prometheus
+    web UI it is not possible to choose to which of the
+    existing Prometheus servers to connect and those
+    servers may contain slightly different results for the
+    same queries. Therefore, we suggest that you use Grafana
+    to visualize the data.

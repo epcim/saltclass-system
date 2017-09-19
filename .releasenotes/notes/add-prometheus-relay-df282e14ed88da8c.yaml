@@ -1,0 +1,12 @@
+---
+
+summary: >
+  Add prometheus relay service
+
+features:
+  - The Prometheus Relay service is responsible for
+    getting PromQL queries from external components,
+    such as Grafana, passing them to all discovered
+    Prometheus servers, merging the results and returning
+    the data. Prometheus Relay can be used to handle
+    Prometheus high availability or sharding.

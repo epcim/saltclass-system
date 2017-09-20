@@ -5,6 +5,8 @@ parameters:
     secmonkey_db_host: ${_param:haproxy_postgresql_bind_host}
     secmonkey_db_user: secmonkey
     secmonkey_db_user_password: secmonkey
+    secmonkey_login_id: 11
+    secmonkey_application_id: 1
   postgresql:
     client:
       server:
@@ -24,5 +26,5 @@ parameters:
                 maintenance_db: pushkin
                 force: true
                 queries:
-                - INSERT INTO login VALUES (11, 1) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
-                - INSERT INTO device VALUES (1, 11, 42, 'security_audit_service', NULL, 1, NULL) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
+                - INSERT INTO login VALUES (${_param:secmonkey_login_id}, ${_param:secmonkey_application_id}) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
+                - INSERT INTO device VALUES (${_param:secmonkey_application_id}, ${_param:secmonkey_login_id}, 42, 'security_audit_service', NULL, 1, NULL) ON CONFLICT (id) DO UPDATE SET id = excluded.id;

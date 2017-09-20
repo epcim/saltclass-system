@@ -1,0 +1,30 @@
+classes:
+  - system.postgresql.client
+parameters:
+  _param:
+    janmonkey_db_host: ${_param:haproxy_postgresql_bind_host}
+    janmonkey_db_user: janmonkey
+    janmonkey_db_user_password: janmonkey
+    janmonkey_login_id: 12
+    janmonkey_application_id: 2
+  postgresql:
+    client:
+      server:
+        server01:
+          database:
+            janmonkey:
+              enabled: true
+              encoding: 'UTF8'
+              locale: 'en_US'
+              users:
+              - name: ${_param:janmonkey_db_user}
+                password: ${_param:janmonkey_db_user_password}
+                host: ${_param:janmonkey_db_host}
+                createdb: true
+                rights: all privileges
+              init:
+                maintenance_db: pushkin
+                force: true
+                queries:
+                - INSERT INTO login VALUES (${_param:janmonkey_login_id}, ${_param:janmonkey_application_id}) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
+                - INSERT INTO device VALUES (${_param:janmonkey_application_id}, ${_param:janmonkey_login_id}, 42, 'janitor_audit_service', NULL, 1, NULL) ON CONFLICT (id) DO UPDATE SET id = excluded.id;

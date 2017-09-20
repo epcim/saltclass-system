@@ -22,6 +22,10 @@ parameters:
     janitor_monkey_elasticsearch: ${_param:elasticsearch_bind_host}:${_param:elasticsearch_binary_bind_port}
     janitor_monkey_cloudfire_region: RegionOne
     janitor_monkey_cis_clustername: ${_param:elasticsearch_cluster_name}
+    janitor_monkey_instance_age_threshold: 15
+    janitor_monkey_notification_oss_url: http://${_param:haproxy_pushkin_bind_host}:${_param:haproxy_pushkin_bind_port}/post_notification_json
+    janitor_monkey_notification_oss_login_id: 12
+    janitor_monkey_notification_oss_application_id: 2
     janitor_monkey_openstack:
       project_domain_name: default
       project_name: admin
@@ -58,6 +62,10 @@ parameters:
             simianarmy.client.cloudfire.project: ${_param:janitor_monkey_openstack:project_name}
             simianarmy.client.cloudfire.SSLVerify: ${_param:janitor_monkey_openstack:ssl_verify}
             simianarmy.client.cloudfire.cafile: ${_param:janitor_monkey_openstack:cafile}
+            simianarmy.janitor.rule.stoppedInstanceRule.instanceAgeThreshold: ${_param:janitor_monkey_instance_age_threshold}
+            simianarmy.janitor.notification.oss.url: ${_param:janitor_monkey_notification_oss_url}
+            simianarmy.janitor.notification.oss.login_id: ${_param:janitor_monkey_notification_oss_login_id}
+            simianarmy.janitor.notification.oss.application_id: ${_param:janitor_monkey_notification_oss_application_id}
           service:
             cleanup-service-mongodb:
               image: ${_param:docker_image_mongodb}

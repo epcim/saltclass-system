@@ -1,0 +1,63 @@
+-----
+upgrades:
+  - |
+    Added SSL support for the followibg cloud-monitoring services:
+
+    * Rundeck CIS Collectors
+
+      To provide ssl support for CIS, set up ``cert`` and ``ssl_cert_file``
+      on a cluster level metadata:
+
+      .. code-block:: yaml
+
+         rundeck_cis_openstack:
+           auth_url: ${_param:oss_openstack_auth_url}/auth/tokens
+           username: ${_param:oss_openstack_username}
+           password: ${_param:oss_openstack_password}
+           cert: |
+            -----BEGIN CERTIFICATE-----
+            MIIE0DCCA7igAwIBAgIBBzANBgkqhkiG9w0BAQsFADCBgzELMAkGA1UEBhMCVVMx
+            -----END CERTIFICATE-----
+           ssl_cert_file: cert.pem
+
+      If all parameters are defined properly, Rundeck enables the ssl support
+      automatically.
+
+    * Cleanup Service
+
+      To provide ssl support for Cleanup Service, specify the cert path
+      and set the ``ssl_verify`` variable to ``True`` on a cluster level
+      metadata:
+
+      .. code-block:: yaml
+
+         janitor_monkey_openstack:
+           username: ${_param:oss_openstack_username}
+           password: ${_param:oss_openstack_password}
+           auth_url: ${_param:oss_openstack_auth_url}
+           ssl_verify: True
+           cacert_path: ${_param:oss_openstack_cert_path}
+
+    * Security Audit Service
+
+      To provide ssl support for Security audit Service, provide cert path,
+      set the ``ssl_verify`` variable to ``True``, and select the endpoint
+      type for cloud connections on a cluster level metadata:
+
+      .. code-block:: yaml
+
+         security_monkey_openstack:
+           username: ${_param:oss_openstack_username}
+           password: ${_param:oss_openstack_password}
+           auth_url: ${_param:oss_openstack_auth_url}
+           ssl_verify: True
+           endpoint_type: public
+           cacert_path: ${_param:oss_openstack_cert_path}
+
+      .. note:: By default, the ``cacert_path`` variable is defined as
+                follows:
+
+               .. code-block:: yaml
+
+                  oss_openstack_cert_path: /srv/volumes/rundeck/storage/content/keys/cis/openstack/cert.pem
+

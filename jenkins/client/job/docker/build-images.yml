@@ -54,3 +54,6 @@ parameters:
               DOCKER_GIT_TAG:
                 type: boolean
                 default: "true"
+              EXTRA_REPO_URL:
+                type: string
+                default: "${_param:jenkins_aptly_url}"

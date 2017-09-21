@@ -1,7 +1,10 @@
------
+---
+summary: >
+  Added SSL support for cloud-monitoring services
+
 upgrades:
   - |
-    Added SSL support for the followibg cloud-monitoring services:
+    Added SSL support for the following cloud-monitoring services:
 
     * Rundeck CIS Collectors
 

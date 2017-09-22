@@ -1,5 +1,6 @@
 classes:
   - service.maas.region.single
+  - service.maas.cluster.single
   - service.maas.region.vendor_repo
 parameters:
   _param:

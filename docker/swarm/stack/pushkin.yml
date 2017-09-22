@@ -9,6 +9,12 @@ parameters:
     pushkin_db: pushkin
     pushkin_smtp_host: smtp.gmail.com
     pushkin_smtp_port: 587
+    webhook_from: your_sender@mail.com
+    pushkin_email_sender_password: your_sender_password
+    webhook_recipients: "recepient1@mail.com,recepient2@mail.com"
+    webhook_login_id: 13
+    webhook_application_id: 24
+    webhook_sfdc_username: your_sfdc_username
   docker:
     client:
       stack:

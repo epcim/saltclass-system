@@ -5,6 +5,10 @@ parameters:
         janitormonkey:
           configure_proxy: true
           resolve_hostname: true
+          proxy_connect_timeout: 300
+          proxy_send_timeout: 300
+          proxy_read_timeout: 300
+          send_timeout: 300
           endpoint:
             address: ${_param:janitor_monkey_bind_host}
             port: ${_param:janitor_monkey_bind_port}

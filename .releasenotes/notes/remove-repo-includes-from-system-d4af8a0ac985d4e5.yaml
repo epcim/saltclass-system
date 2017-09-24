@@ -1,0 +1,19 @@
+---
+summary: >
+    Removed included classes for linux.system.repo from the system level reclass
+    model because they were breaking installation from local repos.
+features:
+  - |
+    Added linux.system.repo definition for MAAS.
+deprecations:
+  - |
+    Removed:
+     - system.linux.system.repo.mcp.salt from salt/master/pkg.yml
+     - system.linux.system.repo.docker from docker/host.yml
+     - service.maas.region.vendor_repo from maas/region/single.yml
+
+    These repos should be added to appropriate cluster level classes. New cluster
+    models from Cookiecutter have them already included.
+fixes:
+  - |
+    MCP deployments can now be installed from local repositories without problems.

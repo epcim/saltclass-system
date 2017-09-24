@@ -1,6 +1,5 @@
 classes:
   - service.docker.host
-  - system.linux.system.repo.docker
 parameters:
   docker:
     host:

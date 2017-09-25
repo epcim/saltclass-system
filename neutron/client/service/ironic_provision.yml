@@ -1,0 +1,21 @@
+classes:
+- service.neutron.client
+parameters:
+  neutron:
+    client:
+      server:
+        admin_identity:
+          endpoint_type: internalURL
+          network:
+            baremetal-provision-network:
+              tenant: admin
+              shared: false
+              admin_state_up: True
+              port_security_enabled: false
+              subnet:
+                baremetal-provision-subnet:
+                  cidr: ${_param:openstack_baremetal_neutron_subnet_cidr}
+                  allocation_pools:
+                    - start: ${_param:openstack_baremetal_neutron_subnet_allocation_start}
+                      end: ${_param:openstack_baremetal_neutron_subnet_allocation_end}
+                  enable_dhcp: true

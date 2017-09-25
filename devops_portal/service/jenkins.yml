@@ -12,3 +12,6 @@ parameters:
             address: ${_param:haproxy_jenkins_bind_host}
             port: ${_param:haproxy_jenkins_bind_port}
             https: ${_param:haproxy_jenkins_ssl:enabled}
+          credentials:
+            username: ${_param:oss_jenkins_user}
+            password: ${_param:oss_jenkins_password}

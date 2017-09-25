@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        myatsenko:
+          enabled: true
+          name: myatsenko
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Maksym Yatsenko
+          home: /home/myatsenko
+          email: myatsenko@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        myatsenko:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3wCjIm2PVzViGp5NFxeDHLVLxSq67gR+mm4jarHyDVb8wz9kfSG6cWGXNZhrqse7NgpDZpurFunFddXQBOgR6LmOfo9sDlcl4oT0+OnWHgyK6RMYcigkVYVYI5W2f5M+3Dz/KjV1S/VmRYlh/tz46PECV+Y93RaUUXS/91Uv19SAzuCd3Rj0l43HY5ROZNK0VZSrIsnhOqLZxF71v0jY/AbFxswooMH0NCM7XFqVBsRjwclfQjIGkV1j4xeWGM1xWkvvHCSEz2JdeAR5w3C7mhCzPpQJXvQGJNuccyZzoNbHPgDdFPx76MGj/VdmeUu5yKnFSnNNoQ1CcbxmaYeJ7 myatsenko@myatsenko-pc
+          user: ${linux:system:user:myatsenko}

@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        astupnikov:
+          enabled: true
+          name: astupnikov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Alexey Stupnikov
+          home: /home/astupnikov
+          email: astupnikov@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        astupnikov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDrV6q403BYodTCb8BCsWlkW6AHxvtCH5JxI9gUANsvbQd9n8fd16xqgXVecCRBJOS4PVauLNiQPMaj6ZuFeRZ8ZXvX498eNSNa5WhBbSwk0X/DqdK1LN/MStTAtL60JQV0yQSY+BghVJkREw4MJJBksyP0X+OG5AB+ijh/bjsabYr+EQNK+WJblrsRvNNCbjiWPcjzXVMxUrzphB09CYMwWFgx1An5jS7c1EGvXrzf0aK1KkadhGnXcjPACFaMGPYmu5HNgQcRnzNXDQU6PLGeyqNnZYZjHdQWZR88cQywznqzI8y9P4qSOTVStYoKLlYsdQFRTw8sJrRpPZupgSED astupnikov@astupnikov-srv
+          user: ${linux:system:user:astupnikov}

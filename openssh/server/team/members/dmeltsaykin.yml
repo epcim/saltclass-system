@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        dmeltsaykin:
+          enabled: true
+          name: dmeltsaykin
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Denis Meltsaykin
+          home: /home/dmeltsaykin
+          email: dmeltsaykin@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        dmeltsaykin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqfNIy3WuxzRzOY/GBNGOnP5UrCFWZ8uMzW6hEl4wgIEYYIcv8o+C1/hvrfHimG/I/rAwYRS6Dx0bZ7m49zATNxe+EVer3BV63ru34Hzel/XxxyD34ULmrDgvP3olaAKFI17gVOFQ7hCBzDRp3s4YN3ojQspPyeiO+Jt8OwVomxJWgLauAHhl7Z/XPVHpT/fssJGG/eC4oOz4RZ4jAk0BH3Yl8s63grfwrgB79H/+nr0UvBdTkBn3T5WiC4gxnm+jQQwci7/BLQsg1Z3OykfTuyftIexNyVVy/SmdsGi37RJGFKRMMovoZx+261JgaHWBoHqBJa5UpV2usi9z3Py2z avgoor@MacBook-Pro-Denis.local
+          user: ${linux:system:user:dmeltsaykin}

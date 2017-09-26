@@ -28,8 +28,8 @@ parameters:
       project_domain_name: Default
       project_name: admin
       user_domain_name: Default
-      cacert_path: /srv/volumes/rundeck/storage/content/cis/openstack/cert.pem
-      cafile: /opt/certs/cert.pem
+      source_credentials: /srv/volumes/rundeck/storage/content/cis/openstack
+      service_credentials: /opt/os_creds
       endpoint_type: public
       ssl_verify: False
   docker:
@@ -58,7 +58,7 @@ parameters:
             OS_PROJECT_NAME: ${_param:security_monkey_openstack:project_name}
             OS_SSL_VERIFY: ${_param:security_monkey_openstack:ssl_verify}
             OS_ENDPOINT_TYPE: ${_param:security_monkey_openstack:endpoint_type}
-            CACERT_PATH: ${_param:security_monkey_openstack:cafile}
+            CACERT_PATH: ${_param:security_monkey_openstack:service_credentials}/cert.pem
             USER_DOMAIN_NAME: ${_param:security_monkey_openstack:user_domain_name}
             SM_WTF_CSRF_ENABLED: ${_param:devops_portal_sm_wtf_csrf_enabled}
             SECURITY_MONKEY_SYNC_INTERVAL: ${_param:security_monkey_sync_interval}
@@ -75,7 +75,7 @@ parameters:
                 - ${_param:haproxy_security_monkey_exposed_port}:${_param:haproxy_security_monkey_bind_port}
               volumes:
                 - /srv/volumes/security_monkey/logs:/var/log/security_monkey/logs
-                - ${_param:security_monkey_openstack:cacert_path}:${_param:security_monkey_openstack:cafile}:ro
+                - ${_param:security_monkey_openstack:source_credentials}:${_param:security_monkey_openstack:service_credentials}:ro
             security-audit-scheduler:
               image: ${_param:docker_image_security_monkey_scheduler}
               deploy:
@@ -84,7 +84,7 @@ parameters:
                   condition: any
               volumes:
                 - /srv/volumes/security_monkey/logs:/var/log/security_monkey/logs
-                - ${_param:security_monkey_openstack:cacert_path}:${_param:security_monkey_openstack:cafile}:ro
+                - ${_param:security_monkey_openstack:source_credentials}:${_param:security_monkey_openstack:service_credentials}:ro
           network:
             default:
               external:

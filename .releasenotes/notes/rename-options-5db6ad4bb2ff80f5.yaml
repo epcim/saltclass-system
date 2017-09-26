@@ -1,0 +1,37 @@
+---
+summary: >
+  change OS-cloud credentials defining process
+
+upgrades:
+   * 'cacert_path' and 'cafile' variables for Security Audit and Cleanup services were changed to:
+
+     .. code-block:: yaml
+        security_monkey_openstack:
+          source_credentials: source/path/for/os/credentials/on/env
+          service_credentials: path/to/os/credentials/in/service/container
+
+        janitor_monkey_openstack:
+          source_credentials: source/path/for/os/credentials/on/env
+          service_credentials: path/to/os/credentials/in/service/container
+
+     Now you do not need to specify cert-file properly, need to define directory only.
+     Cert-file named 'cert.pem' by default for all services.
+     'source_credentials' equal to 'oss_openstack_credentials_path'.
+
+   * 'oss_openstack_cert_path' was changed to:
+
+     .. code-block:: yaml
+
+        oss_openstack_credentials_path: source/path/for/os/credentials/on/env
+
+   .. code-block:: text
+
+      Changes affect cluster and system levels.
+
+fixes:
+  - https://mirantis.jira.com/browse/PROD-14863
+  - https://mirantis.jira.com/browse/PROD-14870
+
+other:
+  * full change-list:
+    https://gerrit.mcp.mirantis.net/#/q/topic:os-creds+(status:open+OR+status:merged)

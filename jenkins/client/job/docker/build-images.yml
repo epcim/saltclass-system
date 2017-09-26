@@ -26,7 +26,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  "mk/docker-{{name}}":
+                  "{{repo}}/docker-{{name}}":
                     branches:
                       - master
                 event:

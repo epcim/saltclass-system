@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
   jenkins:
     client:
       view:
@@ -22,11 +24,11 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
             script: validate-cloud.groovy
-
           param:
             SALT_MASTER_URL:
               type: string
-              default: ""
+              default: "${_param:jenkins_salt_api_url}"
+              description: Full Salt API address [e.g. https://10.10.10.2:6969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"

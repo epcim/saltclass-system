@@ -1,0 +1,10 @@
+classes:
+- system.linux.system.single
+
+# DEBIAN family overrides
+parameters:
+  linux:
+    system:
+      package:
+        python-msgpack:
+          version: latest

@@ -1,16 +1,14 @@
 parameters:
-  _param:
-    apt_mk_version: stable
   aptly:
     server:
       mirror:
         docker-xenial:
-          source: https://apt.dockerproject.org/repo
-          distribution: ubuntu-xenial
-          components: main
+          source: 'https://download.docker.com/linux/ubuntu'
+          distribution: xenial
+          components: stable
           architectures: amd64
           gpgkeys:
-            - 58118E89F3A912897C070ADBF76221572C52609D
+            - 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
           publisher:
             component: docker
             distributions:

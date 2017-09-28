@@ -16,25 +16,25 @@ parameters:
             credentials: "gerrit"
             script: pipelines/mcp-k8s-test-pipeline.groovy
             trigger:
-              gerrit:
-                project:
-                  kubernetes/kubernetes:
-                    branches:
-                      - compare_type: "ANT"
-                        name: "**"
-                message:
-                  build_successful: "Build successful"
-                  build_unstable: "Build unstable"
-                  build_failure: "Build failed"
-                event:
-                  patchset:
-                    - created:
-                        excludeDrafts: false
-                        excludeTrivialRebase: false
-                        excludeNoCodeChange: false
-                  comment:
-                    - addedContains:
-                        commentAddedCommentContains: '(recheck|reverify)'
+          gerrit:
+            project:
+              kubernetes/kubernetes:
+                branches:
+                  - compare_type: "ANT"
+                    name: "**"
+            message:
+              build_successful: "Build successful"
+              build_unstable: "Build unstable"
+              build_failure: "Build failed"
+            event:
+              patchset:
+                - created:
+                    excludeDrafts: false
+                    excludeTrivialRebase: false
+                    excludeNoCodeChange: false
+              comment:
+                - addedContains:
+                    commentAddedCommentContains: '(recheck|reverify)'
           param:
             KUBE_DOCKER_REGISTRY:
               type: string

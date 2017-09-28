@@ -21,3 +21,4 @@ parameters:
                 - /srv/volumes/artifactory/backup:/var/opt/jfrog/artifactory/backup
                 - /srv/volumes/artifactory/etc:/var/opt/jfrog/artifactory/etc
                 - /srv/volumes/artifactory/logs:/var/opt/jfrog/artifactory/logs
+                - /srv/volumes/artifactory/keys:/var/opt/jfrog/artifactory/access/etc/keys

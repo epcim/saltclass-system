@@ -30,3 +30,7 @@ parameters:
               type: bind
               source: /srv/volumes/artifactory/logs
               destination: /var/opt/jfrog/artifactory/logs
+            keys:
+              type: bind
+              source: /srv/volumes/artifactory/keys
+              destination: /var/opt/jfrog/artifactory/access/etc/keys

@@ -64,18 +64,24 @@ parameters:
             SPT_SSH_USER:
               type: string
               default: "root"
-            SPT_FLOATING_NETWORK:
+            FLOATING_NETWORK:
               type: string
               default: ""
             SPT_IMAGE:
               type: string
               default: ""
-            SPT_USER:
+            SPT_IMAGE_USER:
               type: string
               default: ""
             SPT_FLAVOR:
               type: string
               default: ""
-            SPT_AVAILABILITY_ZONE:
+            AVAILABILITY_ZONE:
               type: string
               default: "nova"
+            RALLY_IMAGE:
+              type: string
+              default: "cirros"
+            RALLY_FLAVOR:
+              type: string
+              default: "m1.tiny"

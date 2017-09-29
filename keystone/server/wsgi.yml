@@ -18,7 +18,7 @@ parameters:
           log:
             custom:
               format: >-
-                %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
 
       modules:
         - wsgi

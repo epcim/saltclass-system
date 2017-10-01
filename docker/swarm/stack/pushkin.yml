@@ -14,7 +14,14 @@ parameters:
     webhook_recipients: "recepient1@mail.com,recepient2@mail.com"
     webhook_login_id: 13
     webhook_application_id: 24
-    webhook_sfdc_username: your_sfdc_username
+    sfdc_auth_url: https://login.salesforce.com/services/oauth2/token
+    sfdc_username: user@example.net
+    sfdc_password: secret
+    sfdc_consumer_key: example_consumer_key
+    sfdc_consumer_secret: example_consumer_secret
+    sfdc_organization_id: example_organization_id
+    sfdc_sandbox_enabled: true
+    sfdc_case_fields: case_and_bool_value
   docker:
     client:
       stack:
@@ -32,7 +39,14 @@ parameters:
             WEBHOOK_RECIPIENTS: ${_param:webhook_recipients}
             WEBHOOK_LOGIN_ID: ${_param:webhook_login_id}
             WEBHOOK_APPLICATION_ID: ${_param:webhook_application_id}
-            WEBHOOK_SFDC_USERNAME: ${_param:webhook_sfdc_username}
+            SFDC_AUTH_URL: ${_param:sfdc_auth_url}
+            SFDC_USERNAME: ${_param:sfdc_username}
+            SFDC_PASSWORD: ${_param:sfdc_password}
+            SFDC_CONSUMER_KEY: ${_param:sfdc_consumer_key}
+            SFDC_CONSUMER_SECRET: ${_param:sfdc_consumer_secret}
+            SFDC_ORGANIZATION_ID: ${_param:sfdc_organization_id}
+            SFDC_SANDBOX_ENABLED: ${_param:sfdc_sandbox_enabled}
+            SFDC_CASE_FIELDS: ${_param:sfdc_case_fields}
           service:
             pushkin-api:
               image: ${_param:docker_image_pushkin}

@@ -1,0 +1,30 @@
+classes:
+  - system.postgresql.client
+parameters:
+  _param:
+    sfdc_db_host: ${_param:haproxy_postgresql_bind_host}
+    sfdc_db_user: sfdc
+    sfdc_db_user_password: sfdc
+    sfdc_login_id: 14
+    sfdc_application_id: 4
+  postgresql:
+    client:
+      server:
+        server01:
+          database:
+            sfdc:
+              enabled: true
+              encoding: 'UTF8'
+              locale: 'en_US'
+              users:
+              - name: ${_param:sfdc_db_user}
+                password: ${_param:sfdc_db_user_password}
+                host: ${_param:sfdc_db_host}
+                createdb: true
+                rights: all privileges
+              init:
+                maintenance_db: pushkin
+                force: true
+                queries:
+                - INSERT INTO login VALUES (${_param:sfdc_login_id}, ${_param:sfdc_application_id}) ON CONFLICT (id) DO UPDATE SET id = excluded.id;
+                - INSERT INTO device VALUES (${_param:sfdc_application_id}, ${_param:sfdc_login_id}, 42, 'salesforce_service', NULL, 1, NULL) ON CONFLICT (id) DO UPDATE SET id = excluded.id;

@@ -15,8 +15,6 @@ parameters:
           name: root
           home: /root
       package:
-        python-msgpack:
-          version: latest
         cloud-init:
           version: purged
         unattended-updates:

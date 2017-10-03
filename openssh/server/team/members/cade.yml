@@ -3,7 +3,7 @@ parameters:
     system:
       user:
         cade:
-          enabled: true
+          enabled: false
           name: cade
           sudo: ${_param:linux_system_user_sudo}
           full_name: Cade Ekblad-Frank

@@ -1,0 +1,30 @@
+---
+features:
+  - |
+    Added system metadata classes to deploy reverse proxy support for
+    Jenkins and Gerrit services. When enabled, these services can be
+    accessed through a public URL or DNS.
+
+    **To apply the change to your deployment:**
+
+    #. Add the following classes to
+       ``cluster.<CLUSTER_NAME>.openstack.proxy.yml``:
+
+       .. code-block:: yaml
+
+          classes:
+            - system.nginx.server.proxy.cicd.gerrit
+            - system.nginx.server.proxy.cicd.jenkins
+
+    #. Set up the following parameters in
+       ``cluster.<CLUSTER_NAME>.cicd.control.init.yml``:
+
+       .. code-block:: yaml
+
+          parameters:
+            _param:
+              nginx_proxy_gerrit_server_site_host: ${_param:openstack_proxy_address}
+              nginx_proxy_gerrit_server_site_port: 8080
+              gerrit_http_listen_url: proxy-https://*:8080/
+              gerrit_public_host: https://${_param:nginx_proxy_gerrit_server_site_host}:${_param:nginx_proxy_gerrit_server_site_port}
+

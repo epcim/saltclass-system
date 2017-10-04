@@ -64,6 +64,9 @@ parameters:
               MAX_CPU_PER_JOB:
                 type: string
                 default: "2"
+              LEGACY_TEST_MODE:
+                type: boolean
+                default: "{{legacy_test_mode}}"
         test_system_reclass:
           name: test-salt-model-{{name}}
           template:
@@ -196,3 +199,6 @@ parameters:
             MAX_CPU_PER_JOB:
               type: string
               default: "2"
+            LEGACY_TEST_MODE:
+              type: boolean
+              default: "false"

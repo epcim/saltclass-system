@@ -1,0 +1,48 @@
+---
+features:
+  - |
+    Added system metadata to set upstream proxy for the MAAS, Gerrit, Jenkins,
+    and Aptly services.
+
+    **To apply the change to an existing cicd cluster deployment:**
+
+    #. Set the ``http_proxy`` parameter in
+       ``cluster.<CLUSTER_NAME>.cicd.control.init.yml``:
+
+       .. code-block:: yaml
+
+          parameters:
+            _param:
+              http_proxy: 'http://<<upstream_proxy_address>>:<<upstream_proxy_port>>'
+
+    #. Apply the :command:`docker.client` state:
+
+       .. code-block::
+
+          salt -C 'I@docker:client' state.sls docker.client
+
+    **To apply the change to an existing maas deployment:**
+
+    #. Configure ``upstream_proxy`` for MAAS:
+
+       .. code-block:: yaml
+
+          maas:
+            region:
+              upstream_proxy:
+                address: <<upstream_proxy_address>>
+                port: <<upstream_proxy_address>>
+
+     #. On the Salt Master node, update the MaaS Salt formula to latest:
+
+        .. code-block::
+
+           salt-call state.sls salt.master
+
+     #. On the MAAS node, apply the :command:`maas.region` state:
+
+        .. code-block::
+
+           salt-call state.sls maas.region
+           reboot
+

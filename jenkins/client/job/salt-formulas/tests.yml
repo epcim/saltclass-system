@@ -32,6 +32,7 @@ parameters:
             - name: dovecot
             - name: elasticsearch
             - name: etcd
+            - name: fluentbit
             - name: foreman
             - name: freeipa
             - name: galera

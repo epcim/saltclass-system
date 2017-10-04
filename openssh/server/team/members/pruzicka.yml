@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        pruzicka:
+          enabled: true
+          name: pruzicka
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Petr Ruzicka
+          home: /home/pruzicka
+          email: pruzicka@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        pruzicka:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG5m9Wwd2XIaG6iFrsH4BanLDUPpgeAy8o573iB8uqEe1vEp6IMCID5hL7+JUjRX7TGJ9B3QskgAenE50w0yTCqu+oIVXOfzYCbcOAI/Pestv7RDGwciLCX3wdtSYU1dW5Zl8mtH4LMGpBtAG1nAKP1suqXWHUr92bzrYeMicuTADvOYFLxAOVcAEXwBrRUYsy+wTF4ROSZRzE8HLwYAzSngmFqKyW1tj/nLEGTZGWcIYkXDfWR/TW1neP6svaUV6nFLXnj3pRP7KNSK8iil8YuMyT+YGz2f3971967woAAqvSOtF3Rh2f4PLGcNwsMd1tjqMIVvIlI7Lo4UsIA9AZ pruzicka@mirantis.com
+          user: ${linux:system:user:pruzicka}

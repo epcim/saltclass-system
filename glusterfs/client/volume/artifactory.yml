@@ -10,4 +10,4 @@ parameters:
         artifactory:
           path: /srv/volumes/artifactory
           server: ${_param:artifactory_glusterfs_service_host}
-          opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address}"
+          opts: "defaults,backup-volfile-servers=${_param:glusterfs_node01_address}:${_param:glusterfs_node02_address}:${_param:glusterfs_node03_address},direct-io-mode=disable"

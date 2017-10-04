@@ -12,27 +12,25 @@ parameters:
           mode: http
           options:
             - forwardfor
-#            - httpchk
+            - httpchk
             - httpclose
             - httplog
           balance: source
+          acl:
+            is_docker: "path_reg ^/v[12][/.]*"
           http_request:
+            - action: "add-header X-Artifactory-Override-Base-Url https://%[req.hdr(host)]/artifactory"
+              condition: "if is_docker"
             - action: "add-header X-Forwarded-Proto https"
               condition: "if { ssl_fc }"
+            - action: "set-path /artifactory/api/docker/%[req.hdr(host),lower,field(1,'.')]%[path]"
+              condition: "if is_docker "
           binds:
             - address: ${_param:haproxy_artifactory_bind_host}
               port: ${_param:haproxy_artifactory_bind_port}
               ssl: ${_param:haproxy_artifactory_ssl}
           servers:
             - name: ${_param:cluster_node01_name}
-              host: ${_param:cluster_node01_address}
+              host: localhost
               port: 18082
-              params: check
-            - name: ${_param:cluster_node02_name}
-              host: ${_param:cluster_node02_address}
-              port: 18082
-              params: backup check
-            - name: ${_param:cluster_node03_name}
-              host: ${_param:cluster_node03_address}
-              port: 18082
-              params: backup check
+              params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3

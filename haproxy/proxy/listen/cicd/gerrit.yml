@@ -13,7 +13,7 @@ parameters:
           mode: http
           options:
             - forwardfor
-#            - httpchk
+            - httpchk
             - httpclose
             - httplog
           balance: source
@@ -26,17 +26,9 @@ parameters:
               ssl: ${_param:haproxy_gerrit_ssl}
           servers:
             - name: ${_param:cluster_node01_name}
-              host: ${_param:cluster_node01_address}
+              host: localhost
               port: 18083
-              params: check
-            - name: ${_param:cluster_node02_name}
-              host: ${_param:cluster_node02_address}
-              port: 18083
-              params: backup check
-            - name: ${_param:cluster_node03_name}
-              host: ${_param:cluster_node03_address}
-              port: 18083
-              params: backup check
+              params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
         gerrit_ssh:
           mode: tcp
           balance: source
@@ -45,14 +37,7 @@ parameters:
               port: ${_param:haproxy_gerrit_ssh_bind_port}
           servers:
             - name: ${_param:cluster_node01_name}
-              host: ${_param:cluster_node01_address}
+              host: localhost
               port: 29417
-              params: check
-            - name: ${_param:cluster_node02_name}
-              host: ${_param:cluster_node02_address}
-              port: 29417
-              params: backup check
-            - name: ${_param:cluster_node03_name}
-              host: ${_param:cluster_node03_address}
-              port: 29417
-              params: backup check
+              params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+

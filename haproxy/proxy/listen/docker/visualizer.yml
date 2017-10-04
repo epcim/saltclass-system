@@ -8,7 +8,7 @@ parameters:
           mode: http
           options:
             - forwardfor
-#            - httpchk
+            - httpchk
             - httpclose
             - httplog
           balance: source
@@ -17,14 +17,6 @@ parameters:
               port: ${_param:haproxy_docker_visualizer_listen_port}
           servers:
             - name: ${_param:cluster_node01_name}
-              host: ${_param:cluster_node01_address}
+              host: localhost
               port: 18090
-              params: check
-            - name: ${_param:cluster_node02_name}
-              host: ${_param:cluster_node02_address}
-              port: 18090
-              params: check
-            - name: ${_param:cluster_node03_name}
-              host: ${_param:cluster_node03_address}
-              port: 18090
-              params: check
+              params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3

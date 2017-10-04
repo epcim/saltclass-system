@@ -1,0 +1,20 @@
+---
+summary: >
+   Added support for the Push Notifications service to Salesforce.
+
+features:
+  - |
+    Added support for the Push Notification service to Salesforce.
+    To configure the Push Notification service for a SalesForce account,
+    define following variables on the cluster level metadata:
+
+    .. code-block:: yaml
+
+       sfdc_auth_url: https://login.salesforce.com/services/oauth2/token
+       sfdc_username: user@example.net
+       sfdc_password: secret
+       sfdc_consumer_key: example_consumer_key
+       sfdc_consumer_secret: example_consumer_secret
+       sfdc_organization_id: example_organization_id
+       sfdc_sandbox_enabled: True/False
+

@@ -55,6 +55,8 @@ parameters:
               dist: trusty
             - name: etcd
               dist: trusty
+            - name: fluentbit
+              dist: trusty
             - name: foreman
               dist: trusty
             - name: freeipa
@@ -252,6 +254,8 @@ parameters:
             - name: elasticsearch
               dist: xenial
             - name: etcd
+              dist: xenial
+            - name: fluentbit
               dist: xenial
             - name: foreman
               dist: xenial

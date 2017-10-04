@@ -12,6 +12,10 @@ parameters:
             #  source: git
             #  address: '${_param:salt_master_environment_repository}/salt-formula-avinetworks.git'
             #  revision: ${_param:salt_master_environment_revision}
+            barbican:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-barbican.git'
+              revision: ${_param:salt_master_environment_revision}
             billometer:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-billometer.git'

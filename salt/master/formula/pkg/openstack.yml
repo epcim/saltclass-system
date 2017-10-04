@@ -10,6 +10,9 @@ parameters:
             #avinetworks:
             #  source: pkg
             #  name: salt-formula-avinetworks
+            barbican:
+              source: pkg
+              name: salt-formula-barbican
             billometer:
               source: pkg
               name: salt-formula-billometer

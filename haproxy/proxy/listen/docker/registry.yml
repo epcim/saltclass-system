@@ -23,14 +23,7 @@ parameters:
               ssl: ${_param:haproxy_docker_registry_ssl}
           servers:
             - name: ${_param:cluster_node01_name}
-              host: ${_param:cluster_node01_address}
+              host: localhost
               port: 15000
-              params: check
-            - name: ${_param:cluster_node02_name}
-              host: ${_param:cluster_node02_address}
-              port: 15000
-              params: check
-            - name: ${_param:cluster_node03_name}
-              host: ${_param:cluster_node03_address}
-              port: 15000
-              params: check
+              params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+

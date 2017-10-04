@@ -7,6 +7,7 @@ parameters:
     mysql_admin_user: root
     mysql_admin_password: password
     mysql_keystone_password: password
+    keystone_token_expire: 3600
   linux:
     system:
       package:
@@ -38,7 +39,7 @@ parameters:
         user: keystone
       tokens:
         engine: fernet
-        expiration: 3600
+        expiration: ${_param:keystone_token_expire}
         max_active_keys: 3
         location: /var/lib/keystone/fernet-keys
       credential:

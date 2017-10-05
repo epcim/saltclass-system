@@ -114,3 +114,38 @@ parameters:
               type: boolean
               default: 'true'
               description: If chosen then previous build results will be used in the current build
+        cvp-sanity:
+          type: workflow-scm
+          name: validate-cvp-sanity
+          display_name: "CVP - Sanity checks"
+          discard:
+            build:
+              keep_num: 20
+            artifact:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: cvp-sanity.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: ""
+              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            SANITY_TESTS_REPO:
+              type: string
+              default: "https://github.com/Mirantis/cvp-sanity-checks"
+              description: Url for cvp-sanity-checks
+            SANITY_TESTS_SET:
+              type: string
+              default: ""
+              description: Leave empty for full run or choose a file, e.g. test_mtu.py
+            PROXY:
+              type: string
+              default: ""
+              description: Proxy address to clone repo and install python requirements

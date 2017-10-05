@@ -1,37 +1,42 @@
 ---
 summary: >
-  change OS-cloud credentials defining process
+  Improved the OpenStack cloud credentials defining process for the OSS services
 
 upgrades:
-   * 'cacert_path' and 'cafile' variables for Security Audit and Cleanup services were changed to:
+  - |
+    Improved the OpenStack cloud credentials defining process for the OSS
+    services. The changes affect cluster and system levels of an MCP
+    deployment and include the following:
 
-     .. code-block:: yaml
-        security_monkey_openstack:
-          source_credentials: source/path/for/os/credentials/on/env
-          service_credentials: path/to/os/credentials/in/service/container
+    * ``cacert_path`` and ``cafile`` parameters for the Security Audit and
+      Cleanup services has changed to:
 
-        janitor_monkey_openstack:
-          source_credentials: source/path/for/os/credentials/on/env
-          service_credentials: path/to/os/credentials/in/service/container
+      .. code-block:: yaml
 
-     Now you do not need to specify cert-file properly, need to define directory only.
-     Cert-file named 'cert.pem' by default for all services.
-     'source_credentials' equal to 'oss_openstack_credentials_path'.
+         security_monkey_openstack:
+           source_credentials: source/path/for/os/credentials/on/env
+           service_credentials: path/to/os/credentials/in/service/container
 
-   * 'oss_openstack_cert_path' was changed to:
+         janitor_monkey_openstack:
+           source_credentials: source/path/for/os/credentials/on/env
+           service_credentials: path/to/os/credentials/in/service/container
 
-     .. code-block:: yaml
+      Now, you do not need to specify the certificate file but only the
+      directory where it is located.
+      The certificate file is named ``cert.pem`` for all services by default;
+      and the ``source_credentials`` value equals to
+      the value of the ``oss_openstack_credentials_path`` parameter.
 
-        oss_openstack_credentials_path: source/path/for/os/credentials/on/env
+    * ``oss_openstack_cert_path`` has changed as follows:
 
-   .. code-block:: text
+      .. code-block:: yaml
 
-      Changes affect cluster and system levels.
+         oss_openstack_credentials_path: source/path/for/os/credentials/on/env
 
-fixes:
-  - https://mirantis.jira.com/browse/PROD-14863
-  - https://mirantis.jira.com/browse/PROD-14870
+    .. fixes:
+       - https://mirantis.jira.com/browse/PROD-14863
+       - https://mirantis.jira.com/browse/PROD-14870
 
-other:
-  * full change-list:
-    https://gerrit.mcp.mirantis.net/#/q/topic:os-creds+(status:open+OR+status:merged)
+    .. full change-list:
+       https://gerrit.mcp.mirantis.net/#/q/topic:os-creds+(status:open+OR+status:merged)
+

@@ -5,7 +5,7 @@ classes:
 - system.haproxy.proxy.listen.openstack.keystone.standalone
 parameters:
   _param:
-    keystone_token_expire: 3600
+    keystone_tokens_expiration: 3600
   linux:
     system:
       package:
@@ -37,7 +37,7 @@ parameters:
         user: keystone
       tokens:
         engine: fernet
-        expiration: ${_param:keystone_token_expire}
+        expiration: ${_param:keystone_tokens_expiration}
         max_active_keys: 3
         location: /var/lib/keystone/fernet-keys
       credential:

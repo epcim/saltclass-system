@@ -1,0 +1,21 @@
+parameters:
+  _param:
+    linux_system_country_code: cz
+    aptly_server_mirror_ubuntu_trusty_sources: ${_param:aptly_server_mirror_ubuntu_sources}
+  aptly:
+    server:
+      mirror:
+        trusty-multiverse:
+          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          distribution: trusty-updates
+          sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
+          components: multiverse
+          architectures: amd64
+          gpgkeys:
+            - 40976EAF437D05B5
+            - 437D05B5
+            - C0B21F32
+          publisher:
+            component: multiverse
+            distributions:
+              - ubuntu/trusty

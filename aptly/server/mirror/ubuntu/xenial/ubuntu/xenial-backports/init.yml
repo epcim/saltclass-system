@@ -1,0 +1,5 @@
+classes:
+- system.aptly.server.mirror.ubuntu.xenial.ubuntu.xenial-backports.main
+- system.aptly.server.mirror.ubuntu.xenial.ubuntu.xenial-backports.multiverse
+- system.aptly.server.mirror.ubuntu.xenial.ubuntu.xenial-backports.restricted
+- system.aptly.server.mirror.ubuntu.xenial.ubuntu.xenial-backports.universe

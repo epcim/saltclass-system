@@ -1,0 +1,6 @@
+classes:
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-backports
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-proposed
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-security
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-updates

@@ -1,0 +1,51 @@
+---
+summary: >
+    Added possibility to define Nginx proxy timeouts for Devops Portal Service.
+
+features:
+  - |
+    Added possibility to define Nginx proxy timeouts for Devops Portal service through Salt metadata.
+    To avoid possible *Gateway Timeout* errors that occur due to huge amount
+    of data, connection, and other issues. Its possible to configure server timeouts on the side of
+    Devops Portal service.
+
+    **To configure Nginx proxy timeouts:**
+
+    #. Define following parameters on a system level for each service in
+       your Docker stack.
+
+       .. code-block:: yaml
+
+          parameters:
+            devops_portal:
+              config:
+                service:
+                  your_service:
+                    configure_proxy: true
+                    resolve_hostname: true
+                    # Proxy parameters, default value equals 300 ms
+                    proxy_connect_timeout: 300
+                    proxy_send_timeout: 300
+                    proxy_read_timeout: 300
+                    send_timeout: 300
+
+       .. note:: The following is the example of the above configuration
+                 location:
+
+                 .. code-block:: yaml
+
+                    /srv/salt/reclass/classes/system/docker/swarm/stack/YOUR_SERVICE.yml
+
+    #. Recreate devops-portal stack:
+
+       .. code-block:: bash
+
+          docker stack rm devops-portal
+          salt -C 'I@devops_portal:config' state.sls devops_portal.config
+          salt -C 'I@docker:swarm:role:master' state.sls docker.client
+
+       The Nginx configuration are updated during the Devops Portal Salt
+       formula application.
+
+    .. fixes https://mirantis.jira.com/browse/PROD-14603
+

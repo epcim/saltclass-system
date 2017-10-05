@@ -64,6 +64,9 @@ parameters:
               MAX_CPU_PER_JOB:
                 type: string
                 default: "2"
+              RECLASS_IGNORE_CLASS_NOTFOUND:
+                type: boolean
+                default: "{{reclass_ignore_class_notfound}}"
               LEGACY_TEST_MODE:
                 type: boolean
                 default: "{{legacy_test_mode}}"
@@ -199,6 +202,9 @@ parameters:
             MAX_CPU_PER_JOB:
               type: string
               default: "2"
+            RECLASS_IGNORE_CLASS_NOTFOUND:
+              type: boolean
+              default: "false"
             LEGACY_TEST_MODE:
               type: boolean
               default: "false"

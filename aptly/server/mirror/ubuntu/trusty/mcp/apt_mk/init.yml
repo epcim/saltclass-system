@@ -41,6 +41,18 @@ parameters:
             component: oc32
             distributions:
               - ubuntu-trusty/${_param:apt_mk_version}
+        mcp_opencontrail_trusty_oc323:
+          source: http://apt-mk.mirantis.com/trusty/
+          distribution: ${_param:apt_mk_version}
+          components: oc323
+          architectures: amd64
+          key_url: "http://apt-mk.mirantis.com/public.gpg"
+          gpgkeys:
+            - A76882D3
+          publisher:
+            component: oc323
+            distributions:
+              - ubuntu-trusty/${_param:apt_mk_version}
         mirantis_openstack_trusty_extra:
           source: http://apt-mk.mirantis.com/trusty/
           distribution: ${_param:apt_mk_version}

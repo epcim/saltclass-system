@@ -60,7 +60,7 @@ upgrades:
       .. note:: By default, the ``cacert_path`` variable is defined as
                 follows:
 
-               .. code-block:: yaml
+                .. code-block:: yaml
 
-                  oss_openstack_cert_path: /srv/volumes/rundeck/storage/content/keys/cis/openstack/cert.pem
+                   oss_openstack_cert_path: /srv/volumes/rundeck/storage/content/keys/cis/openstack/cert.pem
 

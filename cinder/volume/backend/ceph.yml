@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    cinder_storage_client_key: ''
   cinder:
     volume:
       message_queue:

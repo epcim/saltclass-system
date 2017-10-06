@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    compute_dpdk_driver: uio
   linux:
     network:
       bridge: openvswitch

@@ -19,5 +19,4 @@ parameters:
           user: ${linux:system:user:mefimov}
   public_keys:
     mefimov:
-      - key: rsa-key AAAAB3NzaC1yc2EAAAABJQAAAQEAgLfqReVrcsOuG8GaxPF1iSJjhUPsCnoxtAwFU4YPd0qVmLFxZtcKgb29yR/OSKQz3o5RM1OvQhHs080/gfiboMIyVa5gOCcbVj1PoySd8dAAVy9DORKWCU3djWmHcsG76FU1G8UE1w7nSrWqs01KW9/NzLjiHxf/4r3YWZ51UTr/C1AFyPPMfFRbffqq6yqULG+/TfpkgN2maBrotN5trDuGAHKluyboL7+EZazYpgjUsd2cPMH8TzdQZNwYrtrzWDS0YAqSQVyMc2dFh/gptw/QCsWT2IMyQKLKOcaAy2qon1xWDRFL1fVgqjakF+oM5RBAvX1bkJ1Vx883GEnPaQ==
-
+      - key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAhbjsMWhgLWtiSYwJRBY8x6yuXPEmeOPjv2SWsGnhLkW3iY/6CEYph4mKBP22vvJaiXRmuUNIpQCnORjp9OrzD9gQM94EmEjpPhaLixYeejPxPW27rEfRo+Xtp9U02GfBUBpBP1hwayKvCOM8y/FTZnPF3pS2zXmBU9VYf3MGR8mt1RS1uJHj+ZBO6fDnf7LNStps1oGdyXkliTqytLH2AE7t+darR3RDN9CN8qMfAMaPSvDjjqE4UzmpoBU4+by/Rxt3bFFyGx5v0/xwq0ieSXT0pkLFSB7mX2P4BiPvr4piH3rZzcVio5QJ5zcH86fHwME9+/tUg7DXihWWW89Vvw== rsa-key-20161025

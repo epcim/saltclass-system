@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    nova_storage_client_key: nova
   nova:
     compute:
       ceph:

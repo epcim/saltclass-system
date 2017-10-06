@@ -2,6 +2,7 @@ classes:
 - service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - service.neutron.control.cluster
+- system.galera.server.database.neutron
 parameters:
   _param:
     neutron_control_dvr: True
@@ -37,20 +38,6 @@ parameters:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
           - host: ${_param:openstack_message_queue_node03_address}
-  mysql:
-    server:
-      database:
-        neutron:
-          encoding: utf8
-          users:
-          - name: neutron
-            password: ${_param:mysql_neutron_password}
-            host: '%'
-            rights: all
-          - name: neutron
-            password: ${_param:mysql_neutron_password}
-            host: ${_param:cluster_local_address}
-            rights: all
   haproxy:
     proxy:
       listen:

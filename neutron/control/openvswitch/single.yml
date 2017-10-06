@@ -1,5 +1,6 @@
 classes:
 - service.neutron.control.single
+- system.galera.server.database.neutron
 parameters:
   _param:
     neutron_control_dvr: True
@@ -33,17 +34,3 @@ parameters:
       message_queue:
         members:
           - host: ${_param:openstack_message_queue_node01_address}
-  mysql:
-    server:
-      database:
-        neutron:
-          encoding: utf8
-          users:
-          - name: neutron
-            password: ${_param:mysql_neutron_password}
-            host: '%'
-            rights: all
-          - name: neutron
-            password: ${_param:mysql_neutron_password}
-            host: ${_param:cluster_local_address}
-            rights: all

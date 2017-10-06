@@ -1,0 +1,11 @@
+parameters:
+  devops_portal:
+    config:
+      service:
+        stacklight-kibana:
+          configure_proxy: true
+          enabled: true
+          endpoint:
+            address: ${_param:haproxy_kibana_bind_host}
+            port: ${_param:haproxy_kibana_bind_port}
+            https: ${_param:haproxy_kibana_ssl:enabled}

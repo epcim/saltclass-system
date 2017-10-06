@@ -1,0 +1,5 @@
+classes:
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-updates.main
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-updates.multiverse
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-updates.restricted
+- system.aptly.server.mirror.ubuntu.trusty.ubuntu.trusty-updates.universe

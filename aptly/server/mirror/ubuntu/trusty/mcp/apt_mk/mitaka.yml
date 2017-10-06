@@ -1,0 +1,18 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+  aptly:
+    server:
+      mirror:
+        mk_openstack_xenial_mitaka:
+          source: http://apt-mk.mirantis.com/xenial/
+          distribution: ${_param:apt_mk_version}
+          components: mitaka
+          architectures: amd64
+          key_url: "http://apt-mk.mirantis.com/public.gpg"
+          gpgkeys:
+            - A76882D3
+          publisher:
+            component: mitaka
+            distributions:
+              - ubuntu-xenial/${_param:apt_mk_version}

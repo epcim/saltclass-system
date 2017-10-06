@@ -83,6 +83,10 @@ parameters:
                 type: text
                 default: ""
                 description: "YAML with overrides for Salt deployment"
+              FORMULA_PKG_REVISION:
+                type: string
+                default: ""
+                description: "Formulas revision to install on Salt Master bootstrap stage"
 
               # aws api
               AWS_STACK_REGION:

@@ -3,6 +3,6 @@ classes:
 - system.aptly.server.mirror.ubuntu.trusty.mcp.apt_mk.oc311
 - system.aptly.server.mirror.ubuntu.trusty.mcp.apt_mk.oc32
 - system.aptly.server.mirror.ubuntu.trusty.mcp.apt_mk.oc323
-- system.aptly.server.mirror.ubuntu.xenial.mcp.apt_mk.mitaka
+- system.aptly.server.mirror.ubuntu.trusty.mcp.apt_mk.mitaka
 - system.aptly.server.mirror.ubuntu.trusty.mcp.apt_mk.extra
 - system.aptly.server.mirror.ubuntu.trusty.mcp.apt_mk.salt

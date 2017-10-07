@@ -18,4 +18,4 @@ parameters:
           publisher:
             component: universe
             distributions:
-              - ubuntu/trusty
+              - ubuntu/trusty-security

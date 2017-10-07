@@ -18,4 +18,4 @@ parameters:
           publisher:
             component: universe
             distributions:
-              - ubuntu/xenial
+              - ubuntu/xenial-security

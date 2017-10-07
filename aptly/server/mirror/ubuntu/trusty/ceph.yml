@@ -1,6 +1,7 @@
 parameters:
   _param:
     ceph_version: luminous
+    apt_mk_version: stable
   aptly:
     server:
       mirror:
@@ -14,4 +15,4 @@ parameters:
           publisher:
             component: ceph
             distributions:
-              - ubuntu-trusty/nightly
+              - ubuntu-trusty/${_param:apt_mk_version}

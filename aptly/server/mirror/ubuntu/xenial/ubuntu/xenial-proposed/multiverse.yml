@@ -18,4 +18,4 @@ parameters:
           publisher:
             component: multiverse
             distributions:
-              - ubuntu/xenial
+              - ubuntu/xenial-proposed

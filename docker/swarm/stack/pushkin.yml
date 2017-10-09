@@ -4,6 +4,7 @@ parameters:
     docker_image_pushkin: docker-prod-local.artifactory.mirantis.com/mirantis/oss/pushkin
     pushkin_bind_host: pushkin-api
     pushkin_bind_port: ${_param:haproxy_pushkin_bind_port}
+    pushkin_elasticsearch: ${_param:elasticsearch_bind_host}
     pushkin_ssl:
       enabled: false
     pushkin_db: pushkin
@@ -24,7 +25,7 @@ parameters:
             POSTGRES_PASSWORD: ${_param:pushkin_db_user_password}
             POSTGRES_DB: ${_param:pushkin_db}
             PUSHKINDBHOST: ${_param:postgresql_bind_host}
-            PUSHKINELASTICHOST: ${_param:elasticsearch_bind_host}
+            PUSHKINELASTICHOST: ${_param:pushkin_elasticsearch}
             WEBHOOK_FROM: ${_param:webhook_from}
             EMAIL_SENDER_PASSWORD: ${_param:pushkin_email_sender_password}
             SMTP_HOST: ${_param:pushkin_smtp_host}

@@ -1,0 +1,20 @@
+parameters:
+  _param:
+    git_server_host: git.${_param:cluster_domain}
+    git_server_port: 8088
+  git:
+    server:
+      enabled: True
+  nginx:
+    server:
+      enabled: True
+      site:
+        git_server:
+          enabled: True
+          name: git_server
+          type: git
+          root: /srv/git
+          client_max_body_size: 0
+          host:
+            name: ${_param:git_server_host}
+            port: ${_param:git_server_port}

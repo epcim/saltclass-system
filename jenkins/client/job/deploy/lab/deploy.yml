@@ -148,7 +148,7 @@ parameters:
               TEST_TEMPEST_IMAGE:
                 type: string
                 description: "Tempest docker image"
-                default: "sandbox-docker-prod-local.docker.mirantis.net/mirantis/rally_tempest:0.1"
+                default: "docker-prod-local.artifactory.mirantis.com/mirantis/oscore/rally-tempest"
               TEST_TEMPEST_TARGET:
                 type: string
                 description: "Node to run tests"

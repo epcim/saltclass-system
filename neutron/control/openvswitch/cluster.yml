@@ -14,7 +14,6 @@ parameters:
     neutron_enable_vlan_aware_vms: False
   neutron:
     server:
-      plugin: ml2
       global_physnet_mtu: ${_param:neutron_global_physnet_mtu}
       l3_ha: ${_param:neutron_l3_ha}
       dvr: ${_param:neutron_control_dvr}

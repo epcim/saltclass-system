@@ -14,7 +14,7 @@ parameters:
       enabled: true
       user:
         dlapshin:
-          enabled: true
+          enabled: false
           public_keys: ${public_keys:dlapshin}
           user: ${linux:system:user:dlapshin}
   public_keys:

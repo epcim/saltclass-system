@@ -14,7 +14,7 @@ parameters:
       enabled: true
       user:
         smachtmes:
-          enabled: true
+          enabled: false
           public_keys: ${public_keys:smachtmes}
           user: ${linux:system:user:smachtmes}
   public_keys:

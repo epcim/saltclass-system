@@ -14,7 +14,7 @@ parameters:
       enabled: true
       user:
         mpetersen:
-          enabled: true
+          enabled: false
           public_keys: ${public_keys:mpetersen}
           user: ${linux:system:user:mpetersen}
   public_keys:

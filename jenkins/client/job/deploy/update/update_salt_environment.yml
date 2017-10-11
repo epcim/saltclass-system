@@ -1,0 +1,28 @@
+#
+# Jobs to update Salt master environment (formulas and models)
+#
+parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+  jenkins:
+    client:
+      job:
+        deploy-update-salt-environment:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - update Salt environment"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: update-salt-environment.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            UPDATE_FORMULAS:
+              type: boolean
+              default: 'true'

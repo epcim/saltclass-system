@@ -1,4 +1,10 @@
 parameters:
+  _param:
+    haproxy_kibana_bind_host: ${_param:cluster_vip_address}
+    haproxy_kibana_bind_port: ${_param:cluster_kibana_port}
+    haproxy_kibana_exposed_port: ${_param:cluster_kibana_port}
+    haproxy_kibana_ssl:
+      enabled: false
   haproxy:
     proxy:
       listen:
@@ -10,19 +16,23 @@ parameters:
             - prefer-last-server
             - dontlog-normal
           balance: roundrobin
+          http_request:
+            - action: "add-header X-Forwarded-Proto https"
+              condition: "if { ssl_fc }"
           binds:
-            - address: ${_param:cluster_vip_address}
-              port: 5601
+            - address: ${_param:haproxy_kibana_bind_host}
+              port: ${_param:haproxy_kibana_bind_port}
+              ssl: ${_param:haproxy_kibana_ssl}
           servers:
             - name: ${_param:cluster_node01_hostname}
               host: ${_param:cluster_node01_address}
-              port: 5601
+              port: ${_param:haproxy_kibana_exposed_port}
               params: 'check inter 10s fastinter 2s downinter 3s rise 3 fall 3'
             - name: ${_param:cluster_node02_hostname}
               host: ${_param:cluster_node02_address}
-              port: 5601
+              port: ${_param:haproxy_kibana_exposed_port}
               params: 'check inter 10s fastinter 2s downinter 3s rise 3 fall 3'
             - name: ${_param:cluster_node03_hostname}
               host: ${_param:cluster_node03_address}
-              port: 5601
+              port: ${_param:haproxy_kibana_exposed_port}
               params: 'check inter 10s fastinter 2s downinter 3s rise 3 fall 3'

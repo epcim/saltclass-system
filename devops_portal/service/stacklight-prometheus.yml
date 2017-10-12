@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    grafana_prometheus_ssl:
+      enabled: false
+  devops_portal:
+    config:
+      service:
+        stacklight-prometheus:
+          configure_proxy: false
+          enabled: true
+          endpoint:
+            address: ${_param:grafana_prometheus_address}
+            custom_path: alerts
+            port: ${_param:stacklight_prometheus_port}
+            https: ${_param:grafana_prometheus_ssl:enabled}

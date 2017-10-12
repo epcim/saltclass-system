@@ -1,0 +1,14 @@
+parameters:
+  _param:
+    grafana_ssl:
+      enabled: false
+  devops_portal:
+    config:
+      service:
+        grafana:
+          configure_proxy: false
+          enabled: true
+          endpoint:
+            address: ${_param:grafana_address}
+            port: ${_param:grafana_port}
+            https: ${_param:grafana_ssl:enabled}

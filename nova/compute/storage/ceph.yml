@@ -1,6 +1,9 @@
 parameters:
   _param:
-    nova_storage_client_key: nova
+    nova_storage_user: nova
+    cinder_storage_user: cinder
+    nova_storage_client_key: ${_param:nova_storage_user}
+    cinder_storage_client_key: ${_param:cinder_storage_user}
   nova:
     compute:
       ceph:
@@ -10,3 +13,5 @@ parameters:
         secret_uuid: ${_param:nova_storage_secret_uuid}
         client_cinder_key: ${_param:nova_storage_client_key}
         rbd_user: ${_param:nova_storage_user}
+        cinder_secret_uuid: ${_param:cinder_storage_secret_uuid}
+        cinder_volumes_key: ${_param:cinder_storage_client_key}

@@ -38,6 +38,10 @@ parameters:
               branch: "master"
               tags: "5.6 latest"
               dockerfile: "5.6/Dockerfile"
+            - name: jnlp-slave
+              branch: "master"
+              tags: "latest"
+              dockerfile: "Dockerfile"
           template:
             discard:
               build:

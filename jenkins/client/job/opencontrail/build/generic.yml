@@ -38,7 +38,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-3.1.1
               upload_source_package: true
               dpdk: contrail_dpdk_2_1
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc311
               os: ubuntu
               dist: xenial
@@ -46,7 +46,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-3.1.1
               upload_source_package: true
               dpdk: contrail_dpdk_2_1
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc32
               os: ubuntu
               dist: trusty
@@ -70,7 +70,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-3.2.3
               upload_source_package: true
               dpdk: contrail_dpdk_2_1
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc323
               os: ubuntu
               dist: xenial
@@ -78,7 +78,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-3.2.3
               upload_source_package: true
               dpdk: contrail_dpdk_2_1
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc40
               os: ubuntu
               dist: trusty
@@ -86,7 +86,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-4.0
               upload_source_package: true
               dpdk: contrail_dpdk_17_02
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc40
               os: ubuntu
               dist: xenial
@@ -94,7 +94,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-4.0
               upload_source_package: true
               dpdk: contrail_dpdk_17_02
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc41
               os: ubuntu
               dist: trusty
@@ -102,7 +102,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-4.1
               upload_source_package: true
               dpdk: contrail_dpdk_17_02
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc41
               os: ubuntu
               dist: xenial
@@ -110,7 +110,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-4.1
               upload_source_package: true
               dpdk: contrail_dpdk_17_02
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc666
               os: ubuntu
               dist: trusty
@@ -118,7 +118,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-master
               upload_source_package: true
               dpdk: contrail_dpdk_17_02
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
             - buildname: oc666
               os: ubuntu
               dist: xenial
@@ -126,7 +126,7 @@ parameters:
               ppa: mirantis-opencontrail/opencontrail-master
               upload_source_package: true
               dpdk: contrail_dpdk_17_02
-              build_trigger: "H H(20-23) * * *"
+              build_trigger: ""
           template:
             discard:
              build:

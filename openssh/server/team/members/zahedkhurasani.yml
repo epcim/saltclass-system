@@ -14,7 +14,7 @@ parameters:
       enabled: true
       user:
         zkhurasani:
-          enabled: true
+          enabled: false
           public_keys: ${public_keys:zkhurasani}
           user: ${linux:system:user:zkhurasani}
   public_keys:

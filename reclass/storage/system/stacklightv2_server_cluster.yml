@@ -12,8 +12,8 @@ parameters:
           domain: ${_param:cluster_domain}
           classes:
           - system.docker.swarm.master
-          - cluster.${_param:cluster_name}.stacklight.server
           - cluster.${_param:cluster_name}.stacklight.client
+          - cluster.${_param:cluster_name}.stacklight.server
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: ${_param:stacklight_monitor_system_codename}

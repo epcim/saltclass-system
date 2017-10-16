@@ -19,4 +19,4 @@ parameters:
           user: ${linux:system:user:jsorondo}
   public_keys:
     jsorondo:
-      - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQifWsY+b8n8imC0NaP1zVpgihzIT+8A5w35W8dF7YyGcgGOYAcmTRV2Wqm8el9iLsW1ANOdjjulZ/jAzicVwh5IEq9MYjNl4+YjThDN9J1yvw9BjkXPs0Ymrqt4Xq9wZdE5c3P6DaoicxOCEpaL3t1ZxigAcMpQxa5qSyxeY0mvr5eb9O6I0eznEsSjikHOJPaWTdAG5Wx6acwhqB6G7gAF0fpE3Hn+enmtAiqJQVnaBKeX06isMPxyabaNgDCdw1jIJ+uHa3RFRXlucResGiJiDggP+GabKenrSkig8xUWk6UBoO3h28fzEF/J3LSJbL2dHTcWLIrdPZJFVj/0l/
+      - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYN/Y6PeKVaW+ouilurh9jyi2k+PDn097LPXxi82ODgPJ+p/qzr6oBYIWDNtudMhNTWA1uV2ZnMbbl67REWAc8V++NFQWtAX9lmtQ4S5w/CvWutgGqrUr7gjJJoq/ySMMFE1F3sekdPM90y2JS4K1L300de5UviAwgPMo48wq292MaESqq6/X7CV3VHDy5srA1VFI1oZMv66NpOO2mHzElKMtVISTHF8/W4yg1P7LvjlcH2vB2clfO6UtOZfcDaAibAyE+bClUYzK6YSRejni5hWaRYFOvza3PyIF6YvjznPxtTU4aclmiZrtMm5gLZB/euvkijXuBOPFO0xgDw6Q9

@@ -1,19 +1,11 @@
-applications:
-- keepalived
 classes:
-- service.keepalived.support
+- service.keepalived.cluster.single
 parameters:
   _param:
     keepalived_openstack_telemetry_vip_address: ${_param:cluster_vip_address}
     keepalived_openstack_telemetry_vip_password: password
     keepalived_openstack_telemetry_vip_interface: eth1
-  keepalived:
-    cluster:
-      enabled: true
-      instance:
-        openstack_telemetry_vip:
-          address: ${_param:keepalived_openstack_telemetry_vip_address}
-          password: ${_param:keepalived_openstack_telemetry_vip_password}
-          interface: ${_param:keepalived_openstack_telemetry_vip_interface}
-          virtual_router_id: 230
-          priority: 101
+    keepalived_vip_virtual_router_id: 230
+    keepalived_vip_address: ${_param:keepalived_openstack_telemetry_vip_address}
+    keepalived_vip_password: ${_param:keepalived_openstack_telemetry_vip_password}
+    keepalived_vip_interface: ${_param:keepalived_openstack_telemetry_vip_interface}

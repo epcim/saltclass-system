@@ -34,6 +34,7 @@ parameters:
             ADMIN_HOST:
               type: string
               description: Host with admin keyring and access to cluster management
+              default: 'cmn01*'
             CLUSTER_FLAGS:
               type: string
               description: Flags to be aplied before pipeline and after pipeline (comma-separated list)

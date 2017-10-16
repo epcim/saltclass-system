@@ -1,0 +1,20 @@
+parameters:
+  _param:
+    ceph_radosgw_keystone_host: 127.0.0.1
+    ceph_radosgw_keystone_user: admin
+    ceph_radosgw_keystone_api_version: 3
+    ceph_radosgw_keystone_project: admin
+    ceph_radosgw_keystone_domain: default
+    ceph_radosgw_keystone_port: 5000
+  ceph:
+    radosgw:
+      identity:
+        engine: keystone
+        api_version: ${_param:ceph_radosgw_keystone_api_version}
+        host: ${_param:ceph_radosgw_keystone_host}
+        port: ${_param:ceph_radosgw_keystone_port}
+        user: ${_param:ceph_radosgw_keystone_user}
+        password: ${_param:ceph_radosgw_keystone_password}
+        tenant: ${_param:ceph_radosgw_keystone_project}
+        project: ${_param:ceph_radosgw_keystone_project}
+        domain: ${_param:ceph_radosgw_keystone_domain}

@@ -1,0 +1,39 @@
+parameters:
+  _param:
+    ceph_rgw_node01_hostname: rgw01
+    ceph_rgw_node02_hostname: rgw02
+    ceph_rgw_node03_hostname: rgw03
+    ceph_rgw_system_codename: xenial
+  reclass:
+    storage:
+      node:
+        ceph_rgw_node01:
+          name: ${_param:ceph_rgw_node01_hostname}
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.ceph.rgw
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename: ${_param:ceph_rgw_system_codename}
+            single_address: ${_param:ceph_rgw_node01_address}
+            keepalived_vip_priority: 103
+        ceph_rgw_node02:
+          name: ${_param:ceph_rgw_node02_hostname}
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.ceph.rgw
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename:  ${_param:ceph_rgw_system_codename}
+            single_address: ${_param:ceph_rgw_node02_address}
+            keepalived_vip_priority: 102
+        ceph_rgw_node03:
+          name: ${_param:ceph_rgw_node03_hostname}
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.ceph.rgw
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename:  ${_param:ceph_rgw_system_codename}
+            single_address: ${_param:ceph_rgw_node03_address}
+            keepalived_vip_priority: 101

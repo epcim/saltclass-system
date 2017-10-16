@@ -12,7 +12,7 @@ parameters:
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.ceph.mon
-          - cluster.${_param:cluster_name}.ceph.mon_init
+          - cluster.${_param:cluster_name}.ceph.setup
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: ${_param:ceph_mon_system_codename}

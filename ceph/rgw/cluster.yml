@@ -1,0 +1,7 @@
+classes:
+- system.haproxy.proxy.single
+- system.haproxy.proxy.listen.radosgw
+- system.linux.system.repo.ceph
+- system.linux.system.repo.ubuntu
+- service.keepalived.cluster.single
+- service.ceph.radosgw.cluster

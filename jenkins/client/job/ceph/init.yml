@@ -1,3 +1,2 @@
 classes:
 - system.jenkins.client.job.ceph.remove-osd
-- system.jenkins.client.job.ceph.weights

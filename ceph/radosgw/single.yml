@@ -1,3 +1,4 @@
+# LEGACY - use rgw.cluster or rgw.single instead
 parameters:
   _param:
     radosgw_keyring_path: /etc/ceph/ceph.client.radosgw.keyring

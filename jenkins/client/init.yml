@@ -30,6 +30,7 @@ parameters:
         gerrit-trigger: {}
         git: {}
         heavy-job: {}
+        jobConfigHistory: {}
         ldap: {}
         matrix-auth: {}
         monitoring: {}

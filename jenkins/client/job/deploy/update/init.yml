@@ -2,6 +2,7 @@ classes:
   - system.jenkins.client.job.deploy.update.package
   - system.jenkins.client.job.deploy.update.config
   - system.jenkins.client.job.deploy.update.saltenv
+  - system.jenkins.client.job.deploy.update.update_salt_environment
   - system.jenkins.client.job.deploy.update.upgrade
   - system.jenkins.client.job.deploy.update.upgrade_compute
   - system.jenkins.client.job.deploy.update.upgrade_ovs_gateway

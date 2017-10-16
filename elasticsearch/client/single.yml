@@ -1,9 +1,12 @@
 classes:
 - service.elasticsearch.client
 parameters:
+  _param:
+    elasticsearch_client_host: ${_param:stacklight_log_address}
+    elasticsearch_client_port: 9200
   elasticsearch:
     client:
       enabled: true
       server:
-        host: ${_param:stacklight_log_address}
-        port: ${_param:haproxy_elasticsearch_http_bind_port}
+        host: ${_param:elasticsearch_client_host}
+        port: ${_param:elasticsearch_client_port}

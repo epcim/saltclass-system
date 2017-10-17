@@ -1,0 +1,10 @@
+classes:
+  - system.jenkins.client.job.oscore.tests
+parameters:
+  jenkins:
+    client:
+      view:
+        "OSCORE":
+          enabled: true
+          type: ListView
+          include_regex: "^oscore-.*"

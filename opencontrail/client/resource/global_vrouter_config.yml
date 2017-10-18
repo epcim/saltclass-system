@@ -1,0 +1,11 @@
+parameters:
+  opencontrail:
+    client:
+      global_vrouter_config:
+        name: global-vrouter-config
+        parent_type: global-system-config
+        encap_priority: "MPLSoUDP,MPLSoGRE"
+        vxlan_vn_id_mode: automatic
+        fq_names:
+          - 'default-global-system-config'
+          - 'default-global-vrouter-config

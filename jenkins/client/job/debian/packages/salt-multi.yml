@@ -6,44 +6,64 @@ parameters:
           name: build-debian-salt-formula-{{name}}-ubuntu-{{dist}}
           jobs:
             - name: ceilometer
+              upload_source_package: false
               dist: trusty
             - name: cinder
+              upload_source_package: false
               dist: trusty
             - name: glance
+              upload_source_package: false
               dist: trusty
             - name: heat
+              upload_source_package: false
               dist: trusty
             - name: horizon
+              upload_source_package: false
               dist: trusty
             - name: keystone
+              upload_source_package: false
               dist: trusty
             - name: kubernetes
+              upload_source_package: false
               dist: trusty
             - name: neutron
+              upload_source_package: false
               dist: trusty
             - name: nova
+              upload_source_package: false
               dist: trusty
             - name: swift
+              upload_source_package: false
               dist: trusty
             - name: ceilometer
+              upload_source_package: true
               dist: xenial
             - name: cinder
+              upload_source_package: true
               dist: xenial
             - name: glance
+              upload_source_package: true
               dist: xenial
             - name: heat
+              upload_source_package: true
               dist: xenial
             - name: horizon
+              upload_source_package: true
               dist: xenial
             - name: keystone
+              upload_source_package: true
               dist: xenial
             - name: kubernetes
+              upload_source_package: true
               dist: xenial
             - name: neutron
+              upload_source_package: true
               dist: xenial
             - name: nova
+              upload_source_package: true
               dist: xenial
             - name: swift
+              upload_source_package: true
               dist: xenial
           template:
             discard:
@@ -117,4 +137,4 @@ parameters:
                 default: 'true'
               UPLOAD_APTLY:
                 type: boolean
-                default: 'true'
+                default: '{{upload_source_package}}'

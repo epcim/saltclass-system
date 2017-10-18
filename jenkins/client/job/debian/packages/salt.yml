@@ -6,408 +6,610 @@ parameters:
           name: build-debian-salt-formula-{{name}}-ubuntu-{{dist}}
           jobs:
             - name: aodh
+              upload_source_package: false
               dist: trusty
             - name: apache
+              upload_source_package: false
               dist: trusty
             - name: aptcacher
+              upload_source_package: false
               dist: trusty
             - name: aptly
+              upload_source_package: false
               dist: trusty
             - name: artifactory
+              upload_source_package: false
               dist: trusty
             - name: avinetworks
+              upload_source_package: false
               dist: trusty
             - name: backupninja
+              upload_source_package: false
               dist: trusty
             - name: baremetal-simulator
+              upload_source_package: false
               dist: trusty
             - name: billometer
+              upload_source_package: false
               dist: trusty
             - name: bind
+              upload_source_package: false
               dist: trusty
             - name: bird
+              upload_source_package: false
               dist: trusty
             - name: cadf
+              upload_source_package: false
               dist: trusty
             - name: calico
+              upload_source_package: false
               dist: trusty
             - name: cassandra
+              upload_source_package: false
               dist: trusty
             - name: ccp
+              upload_source_package: false
               dist: trusty
             - name: ceph
+              upload_source_package: false
               dist: trusty
             - name: chrony
+              upload_source_package: false
               dist: trusty
             - name: collectd
+              upload_source_package: false
               dist: trusty
             - name: dekapod
+              upload_source_package: false
               dist: trusty
             - name: designate
+              upload_source_package: false
               dist: trusty
             - name: devops-portal
+              upload_source_package: false
               dist: trusty
             - name: docker
+              upload_source_package: false
               dist: trusty
             - name: dovecot
+              upload_source_package: false
               dist: trusty
             - name: elasticsearch
+              upload_source_package: false
               dist: trusty
             - name: etcd
+              upload_source_package: false
               dist: trusty
             - name: fluentbit
+              upload_source_package: false
               dist: trusty
             - name: foreman
+              upload_source_package: false
               dist: trusty
             - name: freeipa
+              upload_source_package: false
               dist: trusty
             - name: galera
+              upload_source_package: false
               dist: trusty
             - name: gerrit
+              upload_source_package: false
               dist: trusty
             - name: git
+              upload_source_package: false
               dist: trusty
             - name: gitlab
+              upload_source_package: false
               dist: trusty
             - name: glusterfs
+              upload_source_package: false
               dist: trusty
             - name: grafana
+              upload_source_package: false
               dist: trusty
             - name: graphite
+              upload_source_package: false
               dist: trusty
             - name: haproxy
+              upload_source_package: false
               dist: trusty
             - name: heka
+              upload_source_package: false
               dist: trusty
             - name: influxdb
+              upload_source_package: false
               dist: trusty
             - name: iptables
+              upload_source_package: false
               dist: trusty
             - name: ironic
+              upload_source_package: false
               dist: trusty
             - name: isc-dhcp
+              upload_source_package: false
               dist: trusty
             - name: java
+              upload_source_package: false
               dist: trusty
             - name: jenkins
+              upload_source_package: false
               dist: trusty
             - name: kedb
+              upload_source_package: false
               dist: trusty
             - name: keepalived
+              upload_source_package: false
               dist: trusty
             - name: kibana
+              upload_source_package: false
               dist: trusty
             - name: letsencrypt
+              upload_source_package: false
               dist: trusty
             - name: libvirt
+              upload_source_package: false
               dist: trusty
             - name: linux
+              upload_source_package: false
               dist: trusty
             - name: lldp
+              upload_source_package: false
               dist: trusty
             - name: logrotate
+              upload_source_package: false
               dist: trusty
             - name: maas
+              upload_source_package: false
               dist: trusty
             - name: magnum
+              upload_source_package: false
               dist: trusty
             - name: memcached
+              upload_source_package: false
               dist: trusty
             - name: midonet
+              upload_source_package: false
               dist: trusty
             - name: monasca
+              upload_source_package: false
               dist: trusty
             - name: mongodb
+              upload_source_package: false
               dist: trusty
             - name: murano
+              upload_source_package: false
               dist: trusty
             - name: mysql
+              upload_source_package: false
               dist: trusty
             - name: nagios
+              upload_source_package: false
               dist: trusty
             - name: network
+              upload_source_package: false
               dist: trusty
             - name: nfs
+              upload_source_package: false
               dist: trusty
             - name: nginx
+              upload_source_package: false
               dist: trusty
             - name: nodejs
+              upload_source_package: false
               dist: trusty
             - name: ntp
+              upload_source_package: false
               dist: trusty
             - name: octavia
+              upload_source_package: false
               dist: trusty
             - name: opencontrail
+              upload_source_package: false
               dist: trusty
             - name: openldap
+              upload_source_package: false
               dist: trusty
             - name: openssh
+              upload_source_package: false
               dist: trusty
             - name: openvpn
+              upload_source_package: false
               dist: trusty
             - name: openvstorage
+              upload_source_package: false
               dist: trusty
             - name: owncloud
+              upload_source_package: false
               dist: trusty
             - name: postfix
+              upload_source_package: false
               dist: trusty
             - name: postgresql
+              upload_source_package: false
               dist: trusty
             - name: powerdns
+              upload_source_package: false
               dist: trusty
             - name: pritunl
+              upload_source_package: false
               dist: trusty
             - name: prometheus
+              upload_source_package: false
               dist: trusty
             - name: python
+              upload_source_package: false
               dist: trusty
             - name: rabbitmq
+              upload_source_package: false
               dist: trusty
             - name: reclass
+              upload_source_package: false
               dist: trusty
             - name: redis
+              upload_source_package: false
               dist: trusty
             - name: roundcube
+              upload_source_package: false
               dist: trusty
             - name: rsync
+              upload_source_package: false
               dist: trusty
             - name: rsyslog
+              upload_source_package: false
               dist: trusty
             - name: rundeck
+              upload_source_package: false
               dist: trusty
             - name: sahara
+              upload_source_package: false
               dist: trusty
             - name: salt
+              upload_source_package: false
               dist: trusty
             - name: sensu
+              upload_source_package: false
               dist: trusty
             - name: sentry
+              upload_source_package: false
               dist: trusty
             - name: sphinx
+              upload_source_package: false
               dist: trusty
             - name: spinnaker
+              upload_source_package: false
               dist: trusty
             - name: statsd
+              upload_source_package: false
               dist: trusty
             - name: supervisor
+              upload_source_package: false
               dist: trusty
             - name: taiga
+              upload_source_package: false
               dist: trusty
             - name: telegraf
+              upload_source_package: false
               dist: trusty
             - name: tftpd-hpa
+              upload_source_package: false
               dist: trusty
             - name: varnish
+              upload_source_package: false
               dist: trusty
             - name: xtrabackup
+              upload_source_package: false
               dist: trusty
             - name: zookeeper
+              upload_source_package: false
               dist: trusty
             - name: aodh
+              upload_source_package: true
               dist: xenial
             - name: apache
+              upload_source_package: true
               dist: xenial
             - name: aptcacher
+              upload_source_package: true
               dist: xenial
             - name: aptly
+              upload_source_package: true
               dist: xenial
             - name: artifactory
+              upload_source_package: true
               dist: xenial
             - name: avinetworks
+              upload_source_package: true
               dist: xenial
             - name: barbican
+              upload_source_package: true
               dist: xenial
             - name: baremetal-simulator
+              upload_source_package: true
               dist: xenial
             - name: backupninja
+              upload_source_package: true
               dist: xenial
             - name: billometer
+              upload_source_package: true
               dist: xenial
             - name: bind
+              upload_source_package: true
               dist: xenial
             - name: bird
+              upload_source_package: true
               dist: xenial
             - name: cadf
+              upload_source_package: true
               dist: xenial
             - name: calico
+              upload_source_package: true
               dist: xenial
             - name: cassandra
+              upload_source_package: true
               dist: xenial
             - name: ccp
+              upload_source_package: true
               dist: xenial
             - name: ceph
+              upload_source_package: true
               dist: xenial
             - name: chrony
+              upload_source_package: true
               dist: xenial
             - name: collectd
+              upload_source_package: true
               dist: xenial
             - name: dekapod
+              upload_source_package: true
               dist: xenial
             - name: designate
+              upload_source_package: true
               dist: xenial
             - name: devops-portal
+              upload_source_package: true
               dist: xenial
             - name: docker
+              upload_source_package: true
               dist: xenial
             - name: dovecot
+              upload_source_package: true
               dist: xenial
             - name: elasticsearch
+              upload_source_package: true
               dist: xenial
             - name: etcd
+              upload_source_package: true
               dist: xenial
             - name: fluentbit
+              upload_source_package: true
               dist: xenial
             - name: foreman
+              upload_source_package: true
               dist: xenial
             - name: freeipa
+              upload_source_package: true
               dist: xenial
             - name: galera
+              upload_source_package: true
               dist: xenial
             - name: gerrit
+              upload_source_package: true
               dist: xenial
             - name: git
+              upload_source_package: true
               dist: xenial
             - name: gitlab
+              upload_source_package: true
               dist: xenial
             - name: glusterfs
+              upload_source_package: true
               dist: xenial
             - name: gnocchi
+              upload_source_package: true
               dist: xenial
             - name: grafana
+              upload_source_package: true
               dist: xenial
             - name: graphite
+              upload_source_package: true
               dist: xenial
             - name: haproxy
+              upload_source_package: true
               dist: xenial
             - name: heka
+              upload_source_package: true
               dist: xenial
             - name: helm
+              upload_source_package: true
               dist: xenial
             - name: influxdb
+              upload_source_package: true
               dist: xenial
             - name: iptables
+              upload_source_package: true
               dist: xenial
             - name: ironic
+              upload_source_package: true
               dist: xenial
             - name: isc-dhcp
+              upload_source_package: true
               dist: xenial
             - name: java
+              upload_source_package: true
               dist: xenial
             - name: jenkins
+              upload_source_package: true
               dist: xenial
             - name: kedb
+              upload_source_package: true
               dist: xenial
             - name: keepalived
+              upload_source_package: true
               dist: xenial
             - name: kibana
+              upload_source_package: true
               dist: xenial
             - name: letsencrypt
+              upload_source_package: true
               dist: xenial
             - name: libvirt
+              upload_source_package: true
               dist: xenial
             - name: linux
+              upload_source_package: true
               dist: xenial
             - name: lldp
+              upload_source_package: true
               dist: xenial
             - name: logrotate
+              upload_source_package: true
               dist: xenial
             - name: maas
+              upload_source_package: true
               dist: xenial
             - name: magnum
+              upload_source_package: true
               dist: xenial
             - name: memcached
+              upload_source_package: true
               dist: xenial
             - name: midonet
+              upload_source_package: true
               dist: xenial
             - name: monasca
+              upload_source_package: true
               dist: xenial
             - name: mongodb
+              upload_source_package: true
               dist: xenial
             - name: murano
+              upload_source_package: true
               dist: xenial
             - name: mysql
+              upload_source_package: true
               dist: xenial
             - name: nagios
+              upload_source_package: true
               dist: xenial
             - name: network
+              upload_source_package: true
               dist: xenial
             - name: nfs
+              upload_source_package: true
               dist: xenial
             - name: nginx
+              upload_source_package: true
               dist: xenial
             - name: nodejs
+              upload_source_package: true
               dist: xenial
             - name: ntp
+              upload_source_package: true
               dist: xenial
             - name: octavia
+              upload_source_package: true
               dist: xenial
             - name: opencontrail
+              upload_source_package: true
               dist: xenial
             - name: openldap
+              upload_source_package: true
               dist: xenial
             - name: openssh
+              upload_source_package: true
               dist: xenial
             - name: openvpn
+              upload_source_package: true
               dist: xenial
             - name: openvstorage
+              upload_source_package: true
               dist: xenial
             - name: owncloud
+              upload_source_package: true
               dist: xenial
             - name: panko
+              upload_source_package: true
               dist: xenial
             - name: postfix
+              upload_source_package: true
               dist: xenial
             - name: postgresql
+              upload_source_package: true
               dist: xenial
             - name: pritunl
+              upload_source_package: true
               dist: xenial
             - name: prometheus
+              upload_source_package: true
               dist: xenial
             - name: powerdns
+              upload_source_package: true
               dist: xenial
             - name: python
+              upload_source_package: true
               dist: xenial
             - name: rabbitmq
+              upload_source_package: true
               dist: xenial
             - name: reclass
+              upload_source_package: true
               dist: xenial
             - name: redis
+              upload_source_package: true
               dist: xenial
             - name: roundcube
+              upload_source_package: true
               dist: xenial
             - name: rsync
+              upload_source_package: true
               dist: xenial
             - name: rundeck
+              upload_source_package: true
               dist: xenial
             - name: rsyslog
+              upload_source_package: true
               dist: xenial
             - name: sahara
+              upload_source_package: true
               dist: xenial
             - name: salt
+              upload_source_package: true
               dist: xenial
             - name: sensu
+              upload_source_package: true
               dist: xenial
             - name: sentry
+              upload_source_package: true
               dist: xenial
             - name: sphinx
+              upload_source_package: true
               dist: xenial
             - name: spinnaker
+              upload_source_package: true
               dist: xenial
             - name: statsd
+              upload_source_package: true
               dist: xenial
             - name: supervisor
+              upload_source_package: true
               dist: xenial
             - name: taiga
+              upload_source_package: true
               dist: xenial
             - name: telegraf
+              upload_source_package: true
               dist: xenial
             - name: tftpd-hpa
+              upload_source_package: true
               dist: xenial
             - name: varnish
+              upload_source_package: true
               dist: xenial
             - name: xtrabackup
+              upload_source_package: true
               dist: xenial
             - name: zookeeper
+              upload_source_package: true
               dist: xenial
           template:
             discard:
@@ -477,7 +679,7 @@ parameters:
                 default: "salt-formulas/ppa"
               UPLOAD_PPA:
                 type: boolean
-                default: 'true'
+                default: '{{upload_source_package}}'
               UPLOAD_APTLY:
                 type: boolean
                 default: 'true'

@@ -2,6 +2,7 @@ parameters:
   _param:
     grafana_prometheus_is_default: true
     grafana_prometheus_ds_name: prometheus
+    grafana_prometheus_address: ${_param:stacklight_monitor_address}
   grafana:
     client:
       datasource:

@@ -8,4 +8,4 @@ parameters:
         vxlan_vn_id_mode: automatic
         fq_names:
           - 'default-global-system-config'
-          - 'default-global-vrouter-config
+          - 'default-global-vrouter-config'

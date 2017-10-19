@@ -1,6 +1,8 @@
 classes:
 - service.aodh.server.cluster
+- service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.aodh
+- system.keepalived.cluster.instance.openstack_telemetry_vip
 parameters:
   aodh:
     server:

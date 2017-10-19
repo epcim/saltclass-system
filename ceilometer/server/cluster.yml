@@ -1,8 +1,8 @@
 classes:
 - service.ceilometer.server.cluster
+- service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.ceilometer
 - system.keepalived.cluster.instance.openstack_telemetry_vip
-- service.haproxy.proxy.single
 parameters:
   ceilometer:
     server:

@@ -1,30 +1,41 @@
 ---
 summary: >
-  Additional path for DevopsPortal nginx proxy service
+  Added the ability to define a custom path to the NGINX proxy service
+  endpoints for DevOps Portal
 
 features:
    - |
-     Possibility of defining additional path to service endpoints. Need to define 'custom_path' variable on system level metadata.
-     Result of endpoint looks like 'address:port/custom_path'. Main goal of this feature - auto loading special frame on DevopsPortal dashboard.
+     Added the ability to define a custom path to the NGINX proxy service
+     endpoints for the DevOps Portal to auto-load a dedicated frame in the
+     web UI. To define the path, specify the ``custom_path`` parameter on
+     the system level metadata of your deployment.
 
-     Example:
+     Configuration example:
+
      .. code-block:: yaml
-     parameters:
-       _param:
-         grafana_prometheus_ssl:
-           enabled: false
-       devops_portal:
-         config:
-           service:
-             stacklight-prometheus:
-               configure_proxy: false
-               enabled: true
-               endpoint:
-                 address: ${_param:grafana_prometheus_address}
-                 custom_path: alerts
-                 port: ${_param:grafana_prometheus_port}
-                 https: ${_param:grafana_prometheus_ssl:enabled}
 
+        parameters:
+          _param:
+            grafana_prometheus_ssl:
+              enabled: false
+          devops_portal:
+            config:
+              service:
+                stacklight-prometheus:
+                  configure_proxy: false
+                  enabled: true
+                  endpoint:
+                    address: ${_param:grafana_prometheus_address}
+                    custom_path: alerts
+                    port: ${_param:grafana_prometheus_port}
+                    https: ${_param:grafana_prometheus_ssl:enabled}
 
-fixes:
-  - related bug: https://mirantis.jira.com/browse/PROD-15068 
+     If specified, the endpoint of the NGINX service will take the following
+     form:
+
+     .. code-block:: yaml
+
+        <ADDRESS>:<PORT>/<CUSTOM_PATH>
+
+     .. fixes: https://mirantis.jira.com/browse/PROD-15068
+

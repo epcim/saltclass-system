@@ -6,6 +6,8 @@ parameters:
     jenkins_master_extra_opts: ""
     jenkins_master_executors_num: 4
     jenkins_master_max_concurent_requests: 40
+    oss_jenkins_user: admin
+    oss_jenkins_password: password
   docker:
     client:
       stack:

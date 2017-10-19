@@ -1,16 +1,20 @@
 parameters:
   _param:
     glusterfs_version: 3.8
+    mirror_glusterfs_upstream_trusty_source: http://ppa.launchpad.net/gluster/glusterfs-${_param:glusterfs_version}/ubuntu
+    mirror_glusterfs_upstream_trusty_distribution: trusty
+    mirror_glusterfs_upstream_trusty_components: main
+    mirror_glusterfs_upstream_trusty_gpgkeys:
+      - 3FE869A9
   aptly:
     server:
       mirror:
         glusterfs_upstream_trusty:
-          source: http://ppa.launchpad.net/gluster/glusterfs-${_param:glusterfs_version}/ubuntu
-          distribution: trusty
-          components: main
+          source: ${_param:mirror_glusterfs_upstream_trusty_source}
+          distribution: ${_param:mirror_glusterfs_upstream_trusty_distribution}
+          components: ${_param:mirror_glusterfs_upstream_trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 3FE869A9
+          gpgkeys: ${_param:mirror_glusterfs_upstream_trusty_gpgkeys}
           publisher:
             component: glusterfs
             distributions:

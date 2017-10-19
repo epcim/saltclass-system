@@ -2,19 +2,23 @@ parameters:
   _param:
     linux_system_country_code: cz
     aptly_server_mirror_ubuntu_xenial_sources: ${_param:aptly_server_mirror_ubuntu_sources}
+    mirror_xenial-universe_source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+    mirror_xenial-universe_distribution: xenial
+    mirror_xenial-universe_components: universe
+    mirror_xenial-universe_gpgkeys:
+      - 40976EAF437D05B5
+      - 437D05B5
+      - C0B21F32
   aptly:
     server:
       mirror:
         xenial-universe:
-          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+          source: ${_param:mirror_xenial-universe_source}
+          distribution: ${_param:mirror_xenial-universe_distribution}
           sources: ${_param:aptly_server_mirror_ubuntu_xenial_sources}
-          distribution: xenial
-          components: universe
+          components: ${_param:mirror_xenial-universe_components}
           architectures: amd64
-          gpgkeys:
-            - 40976EAF437D05B5
-            - 437D05B5
-            - C0B21F32
+          gpgkeys: ${_param:mirror_xenial-universe_gpgkeys}
           publisher:
             component: universe
             distributions:

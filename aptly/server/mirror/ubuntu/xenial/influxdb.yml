@@ -1,16 +1,20 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_influxdb-xenial_source: https://repos.influxdata.com/ubuntu/
+    mirror_influxdb-xenial_distribution: xenial
+    mirror_influxdb-xenial_components: stable
+    mirror_influxdb-xenial_gpgkeys:
+      - 2582E0C5
   aptly:
     server:
       mirror:
         influxdb-xenial:
-          source: https://repos.influxdata.com/ubuntu/
-          distribution: xenial
-          components: stable
+          source: ${_param:mirror_influxdb-xenial_source}
+          distribution: ${_param:mirror_influxdb-xenial_distribution}
+          components: ${_param:mirror_influxdb-xenial_components}
           architectures: amd64
-          gpgkeys:
-            - 2582E0C5
+          gpgkeys: ${_param:mirror_influxdb-xenial_gpgkeys}
           publisher:
             component: influxdb
             distributions:

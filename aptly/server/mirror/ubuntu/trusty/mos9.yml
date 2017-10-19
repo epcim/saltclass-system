@@ -1,14 +1,41 @@
 parameters:
+  _param:
+    mirror_mirantis-openstack-9.0-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-trusty_distribution: mos9.0
+    mirror_mirantis-openstack-9.0-trusty_components: main restricted
+    mirror_mirantis-openstack-9.0-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-trusty_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis-openstack-9.0-proposed-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-proposed-trusty_distribution: mos9.0-proposed
+    mirror_mirantis-openstack-9.0-proposed-trusty_components: main restricted
+    mirror_mirantis-openstack-9.0-proposed-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-proposed-trusty_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis-openstack-9.0-updates-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-updates-trusty_distribution: mos9.0-updates
+    mirror_mirantis-openstack-9.0-updates-trusty_components: main restricted
+    mirror_mirantis-openstack-9.0-updates-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-updates-trusty_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis-openstack-9.0-extras-murano_source: http://mirror.fuel-infra.org/extras/murano-plugin-repos/release/1.2.0/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-extras-murano_distribution: mos9.0
+    mirror_mirantis-openstack-9.0-extras-murano_components: main restricted
+    mirror_mirantis-openstack-9.0-extras-murano_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-extras-murano_gpgkeys:
+      - 1FA22B08
   aptly:
     server:
       mirror:
         mirantis-openstack-9.0-trusty:
-          source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
-          distribution: mos9.0
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-9.0-trusty_source}
+          distribution: ${_param:mirror_mirantis-openstack-9.0-trusty_distribution}
+          components: ${_param:mirror_mirantis-openstack-9.0-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 1FA22B08
+          gpgkeys: ${_param:mirror_mirantis-openstack-9.0-trusty_gpgkeys}
           publisher:
             component: main
             distributions:
@@ -26,13 +53,12 @@ parameters:
         #    distributions:
         #      - mos9/mos9.0-hotfix
         mirantis-openstack-9.0-proposed-trusty:
-          source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
-          distribution: mos9.0-proposed
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-9.0-proposed-trusty_source}
+          distribution: ${_param:mirror_mirantis-openstack-9.0-proposed-trusty_distribution}
+          components: ${_param:mirror_mirantis-openstack-9.0-proposed-trusty_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis-openstack-9.0-proposed-trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis-openstack-9.0-proposed-trusty_gpgkeys}
           publisher:
             component: main
             distributions:
@@ -51,25 +77,23 @@ parameters:
         #    distributions:
         #      - mos9/mos9.0-security
         mirantis-openstack-9.0-updates-trusty:
-          source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
-          distribution: mos9.0-updates
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-9.0-updates-trusty_source}
+          distribution: ${_param:mirror_mirantis-openstack-9.0-updates-trusty_distribution}
+          components: ${_param:mirror_mirantis-openstack-9.0-updates-trusty_}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis-openstack-9.0-updates-trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis-openstack-9.0-updates-trusty_gpgkeys}
           publisher:
             component: main
             distributions:
               - mos9/mos9.0-updates
         mirantis-openstack-9.0-extras-murano:
-          source: http://mirror.fuel-infra.org/extras/murano-plugin-repos/release/1.2.0/ubuntu/9.0/
-          distribution: mos9.0
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-9.0-extras-murano_source}
+          distribution: ${_param:mirror_mirantis-openstack-9.0-extras-murano_distribution}
+          components: ${_param:mirror_mirantis-openstack-9.0-extras-murano_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis-openstack-9.0-extras-murano_key_url}
+          gpgkeys: ${_param:mirror_mirantis-openstack-9.0-extras-murano_gpgkeys}
           publisher:
             component: murano
             distributions:

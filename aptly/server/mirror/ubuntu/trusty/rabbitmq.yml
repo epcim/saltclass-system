@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_rabbitmq-testing-trusty_source: http://www.rabbitmq.com/debian/
+    mirror_rabbitmq-testing-trusty_distribution: testing
+    mirror_rabbitmq-testing-trusty_components: main
+    mirror_rabbitmq-testing-trusty_gpgkeys:
+      - 056E8E56
   aptly:
     server:
       mirror:
         rabbitmq-testing-trusty:
-          source: http://www.rabbitmq.com/debian/
-          distribution: testing
-          components: main
+          source: ${_param:mirror_rabbitmq-testing-trusty_source}
+          distribution: ${_param:mirror_rabbitmq-testing-trusty_distribution}
+          components: ${_param:mirror_rabbitmq-testing-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 056E8E56
+          gpgkeys: ${_param:mirror_rabbitmq-testing-trusty_gpgkeys}
           publisher:
             component: rabbitmq
             distributions:

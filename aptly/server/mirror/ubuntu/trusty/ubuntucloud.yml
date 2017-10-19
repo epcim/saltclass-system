@@ -1,4 +1,16 @@
 parameters:
+  _param:
+    mirror_trusty-updates-liberty_source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
+    mirror_trusty-updates-liberty_distribution: trusty-updates/liberty
+    mirror_trusty-updates-liberty_components: main
+    mirror_trusty-updates-liberty_gpgkeys:
+      - EC4926EA
+
+    mirror_trusty-updates-mitaka_source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
+    mirror_trusty-updates-mitaka_distribution: trusty-updates/mitaka
+    mirror_trusty-updates-mitaka_components: main
+    mirror_trusty-updates-mitaka_gpgkeys:
+      - EC4926EA
   aptly:
     server:
       mirror:
@@ -24,24 +36,25 @@ parameters:
         #    component: kilo
         #    distributions:
         #      - trusty
+  aptly:
+    server:
+      mirror:
         trusty-updates-liberty:
-          source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
-          distribution: trusty-updates/liberty
-          components: main
+          source: ${_param:mirror_trusty-updates-liberty_source}
+          distribution: ${_param:mirror_trusty-updates-liberty_distribution}
+          components: ${_param:mirror_trusty-updates-liberty_components}
           architectures: amd64
-          gpgkeys:
-            - EC4926EA
+          gpgkeys: ${_param:mirror_trusty-updates-liberty_gpgkeys}
           publisher:
             component: liberty
             distributions:
               - ubuntu-trusty/nightly
         trusty-updates-mitaka:
-          source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
-          distribution: trusty-updates/mitaka
-          components: main
+          source: ${_param:mirror_trusty-updates-mitaka_source}
+          distribution: ${_param:mirror_trusty-updates-mitaka_distribution}
+          components: ${_param:mirror_trusty-updates-mitaka_components}
           architectures: amd64
-          gpgkeys:
-            - EC4926EA
+          gpgkeys: ${_param:mirror_trusty-updates-mitaka_gpgkeys}
           publisher:
             component: mitaka
             distributions:

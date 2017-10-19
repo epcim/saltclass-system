@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_influxdb-trusty_source: https://repos.influxdata.com/ubuntu/
+    mirror_influxdb-trusty_distribution: trusty
+    mirror_influxdb-trusty_components: stable
+    mirror_influxdb-trusty_gpgkeys:
+      - 2582E0C5
   aptly:
     server:
       mirror:
         influxdb-trusty:
-          source: https://repos.influxdata.com/ubuntu/
-          distribution: trusty
-          components: stable
+          source: ${_param:mirror_influxdb-trusty_source}
+          distribution: ${_param:mirror_influxdb-trusty_distribution}
+          components: ${_param:mirror_influxdb-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 2582E0C5
+          gpgkeys: ${_param:mirror_influxdb-trusty_gpgkeys}
           publisher:
             component: influxdb
             distributions:

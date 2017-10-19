@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_docker-xenial_source: 'https://download.docker.com/linux/ubuntu'
+    mirror_docker-xenial_distribution: xenial
+    mirror_docker-xenial_components: stable
+    mirror_docker-xenial_gpgkeys:
+      - 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
   aptly:
     server:
       mirror:
         docker-xenial:
-          source: 'https://download.docker.com/linux/ubuntu'
-          distribution: xenial
-          components: stable
+          source: ${_param:mirror_docker-xenial_source}
+          distribution: ${_param:mirror_docker-xenial_distribution}
+          components: ${_param:mirror_docker-xenial_components}
           architectures: amd64
-          gpgkeys:
-            - 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+          gpgkeys: ${_param:mirror_docker-xenial_gpgkeys}
           publisher:
             component: docker
             distributions:

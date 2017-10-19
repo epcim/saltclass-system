@@ -1,17 +1,22 @@
 parameters:
+  _param:
+    mirror_hp-xenial_source: http://downloads.linux.hpe.com/SDR/repo/mcp/Ubuntu
+    mirror_hp-xenial_distribution: xenial/current
+    mirror_hp-xenial_components: non-free
+    mirror_hp-xenial_gpgkeys:
+      - 26C2B797
+      - B1275EA3
+      - 5CE2D476
+      - 2689B887
   aptly:
     server:
       mirror:
         hp-xenial:
-          source: http://downloads.linux.hpe.com/SDR/repo/mcp/Ubuntu
-          distribution: xenial/current
-          components: non-free
+          source: ${_param:mirror_hp-xenial_source}
+          distribution: ${_param:mirror_hp-xenial_distribution}
+          components: ${_param:mirror_hp-xenial_components}
           architectures: amd64
-          gpgkeys:
-            - 26C2B797
-            - B1275EA3
-            - 5CE2D476
-            - 2689B887
+          gpgkeys: ${_param:mirror_hp-xenial_gpgkeys}
           publisher:
             component: hp-non-free
             distributions:

@@ -1,16 +1,20 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_maas-xenial_source: http://ppa.launchpad.net/maas/stable/ubuntu
+    mirror_maas-xenial_distribution: xenial
+    mirror_maas-xenial_components: main
+    mirror_maas-xenial_gpgkeys:
+      - 684D4A1C
   aptly:
     server:
       mirror:
         maas-xenial:
-          source: http://ppa.launchpad.net/maas/stable/ubuntu
-          distribution: xenial
-          components: main
+          source: ${_param:mirror_maas-xenial_source}
+          distribution: ${_param:mirror_maas-xenial_distribution}
+          components: ${_param:mirror_maas-xenial_components}
           architectures: amd64
-          gpgkeys:
-            - 684D4A1C
+          gpgkeys: ${_param:mirror_maas-xenial_gpgkeys}
           publisher:
             component: maas
             distributions:

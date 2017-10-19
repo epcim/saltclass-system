@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_aptly_source: http://repo.aptly.info/
+    mirror_aptly_distribution: squeeze
+    mirror_aptly_components: main
+    mirrot_aptly_gpgkeys:
+      - 9C7DE460
   aptly:
     server:
       mirror:
         aptly:
-          source: http://repo.aptly.info/
-          distribution: squeeze
-          components: main
+          source: ${_param:mirror_aptly_source}
+          distribution: ${_param:mirror_aptly_distribution}
+          components: ${_param:mirror_aptly_components}
           architectures: amd64
-          gpgkeys:
-            - 9C7DE460
+          gpgkeys: ${_param:mirror_aptly_gpgkeys}
           publisher:
             component: extra
             distributions:

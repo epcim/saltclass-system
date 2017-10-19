@@ -1,16 +1,20 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_sensu_source: http://sensu.global.ssl.fastly.net/apt
+    mirror_sensu_distribution: sensu
+    mirror_sensu_components: main
+    mirror_sensu_gpgkeys:
+      - EB9C94BB
   aptly:
     server:
       mirror:
         sensu:
-          source: http://sensu.global.ssl.fastly.net/apt
-          distribution: sensu
-          components: main
+          source: ${_param:mirror_sensu_source}
+          distribution: ${_param:mirror_sensu_distribution}
+          components: ${_param:mirror_sensu_components}
           architectures: amd64
-          gpgkeys:
-            - EB9C94BB
+          gpgkeys: ${_param:mirror_sensu_gpgkeys}
           publisher:
             component: sensu
             distributions:

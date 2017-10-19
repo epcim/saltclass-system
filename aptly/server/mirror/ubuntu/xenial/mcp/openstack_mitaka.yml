@@ -1,41 +1,73 @@
 parameters:
+  _param:
+    mirror_mirantis_openstack_mitaka_xenial_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
+    mirror_mirantis_openstack_mitaka_xenial_distribution: mitaka
+    mirror_mirantis_openstack_mitaka_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
+    mirror_mirantis_openstack_mitaka_xenial_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_distribution: mitaka-hotfix
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis_openstack_mitaka_security_xenial_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
+    mirror_mirantis_openstack_mitaka_security_xenial_distribution: mitaka-security
+    mirror_mirantis_openstack_mitaka_security_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_security_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
+    mirror_mirantis_openstack_mitaka_security_xenial_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis_openstack_mitaka_updates_xenial_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
+    mirror_mirantis_openstack_mitaka_updates_xenial_distribution: mitaka-updates
+    mirror_mirantis_openstack_mitaka_updates_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_updates_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
+    mirror_mirantis_openstack_mitaka_updates_xenial_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis_openstack_mitaka_holdback_xenial_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
+    mirror_mirantis_openstack_mitaka_holdback_xenial_distribution: mitaka-holdback
+    mirror_mirantis_openstack_mitaka_holdback_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_holdback_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
+    mirror_mirantis_openstack_mitaka_holdback_xenial_gpgkeys:
+      - 1FA22B08
   aptly:
     server:
       mirror:
         mirantis_openstack_mitaka_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
-          distribution: mitaka
-          components: main restricted
+          source: ${_param:mirror_mirantis_openstack_mitaka_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_xenial_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_xenial_gpgkeys}
           publisher:
             component: main
             distributions:
               - ubuntu-xenial/mitaka
 
         mirantis_openstack_mitaka_hotfix_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
-          distribution: mitaka-hotfix
-          components: main restricted
+          source: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_gpgkeys}
           publisher:
             component: main
             distributions:
               - ubuntu-xenial/mitaka-hotfix
 
         mirantis_openstack_mitaka_security_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
-          distribution: mitaka-security
-          components: main restricted
+          source: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_gpgkeys}
           publisher:
             component: main
             distributions:
@@ -43,13 +75,12 @@ parameters:
 
         # required for alternative horizon plugins/etc..
         mirantis_openstack_mitaka_updates_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
-          distribution: mitaka-updates
-          components:  main restricted
+          source: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_distribution}
+          components:  ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_gpgkeys}
           publisher:
             component: main
             distributions:
@@ -57,13 +88,12 @@ parameters:
 
         # required for salt formulas
         mirantis_openstack_mitaka_holdback_xenial:
-          source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
-          distribution: mitaka-holdback
-          components: main restricted
+          source: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial/archive-mcpmitaka.key"
-          gpgkeys:
-          - 1FA22B08
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_gpgkeys}
           publisher:
             component: main
             distributions:

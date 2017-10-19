@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_galera-trusty_source: http://releases.galeracluster.com/ubuntu/
+    mirror_galera-trusty_distribution: trusty
+    mirror_galera-trusty_components: main
+    mirror_galera-trusty_gpgkeys:
+      - BC19DDBA
   aptly:
     server:
       mirror:
         galera-trusty:
-          source: http://releases.galeracluster.com/ubuntu/
-          distribution: trusty
-          components: main
+          source: ${_param:mirror_galera-trusty_source}
+          distribution: ${_param:mirror_galera-trusty_distribution}
+          components: ${_param:mirror_galera-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - BC19DDBA
+          gpgkeys: ${_param:mirror_galera-trusty_gpgkeys}
           publisher:
             component: galera
             distributions:

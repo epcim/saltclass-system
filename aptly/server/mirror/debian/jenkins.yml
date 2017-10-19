@@ -1,28 +1,37 @@
 parameters:
+  _param:
+    mirror_jenkins_source: http://pkg.jenkins-ci.org/debian/
+    mirror_jenkins_distribution: binary/
+    mirror_jenkins_components: ""
+    mirror_jenkins_gpgkeys:
+      - D50582E6
+    mirror_jenkins-debian-glue_source: http://jenkins.grml.org/debian/
+    mirror_jenkins-debian-glue_distribution: jenkins-debian-glue
+    mirror_jenkins-debian-glue_components: main
+    # TODO: this key is not uploaded to keyserver, workaround:
+    # su aptly -c 'curl http://jenkins.grml.org/debian/C525F56752D4A654.asc|gpg --no-default-keyring --keyring trustedkeys.gpg --import'
+    mirror_jenkins-debian-glue_gpgkeys:
+      - 52D4A654
   aptly:
     server:
       mirror:
         jenkins:
-          source: http://pkg.jenkins-ci.org/debian/
-          distribution: binary/
-          components: ""
+          source: ${_param:mirror_jenkins_source}
+          distribution: ${_param:mirror_jenkins_distribution}
+          components: ${_param:mirror_jenkins_components}
           architectures: amd64
-          gpgkeys:
-            - D50582E6
+          gpgkeys: ${_param:mirror_jenkins_gpgkeys}
           publisher:
             component: extra
             distributions:
               - trusty/nightly
               - xenial/nightly
         jenkins-debian-glue:
-          source: http://jenkins.grml.org/debian/
-          distribution: jenkins-debian-glue
-          components: main
+          source: ${_param:mirror_jenkins-debian-glue_source}
+          distribution: ${_param:mirror_jenkins-debian-glue_distribution}
+          components: ${_param:mirror_jenkins-debian-glue_components}
           architectures: amd64
-          # TODO: this key is not uploaded to keyserver, workaround:
-          # su aptly -c 'curl http://jenkins.grml.org/debian/C525F56752D4A654.asc|gpg --no-default-keyring --keyring trustedkeys.gpg --import'
-          gpgkeys:
-            - 52D4A654
+          gpgkeys: ${_param:mirror_jenkins-debian-glue_gpgkeys}
           publisher:
             component: extra
             distributions:

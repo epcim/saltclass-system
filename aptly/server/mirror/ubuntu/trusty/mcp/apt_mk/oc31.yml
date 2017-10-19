@@ -1,17 +1,22 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_mcp_opencontrail_trusty_oc31_source: http://apt-mk.mirantis.com/trusty/
+    mirror_mcp_opencontrail_trusty_oc31_distribution: ${_param:apt_mk_version}
+    mirror_mcp_opencontrail_trusty_oc31_components: oc31
+    mirror_mcp_opencontrail_trusty_oc31_key_url: "http://apt-mk.mirantis.com/public.gpg"
+    mirror_mcp_opencontrail_trusty_oc31_gpgkeys:
+      - A76882D3
   aptly:
     server:
       mirror:
         mcp_opencontrail_trusty_oc31:
-          source: http://apt-mk.mirantis.com/trusty/
-          distribution: ${_param:apt_mk_version}
-          components: oc31
+          source: ${_param:mirror_mcp_opencontrail_trusty_oc31_source}
+          distribution: ${_param:mirror_mcp_opencontrail_trusty_oc31_distribution}
+          components: ${_param:mirror_mcp_opencontrail_trusty_oc31_components}
           architectures: amd64
-          key_url: "http://apt-mk.mirantis.com/public.gpg"
-          gpgkeys:
-            - A76882D3
+          key_url: ${_param:mirror_mcp_opencontrail_trusty_oc31_key_url}
+          gpgkeys: ${_param:mirror_mcp_opencontrail_trusty_oc31_gpgkeys}
           publisher:
             component: oc31
             distributions:

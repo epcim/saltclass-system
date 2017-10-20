@@ -7,6 +7,7 @@ parameters:
         identity:
           roles:
           - creator
+          - key-manager:service-admin
           project:
             service:
               user:
@@ -16,6 +17,7 @@ parameters:
                   roles:
                   - admin
                   - creator
+                  - key-manager:service-admin
           service:
             barbican:
               type: key-manager

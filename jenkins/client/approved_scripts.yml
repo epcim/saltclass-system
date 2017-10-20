@@ -14,6 +14,7 @@ parameters:
         - method groovy.lang.GroovyObject getProperty java.lang.String
         - method groovy.util.Node attributes
         - method groovy.util.XmlParser parse java.io.File
+        - method groovy.util.XmlParser parseText java.lang.String
         - method hudson.PluginManager getPlugins
         - method hudson.PluginWrapper getShortName
         - method hudson.model.Item getName

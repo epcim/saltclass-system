@@ -19,6 +19,9 @@ parameters:
               tags: "2.13.6 latest"
               dockerfile: "Dockerfile"
             - name: jenkins
+              branch: "master"
+              tags: ""
+            - name: jenkins
               branch: "2.32.3"
               tags: "2.32"
               dockerfile: "Dockerfile"

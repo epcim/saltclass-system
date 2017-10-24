@@ -21,6 +21,7 @@ parameters:
             - name: jenkins
               branch: "master"
               tags: ""
+              dockerfile: "Dockerfile"
             - name: jenkins
               branch: "2.32.3"
               tags: "2.32"

@@ -1,25 +1,35 @@
 parameters:
+  _param:
+    mirror_xenial-updates-newton_source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
+    mirror_xenial-updates-newton_distribution: xenial-updates/newton
+    mirror_xenial-updates-newton_components: main
+    mirror_xenial-updates-newton_gpgkeys:
+      - EC4926EA
+
+    mirror_xenial-updates-ocata_source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
+    mirror_xenial-updates-ocata_distribution: xenial-updates/ocata
+    mirror_xenial-updates-ocata_components: main
+    mirror_xenial-updates-ocata_gpgkeys:
+      - EC4926EA
   aptly:
     server:
       mirror:
         xenial-updates-newton:
-          source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
-          distribution: xenial-updates/newton
-          components: main
+          source: ${_param:mirror_xenial-updates-newton_source}
+          distribution: ${_param:mirror_xenial-updates-newton_distribution}
+          components: ${_param:mirror_xenial-updates-newton_components}
           architectures: amd64
-          gpgkeys:
-            - EC4926EA
+          gpgkeys: ${_param:mirror_xenial-updates-newton_gpgkeys}
           publisher:
             component: newton
             distributions:
               - ubuntu-xenial/nightly
         xenial-updates-ocata:
-          source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
-          distribution: xenial-updates/ocata
-          components: main
+          source: ${_param:mirror_xenial-updates-ocata_source}
+          distribution: ${_param:mirror_xenial-updates-ocata_distribution}
+          components: ${_param:mirror_xenial-updates-ocata_components}
           architectures: amd64
-          gpgkeys:
-            - EC4926EA
+          gpgkeys: ${_param:mirror_xenial-updates-ocata_gpgkeys}
           publisher:
             component: ocata
             distributions:

@@ -1,25 +1,35 @@
 parameters:
+  _param:
+    mirror_foreman-trusty_source: http://deb.theforeman.org
+    mirror_foreman-trusty_distribution: trusty
+    mirror_foreman-trusty_components: stable
+    mirror_foreman-trusty_gpgkeys:
+      - 1AA043B8
+
+    mirror_foreman-plugins-trusty_source: http://deb.theforeman.org
+    mirror_foreman-plugins-trusty_distribution: plugins
+    mirror_foreman-plugins-trusty_components: stable
+    mirror_foreman-plugins-trusty_gpgkeys:
+      - 1AA043B8
   aptly:
     server:
       mirror:
         foreman-trusty:
-          source: http://deb.theforeman.org
-          distribution: trusty
-          components: stable
+          source: ${_param:mirror_foreman-trusty_source}
+          distribution: ${_param:mirror_foreman-trusty_distribution}
+          components: ${_param:mirror_foreman-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 1AA043B8
+          gpgkeys: ${_param:mirror_foreman-trusty_gpgkeys}
           publisher:
             component: extra
             distributions:
               - ubuntu-trusty/nightly
         foreman-plugins-trusty:
-          source: http://deb.theforeman.org
-          distribution: plugins
-          components: stable
+          source: ${_param:mirror_foreman-plugins-trusty_source}
+          distribution: ${_param:mirror_foreman-plugins-trusty_distribution}
+          components: ${_param:mirror_foreman-plugins-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 1AA043B8
+          gpgkeys: ${_param:mirror_foreman-plugins-trusty_gpgkeys}
           publisher:
             component: extra
             distributions:

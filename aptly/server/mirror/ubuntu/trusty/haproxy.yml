@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_haproxy-trusty_source: http://ppa.launchpad.net/vbernat/haproxy-1.5/ubuntu
+    mirror_haproxy-trusty_distribution: trusty
+    mirror_haproxy-trusty_components: main
+    mirror_haproxy-trusty_gpgkeys:
+      - 1C61B9CD
   aptly:
     server:
       mirror:
         haproxy-trusty:
-          source: http://ppa.launchpad.net/vbernat/haproxy-1.5/ubuntu
-          distribution: trusty
-          components: main
+          source: ${_param:mirror_haproxy-trusty_source}
+          distribution: ${_param:mirror_haproxy-trusty_distribution}
+          components: ${_param:mirror_haproxy-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 1C61B9CD
+          gpgkeys: ${_param:mirror_haproxy-trusty_gpgkeys}
           publisher:
             component: haproxy
             distributions:

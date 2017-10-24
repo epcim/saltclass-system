@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_erlang-trusty_source: http://packages.erlang-solutions.com/ubuntu
+    mirror_erlang-trusty_distribution: trusty
+    mirror_erlang-trusty_components: contrib
+    mirror_erlang-trusty_gpgkeys:
+      - A14F4FCA
   aptly:
     server:
       mirror:
         erlang-trusty:
-          source: http://packages.erlang-solutions.com/ubuntu
-          distribution: trusty
-          components: contrib
+          source: ${_param:mirror_erlang-trusty_source}
+          distribution: ${_param:mirror_erlang-trusty_distribution}
+          components: ${_param:mirror_erlang-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - A14F4FCA
+          gpgkeys: ${_param:mirror_erlang-trusty_gpgkeys}
           publisher:
             component: erlang
             distributions:

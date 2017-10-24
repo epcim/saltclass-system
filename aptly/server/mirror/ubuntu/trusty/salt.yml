@@ -1,16 +1,20 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_salt-2016-3-trusty_source: http://repo.saltstack.com/apt/ubuntu/14.04/amd64/2016.3
+    mirror_salt-2016-3-trusty_distribution: trusty
+    mirror_salt-2016-3-trusty_components: main
+    mirror_salt-2016-3-trusty_gpgkeys:
+      - DE57BFBE
   aptly:
     server:
       mirror:
         salt-2016.3-trusty:
-          source: http://repo.saltstack.com/apt/ubuntu/14.04/amd64/2016.3
-          distribution: trusty
-          components: main
+          source: ${_param:mirror_salt-2016-3-trusty_source}
+          distribution: ${_param:mirror_salt-2016-3-trusty_distribution}
+          components: ${_param:mirror_salt-2016-3-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - DE57BFBE
+          gpgkeys: ${_param:mirror_salt-2016-3-trusty_gpgkeys}
           publisher:
             component: salt
             distributions:

@@ -2,16 +2,20 @@ parameters:
   _param:
     apt_mk_version: stable
     glusterfs_version: 3.8
+    mirror_glusterfs_upstream_xenial_source: http://ppa.launchpad.net/gluster/glusterfs-${_param:glusterfs_version}/ubuntu
+    mirror_glusterfs_upstream_xenial_distribution: xenial
+    mirror_glusterfs_upstream_xenial_components: main
+    mirror_glusterfs_upstream_xenial_gpgkeys:
+      - 3FE869A9
   aptly:
     server:
       mirror:
         glusterfs_upstream_xenial:
-          source: http://ppa.launchpad.net/gluster/glusterfs-${_param:glusterfs_version}/ubuntu
-          distribution: xenial
-          components: main
+          source: ${_param:mirror_glusterfs_upstream_xenial_source}
+          distribution: ${_param:mirror_glusterfs_upstream_xenial_distribution}
+          components: ${_param:mirror_glusterfs_upstream_xenial_components}
           architectures: amd64
-          gpgkeys:
-            - 3FE869A9
+          gpgkeys: ${_param:mirror_glusterfs_upstream_xenial_gpgkeys}
           publisher:
             component: glusterfs
             distributions:

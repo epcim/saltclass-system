@@ -2,19 +2,23 @@ parameters:
   _param:
     linux_system_country_code: cz
     aptly_server_mirror_ubuntu_trusty_sources: ${_param:aptly_server_mirror_ubuntu_sources}
+    mirror_trusty-proposed-universe_source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+    mirror_trusty-proposed-universe_distribution: trusty-proposed
+    mirror_trusty-proposed-universe_components: universe
+    mirror_trusty-proposed-universe_gpgkeys:
+      - 40976EAF437D05B5
+      - 437D05B5
+      - C0B21F32
   aptly:
     server:
       mirror:
-        trusty-universe:
-          source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+        trusty-proposed-universe:
+          source: ${_param:mirror_trusty-proposed-universe_source}
+          distribution: ${_param:mirror_trusty-proposed-universe_distribution}
           sources: ${_param:aptly_server_mirror_ubuntu_trusty_sources}
-          distribution: trusty-proposed
-          components: universe
+          components: ${_param:mirror_trusty-proposed-universe_components}
           architectures: amd64
-          gpgkeys:
-            - 40976EAF437D05B5
-            - 437D05B5
-            - C0B21F32
+          gpgkeys: ${_param:mirror_trusty-proposed-universe_gpgkeys}
           publisher:
             component: universe
             distributions:

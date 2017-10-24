@@ -1,17 +1,22 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_mcp_opencontrail_xenial_oc323_source: http://apt-mk.mirantis.com/xenial/
+    mirror_mcp_opencontrail_xenial_oc323_distribution: ${_param:apt_mk_version}
+    mirror_mcp_opencontrail_xenial_oc323_components: oc323
+    mirror_mcp_opencontrail_xenial_oc323_key_url: "http://apt-mk.mirantis.com/public.gpg"
+    mirror_mcp_opencontrail_xenial_oc323_gpgkeys:
+      - A76882D3
   aptly:
     server:
       mirror:
         mcp_opencontrail_xenial_oc323:
-          source: http://apt-mk.mirantis.com/xenial/
-          distribution: ${_param:apt_mk_version}
-          components: oc323
+          source: ${_param:mirror_mcp_opencontrail_xenial_oc323_source}
+          distribution: ${_param:mirror_mcp_opencontrail_xenial_oc323_distribution}
+          components: ${_param:mirror_mcp_opencontrail_xenial_oc323_components}
           architectures: amd64
-          key_url: "http://apt-mk.mirantis.com/public.gpg"
-          gpgkeys:
-            - A76882D3
+          key_url: ${_param:mirror_mcp_opencontrail_xenial_oc323_key_url}
+          gpgkeys: ${_param:mirror_mcp_opencontrail_xenial_oc323_gpgkeys}
           publisher:
             component: oc323
             distributions:

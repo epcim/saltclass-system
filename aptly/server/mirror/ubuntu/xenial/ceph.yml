@@ -2,16 +2,20 @@ parameters:
   _param:
     ceph_version: luminous
     apt_mk_version: stable
+    mirror_ceph-xenial_source: http://download.ceph.com/debian-${_param:ceph_version}
+    mirror_ceph-xenial_distribution: xenial
+    mirror_ceph-xenial_components: main
+    mirror_ceph-xenial_gpgkeys:
+      - 460F3994
   aptly:
     server:
       mirror:
         ceph-xenial:
-          source: http://download.ceph.com/debian-${_param:ceph_version}
-          distribution: xenial
-          components: main
+          source: ${_param:mirror_ceph-xenial_source}
+          distribution: ${_param:mirror_ceph-xenial_distribution}
+          components: ${_param:mirror_ceph-xenial_components}
           architectures: amd64
-          gpgkeys:
-            - 460F3994
+          gpgkeys: ${_param:mirror_ceph-xenial_gpgkeys}
           publisher:
             component: ceph
             distributions:

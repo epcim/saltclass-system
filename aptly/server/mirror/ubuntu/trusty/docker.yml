@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_docker-trusty_source: 'https://download.docker.com/linux/ubuntu'
+    mirror_docker-trusty_distribution: trusty
+    mirror_docker-trusty_components: stable
+    mirror_docker-trusty_gpgkeys:
+      - 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
   aptly:
     server:
       mirror:
         docker-trusty:
-          source: 'https://download.docker.com/linux/ubuntu'
-          distribution: trusty
-          components: stable
+          source: ${_param:mirror_docker-trusty_source}
+          distribution: ${_param:mirror_docker-trusty_distribution}
+          components: ${_param:mirror_docker-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+          gpgkeys: ${_param:mirror_docker-trusty_gpgkeys}
           publisher:
             component: docker
             distributions:

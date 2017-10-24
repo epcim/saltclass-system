@@ -2,7 +2,47 @@ parameters:
   aptly:
     server:
       mirror:
+        mirror_tcpcloud-nightly-main-xenial_source: http://apt.tcpcloud.eu/nightly
+        mirror_tcpcloud-nightly-main-xenial_distribution: xenial
+        mirror_tcpcloud-nightly-main-xenial_components: main security
+        mirror_tcpcloud-nightly-main-xenial_key_url: "http://apt.tcpcloud.eu/public.gpg"
+        mirror_tcpcloud-nightly-main-xenial_gpgkeys:
+          - 3EF02D1C
 
+        mirror_tcpcloud-nightly-tcp-xenial_source: http://apt.tcpcloud.eu/nightly
+        mirror_tcpcloud-nightly-tcp-xenial_distribution: xenial
+        mirror_tcpcloud-nightly-tcp-xenial_components: tcp
+        mirror_tcpcloud-nightly-tcp-xenial_key_url: "http://apt.tcpcloud.eu/public.gpg"
+        mirror_tcpcloud-nightly-tcp-xenial_gpgkeys:
+          - 3EF02D1C
+
+        mirror_tcpcloud-nightly-extra-xenial_source: http://apt.tcpcloud.eu/nightly
+        mirror_tcpcloud-nightly-extra-xenial_distribution: xenial
+        mirror_tcpcloud-nightly-extra-xenial_components: extra
+        mirror_tcpcloud-nightly-tcp-xenial_key_url: "http://apt.tcpcloud.eu/public.gpg"
+        mirror_tcpcloud-nightly-extra-xenial_gpgkeys:
+          - 3EF02D1C
+
+        mirror_tcpcloud-nightly-salt-xenial_source: http://apt.tcpcloud.eu/nightly
+        mirror_tcpcloud-nightly-salt-xenial_distribution: xenial
+        mirror_tcpcloud-nightly-salt-xenial_components: tcp-salt
+        mirror_tcpcloud-nightly-tcp-xenial_key_url: "http://apt.tcpcloud.eu/public.gpg"
+        mirror_tcpcloud-nightly-salt-xenial_gpgkeys:
+          - 3EF02D1C
+
+        mirror_tcpcloud-nightly-oc30-xenial_source: http://apt.tcpcloud.eu/nightly
+        mirror_tcpcloud-nightly-oc30-xenial_distribution: xenial
+        mirror_tcpcloud-nightly-oc30-xenial_components: oc30
+        mirror_tcpcloud-nightly-tcp-xenial_key_url: "http://apt.tcpcloud.eu/public.gpg"
+        mirror_tcpcloud-nightly-oc30-xenial_gpgkeys:
+          - 3EF02D1C
+
+        mirror_tcpcloud-nightly-elastic-xenial_source: http://apt.tcpcloud.eu/nightly
+        mirror_tcpcloud-nightly-elastic-xenial_distribution: xenial
+        mirror_tcpcloud-nightly-elastic-xenial_components: elastic
+        mirror_tcpcloud-nightly-tcp-xenial_key_url: "http://apt.tcpcloud.eu/public.gpg"
+        mirror_tcpcloud-nightly-elastic-xenial_gpgkeys:
+          - 3EF02D1C
         #TOOD: 4x the lower below
         #tcpcloud-[stable/testing]-xxx-[xenial/xenial]:
         #
@@ -10,44 +50,39 @@ parameters:
         # salt tcp-salt extra liberty mitaka oc30 security mitaka
 
         tcpcloud-nightly-main-xenial:
-          source: http://apt.tcpcloud.eu/nightly
-          distribution: xenial
+          source: ${_param:mirror_tcpcloud-nightly-main-xenial_source}
+          distribution: ${_param:mirror_tcpcloud-nightly-main-xenial_distribution}
             #TODO: extra component might not be needed; tcp is just for heka
-          components: main security
+          components: ${_param:mirror_tcpcloud-nightly-main-xenial_components}
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
-          gpgkeys:
-            - 3EF02D1C
+          key_url: ${_param:mirror_tcpcloud-nightly-main-xenial_key_url}
+          gpgkeys: ${_param:mirror_tcpcloud-nightly-main-xenial_gpgkeys}
           publisher:
             component: tcp-main
             distributions:
               - ubuntu-xenial/nightly
 
-
         tcpcloud-nightly-tcp-xenial:
-          source: http://apt.tcpcloud.eu/nightly
-          distribution: xenial
+          source: ${_param:mirror_tcpcloud-nightly-tcp-xenial_source}
+          distribution: ${_param:mirror_tcpcloud-nightly-tcp-xenial_distribution}
             #TODO: extra component might not be needed; tcp is just for heka
-          components: tcp
+          components: ${_param:mirror_tcpcloud-nightly-tcp-xenial_components}
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
-          gpgkeys:
-            - 3EF02D1C
+          key_url: ${_param:mirror_tcpcloud-nightly-tcp-xenial_key_url}
+          gpgkeys: ${_param:mirror_tcpcloud-nightly-tcp-xenial_gpgkeys}
           publisher:
             component: tcp
             distributions:
               - ubuntu-xenial/nightly
 
-
         tcpcloud-nightly-extra-xenial:
-          source: http://apt.tcpcloud.eu/nightly
-          distribution: xenial
+          source: ${_param:mirror_tcpcloud-nightly-extra-xenial_source}
+          distribution: ${_param:mirror_tcpcloud-nightly-extra-xenial_distribution}
             #TODO: extra component might not be needed; tcp is just for heka
-          components: extra
+          components: ${_param:mirror_tcpcloud-nightly-extra-xenial_components}
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
-          gpgkeys:
-            - 3EF02D1C
+          key_url: ${_param:mirror_tcpcloud-nightly-extra-xenial_key_url}
+          gpgkeys: ${_param:mirror_tcpcloud-nightly-extra-xenial_gpgkeys}
           publisher:
             component: tcp-extra
             distributions:
@@ -55,13 +90,12 @@ parameters:
 
         # required for salt formulas
         tcpcloud-nightly-salt-xenial:
-          source: http://apt.tcpcloud.eu/nightly
-          distribution: xenial
-          components: tcp-salt
+          source: ${_param:mirror_tcpcloud-nightly-salt-xenial_source}
+          distribution: ${_param:mirror_tcpcloud-nightly-salt-xenial_distribution}
+          components: ${_param:mirror_tcpcloud-nightly-salt-xenial_components}
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
-          gpgkeys:
-          - 3EF02D1C
+          key_url: ${_param:mirror_tcpcloud-nightly-salt-xenial_key_url}
+          gpgkeys: ${_param:mirror_tcpcloud-nightly-salt-xenial_gpgkeys}
           publisher:
             component: tcp-salt
             distributions:
@@ -69,13 +103,12 @@ parameters:
 
         # required for opencontrail formulas
         tcpcloud-nightly-oc30-xenial:
-          source: http://apt.tcpcloud.eu/nightly
-          distribution: xenial
-          components: oc30
+          source: ${_param:mirror_tcpcloud-nightly-oc30-xenial_source}
+          distribution: ${_param:mirror_tcpcloud-nightly-oc30-xenial_distribution}
+          components: ${_param:mirror_tcpcloud-nightly-oc30-xenial_components}
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
-          gpgkeys:
-            - 3EF02D1C
+          key_url: ${_param:mirror_tcpcloud-nightly-oc30-xenial_key_url}
+          gpgkeys: ${_param:mirror_tcpcloud-nightly-oc30-xenial_gpgkeys}
           publisher:
             component: tcp-oc30
             distributions:
@@ -83,15 +116,13 @@ parameters:
 
         # elastic, kibana is there
         tcpcloud-nightly-elastic-xenial:
-          source: http://apt.tcpcloud.eu/nightly
-          distribution: xenial
-          components: elastic
+          source: ${_param:mirror_tcpcloud-nightly-elastic-xenial_source}
+          distribution: ${_param:mirror_tcpcloud-nightly-elastic-xenial_distribution}
+          components: ${_param:mirror_tcpcloud-nightly-elastic-xenial_components}
           architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
-          gpgkeys:
-            - 3EF02D1C
+          key_url: ${_param:mirror_tcpcloud-nightly-elastic-xenial_key_url}
+          gpgkeys: ${_param:mirror_tcpcloud-nightly-elastic-xenial_gpgkeys}
           publisher:
             component: tcp-elastic
             distributions:
               - ubuntu-xenial/nightly
-

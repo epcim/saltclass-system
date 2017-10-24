@@ -1,17 +1,22 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_mirantis_openstack_xenial_extra_source: http://apt-mk.mirantis.com/xenial/
+    mirror_mirantis_openstack_xenial_extra_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_xenial_extra_components: extra
+    mirror_mirantis_openstack_xenial_extra_key_url: "http://apt-mk.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_xenial_extra_gpgkeys:
+      - A76882D3
   aptly:
     server:
       mirror:
         mirantis_openstack_xenial_extra:
-          source: http://apt-mk.mirantis.com/xenial/
-          distribution: ${_param:apt_mk_version}
-          components: extra
+          source: ${_param:mirror_mirantis_openstack_xenial_extra_source}
+          distribution: ${_param:mirror_mirantis_openstack_xenial_extra_distribution}
+          components: ${_param:mirror_mirantis_openstack_xenial_extra_components}
           architectures: amd64
-          key_url: "http://apt-mk.mirantis.com/public.gpg"
-          gpgkeys:
-            - A76882D3
+          key_url: ${_param:mirror_mirantis_openstack_xenial_extra_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_xenial_extra_gpgkeys}
           publisher:
             component: extra
             distributions:

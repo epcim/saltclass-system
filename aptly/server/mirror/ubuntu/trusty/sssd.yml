@@ -1,14 +1,19 @@
 parameters:
+  _param:
+    mirror_sssd-trusty_source: http://ppa.launchpad.net/sssd/updates/ubuntu
+    mirror_sssd-trusty_distribution: trusty
+    mirror_sssd-trusty_components: main
+    mirror_sssd-trusty_gpgkeys:
+      - CA45F42B
   aptly:
     server:
       mirror:
         sssd-trusty:
-          source: http://ppa.launchpad.net/sssd/updates/ubuntu
-          distribution: trusty
-          components: main
+          source: ${_param:mirror_sssd-trusty_source}
+          distribution: ${_param:mirror_sssd-trusty_distribution}
+          components: ${_param:mirror_sssd-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - CA45F42B
+          gpgkeys: ${_param:mirror_sssd-trusty_gpgkeys}
           publisher:
             component: extra
             distributions:

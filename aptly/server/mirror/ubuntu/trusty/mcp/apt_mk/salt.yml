@@ -1,17 +1,22 @@
 parameters:
   _param:
     apt_mk_version: stable
+    mirror_mirantis_openstack_trusty_salt_source: http://apt-mk.mirantis.com/trusty/
+    mirror_mirantis_openstack_trusty_salt_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_trusty_salt_components: salt
+    mirror_mirantis_openstack_trusty_salt_key_url: "http://apt-mk.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_trusty_salt_gpgkeys:
+      - A76882D3
   aptly:
     server:
       mirror:
         mirantis_openstack_trusty_salt:
-          source: http://apt-mk.mirantis.com/trusty/
-          distribution: ${_param:apt_mk_version}
-          components: salt
+          source: ${_param:mirror_mirantis_openstack_trusty_salt_source}
+          distribution: ${_param:mirror_mirantis_openstack_trusty_salt_distribution}
+          components: ${_param:mirror_mirantis_openstack_trusty_salt_components}
           architectures: amd64
-          key_url: "http://apt-mk.mirantis.com/public.gpg"
-          gpgkeys:
-            - A76882D3
+          key_url: ${_param:mirror_mirantis_openstack_trusty_salt_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_trusty_salt_gpgkeys}
           publisher:
             component: salt
             distributions:

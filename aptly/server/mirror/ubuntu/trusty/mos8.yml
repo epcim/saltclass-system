@@ -1,14 +1,34 @@
 parameters:
+  _param:
+    mirror_mirantis-openstack-8.0-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
+    mirror_mirantis-openstack-8.0-trusty_distribution: mos8.0
+    mirror_mirantis-openstack-8.0-trusty_components: main restricted
+    mirror_mirantis-openstack-8.0-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/archive-mos8.0.key"
+    mirror_mirantis-openstack-8.0-trusty_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis-openstack-8.0-proposed-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
+    mirror_mirantis-openstack-8.0-proposed-trusty_distribution: mos8.0-proposed
+    mirror_mirantis-openstack-8.0-proposed-trusty_components: main restricted
+    mirror_mirantis-openstack-8.0-proposed-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/archive-mos8.0.key"
+    mirror_mirantis-openstack-8.0-proposed-trusty_gpgkeys:
+      - 1FA22B08
+
+    mirror_mirantis-openstack-8.0-updates-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
+    mirror_mirantis-openstack-8.0-updates-trusty_distribution: mos8.0-updates
+    mirror_mirantis-openstack-8.0-updates-trusty_components: main restricted
+    mirror_mirantis-openstack-8.0-updates-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/archive-mos8.0.key"
+    mirror_mirantis-openstack-8.0-updates-trusty_gpgkeys:
+      - 1FA22B08
   aptly:
     server:
       mirror:
         mirantis-openstack-8.0-trusty:
-          source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
-          distribution: mos8.0
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-8.0-trusty_source}
+          distribution: ${_param:mirror_mirantis-openstack-8.0-trusty_distribution}
+          components: ${_param:mirror_mirantis-openstack-8.0-trusty_components}
           architectures: amd64
-          gpgkeys:
-            - 1FA22B08
+          gpgkeys: ${_param:mirror_mirantis-openstack-8.0-trusty_gpgkeys}
           publisher:
             component: main
             distributions:
@@ -27,13 +47,12 @@ parameters:
         #    distributions:
         #      - mos8/mos8.0-hotfix
         mirantis-openstack-8.0-proposed-trusty:
-          source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
-          distribution: mos8.0-proposed
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-8.0-proposed-trusty_source}
+          distribution: ${_param:mirror_mirantis-openstack-8.0-proposed-trusty_distribution}
+          components: ${_param:mirror_mirantis-openstack-8.0-proposed-trusty_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/archive-mos8.0.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis-openstack-8.0-proposed-trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis-openstack-8.0-proposed-trusty_gpgkeys}
           publisher:
             component: main
             distributions:
@@ -52,13 +71,12 @@ parameters:
         #    distributions:
         #      - mos8/mos8.0-security
         mirantis-openstack-8.0-updates-trusty:
-          source: http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/
-          distribution: mos8.0-updates
-          components: main restricted
+          source: ${_param:mirror_mirantis-openstack-8.0-updates-trusty_source}
+          distribution: ${_param:mirror_mirantis-openstack-8.0-updates-trusty_distribution}
+          components: ${_param:mirror_mirantis-openstack-8.0-updates-trusty_components}
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/8.0-mu-3/archive-mos8.0.key"
-          gpgkeys:
-            - 1FA22B08
+          key_url: ${_param:mirror_mirantis-openstack-8.0-updates-trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis-openstack-8.0-updates-trusty_gpgkeys}
           publisher:
             component: main
             distributions:

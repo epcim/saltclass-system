@@ -1,0 +1,43 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        custompatches:
+          concurrent: true
+          discard:
+            build:
+              keep_num: 20
+          display_name: Custom Patches - find and upload to review
+          name: custom-patches
+          param:
+            GERRIT_URI:
+              type: string
+              default: ''
+              description: "Gerrit URI to the projec"
+            GERRIT_CREDENTIALS:
+              default: mcp-ci-gerrit
+              type: string
+              description: "Name of creadentials to use when connecting to gerrit"
+            TARGET_GERRIT_URI:
+              default: ''
+              type: string
+              description: "Link to the target on gerrit, if not set GERRIT_URI is picked"
+            OLD_BRANCH:
+              default: ''
+              type: string
+              description: "Old branch on GERRIT_URI to take patches from, tupically previous release"
+            NEW_BRANCH:
+              default: ''
+              type: string
+              description: "New branch to compare with and push patches to, tupically current release"
+            DRY_RUN:
+              default: 'false'
+              type: boolean
+              description: "Do not upload custom patches on review, just log them"
+          scm:
+            script: custompatches.groovy
+            type: git
+            url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines"
+            credentials: "gerrit"
+          type: workflow-scm
+

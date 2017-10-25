@@ -35,10 +35,11 @@ parameters:
                 comment:
                   - addedContains:
                       commentAddedCommentContains: '(recheck|reverify)'
+              gerrit-build-unstable-verified-value: 1
           param:
             KUBE_DOCKER_REGISTRY:
               type: string
-              default: 'docker-dev-virtual.docker.mirantis.net'
+              default: 'docker-dev-local.docker.mirantis.net'
               description: 'Docker registry for binaries and images'
             CALICO_DOCKER_REGISTRY:
               type: string
@@ -46,16 +47,8 @@ parameters:
               description: 'Docker registry for published Calico images'
             K8S_BASE_IMAGE:
               type: string
-              default: '{docker-prod-virtual}/mirantis/base-images/debian-base:20161223134732'
+              default: 'mirantis/base-images/debian-base:20161223134732'
               description: 'Base Docker image to build k8s'
-            DOCKER_IMAGE_UNIT:
-              type: string
-              default: '{docker-prod-virtual}/mirantis/k8s-tests-images/k8s-tests-unit:latest'
-              desription: 'Docker image for k8s unit tests'
-            DOCKER_IMAGE_INTEGRATION:
-              type: string
-              default: '{docker-prod-virtual}/mirantis/k8s-tests-images/k8s-tests-integration:latest'
-              desription: 'Docker image for k8s integration tests'
             CALICO_CNI_IMAGE_REPO:
               type: string
               default: 'calico/cni'

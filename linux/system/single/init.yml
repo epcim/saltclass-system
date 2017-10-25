@@ -17,7 +17,7 @@ parameters:
       package:
         cloud-init:
           version: purged
-        unattended-updates:
+        unattended-upgrades:
           version: purged
         mcelog:
           version: latest

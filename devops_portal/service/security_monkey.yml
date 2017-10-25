@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    oss_security_monkey_user: ${_param:security_monkey_user}
+    oss_security_monkey_password: ${_param:security_monkey_password}
   devops_portal:
     config:
       service:
@@ -14,5 +17,5 @@ parameters:
             port: ${_param:security_monkey_bind_port}
             https: ${_param:security_monkey_ssl:enabled}
           credentials:
-            username: ${_param:security_monkey_user}
-            password: ${_param:security_monkey_password}
+            username: ${_param:oss_security_monkey_user}
+            password: ${_param:oss_security_monkey_password}

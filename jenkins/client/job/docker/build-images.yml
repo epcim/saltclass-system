@@ -11,6 +11,8 @@ parameters:
               repo: mk
             - name: prometheus
               repo: mcp
+            - name: opencontrail
+              repo: mk
           template:
             discard:
               build:

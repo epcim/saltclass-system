@@ -49,6 +49,7 @@ parameters:
         - method java.net.URLConnection setRequestProperty java.lang.String java.lang.String
         - method java.util.Collection remove java.lang.Object
         - method java.util.Collection stream
+        - method java.util.Date getTime
         - method java.util.LinkedHashMap$LinkedHashIterator hasNext
         - method java.util.List subList int int
         - method java.util.Map remove java.lang.Object

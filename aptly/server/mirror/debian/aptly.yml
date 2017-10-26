@@ -3,7 +3,7 @@ parameters:
     mirror_aptly_source: http://repo.aptly.info/
     mirror_aptly_distribution: squeeze
     mirror_aptly_components: main
-    mirrot_aptly_gpgkeys:
+    mirror_aptly_gpgkeys:
       - 9C7DE460
   aptly:
     server:

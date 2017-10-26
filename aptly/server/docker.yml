@@ -8,13 +8,15 @@ parameters:
     aptly_gpg_private_key: none
     aptly_server_mirror_sources: false
     aptly_server_mirror_ubuntu_sources: ${_param:aptly_server_mirror_sources}
+    docker_image_aptly:
+      base: tcpcloud/aptly
   aptly:
     server:
       enabled: true
       secure: ${_param:aptly_server_secure}
       source:
         engine: docker
-        image: tcpcloud/aptly
+        image: ${_param:docker_image_aptly:base}
       user:
         uid: 501
         gid: 501

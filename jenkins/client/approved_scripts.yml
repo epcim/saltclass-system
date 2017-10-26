@@ -99,6 +99,7 @@ parameters:
         - staticMethod java.util.regex.Pattern quote java.lang.String
         - staticMethod java.util.stream.Collectors joining java.lang.CharSequence
         - staticMethod jenkins.model.Jenkins getInstance
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods asBoolean java.util.regex.Matcher
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods collect java.util.Map groovy.lang.Closure
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachFile java.io.File groovy.io.FileType groovy.lang.Closure
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods find java.util.Collection groovy.lang.Closure

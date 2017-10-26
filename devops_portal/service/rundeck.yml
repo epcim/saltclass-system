@@ -1,4 +1,8 @@
 parameters:
+  _param:
+    oss_rundeck_user: ${_param:rundeck_admin_username}
+    oss_rundeck_password: ${_param:rundeck_admin_password}
+    oss_rundeck_token: ${_param:rundeck_admin_token}
   devops_portal:
     config:
       service:
@@ -10,9 +14,9 @@ parameters:
           proxy_read_timeout: 300
           send_timeout: 300
           credentials:
-            username: ${_param:rundeck_admin_username}
-            password: ${_param:rundeck_admin_password}
-            token: ${_param:rundeck_admin_token}
+            username: ${_param:oss_rundeck_user}
+            password: ${_param:oss_rundeck_password}
+            token: ${_param:oss_rundeck_token}
           endpoint:
             address: ${_param:haproxy_rundeck_bind_host}
             port: ${_param:haproxy_rundeck_bind_port}

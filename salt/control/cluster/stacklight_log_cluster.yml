@@ -5,7 +5,7 @@ parameters:
         stacklight.log:
           cpu: 32
           ram: 65536
-          disk_profile: small
+          disk_profile: xxxxlarge
           net_profile: default
       cluster:
         internal:

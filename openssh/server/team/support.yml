@@ -86,8 +86,6 @@ parameters:
             - ${linux:system:user:nkabanova:name}
             - ${linux:system:user:rsoto:name}
             - ${linux:system:user:rsafonov:name}
-            - ${linux:system:user:smachtmes:name}
-            - ${linux:system:user:zkhurasani:name}
             # L2OPS
             - ${linux:system:user:aepifanov:name}
             - ${linux:system:user:apetrenko:name}
@@ -104,12 +102,9 @@ parameters:
             - ${linux:system:user:oliemieshko:name}
             - ${linux:system:user:sovsianikov:name}
             - ${linux:system:user:pmichalec:name}
-            - ${linux:system:user:pmathews:name}
             - ${linux:system:user:pcizinsky:name}
             - ${linux:system:user:osmola:name}
-            - ${linux:system:user:cade:name}
             - ${linux:system:user:jmosher:name}
-            - ${linux:system:user:ecantwell:name}
             - ${linux:system:user:lmercl:name}
       sudo:
         enabled: true

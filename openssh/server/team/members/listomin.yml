@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        listomin:
+          enabled: true
+          name: listomin
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Leontii Istomin
+          home: /home/listomin
+          email: listomin@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        listomin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkiHTkB53cYMFqNsKjEa1W+O3KpSRk26zCQtNsJO4KrNTSuROcpSjSGLUL55YgjBzVUUo88WNFJgu5e3oJNmXpWcfyRa2LoQyhAws6LxsGb5hH0YWB34w4uzvcHIpO5QNGmHIMaczdS721cgGMygBla32putV13gZE/y2ucFh4oza5lRuY5GZm2i1iTaDV5QqamDeYC3venjTtnXXuZbsW0Mkyn8mPXe5d3/FYSKLBGGCELnxpyopfpuCBsQEPSuYIz7EWsLCCjKgUrYZ4Uu5Sg5Ifs+Z0lSQR7/wbraDoGSyrubBHP3ub57lJvQ5kvNyKnT+BwGpoF8V+oMuoqR4l listomin@listomin-laptop
+          user: ${linux:system:user:listomin}

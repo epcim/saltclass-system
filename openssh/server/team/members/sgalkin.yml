@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        sgalkin:
+          enabled: true
+          name: sgalkin
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Sergey Galkin
+          home: /home/sgalkin
+          email: sgalkin@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        sgalkin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyaEWaI1tkQiWHIB/pHZ6jrZyN7fQDxYodhT54rtbFcwnxGM0L1PuL1WcHGB9GJgWwOe7FE+9/kGxAuabjiFjg/NagdtAOfBp2b9+9sYCc8luJxIicTXHI5fY/tVW28OL8s51cw3Gr2m0atRDxKpb8Zv78qfYSSaENB9vq02IYu4Cr1CLEB6Zawm9iRq9ahMwWfslwIii4wKFuWcgjT6spMiHNkUwIYwxdFlCUh3gEhJYfwhe3LpoAvHmBESW0hdEj0S9YgTByBRgKkKrh98irf6B4DVOLWQLudLjAl59lb9Gz2s6fKUBYbz++I6bejHQ6I83VzT0DDKnbiQRXLh4/Q== gals@gals
+          user: ${linux:system:user:sgalkin}

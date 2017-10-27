@@ -5,7 +5,7 @@ parameters:
         stacklight.server:
           cpu: 32
           ram: 65536
-          disk_profile: small
+          disk_profile: xxlarge
           net_profile: default
       cluster:
         internal:

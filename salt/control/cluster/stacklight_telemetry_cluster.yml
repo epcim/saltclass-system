@@ -5,7 +5,7 @@ parameters:
         stacklight.telemetry:
           cpu: 32
           ram: 65536
-          disk_profile: small
+          disk_profile: xxxlarge
           net_profile: default
       cluster:
         internal:

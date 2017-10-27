@@ -1,0 +1,9 @@
+---
+prelude: >
+  Implemented the OSS nodes definition for standalone OSS deployments
+
+features:
+  - Implemented the OSS nodes definition for standalone OSS deployments.
+    Now, deployment engineers have ability to switch the placement of the OSS
+    services that are by default binded to StackLight monitoring nodes.
+

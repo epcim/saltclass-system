@@ -35,7 +35,9 @@ parameters:
                 comment:
                   - addedContains:
                       commentAddedCommentContains: '(recheck|reverify)'
-              gerrit-build-unstable-verified-value: 1
+              override-votes:
+                gerritBuildUnstableVerifiedValue: 1
+                gerritBuildUnstableCodeReviewValue: 1
           param:
             KUBE_DOCKER_REGISTRY:
               type: string

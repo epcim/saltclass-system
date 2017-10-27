@@ -88,7 +88,7 @@ parameters:
         nginx_proxy_openstack_api_heat_cloudwatch:
           enabled: true
           type: nginx_proxy
-          name: openstack_api_heat_cfn
+          name: openstack_api_heat_cloudwatch
           proxy:
             host: ${_param:heat_service_host}
             port: 8003
@@ -100,7 +100,7 @@ parameters:
         nginx_proxy_openstack_api_heat_cfn:
           enabled: true
           type: nginx_proxy
-          name: openstack_api_heat_cloudwatch
+          name: openstack_api_heat_cfn
           proxy:
             host: ${_param:heat_service_host}
             port: 8000

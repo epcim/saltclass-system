@@ -1,0 +1,57 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        ceph-remove-osd:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Ceph - replace failed OSD"
+          discard:
+            build:
+              keep_num: 50
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: ceph-replace-failed-osd.groovy
+          param:
+            # general parameters
+            SALT_MASTER_URL:
+              type: string
+              description: URL of Salt master
+              default: "http://${_param:salt_master_host}:6969"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              description: Credentials for login to Salt API
+              default: salt
+            HOST:
+              type: string
+              description: Failed OSDs on this HOST will replaced
+            OSD:
+              type: string
+              description: These OSD IDs at HOST will be replaced (comma-separated list - 1,2,3)
+            DEVICE:
+              type: string
+              description: Comma separated list of failed devices that will be replaced at HOST (/dev/sdb,/dev/sdc)
+            JOURNAL_OR_BLOCKDB_PARTITION:
+              type: string
+              description: Comma separated list of partitions where journal or block_db for the failed devices on this HOST were stored (/dev/sdh2,/dev/sdh3)
+            ADMIN_HOST:
+              type: string
+              description: Host with admin keyring and correct crushmap file in /etc/ceph/crushmap
+              default: 'cmn01*'
+            ENFORCE_CRUSHMAP:
+              type: boolean
+              default: 'false'
+              description: Set to true if the prepared crush map should be enforced
+            WAIT_FOR_PG_REBALANCE:
+              type: boolean
+              default: 'true'
+              description: Wait for PGs to rebalance after osd is removed from crush map
+            WAIT_FOR_HEALTHY:
+              type: boolean
+              default: 'false'
+              description: Wait for healthy during pipeline
+            CLUSTER_FLAGS:
+              type: string
+              description: Flags to be aplied before pipeline and after pipeline (comma-separated list)

@@ -5,7 +5,7 @@ parameters:
         ceph-remove-osd:
           type: workflow-scm
           concurrent: true
-          display_name: "Ceph - add OSD host"
+          display_name: "Ceph - add node"
           discard:
             build:
               keep_num: 50
@@ -13,7 +13,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
-            script: ceph-add-osd-host.groovy
+            script: ceph-add-node.groovy
           param:
             # general parameters
             SALT_MASTER_URL:
@@ -26,4 +26,9 @@ parameters:
               default: salt
             HOST:
               type: string
-              description: OSD HOST that will be added to Ceph cluster
+              description: OSD HOST that will be added to Ceph cluster (rgw04*)
+              default: 'rgw04*'
+            HOST_TYPE:
+              type: string
+              description: Type of Ceph node to be added. Valid values are mon/osd/rgw
+              default: 'rgw'

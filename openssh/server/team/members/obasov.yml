@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        obasov:
+          enabled: true
+          name: obasov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Oleg Basov
+          home: /home/obasov
+          email: obasov@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        obasov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkbt+z214gkpRTA1Fso0ltxDq37Cu0l75stLO9eIPh9Gd38MliXB5NpJsGk3b521y/a2fdIKMfzwlt3WpC/cgx16l2PesEt4b/ASHYiHNtoGPxbcDRfgcamAsUyUyPtKjbBJJJ2aPfYRRhnEDOZwA3P6ITvpfzj4I24Y46j1H+qmi8gKzFTZpj0EobaPTi/sRztuVLspTy3MntcIwGBJMZCaz0jifYLEEFdEQRHdaZy5L2/2jv7GVECBRd0ucHr+zSM1uV4LQbQVCuGquTn05GZBpwgtMyfwhm7ySMsewZpssVReDha+0WVpNiftKcyBAjXdUsLAgZqeaAz4exey1r olegeech@ns1.sytkovo.su
+          user: ${linux:system:user:obasov}

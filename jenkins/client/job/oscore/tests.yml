@@ -26,7 +26,7 @@ parameters:
               HEAT_STACK_ZONE:
                 type: string
                 description: AZ
-                default: 'mcp-oscore'
+                default: "mcp-oscore-ci"
               OPENSTACK_VERSION:
                 type: string
                 description: Version of openstack to test
@@ -83,7 +83,7 @@ parameters:
                 default: "openstack-devcloud-credentials"
               OPENSTACK_API_PROJECT:
                 type: string
-                default: "mcp-oscore"
+                default: "mcp-oscore-ci"
               OPENSTACK_API_PROJECT_DOMAIN:
                 type: string
                 default: "default"
@@ -181,6 +181,10 @@ parameters:
               TEST_TEMPEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
+              TEST_TEMPEST_CONCURRENCY:
+                type: string
+                description: How much test threads to run
+                default: "2"
               TEST_MODEL:
                 type: string
                 description: Environment salt model

@@ -1,0 +1,46 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        ceph-remove-osd:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Ceph - remove node"
+          discard:
+            build:
+              keep_num: 50
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: ceph-remove-node.groovy
+          param:
+            # general parameters
+            SALT_MASTER_URL:
+              type: string
+              description: URL of Salt master
+              default: "http://${_param:salt_master_host}:6969"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              description: Credentials for login to Salt API
+              default: salt
+            HOST:
+              type: string
+              description: OSD HOST that will be removed from Ceph cluster (rgw04*)
+              default: 'rgw04*'
+            HOST_TYPE:
+              type: string
+              description: Type of Ceph node to be removed. Valid values are mon/osd/rgw
+              default: 'rgw'
+            ADMIN_HOST:
+              type: string
+              description: Host with admin keyring and access to cluster management
+              default: 'cmn01*'
+            GENERATE_CRUSHMAP:
+              type: boolean
+              default: 'false'
+              description: Only if removing OSD host. Set to true if crush map file should be updated. Enforce has to happen manually unless it is specifically set to be enforced in pillar.
+            WAIT_FOR_HEALTHY:
+              type: boolean
+              default: 'false'
+              description: Wait for healthy during pipeline

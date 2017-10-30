@@ -1,0 +1,79 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        ironic_node_provision:
+          concurrent: true
+          discard:
+            build:
+              keep_num: 20
+          display_name: Ironic - provision nodes
+          name: ironic-provision-nodes
+          param:
+            ASK_ON_ERROR:
+              default: 'false'
+              type: boolean
+            HEAT_STACK_ZONE:
+              default: mcp-mk
+              type: string
+            OPENSTACK_API_CLIENT:
+              default: ''
+              type: string
+            OPENSTACK_API_CREDENTIALS:
+              default: openstack-devcloud-credentials
+              type: string
+            OPENSTACK_API_PROJECT:
+              default: mcp-mk
+              type: string
+            OPENSTACK_API_PROJECT_DOMAIN:
+              default: default
+              type: string
+            OPENSTACK_API_PROJECT_ID:
+              default: ''
+              type: string
+            OPENSTACK_API_URL:
+              default: https://cloud-cz.bud.mirantis.net:5000
+              type: string
+            OPENSTACK_API_USER_DOMAIN:
+              default: default
+              type: string
+            OPENSTACK_API_USER_DOMAIN_ID:
+              default: default
+              type: string
+            OPENSTACK_API_VERSION:
+              default: '3'
+              type: string
+            ENV_NAME:
+              type: string
+            SALT_MASTER_CREDENTIALS:
+              default: salt-qa-credentials
+              type: string
+            SALT_MASTER_URL:
+              default: ''
+              type: string
+            STACK_TYPE:
+              default: heat
+              type: string
+            IRONIC_AUTHORIZATION_PROFILE:
+              default: admin_identity
+              type: string
+            IRONIC_DEPLOY_NODES:
+              default: ''
+              type: string
+            IRONIC_DEPLOY_PROFILE:
+              default: ''
+              type: string
+            IRONIC_DEPLOY_TIMEOUT:
+              default: '60'
+              type: string
+            IRONIC_DEPLOY_PARTITION_PROFILE:
+              default: ''
+              type: string
+            RUN_TARGET:
+              default: 'I@ironic:client and *01*'
+              type: string
+          scm:
+            script: ironic-node-provision-pipeline.groovy
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+          type: workflow-scm

@@ -2,6 +2,8 @@ parameters:
   _param:
     docker_security_monkey_api_replicas: 1
     docker_security_monkey_scheduler_replicas: 1
+    secmonkey_login_id: 11
+    secmonkey_application_id: 1
     docker_image_security_monkey_api: docker-prod-local.artifactory.mirantis.com/mirantis/oss/security-monkey-api
     docker_image_security_monkey_scheduler: docker-prod-local.artifactory.mirantis.com/mirantis/oss/security-monkey-scheduler
     security_monkey_bind_host: security-audit-api
@@ -45,6 +47,8 @@ parameters:
             WEB_PORT: ${_param:security_monkey_web_port}
             API_PORT: ${_param:security_monkey_api_port}
             NGINX_PORT: ${_param:security_monkey_nginx_port}
+            NOTIFICATIONS_APP_ID: ${_param:secmonkey_application_id}
+            NOTIFICATIONS_LOGIN_ID: ${_param:secmonkey_login_id}
             NOTIFICATIONS_SERVICE_URL: ${_param:notification_service_url}
             DEFAULT_USER: ${_param:security_monkey_user}
             DEFAULT_PASSWORD: ${_param:security_monkey_password}
@@ -63,7 +67,7 @@ parameters:
             SM_WTF_CSRF_ENABLED: ${_param:devops_portal_sm_wtf_csrf_enabled}
             SECURITY_MONKEY_SYNC_INTERVAL: ${_param:security_monkey_sync_interval}
             SQLALCHEMY_DATABASE_URI: postgresql://${_param:secmonkey_db_user}:${_param:secmonkey_db_user_password}@${_param:secmonkey_db_host}:${_param:haproxy_postgresql_bind_port}/${_param:security_monkey_db}
-            SQLALCHEMY_POOL_RECYCLE: 14400
+            SQLALCHEMY_POOL_RECYCLE: 25000
           service:
             security-audit-api:
               image: ${_param:docker_image_security_monkey_api}

@@ -27,6 +27,9 @@ parameters:
               ASK_ON_ERROR:
                 type: boolean
                 default: 'false'
+              SLAVE_NODE:
+                type: string
+                default: 'python'
 
               # deployments
               STACK_NAME:

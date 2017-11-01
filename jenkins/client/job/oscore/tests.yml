@@ -15,7 +15,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
-              credentials: "mcp-gerrit"
+              credentials: "gerrit"
               branch: 'master'
               script: test-openstack-component-pipeline.groovy
             trigger:
@@ -137,7 +137,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
-              credentials: "mcp-gerrit"
+              credentials: "gerrit"
               branch: 'master'
               script: run-openstack-tests.groovy
             param:
@@ -209,7 +209,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
-              credentials: "mcp-gerrit"
+              credentials: "gerrit"
               branch: 'master'
               script: process-openstack-test-results.groovy
             param:
@@ -269,3 +269,84 @@ parameters:
                 type: string
                 description: Tests pass rate to consider build successful
                 default: "90"
+        deploy-kvm-virtual-template:
+          name: "{{job_prefix}}-deploy-kvm-VMs"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: deploy-kvm-pipeline.groovy
+            param:
+              # general
+              STACK_NAME:
+                type: string
+                description: "VM prefix name"
+                default: "kvm-aio-node"
+              TEMPLATE:
+                type: choice
+                choices:
+                  - AIO
+                  - Multi
+                default: "AIO"
+              DEPLOY_OPENSTACK:
+                type: boolean
+                default: 'false'
+                description: "Enable it if openstack deployment is required"
+              JOB_DEP_NAME:
+                type: string
+                default:
+                description: "Name of the job to deploy openstack"
+              DESTROY_ENV:
+                type: boolean
+                default: 'false'
+                description: "Enable if env have to be destoyed."
+              CREATE_ENV:
+                type: boolean
+                default: 'true'
+                description: "Enable it if KVM VM have to be created."
+              STACK_DELETE:
+                type: boolean
+                default: 'false'
+                description: "Enable it if KVM VM have to be deleted."
+              STACK_TYPE:
+                type: string
+                default: "{{stack_type}}"
+              OPENSTACK_API_PROJECT:
+                type: string
+                default: "mcp-oscore-ci"
+              HEAT_STACK_ZONE:
+                type: string
+                description: AZ
+                default: "mcp-oscore-ci"
+              STACK_INSTALL:
+                type: string
+                description: components to install
+                default: 'core,openstack,ovs'
+              STACK_TEST:
+                type: string
+                description: Job for environment deployment
+                default: ''
+              # salt
+              SALT_MASTER_CREDENTIALS:
+                type: string
+                default: "salt-qa-credentials"
+              SALT_MASTER_URL:
+                type: string
+                default: ""
+              SALT_OVERRIDES:
+                type: text
+                default: ""
+                description: YAML with overrides for Salt deployment
+              TEST_MODEL:
+                type: string
+                description: Environment salt model
+                default: "{{model}}"

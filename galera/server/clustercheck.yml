@@ -1,0 +1,18 @@
+parameters:
+  _param:
+    galera_clustercheck_password: clustercheck
+  galera:
+    clustercheck:
+      enabled: True
+      user: clustercheck
+      password: ${_param:galera_clustercheck_password}
+      port: 9200
+      available_when_donor: 0
+      available_when_readonly: 0
+  mysql:
+    server:
+      users:
+      - name: clustercheck
+        password: ${_param:galera_clustercheck_password}
+        database: '*.*'
+        grants: PROCESS

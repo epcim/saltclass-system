@@ -48,7 +48,7 @@ parameters:
                 default: 'core,openstack,ovs'
               STACK_DELETE:
                 type: boolean
-                default: 'true'
+                default: 'false'
                 description: Don't enable it if you need to use the lab after
               STACK_CLEANUP_JOB:
                 type: string

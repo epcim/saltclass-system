@@ -1,0 +1,66 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        ceph-upgrade:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Ceph - upgrade"
+          discard:
+            build:
+              keep_num: 50
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            credentials: "gerrit"
+            script: ceph-upgrade.groovy
+          param:
+            # general parameters
+            SALT_MASTER_URL:
+              type: string
+              description: URL of Salt master
+              default: "http://${_param:salt_master_host}:6969"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              description: Credentials for login to Salt API
+              default: salt
+            ADMIN_HOST:
+              type: string
+              description: Host with admin keyring and correct crushmap file in /etc/ceph/crushmap
+              default: 'cmn01*'
+            WAIT_FOR_HEALTHY:
+              type: boolean
+              default: 'true'
+              description: Wait for healthy during pipeline
+            CLUSTER_FLAGS:
+              type: string
+              default: 'sortbitwise,noout'
+              description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
+            ORIGIN_RELEASE:
+              type: string
+              description: Ceph release version before upgrade
+              default: 'jewel'
+            TARGET_RELEASE:
+              type: string
+              description: Ceph release version after upgrade
+              default: 'luminous'
+            STAGE_UPGRADE_MON:
+              type: boolean
+              default: 'true'
+              description: Set to True if Ceph mon nodes upgrade is desired
+            STAGE_UPGRADE_MGR:
+              type: boolean
+              default: 'true'
+              description: Set to True if Ceph mgr nodes upgrade or new deploy is desired
+            STAGE_UPGRADE_OSD:
+              type: boolean
+              default: 'true'
+              description: Set to True if Ceph osd nodes upgrade is desired
+            STAGE_UPGRADE_RGW:
+              type: boolean
+              default: 'true'
+              description: Set to True if Ceph rgw nodes upgrade is desired
+            STAGE_UPGRADE_CLIENT:
+              type: boolean
+              default: 'true'
+              description: Set to True if Ceph client nodes upgrade is desired (includes for example ctl/cmp nodes)

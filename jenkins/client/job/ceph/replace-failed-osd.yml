@@ -2,7 +2,7 @@ parameters:
   jenkins:
     client:
       job:
-        ceph-remove-osd:
+        ceph-replace-failed-osd:
           type: workflow-scm
           concurrent: true
           display_name: "Ceph - replace failed OSD"
@@ -40,14 +40,6 @@ parameters:
               type: string
               description: Host with admin keyring and correct crushmap file in /etc/ceph/crushmap
               default: 'cmn01*'
-            ENFORCE_CRUSHMAP:
-              type: boolean
-              default: 'false'
-              description: Set to true if the prepared crush map should be enforced
-            WAIT_FOR_PG_REBALANCE:
-              type: boolean
-              default: 'true'
-              description: Wait for PGs to rebalance after osd is removed from crush map
             WAIT_FOR_HEALTHY:
               type: boolean
               default: 'false'

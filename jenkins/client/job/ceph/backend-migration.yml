@@ -2,10 +2,10 @@ parameters:
   jenkins:
     client:
       job:
-        ceph-remove-node:
+        ceph-backend-migration:
           type: workflow-scm
           concurrent: true
-          display_name: "Ceph - remove node"
+          display_name: "Ceph - backend migration"
           discard:
             build:
               keep_num: 50
@@ -13,7 +13,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             credentials: "gerrit"
-            script: ceph-remove-node.groovy
+            script: ceph-backend-migration.groovy
           param:
             # general parameters
             SALT_MASTER_URL:
@@ -24,23 +24,26 @@ parameters:
               type: string
               description: Credentials for login to Salt API
               default: salt
-            HOST:
+            TARGET:
               type: string
-              description: OSD HOST that will be removed from Ceph cluster (rgw04*)
-              default: 'rgw04*'
-            HOST_TYPE:
+              description: OSD hosts (minion ids) to be targeted
+              default: 'osd*'
+            OSD:
               type: string
-              description: Type of Ceph node to be removed. Valid values are mon/osd/rgw
-              default: 'rgw'
+              description: OSD ids to be migrated (comma-separated list - 1,2,3)
+              default: '*'
             ADMIN_HOST:
               type: string
               description: Host with admin keyring and access to cluster management
               default: 'cmn01*'
-            GENERATE_CRUSHMAP:
-              type: boolean
-              default: 'false'
-              description: Only if removing OSD host. Set to true if crush map file should be updated. Enforce has to happen manually unless it is specifically set to be enforced in pillar.
+            CLUSTER_FLAGS:
+              type: string
+              description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
             WAIT_FOR_HEALTHY:
               type: boolean
-              default: 'false'
+              default: 'true'
               description: Wait for healthy during pipeline
+            ORIGIN_BACKEND:
+              type: string
+              description: Ceph backend before migration
+              default: 'filestore'

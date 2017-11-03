@@ -1,3 +1,4 @@
+## DEPRECATED, this class will be removed 01/2018
 classes:
 # DevOps/SRE Team
 - system.openssh.server.team.members.cade

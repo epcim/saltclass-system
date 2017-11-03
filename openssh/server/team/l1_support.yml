@@ -1,5 +1,6 @@
 ## DEPRECATED, this class will be removed 01/2018
-#  please use support.yml instead
+## please integrate submodule opscare instead
+## https://gerrit.mirantis.com/#/admin/projects/mmo-support/reclass-opscare
 classes:
 - system.linux.system.sudo
 # L1

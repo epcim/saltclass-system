@@ -33,6 +33,7 @@ parameters:
             - name: elasticsearch
             - name: etcd
             - name: fluentbit
+            - name: fluentd
             - name: foreman
             - name: freeipa
             - name: galera

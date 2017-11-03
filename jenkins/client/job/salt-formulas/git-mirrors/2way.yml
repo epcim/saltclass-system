@@ -61,6 +61,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: fluentbit
               branches: ${_param:salt_formulas_branches}
+            - name: fluentd
+              branches: ${_param:salt_formulas_branches}
             - name: foreman
               branches: ${_param:salt_formulas_branches}
             - name: freeipa

@@ -83,6 +83,9 @@ parameters:
             - name: fluentbit
               upload_source_package: false
               dist: trusty
+            - name: fluentd
+              upload_source_package: false
+              dist: trusty
             - name: foreman
               upload_source_package: false
               dist: trusty

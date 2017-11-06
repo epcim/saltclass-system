@@ -7,9 +7,9 @@ parameters:
             aodh:
               source: pkg
               name: salt-formula-aodh
-            #avinetworks:
-            #  source: pkg
-            #  name: salt-formula-avinetworks
+            avinetworks:
+              source: pkg
+              name: salt-formula-avinetworks
             barbican:
               source: pkg
               name: salt-formula-barbican

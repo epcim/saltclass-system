@@ -8,10 +8,10 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-aodh.git'
               revision: ${_param:salt_master_environment_revision}
-            #avinetworks:
-            #  source: git
-            #  address: '${_param:salt_master_environment_repository}/salt-formula-avinetworks.git'
-            #  revision: ${_param:salt_master_environment_revision}
+            avinetworks:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-avinetworks.git'
+              revision: ${_param:salt_master_environment_revision}
             barbican:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-barbican.git'

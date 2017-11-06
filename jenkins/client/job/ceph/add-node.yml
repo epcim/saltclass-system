@@ -2,7 +2,7 @@ parameters:
   jenkins:
     client:
       job:
-        ceph-remove-osd:
+        ceph-add-node:
           type: workflow-scm
           concurrent: true
           display_name: "Ceph - add node"

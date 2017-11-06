@@ -3,4 +3,5 @@ classes:
 - system.jenkins.client.job.ceph.replace-failed-osd
 - system.jenkins.client.job.ceph.add-node
 - system.jenkins.client.job.ceph.remove-node
-
+- system.jenkins.client.job.ceph.upgrade
+- system.jenkins.client.job.ceph.backend-migration

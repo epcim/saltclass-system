@@ -104,6 +104,10 @@ parameters:
                 type: string
                 description: Product milestone
                 default: "{{milestone}}"
+              TEST_TEMPEST_CONF:
+                type: string
+                description: Tempest configuration file path inside container
+                default: "{{tempest_conf}}"
               TEST_TEMPEST_TARGET:
                 type: string
                 description: Node to run tests
@@ -185,6 +189,10 @@ parameters:
                 type: string
                 description: How much test threads to run
                 default: "2"
+              TEST_TEMPEST_CONF:
+                type: string
+                description: Tempest configuration file path inside container
+                default: "mcp.conf"
               TEST_MODEL:
                 type: string
                 description: Environment salt model

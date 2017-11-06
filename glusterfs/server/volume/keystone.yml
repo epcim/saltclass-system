@@ -15,6 +15,7 @@ parameters:
             network.remote-dio: On
             diagnostics.client-log-level: WARNING
             diagnostics.brick-log-level: WARNING
+            cluster.favorite-child-policy: mtime
         keystone-credential-keys:
           storage: /srv/glusterfs/keystone-credential-keys
           replica: 3
@@ -28,3 +29,4 @@ parameters:
             network.remote-dio: On
             diagnostics.client-log-level: WARNING
             diagnostics.brick-log-level: WARNING
+            cluster.favorite-child-policy: mtime

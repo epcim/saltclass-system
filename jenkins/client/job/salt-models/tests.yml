@@ -70,6 +70,12 @@ parameters:
               LEGACY_TEST_MODE:
                 type: boolean
                 default: "{{legacy_test_mode}}"
+              APT_REPOSITORY:
+                type: string
+                default: ""
+              APT_REPOSITORY_GPG:
+                type: string
+                default: ""
         test_system_reclass:
           name: test-salt-model-{{name}}
           template:
@@ -208,3 +214,9 @@ parameters:
             LEGACY_TEST_MODE:
               type: boolean
               default: "false"
+            APT_REPOSITORY:
+              type: string
+              default: ""
+            APT_REPOSITORY_GPG:
+              type: string
+              default: ""

@@ -153,6 +153,12 @@ parameters:
               RECLASS_MODEL_BRANCH:
                 type: string
                 default: master
+              SYSTEM_GIT_URL:
+                type: string
+                default: ""
+              SYSTEM_GIT_REF:
+                type: string
+                default: ""
               PARALLEL_NODE_GROUP_SIZE:
                 type: string
                 default: "1"

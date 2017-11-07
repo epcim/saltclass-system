@@ -43,6 +43,14 @@ parameters:
               type: boolean
               default: 'true'
               description: Wait for healthy during pipeline
+            PER_OSD_CONTROL:
+              type: boolean
+              default: 'true'
+              description: Set to true if Ceph status verification after every osd disk migration is desired
+            PER_OSD_HOST_CONTROL:
+              type: boolean
+              default: 'true'
+              description: Set to true if Ceph status verificaton after whole OSD host migration is desired
             ORIGIN_BACKEND:
               type: string
               description: Ceph backend before migration

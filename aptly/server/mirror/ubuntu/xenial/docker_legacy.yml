@@ -1,0 +1,20 @@
+parameters:
+  _param:
+    mirror_docker-xenial_source: 'https://apt.dockerproject.org/repo'
+    mirror_docker-xenial_distribution: ubuntu-xenial
+    mirror_docker-xenial_components: main
+    mirror_docker-xenial_gpgkeys:
+      - 58118E89F3A912897C070ADBF76221572C52609D
+  aptly:
+    server:
+      mirror:
+        docker-xenial-legacy:
+          source: ${_param:mirror_docker-xenial_source}
+          distribution: ${_param:mirror_docker-xenial_distribution}
+          components: ${_param:mirror_docker-xenial_components}
+          architectures: amd64
+          gpgkeys: ${_param:mirror_docker-xenial_gpgkeys}
+          publisher:
+            component: docker-legacy
+            distributions:
+              - ubuntu-xenial/${_param:apt_mk_version}

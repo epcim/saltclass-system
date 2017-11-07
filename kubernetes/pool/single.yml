@@ -1,7 +1,6 @@
 classes:
 - service.kubernetes.pool.single
 - service.docker.host
-- system.linux.system.repo.docker_legacy
 parameters:
   _param:
     # component docker images

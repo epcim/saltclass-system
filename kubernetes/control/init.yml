@@ -1,3 +1,2 @@
 classes:
   - service.kubernetes.control.cluster
-  - system.linux.system.repo.docker_legacy

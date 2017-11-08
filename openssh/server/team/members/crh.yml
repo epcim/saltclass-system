@@ -17,4 +17,4 @@ parameters:
           enabled: true
           public_keys:
             - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjW4PSMoILjoZWDM8RnbiW6HXHBFntnDd6jgAlokJhTpYIjzUHpoh/OqphraKbNFnPbzL2nkIbaKZqKj+uuvbsitHnApmdFgSpOmBRGeaSExA30GqweYrIMKN5JAQTbONZWLSm+LD689CXRv2s6Th/YMELYfoi2W0pkvwiBdr+/0NxpdRvJydCn36SE6wOigu4uJXIXeNqIjTD+x4sW6GB54Ugbg+SMmI9D5ONlmfEj8K/ZmG1THdPGOLlquy/VLiuOBuwNoJCBV9shsGEmdg8NiOu8NPupQlsbmClZDbBAklJ0AF6ElAwKSiqCOhbaa7hu4qJFrCKC+XAgYxS9t7r
-user: ${linux:system:user:crh}
+          user: ${linux:system:user:crh}

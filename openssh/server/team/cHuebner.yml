@@ -3,4 +3,4 @@ classes:
 - system.openssh.server.team.members.crh
 parameters:
   _param:
-linux_system_user_sudo: true
+    linux_system_user_sudo: true

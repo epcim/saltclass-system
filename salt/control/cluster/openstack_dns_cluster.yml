@@ -13,10 +13,12 @@ parameters:
           engine: virt
           node:
             dns01:
+              name: ${_param:openstack_dns_node01_hostname}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               size: openstack.dns
             dns02:
+              name: ${_param:openstack_dns_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               size: openstack.dns

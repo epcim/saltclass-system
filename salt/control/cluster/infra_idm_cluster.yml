@@ -13,14 +13,17 @@ parameters:
           engine: virt
           node:
             idm01:
+              name: ${_param:infra_idm_node01_hostname}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_centos7_image}
               size: infra.idm
             idm02:
+              name: ${_param:infra_idm_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_centos7_image}
               size: infra.idm
             idm03:
+              name: ${_param:infra_idm_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_centos7_image}
               size: infra.idm

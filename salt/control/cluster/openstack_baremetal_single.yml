@@ -13,6 +13,7 @@ parameters:
           engine: virt
           node:
             bmt01:
+              name: ${_param:openstack_baremetal_node01_hostname}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               size: openstack.baremetal

@@ -64,3 +64,11 @@ parameters:
               type: boolean
               default: 'true'
               description: Set to True if Ceph client nodes upgrade is desired (includes for example ctl/cmp nodes)
+            STAGE_FINALIZE:
+              type: boolean
+              default: 'true'
+              description: Set to True if configs recommended for TARGET_RELEASE should be set after upgrade is done
+            BACKUP_ENABLED:
+              type: boolean
+              default: 'true'
+              description: Set to True if disks of Ceph VMs should be copied before upgrade

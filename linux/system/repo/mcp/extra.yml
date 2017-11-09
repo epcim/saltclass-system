@@ -6,9 +6,9 @@ parameters:
     system:
       repo:
         mcp_extra:
-          source: "deb [arch=amd64] http://apt-mk.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mcp_extra_version} extra"
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mcp_extra_version} extra"
           architectures: amd64
-          key_url: "http://apt-mk.mirantis.com/public.gpg"
+          key_url: "http://apt.mirantis.com/public.gpg"
           clean_file: true
           pin:
           - pin: 'release a=${_param:linux_system_repo_mcp_extra_version}'

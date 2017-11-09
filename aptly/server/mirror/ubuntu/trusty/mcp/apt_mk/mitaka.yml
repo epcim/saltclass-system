@@ -1,10 +1,10 @@
 parameters:
   _param:
     apt_mk_version: stable
-    mirror_mk_openstack_xenial_mitaka_source: http://apt-mk.mirantis.com/trusty/
+    mirror_mk_openstack_xenial_mitaka_source: http://apt.mirantis.com/trusty/
     mirror_mk_openstack_xenial_mitaka_distribution: ${_param:apt_mk_version}
     mirror_mk_openstack_xenial_mitaka_components: mitaka
-    mirror_mk_openstack_xenial_mitaka_key_url: "http://apt-mk.mirantis.com/public.gpg"
+    mirror_mk_openstack_xenial_mitaka_key_url: "http://apt.mirantis.com/public.gpg"
     mirror_mk_openstack_xenial_mitaka_gpgkeys:
       - A76882D3
   aptly:

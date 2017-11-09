@@ -46,9 +46,9 @@ parameters:
             priority: 1100
             package: '*'
         mk_openstack:
-          source: "deb [arch=amd64] http://apt-mk.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mk_openstack_version} ${_param:openstack_version}"
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mk_openstack_version} ${_param:openstack_version}"
           architectures: amd64
-          key_url: "http://apt-mk.mirantis.com/public.gpg"
+          key_url: "http://apt.mirantis.com/public.gpg"
           pin:
           - pin: 'release a=${_param:linux_system_repo_mk_openstack_version}'
             priority: 1100

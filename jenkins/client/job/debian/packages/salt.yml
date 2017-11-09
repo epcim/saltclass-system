@@ -71,6 +71,9 @@ parameters:
             - name: docker
               upload_source_package: false
               dist: trusty
+            - name: dogtag
+              upload_source_package: false
+              dist: trusty
             - name: dovecot
               upload_source_package: false
               dist: trusty
@@ -372,6 +375,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: docker
+              upload_source_package: true
+              dist: xenial
+            - name: dogtag
               upload_source_package: true
               dist: xenial
             - name: dovecot

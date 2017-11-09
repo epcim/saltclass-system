@@ -29,6 +29,7 @@ parameters:
             - name: dekapod
             - name: devops-portal
             - name: docker
+            - name: dogtag
             - name: dovecot
             - name: elasticsearch
             - name: etcd

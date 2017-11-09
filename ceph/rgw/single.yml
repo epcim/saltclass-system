@@ -1,4 +1,2 @@
 classes:
-- system.linux.system.repo.ceph
-- system.linux.system.repo.ubuntu
 - service.ceph.radosgw.single

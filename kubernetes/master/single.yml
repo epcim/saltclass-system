@@ -1,6 +1,5 @@
 classes:
 - service.kubernetes.master.single
-- system.linux.system.repo.docker_legacy
 parameters:
   _param:
     kubernetes_netchecker_agent_image: quay.io/l23network/k8s-netchecker-agent:v1.0

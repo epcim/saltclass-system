@@ -395,6 +395,8 @@ parameters:
               dist: xenial
             - name: telegraf
               dist: xenial
+            - name: tinyproxy
+              dist: xenial
             - name: tftpd-hpa
               dist: xenial
             - name: varnish

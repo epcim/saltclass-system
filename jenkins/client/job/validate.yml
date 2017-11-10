@@ -59,6 +59,22 @@ parameters:
                 - smoke
                 - full
               description: Set of Tempest tests to run
+            TEMPEST_CONFIG_REPO:
+              type: string
+              default: ""
+              description: Git repository with configuration files for Tempest
+            TEMPEST_CONFIG_BRANCH:
+              type: string
+              default: ""
+              description: Git branch which will be used during the checkout
+            TEMPEST_REPO:
+              type: string
+              default: ""
+              description: Git repository with Tempest
+            TEMPEST_VERSION:
+              type: string
+              default: ""
+              description: Version of Tempest (tag, branch or commit)
             TEST_K8S_NODE:
               type: string
               default: ""
@@ -102,6 +118,14 @@ parameters:
               type: string
               default: "m1.tiny"
               description: Flavor name for Rally scenarios
+            RALLY_CONFIG_REPO:
+              type: string
+              default: ""
+              description: Git repository with configuration files for Rally
+            RALLY_CONFIG_BRANCH:
+              type: string
+              default: ""
+              description: Git branch which will be used during the checkout
             AVAILABILITY_ZONE:
               type: string
               default: "nova"

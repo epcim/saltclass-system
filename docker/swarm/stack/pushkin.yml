@@ -8,6 +8,7 @@ parameters:
     pushkin_ssl:
       enabled: false
     pushkin_db: pushkin
+    pushkin_db_host: ${_param:haproxy_postgresql_bind_host}
     pushkin_smtp_host: smtp.gmail.com
     pushkin_smtp_port: 587
     webhook_from: your_sender@mail.com
@@ -30,7 +31,7 @@ parameters:
             POSTGRES_USER: ${_param:pushkin_db_user}
             POSTGRES_PASSWORD: ${_param:pushkin_db_user_password}
             POSTGRES_DB: ${_param:pushkin_db}
-            PUSHKINDBHOST: ${_param:postgresql_bind_host}
+            PUSHKINDBHOST: ${_param:pushkin_db_host}
             PUSHKINELASTICHOST: ${_param:pushkin_elasticsearch}
             WEBHOOK_FROM: ${_param:webhook_from}
             EMAIL_SENDER_PASSWORD: ${_param:pushkin_email_sender_password}

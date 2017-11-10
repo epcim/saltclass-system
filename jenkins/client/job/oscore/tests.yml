@@ -163,6 +163,9 @@ parameters:
                 type: string
                 description: Job for results processing
                 default: "{{proc_results_job}}"
+              SLAVE_NODE:
+                type: string
+                default: 'python'
               # salt
               SALT_MASTER_CREDENTIALS:
                 type: string

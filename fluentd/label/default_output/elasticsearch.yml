@@ -1,0 +1,15 @@
+classes:
+- service.fluentd.agent.output.elasticsearch
+parameters:
+  _params:
+    fluentd_elasticsearch_host: 127.0.0.1
+    elasticsearch_port: 9200
+  fluentd:
+    agent:
+      config:
+        label:
+          default_output:
+            match:
+              elasticsearch_output:
+                host: ${_param:fluentd_elasticsearch_host}
+                port: ${_param:elasticsearch_port}

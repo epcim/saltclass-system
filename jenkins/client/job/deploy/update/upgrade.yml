@@ -35,3 +35,7 @@ parameters:
               type: boolean
               default: 'true'
               description: "Rollback if control upgrade fails"
+            SKIP_VM_RELAUNCH:
+              type: boolean
+              default: 'false'
+              description: "Set to true if vms should not be recreated"

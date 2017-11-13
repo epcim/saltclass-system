@@ -10,3 +10,6 @@ parameters:
       insecure_registries:
         - ${_param:cluster_vip_address}:5000
         - ${_param:cluster_public_host}:5000
+      options:
+        ipv6: true
+        fixed-cidr-v6: fc00::/7

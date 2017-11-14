@@ -223,6 +223,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: telegraf
               branches: ${_param:salt_formulas_branches}
+            - name: tinyproxy
+              branches: ${_param:salt_formulas_branches}
             - name: varnish
               branches: ${_param:salt_formulas_branches}
             - name: xtrabackup

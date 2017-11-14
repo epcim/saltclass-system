@@ -296,6 +296,9 @@ parameters:
             - name: telegraf
               upload_source_package: false
               dist: trusty
+            - name: tinyproxy
+              upload_source_package: false
+              dist: trusty
             - name: tftpd-hpa
               upload_source_package: false
               dist: trusty
@@ -609,6 +612,7 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: tinyproxy
+              upload_source_package: true
               dist: xenial
             - name: tftpd-hpa
               upload_source_package: true

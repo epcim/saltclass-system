@@ -1,2 +1,8 @@
 classes:
 - service.ceph.osd.cluster
+parameters:
+  linux:
+    system:
+      kernel:
+        sysctl:
+          fs.aio-max-nr: 131072

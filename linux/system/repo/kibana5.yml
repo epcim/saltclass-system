@@ -1,0 +1,7 @@
+parameters:
+  linux:
+    system:
+      repo:
+        kibana:
+          source: "deb https://artifacts.elastic.co/packages/5.x/apt stable main"
+          key_url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"

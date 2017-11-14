@@ -207,6 +207,10 @@ parameters:
                 type: string
                 description: Tests pass rate to consider build successful
                 default: "90"
+              USE_PEPPER:
+                type: boolean
+                description: Whether to use pepper to connect to salt master
+                default: 'false'
         results-checker-template:
           name: "{{job_prefix}}-{{test_type}}-results-checker"
           template:

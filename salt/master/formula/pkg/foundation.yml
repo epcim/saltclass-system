@@ -34,3 +34,6 @@ parameters:
             lldp:
               source: pkg
               name: salt-formula-lldp
+            tinyproxy:
+              source: pkg
+              name: salt-formula-tinyproxy

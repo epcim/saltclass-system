@@ -1,0 +1,8 @@
+parameters:
+  linux:
+    system:
+      repo:
+        fluentd3:
+          source: "deb [arch=amd64] http://packages.treasuredata.com/3/ubuntu/${_param:linux_system_codename} ${_param:linux_system_codename} contrib"
+          architectures: amd64
+          key_url: "http://packages.treasuredata.com/GPG-KEY-td-agent"

@@ -113,6 +113,7 @@ parameters:
             - name: swift
             - name: taiga
             - name: telegraf
+            - name: tinyproxy
             - name: tftpd-hpa
             - name: varnish
             - name: xtrabackup

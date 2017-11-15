@@ -116,6 +116,7 @@ parameters:
             - name: taiga
             - name: tinyproxy
             - name: telegraf
+            - name: tinyproxy
             - name: tftpd-hpa
             - name: varnish
             - name: xtrabackup

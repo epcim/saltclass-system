@@ -1,7 +1,7 @@
 parameters:
   jenkins:
     client:
-      job:
+      job_template:
         oscore-build-docker-image:
           name: "{{job_prefix}}-{{oscore-qa-project}}-build-docker-image"
           template:

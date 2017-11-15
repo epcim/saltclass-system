@@ -6,9 +6,11 @@ parameters:
   linux:
     system:
       repo:
-        salt:
+        saltstack:
           humanname: "SaltStack repo for RHEL/CentOS ${rhel_repo_releasever}"
           source: "https://repo.saltstack.com/yum/redhat/${_param:rhel_releasever}/${_param:rhel_basearch}/${_param:salt_version}"
           gpgkey: "https://repo.saltstack.com/yum/redhat/${_param:rhel_releasever}/${_param:rhel_basearch}/${_param:salt_version}/SALTSTACK-GPG-KEY.pub"
           gpgcheck: true
           architectures: amd64
+        salt:
+          enabled: false

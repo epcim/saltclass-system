@@ -31,6 +31,7 @@ parameters:
         git: {}
         heavy-job: {}
         jobConfigHistory: {}
+        jira: {}
         ldap: {}
         matrix-auth: {}
         monitoring: {}

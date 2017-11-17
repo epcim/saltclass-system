@@ -18,5 +18,5 @@ parameters:
             enabled: true
             webhook_configs:
               pushkin-vip:
-                url: "${_param:alertmanager_notification_pushkin_host}:${_param:alertmanager_notification_pushkin_port}/webhook?app=stacklight"
+                url: "http://${_param:alertmanager_notification_pushkin_host}:${_param:alertmanager_notification_pushkin_port}/webhook?app=stacklight"
                 send_resolved: true

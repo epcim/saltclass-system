@@ -164,7 +164,7 @@ parameters:
                 default: "1"
               EXTRA_FORMULAS:
                 type: string
-                default: "xtrabackup docker haproxy aptly keepalived gerrit jenkins openldap maas"
+                default: "xtrabackup docker haproxy aptly keepalived gerrit jenkins openldap maas backupninja"
       job:
         test-salt-model-node:
           name: test-salt-model-node

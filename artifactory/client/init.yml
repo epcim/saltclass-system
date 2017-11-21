@@ -16,121 +16,287 @@ parameters:
           ldap_account_base: ${_param:artifactory_security_ldap_root_dn}
           ldap_searchFilter: ${_param:artifactory_security_ldap_searchFilter}
         repo:
+          # Please keep repo list sorted
+
           _genericRepository-local:
+            rclass: local
+            packageType: generic
             description: "Used by Jimbo"
-            repo_type: local
-            package_type: generic
-          binary-dev-local:
-            description: "None"
-            repo_type: local
-            package_type: generic
-          binary-prod-local:
-            repo_type: local
-            package_type: generic
-          docker-dev-local:
-            repo_type: local
-            package_type: docker
-          docker-prod-local:
-            repo_type: local
-            package_type: docker
-          k8s-tests-images:
-            repo_type: local
-            package_type: docker
-          maven-local:
-            description: "Hosts Java libraries needed to build Docker images"
-            repo_type: local
-            package_type: maven
-          mcp-ci-images:
-            repo_type: local
-            package_type: docker
-          vm-images:
-            repo_type: local
-            package_type: generic
+
           _genericRepository-remote:
+            rclass: remote
+            packageType: generic
             description: "Used by Jimbo"
-            repo_type: remote
-            package_type: generic
             url: http://localhost
+
+          _genericRepository-virtual:
+            rclass: virtual
+            packageType: generic
+            description: "Used by Jimbo"
+            repositories:
+            - _genericRepository-local
+            - _genericRepository-remote
+
+          apk-local:
+            rclass: local
+            packageType: generic
+
           apk-remote:
-            repo_type: remote
-            package_type: generic
+            rclass: remote
+            packageType: generic
             url: http://dl-cdn.alpinelinux.org/alpine/
+
+          apk-virtual:
+            rclass: virtual
+            packageType: generic
+            repositories:
+            - apk-local
+            - apk-remote
+
           apt-docker-project:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: https://apt.dockerproject.org/repo
+
           artifactory-pro-debian:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: https://jfrog.bintray.com/artifactory-pro-debs
+
+          artifactory-pro-rpm:
+            rclass: remote
+            packageType: yum
+            url: http://jfrog.bintray.com/artifactory-pro-rpms
+
+          binary-dev-local:
+            rclass: local
+            packageType: generic
+
+          binary-dev-virtual:
+            rclass: virtual
+            packageType: generic
+            repositories:
+            - binary-dev-local
+            - binary-prod-local
+            - binary-remote
+            defaultDeploymentRepo: binary-dev-local
+
+          binary-prod-local:
+            rclass: local
+            packageType: generic
+
+          binary-prod-virtual:
+            rclass: virtual
+            packageType: generic
+            repositories:
+            - binary-prod-local
+            - binary-remote
+            - gcs-remote
+            defaultDeploymentRepo: binary-prod-local
+
+          binary-remote:
+            rclass: remote
+            packageType: generic
+            url: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-virtual
+
+          centos:
+            rclass: virtual
+            packageType: yum
+            repositories:
+            - centos-local
+            - centos-remote
+            - artifactory-pro-rpm
+
+          centos-local:
+            rclass: local
+            packageType: yum
+
+          centos-remote:
+            rclass: remote
+            packageType: yum
+            url: http://mirror.centos.org/centos/
+
+          centos-virtual:
+            rclass: virtual
+            packageType: yum
+            repositories:
+            - centos-local
+            - centos-remote
+            defaultDeploymentRepo: centos-local
+
+          debian-local:
+            rclass: local
+            packageType: debian
+
           debian-mariadb-remote:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.1/debian/
+
           debian-nginx:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://nginx.org/packages/debian/
+
           debian-percona-remote:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://repo.percona.com/apt
+
           debian-rabbitmq-remote:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://www.rabbitmq.com/debian/
+
           debian-remote:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://ftp.us.debian.org/debian
+
           debian-security-remote:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://security.debian.org/
+
+          debian-virtual:
+            rclass: virtual
+            packageType: generic
+            repositories:
+            - debian-local
+            - debian-remote
+            - debian-security-remote
+            defaultDeploymentRepo: debian-local
+
+          docker-dev-local:
+            rclass: local
+            packageType: docker
+
+          docker-dev-virtual:
+            rclass: virtual
+            packageType: docker
+            repositories:
+            - docker-dev-local
+            - docker-prod-local
+            - docker-remote
+            defaultDeploymentRepo: docker-dev-local
+
+          docker-prod-local:
+            rclass: local
+            packageType: docker
+
+          docker-prod-virtual:
+            rclass: virtual
+            packageType: docker
+            repositories:
+            - docker-prod-local
+            - docker-remote
+            defaultDeploymentRepo: docker-prod-local
+
           docker-remote:
-            description: "Remote repository for DockerHub"
-            repo_type: remote
-            package_type: docker
+            rclass: remote
+            packageType: docker
             url: https://registry-1.docker.io/
+            description: "Remote repository for DockerHub"
+
           gcs-remote:
-            description: "Has zero downloads. Can be removed."
-            repo_type: remote
-            package_type: generic
+            rclass: remote
+            packageType: generic
             url: https://storage.googleapis.com
+            description: "Has zero downloads. Can be removed."
+
           gerrit-plugins:
-            description: "Overlaps with maven-local. We should resolve overlap and remove this repo."
-            repo_type: remote
-            package_type: generic
+            rclass: remote
+            packageType: generic
             url: http://builds.quelltextlich.at/gerrit/nightly
+            description: "Overlaps with maven-local. We should resolve overlap and remove this repo."
+
           jcenter:
-            repo_type: remote
-            package_type: maven
+            rclass: remote
+            packageType: maven
             url: https://jcenter.bintray.com
+
           jenkins-deb-pkgs:
-            repo_type: remote
-            package_type: generic
+            rclass: remote
+            packageType: generic
             url: https://pkg.jenkins.io/debian-stable/binary
+
           jenkins-plugins:
-            repo_type: remote
-            package_type: generic
+            rclass: remote
+            packageType: generic
             url: http://mirrors.jenkins-ci.org/plugins
+
           jenkins-plugins-jars:
-            repo_type: remote
-            package_type: maven
+            rclass: remote
+            packageType: maven
             url: https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/
+
           jenkins-updates:
-            repo_type: remote
-            package_type: generic
+            rclass: remote
+            packageType: generic
             url: https://updates.jenkins.io/
+
+          k8s-tests-images:
+            rclass: local
+            packageType: docker
+
+          maven-local:
+            rclass: local
+            packageType: maven
+            description: "Hosts Java libraries needed to build Docker images"
+
+          mcp-k8s:
+            rclass: virtual
+            packageType: docker
+            repositories:
+            - mcp-k8s-local
+
+          mcp-k8s-ci:
+            rclass: local
+            packageType: docker
+
+          mcp-k8s-local:
+            rclass: local
+            packageType: docker
+
           mysql-connector-java:
-            repo_type: remote
-            package_type: maven
+            rclass: remote
+            packageType: maven
             url: http://repo.jfrog.org/artifactory/remote-repos/mysql/mysql-connector-java/
+
+          pypi-local:
+            rclass: local
+            packageType: pypi
+
           pypi-remote:
-            repo_type: remote
-            package_type: pypi
+            rclass: remote
+            packageType: pypi
             url: https://pypi.python.org
+
+          pypi-virtual:
+            rclass: virtual
+            packageType: pypi
+            repositories:
+            - pypi-local
+            - pypi-remote
+            defaultDeploymentRepo: pypi-local
+
+          ubuntu-local:
+            rclass: local
+            packageType: debian
+
           ubuntu-remote:
-            repo_type: remote
-            package_type: debian
+            rclass: remote
+            packageType: debian
             url: http://us.archive.ubuntu.com/ubuntu/
+
+          ubuntu-virtual:
+            rclass: virtual
+            packageType: generic
+            repositories:
+            - ubuntu-local
+            - ubuntu-remote
+            defaultDeploymentRepo: ubuntu-local
+
+          vm-images:
+            rclass: local
+            packageType: generic

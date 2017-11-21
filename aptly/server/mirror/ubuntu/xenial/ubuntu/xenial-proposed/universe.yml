@@ -2,7 +2,8 @@ parameters:
   _param:
     linux_system_country_code: cz
     aptly_server_mirror_ubuntu_xenial_sources: ${_param:aptly_server_mirror_ubuntu_sources}
-    mirror_xenial-proposed-universe_source: http://${_param:linux_system_country_code}.archive.ubuntu.com/ubuntu/
+    ubuntu_mirror_url: ${_param:linux_system_country_code}.archive.ubuntu.com
+    mirror_xenial-proposed-universe_source: http://${_param:ubuntu_mirror_url}/ubuntu/
     mirror_xenial-proposed-universe_distribution: xenial-proposed
     mirror_xenial-proposed-universe_components: universe
     mirror_xenial-proposed-universe_gpgkeys:

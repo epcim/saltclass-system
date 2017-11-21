@@ -15,8 +15,8 @@ parameters:
             - httplog
           balance: source
           timeout:
-            server: 10m
-            client: 10m
+            server: 90m
+            client: 90m
           binds:
             - address: ${_param:haproxy_aptly_api_bind_host}
               port: ${_param:haproxy_aptly_api_bind_port}

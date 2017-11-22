@@ -1,0 +1,18 @@
+---
+summary:
+  - |
+    Forward Rundeck main page through Proxy configurations. Default Rundeck service configuration does not allow to get access through external-proxy-address and exposed rundeck port (by default: 14440).
+    In case of using Devops Portal through external proxy networks, need to define additional configuration, otherwise Rundeck tab will be unavailable.
+
+features:
+  - |
+    * Need to define following configuration on cluster level, then follow instructions in OPS guide:
+
+      .. code-block:: yaml
+         rundeck_forward_iframe: True
+         rundeck_iframe_host: "external-proxy-endpoint"
+         rundeck_iframe_port: "external-proxy-port" 
+         rundeck_iframe_ssl: False
+
+fixes:
+  - https://mirantis.jira.com/browse/PROD-16157 

@@ -17,3 +17,4 @@ parameters:
         credentials:
           username: ${_param:rundeck_client_username}
           password: ${_param:rundeck_client_password}
+          api_token: ${_param:rundeck_client_password}

@@ -2,26 +2,27 @@ parameters:
   _param:
     fluentd_default_output_file: /var/log/td-agent/default-all.log
   fluentd:
-    config:
-      dollar: '$'
-      label:
-        default_output:
-          filter:
-            add_general_fields:
-              tag: "**"
-              type: record_transformer
-              enable_ruby: true
-              record:
-                - name: Type
-                  value: log
-                - name: environment_label
-                  value: ${_param:cluster_domain}
-                - name: Hostname
-                  value: ${fluentd:config:dollar}{ hostname }
-                - name: Timestamp
-                  value: ${fluentd:config:dollar}{ time.strftime('%Y-%m-%dT%H:%M:%S%z') }
-          match:
-            everything:
-              tag: '**'
-              type: 'file'
-              path: ${_param:fluentd_default_output_file}
+    agent:
+      config:
+        dollar: '$'
+        label:
+          default_output:
+            filter:
+              add_general_fields:
+                tag: "**"
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: Type
+                    value: log
+                  - name: environment_label
+                    value: ${_param:cluster_domain}
+                  - name: Hostname
+                    value: ${fluentd:config:dollar}{ hostname }
+                  - name: Timestamp
+                    value: ${fluentd:config:dollar}{ time.strftime('%Y-%m-%dT%H:%M:%S%z') }
+            match:
+              everything:
+                tag: '**'
+                type: 'file'
+                path: ${_param:fluentd_default_output_file}

@@ -8,3 +8,7 @@ parameters:
       package:
         python-msgpack:
           version: latest
+      apt:
+        config:
+          compression-workaround:
+            "Acquire::CompressionTypes::Order": "gz"

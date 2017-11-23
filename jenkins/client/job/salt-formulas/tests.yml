@@ -114,7 +114,6 @@ parameters:
             - name: supervisor
             - name: swift
             - name: taiga
-            - name: tinyproxy
             - name: telegraf
             - name: tinyproxy
             - name: tftpd-hpa

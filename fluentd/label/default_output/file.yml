@@ -4,7 +4,6 @@ parameters:
   fluentd:
     agent:
       config:
-        dollar: '$'
         label:
           default_output:
             filter:
@@ -18,9 +17,9 @@ parameters:
                   - name: environment_label
                     value: ${_param:cluster_domain}
                   - name: Hostname
-                    value: ${fluentd:config:dollar}{ hostname }
+                    value: ${fluentd:dollar}{ hostname }
                   - name: Timestamp
-                    value: ${fluentd:config:dollar}{ time.strftime('%Y-%m-%dT%H:%M:%S%z') }
+                    value: ${fluentd:dollar}{ time.strftime('%Y-%m-%dT%H:%M:%S%z') }
             match:
               everything:
                 tag: '**'

@@ -10,6 +10,9 @@ parameters:
         dpdk_socket_mem: "${_param:compute_ovs_dpdk_socket_mem}"
         dpdk_lcore_mask: "${_param:compute_ovs_dpdk_lcore_mask}"
         memory_channels: "${_param:compute_ovs_memory_channels}"
+        vhost_socket_dir:
+          name: "openvswitch-vhost"
+          path: "/run/openvswitch-vhost"
   neutron:
     compute:
       dpdk: True

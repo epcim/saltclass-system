@@ -5,6 +5,7 @@ parameters:
     mirror_cassandra-21x_distribution: 21x
     mirror_cassandra-21x_components: main
     mirror_cassandra-21x_gpgkeys:
+      - A278B781FE4B2BDA
       - F758CE318D77295D
       - 2B5C1B00
       - 0353B12C

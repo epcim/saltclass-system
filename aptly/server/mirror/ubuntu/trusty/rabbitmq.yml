@@ -4,6 +4,7 @@ parameters:
     mirror_rabbitmq-testing-trusty_distribution: testing
     mirror_rabbitmq-testing-trusty_components: main
     mirror_rabbitmq-testing-trusty_gpgkeys:
+      - 6B73A36E6026DFCA
       - 056E8E56
   aptly:
     server:

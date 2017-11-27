@@ -1,9 +1,12 @@
 classes:
 - service.kibana.server.single
 parameters:
+  _param:
+    kibana_version: 4
   kibana:
     server:
       enabled: true
+      version: ${_param:kibana_version}
       default_app_id: "dashboard/logs"
       bind:
         address: ${_param:single_address}

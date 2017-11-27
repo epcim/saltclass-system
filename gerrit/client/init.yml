@@ -47,16 +47,16 @@ parameters:
           - name: create
             group: devops-core
           labels:
-          - name: label-Code-Review
+          - name: Code-Review
             group: devops-core
             score: -2..+2
-          - name: label-Code-Review
+          - name: Code-Review
             group: Non-Interactive Users
             score: -1..+1
-          - name: label-Verified
+          - name: Verified
             group: Non-Interactive Users
             score: -1..+1
-          - name: label-Workflow
+          - name: Workflow
             group: devops-core
             score: -1..+1
         "refs/tags/*":

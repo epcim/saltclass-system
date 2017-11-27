@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        dkruglov:
+          enabled: true
+          name: dkruglov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Dmitriy Kruglov
+          home: /home/dkruglov
+          email: dkruglov@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        dkruglov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDd0peqhFCRgFhxsAV23TJ6la96FH7CFd/XYW67vaxWrlWSZsba9+aMMpNFPjNfrcAqZsKNlRk3EOEAHyS4JQHcOzQAxYU5kCnqg2YnIY3bp4ihDwF/V+4xMRvt8avdlo9qBFQGqiX7iPleMM089wiATi6NYsacooqNEhrjf3NvqeJBK2NLS82aSdOFF7reC58hyomArD1dJE1usF28l5+i8d8ALlzOlMLLaIRPFmbJeT43S+VXNycREektwVbXvF+Lmt2FST1oQD2KMd+aWltLsGg2KlXwlzMIod1UuYx0ZcIk7o1GYY7duNP+gmldj+TTqAgqlOChusw8iAdOUPff dkruglov@mirantis.com
+          user: ${linux:system:user:dkruglov}

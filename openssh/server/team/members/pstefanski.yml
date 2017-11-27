@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        pstefanski:
+          enabled: true
+          name: pstefanski
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Pawel Stefanski
+          home: /home/pstefanski
+          email: pstefanski@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        pstefanski:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEmhgYMXA98zTAHALZKpgD4MIhHsUcAbrw0dM5AroBKiGBAEqlClxKxzsg7cC7yv4P8TloIoV656ywtgiRIfTAYoXGANxBgkeDfHFzlBQ7yYf8xU1Cl5jBG2xB9FnPJQYtxFJD36dAsUPQ4ykROw0epfBv+CCqgqmh6AWuIRnY8vGx6o3oKu4eZ4P0iSGuN2ITfVkGc32WoXFI0qIZPrnWLmIf4+LwbeA3aNZ54La5Er2wgrzdwF3D2MOBg964gCnuauUneY4WDkO81W+yUB7MA1n/WQP5dgLwdNTXiMtyNtuXs+QeEzlag2fRvMkmsUoU7oaIC3iuW8mf6967n+ED
+          user: ${linux:system:user:pstefanski}

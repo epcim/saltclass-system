@@ -15,3 +15,6 @@ parameters:
           - pin: 'release a=${_param:linux_system_repo_mcp_extra_version}'
             priority: 1100
             package: '*'
+          - pin: 'release a=${_param:linux_system_repo_mcp_extra_version}'
+            priority: 500
+            package: 'libsodium18'

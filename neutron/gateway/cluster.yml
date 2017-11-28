@@ -4,6 +4,11 @@ parameters:
   _param:
     neutron_enable_qos: False
     neutron_enable_vlan_aware_vms: False
+  linux:
+    system:
+      kernel:
+        sysctl:
+          fs.inotify.max_user_instances: 4096
   neutron:
     gateway:
       dvr: ${_param:neutron_gateway_dvr}

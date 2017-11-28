@@ -17,6 +17,7 @@ parameters:
         - method groovy.util.XmlParser parseText java.lang.String
         - method hudson.PluginManager getPlugins
         - method hudson.PluginWrapper getShortName
+        - method hudson.model.Hudson getSlaves
         - method hudson.model.Item getName
         - method hudson.model.ItemGroup getItem java.lang.String
         - method hudson.model.ItemGroup getItems

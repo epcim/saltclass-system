@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    jenkins_aptly_storages: "local"
   jenkins:
     client:
       view:
@@ -92,3 +94,7 @@ parameters:
                 type: string
                 default: "all"
                 description: "Comma separated list (,)"
+              STORAGES:
+                type: string
+                default: "${_param:jenkins_aptly_storages}"
+                description: "Comma separated list of storage"

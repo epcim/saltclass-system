@@ -1,6 +1,5 @@
 classes:
 - service.nova.compute.kvm
-- service.iptables.server
 parameters:
   _param:
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
@@ -95,15 +94,3 @@ parameters:
         public_key: ${_param:nova_compute_ssh_public}
         private_key: ${_param:nova_compute_ssh_private}
       my_ip: ${_param:single_address}
-      libvirt:
-        uri: qemu+unix:///system?socket=/var/run/libvirt/libvirt-sock
-  iptables:
-    service:
-      enabled: true
-      chain:
-        INPUT:
-          rules:
-            # deny any connections to libvirt port
-            - destination_port: 16509
-              protocol: tcp
-              jump: DROP

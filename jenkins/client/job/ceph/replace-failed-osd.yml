@@ -33,9 +33,9 @@ parameters:
             DEVICE:
               type: string
               description: Comma separated list of failed devices that will be replaced at HOST (/dev/sdb,/dev/sdc)
-            JOURNAL_OR_BLOCKDB_PARTITION:
+            JOURNAL_BLOCKDB_BLOCKWAL_PARTITION:
               type: string
-              description: Comma separated list of partitions where journal or block_db for the failed devices on this HOST were stored (/dev/sdh2,/dev/sdh3)
+              description: Comma separated list of partitions where journal, block_db or block_wal for the failed devices on this HOST were stored (/dev/sdh2,/dev/sdh3)
             ADMIN_HOST:
               type: string
               description: Host with admin keyring and correct crushmap file in /etc/ceph/crushmap

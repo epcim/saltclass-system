@@ -1,3 +1,4 @@
+# client role is deprecated. Use ceph_common.yml instead
 classes:
 - system.ceph.client.container
 - system.ceph.monitoring.cluster_stats

@@ -1,0 +1,6 @@
+classes:
+- service.ceph.common.container
+- system.ceph.monitoring.cluster_stats
+parameters:
+  _param:
+    ceph_common_prefix_dir: /srv/volumes/ceph

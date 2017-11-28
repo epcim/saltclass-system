@@ -24,6 +24,8 @@ parameters:
         - method hudson.model.Job getBuildByNumber int
         - method hudson.model.Job getBuilds
         - method hudson.model.Job getLastBuild
+        - method hudson.model.Node getLabelString
+        - method hudson.model.Node getNodeName
         - method hudson.model.Run getEnvironment
         - method hudson.model.Run getId
         - method hudson.model.Run getNumber

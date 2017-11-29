@@ -6,6 +6,7 @@ parameters:
     java_environment_version: "8"
     java_environment_platform: openjdk
     elasticsearch_cluster_name: elasticsearch
+    elasticsearch_version: 2
   linux:
     system:
       sysctl:
@@ -16,6 +17,7 @@ parameters:
       headless: true
   elasticsearch:
     server:
+      version: ${_param:elasticsearch_version}
       name: ${_param:elasticsearch_cluster_name}
       enabled: true
       master: true

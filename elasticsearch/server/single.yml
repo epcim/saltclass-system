@@ -2,6 +2,8 @@ classes:
 - service.java.environment.openjdk8
 - service.elasticsearch.server.single
 parameters:
+  _param:
+    elasticsearch_version: 2
   linux:
     system:
       sysctl:
@@ -12,6 +14,7 @@ parameters:
       headless: true
   elasticsearch:
     server:
+      version: ${_param:elasticsearch_version}
       enabled: true
       bind:
         address: ${_param:single_address}

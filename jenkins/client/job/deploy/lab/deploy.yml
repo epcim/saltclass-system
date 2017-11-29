@@ -97,7 +97,7 @@ parameters:
               # aws api
               AWS_STACK_REGION:
                 type: string
-                default: "us-west-2"
+                default: "eu-central-1"
               AWS_API_CREDENTIALS:
                 type: string
                 default: "aws-credentials"

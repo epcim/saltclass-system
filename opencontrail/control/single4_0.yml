@@ -5,14 +5,13 @@ parameters:
   _param:
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
+    opencontrail_analytics_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analytics
+    opencontrail_analyticsdb_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analyticsdb
+    opencontrail_controller_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-controller
 # Temprorary fix for MOS9 packages to pin old version of kafka
   linux:
     system:
       package:
-        librdkafka1:
-          version: 0.9.0-0contrail0
-        python-kafka:
-          version: 1.0.1-0contrail1
         contrail-api-cli:
           version: latest
       kernel:
@@ -73,11 +72,13 @@ parameters:
           password: ${_param:opencontrail_stats_password}
   opencontrail:
     common:
+      config_only: true
       identity:
         host: ${_param:openstack_control_address}
       network:
         host: ${_param:openstack_control_address}
     config:
+      config_only: true
       network:
         host: ${_param:openstack_control_address}
       bind:
@@ -96,6 +97,7 @@ parameters:
         region: ${_param:openstack_region}
         host: ${_param:openstack_control_address}
     control:
+      config_only: true
       analytics:
         members:
         - host: ${_param:single_address}
@@ -108,6 +110,7 @@ parameters:
       discovery:
         host: None
     web:
+      config_only: true
       analytics:
         host: ${_param:single_address}
       cache:
@@ -115,14 +118,16 @@ parameters:
       identity:
         host: ${_param:openstack_control_address}
       database:
-        port: 9042
+        port: 9041
       network:
         host: ${_param:openstack_control_address}
     database:
+      config_only: true
       analytics:
         members:
         - host: ${_param:single_address}
     collector:
+      config_only: true
       discovery:
         host: None
       database:
@@ -138,3 +143,48 @@ parameters:
       config:
         members:
         - host: ${_param:single_address}
+  docker:
+    client:
+      compose:
+        opencontrail_api:
+          status: up
+          pull: true
+          service:
+            controller:
+              image: ${_param:opencontrail_controller_image}
+              volumes:
+                - /etc/contrail:/etc/contrail
+                - /var/lib/configdb:/var/lib/cassandra
+                - /var/lib/config_zookeeper_data:/var/lib/zookeeper
+                - /var/lib/zookeeper/myid:/var/lib/zookeeper/myid
+                - /etc/cassandra/cassandra-env.sh:/etc/cassandra/cassandra-env.sh
+                - /etc/cassandra/cassandra.yaml:/etc/cassandra/cassandra.yaml
+                - /etc/cassandra/logback.xml:/etc/cassandra/logback.xml
+                - /etc/zookeeper/conf/zoo.cfg:/etc/zookeeper/conf/zoo.cfg
+                - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
+              network_mode: "host"
+              privileged: true
+            analytics:
+              image: ${_param:opencontrail_analytics_image}
+              network_mode: "host"
+              privileged: true
+              volumes:
+                - /etc/contrail:/etc/contrail
+                - /etc/redis/redis.conf:/etc/redis/redis.conf
+            analyticsdb:
+              image: ${_param:opencontrail_analyticsdb_image}
+              volumes:
+                - /etc/cassandra/cassandra-env-analytics.sh:/etc/cassandra/cassandra-env.sh
+                - /etc/cassandra/cassandra_analytics.yaml:/etc/cassandra/cassandra.yaml
+                - /etc/cassandra/logback.xml:/etc/cassandra/logback.xml
+                - /etc/contrail:/etc/contrail
+                - /var/lib/analyticsdb:/var/lib/cassandra
+                - /var/lib/analyticsdb_zookeeper_data:/var/lib/zookeeper
+                - /var/lib/zookeeper/myid:/var/lib/zookeeper/myid
+                - /usr/share/kafka/config/server.properties:/usr/share/kafka/config/server.properties
+                - /usr/share/kafka/config/consumer.properties:/usr/share/kafka/config/consumer.properties
+                - /usr/share/kafka/config/zookeeper.properties:/usr/share/kafka/config/zookeeper.properties
+                - /etc/zookeeper/conf/zoo_analytics.cfg:/etc/zookeeper/conf/zoo.cfg
+                - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
+              network_mode: "host"
+              privileged: true

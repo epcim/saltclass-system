@@ -11,34 +11,28 @@ parameters:
     opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
     opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
     opencontrail_message_queue_address: ${_param:openstack_message_queue_address}
+    opencontrail_analytics_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analytics
+    opencontrail_analyticsdb_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analyticsdb
 # Temprorary fix for MOS9 packages to pin old version of kafka
   linux:
     system:
-      package:
-        librdkafka1:
-          version: 0.9.0-0contrail0
-          hold: true
-        python-kafka:
-          version: 1.0.1-0contrail1
-          hold: true
       kernel:
         modules:
         - nf_conntrack_ipv4
   opencontrail:
     common:
+      config_only: true
       identity:
         host: ${_param:openstack_control_address}
       network:
         host: ${_param:openstack_control_address}
     collector:
+      config_only: true
       discovery:
         host: None
-      database:
-        members:
-        - host: ${_param:opencontrail_analytics_node01_address}
-        - host: ${_param:opencontrail_analytics_node02_address}
-        - host: ${_param:opencontrail_analytics_node03_address}
       analytics:
+        identity:
+          host: ${_param:openstack_control_address}
         members:
         - host: ${_param:opencontrail_analytics_node01_address}
         - host: ${_param:opencontrail_analytics_node02_address}
@@ -55,6 +49,7 @@ parameters:
         - host: ${_param:opencontrail_control_node02_address}
         - host: ${_param:opencontrail_control_node03_address}
     database:
+      config_only: true
       discovery:
         host: None
       analytics:
@@ -62,3 +57,34 @@ parameters:
         - host: ${_param:opencontrail_analytics_node01_address}
         - host: ${_param:opencontrail_analytics_node02_address}
         - host: ${_param:opencontrail_analytics_node03_address}
+  docker:
+    client:
+      compose:
+        opencontrail_api:
+          status: up
+          pull: true
+          service:
+            analytics:
+              image: ${_param:opencontrail_analytics_image}
+              network_mode: "host"
+              privileged: true
+              volumes:
+                - /etc/contrail:/etc/contrail
+                - /etc/redis/redis.conf:/etc/redis/redis.conf
+            analyticsdb:
+              image: ${_param:opencontrail_analyticsdb_image}
+              volumes:
+                - /etc/cassandra/cassandra-env-analytics.sh:/etc/cassandra/cassandra-env.sh
+                - /etc/cassandra/cassandra_analytics.yaml:/etc/cassandra/cassandra.yaml
+                - /etc/cassandra/logback.xml:/etc/cassandra/logback.xml
+                - /etc/contrail:/etc/contrail
+                - /var/lib/analyticsdb:/var/lib/cassandra
+                - /var/lib/analyticsdb_zookeeper_data:/var/lib/zookeeper
+                - /var/lib/zookeeper/myid:/var/lib/zookeeper/myid
+                - /usr/share/kafka/config/server.properties:/usr/share/kafka/config/server.properties
+                - /usr/share/kafka/config/consumer.properties:/usr/share/kafka/config/consumer.properties
+                - /usr/share/kafka/config/zookeeper.properties:/usr/share/kafka/config/zookeeper.properties
+                - /etc/zookeeper/conf/zoo_analytics.cfg:/etc/zookeeper/conf/zoo.cfg
+                - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
+              network_mode: "host"
+              privileged: true

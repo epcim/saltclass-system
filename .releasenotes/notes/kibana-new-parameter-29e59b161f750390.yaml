@@ -1,11 +1,13 @@
 ---
 summary: >
-    Added a new parameter for Kibana
+  Added a new parameter for Kibana
+
 features:
-  - Added the ``kibana_version`` parameter to specify
-    which version of Kibana should be deployed.
-    Kibana version 4 is deployed by default.
-    To deploy Kibana version 5, specify the
-    ``kibana_version: 5`` parameter in the
-    ``classes/cluster/<cluster_name>/stacklight/server.yml``
-    file of the Reclass model.
+  - |
+    Added the ``kibana_version`` parameter to specify which version of Kibana
+    should be deployed. By default, Kibana v4 is installed.
+
+    To deploy Kibana v5, specify the ``kibana_version: 5`` parameter in the
+    ``classes/cluster/<cluster_name>/stacklight/server.yml`` file of the
+    Reclass model of your MCP deployment.
+

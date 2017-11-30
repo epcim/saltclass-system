@@ -1,0 +1,72 @@
+classes:
+  - system.docker.client.compose
+parameters:
+  _param:
+    docker_image_gerrit: tcpcloud/gerrit:2.13.6
+    docker_image_mysql: tcpcloud/mysql:5.6
+    gerrit_ldap_server: ""
+    gerrit_ldap_bind_user: ""
+    gerrit_ldap_bind_password: ""
+    gerrit_ldap_account_base: ""
+    gerrit_ldap_group_base: ""
+    gerrit_http_listen_url: http://*:8080/
+    gerrit_extra_opts: ""
+  docker:
+    client:
+      compose:
+        gerrit:
+          service:
+            server:
+              image: ${_param:docker_image_gerrit}
+              restart: always
+              ports:
+                - 18083:8080
+                - 29417:29418
+              volumes:
+                - /srv/volumes/gerrit:/var/gerrit/review_site
+              depends_on:
+                - db
+              environment:
+                #GERRIT_INIT_ARGS: ""
+                DATABASE_TYPE: "mysql"
+                DB_PORT_3306_TCP_ADDR: ${_param:cluster_vip_address}
+                DB_ENV_MYSQL_USER: gerrit
+                DB_ENV_MYSQL_PASSWORD: ${_param:mysql_gerrit_password}
+                DB_ENV_MYSQL_DB: gerrit
+                AUTH_TYPE: ${_param:gerrit_auth_type}
+                LDAP_SERVER: ${_param:gerrit_ldap_server}
+                LDAP_ACCOUNTPATTERN: 'uid={username}'
+                LDAP_ACCOUNTBASE: ${_param:gerrit_ldap_account_base}
+                LDAP_GROUPBASE: ${_param:gerrit_ldap_group_base}
+                LDAP_USERNAME: ${_param:gerrit_ldap_bind_user}
+                LDAP_PASSWORD: ${_param:gerrit_ldap_bind_password}
+                WEBURL: ${_param:gerrit_public_host}
+                HTTPD_LISTENURL: ${_param:gerrit_http_listen_url}
+                GERRIT_ADMIN_SSH_PUBLIC: ${_param:gerrit_admin_public_key}
+                GERRIT_ADMIN_PWD: ${_param:gerrit_admin_password}
+                GERRIT_ADMIN_EMAIL: ${_param:gerrit_admin_email}
+                CANLOADINIFRAME: "true"
+                JAVA_OPTIONS: ${_param:gerrit_extra_opts}
+                https_proxy: ${_param:docker_https_proxy}
+                http_proxy: ${_param:docker_http_proxy}
+                no_proxy: ${_param:docker_no_proxy}
+            db:
+              environment:
+                MYSQL_USER: gerrit
+                MYSQL_PASSWORD: ${_param:mysql_gerrit_password}
+                MYSQL_DATABASE: gerrit
+                MYSQL_ROOT_PASSWORD: ${_param:mysql_admin_password}
+                MYSQL_START_TIMEOUT: 300
+              deploy:
+                restart_policy:
+                  condition: any
+              image: "${_param:docker_image_mysql}"
+              ports:
+                - 13306:3306
+              volumes:
+                - /srv/volumes/mysql:/var/lib/mysql
+  linux:
+    system:
+      directory:
+        /srv/volumes/gerrit:
+          makedirs: true

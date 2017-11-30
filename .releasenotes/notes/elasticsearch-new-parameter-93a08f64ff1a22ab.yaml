@@ -1,0 +1,15 @@
+---
+summary: >
+  Added a new parameter for Elasticsearch
+
+features:
+  - |
+    Added the ``elasticsearch_version`` parameter to specify which version of
+    Elasticsearch should be deployed. By default, Elasticsearch v2 is
+    installed.
+
+    To deploy Elasticsearch v5, specify the ``elasticsearch_version: 5``
+    parameter in the
+    ``classes/cluster/<cluster_name>/stacklight/server.yml`` file of
+    the Reclass model of your MCP deployment.
+

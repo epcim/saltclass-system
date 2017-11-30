@@ -1,0 +1,140 @@
+parameters:
+  jenkins:
+    client:
+      job_template:
+        bandit-scanner-template-downstream:
+          name: "{{job_prefix}}-bandit-downstream-{{project}}"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: bandit-openstack-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  packaging/sources/{{project}}:
+                    branches:
+                      - compare_type: "ANT"
+                        name: "mcp/**"
+                skip_vote:
+                  - successful
+                  - failed
+                  - unstable
+                  - not_built
+                event:
+                  change:
+                    - merged
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '^(?s:Patch Set \d+:.*(run bandit)\s*)$'
+                custom_url: '* $JOB_NAME $BUILD_URL'
+            param:
+              GERRIT_PROJECT_URL:
+                type: string
+                description: project url
+                default: ""
+              GERRIT_BRANCH:
+                type: string
+                description: Version of openstack to test
+                default: ""
+              GERRIT_USER:
+                type: string
+                description: user
+                default: "mcp-jenkins"
+              UPSTREAM:
+                type: boolean
+                description: whether to do upstream like testing
+                default: "false"
+              FAIL_ON_TESTS:
+                type: boolean
+                description: whether to do upstream like testing
+                default: "true"
+              SEVERITY:
+                type: string
+                description: Bandit args
+                default: "3"
+              CONFIDENCE:
+                type: string
+                description: confidence
+                default: "2"
+              CREDENTIALS_ID:
+                type: string
+                description: gerrit creds
+                default: "gerrit"
+              REPORT_FORMAT:
+                type: string
+                description: Format for generated report(csv,html,json)
+                default: "csv"
+        bandit-scanner-template-upstream:
+          name: "{{job_prefix}}-bandit-upstream-{{project}}"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: bandit-openstack-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  packaging/sources/{{project}}:
+                    branches:
+                      - compare_type: "ANT"
+                        name: "mcp/**"
+                skip_vote:
+                  - successful
+                  - failed
+                  - unstable
+                  - not_built
+                event:
+                  change:
+                    - merged
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '^(?s:Patch Set \d+:.*(run bandit)\s*)$'
+                custom_url: '* $JOB_NAME $BUILD_URL'
+            param:
+              GERRIT_PROJECT_URL:
+                type: string
+                description: project url
+                default: ""
+              GERRIT_BRANCH:
+                type: string
+                description: Version of openstack to test
+                default: ""
+              GERRIT_USER:
+                type: string
+                description: user
+                default: "mcp-jenkins"
+              UPSTREAM:
+                type: boolean
+                description: whether to do upstream like testing
+                default: "true"
+              FAIL_ON_TESTS:
+                type: boolean
+                description: whether to do upstream like testing
+                default: "true"
+              CREDENTIALS_ID:
+                type: string
+                description: gerrit creds
+                default: "gerrit"
+              REPORT_FORMAT:
+                type: string
+                description: Format for generated report(csv,html,json)
+                default: "csv"

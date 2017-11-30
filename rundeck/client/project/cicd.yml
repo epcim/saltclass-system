@@ -6,6 +6,7 @@ parameters:
     rundeck_cis_os_docker_image: docker-prod-local.artifactory.mirantis.com/mirantis/oss/cis-openstack:latest
     rundeck_cis_openstack:
       auth_url: http://yourcloud.com:5000/v3/auth/tokens
+      endpoint_type: publicURL
       username: admin
       password: password
       cert: plain-certificate
@@ -47,6 +48,9 @@ parameters:
         cis/openstack/auth_url:
           type: password
           content: ${_param:rundeck_cis_openstack:auth_url}
+        cis/openstack/endpoint_type:
+          type: password
+          content: ${_param:rundeck_cis_openstack:endpoint_type}
         cis/openstack/username:
           type: password
           content: ${_param:rundeck_cis_openstack:username}

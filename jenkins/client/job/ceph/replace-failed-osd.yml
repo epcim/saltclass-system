@@ -44,6 +44,10 @@ parameters:
               type: boolean
               default: 'false'
               description: Wait for healthy during pipeline
+            DMCRYPT:
+              type: boolean
+              default: 'false'
+              description: Check if replacing osds were encrypted
             CLUSTER_FLAGS:
               type: string
               description: Flags to be aplied before pipeline and after pipeline (comma-separated list)

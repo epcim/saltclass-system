@@ -2,7 +2,7 @@ classes:
 - system.glance.client
 parameters:
   _param:
-    ubuntu_trusty_image_url: "http://apt.mirantis.com/images/ubuntu-14-04-x64-mcp1.1.qcow2"
+    ubuntu_trusty_image_url: "http://images.mirantis.com/ubuntu-14-04-x64-mcp1.1.qcow2"
     ubuntu_trusty_image_name:  "ubuntu-14-04-x64-mcp1.1"
   glance:
     client:

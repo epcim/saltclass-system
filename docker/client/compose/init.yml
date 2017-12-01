@@ -1,11 +1,10 @@
 classes:
-  - service.docker.client
+  - system.docker.client
 parameters:
   _param:
-    docker_image_compose: docker/compose:1.17.0
+    docker_image_compose: docker/compose:1.17.1
   docker:
     client:
-      enabled: true
       compose:
         source:
           engine: docker

@@ -1,0 +1,6 @@
+classes:
+  - service.docker.client
+parameters:
+  docker:
+    client:
+      enabled: true

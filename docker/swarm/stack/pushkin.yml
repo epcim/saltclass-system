@@ -22,6 +22,7 @@ parameters:
     sfdc_consumer_key: example_consumer_key
     sfdc_consumer_secret: example_consumer_secret
     sfdc_organization_id: example_organization_id
+    sfdc_environment_id: 0
     sfdc_sandbox_enabled: true
   docker:
     client:
@@ -46,6 +47,7 @@ parameters:
             SFDC_CONSUMER_KEY: ${_param:sfdc_consumer_key}
             SFDC_CONSUMER_SECRET: ${_param:sfdc_consumer_secret}
             SFDC_ORGANIZATION_ID: ${_param:sfdc_organization_id}
+            SFDC_ENVIRONMENT_ID: ${_param:sfdc_environment_id}
             SFDC_SANDBOX_ENABLED: ${_param:sfdc_sandbox_enabled}
           service:
             pushkin-api:

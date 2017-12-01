@@ -128,6 +128,8 @@ parameters:
         - host: ${_param:single_address}
     collector:
       config_only: true
+      identity:
+        host: ${_param:openstack_control_address}
       discovery:
         host: None
       database:

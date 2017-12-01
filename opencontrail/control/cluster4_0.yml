@@ -83,6 +83,8 @@ parameters:
         host: ${_param:openstack_control_address}
     control:
       config_only: true
+      identity:
+        host: ${_param:openstack_control_address}
       analytics:
         members:
         - host: ${_param:cluster_node01_address}

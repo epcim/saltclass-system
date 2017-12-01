@@ -30,9 +30,9 @@ parameters:
       config_only: true
       discovery:
         host: None
+      identity:
+        host: ${_param:openstack_control_address}
       analytics:
-        identity:
-          host: ${_param:openstack_control_address}
         members:
         - host: ${_param:opencontrail_analytics_node01_address}
         - host: ${_param:opencontrail_analytics_node02_address}

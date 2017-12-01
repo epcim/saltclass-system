@@ -7,3 +7,7 @@ parameters:
         downstream: oss/rundeck-cis-jobs
         upstream: "git@github.com:Mirantis/rundeck-cis-jobs"
         branches: master
+      - name: security-monkey
+        downstream: oss/security-monkey
+        upstream: "git@github.com:Netflix/security_monkey.git"
+        branches: develop

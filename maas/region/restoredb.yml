@@ -1,0 +1,9 @@
+classes:
+- system.maas.region.single
+parameters:
+  maas:
+    region:
+      database:
+        initial_data:
+          source: ${linux:network:fqdn}
+          host: ${_param:backupninja_backup_host}

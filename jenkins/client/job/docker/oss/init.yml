@@ -6,6 +6,8 @@ classes:
   - system.jenkins.client.job.docker.oss.pushkin-docker
   - system.jenkins.client.job.docker.oss.pushkin-codebase
   - system.jenkins.client.job.docker.oss.pushkin-codebase-ext
+  - system.jenkins.client.job.docker.oss.hce-docker
+  - system.jenkins.client.job.docker.oss.hce-codebase
   - system.jenkins.client.job.docker.oss.rundeck
   - system.jenkins.client.job.docker.oss.security-monkey-docker
   - system.jenkins.client.job.docker.oss.security-monkey-codebase-openstack

@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    jenkins_aptly_storages: "local"
   jenkins:
     client:
       view:

@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_mcp_glusterfs_version: ${_param:apt_mk_version}
+    linux_system_repo_mcp_glusterfs_version_number: "3.12"
+  linux:
+    system:
+      repo:
+        mcp_glusterfs:
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/glusterfs/ ${_param:linux_system_repo_mcp_glusterfs_version} ${_param:linux_system_repo_mcp_glusterfs_version_number}"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_glusterfs_version}'
+            priority: 1100
+            package: '*'

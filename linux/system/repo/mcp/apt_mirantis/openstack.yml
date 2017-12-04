@@ -6,17 +6,17 @@ parameters:
     system:
       repo:
         mirantis_openstack:
-          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:openstack_version} main"
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/openstack/${_param:openstack_version} ${_param:linux_system_repo_mk_openstack_version} main"
           architectures: amd64
-          key_url: "http://${_param:local_repo_url}/public.gpg"
+          key_url: "http://apt.mirantis.com/public.gpg"
           pin:
           - pin: 'release l=${_param:openstack_version}'
             priority: 1100
             package: '*'
         mk_openstack:
-          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/ ${_param:linux_system_repo_mk_openstack_version} ${_param:openstack_version}"
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mk_openstack_version} ${_param:openstack_version}"
           architectures: amd64
-          key_url: "http://${_param:local_repo_url}/public.gpg"
+          key_url: "http://apt.mirantis.com/public.gpg"
           pin:
           - pin: 'release l=${_param:linux_system_repo_mk_openstack_version}'
             priority: 1100

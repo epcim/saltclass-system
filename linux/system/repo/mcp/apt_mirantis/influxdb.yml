@@ -1,0 +1,16 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_mcp_influxdb_version: ${_param:apt_mk_version}
+  linux:
+    system:
+      repo:
+        mcp_influxdb:
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/influxdb/ ${_param:linux_system_repo_mcp_influxdb_version} main"
+          architectures: amd64
+          key_url: "http://apt.mirantis.com/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_influxdb_version}'
+            priority: 1100
+            package: '*'

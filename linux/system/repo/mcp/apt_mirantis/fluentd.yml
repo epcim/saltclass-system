@@ -1,0 +1,16 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_mcp_fluentd_version: ${_param:apt_mk_version}
+  linux:
+    system:
+      repo:
+        mcp_fluentd:
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/fluentd/ ${_param:linux_system_repo_mcp_fluentd_version} main"
+          architectures: amd64
+          key_url: "http://apt.mirantis.com/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_fluentd_version}'
+            priority: 1100
+            package: '*'

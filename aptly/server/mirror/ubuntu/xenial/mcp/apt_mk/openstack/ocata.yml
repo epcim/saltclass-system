@@ -1,0 +1,103 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+
+    mirror_mirantis_openstack_ocata_xenial_source: http://apt.mirantis.com/xenial/openstack/ocata/
+    mirror_mirantis_openstack_ocata_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_ocata_xenial_components: main restricted
+    mirror_mirantis_openstack_ocata_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_ocata_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_ocata_hotfix_xenial_source: http://apt.mirantis.com/xenial/openstack/ocata/hotfix/
+    mirror_mirantis_openstack_ocata_hotfix_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_ocata_hotfix_xenial_components: main restricted
+    mirror_mirantis_openstack_ocata_hotfix_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_ocata_hotfix_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_ocata_security_xenial_source: http://apt.mirantis.com/xenial/openstack/ocata/security/
+    mirror_mirantis_openstack_ocata_security_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_ocata_security_xenial_components: main restricted
+    mirror_mirantis_openstack_ocata_security_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_ocata_security_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_ocata_updates_xenial_source: http://apt.mirantis.com/xenial/openstack/ocata/updates/
+    mirror_mirantis_openstack_ocata_updates_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_ocata_updates_xenial_components: main restricted
+    mirror_mirantis_openstack_ocata_updates_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_ocata_updates_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_ocata_holdback_xenial_source: http://apt.mirantis.com/xenial/openstack/ocata/holdback/
+    mirror_mirantis_openstack_ocata_holdback_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_ocata_holdback_xenial_components: main restricted
+    mirror_mirantis_openstack_ocata_holdback_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_ocata_holdback_xenial_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_ocata_xenial:
+          source: ${_param:mirror_mirantis_openstack_ocata_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_ocata_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_ocata_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_ocata_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_ocata_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/ocata/${_param:apt_mk_version}
+
+        mirantis_openstack_ocata_hotfix_xenial:
+          source: ${_param:mirror_mirantis_openstack_ocata_hotfix_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_ocata_hotfix_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_ocata_hotfix_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_ocata_hotfix_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_ocata_hotfix_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/ocata/hotfix/${_param:apt_mk_version}
+
+        mirantis_openstack_ocata_security_xenial:
+          source: ${_param:mirror_mirantis_openstack_ocata_security_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_ocata_security_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_ocata_security_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_ocata_security_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_ocata_security_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/ocata/security/${_param:apt_mk_version}
+
+        # required for alternative horizon plugins/etc..
+        mirantis_openstack_ocata_updates_xenial:
+          source: ${_param:mirror_mirantis_openstack_ocata_updates_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_ocata_updates_xenial_distribution}
+          components:  ${_param:mirror_mirantis_openstack_ocata_updates_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_ocata_updates_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_ocata_updates_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/ocata/updates/${_param:apt_mk_version}
+
+        # required for salt formulas
+        mirantis_openstack_ocata_holdback_xenial:
+          source: ${_param:mirror_mirantis_openstack_ocata_holdback_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_ocata_holdback_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_ocata_holdback_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_ocata_holdback_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_ocata_holdback_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/ocata/holdback/${_param:apt_mk_version}
+

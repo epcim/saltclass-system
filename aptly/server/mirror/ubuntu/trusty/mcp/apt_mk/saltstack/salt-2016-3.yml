@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    mirror_mirantis_openstack_trusty_saltstack_2016_3_source: http://apt.mirantis.com/trusty/salt/2016.3/
+    mirror_mirantis_openstack_trusty_saltstack_2016_3_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_trusty_saltstack_2016_3_components: main
+    mirror_mirantis_openstack_trusty_saltstack_2016_3_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_trusty_saltstack_2016_3_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_trusty_saltstack_2016_3:
+          source: ${_param:mirror_mirantis_openstack_trusty_saltstack_2016_3_source}
+          distribution: ${_param:mirror_mirantis_openstack_trusty_saltstack_2016_3_distribution}
+          components: ${_param:mirror_mirantis_openstack_trusty_saltstack_2016_3_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_trusty_saltstack_2016_3_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_trusty_saltstack_2016_3_gpgkeys}
+          publisher:
+            component: ${_param:mirror_mirantis_openstack_trusty_saltstack_2016_3_components}
+            distributions:
+              - ubuntu-trusty/salt/2016.3/${_param:apt_mk_version}

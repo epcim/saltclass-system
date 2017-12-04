@@ -1,0 +1,3 @@
+classes:
+- system.aptly.server.mirror.ubuntu.xenial.mcp.apt_mk.saltstack.salt-2016-3
+- system.aptly.server.mirror.ubuntu.xenial.mcp.apt_mk.saltstack.salt-2017-7

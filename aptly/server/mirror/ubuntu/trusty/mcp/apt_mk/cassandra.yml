@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    mirror_mirantis_openstack_trusty_cassandra_source: http://apt.mirantis.com/trusty/cassandra/
+    mirror_mirantis_openstack_trusty_cassandra_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_trusty_cassandra_components: 21x
+    mirror_mirantis_openstack_trusty_cassandra_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_trusty_cassandra_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_trusty_cassandra:
+          source: ${_param:mirror_mirantis_openstack_trusty_cassandra_source}
+          distribution: ${_param:mirror_mirantis_openstack_trusty_cassandra_distribution}
+          components: ${_param:mirror_mirantis_openstack_trusty_cassandra_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_trusty_cassandra_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_trusty_cassandra_gpgkeys}
+          publisher:
+            component: ${_param:mirror_mirantis_openstack_trusty_cassandra_components}
+            distributions:
+              - ubuntu-trusty/cassandra/${_param:apt_mk_version}/

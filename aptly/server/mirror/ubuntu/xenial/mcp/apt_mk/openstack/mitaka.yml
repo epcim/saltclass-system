@@ -1,0 +1,103 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+
+    mirror_mirantis_openstack_mitaka_xenial_source: http://apt.mirantis.com/xenial/openstack/mitaka/
+    mirror_mirantis_openstack_mitaka_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_mitaka_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_mitaka_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_source: http://apt.mirantis.com/xenial/openstack/mitaka/hotfix/
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_mitaka_hotfix_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_mitaka_security_xenial_source: http://apt.mirantis.com/xenial/openstack/mitaka/security/
+    mirror_mirantis_openstack_mitaka_security_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_mitaka_security_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_security_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_mitaka_security_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_mitaka_updates_xenial_source: http://apt.mirantis.com/xenial/openstack/mitaka/updates/
+    mirror_mirantis_openstack_mitaka_updates_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_mitaka_updates_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_updates_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_mitaka_updates_xenial_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_mitaka_holdback_xenial_source: http://apt.mirantis.com/xenial/openstack/mitaka/holdback/
+    mirror_mirantis_openstack_mitaka_holdback_xenial_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_mitaka_holdback_xenial_components: main restricted
+    mirror_mirantis_openstack_mitaka_holdback_xenial_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_mitaka_holdback_xenial_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_mitaka_xenial:
+          source: ${_param:mirror_mirantis_openstack_mitaka_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/mitaka/${_param:apt_mk_version}
+
+        mirantis_openstack_mitaka_hotfix_xenial:
+          source: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_hotfix_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/mitaka/hotfix/${_param:apt_mk_version}
+
+        mirantis_openstack_mitaka_security_xenial:
+          source: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_security_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/mitaka/security/${_param:apt_mk_version}
+
+        # required for alternative horizon plugins/etc..
+        mirantis_openstack_mitaka_updates_xenial:
+          source: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_distribution}
+          components:  ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_updates_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/mitaka/updates/${_param:apt_mk_version}
+
+        # required for salt formulas
+        mirantis_openstack_mitaka_holdback_xenial:
+          source: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_source}
+          distribution: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_distribution}
+          components: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_mitaka_holdback_xenial_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-xenial/openstack/mitaka/holdback/${_param:apt_mk_version}
+

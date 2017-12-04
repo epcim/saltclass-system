@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    mirror_mirantis_openstack_xenial_grafana_source: http://apt.mirantis.com/xenial/grafana/
+    mirror_mirantis_openstack_xenial_grafana_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_xenial_grafana_components: main
+    mirror_mirantis_openstack_xenial_grafana_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_xenial_grafana_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_xenial_grafana:
+          source: ${_param:mirror_mirantis_openstack_xenial_grafana_source}
+          distribution: ${_param:mirror_mirantis_openstack_xenial_grafana_distribution}
+          components: ${_param:mirror_mirantis_openstack_xenial_grafana_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_xenial_grafana_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_xenial_grafana_gpgkeys}
+          publisher:
+            component: ${_param:mirror_mirantis_openstack_xenial_grafana_components}
+            distributions:
+              - ubuntu-xenial/grafana/${_param:apt_mk_version}

@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    mirror_mirantis_openstack_xenial_maas_source: http://apt.mirantis.com/xenial/maas/
+    mirror_mirantis_openstack_xenial_maas_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_xenial_maas_components: main
+    mirror_mirantis_openstack_xenial_maas_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_xenial_maas_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_xenial_maas:
+          source: ${_param:mirror_mirantis_openstack_xenial_maas_source}
+          distribution: ${_param:mirror_mirantis_openstack_xenial_maas_distribution}
+          components: ${_param:mirror_mirantis_openstack_xenial_maas_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_xenial_maas_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_xenial_maas_gpgkeys}
+          publisher:
+            component: ${_param:mirror_mirantis_openstack_xenial_maas_components}
+            distributions:
+              - ubuntu-xenial/maas/${_param:apt_mk_version}

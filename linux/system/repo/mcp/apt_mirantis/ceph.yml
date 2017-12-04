@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_mcp_ceph_version: ${_param:apt_mk_version}
+    linux_system_repo_mcp_ceph_codename: luminous
+  linux:
+    system:
+      repo:
+        mcp_ceph:
+          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ceph/ ${_param:linux_system_repo_mcp_ceph_version} ${_param:linux_system_repo_mcp_ceph_codename}"
+          architectures: amd64
+          key_url: "http://apt.mirantis.com/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_ceph_version}'
+            priority: 1100
+            package: '*'

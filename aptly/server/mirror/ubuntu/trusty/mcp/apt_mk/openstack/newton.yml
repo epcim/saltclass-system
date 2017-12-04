@@ -1,0 +1,103 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+
+    mirror_mirantis_openstack_newton_trusty_source: http://apt.mirantis.com/trusty/openstack/newton/
+    mirror_mirantis_openstack_newton_trusty_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_newton_trusty_components: main restricted
+    mirror_mirantis_openstack_newton_trusty_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_newton_trusty_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_newton_hotfix_trusty_source: http://apt.mirantis.com/trusty/openstack/newton/hotfix/
+    mirror_mirantis_openstack_newton_hotfix_trusty_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_newton_hotfix_trusty_components: main restricted
+    mirror_mirantis_openstack_newton_hotfix_trusty_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_newton_hotfix_trusty_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_newton_security_trusty_source: http://apt.mirantis.com/trusty/openstack/newton/security/
+    mirror_mirantis_openstack_newton_security_trusty_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_newton_security_trusty_components: main restricted
+    mirror_mirantis_openstack_newton_security_trusty_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_newton_security_trusty_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_newton_updates_trusty_source: http://apt.mirantis.com/trusty/openstack/newton/updates/
+    mirror_mirantis_openstack_newton_updates_trusty_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_newton_updates_trusty_components: main restricted
+    mirror_mirantis_openstack_newton_updates_trusty_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_newton_updates_trusty_gpgkeys:
+      - A76882D3
+
+    mirror_mirantis_openstack_newton_holdback_trusty_source: http://apt.mirantis.com/trusty/openstack/newton/holdback/
+    mirror_mirantis_openstack_newton_holdback_trusty_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_newton_holdback_trusty_components: main restricted
+    mirror_mirantis_openstack_newton_holdback_trusty_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_newton_holdback_trusty_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_newton_trusty:
+          source: ${_param:mirror_mirantis_openstack_newton_trusty_source}
+          distribution: ${_param:mirror_mirantis_openstack_newton_trusty_distribution}
+          components: ${_param:mirror_mirantis_openstack_newton_trusty_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_newton_trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_newton_trusty_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/openstack/newton/${_param:apt_mk_version}
+
+        mirantis_openstack_newton_hotfix_trusty:
+          source: ${_param:mirror_mirantis_openstack_newton_hotfix_trusty_source}
+          distribution: ${_param:mirror_mirantis_openstack_newton_hotfix_trusty_distribution}
+          components: ${_param:mirror_mirantis_openstack_newton_hotfix_trusty_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_newton_hotfix_trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_newton_hotfix_trusty_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/openstack/newton/hotfix/${_param:apt_mk_version}
+
+        mirantis_openstack_newton_security_trusty:
+          source: ${_param:mirror_mirantis_openstack_newton_security_trusty_source}
+          distribution: ${_param:mirror_mirantis_openstack_newton_security_trusty_distribution}
+          components: ${_param:mirror_mirantis_openstack_newton_security_trusty_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_newton_security_trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_newton_security_trusty_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/openstack/newton/security/${_param:apt_mk_version}
+
+        # required for alternative horizon plugins/etc..
+        mirantis_openstack_newton_updates_trusty:
+          source: ${_param:mirror_mirantis_openstack_newton_updates_trusty_source}
+          distribution: ${_param:mirror_mirantis_openstack_newton_updates_trusty_distribution}
+          components:  ${_param:mirror_mirantis_openstack_newton_updates_trusty_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_newton_updates_trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_newton_updates_trusty_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/openstack/newton/updates/${_param:apt_mk_version}
+
+        # required for salt formulas
+        mirantis_openstack_newton_holdback_trusty:
+          source: ${_param:mirror_mirantis_openstack_newton_holdback_trusty_source}
+          distribution: ${_param:mirror_mirantis_openstack_newton_holdback_trusty_distribution}
+          components: ${_param:mirror_mirantis_openstack_newton_holdback_trusty_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_newton_holdback_trusty_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_newton_holdback_trusty_gpgkeys}
+          publisher:
+            component: main
+            distributions:
+              - ubuntu-trusty/openstack/newton/holdback/${_param:apt_mk_version}
+

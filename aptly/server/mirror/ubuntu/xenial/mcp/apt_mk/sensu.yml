@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    mirror_mirantis_openstack_xenial_sensu_source: http://apt.mirantis.com/xenial/sensu/
+    mirror_mirantis_openstack_xenial_sensu_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_xenial_sensu_components: main
+    mirror_mirantis_openstack_xenial_sensu_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_xenial_sensu_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_xenial_sensu:
+          source: ${_param:mirror_mirantis_openstack_xenial_sensu_source}
+          distribution: ${_param:mirror_mirantis_openstack_xenial_sensu_distribution}
+          components: ${_param:mirror_mirantis_openstack_xenial_sensu_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_xenial_sensu_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_xenial_sensu_gpgkeys}
+          publisher:
+            component: ${_param:mirror_mirantis_openstack_xenial_sensu_components}
+            distributions:
+              - ubuntu-xenial/sensu/${_param:apt_mk_version}

@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_mcp_elastic_version: ${_param:apt_mk_version}
+    linux_system_repo_mcp_elastic_version_number: "2.x"
+  linux:
+    system:
+      repo:
+        mcp_elastic:
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/elastic/${_param:linux_system_repo_mcp_elastic_version_number}/ ${_param:linux_system_repo_mcp_elastic_version} main"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_elastic_version}'
+            priority: 1100
+            package: '*'

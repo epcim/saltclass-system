@@ -1,0 +1,23 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    mirror_mirantis_openstack_xenial_kibana_source: http://apt.mirantis.com/xenial/kibana/4.6/
+    mirror_mirantis_openstack_xenial_kibana_distribution: ${_param:apt_mk_version}
+    mirror_mirantis_openstack_xenial_kibana_components: "kibana-46"
+    mirror_mirantis_openstack_xenial_kibana_key_url: "http://apt.mirantis.com/public.gpg"
+    mirror_mirantis_openstack_xenial_kibana_gpgkeys:
+      - A76882D3
+  aptly:
+    server:
+      mirror:
+        mirantis_openstack_xenial_kibana:
+          source: ${_param:mirror_mirantis_openstack_xenial_kibana_source}
+          distribution: ${_param:mirror_mirantis_openstack_xenial_kibana_distribution}
+          components: ${_param:mirror_mirantis_openstack_xenial_kibana_components}
+          architectures: amd64
+          key_url: ${_param:mirror_mirantis_openstack_xenial_kibana_key_url}
+          gpgkeys: ${_param:mirror_mirantis_openstack_xenial_kibana_gpgkeys}
+          publisher:
+            component: ${_param:mirror_mirantis_openstack_xenial_kibana_components}
+            distributions:
+              - ubuntu-xenial/kibana/4.6/${_param:apt_mk_version}

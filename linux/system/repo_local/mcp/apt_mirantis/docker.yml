@@ -1,0 +1,16 @@
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_mcp_docker_version: ${_param:apt_mk_version}
+  linux:
+    system:
+      repo:
+        mcp_docker:
+          source: "deb [arch=amd64] http://${_param:local_repo_url}/ubuntu-${_param:linux_system_codename}/docker/ ${_param:linux_system_repo_mcp_docker_version} stable"
+          architectures: amd64
+          key_url: "http://${_param:local_repo_url}/public.gpg"
+          clean_file: true
+          pin:
+          - pin: 'release a=${_param:linux_system_repo_mcp_docker_version}'
+            priority: 1100
+            package: '*'

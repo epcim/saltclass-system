@@ -11,7 +11,7 @@ parameters:
           email: mlos@mirantis.com
   openssh:
     server:
-      enabled: true
+      enabled: false
       user:
         mlos:
           enabled: true

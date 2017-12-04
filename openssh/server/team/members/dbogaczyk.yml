@@ -11,7 +11,7 @@ parameters:
           email: dbogaczyk@mirantis.com
   openssh:
     server:
-      enabled: true
+      enabled: false
       user:
         dbogaczyk:
           enabled: true

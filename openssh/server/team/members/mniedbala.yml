@@ -11,7 +11,7 @@ parameters:
           email: mniedbala@mirantis.com
   openssh:
     server:
-      enabled: true
+      enabled: false
       user:
         mniedbala:
           enabled: true

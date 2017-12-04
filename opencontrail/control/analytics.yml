@@ -4,6 +4,9 @@ classes:
 - service.opencontrail.control.analytics
 - system.haproxy.proxy.listen.opencontrail.analytics
 parameters:
+  _param:
+    opencontrail_kafka_log_cleanup_mtime: '+7'
+    opencontrail_kafka_log_cleanup_dir: '/usr/share/kafka/logs/'
 # Temprorary fix for MOS9 packages to pin old version of kafka
   linux:
     system:
@@ -17,6 +20,12 @@ parameters:
       kernel:
         modules:
         - nf_conntrack_ipv4
+      job:
+        kafka_logs_cleanup:
+          command: "find ${_param:opencontrail_kafka_log_cleanup_dir} -name '*.log.*' -type f -mtime ${_param:opencontrail_kafka_log_cleanup_mtime} -exec rm {} \\;"
+          identifier: kafka_logs_cleanup
+          hour: 0
+          minute: 0
   opencontrail:
     common:
       identity:

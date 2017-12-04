@@ -3,6 +3,8 @@ classes:
 - service.haproxy.proxy.single
 parameters:
   _param:
+    opencontrail_kafka_log_cleanup_mtime: '+7'
+    opencontrail_kafka_log_cleanup_dir: '/usr/share/kafka/logs/'
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
     opencontrail_analytics_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analytics
@@ -17,6 +19,12 @@ parameters:
       kernel:
         modules:
         - nf_conntrack_ipv4
+      job:
+        kafka_logs_cleanup:
+          command: "find ${_param:opencontrail_kafka_log_cleanup_dir} -name '*.log.*' -type f -mtime ${_param:opencontrail_kafka_log_cleanup_mtime} -exec rm {} \\;"
+          identifier: kafka_logs_cleanup
+          hour: 0
+          minute: 0
   haproxy:
     proxy:
       listen:
@@ -186,6 +194,7 @@ parameters:
                 - /usr/share/kafka/config/server.properties:/usr/share/kafka/config/server.properties
                 - /usr/share/kafka/config/consumer.properties:/usr/share/kafka/config/consumer.properties
                 - /usr/share/kafka/config/zookeeper.properties:/usr/share/kafka/config/zookeeper.properties
+                - /usr/share/kafka/logs:/usr/share/kafka/logs
                 - /etc/zookeeper/conf/zoo_analytics.cfg:/etc/zookeeper/conf/zoo.cfg
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
               network_mode: "host"

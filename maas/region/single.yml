@@ -36,7 +36,7 @@ parameters:
         dnssec_validation: 'no'
         enable_third_party_drivers: true
         maas_name: mas01
-        active_discovery_interval: '600'
+        active_discovery_interval: 600
         ntp_external_only: true
         upstream_dns: ${_param:dns_server01}
         enable_http_proxy: false

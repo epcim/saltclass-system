@@ -2,7 +2,7 @@ classes:
 - system.glance.client
 parameters:
   _param:
-    cirros_image_url: "http://apt.mirantis.com/images/cirros-x64-20170828.qcow2"
+    cirros_image_url: "http://images.mirantis.com/cirros-x64-20170828.qcow2"
     cirros_image_name:  "cirros-0.3.0-x86_64"
   glance:
     client:

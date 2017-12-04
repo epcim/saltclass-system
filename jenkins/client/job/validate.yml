@@ -126,6 +126,14 @@ parameters:
               type: string
               default: ""
               description: Git branch which will be used during the checkout
+            RALLY_SCENARIOS:
+              type: string
+              default: ""
+              description: Rally scenarios directory or file with scenarios
+            RALLY_TASK_ARGS_FILE:
+              type: string
+              default: ""
+              description: Rally scenarios arguments file
             AVAILABILITY_ZONE:
               type: string
               default: "nova"

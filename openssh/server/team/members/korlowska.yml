@@ -11,7 +11,7 @@ parameters:
           email: korlowska@mirantis.com
   openssh:
     server:
-      enabled: true
+      enabled: false
       user:
         korlowska:
           enabled: true

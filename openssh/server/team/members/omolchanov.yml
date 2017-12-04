@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        omolchanov:
+          enabled: true
+          name: omolchanov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Oleksii Molchanov
+          home: /home/omolchanov
+          email: omolchanov@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        myatsenko:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCulNT7qgpJtIoLshljGonHfWk5IYh/MhzO2PEh3GnzrsnI8Mgv2W8TCD4ZB7RbSP6Jt74T7P6F4Mgzag/Nxjwimh7cUJoJZQH54QC4GVBN+YG+CRjEhIDn/OEM9q+6fnAWqBLBf/k0pzeRxWM4mLpcU+6DSPS57qjEKG5OfLCgFbBFg+4EdGP9HNVTLcMBglo7vTWtvzaGjJgH0XFXjx1fXW9JftEmwMzNdoYpQ/a19JYC2x5vu0cGWUjdMWmrzJbnTJ7SwnVYfD2mhUYDi8WGy/nCk67tb6qKCAUN5kvCEWrMPDhVEcBfvyhXU2wVnZHJbOoZxrBiici9q2U7KDYT alex@alex-B85M-DS3H
+          user: ${linux:system:user:omolchanov}

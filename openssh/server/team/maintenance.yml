@@ -1,0 +1,9 @@
+classes:
+- system.linux.system.sudo
+- system.openssh.server.team.members.astupnikov
+- system.openssh.server.team.members.dmeltsaykin
+- system.openssh.server.team.members.myatsenko
+- system.openssh.server.team.members.omolchanov
+parameters:
+  _param:
+    linux_system_user_sudo: true

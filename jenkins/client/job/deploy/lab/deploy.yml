@@ -71,6 +71,9 @@ parameters:
                 type: string
                 default: 'deploy-stack-cleanup'
 
+              STACK_RECLASS_ADDRESS:
+                type: string
+                default: ""
               STACK_RECLASS_BRANCH:
                 type: string
                 default: ""

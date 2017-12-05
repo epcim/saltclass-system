@@ -96,3 +96,59 @@ parameters:
                 type: string
                 default: "${_param:jenkins_aptly_storages}"
                 description: "Comma separated list of storage"
+      job_template:
+        aptly-all:
+          name: aptly-{{operation}}-all-{{source}}-{{target}}
+          jobs:
+            - operation: promote
+              diff_only: false
+              source: nightly
+              target: testing
+            - operation: promote
+              diff_only: false
+              source: testing
+              target: stable
+          template:
+            discard:
+              build:
+                keep_num: 25
+              artifact:
+                keep_num: 25
+            type: workflow-scm
+            concurrent: false
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              credentials: "gerrit"
+              script: aptly-promote-pipeline.groovy
+            param:
+              SOURCE:
+                type: string
+                default: "(.*)/{{source}}"
+              TARGET:
+                type: string
+                default: "{0}/{{target}}"
+              RECREATE:
+                type: boolean
+                default: 'false'
+              DUMP_PUBLISH:
+                type: boolean
+                default: 'true'
+              DIFF_ONLY:
+                type: boolean
+                default: '{{diff_only}}'
+              APTLY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_api_url}"
+              COMPONENTS:
+                type: string
+                default: "all"
+                description: "Comma separated list (,)"
+              PACKAGES:
+                type: string
+                default: "all"
+                description: "Comma separated list (,)"
+              STORAGES:
+                type: string
+                default: "${_param:jenkins_aptly_storages}"
+                description: "Comma separated list of storage"

@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        dbogaczyk:
+          enabled: true
+          name: dbogaczyk
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Dariusz Bogaczyk
+          home: /home/dbogaczyk
+          email: dbogaczyk@mirantis.com
+  openssh:
+    server:
+      user:
+        dbogaczyk:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC471IhcUC1BZlCWdD012E49P9BLGp08Tp45Zn2EQrSPuMUf6kuNyogU6ZSwRPvW9yzTd8DSNKEqr80hYyoX/SDURsKfZaw5iIKFWhj4M/0AODrx01h6Z6r+l4Oj7cgIe4Y24Qbkg0da9Z1nhy+QjKM7So6n+5IBwQLq0IyEuYkljnY7G1cjlDiw41f+S8euIHMZcOP86t+6UJswdwlLswXrF/QZOlkyXTl7N0Yf1z4ehpO8TpFfd9hdsO8Gh0pBfJ1P+ORveeowldDu9zIv4UUs8D8Q+nuujw2JB42XxiK0dq2xXvHUxwsg7+06gD0N5VHJOZTdJBtsEdOBFPO8GZj dbogaczyk@mirantis.com
+          user: ${linux:system:user:dbogaczyk}

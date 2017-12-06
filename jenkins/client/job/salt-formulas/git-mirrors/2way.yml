@@ -205,6 +205,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: salt
               branches: ${_param:salt_formulas_branches}
+            - name: salt-formulas-cookiecutter
+              branches: ${_param:salt_formulas_branches}
             - name: sensu
               branches: ${_param:salt_formulas_branches}
             - name: sentry

@@ -30,6 +30,12 @@ parameters:
               volumes:
                 - /srv/volumes/jenkins:/var/jenkins_home
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
+          network:
+            default:
+              ipam:
+                driver: default
+                config:
+                  - subnet: 172.29.0.0/24
   linux:
     system:
       directory:

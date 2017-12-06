@@ -1,0 +1,19 @@
+---
+summary: >
+  Updated Elasticsearch and Kibana to versions 5
+
+features:
+  - |
+    Updated Elasticsearch and Kibana to v5. Elasticsearch and Kibana v5
+    are now installed by default.
+
+    To upgrade existing Elasticsearch and Kibana installations to v5,
+    follow the procedures described in the MCP Operations Guide.
+
+    .. TODO: add a link to the upgrade procedure.
+
+    Kibana versions prior to 5.6.x are incompatible with Elasticsearch
+    5.x. Therefore, once you upgrade Elasticsearch to v5, you must also
+    upgrade Kibana to v5 as described in the MCP Operations Guide.
+
+    .. TODO: add a link to the upgrade procedure.

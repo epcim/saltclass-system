@@ -36,7 +36,7 @@ parameters:
                 default: "${_param:jenkins_gerrit_url}/{{source}}.git"
               TARGET_URL:
                 type: string
-                default: "https://github.com/{{target}}.git"
+                default: "git@github.com:{{target}}.git"
               CREDENTIALS_ID:
                 type: string
                 default: "gerrit"

@@ -289,7 +289,7 @@ parameters:
               default: "${_param:jenkins_gerrit_url}/salt-formulas/salt-formulas-scripts.git"
             TARGET_URL:
               type: string
-              default: "https://github.com/salt-formulas/salt-formulas-scripts.git"
+              default: "git@github.com:salt-formulas/salt-formulas-scripts.git"
             CREDENTIALS_ID:
               type: string
               default: "gerrit"

@@ -48,3 +48,12 @@ parameters:
       xxxxlarge:
         - system:
             size: 700000
+      huge:
+        - system:
+            size: 1000000
+      xhuge:
+        - system:
+            size: 1500000
+      xxhuge:
+        - system:
+            size: 3000000

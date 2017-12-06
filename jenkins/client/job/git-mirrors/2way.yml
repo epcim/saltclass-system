@@ -7,10 +7,6 @@ parameters:
         git-mirror-2way-common:
           name: git-mirror-2way-{{name}}
           jobs:
-            - name: salt-formulas-scripts
-              source: salt-formulas/salt-formulas-scripts
-              target: salt-formulas/salt-formulas-scripts
-              branches: "master"
             - name: mcp-common-scripts
               source: mcp/mcp-common-scripts
               target: Mirantis/mcp-common-scripts

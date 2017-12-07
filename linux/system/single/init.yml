@@ -21,6 +21,10 @@ parameters:
           version: purged
         mcelog:
           version: latest
+      apt:
+        config:
+          compression-workaround:
+            "Acquire::CompressionTypes::Order": "gz"
       kernel:
         modules:
           - nf_conntrack

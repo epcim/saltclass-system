@@ -10,7 +10,7 @@ parameters:
           architectures: amd64
           key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:openstack_version}/${_param:linux_system_codename}/archive-mcp${_param:openstack_version}.key"
           pin:
-          - pin: 'release a=${_param:openstack_version}'
+          - pin: 'release l=${_param:openstack_version}'
             priority: 1100
             package: '*'
         mk_openstack:
@@ -18,6 +18,6 @@ parameters:
           architectures: amd64
           key_url: "http://apt.mirantis.com/public.gpg"
           pin:
-          - pin: 'release a=${_param:linux_system_repo_mk_openstack_version}'
+          - pin: 'release l=${_param:linux_system_repo_mk_openstack_version}'
             priority: 1100
             package: '*'

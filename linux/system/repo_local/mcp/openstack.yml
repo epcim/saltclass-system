@@ -7,6 +7,6 @@ parameters:
           architectures: amd64
           key_url: "http://${_param:local_repo_url}/public.gpg"
           pin:
-          - pin: 'release a=${_param:openstack_version}'
+          - pin: 'release l=${_param:openstack_version}'
             priority: 1100
             package: '*'

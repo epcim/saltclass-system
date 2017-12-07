@@ -65,6 +65,12 @@ parameters:
                 - 13306:3306
               volumes:
                 - /srv/volumes/mysql:/var/lib/mysql
+          network:
+            default:
+              ipam:
+                driver: default
+                config:
+                  - subnet: 172.30.0.0/24
   linux:
     system:
       directory:

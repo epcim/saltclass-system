@@ -13,3 +13,4 @@ parameters:
       options:
         ipv6: true
         fixed-cidr-v6: fc00::/7
+        storage-driver: overlay2

@@ -131,6 +131,7 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toBoolean java.lang.Boolean
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.lang.Object java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods multiply java.lang.String java.lang.Number
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.lang.String java.lang.Object
         - method java.io.File listFiles
         - method java.lang.String concat java.lang.String
         - method org.jenkinsci.plugins.workflow.steps.FlowInterruptedException getCauses

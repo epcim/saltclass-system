@@ -22,3 +22,5 @@ parameters:
     host:
       options:
         iptables: false
+        log-opts:
+          labels: "io.kubernetes.pod.name"

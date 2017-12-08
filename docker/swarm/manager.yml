@@ -11,3 +11,7 @@ parameters:
       master:
         host: ${_param:cluster_node01_address}
         port: ${_param:docker_swarm_master_port}
+    host:
+      options:
+        log-opts:
+          labels: "com.docker.stack.namespace,com.docker.swarm.service.name,com.docker.swarm.task.name"

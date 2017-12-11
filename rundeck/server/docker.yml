@@ -9,6 +9,10 @@ parameters:
     rundeck_postgresql_host: ${_param:control_vip_address}
     rundeck_postgresql_port: 5432
     rundeck_server_ssh_timeout: 300000
+    rundeck_forward_iframe: False
+    rundeck_iframe_host: "external-proxy-endpoint"
+    rundeck_iframe_port: ${_param:haproxy_rundeck_exposed_port}
+    rundeck_iframe_ssl: False
   rundeck:
     server:
       user:
@@ -27,6 +31,11 @@ parameters:
         host: ${_param:haproxy_rundeck_bind_host}
         port: ${_param:haproxy_rundeck_bind_port}
         https: ${_param:haproxy_rundeck_ssl:enabled}
+      iframe:
+        external_forward: ${_param:rundeck_forward_iframe}
+        host: ${_param:rundeck_iframe_host}
+        port: ${_param:rundeck_iframe_port}
+        https: ${_param:rundeck_iframe_ssl}
       ssh:
         user: ${_param:rundeck_runbook_user}
         private_key: ${_param:rundeck_runbook_private_key}

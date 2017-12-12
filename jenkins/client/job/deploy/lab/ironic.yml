@@ -76,4 +76,5 @@ parameters:
             script: ironic-node-provision-pipeline.groovy
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
           type: workflow-scm

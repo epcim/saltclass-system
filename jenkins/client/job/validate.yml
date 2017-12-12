@@ -22,6 +22,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: validate-cloud.groovy
           param:
@@ -159,6 +160,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: cvp-sanity.groovy
           param:

@@ -13,6 +13,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: cloud-deploy-pipeline.groovy
           param:
@@ -41,6 +42,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: openstack-compute-install.groovy
           param:

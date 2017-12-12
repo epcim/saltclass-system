@@ -9,6 +9,7 @@ parameters:
     jenkins_master_host: ${_param:control_vip_address}
     jenkins_master_port: 8081
     jenkins_aptly_storages: "local"
+    jenkins_pipelines_branch: "master"
   jenkins:
     client:
       master:

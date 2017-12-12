@@ -11,6 +11,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              branch: "${_param:jenkins_pipelines_branch}"
               credentials: "gerrit"
               script: test-salt-models-pipeline.groovy
             concurrent: true
@@ -83,6 +84,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              branch: "${_param:jenkins_pipelines_branch}"
               credentials: "gerrit"
               script: test-system-reclass-pipeline.groovy
             trigger:
@@ -125,6 +127,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              branch: "${_param:jenkins_pipelines_branch}"
               credentials: "jenkins-mk"
               script: test-cookiecutter-reclass.groovy
             trigger:
@@ -178,6 +181,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: test-salt-model-node.groovy
           param:

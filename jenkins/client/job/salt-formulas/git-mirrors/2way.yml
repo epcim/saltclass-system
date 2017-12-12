@@ -242,6 +242,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+              branch: "${_param:jenkins_pipelines_branch}"
               credentials: "gerrit"
               script: git-mirror-2way-pipeline.groovy
               github:
@@ -275,6 +276,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: git-mirror-2way-pipeline.groovy
             github:
@@ -307,6 +309,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: git-mirror-2way-pipeline.groovy
             github:

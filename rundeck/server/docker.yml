@@ -3,11 +3,6 @@ classes:
   - service.rundeck.server.single
 parameters:
   _param:
-    rundeck_postgresql_username: rundeck
-    rundeck_postgresql_password: password
-    rundeck_postgresql_database: rundeck
-    rundeck_postgresql_host: ${_param:control_vip_address}
-    rundeck_postgresql_port: 5432
     rundeck_server_ssh_timeout: 300000
     rundeck_forward_iframe: False
     rundeck_iframe_host: "external-proxy-endpoint"
@@ -20,13 +15,6 @@ parameters:
         gid: 550
       home_dir: /srv/volumes/rundeck
       root_dir: /srv/volumes/rundeck
-      datasource:
-        engine: postgresql
-        host: ${_param:rundeck_postgresql_host}
-        port: ${_param:rundeck_postgresql_port}
-        username: ${_param:rundeck_postgresql_username}
-        password: ${_param:rundeck_postgresql_password}
-        database: ${_param:rundeck_postgresql_database}
       api:
         host: ${_param:haproxy_rundeck_bind_host}
         port: ${_param:haproxy_rundeck_bind_port}

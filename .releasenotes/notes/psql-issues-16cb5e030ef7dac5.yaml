@@ -1,0 +1,10 @@
+---
+summary: >
+  Configure Rundeck datasource through salt metadata.
+
+features:
+  - |
+  Rundeck service support using postgresql database as external source for datastore.
+  
+   .. code-block:: text
+      Default configuration supports PostgresqlDB driver, pointed on OSS Postgresql stack and disabled.

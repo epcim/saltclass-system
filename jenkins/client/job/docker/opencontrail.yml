@@ -2,15 +2,10 @@ parameters:
   jenkins:
     client:
       job_template:
-        docker-build-images:
-          name: "docker-build-images-{{name}}"
+        docker-build-images-opencontrail:
+          name: "docker-build-images-opencontrail-{{version}}"
           jobs:
-            - name: aptly
-              repo: mk
-            - name: ci
-              repo: mk
-            - name: prometheus
-              repo: mcp
+            - version: oc40
           template:
             discard:
               build:
@@ -21,24 +16,27 @@ parameters:
             concurrent: true
             scm:
               type: git
-              url: "${_param:jenkins_gerrit_url}/{{repo}}/docker-{{name}}"
+              url: "${_param:jenkins_gerrit_url}/mk/docker-opencontrail"
               credentials: "gerrit"
             trigger:
               gerrit:
                 project:
-                  "{{repo}}/docker-{{name}}":
+                  "mk/docker-opencontrail":
                     branches:
                       - master
                 event:
                   ref:
                     - updated: {}
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '(buildcontainer)'
             param:
               IMAGE_GIT_URL:
                 type: string
-                default: "${_param:jenkins_gerrit_url}/{{repo}}/docker-{{name}}"
-              IMAGE_BRANCH:
+                default: "${_param:jenkins_gerrit_url}/mk/docker-opencontrail-{{version}}"
+              OC_VERSION:
                 type: string
-                default: "master"
+                default: "{{version}}"
               IMAGE_CREDENTIALS_ID:
                 type: string
                 default: "gerrit"

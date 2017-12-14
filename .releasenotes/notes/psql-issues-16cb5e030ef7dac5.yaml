@@ -1,10 +1,14 @@
 ---
 summary: >
-  Configure Rundeck datasource through salt metadata.
+  Enabled the Runbooks automation service to use an external datasource
 
 features:
   - |
-  Rundeck service support using postgresql database as external source for datastore.
-  
-   .. code-block:: text
-      Default configuration supports PostgresqlDB driver, pointed on OSS Postgresql stack and disabled.
+    Enabled the Runbooks automation service to use an external datasource.
+    Now, you can configure the service to use the PostgreSQL database as an
+    external source for the datastore.
+
+    .. seealso::
+
+       * `MCP Operations Guide: Configure an external datasource <https://docs.mirantis.com/mcp/latest/mcp-operations-guide/devops-portal/use-runbooks-automation/configure-rundeck/configure-external-datasource.html>`__
+

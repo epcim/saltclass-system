@@ -1,18 +1,18 @@
 ---
 summary:
-  - |
-    Forward Rundeck main page through Proxy configurations. Default Rundeck service configuration does not allow to get access through external-proxy-address and exposed rundeck port (by default: 14440).
-    In case of using Devops Portal through external proxy networks, need to define additional configuration, otherwise Rundeck tab will be unavailable.
+  - Added the possibility to configure iFrame forwarding for the Runbooks
+    Automation service
 
 features:
   - |
-    * Need to define following configuration on cluster level, then follow instructions in OPS guide:
+    Added the possibility to configure iFrame forwarding for the Runbooks
+    Automation service. By default, the Rundeck service configuration does not
+    enable you to get access through an external proxy address and exposed
+    Rundeck port, which is 14440 by default. Now, you can easily forward the
+    Runbooks dashboard through a proxy endpoint in case of using the Devops
+    Portal through external proxy networks.
 
-      .. code-block:: yaml
-         rundeck_forward_iframe: True
-         rundeck_iframe_host: "external-proxy-endpoint"
-         rundeck_iframe_port: "external-proxy-port" 
-         rundeck_iframe_ssl: False
+    .. seealso::
 
-fixes:
-  - https://mirantis.jira.com/browse/PROD-16157 
+       * `MCP Operations Guide: Configure iFrame forwarding <https://docs.mirantis.com/mcp/latest/mcp-operations-guide/devops-portal/use-runbooks-automation/configure-rundeck/configure-iframe-forwarding.html>`__
+

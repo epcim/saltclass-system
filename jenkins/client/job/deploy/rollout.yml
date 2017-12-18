@@ -13,6 +13,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: rollout-config-change.groovy
           param:
@@ -78,6 +79,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: git-merge-branches-pipeline.groovy
           param:

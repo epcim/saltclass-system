@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    compute_ovs_vhost_socket_dir: "/run/openvswitch-vhost"
   linux:
     network:
       bridge: openvswitch
@@ -12,7 +14,8 @@ parameters:
         memory_channels: "${_param:compute_ovs_memory_channels}"
         vhost_socket_dir:
           name: "openvswitch-vhost"
-          path: "/run/openvswitch-vhost"
+          path: "${_param:compute_ovs_vhost_socket_dir}"
   neutron:
     compute:
       dpdk: True
+      vhost_socket_dir: "${_param:compute_ovs_vhost_socket_dir}"

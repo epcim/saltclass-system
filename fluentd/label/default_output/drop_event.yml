@@ -1,0 +1,17 @@
+agent:
+  config:
+    label:
+      default_output:
+        filter:
+          drop_event:
+            tag: '**'
+            type: grep
+            exclude:
+              - name: drop_event
+                regexp: ^.+?$
+          remove_drop_event_key:
+            require:
+              - drop_event
+            tag: '**'
+            type: record_transformer
+            remove_keys: drop_event

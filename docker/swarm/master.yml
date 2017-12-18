@@ -7,3 +7,7 @@ parameters:
     swarm:
       role: master
       advertise_addr: ${_param:single_address}
+    host:
+      options:
+        log-opts:
+          labels: "com.docker.stack.namespace,com.docker.swarm.service.name,com.docker.swarm.task.name"

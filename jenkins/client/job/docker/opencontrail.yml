@@ -29,29 +29,23 @@ parameters:
                     - updated: {}
                   comment:
                     - addedContains:
-                        commentAddedCommentContains: '(buildcontainer)'
+                        commentAddedCommentContains: '(buildcontainer|test|recheck|verify|)'
             param:
               IMAGE_GIT_URL:
                 type: string
-                default: "${_param:jenkins_gerrit_url}/mk/docker-opencontrail-{{version}}"
+                default: "${_param:jenkins_gerrit_url}/mk/docker-opencontrail"
               OC_VERSION:
                 type: string
                 default: "{{version}}"
               IMAGE_CREDENTIALS_ID:
                 type: string
                 default: "gerrit"
-              IMAGE_TAGS:
+              APT_KEY:
                 type: string
-                default: "latest"
-              REGISTRY_URL:
+                default: "${_param:jenkins_aptly_url}/public.gpg"
+              APT_REPO_URL:
                 type: string
-                default: ""
+                default: "${_param:jenkins_aptly_url}/xenial/ nightly"
               REGISTRY_CREDENTIALS_ID:
                 type: string
                 default: "dockerhub"
-              DOCKER_GIT_TAG:
-                type: boolean
-                default: "true"
-              EXTRA_REPO_URL:
-                type: string
-                default: "${_param:jenkins_aptly_url}"

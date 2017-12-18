@@ -148,11 +148,11 @@ parameters:
             - package: telegraf
               dist: trusty
               build: telegraf
-              branch: release-1.2
+              branch: release-1.5
             - package: telegraf
               dist: xenial
               build: telegraf
-              branch: release-1.2
+              branch: release-1.5
             - package: libvirt-exporter
               dist: xenial
               build: libvirt-exporter

@@ -5,17 +5,20 @@ parameters:
     system:
       repo:
         ubuntu:
-          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ubuntu/ ${_param:apt_mk_version} main restricted universe"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:apt_mk_version}/ubuntu/ ${_param:linux_system_codename} main restricted universe"
           architectures: amd64
           default: true
-          key_url: "http://apt.mirantis.com/public.gpg"
+          key_id: 437D05B5
+          key_server: keyserver.ubuntu.com
         ubuntu_updates:
-          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ubuntu/updates/ ${_param:apt_mk_version} main restricted universe"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:apt_mk_version}/ubuntu/ ${_param:linux_system_codename}-updates main restricted universe"
           architectures: amd64
           default: true
-          key_url: "http://apt.mirantis.com/public.gpg"
+          key_id: 437D05B5
+          key_server: keyserver.ubuntu.com
         ubuntu_security:
-          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ubuntu/security/ ${_param:apt_mk_version} main restricted universe"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:apt_mk_version}/ubuntu/ ${_param:linux_system_codename}-security main restricted universe"
           architectures: amd64
           default: true
-          key_url: "http://apt.mirantis.com/public.gpg"
+          key_id: 437D05B5
+          key_server: keyserver.ubuntu.com

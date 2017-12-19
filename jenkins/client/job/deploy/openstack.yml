@@ -35,6 +35,10 @@ parameters:
             ASK_ON_ERROR:
                 type: boolean
                 default: 'false'
+            STATIC_MGMT_NETWORK:
+                type: boolean
+                default: 'false'
+                description: "Check if model contains static IP address definitions for all nodes"
         deploy-openstack-compute:
           type: workflow-scm
           concurrent: true

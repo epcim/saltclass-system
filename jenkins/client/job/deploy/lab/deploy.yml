@@ -96,7 +96,11 @@ parameters:
                 description: "Formulas revision to install on Salt Master bootstrap stage"
               EXTRA_FORMULAS:
                 type: string
-                default: "maas memcached ntp nginx collectd sensu heka sphinx mysql grafana libvirt rsyslog glusterfs postfix xtrabackup freeipa prometheus telegraf elasticsearch kibana rundeck devops-portal rsync docker keepalived aptly jenkins gerrit artifactory influxdb horizon"
+                default: "maas memcached ntp nginx collectd sensu heka sphinx mysql grafana libvirt rsyslog glusterfs postfix xtrabackup freeipa prometheus telegraf elasticsearch kibana rundeck devops-portal rsync docker keepalived aptly jenkins gerrit artifactory influxdb horizon ceph"
+              STATIC_MGMT_NETWORK:
+                  type: boolean
+                  default: 'false'
+                  description: "Check if model contains static IP address definitions for all nodes"
 
               # aws api
               AWS_STACK_REGION:

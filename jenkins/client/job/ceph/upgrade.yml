@@ -72,4 +72,4 @@ parameters:
             BACKUP_ENABLED:
               type: boolean
               default: 'true'
-              description: Set to True if disks of Ceph VMs should be copied before upgrade
+              description: Select to copy the disks of Ceph VMs before upgrade and backup Ceph directories on OSD nodes.

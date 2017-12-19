@@ -7,10 +7,13 @@ parameters:
           jobs:
             - name: aptly
               repo: mk
+              build_trigger: ""
             - name: ci
               repo: mk
+              build_trigger: "H H(20-23) * * *"
             - name: prometheus
               repo: mcp
+              build_trigger: ""
           template:
             discard:
               build:
@@ -32,6 +35,8 @@ parameters:
                 event:
                   ref:
                     - updated: {}
+              pollscm:
+                spec: "{{build_trigger}}"
             param:
               IMAGE_GIT_URL:
                 type: string

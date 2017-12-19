@@ -56,6 +56,9 @@ parameters:
             - name: kubernetes
               upload_source_package: true
               dist: xenial
+            - name: mirascan
+              upload_source_package: true
+              dist: xenial
             - name: neutron
               upload_source_package: true
               dist: xenial

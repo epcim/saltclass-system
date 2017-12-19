@@ -72,6 +72,7 @@ parameters:
             - name: magnum
             - name: memcached
             - name: midonet
+            - name: mirascan
             - name: monasca
             - name: mongodb
             - name: murano

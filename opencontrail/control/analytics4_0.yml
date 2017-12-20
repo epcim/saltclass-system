@@ -15,6 +15,8 @@ parameters:
     opencontrail_message_queue_address: ${_param:openstack_message_queue_address}
     opencontrail_analytics_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analytics
     opencontrail_analyticsdb_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-analyticsdb
+    opencontrail_analytics_container_name: opencontrail_analytics_1
+    opencontrail_analyticsdb_container_name: opencontrail_analyticsdb_1
 # Temprorary fix for MOS9 packages to pin old version of kafka
   linux:
     system:
@@ -68,12 +70,13 @@ parameters:
   docker:
     client:
       compose:
-        opencontrail_api:
+        opencontrail:
           status: up
           pull: true
           service:
             analytics:
               image: ${_param:opencontrail_analytics_image}
+              container_name: ${_param:opencontrail_analytics_container_name}
               network_mode: "host"
               privileged: true
               volumes:
@@ -81,6 +84,7 @@ parameters:
                 - /etc/redis/redis.conf:/etc/redis/redis.conf
             analyticsdb:
               image: ${_param:opencontrail_analyticsdb_image}
+              container_name: ${_param:opencontrail_analyticsdb_container_name}
               volumes:
                 - /etc/cassandra/cassandra-env-analytics.sh:/etc/cassandra/cassandra-env.sh
                 - /etc/cassandra/cassandra_analytics.yaml:/etc/cassandra/cassandra.yaml

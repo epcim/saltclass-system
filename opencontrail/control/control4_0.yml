@@ -10,6 +10,7 @@ parameters:
     opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
     opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
     opencontrail_controller_image: docker-prod-local.artifactory.mirantis.com/opencontrail/opencontrail-controller
+    opencontrail_controller_container_name: opencontrail_controller_1
     analytics_vip_address: ${_param:opencontrail_analytics_address}
   opencontrail:
     common:
@@ -87,12 +88,13 @@ parameters:
   docker:
     client:
       compose:
-        opencontrail_api:
+        opencontrail:
           status: up
           pull: true
           service:
             controller:
               image: ${_param:opencontrail_controller_image}
+              container_name: ${_param:opencontrail_controller_container_name}
               volumes:
                 - /etc/contrail:/etc/contrail
                 - /var/lib/configdb:/var/lib/cassandra

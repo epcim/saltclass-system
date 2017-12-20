@@ -20,4 +20,3 @@ parameters:
           architectures: amd64
           default: true
           key_url: "http://${_param:local_repo_url}/public.gpg"
-

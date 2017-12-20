@@ -251,6 +251,11 @@ parameters:
               github:
               pollscm:
                 spec: ${_param:jenkins_pollscm_spec}
+              gerrit:
+                project:
+                  salt-formulas/{{name}}:
+                    branches:
+                      - master
             param:
               SOURCE_URL:
                 type: string

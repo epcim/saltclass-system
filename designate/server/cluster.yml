@@ -4,6 +4,8 @@ classes:
 - system.haproxy.proxy.listen.openstack.designate
 - service.haproxy.proxy.single
 parameters:
+  _param:
+    designate_admin_api_enabled: false
   linux:
     system:
       package:
@@ -20,6 +22,9 @@ parameters:
       region: ${_param:openstack_region}
       domain_id: ${_param:designate_domain_id}
       version: ${_param:designate_version}
+      admin_api:
+        enabled: ${_param:designate_admin_api_enabled}
+        enabled_extensions_admin: quotas
       database:
         engine: mysql
         host: ${_param:openstack_database_address}

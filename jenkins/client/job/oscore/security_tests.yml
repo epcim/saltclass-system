@@ -11,7 +11,8 @@ parameters:
               artifact:
                 keep_num: 30
             type: workflow-scm
-            concurrent: true
+            # Downstream jobs are uploading reports, so shouldn't be concurrent
+            concurrent: false
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
@@ -74,6 +75,22 @@ parameters:
                 type: string
                 description: Format for generated report(csv,html,json)
                 default: "csv"
+              UPLOAD_REPORT:
+                type: boolean
+                description: Whether to upload report
+                default: "true"
+              REPORT_HOST:
+                type: string
+                description: Reporting tool hostname
+                default: "cve-slave01-bud.infra.mirantis.net"
+              REPORT_USER:
+                type: string
+                description: User for uploading results to reporting tool
+                default: "bandit"
+              UPLOAD_CREDENTIALS_ID:
+                type: string
+                description: Credentials for uploading report
+                default: "bandit"
         bandit-scanner-template-upstream:
           name: "{{job_prefix}}-bandit-upstream-{{project}}"
           template:

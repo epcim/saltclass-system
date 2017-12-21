@@ -1,0 +1,21 @@
+---
+summary: >
+  Added two new classes for Elasticsearch and Kibana
+
+features:
+  - |
+    Added two new classes to support Elasticsearch v2 and v5 and Kibana
+    v4 and v5.
+    Update the Elasticsearch and Kibana classes in the
+    ``classes/cluster/<cluster_name>/stacklight/server.yml`` file of
+    the Reclass model of your MCP deployment according to the required
+    versions:
+
+    #. For Elasticsearch, change the ``linux.system.repo.elasticsearch`` class
+       to ``linux.system.repo.elasticsearch.2`` or ``linux.system.repo.elasticsearch.5``.
+       To deploy Elasticsearch version 2, specify the ``elasticsearch_version: 2``
+       parameter in the same file.
+    #. For Kibana, change the ``linux.system.repo.kibana`` class to
+       ``linux.system.repo.kibana.4`` or ``linux.system.repo.kibana.5``.
+       To deploy Kibana version 4, specify the ``kibana_version: 4``
+       parameter in the same file.

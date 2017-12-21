@@ -1,0 +1,46 @@
+parameters:
+  _param:
+    aptly_mirror_elasticsearch-5x_source: https://artifacts.elastic.co/packages/5.x/apt
+    aptly_mirror_elasticsearch-5x_distribution: stable
+    aptly_mirror_elasticsearch-5x_components: main
+    aptly_mirror_elasticsearch-5x_gpgkeys:
+      - D88E42B4
+    aptly_mirror_elasticsearch-curator-5x_source: https://packages.elastic.co/curator/5/debian
+    aptly_mirror_elasticsearch-curator-5x_distribution: stable
+    aptly_mirror_elasticsearch-curator-5x_components: main
+  aptly:
+    server:
+      mirror:
+        elasticsearch-5x:
+          source: ${_param:mirror_elasticsearch-5x_source}
+          distribution: ${_param:mirror_elasticsearch-5x_distribution}
+          components: ${_param:mirror_elasticsearch-5x_components}
+          architectures: amd64
+          gpgkeys: ${_param:mirror_elasticsearch-5x_gpgkeys}
+          publisher:
+            component: elastic
+            distributions:
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}
+        kibana-5x:
+          source: ${_param:aptly_mirror_elasticsearch-5x_source}
+          distribution: ${_param:aptly_mirror_elasticsearch-5x_distribution}
+          components: ${_param:aptly_mirror_elasticsearch-5x_components}
+          architectures: amd64
+          gpgkeys: ${_param:aptly_mirror_elasticsearch-5x_gpgkeys}
+          publisher:
+            component: elastic
+            distributions:
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}
+        elasticsearch-curator-5x:
+          source: ${_param:aptly_mirror_elasticsearch-curator-5x_source}
+          distribution: ${_param:aptly_mirror_elasticsearch-curator-5x_distribution}
+          components: ${_param:aptly_mirror_elasticsearch-curator-5x_components}
+          architectures: amd64
+          gpgkeys: ${_param:aptly_mirror_elasticsearch-5x_gpgkeys}
+          publisher:
+            component: elastic
+            distributions:
+              - trusty/${_param:apt_mk_version}
+              - xenial/${_param:apt_mk_version}

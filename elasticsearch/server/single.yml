@@ -3,7 +3,7 @@ classes:
 - service.elasticsearch.server.single
 parameters:
   _param:
-    elasticsearch_version: 2
+    elasticsearch_version: 5
   linux:
     system:
       sysctl:

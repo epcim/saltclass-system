@@ -74,7 +74,7 @@ parameters:
               REPORT_FORMAT:
                 type: string
                 description: Format for generated report(csv,html,json)
-                default: "csv"
+                default: "json"
               UPLOAD_REPORT:
                 type: boolean
                 description: Whether to upload report
@@ -154,4 +154,4 @@ parameters:
               REPORT_FORMAT:
                 type: string
                 description: Format for generated report(csv,html,json)
-                default: "csv"
+                default: "json"

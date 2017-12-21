@@ -50,6 +50,14 @@ parameters:
                 type: boolean
                 default: 'false'
                 description: Don't enable it if you need to use the lab after
+              STACK_RECLASS_ADDRESS:
+                type: string
+                default: '{{stack_reclass_address}}'
+                description: 'Url to repository with stack salt models'
+              STACK_RECLASS_BRANCH:
+                type: string
+                default: '{{stack_reclass_branch}}'
+                description: 'Branch of repository with stack salt models'
               STACK_CLEANUP_JOB:
                 type: string
                 default: "{{stack_cleanup_job}}"

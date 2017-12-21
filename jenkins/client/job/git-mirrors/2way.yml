@@ -31,6 +31,11 @@ parameters:
               github:
               pollscm:
                 spec: ${_param:jenkins_pollscm_spec}
+              gerrit:
+                project:
+                  "{{source}}":
+                    branches:
+                      - master
             param:
               SOURCE_URL:
                 type: string

@@ -1,0 +1,33 @@
+#
+# Jobs to upgrade MCP release
+#
+parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+  jenkins:
+    client:
+      job:
+        upgrade-mcp-release:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - upgrade MCP Release"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: upgrade-mcp-release.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            MCP_VERSION:
+              type: string
+              default: ""
+            UPDATE_LOCAL_REPOS:
+              type: boolean
+              default: 'false'
+              description: "Use only when local repositories are present"

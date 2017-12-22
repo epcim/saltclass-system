@@ -6,6 +6,7 @@ classes:
   - system.jenkins.client.job.deploy.update.update_mirror_image
   - system.jenkins.client.job.deploy.update.upgrade
   - system.jenkins.client.job.deploy.update.upgrade_compute
+  - system.jenkins.client.job.deploy.update.upgrade_mcp_release
   - system.jenkins.client.job.deploy.update.upgrade_ovs_gateway
   - system.jenkins.client.job.deploy.update.upgrade_opencontrail
   - system.jenkins.client.job.deploy.update.restore_mysql

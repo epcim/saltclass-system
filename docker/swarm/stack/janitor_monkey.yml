@@ -33,6 +33,7 @@ parameters:
       username: admin
       password: password
       ssl_verify: False
+      endpoint_type: public
       source_credentials: /srv/volumes/rundeck/storage/content/cis/openstack
       service_credentials: /opt/os_creds
   docker:
@@ -56,6 +57,7 @@ parameters:
             simianarmy.client.cloudfire.region: ${_param:janitor_monkey_cloudfire_region}
             simianarmy.client.cloudfire.cis.clustername: ${_param:janitor_monkey_cis_clustername}
             simianarmy.client.cloudfire.identityEndpoint: ${_param:janitor_monkey_openstack:auth_url}
+            simianarmy.client.cloudfire.identityEndpointType: ${_param:janitor_monkey_openstack:endpoint_type}
             simianarmy.client.cloudfire.accountKey: ${_param:janitor_monkey_openstack:username}
             simianarmy.client.cloudfire.secretKey: ${_param:janitor_monkey_openstack:password}
             simianarmy.client.cloudfire.domain: ${_param:janitor_monkey_openstack:project_domain_name}

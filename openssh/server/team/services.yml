@@ -10,6 +10,7 @@ classes:
 - system.openssh.server.team.members.mlos
 - system.openssh.server.team.members.dbogaczyk
 - system.openssh.server.team.members.dkruglov
+- system.openssh.server.team.members.sflorczak
 parameters:
   _param:
     linux_system_user_sudo: true

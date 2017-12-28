@@ -15,15 +15,15 @@ parameters:
               options:
               - expect status 401
           servers:
-          - name: ctl01
+          - name: ${_param:cluster_node01_hostname}
             host: ${_param:cluster_node01_address}
             port: 8778
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
-          - name: ctl02
+          - name: ${_param:cluster_node02_hostname}
             host: ${_param:cluster_node02_address}
             port: 8778
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
-          - name: ctl03
+          - name: ${_param:cluster_node03_hostname}
             host: ${_param:cluster_node03_address}
             port: 8778
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3

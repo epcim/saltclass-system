@@ -1,4 +1,4 @@
-parameters:
+pillars:
   grafana:
     server:
       plugins:

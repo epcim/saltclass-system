@@ -1,6 +1,6 @@
 classes:
 - service.neutron.control.single
-parameters:
+pillars:
   _param:
     neutron_control_dvr: False
     neutron_l3_ha: False

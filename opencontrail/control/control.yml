@@ -2,7 +2,7 @@ classes:
 - service.keepalived.cluster.single
 - service.opencontrail.control.control
 - system.haproxy.proxy.listen.opencontrail.control
-parameters:
+pillars:
   _param:
     multi_tenancy: false
     opencontrail_message_queue_node01_address: ${_param:openstack_message_queue_node01_address}

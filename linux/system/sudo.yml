@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     sudo_shells:
     - /bin/sh

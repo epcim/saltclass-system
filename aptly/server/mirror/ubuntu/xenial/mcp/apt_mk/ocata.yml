@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_mk_openstack_xenial_ocata_source: http://apt.mirantis.com/xenial/

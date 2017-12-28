@@ -1,6 +1,6 @@
 classes:
   - system.postgresql.client
-parameters:
+pillars:
   _param:
     sfdc_db_host: ${_param:haproxy_postgresql_bind_host}
     sfdc_db_user: sfdc

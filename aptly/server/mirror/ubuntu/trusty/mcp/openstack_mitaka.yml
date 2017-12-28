@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_mirantis_openstack_mitaka_trusty_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/trusty
     mirror_mirantis_openstack_mitaka_trusty_distribution: mitaka

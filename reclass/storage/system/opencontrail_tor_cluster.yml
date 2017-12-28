@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     opencontrail_tor01_node01_hostname: tor01
     opencontrail_tor01_node02_hostname: tor02

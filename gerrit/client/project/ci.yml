@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     gerrit_pipeline_library_repo: https://github.com/Mirantis/pipeline-library
     gerrit_mk_pipelines_repo: https://github.com/Mirantis/mk-pipelines

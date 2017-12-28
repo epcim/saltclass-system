@@ -1,6 +1,6 @@
 classes:
 - service.kibana.client
-parameters:
+pillars:
   kibana:
     client:
       enabled: true

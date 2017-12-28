@@ -1,4 +1,4 @@
-parameters:
+pillars:
   devops_portal:
     config:
       service:

@@ -1,6 +1,6 @@
 classes:
 - service.influxdb.client
-parameters:
+pillars:
   _param:
     influxdb_client_port: 8086
   influxdb:

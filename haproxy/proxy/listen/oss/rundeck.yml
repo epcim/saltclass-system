@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_rundeck_bind_host: ${_param:haproxy_bind_address}
     haproxy_rundeck_bind_port: 4440

@@ -1,6 +1,6 @@
 classes:
   - service.bind.server.single
-parameters:
+pillars:
   bind:
     server:
       enabled: true

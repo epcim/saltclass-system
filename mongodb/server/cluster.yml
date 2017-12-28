@@ -1,6 +1,6 @@
 classes:
 - service.mongodb.server.cluster
-parameters:
+pillars:
   _param:
     mongodb_server_replica_set: mongodb
     mongodb_master: mdb01

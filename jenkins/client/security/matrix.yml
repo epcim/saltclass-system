@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     # Full admin access
     jenkins_security_matrix_admins:

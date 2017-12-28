@@ -1,4 +1,4 @@
-parameters:
+pillars:
   salt:
     minion:
       master_type: failover

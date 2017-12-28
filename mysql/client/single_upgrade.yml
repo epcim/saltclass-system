@@ -9,7 +9,7 @@ classes:
 - system.mysql.client.database_upgrade.nova_api
 - system.mysql.client.database_upgrade.neutron
 - service.mysql.client.single
-parameters:
+pillars:
   _param:
     mysql_client_host: localhost
   mysql:

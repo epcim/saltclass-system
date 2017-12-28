@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     linux_system_country_code: cz
     aptly_server_mirror_ubuntu_trusty_sources: ${_param:aptly_server_mirror_ubuntu_sources}

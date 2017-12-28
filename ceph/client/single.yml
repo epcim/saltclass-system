@@ -1,6 +1,6 @@
 classes:
 - service.ceph.client.single
-parameters:
+pillars:
   _param:
     ceph_auth_client_required: cephx
   ceph:

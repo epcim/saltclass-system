@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_docker_visualizer_listen_port: 8091
   haproxy:

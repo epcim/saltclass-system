@@ -1,6 +1,6 @@
 classes:
 - service.nova.client
-parameters:
+pillars:
   nova:
     client:
       server:

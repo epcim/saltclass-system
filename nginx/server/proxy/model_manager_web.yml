@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     nginx_proxy_model_manager_web_host: ${_param:cluster_public_host}
     nginx_proxy_model_manager_web_proxy_host: ${_param:cluster_vip_address}

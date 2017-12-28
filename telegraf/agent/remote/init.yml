@@ -1,6 +1,6 @@
 classes:
 - service.telegraf.agent.remote
-parameters:
+pillars:
   telegraf:
     remote_agent:
       omit_hostname: true

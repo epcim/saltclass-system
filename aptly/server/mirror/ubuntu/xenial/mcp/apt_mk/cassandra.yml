@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_mirantis_openstack_xenial_cassandra_source: http://apt.mirantis.com/xenial/cassandra/

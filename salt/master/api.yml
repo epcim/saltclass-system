@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     salt_master_api_port: 6969
     salt_master_api_permissions:

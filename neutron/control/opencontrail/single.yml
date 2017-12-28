@@ -1,7 +1,7 @@
 classes:
 - service.neutron.control.single
 - system.galera.server.database.neutron
-parameters:
+pillars:
   neutron:
     server:
       dns_domain: ${_param:cluster_domain}

@@ -3,7 +3,7 @@ classes:
 - service.redis.server.local
 - service.rabbitmq.server.single
 - service.sensu.server.single
-parameters:
+pillars:
   _param:
     rabbitmq_monitor_password: password
     sensu_message_queue_host: 127.0.0.1

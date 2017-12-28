@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     jenkins_salt_model_name: "salt"

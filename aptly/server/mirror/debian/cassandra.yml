@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_cassandra-21x_source: http://www.apache.org/dist/cassandra/debian

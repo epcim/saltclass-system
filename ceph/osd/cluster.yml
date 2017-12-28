@@ -1,6 +1,6 @@
 classes:
 - service.ceph.osd.cluster
-parameters:
+pillars:
   linux:
     system:
       kernel:

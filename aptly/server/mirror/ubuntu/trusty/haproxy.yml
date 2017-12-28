@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_haproxy-trusty_source: http://ppa.launchpad.net/vbernat/haproxy-1.5/ubuntu
     mirror_haproxy-trusty_distribution: trusty

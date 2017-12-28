@@ -1,6 +1,6 @@
 classes:
 - service.neutron.gateway.single
-parameters:
+pillars:
   _param:
     neutron_enable_qos: False
     neutron_enable_vlan_aware_vms: False

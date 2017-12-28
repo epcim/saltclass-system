@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     ceph_rgw_node01_hostname: rgw01
     ceph_rgw_node02_hostname: rgw02

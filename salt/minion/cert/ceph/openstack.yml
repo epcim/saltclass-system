@@ -1,6 +1,6 @@
 classes:
 - system.salt.minion.cert.ceph
-parameters:
+pillars:
   _param:
     salt_pki_ceph_alt_names: IP:${_param:cluster_public_host},DNS:${_param:cluster_public_host}
   salt:

@@ -2,7 +2,7 @@ classes:
   - system.jenkins.client.job.oscore.security_tests
   - system.jenkins.client.job.oscore.tests
   - system.jenkins.client.job.oscore.qa
-parameters:
+pillars:
   jenkins:
     client:
       view:

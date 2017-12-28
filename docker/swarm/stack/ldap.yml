@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     docker_image_openldap: osixia/openldap:1.1.8
     docker_image_phpldapadmin: tcpcloud/phpldapadmin:0.6.12

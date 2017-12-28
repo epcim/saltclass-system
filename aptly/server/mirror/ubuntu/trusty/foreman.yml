@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_foreman-trusty_source: http://deb.theforeman.org
     mirror_foreman-trusty_distribution: trusty

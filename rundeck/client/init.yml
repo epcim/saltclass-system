@@ -1,6 +1,6 @@
 classes:
   - service.rundeck.client
-parameters:
+pillars:
   _param:
     rundeck_client_host: ${_param:haproxy_rundeck_bind_host}
     rundeck_client_port: ${_param:haproxy_rundeck_bind_port}

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     cinder_storage_client_key: ''
   cinder:

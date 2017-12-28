@@ -1,6 +1,6 @@
 classes:
 - service.neutron.fwaas
-parameters:
+pillars:
   _param:
     fwaas_version: v1
   neutron:

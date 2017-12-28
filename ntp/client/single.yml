@@ -1,6 +1,6 @@
 classes:
 - service.ntp.client
-parameters:
+pillars:
   ntp:
     client:
       mode7: true

@@ -2,7 +2,7 @@ classes:
 - service.keepalived.cluster.single
 - service.opencontrail.control.control
 - system.haproxy.proxy.listen.opencontrail.control
-parameters:
+pillars:
   _param:
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40

@@ -2,7 +2,7 @@ classes:
 - service.aptly.server.single
 - system.nginx.server.single
 - service.iptables.server
-parameters:
+pillars:
   _param:
     nginx_aptly_server_host: ${linux:network:fqdn}
     aptly_server_secure: true

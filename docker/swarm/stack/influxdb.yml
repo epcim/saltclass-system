@@ -2,7 +2,7 @@ classes:
 - system.influxdb.server.container
 - system.influxdb.server.tmpfs_wal
 - system.telegraf.agent.remote.input.influxdb
-parameters:
+pillars:
   _param:
     docker_influxdb_replicas: 1
     docker_influxdb_dir: /srv/volumes/influxdb

@@ -1,7 +1,7 @@
 classes:
   - system.jenkins.slave
   - service.iptables.server
-parameters:
+pillars:
   linux:
     system:
       user:

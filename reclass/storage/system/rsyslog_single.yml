@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     rsyslog_node01_hostname: rsl01
     rsyslog_system_codename: xenial

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     opencontrail_gateway_hostname: gtw01
     opencontrail_gateway_system_codename: trusty

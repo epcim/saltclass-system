@@ -1,6 +1,6 @@
 classes:
 - service.designate.server.single
-parameters:
+pillars:
   _param:
     designate_admin_api_enabled: false
   linux:

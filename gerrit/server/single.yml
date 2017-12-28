@@ -3,7 +3,7 @@ classes:
 - service.gerrit.server.single
 - service.java.environment
 - service.postgresql.server.local
-parameters:
+pillars:
   _param:
     java_environment_platform: openjdk
     java_environment_version: "8"

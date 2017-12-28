@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     collectd_remote_collector_port: 8326
   collectd:

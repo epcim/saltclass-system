@@ -1,4 +1,4 @@
-parameters:
+pillars:
   apache:
     server:
       site:

@@ -1,6 +1,6 @@
 classes:
   - service.libvirt.server.kvm
-parameters:
+pillars:
   salt:
     control:
       enabled: True

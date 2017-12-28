@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_galera-trusty_source: http://releases.galeracluster.com/ubuntu/
     mirror_galera-trusty_distribution: trusty

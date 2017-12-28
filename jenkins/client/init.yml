@@ -2,7 +2,7 @@ classes:
   - service.jenkins.support
   - service.jenkins.client
   - system.jenkins.client.approved_scripts
-parameters:
+pillars:
   _param:
     jenkins_client_user: none
     jenkins_client_password: none

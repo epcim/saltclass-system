@@ -1,7 +1,7 @@
 classes:
 - service.elasticsearch.server.cluster
 - service.java.environment
-parameters:
+pillars:
   _param:
     java_environment_version: "8"
     java_environment_platform: openjdk

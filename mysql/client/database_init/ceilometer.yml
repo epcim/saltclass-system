@@ -1,6 +1,6 @@
 classes:
 - system.mysql.client.database.ceilometer
-parameters:
+pillars:
   mysql:
     client:
       enabled: true

@@ -1,6 +1,6 @@
 classes:
 - service.redis.server.single
-parameters:
+pillars:
   aodh:
     server:
       coordination_backend:

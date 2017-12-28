@@ -1,6 +1,6 @@
 classes:
 - service.freeipa.client
-parameters:
+pillars:
   freeipa:
     client:
       enabled: true

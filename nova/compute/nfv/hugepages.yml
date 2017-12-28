@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     compute_hugepages_size: 1G
     compute_hugepages_mount: /mnt/hugepages_1G

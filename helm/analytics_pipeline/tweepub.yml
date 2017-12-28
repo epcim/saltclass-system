@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     analytics_tweepub_release: ${_param:analytics_release_prefix}tweepub
   helm:

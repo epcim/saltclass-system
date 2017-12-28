@@ -1,6 +1,6 @@
 classes:
 - system.mysql.client.database.glance
-parameters:
+pillars:
   mysql:
     client:
       enabled: true

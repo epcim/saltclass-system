@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     analytics_spark_release: ${_param:analytics_release_prefix}spark
     analytics_spark_address: spark-master-${_param:analytics_spark_release}-0.spark-master-${_param:analytics_spark_release}:7077,spark-master-${_param:analytics_spark_release}-1.spark-master-${_param:analytics_spark_release}:7077

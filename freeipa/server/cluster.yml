@@ -1,6 +1,6 @@
 classes:
   - service.freeipa.server
-parameters:
+pillars:
   freeipa:
     server:
       realm: ${_param:freeipa_realm} 

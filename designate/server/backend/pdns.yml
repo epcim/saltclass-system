@@ -1,6 +1,6 @@
 classes:
 - service.powerdns.server.single
-parameters:
+pillars:
   designate:
     server:
       backend:

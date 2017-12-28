@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     nagios_notification_email: root@localhost
     nagios_host_dimension_key: nagios_host

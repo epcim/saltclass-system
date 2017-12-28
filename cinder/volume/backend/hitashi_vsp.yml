@@ -1,4 +1,4 @@
-parameters:
+pillars:
   cinder:
     volume:
       default_volume_type: hitachi_vsp

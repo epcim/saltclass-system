@@ -2,7 +2,7 @@ classes:
   - system.jenkins.client.job.salt-models.git-mirrors
   - system.jenkins.client.job.salt-models.tests
   - system.jenkins.client.job.salt-models.generate
-parameters:
+pillars:
   _param:
     salt_formulas_branches: master
   jenkins:

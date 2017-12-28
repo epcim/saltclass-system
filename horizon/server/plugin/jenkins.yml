@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     horizon_jenkins_url: http://localhost:8080/
     horizon_jenkins_user: admin

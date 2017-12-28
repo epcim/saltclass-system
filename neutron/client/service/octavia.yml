@@ -1,6 +1,6 @@
 classes:
 - service.neutron.client
-parameters:
+pillars:
   _param:
     octavia_hm_bind_ip: '192.168.0.12'
   neutron:

@@ -1,6 +1,6 @@
 classes:
 - service.octavia.manager.single
-parameters:
+pillars:
   octavia:
     manager:
       enabled: true

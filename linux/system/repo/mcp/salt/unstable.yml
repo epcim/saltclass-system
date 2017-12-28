@@ -1,6 +1,6 @@
 classes:
 - linux.system.repo.mcp.salt
-parameters:
+pillars:
   _param:
     linux_system_repo_mcp_salt_unstable_version: testing
   linux:

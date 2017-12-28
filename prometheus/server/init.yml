@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     prometheus_server_config_directory: /srv/prometheus
     prometheus_server_data_directory: /data

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     galera_clustercheck_password: clustercheck
   galera:

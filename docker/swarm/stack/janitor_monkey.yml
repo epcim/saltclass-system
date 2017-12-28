@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     docker_janitor_monkey_replicas: 1
     docker_image_mongodb: library/mongo:3.4

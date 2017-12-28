@@ -14,7 +14,7 @@ classes:
   - system.jenkins.client.job.deploy.lab.component.stacklight
   - system.jenkins.client.job.deploy.lab.ironic
 
-parameters:
+pillars:
   jenkins:
     client:
       view:

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     influxdb_glusterfs_service_host: ${_param:glusterfs_service_host}
     glusterfs_node01_address: ${_param:cluster_node01_address}

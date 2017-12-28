@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     nginx_proxy_gerrit_server_proxy_host: ${_param:cicd_control_address}
     nginx_proxy_gerrit_server_proxy_port: 8080

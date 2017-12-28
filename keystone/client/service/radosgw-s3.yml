@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     cluster_public_protocol: https
     radosgw_s3_cluster_port: 8081

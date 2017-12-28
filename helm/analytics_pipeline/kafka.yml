@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     analytics_kafka_release: ${_param:analytics_release_prefix}kafka
     analytics_kafka_address: kafka-${_param:analytics_kafka_release}-0.kafka-${_param:analytics_kafka_release}:9092,kafka-${_param:analytics_kafka_release}-1.kafka-${_param:analytics_kafka_release}:9092,kafka-${_param:analytics_kafka_release}-2.kafka-${_param:analytics_kafka_release}:9092

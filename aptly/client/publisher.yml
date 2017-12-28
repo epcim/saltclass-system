@@ -1,6 +1,6 @@
 classes:
   - service.aptly.client.publisher
-parameters:
+pillars:
   aptly:
     publisher:
       enabled: true

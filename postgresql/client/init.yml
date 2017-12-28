@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     postgresql_client_user: none
     postgresql_client_password: none

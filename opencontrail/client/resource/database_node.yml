@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     cluster_node01_hostname: ntw01
     cluster_node02_hostname: ntw02

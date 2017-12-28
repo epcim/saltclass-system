@@ -1,7 +1,7 @@
 classes:
   - service.maas.region.single
   - service.maas.cluster.single
-parameters:
+pillars:
   _param:
     maas_admin_username: mirantis
   maas:

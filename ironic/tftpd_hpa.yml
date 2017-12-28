@@ -1,6 +1,6 @@
 classes:
   - service.tftpd_hpa.server.single
-parameters:
+pillars:
   tftpd_hpa:
     server:
       enabled: true

@@ -1,6 +1,6 @@
 classes:
 - system.openssh.client.root
-parameters:
+pillars:
   _param:
     cassandra_remote_backup_server: cfg01
   cassandra:

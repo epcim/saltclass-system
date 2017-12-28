@@ -1,6 +1,6 @@
 classes:
 - service.ironic.conductor.single
-parameters:
+pillars:
   linux:
     system:
       package:

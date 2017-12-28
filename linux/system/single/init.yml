@@ -3,7 +3,7 @@ classes:
 - service.salt.minion.master
 - system.openssh.server.single
 - system.ntp.client.single
-parameters:
+pillars:
   _param:
     local_package_repos: false
   linux:

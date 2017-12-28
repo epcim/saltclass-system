@@ -1,7 +1,7 @@
 classes:
 - service.heka.aggregator.single
 - system.heka.server
-parameters:
+pillars:
   heka:
     aggregator:
       influxdb_host: ${_param:heka_influxdb_host}

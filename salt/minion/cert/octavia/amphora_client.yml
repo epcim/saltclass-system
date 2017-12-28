@@ -1,6 +1,6 @@
 classes:
 - system.salt.minion.cert.octavia
-parameters:
+pillars:
   salt:
     minion:
       cert:

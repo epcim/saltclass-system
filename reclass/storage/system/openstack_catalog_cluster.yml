@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_catalog_node01_hostname: asc01
     openstack_catalog_node02_hostname: asc02

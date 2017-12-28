@@ -6,7 +6,7 @@ classes:
 - system.keystone.client.service.heat-cfn
 - system.keystone.client.service.keystone
 - system.keystone.client.service.neutron
-parameters:
+pillars:
   linux:
     system:
       job:

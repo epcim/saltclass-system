@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     octavia_ca_common_name: Octavia CA
     octavia_ca_country: cz

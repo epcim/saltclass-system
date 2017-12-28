@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     telegraf_remote_agent_http_listener_port: 8186
   telegraf:

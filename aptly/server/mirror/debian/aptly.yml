@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_aptly_source: http://repo.aptly.info/
     mirror_aptly_distribution: squeeze

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     analytics_zookeeper_release: ${_param:analytics_release_prefix}zookeeper
     analytics_zookeeper_address: zk-${_param:analytics_zookeeper_release}-0.zk-${_param:analytics_zookeeper_release}:2181,zk-${_param:analytics_zookeeper_release}-1.zk-${_param:analytics_zookeeper_release}:2181,zk-${_param:analytics_zookeeper_release}-2.zk-${_param:analytics_zookeeper_release}:2181

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     oss_security_monkey_user: ${_param:security_monkey_user}
     oss_security_monkey_password: ${_param:security_monkey_password}

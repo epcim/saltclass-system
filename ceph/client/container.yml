@@ -1,6 +1,6 @@
 classes:
 - service.ceph.client.container
-parameters:
+pillars:
   _param:
     ceph_client_prefix_dir: /srv/volumes/ceph
     ceph_auth_client_required: cephx

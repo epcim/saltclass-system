@@ -1,6 +1,6 @@
 classes:
 - system.salt.minion.cert.proxy
-parameters:
+pillars:
   salt:
     minion:
       cert:

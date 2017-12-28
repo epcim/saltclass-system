@@ -1,5 +1,5 @@
 ##Obsolete, please use repo/saltstack/xenial
-parameters:
+pillars:
   linux:
     system:
       repo:

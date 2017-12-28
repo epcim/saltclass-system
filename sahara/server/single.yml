@@ -1,6 +1,6 @@
 classes:
 - service.sahara.server.single
-parameters:
+pillars:
   sahara:
     server:
       enabled: true

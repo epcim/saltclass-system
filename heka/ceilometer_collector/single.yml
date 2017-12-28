@@ -1,7 +1,7 @@
 classes:
 - service.heka.ceilometer_collector.single
 - system.heka.server
-parameters:
+pillars:
   heka:
     ceilometer_collector:
       enabled: true

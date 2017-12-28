@@ -1,6 +1,6 @@
 classes:
 - service.ironic.api.cluster
-parameters:
+pillars:
   linux:
     system:
       package:

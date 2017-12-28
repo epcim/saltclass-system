@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_docker-xenial_source: 'https://apt.dockerproject.org/repo'
     mirror_docker-xenial_distribution: ubuntu-xenial

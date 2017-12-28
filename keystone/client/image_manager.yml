@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     keystone_image_manager_email: 'root@localhost'
   keystone:

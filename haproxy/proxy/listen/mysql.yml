@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_mysql_bind_port: 3306
     haproxy_mysql_source_port: 3306

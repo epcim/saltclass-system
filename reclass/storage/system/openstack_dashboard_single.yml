@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_proxy_hostname: prx01
     openstack_proxy_system_codename: trusty

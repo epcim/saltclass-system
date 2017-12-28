@@ -1,6 +1,6 @@
 classes:
 - system.apache.server.single
-parameters:
+pillars:
   keystone:
     server:
       service_name: apache2

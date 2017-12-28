@@ -1,6 +1,6 @@
-applications:
+states:
 - opencontrail
-parameters:
+pillars:
   _param:
     opencontrail_compute_iface_mask: 24
     opencontrail_version: 4.0

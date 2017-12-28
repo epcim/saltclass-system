@@ -1,7 +1,7 @@
 #
 # Jobs to run given states on given Salt master environment's
 #
-parameters:
+pillars:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
   jenkins:

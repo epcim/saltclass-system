@@ -4,7 +4,7 @@ classes:
 - service.opencontrail.control.cluster
 - system.haproxy.proxy.listen.opencontrail.control
 - system.haproxy.proxy.listen.opencontrail.analytics
-parameters:
+pillars:
   _param:
     opencontrail_kafka_log_cleanup_mtime: '+7'
     opencontrail_kafka_log_cleanup_dir: '/usr/share/kafka/logs/'

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     docker_hce_replicas: 1
     docker_image_hce: docker-prod-local.artifactory.mirantis.com/mirantis/oss/hce

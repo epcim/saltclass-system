@@ -7,7 +7,7 @@ classes:
 - system.helm.analytics_pipeline.tweetics
 - system.helm.analytics_pipeline.tweeviz
 - service.helm.client
-parameters:
+pillars:
   _param:
     analytics_enabled: true
     analytics_repo: mirantisworkloads

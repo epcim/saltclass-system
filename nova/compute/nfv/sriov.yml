@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     sriov_nic01_physical_network: physnet1
     sriov_unsafe_interrupts: False

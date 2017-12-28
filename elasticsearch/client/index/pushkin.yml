@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     pushkin_notifications_shards: 5
     pushkin_notifications_replicas: 1

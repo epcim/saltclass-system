@@ -1,6 +1,6 @@
 classes:
 - system.linux.system.repo.salt
-parameters:
+pillars:
   linux:
     system:
       repo:

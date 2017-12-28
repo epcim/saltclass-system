@@ -1,4 +1,4 @@
-parameters:
+pillars:
   keystone:
     server:
       notification_format: cadf

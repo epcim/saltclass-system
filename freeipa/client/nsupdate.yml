@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     freeipa_client_nsupdate_01_address: 172.16.10.240
   freeipa:

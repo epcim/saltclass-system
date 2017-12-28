@@ -1,6 +1,6 @@
 classes:
 - service.ceph.setup.single
-parameters:
+pillars:
   ceph:
     common:
       keyring:

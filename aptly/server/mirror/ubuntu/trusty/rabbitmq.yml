@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_rabbitmq-testing-trusty_source: http://www.rabbitmq.com/debian/
     mirror_rabbitmq-testing-trusty_distribution: testing

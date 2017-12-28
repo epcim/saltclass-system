@@ -5,7 +5,7 @@ classes:
 - service.python.environment
 - service.rabbitmq.server.single
 - service.supervisor.server.single
-parameters:
+pillars:
   _param:
     billometer_secret_key: billometer
     keystone_billometer_address: localhost

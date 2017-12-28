@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     octavia_ca_hostname: ${linux:system:name}
     octavia_ca_host: ${_param:octavia_ca_hostname}.${_param:cluster_domain}

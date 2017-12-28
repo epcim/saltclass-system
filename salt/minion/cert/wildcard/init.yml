@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     salt_minion_ca_authority: salt_master_ca
     salt_pki_wildcard_alt_names: IP:${_param:cluster_public_host},DNS:${_param:cluster_public_host},DNS:*.${_param:cluster_public_host},DNS:${_param:cluster_domain},DNS:*.${_param:cluster_domain}

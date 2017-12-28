@@ -1,5 +1,5 @@
 ##Obsolete, please use repo/saltstack/trusty
-parameters:
+pillars:
   linux:
     system:
       repo:

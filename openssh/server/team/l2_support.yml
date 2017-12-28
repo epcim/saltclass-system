@@ -18,7 +18,7 @@ classes:
 - system.openssh.server.team.members.obryndzii
 - system.openssh.server.team.members.oliemieshko
 - system.openssh.server.team.members.sovsianikov
-parameters:
+pillars:
   _param:
     linux_system_user_sudo: false
   linux:

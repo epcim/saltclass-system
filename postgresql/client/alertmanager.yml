@@ -1,6 +1,6 @@
 classes:
   - system.postgresql.client
-parameters:
+pillars:
   _param:
     alertmanager_db_host: ${_param:haproxy_postgresql_bind_host}
     alertmanager_db_user: alertmanager

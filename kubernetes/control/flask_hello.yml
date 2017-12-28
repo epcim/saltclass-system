@@ -1,6 +1,6 @@
 classes:
   - system.kubernetes.control
-parameters:
+pillars:
   kubernetes:
     control:
       service:

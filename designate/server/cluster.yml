@@ -3,7 +3,7 @@ classes:
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.designate
 - service.haproxy.proxy.single
-parameters:
+pillars:
   _param:
     designate_admin_api_enabled: false
   linux:

@@ -2,7 +2,7 @@ classes:
   - system.jenkins.client.job.deploy.lab
   - system.jenkins.client.job.deploy.update
   - system.jenkins.client.job.deploy.openstack
-parameters:
+pillars:
   jenkins:
     client:
       view:

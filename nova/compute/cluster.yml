@@ -1,6 +1,6 @@
 classes:
 - service.nova.compute.kvm
-parameters:
+pillars:
   _param:
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
     nova_compute_virtualization: kvm

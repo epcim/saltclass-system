@@ -1,6 +1,6 @@
 classes:
 - service.keystone.server.single
-parameters:
+pillars:
   _param:
     keystone_service_token: token
     keystone_admin_password: password

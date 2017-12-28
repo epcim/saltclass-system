@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_benchmark_node01_hostname: bmk01
     openstack_benchmark_system_codename: xenial

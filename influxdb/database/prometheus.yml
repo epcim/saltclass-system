@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     influxdb_prometheus_database_retention: 30d
   influxdb:

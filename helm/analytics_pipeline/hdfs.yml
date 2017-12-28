@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     analytics_hdfs_release: ${_param:analytics_release_prefix}hdfs
     analytics_hdfs_address: hdfs-namenode-${_param:analytics_hdfs_release}-0.hdfs-namenode-${_param:analytics_hdfs_release}

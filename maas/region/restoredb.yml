@@ -1,6 +1,6 @@
 classes:
 - system.maas.region.single
-parameters:
+pillars:
   maas:
     region:
       database:

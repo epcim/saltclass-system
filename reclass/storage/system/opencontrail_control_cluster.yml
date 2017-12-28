@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     opencontrail_control_node01_hostname: ntw01
     opencontrail_control_node02_hostname: ntw02

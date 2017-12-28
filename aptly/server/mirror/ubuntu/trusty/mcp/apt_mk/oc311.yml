@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_mcp_opencontrail_trusty_oc311_source: http://apt.mirantis.com/trusty/

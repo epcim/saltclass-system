@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     telegraf_remote_agent_prometheus_port: 9126
   telegraf:

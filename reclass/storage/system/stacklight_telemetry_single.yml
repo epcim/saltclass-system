@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     stacklight_telemetry_node01_hostname: mtr01
     stacklight_telemetry_system_codename: xenial

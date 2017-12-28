@@ -3,7 +3,7 @@ classes:
 - service.haproxy.proxy.single
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.cinder
-parameters:
+pillars:
   linux:
     system:
       package:

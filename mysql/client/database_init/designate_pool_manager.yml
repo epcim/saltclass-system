@@ -1,6 +1,6 @@
 classes:
 - system.mysql.client.database.designate_pool_manager
-parameters:
+pillars:
   mysql:
     client:
       enabled: true

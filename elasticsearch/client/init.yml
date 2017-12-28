@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     elasticsearch_client_host: ${_param:haproxy_elasticsearch_bind_host}
     elasticsearch_client_port: ${_param:haproxy_elasticsearch_http_bind_port}

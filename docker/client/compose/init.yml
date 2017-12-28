@@ -1,6 +1,6 @@
 classes:
   - system.docker.client
-parameters:
+pillars:
   _param:
     docker_image_compose: docker/compose:1.17.1
   docker:

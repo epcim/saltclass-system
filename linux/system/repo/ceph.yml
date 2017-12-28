@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     linux_repo_ceph_component: jewel
     linux_repo_ceph_mirror: download

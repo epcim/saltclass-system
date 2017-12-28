@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     ceph_mon_node01_hostname: cmn01
     ceph_mon_node02_hostname: cmn02

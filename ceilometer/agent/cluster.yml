@@ -1,6 +1,6 @@
 classes:
 - service.ceilometer.agent.cluster
-parameters:
+pillars:
   ceilometer:
     agent:
       region: ${_param:openstack_region}

@@ -1,7 +1,7 @@
 classes:
 - service.kubernetes.pool.single
 - service.docker.host
-parameters:
+pillars:
   _param:
     # component docker images
     kubernetes_calicoctl_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/ctl:latest

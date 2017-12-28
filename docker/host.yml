@@ -1,6 +1,6 @@
 classes:
   - service.docker.host
-parameters:
+pillars:
   docker:
     host:
       pkgs:

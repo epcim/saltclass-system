@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_proxy_node01_hostname: prx01
     openstack_proxy_node02_hostname: prx02

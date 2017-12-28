@@ -1,6 +1,6 @@
 classes:
 - service.neutron.client
-parameters:
+pillars:
   neutron:
     client:
       server:

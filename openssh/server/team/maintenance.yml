@@ -4,6 +4,6 @@ classes:
 - system.openssh.server.team.members.dmeltsaykin
 - system.openssh.server.team.members.myatsenko
 - system.openssh.server.team.members.omolchanov
-parameters:
+pillars:
   _param:
     linux_system_user_sudo: true

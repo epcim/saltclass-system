@@ -4,7 +4,7 @@ classes:
 - service.rabbitmq.server.cluster
 - system.rabbitmq.server.vhost.monitoring
 - service.sensu.server.single
-parameters:
+pillars:
   _param:
     rabbitmq_secret_key: secret
     rabbitmq_admin_password: password

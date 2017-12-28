@@ -1,6 +1,6 @@
-applications:
+states:
 - openssh
-parameters:
+pillars:
   _param:
     root_private_key: |
       -----BEGIN RSA PRIVATE KEY-----

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   aptly:
     server:
       mirror:

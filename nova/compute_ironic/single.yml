@@ -1,6 +1,6 @@
 classes:
 - service.nova.compute.ironic
-parameters:
+pillars:
   nova:
     compute:
       version: ${_param:nova_version}

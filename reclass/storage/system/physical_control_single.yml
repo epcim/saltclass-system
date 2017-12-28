@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     infra_kvm_node01_hostname: kvm01
     infra_kvm_node01_deploy_address: ${_param:infra_kvm_node01_address}

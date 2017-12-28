@@ -1,6 +1,6 @@
 classes:
 - service.glance.control.single
-parameters:
+pillars:
   linux:
     system:
       package:

@@ -1,6 +1,6 @@
 classes:
 - service.collectd.client
-parameters:
+pillars:
   _param:
     collectd_metric_collector_host: 127.0.0.1
     collectd_metric_collector_port: 8325

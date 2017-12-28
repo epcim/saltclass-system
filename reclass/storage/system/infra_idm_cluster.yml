@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     infra_idm_node01_hostname: idm01
     infra_idm_node02_hostname: idm02

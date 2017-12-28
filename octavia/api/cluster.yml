@@ -1,7 +1,7 @@
 classes:
 - service.octavia.api.cluster
 - system.haproxy.proxy.listen.openstack.octavia
-parameters:
+pillars:
   octavia:
     api:
       enabled: true

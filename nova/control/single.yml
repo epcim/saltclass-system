@@ -1,6 +1,6 @@
 classes:
 - service.nova.control.single
-parameters:
+pillars:
   linux:
     system:
       package:

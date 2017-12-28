@@ -1,6 +1,6 @@
 classes:
 - system.glance.client
-parameters:
+pillars:
   _param:
     amphora_image_url: "https://artifactory.mirantis.com/binary-prod-local/mirantis/openstack/octavia/images/${_param:openstack_version}/amphora-x64-haproxy.qcow2"
     amphora_image_name:  "amphora-x64-haproxy"

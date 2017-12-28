@@ -1,7 +1,7 @@
 classes:
 - system.collectd.remote_client.output.heka
 - service.collectd.remote_client.cluster
-parameters:
+pillars:
   collectd:
     remote_client:
       automatic_starting: false

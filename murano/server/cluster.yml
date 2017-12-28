@@ -3,7 +3,7 @@ classes:
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.murano
 - service.rabbitmq.server.single
-parameters:
+pillars:
   murano:
     server:
       enabled: true

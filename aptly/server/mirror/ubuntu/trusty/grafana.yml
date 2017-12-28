@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_grafana-trusty_source: https://packagecloud.io/grafana/stable/debian/
     mirror_grafana-trusty_distribution: wheezy

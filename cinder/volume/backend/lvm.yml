@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     cinder_lvm_devices: [ "/dev/loop0" ]
   linux:

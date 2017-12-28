@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_elasticsearch-2x_source: http://packages.elastic.co/elasticsearch/2.x/debian

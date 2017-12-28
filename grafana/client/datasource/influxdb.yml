@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     grafana_influxdb_is_default: true
     grafana_influxdb_ds_name: influxdb

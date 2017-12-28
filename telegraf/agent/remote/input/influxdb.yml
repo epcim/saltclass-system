@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     telegraf_remote_agent_influxdb_port: 15016
     telegraf_remote_agent_influxdb_protocol: http

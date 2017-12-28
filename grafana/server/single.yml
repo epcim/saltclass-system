@@ -1,6 +1,6 @@
 classes:
 - service.grafana.server.single
-parameters:
+pillars:
   _param:
     grafana_port: 3000
     grafana_user: admin

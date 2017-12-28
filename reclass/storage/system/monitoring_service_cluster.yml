@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     monitor_node01_hostname: mon01
     monitor_node02_hostname: mon02

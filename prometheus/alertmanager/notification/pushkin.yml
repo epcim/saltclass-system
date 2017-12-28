@@ -1,8 +1,8 @@
-parameters:
+pillars:
     _param:
       alertmanager_notification_pushkin_host: ${_param:haproxy_pushkin_bind_host}
       alertmanager_notification_pushkin_port: ${_param:haproxy_pushkin_bind_port}
-parameters:
+pillars:
   prometheus:
     alertmanager:
       config:

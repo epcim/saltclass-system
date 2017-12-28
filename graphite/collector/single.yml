@@ -1,7 +1,7 @@
 classes:
 - service.memcached.server.local
 - service.graphite.collector.single
-parameters:
+pillars:
   _param:
     rabbitmq_monitor_password: password
   carbon:

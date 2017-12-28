@@ -1,6 +1,6 @@
 classes:
   - system.openldap.client.groups
-parameters:
+pillars:
   openldap:
     client:
       entry:

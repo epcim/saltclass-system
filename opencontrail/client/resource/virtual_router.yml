@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     contrail_compute_dpdk_enabled: False
     contrail_client_virtual_router_type: hypervisor

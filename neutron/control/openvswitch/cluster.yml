@@ -3,7 +3,7 @@ classes:
 - service.haproxy.proxy.single
 - service.neutron.control.cluster
 - system.galera.server.database.neutron
-parameters:
+pillars:
   _param:
     neutron_control_dvr: True
     neutron_l3_ha: False

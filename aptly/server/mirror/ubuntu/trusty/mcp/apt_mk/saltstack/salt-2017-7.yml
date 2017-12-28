@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_mirantis_openstack_trusty_saltstack_2017_7_source: http://apt.mirantis.com/trusty/salt/2017.7/

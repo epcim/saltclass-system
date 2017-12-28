@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     influxdb_stacklight_rp_duration: 30d
   influxdb:

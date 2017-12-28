@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_salt-2016-3-xenial_source: http://repo.saltstack.com/apt/ubuntu/16.04/amd64/2016.3/

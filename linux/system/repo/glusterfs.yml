@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     glusterfs_version: 3.8
   linux:

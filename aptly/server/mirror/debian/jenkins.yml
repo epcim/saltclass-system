@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_jenkins_source: http://pkg.jenkins-ci.org/debian/
     mirror_jenkins_distribution: binary/

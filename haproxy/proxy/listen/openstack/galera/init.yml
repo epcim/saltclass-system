@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_params_check: 'check'
   haproxy:

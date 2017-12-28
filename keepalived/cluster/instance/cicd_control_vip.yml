@@ -1,8 +1,8 @@
-applications:
+states:
   - keepalived
 classes:
   - service.keepalived.support
-parameters:
+pillars:
   keepalived:
     cluster:
       enabled: true

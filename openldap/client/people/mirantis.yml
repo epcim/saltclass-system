@@ -5,7 +5,7 @@
 classes:
   - system.openldap.client.people
   - system.openldap.client.groups.mirantis
-parameters:
+pillars:
   openldap:
     client:
       entry:

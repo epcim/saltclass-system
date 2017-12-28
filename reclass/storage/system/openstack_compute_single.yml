@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_compute_node01_hostname: cmp01
     openstack_compute_node01_address: 172.16.10.105

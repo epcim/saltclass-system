@@ -1,4 +1,4 @@
-parameters:
+pillars:
   cinder:
     controller:
       default_volume_type: lvm-driver

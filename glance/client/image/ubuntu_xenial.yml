@@ -1,6 +1,6 @@
 classes:
 - system.glance.client
-parameters:
+pillars:
   _param:
     ubuntu_xenial_image_url: "http://images.mirantis.com/ubuntu-16-04-x64-mcp1.1.qcow2"
     ubuntu_xenial_image_name:  "ubuntu-16-04-amd64-cloudimg"

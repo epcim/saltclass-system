@@ -1,6 +1,6 @@
 classes:
   - system.jenkins.slave
-parameters:
+pillars:
   linux:
     system:
       user:

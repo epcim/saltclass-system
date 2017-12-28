@@ -1,7 +1,7 @@
 classes:
 - system.salt.minion.cert.mysql
 
-parameters:
+pillars:
   _param:
     mysql_ssl_key_file: /etc/mysql/ssl/key.pem
     mysql_ssl_cert_file: /etc/mysql/ssl/cert.pem

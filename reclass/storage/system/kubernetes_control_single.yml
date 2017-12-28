@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     kubernetes_control_node01_hostname: ctl01
     kubernetes_control_node01_deploy_address: ${_param:kubernetes_control_node01_address}

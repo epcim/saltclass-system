@@ -1,6 +1,6 @@
 classes:
   - system.jenkins.client.job.git-mirrors.downstream
-parameters:
+pillars:
   _param:
     jenkins_git_mirror_downstream_jobs:
       - name: pipeline-library

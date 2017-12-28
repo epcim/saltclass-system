@@ -1,6 +1,6 @@
 classes:
 - system.telegraf.agent.remote
-parameters:
+pillars:
   docker:
     client:
       stack:

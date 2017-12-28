@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     cicd_control_node01_hostname: cid01
     cicd_control_node02_hostname: cid02

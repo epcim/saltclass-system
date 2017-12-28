@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     remote_collector_telegraf_port: 8186
   heka:

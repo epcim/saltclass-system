@@ -1,8 +1,8 @@
 classes:
   - service.opencontrail.compute.cluster
-applications:
+states:
 - opencontrail
-parameters:
+pillars:
   _param:
     opencontrail_compute_iface_mask: 24
   opencontrail:

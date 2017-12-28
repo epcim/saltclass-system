@@ -1,6 +1,6 @@
 classes:
 - system.mysql.client.database.designate
-parameters:
+pillars:
   mysql:
     client:
       enabled: true

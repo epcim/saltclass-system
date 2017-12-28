@@ -1,7 +1,7 @@
 classes:
 - service.java.environment.openjdk8
 - service.elasticsearch.server.single
-parameters:
+pillars:
   _param:
     elasticsearch_version: 5
   linux:

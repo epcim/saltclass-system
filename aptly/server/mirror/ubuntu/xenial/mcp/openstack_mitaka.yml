@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_mirantis_openstack_mitaka_xenial_source: http://mirror.fuel-infra.org/mcp-repos/mitaka/xenial
     mirror_mirantis_openstack_mitaka_xenial_distribution: mitaka

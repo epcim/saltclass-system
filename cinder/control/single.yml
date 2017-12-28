@@ -1,6 +1,6 @@
 classes:
 - service.cinder.control.single
-parameters:
+pillars:
   linux:
     system:
       package:

@@ -1,6 +1,6 @@
 classes:
   - service.openldap.client
-parameters:
+pillars:
   _param:
     openldap_server: ${_param:cluster_vip_address}
     openldap_tls: false

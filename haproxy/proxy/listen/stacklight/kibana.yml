@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_kibana_bind_host: ${_param:cluster_vip_address}
     haproxy_kibana_bind_port: ${_param:cluster_kibana_port}

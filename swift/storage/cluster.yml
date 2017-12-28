@@ -1,7 +1,7 @@
 classes:
 - service.swift.storage.cluster
 - service.rsync.server.single
-parameters:
+pillars:
   rsync:
     server:
       module:

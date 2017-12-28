@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_telemetry_node01_hostname: mdb01
     openstack_telemetry_node02_hostname: mdb02

@@ -46,7 +46,7 @@ classes:
 - system.openssh.server.team.members.pcizinsky
 - system.openssh.server.team.members.pmathews
 - system.openssh.server.team.members.pmichalec
-parameters:
+pillars:
   _param:
     linux_system_user_sudo: true
   linux:

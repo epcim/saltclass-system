@@ -2,7 +2,7 @@ classes:
   - system.jenkins.client.job.salt-formulas.git-mirrors
   - system.jenkins.client.job.salt-formulas.tests
   - system.jenkins.client.job.salt-formulas.release
-parameters:
+pillars:
   jenkins:
     client:
       view:

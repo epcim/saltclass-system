@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     octavia_api_bind_address: ${_param:cluster_local_address}
   neutron:

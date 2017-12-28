@@ -1,6 +1,6 @@
 classes:
   - service.gerrit.client
-parameters:
+pillars:
   _param:
     gerrit_try_login: true
   gerrit:

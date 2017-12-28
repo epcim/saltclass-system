@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     elasticsearch_replicas: 1
     docker_image_elasticsearch: docker.elastic.co/elasticsearch/elasticsearch:5.4.1

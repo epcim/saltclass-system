@@ -1,8 +1,8 @@
-applications:
+states:
 - keepalived
 classes:
 - service.keepalived.support
-parameters:
+pillars:
   _param:
     keepalived_openstack_baremetal_vip_address: ${_param:cluster_baremetal_vip_address}
     keepalived_openstack_baremetal_password: password

@@ -1,7 +1,7 @@
 classes:
 - service.neutron.control.single
 - system.galera.server.database.neutron
-parameters:
+pillars:
   _param:
     neutron_control_dvr: True
     neutron_l3_ha: False

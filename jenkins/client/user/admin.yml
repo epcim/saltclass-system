@@ -1,4 +1,4 @@
-parameters:
+pillars:
   jenkins:
     client:
       user:

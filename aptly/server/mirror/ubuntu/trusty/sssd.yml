@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_sssd-trusty_source: http://ppa.launchpad.net/sssd/updates/ubuntu
     mirror_sssd-trusty_distribution: trusty

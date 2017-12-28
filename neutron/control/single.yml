@@ -1,7 +1,7 @@
 classes:
 - service.neutron.control.single
 - system.galera.server.database.neutron
-parameters:
+pillars:
   linux:
     system:
       package:

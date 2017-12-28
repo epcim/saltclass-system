@@ -1,6 +1,6 @@
 classes:
   - service.aptly.server.single
-parameters:
+pillars:
   _param:
     aptly_server_secure: false
     aptly_gpg_keypair_id: none

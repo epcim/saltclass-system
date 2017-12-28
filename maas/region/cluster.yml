@@ -1,7 +1,7 @@
 classes:
   - system.maas.region.single
   - system.keepalived.server.cluster_maas
-parameters:
+pillars:
   _param:
     cluster_vip_address: 10.0.175.80
   maas:

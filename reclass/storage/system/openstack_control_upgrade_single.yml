@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_upgrade_node01_hostname: upg01
     openstack_upgrade_system_codename: xenial

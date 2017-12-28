@@ -1,4 +1,4 @@
-parameters:
+pillars:
   rabbitmq:
     server:
       host:

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     janitor_monkey_cis_openstack_shards: 5
     janitor_monkey_cis_openstack_replicas: 1

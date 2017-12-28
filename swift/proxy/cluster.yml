@@ -3,7 +3,7 @@ classes:
 - service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - service.swift.proxy.cluster
-parameters:
+pillars:
   _param:
       cluster_node01_address: ${_param:swift_proxy_node01_address}
       cluster_node02_address: ${_param:swift_proxy_node02_address}

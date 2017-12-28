@@ -1,6 +1,6 @@
 classes:
 - system.salt.minion.cert.proxy
-parameters:
+pillars:
   _param:
     salt_pki_proxy_alt_names: IP:${_param:cluster_public_host},DNS:${_param:cluster_public_host},DNS:proxy.${_param:cluster_public_host},DNS:horizon.${_param:cluster_public_host}
   salt:

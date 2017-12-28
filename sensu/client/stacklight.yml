@@ -1,6 +1,6 @@
 classes:
 - service.sensu.client
-parameters:
+pillars:
   _param:
     sensu_message_queue_host: ${_param:stacklight_monitor_address}
   sensu:

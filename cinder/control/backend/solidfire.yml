@@ -1,4 +1,4 @@
-parameters:
+pillars:
   cinder:
     controller:
       defaul_volume_type: normal-storage

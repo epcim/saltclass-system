@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     docker_pushkin_replicas: 1
     docker_image_pushkin: docker-prod-local.artifactory.mirantis.com/mirantis/oss/pushkin

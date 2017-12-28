@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_trusty-updates-liberty_source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
     mirror_trusty-updates-liberty_distribution: trusty-updates/liberty

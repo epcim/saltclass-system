@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_aptly_api_bind_host: ${_param:haproxy_bind_address}
     haproxy_aptly_api_bind_port: 8084

@@ -1,6 +1,6 @@
 classes:
 - system.openssh.server.team.members.ashestakov
-parameters:
+pillars:
   _param:
     linux_system_user_sudo: true
   linux:

@@ -1,6 +1,6 @@
 classes:
 - system.docker
-parameters:
+pillars:
   _param:
     docker_image_jenkins: tcpcloud/jenkins:2.93
     jenkins_master_extra_opts: ""

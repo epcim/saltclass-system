@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_billing_currency: EUR
     openstack_billing_allocation: False

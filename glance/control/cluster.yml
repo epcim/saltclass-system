@@ -3,7 +3,7 @@ classes:
 - service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.glance
-parameters:
+pillars:
   linux:
     system:
       package:

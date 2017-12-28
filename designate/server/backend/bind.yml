@@ -1,6 +1,6 @@
 classes:
 - service.bind.server.single
-parameters:
+pillars:
   _param:
     designate_bind9_rndc_algorithm: hmac-sha512
   designate:

@@ -1,7 +1,7 @@
 classes:
 - service.horizon.server.single
 - system.memcached.server.single
-parameters:
+pillars:
   _param:
     horizon_site_branding: "OpenStack Dashboard"
   horizon:

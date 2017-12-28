@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_xenial-updates-newton_source: http://ubuntu-cloud.archive.canonical.com/ubuntu/
     mirror_xenial-updates-newton_distribution: xenial-updates/newton

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mysql_client_host: localhost
   mysql:

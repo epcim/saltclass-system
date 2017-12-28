@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     linux_repo_cassandra_component: 21x
   linux:

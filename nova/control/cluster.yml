@@ -4,7 +4,7 @@ classes:
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.nova
 - system.haproxy.proxy.listen.openstack.novnc
-parameters:
+pillars:
   _param:
     nova_vncproxy_url: http://${_param:cluster_vip_address}:6080
     nova_cpu_allocation_ratio: 16.0

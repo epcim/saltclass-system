@@ -1,6 +1,6 @@
 classes:
 - system.mysql.client.database.nova
-parameters:
+pillars:
   mysql:
     client:
       enabled: true

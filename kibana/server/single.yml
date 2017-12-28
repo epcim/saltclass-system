@@ -1,6 +1,6 @@
 classes:
 - service.kibana.server.single
-parameters:
+pillars:
   _param:
     kibana_version: 5
   kibana:

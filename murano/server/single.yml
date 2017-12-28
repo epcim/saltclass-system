@@ -1,7 +1,7 @@
 classes:
 - service.murano.server.single
 - service.rabbitmq.server.single
-parameters:
+pillars:
   murano:
     server:
       enabled: true

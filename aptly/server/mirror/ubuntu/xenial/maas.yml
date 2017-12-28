@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_maas-xenial_source: http://ppa.launchpad.net/maas/stable/ubuntu

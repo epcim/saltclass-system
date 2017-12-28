@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     stacklight_log_node01_hostname: log01
     stacklight_log_node02_hostname: log02

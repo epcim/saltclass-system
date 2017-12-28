@@ -8,7 +8,7 @@ classes:
 - system.mysql.client.database_init.nova
 - system.mysql.client.database_init.nova_api
 - system.mysql.client.database_init.neutron
-parameters:
+pillars:
   _param:
     mysql_client_host: localhost
   mysql:

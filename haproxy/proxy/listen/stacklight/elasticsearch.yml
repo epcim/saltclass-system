@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_elasticsearch_bind_host: ${_param:cluster_vip_address}
     haproxy_elasticsearch_http_bind_port: 9200

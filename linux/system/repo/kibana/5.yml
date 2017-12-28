@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     kibana_gpg_key: |
       -----BEGIN PGP PUBLIC KEY BLOCK-----

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     docker_security_monkey_api_replicas: 1
     docker_security_monkey_scheduler_replicas: 1

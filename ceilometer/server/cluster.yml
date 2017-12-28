@@ -3,7 +3,7 @@ classes:
 - service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.ceilometer
 - system.keepalived.cluster.instance.openstack_telemetry_vip
-parameters:
+pillars:
   ceilometer:
     server:
       enabled: true

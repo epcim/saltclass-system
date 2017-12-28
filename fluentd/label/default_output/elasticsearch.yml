@@ -1,6 +1,6 @@
 classes:
 - service.fluentd.agent.output.elasticsearch
-parameters:
+pillars:
   _params:
     fluentd_elasticsearch_host: 127.0.0.1
     elasticsearch_port: 9200

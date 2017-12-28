@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     http_proxy: ""
     docker_http_proxy: ${_param:http_proxy}

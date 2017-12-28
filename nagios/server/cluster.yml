@@ -1,7 +1,7 @@
 classes:
 - service.nagios.server.cluster
 - system.nagios.server
-parameters:
+pillars:
   _param:
     nagios_ui_bind: ${_param:stacklight_monitor_address}
     nagios_status_bind: ${_param:stacklight_monitor_address}

@@ -1,7 +1,7 @@
 classes:
   - service.rundeck.common
   - service.rundeck.server.single
-parameters:
+pillars:
   _param:
     rundeck_server_ssh_timeout: 300000
     rundeck_forward_iframe: False

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_billing_hostname: bil01
     openstack_billing_system_codename: trusty

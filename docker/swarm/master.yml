@@ -1,6 +1,6 @@
 classes:
   - system.docker.swarm.network.gwbridge
-parameters:
+pillars:
   _param:
     docker_gwbridge_subnet: 10.20.0.0/16
   docker:

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     contrail_compute_dpdk_enabled: True
   nova:

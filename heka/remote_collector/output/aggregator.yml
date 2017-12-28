@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     aggregator_port: 5565
   heka:

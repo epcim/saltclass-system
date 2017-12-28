@@ -1,7 +1,7 @@
 classes:
 - service.git.client
 - service.salt.master.single
-parameters:
+pillars:
   linux:
     system:
       sysctl:

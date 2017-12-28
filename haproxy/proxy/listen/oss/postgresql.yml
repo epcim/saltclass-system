@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_postgresql_bind_host: ${_param:haproxy_bind_address}
     haproxy_postgresql_bind_port: 5432

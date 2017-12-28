@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     salt_minion_ca_common_name: Salt Master CA
     salt_minion_ca_country: cz

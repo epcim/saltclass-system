@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     # Ceilometer samples are persisted up to 3 hours by default
     rabbitmq_ceilometer_ttl: 10800000

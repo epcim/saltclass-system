@@ -1,6 +1,6 @@
 classes:
   - system.postgresql.client
-parameters:
+pillars:
   _param:
     secmonkey_db_host: ${_param:haproxy_postgresql_bind_host}
     secmonkey_db_user: secmonkey

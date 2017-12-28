@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     analytics_tweetics_release: ${_param:analytics_release_prefix}tweetics
   helm:

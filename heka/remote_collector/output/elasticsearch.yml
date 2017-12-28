@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     elasticsearch_port: 9200
   heka:

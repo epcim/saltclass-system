@@ -1,4 +1,4 @@
-parameters:
+pillars:
   glusterfs:
     server:
       volumes:

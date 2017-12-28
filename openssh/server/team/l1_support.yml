@@ -26,7 +26,7 @@ classes:
 - system.openssh.server.team.members.rsafonov
 - system.openssh.server.team.members.scottmachtmes
 - system.openssh.server.team.members.zahedkhurasani
-parameters:
+pillars:
   _param:
     linux_system_user_sudo: false
   linux:

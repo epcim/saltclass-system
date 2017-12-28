@@ -1,4 +1,4 @@
-parameters:
+pillars:
 
   _param:
     salt_minion_ca_host: cfg01.${_param:cluster_domain}

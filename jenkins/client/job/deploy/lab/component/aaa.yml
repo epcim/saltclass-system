@@ -1,6 +1,6 @@
 classes:
   - system.jenkins.client.job.deploy.lab.deploy
-parameters:
+pillars:
   _param:
     jenkins_deploy_jobs:
       - stack_name: aaa_ha_freeipa

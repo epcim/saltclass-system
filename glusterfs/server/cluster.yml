@@ -1,6 +1,6 @@
 classes:
 - service.glusterfs.server
-parameters:
+pillars:
   glusterfs:
     _support:
       iptables:

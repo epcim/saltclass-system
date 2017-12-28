@@ -1,7 +1,7 @@
 classes:
 - service.glusterfs.server
 - service.glusterfs.client
-parameters:
+pillars:
   elasticsearch:
     server:
       snapshot:

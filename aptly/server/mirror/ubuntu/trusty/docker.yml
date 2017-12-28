@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_docker-trusty_source: 'https://download.docker.com/linux/ubuntu'
     mirror_docker-trusty_distribution: trusty

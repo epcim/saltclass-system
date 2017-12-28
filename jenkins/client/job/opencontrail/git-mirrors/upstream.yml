@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     jenkins_pollscm_spec: "H/60 * * * *"
     jenkins_contrail_pipeline: "${_param:jenkins_gerrit_url}/contrail/contrail-pipeline"

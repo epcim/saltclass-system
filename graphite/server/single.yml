@@ -4,7 +4,7 @@ classes:
 - service.graphite.server.single
 - service.apache.server.single
 - service.supervisor.server.single
-parameters:
+pillars:
   _param:
     graphite_secret_key: secret
     postgresql_graphite_password: password

@@ -1,7 +1,7 @@
 classes:
 - service.heka.metric_collector.single
 - system.heka.server
-parameters:
+pillars:
   heka:
     metric_collector:
       aggregator_host: ${_param:stacklight_monitor_address}

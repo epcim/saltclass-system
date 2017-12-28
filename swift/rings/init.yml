@@ -1,4 +1,4 @@
-parameters:
+pillars:
   swift:
     ring_builder:
       enabled: true

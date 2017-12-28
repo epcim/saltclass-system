@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     oss_jenkins_user: admin
     oss_jenkins_password: password

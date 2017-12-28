@@ -1,6 +1,6 @@
 classes:
 - service.keepalived.cluster.single
-parameters:
+pillars:
   _param:
     keepalived_openstack_telemetry_vip_address: ${_param:cluster_vip_address}
     keepalived_openstack_telemetry_vip_password: password

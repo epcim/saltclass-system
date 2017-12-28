@@ -1,7 +1,7 @@
 classes:
 - service.heka.remote_collector.cluster
 - system.heka.server
-parameters:
+pillars:
   keepalived:
     cluster:
       instance:

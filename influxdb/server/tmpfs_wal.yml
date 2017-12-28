@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     influxdb_home_directory: /var/lib/influxdb
     influxdb_wal_directory: ${_param:influxdb_home_directory}/wal

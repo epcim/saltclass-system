@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_mirantis_openstack_newton_xenial_source: http://mirror.fuel-infra.org/mcp-repos/newton/xenial
     mirror_mirantis_openstack_newton_xenial_distribution: newton

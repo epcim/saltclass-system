@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_gateway_node01_hostname: gtw01
     openstack_gateway_node02_hostname: gtw02

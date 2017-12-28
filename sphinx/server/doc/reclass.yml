@@ -1,6 +1,6 @@
 classes:
 - system.sphinx.server.multi
-parameters:
+pillars:
   _param:
     nginx_static_reclass_doc_host: ${_param:cluster_public_host}
   sphinx:

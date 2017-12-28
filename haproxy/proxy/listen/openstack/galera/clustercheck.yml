@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_params_check: 'check port 9200'
   haproxy:

@@ -1,6 +1,6 @@
 classes:
 - service.grafana.client.single
-parameters:
+pillars:
   _param:
     grafana_protocol: http
     grafana_port: 3000

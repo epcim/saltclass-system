@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     nova_storage_user: nova
     cinder_storage_user: cinder

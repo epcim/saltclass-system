@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     git_server_host: git.${_param:cluster_domain}
     git_server_port: 8088

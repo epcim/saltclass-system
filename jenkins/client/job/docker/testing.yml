@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     jenkins_docker_registry_url: ""
     jenkins_docker_registry_credentials: "dockerhub"

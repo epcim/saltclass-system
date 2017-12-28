@@ -1,7 +1,7 @@
 classes:
   - system.openldap.client.people
   - system.openldap.client.groups.admins
-parameters:
+pillars:
   openldap:
     client:
       entry:

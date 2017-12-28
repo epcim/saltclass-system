@@ -1,6 +1,6 @@
 classes:
 - service.elasticsearch.client
-parameters:
+pillars:
   _param:
     elasticsearch_client_host: ${_param:stacklight_log_address}
     elasticsearch_client_port: 9200

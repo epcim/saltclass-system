@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     elasticsearch_curator_indices_pattern: "^(log|notification)-.*$"
     elasticsearch_curator_retention_period: 31

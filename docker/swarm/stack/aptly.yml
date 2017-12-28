@@ -1,6 +1,6 @@
 classes:
 - system.docker
-parameters:
+pillars:
   _param:
     docker_image_aptly:
       api: tcpcloud/aptly-api

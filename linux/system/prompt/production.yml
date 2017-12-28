@@ -1,6 +1,6 @@
 classes:
   - system.linux.system.prompt
-parameters:
+pillars:
   linux:
     system:
       prompt:

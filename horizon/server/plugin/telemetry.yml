@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     horizon_telemetry_engine: graphite
     horizon_telemetry_host: 127.0.0.1

@@ -1,5 +1,5 @@
 ##Disabled user
-parameters:
+pillars:
   linux:
     system:
       user:

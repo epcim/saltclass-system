@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     haproxy_gerrit_bind_host: ${_param:haproxy_bind_address}
     haproxy_gerrit_bind_port: 8080

@@ -4,7 +4,7 @@ classes:
 - system.heka.remote_collector.output.elasticsearch
 - system.heka.remote_collector.output.telegraf
 - system.telegraf.agent.remote.input.http_listener
-parameters:
+pillars:
   docker:
     client:
       stack:

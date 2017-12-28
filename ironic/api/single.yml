@@ -1,6 +1,6 @@
 classes:
 - service.ironic.api.single
-parameters:
+pillars:
   linux:
     system:
       package:

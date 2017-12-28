@@ -4,7 +4,7 @@ classes:
 - system.prometheus.remote_storage_adapter.container
 - system.prometheus.server.container
 - system.docker.swarm.stack.monitoring.remote_agent
-parameters:
+pillars:
   docker:
     client:
       stack:

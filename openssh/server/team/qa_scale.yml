@@ -3,6 +3,6 @@ classes:
 - system.openssh.server.team.members.sgalkin
 - system.openssh.server.team.members.obasov
 
-parameters:
+pillars:
   _param:
     linux_system_user_sudo: true

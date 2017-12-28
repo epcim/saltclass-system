@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     opencontrail_asn: 64512
     opencontrail_router01_hostname: mx01

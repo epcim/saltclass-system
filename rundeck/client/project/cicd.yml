@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     rundeck_cis_jobs_repository: https://gerrit.mcp.mirantis.net/oss/rundeck-cis-jobs
     rundeck_cis_jobs_revision: master

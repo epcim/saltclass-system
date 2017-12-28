@@ -1,7 +1,7 @@
 classes:
 - service.ccp.control.single
 - service.ccp.control.service.etcd
-parameters:
+pillars:
   _param:
     ccp_public_interface: eth0
     ccp_private_interface: eth0

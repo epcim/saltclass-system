@@ -4,7 +4,7 @@ classes:
 - service.neutron.control.cluster
 - system.haproxy.proxy.listen.openstack.neutron
 - system.galera.server.database.neutron
-parameters:
+pillars:
   linux:
     system:
       package:

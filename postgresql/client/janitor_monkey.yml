@@ -1,6 +1,6 @@
 classes:
   - system.postgresql.client
-parameters:
+pillars:
   _param:
     janmonkey_db_host: ${_param:haproxy_postgresql_bind_host}
     janmonkey_db_user: janmonkey

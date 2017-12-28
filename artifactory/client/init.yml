@@ -1,4 +1,4 @@
-parameters:
+pillars:
   artifactory:
     client:
         enabled: True

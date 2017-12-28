@@ -1,7 +1,7 @@
 #
 # Jobs to update Salt master environment (formulas and models)
 #
-parameters:
+pillars:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
   jenkins:

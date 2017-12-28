@@ -1,6 +1,6 @@
 classes:
 - service.octavia.api.single
-parameters:
+pillars:
   octavia:
     api:
       enabled: true

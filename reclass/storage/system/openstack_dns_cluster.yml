@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     openstack_dns_node01_hostname: dns01
     openstack_dns_node02_hostname: dns02

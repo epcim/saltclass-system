@@ -1,6 +1,6 @@
 classes:
 - service.ironic.conductor.cluster
-parameters:
+pillars:
   linux:
     system:
       package:

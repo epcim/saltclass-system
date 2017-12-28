@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     apt_mk_version: stable
     mirror_sensu_source: http://sensu.global.ssl.fastly.net/apt

@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     opencontrail_analytics_node01_hostname: nal01
     opencontrail_analytics_node02_hostname: nal02

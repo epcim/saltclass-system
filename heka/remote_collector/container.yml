@@ -1,7 +1,7 @@
 classes:
 - service.heka.remote_collector.container
 - system.heka.server
-parameters:
+pillars:
   _param:
     remote_collector_prefix_dir: /srv/volumes/local/remote_collector
   heka:

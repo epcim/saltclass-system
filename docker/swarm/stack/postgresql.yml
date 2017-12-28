@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     docker_postgresql_replicas: 1
     docker_image_postgresql: library/postgres:9.6

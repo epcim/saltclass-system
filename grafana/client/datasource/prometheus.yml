@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     grafana_prometheus_is_default: true
     grafana_prometheus_ds_name: prometheus

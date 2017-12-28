@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     stacklight_monitor_node01_hostname: mon01
     stacklight_monitor_node02_hostname: mon02

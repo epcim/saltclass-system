@@ -1,6 +1,6 @@
 classes:
 - service.grafana.support
-parameters:
+pillars:
   _param:
     docker_grafana_replicas: 1
     grafana_database_type: sqlite3

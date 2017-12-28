@@ -1,6 +1,6 @@
 classes:
   - system.docker.client.compose
-parameters:
+pillars:
   _param:
     docker_image_gerrit: tcpcloud/gerrit:2.13.6
     docker_image_mysql: tcpcloud/mysql:5.6

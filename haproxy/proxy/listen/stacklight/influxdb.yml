@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     cluster_influxdb_port: ${_param:influxdb_port}
   haproxy:

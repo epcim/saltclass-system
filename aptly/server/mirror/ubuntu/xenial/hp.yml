@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_hp-xenial_source: http://downloads.linux.hpe.com/SDR/repo/mcp/Ubuntu
     mirror_hp-xenial_distribution: xenial/current

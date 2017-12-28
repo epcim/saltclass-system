@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     infra_maas_node01_hostname: mas01
     infra_maas_system_codename: xenial

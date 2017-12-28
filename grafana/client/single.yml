@@ -1,7 +1,7 @@
 classes:
 - system.grafana.client
 - system.grafana.client.datasource.influxdb
-parameters:
+pillars:
   _param:
     grafana_address: ${_param:stacklight_monitor_address}
     grafana_influxdb_address: ${_param:grafana_influxdb_host}

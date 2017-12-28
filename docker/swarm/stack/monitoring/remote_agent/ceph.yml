@@ -2,7 +2,7 @@
 classes:
 - system.ceph.client.container
 - system.ceph.monitoring.cluster_stats
-parameters:
+pillars:
   docker:
     client:
       stack:

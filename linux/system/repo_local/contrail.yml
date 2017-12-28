@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     contrail_repo_pin_priority: 200
   linux:

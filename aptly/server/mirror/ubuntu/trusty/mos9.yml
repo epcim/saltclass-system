@@ -1,4 +1,4 @@
-parameters:
+pillars:
   _param:
     mirror_mirantis-openstack-9.0-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
     mirror_mirantis-openstack-9.0-trusty_distribution: mos9.0
